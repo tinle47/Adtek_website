@@ -5,6 +5,11 @@
     $ranking_ios                    = get_field('ranking_ios', $post_ID);
     $ranking_android                = get_field('ranking_android', $post_ID);
     $web_traffic_per_social_network = get_field('web_traffic_per_social_network', $post_ID);
+    // PHP 8: tránh lỗi khi nhóm trường mạng xã hội để trống.
+    if( !is_array($web_traffic_per_social_network) ){
+        $web_traffic_per_social_network = [];
+    }
+    $web_traffic_per_social_network += ['youtube' => '', 'instagram' => '', 'facebook' => ''];
     $web_traffic_width              = get_field('web_traffic_width', $post_ID);
     $ecommerce_title                = get_field('ecommerce_title', $post_ID);
     if( empty($ecommerce_title) ){
@@ -43,7 +48,7 @@
     </div>
     <div class="item">
         <?php 
-        if( $youtube_traffic <= $all_traffic){
+        if( $all_traffic > 0 && $youtube_traffic <= $all_traffic){
             $percent = $youtube_traffic*100/$all_traffic;
         ?>
 
@@ -63,7 +68,7 @@
     </div>
     <div class="item">
         <?php 
-        if( $instagram_traffic <= $all_traffic){ 
+        if( $all_traffic > 0 && $instagram_traffic <= $all_traffic){ 
             $percent = $instagram_traffic*100/$all_traffic;
         ?>
         <p class="percent" style="width: <?php echo $percent; ?>%;"></p>
@@ -82,7 +87,7 @@
     </div>
     <div class="item">
         <?php 
-        if( $facebook_traffic <= $all_traffic){ 
+        if( $all_traffic > 0 && $facebook_traffic <= $all_traffic){ 
             $percent = $facebook_traffic*100/$all_traffic;
         ?>
         <p class="percent" style="width: <?php echo $percent; ?>%;"></p>

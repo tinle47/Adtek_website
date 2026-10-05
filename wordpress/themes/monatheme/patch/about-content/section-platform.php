@@ -1,6 +1,6 @@
 <?php 
     $mona_aboutus_platform = get_field('mona_aboutus_platform');
-    $platforms = $mona_aboutus_platform['platforms'];
+    $platforms = !empty($mona_aboutus_platform['platforms']) && is_array($mona_aboutus_platform['platforms']) ? $mona_aboutus_platform['platforms'] : [];
     $stackTab = [];
     $stackFilter = [];
     foreach ($platforms as $key => $platform_item) {
