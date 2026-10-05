@@ -59,7 +59,11 @@ def fill_content_alts(content, title):
             continue
         tag = m.group(0)
         alt = re.search(r'\balt="([^"]*)"', tag)
+        wid = re.search(r"wp-image-(\d+)", tag)
         if alt and alt.group(1).strip():
+            # Ảnh đã có alt trong bài: dùng lại cho thư viện nếu thư viện còn trống.
+            if wid:
+                media_alts.setdefault(int(wid.group(1)), html.unescape(alt.group(1)))
             continue
         used[heading] = used.get(heading, 0) + 1
         text = heading if used[heading] == 1 else f"{heading} (hình {used[heading]})"
@@ -67,7 +71,6 @@ def fill_content_alts(content, title):
         new_tag = tag.replace(alt.group(0), f'alt="{safe}"', 1) if alt else tag.replace("<img", f'<img alt="{safe}"', 1)
         out.append(content[pos:m.start()] + new_tag)
         pos = m.end()
-        wid = re.search(r"wp-image-(\d+)", tag)
         if wid:
             media_alts.setdefault(int(wid.group(1)), text)
     out.append(content[pos:])
