@@ -20,7 +20,7 @@ APPLY = "--apply" in sys.argv
 
 
 def api(method, path, data=None):
-    cmd = ["curl", "-sS", "-X", method, f"{API}/{path}"]
+    cmd = ["curl", "-sS", "--max-time", "60", "-X", method, f"{API}/{path}"]
     if data is not None:
         cmd += ["-H", "Content-Type: application/json; charset=utf-8", "--data-binary", "@-"]
     for attempt in range(4):
