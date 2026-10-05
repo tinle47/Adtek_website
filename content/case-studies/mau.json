@@ -1,0 +1,32 @@
+{
+  "title": "Case Study: [Tên khách hàng]",
+  "slug": "case-study-mau",
+  "headline": "[Tăng X% doanh thu online] cho [Tên khách hàng] trong [Y tháng]",
+  "meta": "Ngành: [Ngành] | Thị trường: [Việt Nam] | Thời gian: [MM/YYYY đến MM/YYYY]",
+  "key_results": [
+    {"value": "[+X%]", "label": "[Doanh thu online]"},
+    {"value": "[X.X]", "label": "[ROAS trung bình]"},
+    {"value": "[-X%]", "label": "[Chi phí mỗi đơn hàng]"},
+    {"value": "[X,XXX]", "label": "[Khách hàng mới]"}
+  ],
+  "context": [
+    "[Giới thiệu khách hàng: lĩnh vực, quy mô, sản phẩm chính, kênh bán hàng.]"
+  ],
+  "challenges": [
+    "[Thách thức 1: ví dụ chi phí quảng cáo tăng nhưng doanh thu không tăng tương ứng]",
+    "[Thách thức 2]",
+    "[Thách thức 3]"
+  ],
+  "solution": [
+    "[Bước 1: ví dụ phân tích dữ liệu và đối thủ]",
+    "[Bước 2: ví dụ tái cấu trúc chiến dịch Meta Ads và Google Ads]",
+    "[Bước 3: ví dụ tối ưu landing page và đo lường chuyển đổi]"
+  ],
+  "results": [
+    "[Mô tả kết quả chi tiết, kèm số liệu trước và sau khi triển khai.]"
+  ],
+  "testimonial": {
+    "quote": "[Nhận xét của khách hàng về Adtek.]",
+    "author": "[Họ tên], [Chức vụ], [Công ty]"
+  }
+}
