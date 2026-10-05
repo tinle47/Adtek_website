@@ -10,6 +10,8 @@ TEMPLATE_IMG_SHARE = 0.3  # ảnh xuất hiện trên >= 30% số trang được
 
 
 def analyze(rows):
+    # Sitemap có thể liệt kê một URL nhiều lần (lỗi WPML + Yoast), chỉ phân tích mỗi URL một lần.
+    rows = list({r["url"]: r for r in rows}.values())
     ok = [r for r in rows if r["status"] == 200 and not r["challenge"]]
     titles = Counter(r["title"] for r in ok if r["title"])
     descs = Counter(r["description"] for r in ok if r["description"])
@@ -67,8 +69,6 @@ def analyze(rows):
         content_no_alt = [s for s in r["images_no_alt"] if s not in template_imgs]
         if content_no_alt:
             add(r, "medium", "img_alt_missing", f"{len(content_no_alt)} ảnh")
-        if r["seconds"] > 3:
-            add(r, "low", "slow", f"{r['seconds']} giây")
 
     return issues, sorted(template_imgs)
 

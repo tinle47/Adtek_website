@@ -37,6 +37,9 @@ ISSUES = {
     "thin_content": ("Nội dung mỏng (dưới 300 từ)", "Bổ sung nội dung hữu ích, hoặc noindex nếu trang không cần lên Google."),
     "img_alt_missing": ("Ảnh trong nội dung thiếu alt", "Điền Alt Text cho ảnh trong Thư viện, mô tả đúng nội dung ảnh."),
     "slow": ("Thời gian tải HTML trên 3 giây", "Kiểm tra cache WP-Optimize cho trang này, giảm kích thước trang."),
+    "link_redirect": ("Link nội bộ dùng http hoặc URL cũ, phải chuyển hướng", "Sửa link về URL https cuối cùng (ví dụ menu FAQ trỏ về https://adtek.agency/faq/)."),
+    "server_error": ("Trang bị lỗi nghiêm trọng (PHP) giữa chừng", "Xem log lỗi trong Plesk > Logs, sửa template hoặc plugin gây lỗi."),
+    "sitemap_wrong_lang_url": ("Sitemap ghi URL tiếng Anh thành URL tiếng Việt (thiếu /en/)", "Kiểm tra cài đặt WPML + Yoast sitemap, sau đó gửi lại sitemap trong Search Console."),
     "crawl_blocked": ("Bị tường lửa chặn khi quét", "Không cần sửa, kiểm tra lại thủ công."),
 }
 
@@ -61,6 +64,7 @@ def finish(ws):
 
 
 def build(crawl, issues, links, out):
+    crawl = list({r["url"]: r for r in crawl}.values())  # sitemap có URL trùng
     wb = Workbook()
     summary = wb.active
     summary.title = "Tổng quan"
@@ -140,6 +144,7 @@ def build(crawl, issues, links, out):
         c = s.cell(row=k, column=3, value=sev)
         c.font = Font(name=FONT)
         c.fill = PatternFill("solid", fgColor=SEV_FILL[sev])
+    wb.calculation.fullCalcOnLoad = True  # Excel/Google Sheets tính lại công thức khi mở file
     wb.save(out)
 
 
