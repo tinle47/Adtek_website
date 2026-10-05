@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Adtek SEO Meta REST
  * Description: Cho phép đọc và sửa SEO title, meta description, noindex của Yoast qua REST API (chỉ người có quyền sửa bài).
- * Version:     1.1.0
+ * Version:     1.2.0
  * Author:      Adtek
  */
 
@@ -56,5 +56,27 @@ add_filter(
 	static function ( $robots ) {
 		return is_post_type_archive( adtek_empty_archive_types() ) ? 'noindex, follow' : $robots;
 	}
+);
+
+/*
+ * Sitemap đa ngôn ngữ (WPML + Yoast): sitemap đang liệt kê cả bài tiếng Việt và tiếng Anh
+ * nhưng gán mọi URL theo ngôn ngữ đang xem, nên URL bị trùng và bản /en/ biến mất.
+ * Ghi lại URL của từng mục theo đúng ngôn ngữ của bài đó.
+ */
+add_filter(
+	'wpseo_sitemap_entry',
+	static function ( $url, $type, $post ) {
+		if ( 'post' !== $type || empty( $post->ID ) || empty( $url['loc'] ) ) {
+			return $url;
+		}
+		$details = apply_filters( 'wpml_post_language_details', null, $post->ID );
+		if ( empty( $details['language_code'] ) ) {
+			return $url;
+		}
+		$url['loc'] = apply_filters( 'wpml_permalink', get_permalink( $post->ID ), $details['language_code'], true );
+		return $url;
+	},
+	20,
+	3
 );
 

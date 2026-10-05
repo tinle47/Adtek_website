@@ -11,3 +11,5 @@
 | 2026-10-05 15:14 | Thêm H1 cho các mẫu trang, noindex trang lưu trữ trống | Theme + mu-plugin | Chờ upload |
 | 2026-10-05 16:14 | Đổi H1 thừa trong nội dung 2 bài viết (Gojek/Baemin/GrabFood, NFT Marketing) thành H2 | Bài viết 3487, 4072 | Đã áp dụng |
 | 2026-10-05 16:14 | Thêm H1 cho trang Giải pháp (banner.php) | Theme | Chờ upload |
+| 2026-10-05 16:42 | Cài và kích hoạt plugin WPML SEO (wp-seo-multilingual 5.1.0) qua REST API | Plugins | Đã áp dụng |
+| 2026-10-05 16:42 | Sửa URL theo ngôn ngữ trong sitemap Yoast (adtek-seo-meta 1.2.0) | mu-plugin | Chờ upload |
