@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Adtek SEO Meta REST
- * Description: Cho phép đọc và sửa SEO title, meta description, noindex của Yoast qua REST API (chỉ người có quyền sửa bài).
- * Version:     1.2.0
+ * Description: Cho phép đọc và sửa SEO title, meta description, noindex của Yoast qua REST API (bài viết, trang, chuyên mục; chỉ người có quyền sửa).
+ * Version:     1.3.0
  * Author:      Adtek
  */
 
@@ -78,5 +78,42 @@ add_filter(
 	},
 	20,
 	3
+);
+
+/*
+ * SEO title và meta description của chuyên mục (Yoast lưu trong option riêng, không phải term meta):
+ * mở qua trường REST "adtek_seo" = { title, desc } trên endpoint categories.
+ */
+add_action(
+	'rest_api_init',
+	static function () {
+		register_rest_field(
+			'category',
+			'adtek_seo',
+			array(
+				'get_callback'    => static function ( $term ) {
+					if ( ! class_exists( 'WPSEO_Taxonomy_Meta' ) ) {
+						return null;
+					}
+					return array(
+						'title' => (string) WPSEO_Taxonomy_Meta::get_term_meta( $term['id'], 'category', 'title' ),
+						'desc'  => (string) WPSEO_Taxonomy_Meta::get_term_meta( $term['id'], 'category', 'desc' ),
+					);
+				},
+				'update_callback' => static function ( $value, $term ) {
+					if ( ! class_exists( 'WPSEO_Taxonomy_Meta' ) || ! current_user_can( 'manage_categories' ) ) {
+						return new WP_Error( 'adtek_seo_forbidden', 'Không thể cập nhật SEO chuyên mục.', array( 'status' => 403 ) );
+					}
+					foreach ( array( 'title' => 'wpseo_title', 'desc' => 'wpseo_desc' ) as $field => $key ) {
+						if ( isset( $value[ $field ] ) ) {
+							WPSEO_Taxonomy_Meta::set_value( $term->term_id, 'category', $key, sanitize_text_field( $value[ $field ] ) );
+						}
+					}
+					return true;
+				},
+				'schema'          => array( 'type' => 'object' ),
+			)
+		);
+	}
 );
 
