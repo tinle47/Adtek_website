@@ -79,3 +79,14 @@ require_once( get_template_directory() . '/modules/filter-comments/class-filter-
  * Add widgets
  */
 require_once( get_template_directory() . '/widgets/autoload.php' );
+
+/**
+ * Adtek: in tiêu đề H1 cho các mẫu trang chưa có H1 (phục vụ SEO).
+ */
+function adtek_page_heading( $title ) {
+	if ( '' === trim( wp_strip_all_tags( (string) $title ) ) ) {
+		return;
+	}
+	echo '<h1 class="sec-tt sec-tt-left adtek-page-tt">' . esc_html( wp_strip_all_tags( $title ) ) . '</h1>';
+}
+

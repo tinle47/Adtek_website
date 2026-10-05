@@ -16,6 +16,7 @@ $obz = get_queried_object();
 
 <section class="section blog">
     <div class="container">
+        <?php adtek_page_heading( single_cat_title( '', false ) ); ?>
         <div class="blog-ctn">
             <div class="blog-main">
                 <?php if( have_posts() ){ ?>

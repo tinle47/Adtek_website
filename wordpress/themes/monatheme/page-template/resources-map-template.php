@@ -28,9 +28,9 @@ while (have_posts()):
         <div class="container">
             <div class="resources-map-ctn">
                 <div class="resources-map-text">
-                    <h2 class="sec-tt resources-map-tt" data-aos="fade-down">
+                    <h1 class="sec-tt resources-map-tt" data-aos="fade-down">
                         <?php echo $mona_resources_map_about['resources_map_about_title']; ?>
-                    </h2>
+                    </h1>
                     <div class="resources-desc mona-content" data-aos="fade-up">
                         <?php echo $mona_resources_map_about['resources_map_about_description']; ?>
                     </div>

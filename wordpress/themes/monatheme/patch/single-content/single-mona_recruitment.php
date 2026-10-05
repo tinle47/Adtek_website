@@ -20,9 +20,9 @@
 
     <section class="section recruitment-dt" data-aos="fade-up">
         <div class="container">
-            <h2 class="sec-tt recruitment-dt-tt">
+            <h1 class="sec-tt recruitment-dt-tt">
                 <?php echo get_the_title($post_ID); ?>
-            </h2>
+            </h1>
             <div class="news-time-ctn">
                 <div class="news-time news-detail-time">
                     <img src="<?php echo get_site_url() ?>/template/assets/images/calendar.svg" alt="">

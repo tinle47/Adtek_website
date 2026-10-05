@@ -17,7 +17,7 @@
     <section class="news-detail" data-aos="fade-up">
         <div class="container">
             <div class="news-detail-wrap">
-                <h2 class="news-detail-tt"><?php echo get_the_title($post_ID); ?></h2>
+                <h1 class="news-detail-tt"><?php echo get_the_title($post_ID); ?></h1>
                 <div class="news-time news-detail-time">
                     <img src="<?php echo get_site_url() ?>/template/assets/images/calendar.svg" alt="">
                     <?php echo get_the_date('F d, Y', $post_ID) ?>

@@ -40,7 +40,8 @@
                     <div class="banner-text">
                         <div class="container">
                             <div class="banner-text-wrap">
-                                <h1 class="banner-tt"><?php echo $banner['slider_title'] ?></h1>
+                                <?php $adtek_tag = $key === array_key_first( $solution_slider_items ) ? 'h1' : 'h2'; ?>
+                                <<?php echo $adtek_tag; ?> class="banner-tt"><?php echo $banner['slider_title'] ?></<?php echo $adtek_tag; ?>>
                                 <div class="banner-desc">
                                     <?php echo $banner['image_desc'] ?>
                                 </div>
@@ -52,6 +53,8 @@
             </div>
         </div>
     </section>
+    <?php } else { ?>
+    <div class="container"><?php adtek_page_heading( get_the_title() ); ?></div>
     <?php } ?>
     <?php 
     $solution_abous = get_field('mona_solution_abous');

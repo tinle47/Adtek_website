@@ -26,9 +26,9 @@ while (have_posts()):
                 $mona_reports = get_field('mona_reports');
                 if( !empty($mona_reports) ){
             ?>
-            <h2 class="sec-tt resources-tt">
+            <h1 class="sec-tt resources-tt">
                 <?php echo $mona_reports['title']; ?>
-            </h2>
+            </h1>
             <div class="sec-desc resources-desc">
                 <?php echo $mona_reports['description']; ?>
             </div>

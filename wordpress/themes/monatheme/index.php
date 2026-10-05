@@ -16,6 +16,7 @@ get_header();
 
     <section class="section blog">
         <div class="container">
+            <?php adtek_page_heading( is_home() ? get_the_title( get_option( 'page_for_posts' ) ) : wp_get_document_title() ); ?>
             <div class="blog-ctn">
                 <div class="blog-main">
                     <?php if( have_posts() ){ ?>

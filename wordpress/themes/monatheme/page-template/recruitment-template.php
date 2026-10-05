@@ -22,6 +22,7 @@ while (have_posts()):
 
     <section class="section recruitment news about no-border">
         <div class="container">
+            <?php adtek_page_heading( get_the_title() ); ?>
             <div class="filter-form" data-aos="fade-down">
                 <form action="<?php echo get_the_permalink(); ?>" id="filterRecruitment" class="is-loading-group2">
                     <div class="f-r">

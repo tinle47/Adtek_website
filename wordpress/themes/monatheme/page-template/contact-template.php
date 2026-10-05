@@ -26,7 +26,7 @@ while (have_posts()):
     <section class="section lets-talk contact">
         <div class="contact-header" data-aos="fade-down">
             <div class="container">
-                <h2 class="sec-tt contact-tt"><?php echo $contact_information_group['title'] ?></h2>
+                <h1 class="sec-tt contact-tt"><?php echo $contact_information_group['title'] ?></h1>
                 <div class="sec-desc lets-talk-desc" data-aos="fade-up">
                     <?php echo $contact_information_group['description']; ?>
                 </div>

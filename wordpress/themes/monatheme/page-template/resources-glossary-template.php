@@ -29,6 +29,7 @@ while (have_posts()):
     ?>
     <section class="section resources-glossary" data-aos="fade-up">
         <div class="container">
+            <?php adtek_page_heading( get_the_title() ); ?>
             <div class="resources-glossary-ctn">
                 <div class="glossary-alpha">
                     <?php 
