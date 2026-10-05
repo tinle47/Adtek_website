@@ -27,13 +27,9 @@ def bullet_list(items, ordered=False):
 
 def result_column(value, label):
     return (
-        "<!-- wp:column -->\n<div class=\"wp-block-column\">"
-        '<!-- wp:heading {"textAlign":"center","style":{"color":{"text":"#FF9014"},"typography":{"fontSize":"40px"}}} -->\n'
-        f'<h2 class="wp-block-heading has-text-align-center has-text-color" style="color:#FF9014;font-size:40px">{html.escape(value)}</h2>\n'
-        "<!-- /wp:heading -->\n\n"
-        '<!-- wp:paragraph {"align":"center"} -->\n'
-        f'<p class="has-text-align-center">{html.escape(label)}</p>\n'
-        "<!-- /wp:paragraph --></div>\n<!-- /wp:column -->"
+        '<div style="text-align:center;padding:24px 16px;border-radius:12px;background:#F4F6FA">'
+        f'<div style="color:#FF9014;font-size:40px;font-weight:700;line-height:1.2">{html.escape(value)}</div>'
+        f'<div style="margin-top:8px">{html.escape(label)}</div></div>'
     )
 
 
@@ -53,7 +49,7 @@ def build(data):
     parts = {
         "HEADLINE": html.escape(data["headline"]),
         "META": html.escape(data["meta"]),
-        "RESULT_COLUMNS": "\n\n".join(result_column(r["value"], r["label"]) for r in data["key_results"]),
+        "RESULT_COLUMNS": "".join(result_column(r["value"], r["label"]) for r in data["key_results"]),
         "CONTEXT": paragraphs(data["context"]),
         "CHALLENGES": bullet_list(data["challenges"]),
         "SOLUTION": bullet_list(data["solution"], ordered=True),
