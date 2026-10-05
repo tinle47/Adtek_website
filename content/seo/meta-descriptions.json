@@ -1,0 +1,32 @@
+{
+  "_note": "Meta description viết tay cho các trang chính. Trang thuật ngữ được tạo tự động từ nội dung (tools/apply_meta.py).",
+  "items": [
+    {"type": "pages", "id": 1143, "desc": "Bản đồ thương mại điện tử Việt Nam: xếp hạng traffic website, thứ hạng app iOS, Android và lượng theo dõi mạng xã hội của các sàn, doanh nghiệp TMĐT."},
+    {"type": "pages", "id": 1144, "desc": "Từ điển thuật ngữ marketing của Adtek: giải thích dễ hiểu các khái niệm về quảng cáo, thương hiệu, dữ liệu và growth marketing, sắp xếp theo bảng chữ cái."},
+    {"type": "pages", "id": 1146, "desc": "Thư viện báo cáo marketing do Adtek tổng hợp: xu hướng thị trường, best practices quảng cáo và dữ liệu ngành giúp doanh nghiệp ra quyết định nhanh hơn."},
+    {"type": "pages", "id": 1147, "desc": "Cơ hội nghề nghiệp tại Adtek, growth marketing agency tại TP. Hồ Chí Minh. Xem các vị trí đang tuyển và ứng tuyển để cùng phát triển thương hiệu khách hàng."},
+    {"type": "pages", "id": 1148, "desc": "Giải pháp growth marketing của Adtek: chiến lược tăng trưởng, quảng cáo đa kênh, quản lý thương mại điện tử và tư vấn CRM, xây dựng dựa trên phân tích dữ liệu."},
+    {"type": "pages", "id": 1149, "desc": "Liên hệ Adtek để được tư vấn chiến lược growth marketing. Hotline +84 9323 494 34, email tin.le@adtek.agency, văn phòng tại phường Bình Trưng, TP. Hồ Chí Minh."},
+    {"type": "pages", "id": 1150, "desc": "Blog Adtek: kiến thức growth marketing, quảng cáo số, data-driven marketing và ứng dụng AI, cập nhật xu hướng mới cho marketer và chủ doanh nghiệp."},
+    {"type": "pages", "id": 5240, "desc": "Adtek is a growth marketing agency in Vietnam helping brands grow from branding to revenue through digital transformation and data-driven strategy."},
+    {"type": "pages", "id": 599, "desc": "Vietnam e-commerce map: rankings of website traffic, iOS and Android app positions and social media followers for leading e-commerce players by quarter."},
+    {"type": "pages", "id": 425, "desc": "Adtek marketing glossary: clear explanations of advertising, branding, data and growth marketing terms, organized alphabetically for quick reference."},
+    {"type": "pages", "id": 400, "desc": "Marketing reports curated by Adtek: market trends, advertising best practices and industry data to help businesses make faster, better decisions."},
+    {"type": "pages", "id": 390, "desc": "Career opportunities at Adtek, a growth marketing agency in Ho Chi Minh City. Explore open positions and apply to help brands grow with us."},
+    {"type": "pages", "id": 372, "desc": "Adtek growth marketing solutions: growth strategy, multi-channel advertising, e-commerce management and CRM consulting, all built on data analysis."},
+    {"type": "pages", "id": 18, "desc": "Contact Adtek for a growth marketing consultation. Hotline +84 9323 494 34, email tin.le@adtek.agency, office in Binh Trung Ward, Ho Chi Minh City."},
+    {"type": "pages", "id": 13, "desc": "Adtek blog: insights on growth marketing, digital advertising, data-driven marketing and AI, with the latest trends for marketers and business owners."},
+    {"type": "pages", "id": 11, "desc": "About Adtek: a growth marketing agency helping brands grow from branding to revenue by combining creative thinking with data-driven strategy."},
+    {"type": "posts", "id": 3086, "desc": "CRM là gì? Tìm hiểu hệ thống quản lý quan hệ khách hàng, lợi ích và cách doanh nghiệp ứng dụng CRM để giữ chân khách hàng và tăng doanh thu."},
+    {"type": "posts", "id": 3073, "desc": "Cookie bên thứ ba đang dần biến mất. Tìm hiểu cách xây dựng hệ thống marketing analytics đo lường chính xác trong thế giới không còn cookie."},
+    {"type": "posts", "id": 2215, "desc": "Growth marketing là gì và vì sao doanh nghiệp cần? Những nguyên tắc cơ bản để tăng trưởng bền vững trên toàn phễu, không chỉ tối ưu đầu phễu."},
+    {"type": "mona_solution", "id": 1262, "desc": "Giải pháp truyền thông marketing tích hợp (IMC) của Adtek: thống nhất thông điệp trên mọi kênh để tăng nhận diện thương hiệu và hiệu quả chuyển đổi."},
+    {"type": "mona_solution", "id": 1010, "desc": "Adtek Integrated Marketing Communication (IMC): one consistent message across every channel to build brand awareness and drive conversions."},
+    {"type": "mona_solution", "id": 368, "desc": "Adtek growth consulting: identify growth levers, set the right metrics and build a data-driven roadmap to scale your business sustainably."},
+    {"type": "mona_solution", "id": 366, "desc": "Adtek user acquisition strategy: plan and optimize paid channels to acquire high-value customers at a sustainable cost per acquisition."},
+    {"type": "mona_solution", "id": 364, "desc": "Adtek e-commerce management: operate and grow your stores on marketplaces and your own website, from listings and ads to conversion optimization."},
+    {"type": "mona_solution", "id": 140, "desc": "Adtek CRM consulting: choose, set up and use a CRM system to manage customer relationships, automate marketing and increase customer lifetime value."},
+    {"type": "mona_reports", "id": 5646, "desc": "Tài liệu Google Demand Gen Creative Best Practices: thông số hình ảnh, độ dài video tối ưu và cách viết headline cho quảng cáo Demand Gen hiệu quả."},
+    {"type": "mona_recruitment", "id": 1953, "desc": "Adtek tuyển dụng Senior Account Executive: quản lý khách hàng và dự án growth marketing tại TP. Hồ Chí Minh. Xem mô tả công việc, yêu cầu và cách ứng tuyển."}
+  ]
+}
