@@ -23,9 +23,15 @@ def api(method, path, data=None):
     cmd = ["curl", "-sS", "-X", method, f"{API}/{path}"]
     if data is not None:
         cmd += ["-H", "Content-Type: application/json; charset=utf-8", "--data-binary", "@-"]
-    r = subprocess.run(cmd, input=json.dumps(data, ensure_ascii=False) if data is not None else None,
-                       capture_output=True, text=True)
-    return json.loads(r.stdout)
+    for attempt in range(4):
+        r = subprocess.run(cmd, input=json.dumps(data, ensure_ascii=False) if data is not None else None,
+                           capture_output=True, text=True)
+        try:
+            return json.loads(r.stdout)
+        except json.JSONDecodeError:
+            # Tường lửa của hosting đôi khi trả trang chống bot thay vì JSON: chờ rồi thử lại.
+            time.sleep(20 * (attempt + 1))
+    return {"error": r.stdout[:200]}
 
 
 def fetch_all(path, fields):
@@ -125,7 +131,7 @@ def main():
     for mid, alt in media_updates.items():
         r = api("POST", f"media/{mid}?_fields=id,alt_text", {"alt_text": alt})
         log.append(("media", mid, "ok" if r.get("alt_text") == alt else r))
-        time.sleep(0.3)
+        time.sleep(1)
     errors = [l for l in log if l[2] != "ok"]
     print(f"Đã cập nhật {len(log) - len(errors)}/{len(log)}. Lỗi: {errors[:5]}")
 
