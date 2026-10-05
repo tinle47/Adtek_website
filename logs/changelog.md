@@ -15,3 +15,4 @@
 | 2026-10-05 16:42 | Sửa URL theo ngôn ngữ trong sitemap Yoast (adtek-seo-meta 1.2.0) | mu-plugin | Chờ upload |
 | 2026-10-05 16:51 | Cập nhật trang Báo chí (6 bài báo, vi + en) và FAQ (10 câu hỏi, vi + en, có FAQPage schema), thêm meta description | Trang 4340, 5242, 1145, 412 | Đã áp dụng |
 | 2026-10-05 16:56 | Thêm 3 bài báo (Saigon Times, CafeBiz, Market Times) vào trang Báo chí; thêm câu hỏi ngày thành lập 5/5/2022 vào FAQ | Trang 4340, 5242, 1145, 412 | Đã áp dụng |
+| 2026-10-05 17:02 | Thêm "Báo chí" vào footer menu (vi + en), đổi tiêu đề trang tiếng Anh thành "Press" | Menu 134, trang 5242 | Đã áp dụng |
