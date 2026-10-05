@@ -37,7 +37,11 @@
                                  <div class="container">
                                      <div class="dnor">
                                          <div class="dnor-item hu-bn-left">
+                                             <?php if ( empty( $adtek_h1_done ) ) { $adtek_h1_done = true; ?>
+                                             <h1 class="title white" style="margin-bottom:1.5rem" data-aos="fade-up"><?php echo $title; ?></h1>
+                                             <?php } else { ?>
                                              <p class="title white" data-aos="fade-up"><?php echo $title; ?></p>
+                                             <?php } ?>
                                              <p class="desc" data-aos="fade-up" data-aos-delay="300">
                                                  <?php echo $content; ?>
                                              </p>
