@@ -17,4 +17,4 @@
 | 2026-10-05 16:56 | Thêm 3 bài báo (Saigon Times, CafeBiz, Market Times) vào trang Báo chí; thêm câu hỏi ngày thành lập 5/5/2022 vào FAQ | Trang 4340, 5242, 1145, 412 | Đã áp dụng |
 | 2026-10-05 17:02 | Thêm "Báo chí" vào footer menu (vi + en), đổi tiêu đề trang tiếng Anh thành "Press" | Menu 134, trang 5242 | Đã áp dụng |
 | 2026-10-05 17:14 | Đăng bài "AIO là gì? Cách tối ưu nội dung để được AI trích dẫn (cập nhật 2026)", tác giả Tin Le, chuyên mục Digital Marketing, kèm ảnh bìa, SEO title, meta description | Bài 6076, media 6075 | Đã đăng |
-| 2026-10-05 17:25 | Tạo bản nháp bài "Chiến lược digital marketing cho bất động sản khu công nghiệp", tác giả Tin Le | Bài 6078 (nháp), media 6077 | Chờ duyệt |
+| 2026-10-05 17:25 | Tạo bản nháp bài "Chiến lược digital marketing cho bất động sản khu công nghiệp", tác giả Tin Le | Bài 6078, media 6077 | Đã đăng |
