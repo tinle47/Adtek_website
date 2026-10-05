@@ -1,0 +1,65 @@
+.is-loading-btn.loading {
+    opacity: 0.50 !important;
+    position: relative;
+    pointer-events: none !important;
+}
+
+.is-loading-btn.loading::before {
+    height: 1em;
+    width: 1em;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -.5em;
+    margin-top: -.5em;
+    content: '';
+    -webkit-animation: spin 1s ease-in-out infinite;
+    animation: spin 1s ease-in-out infinite;
+    background: url(../images/icon-loading-ring.svg) center center;
+    background-size: cover;
+    line-height: 1;
+    text-align: center;
+    font-size: 2em;
+    color: rgba(0, 0, 0, .75);
+    z-index: 99;
+}
+
+.is-loading-btn2.loading {
+    opacity: 0.25 !important;
+    position: relative;
+    color: #fff;
+    pointer-events: none !important;
+}
+
+.is-loading-btn2::before {
+    top: unset;
+    left: unset;
+    width: unset;
+    height: unset;
+    background: unset;
+}
+
+.is-loading-btn2.loading::before {
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+    border: solid 4px #cfd0d1;
+    border-bottom-color: #000000;
+    border-radius: 50%;
+    content: '';
+    left: 45%;
+    top: 28%;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    transform: translate3d(-50%, -50%, 0);
+    opacity: unset!important;
+    visibility: unset!important;
+    will-change: transform;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,11 @@
+import monaCreateModuleDefault from './modules/default.js';
+import monaSolutionsBtn from './modules/solutions_btn.js';
+import SelectGetCities from './modules/getCities.js';
+import GetRankingEcommerce from './modules/getRankingEcommerce.js';
+
+/****************************/
+
+monaCreateModuleDefault();
+monaSolutionsBtn();
+SelectGetCities();
+GetRankingEcommerce();

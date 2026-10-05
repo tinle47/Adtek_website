@@ -1,0 +1,29 @@
+h3#reply-title {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #193869;
+    margin-bottom: 1.5rem;
+}
+
+form#commentform {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+
+form#commentform .f-r.w-50 {
+    width: 50%;
+    margin-left: 0;
+}
+
+form#commentform .f-r.w-50 .f-c {
+    padding: 0;
+    padding-right: 1.5rem;
+}
+
+.comment-avt img {
+    border-radius: 100%;
+}

@@ -1,0 +1,178 @@
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+    min-height: 30px;
+}
+
+.box-repeater-button.button-remove {
+    text-align: right;
+    padding: 10px 0;
+}
+
+.mona-widget-items .box-field-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.mona-widget-items .box-field-content {
+    padding: 5px 0px;
+}
+
+.mona-widget-items .box-field-content .ref-field-text,
+.mona-widget-items .box-field-content .ref-field-textarea,
+.mona-widget-items .box-field-content .ref-field-select {
+    width: 100%;
+}
+
+.mona-widget-items.render-field:not:first-child {
+    border-top: #E1E1E1 solid 1px;
+}
+
+.mona-widget-items.render-field {
+    margin: 0px;
+    padding: 15px 0px;
+}
+
+.mona-widget-items .box-field-item.render-item {
+    margin: 0px;
+    padding: 10px 10px;
+    border-bottom: #E1E1E1 solid 1px;
+}
+
+.box-image-button {
+    padding: 10px 0;
+}
+
+.box-image-button button {
+    margin-right: 10px!important;
+}
+
+.box-field-radio .box-field-content .field-radio-item,
+.box-field-checkbox .box-field-content .field-checkbox-item {
+    width: 25%;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.render-gallery-images {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0
+}
+
+.render-gallery-images .gallery-column {
+    background-size: 100%;
+    background-position: top left;
+    transition: background-position 2s;
+    padding: 15px;
+    border: #E1E1E1 solid 1px;
+    cursor: all-scroll;
+}
+
+.render-gallery-images .gallery-column:hover {
+    border-color: #8c8f94;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+}
+
+.preview-image-action {
+    width: 100%;
+    text-align: center;
+}
+
+.box-field-repeater .field-row-repeater {
+    padding: 5px 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+}
+
+.box-field-repeater .field-row-repeater .box-row-head {
+    background: #f4f4f4;
+    cursor: move;
+    color: #aaa;
+    text-shadow: #fff 0 1px 0;
+    width: 8%;
+    text-align: center;
+    padding: 8px 0;
+    border: #E1E1E1 solid 1px;
+    border-right: 0;
+}
+
+.box-field-repeater .box-row-repeaters {
+    width: 92%;
+    padding: 0;
+    border: #E1E1E1 solid 1px;
+}
+
+.add_row_button {
+    margin-top: 10px!important;
+}
+
+.rowCloneindex {
+    display: none!important;
+}
+
+.box-row-repeaters.hide {
+    display: none;
+}
+
+.mona-widget-not-found .w-title {
+    font-weight: bold;
+}
+
+.w-field-items ul li {
+    list-style: inside;
+}
+
+.widget-content pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.widget-content pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+    margin: 0;
+    text-align: left;
+    cursor: text;
+}
+
+.widget-content {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.box-field-radio .box-field-content .radio-text label,
+.box-field-checkbox .box-field-content .checkbox-text label {
+    vertical-align: text-top;
+}
+
+.box-field-group .field-group-head,
+.box-field-repeater .field-repeater-head {
+    font-weight: bold;
+}
+
+.box-field-group .field-group-contents .box-field-title,
+.box-field-repeater .box-row-repeaters .box-field-title {
+    font-weight: 400;
+}
+
+button.remove_row_button.button.button-danger:hover {
+    border: red solid 1px;
+}

@@ -1,0 +1,319 @@
+<?php
+
+/**
+ * Template name: Home V2 Page
+ * @author : Hoàng Phát
+ */
+get_header('2');
+while (have_posts()):
+    the_post();
+?>
+    <style>
+        .home #footer {
+            display: none;
+        }
+    </style>
+    <?php 
+    if (!function_exists('content_exists')) {
+        function content_exists($content_args = [])
+        {
+            if (! empty($content_args)) {
+                $done  = 0;
+                foreach ($content_args as $value) {
+                    if (! is_array($value) && $value != '' || is_array($value) && content_exists($value)) {
+                        $done++;
+                    }
+                }
+                return ($done > 0);
+            }
+            return false;
+        }
+    }
+    ?>
+    <main class="main page-homever2">
+        <div id="fullpage">
+            <?php /* --- SECTION BANNER --- */ ?>
+            <?php $mona_home_banner = get_field('mona_home_banner');
+            if (content_exists($mona_home_banner)) { ?>
+                <section class="sec-homever2-bn section " id="section-banner">
+                    <div class="homever2-bn">
+                        <div class="bg">
+                            <?php echo wp_get_attachment_image($mona_home_banner['image'], 'full'); ?>
+                        </div>
+                        <div class="container">
+                            <div class="homever2-bn-ctn">
+                                <h1 class="homever2-bn-tt"><?php echo $mona_home_banner['title']; ?></h1>
+                                <p class="homever2-bn-des"><?php echo $mona_home_banner['content']; ?></p>
+                                <div class="btn-box">
+                                    <a href="<?php echo $mona_home_banner['link']; ?>" class="btn">
+                                        <span class="txt"><?php echo $mona_home_banner['btn']; ?></span>
+                                        <span class="icon">
+                                            <img src="<?php echo get_site_url() ?>/template-v2/assets/images/ver2/ic-arrow.svg" alt="">
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            <?php } ?>
+
+            <?php /* --- SECTION SERVICES --- */ ?>
+            <?php $mona_home_service = get_field('mona_home_service');
+            if (content_exists($mona_home_service)) {
+                $mona_home_service_sub = get_field('mona_home_service_sub');
+                foreach ($mona_home_service as $key => $value) {
+            ?>
+                    <section class="sec-homever2-brand homever2-slide-it section" id="section<?php echo $key + 1; ?>">
+                        <?php if ($key == 0) : ?>
+                            <div class="homever2-heading" id="element<?php echo $key + 1; ?>">
+                                <div class="container">
+                                    <h2 class="tt"><?php echo $mona_home_service_sub ?></h2>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                        <div class="homever2-brand ss-pd">
+                            <div class="recontainer">
+                                <div class="homever2-brand-flex">
+                                    <div class="homever2-brand-ctn">
+                                        <div class="wrapper">
+                                            <h3 class="homever2-tt"><?php echo $value['title']; ?></h3>
+                                            <p class="homever2-des"><?php echo $value['content']; ?></p>
+                                            <?php if (!empty($value['repeater'])) { ?>
+                                                <div class="homever2-boxs">
+                                                    <p class="text"><?php _e('Dịch vụ bao gồm:', 'moanmedia') ?></p>
+                                                    <div class="homever2-its">
+                                                        <?php foreach ($value['repeater'] as $item) { ?>
+                                                            <div class="homever2-it">
+                                                                <div class="inner">
+                                                                    <?php echo wp_get_attachment_image($item['image'], 'full'); ?>
+                                                                    <span class="txt"><?php echo $item['content']; ?></span>
+                                                                </div>
+                                                            </div>
+                                                        <?php } ?>
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                            <div class="btn-box">
+                                                <a href="<?php echo $value['link']; ?>" class="btn">
+                                                    <span class="txt"><?php echo $value['btn']; ?></span>
+                                                    <span class="icon">
+                                                        <img src="<?php echo get_site_url() ?>/template-v2/assets/images/ver2/ic-arrow.svg" alt="">
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="homever2-brand-img">
+                                        <div class="wrapper">
+                                            <h3 class="homever2-tt tt-mobille "><?php echo $value['title']; ?></h3>
+                                            <div class="img">
+                                                <div class="img-inner">
+                                                    <?php for ($i = 1; $i <= 3; $i++): $img_key = ($i == 1) ? 'image' : "image_$i"; ?>
+                                                        <?php if (!empty($value[$img_key])): ?>
+                                                            <div class="part<?php echo $i; ?>">
+                                                                <?php echo wp_get_attachment_image($value[$img_key], 'full'); ?>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    <?php endfor; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+            <?php } } ?>
+
+            <?php /* --- SECTION ĐỘI NGŨ --- */ ?>
+            <?php $mona_home_doingu = get_field('mona_home_doingu');
+            if (content_exists($mona_home_doingu)) { ?>
+                <section class="sec-homever2-hand section fp-auto-height" id="section-hand">
+                    <div class="homever2-hand">
+                        <div class="bg"><?php echo wp_get_attachment_image($mona_home_doingu['image'], 'full'); ?></div>
+                        <div class="container">
+                            <div class="homever2-hand-wrap">
+                                <div class="ctn">
+                                    <h3 class="homever2-tt"><?php echo $mona_home_doingu['title']; ?></h3>
+                                    <div class="homever2-des"><?php echo $mona_home_doingu['content']; ?></div>
+                                    <div class="btn-box">
+                                        <a href="<?php echo $mona_home_doingu['link']; ?>" class="btn">
+                                            <span class="txt"><?php echo $mona_home_doingu['btn']; ?></span>
+                                            <span class="icon">
+                                                <img src="<?php echo get_site_url() ?>/template-v2/assets/images/ver2/ic-arrow.svg" alt="">
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            <?php } ?>
+
+            <?php /* --- SECTION VỀ CHÚNG TÔI --- */ ?>
+            <?php $mona_home_vechungtoi = get_field('mona_home_vechungtoi');
+            if (content_exists($mona_home_vechungtoi)) { ?>
+                <section class="sec-homever2-rocket section" id="section-rocket">
+                    <div class="homever2-rocket ss-pd">
+                        <div class="cloud"><img src="<?php echo get_site_url() ?>/template-v2/assets/images/ver2/cloud.png" alt=""></div>
+                        <div class="container">
+                            <div class="homever2-sub"><?php echo $mona_home_vechungtoi['sub']; ?></div>
+                            <div class="homever2-rocket-flex">
+                                <div class="homever2-rocket-img">
+                                    <div class="wrapper">
+                                        <div class="img" data-aos="fade-up">
+                                            <div class=" img-inner"><?php echo wp_get_attachment_image($mona_home_vechungtoi['image'], 'full'); ?></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="homever2-rocket-ctn">
+                                    <div class="ctn">
+                                        <h3 class="homever2-tt"><?php echo $mona_home_vechungtoi['title']; ?></h3>
+                                        <div class="homever2-des"><?php echo $mona_home_vechungtoi['content']; ?></div>
+                                        <div class="btn-box">
+                                            <a href="<?php echo $mona_home_vechungtoi['link']; ?>" class="btn">
+                                                <span class="txt"><?php echo $mona_home_vechungtoi['btn']; ?></span>
+                                                <span class="icon">
+                                                    <img src="<?php echo get_site_url() ?>/template-v2/assets/images/ver2/ic-arrow.svg" alt="">
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+            <?php } ?>
+
+            <?php /* --- SECTION ĐỐI TÁC --- */ ?>
+            <?php $mona_home_doitac = get_field('mona_home_doitac');
+            if (content_exists($mona_home_doitac)) { ?>
+                <section class="sec-homever2-partner section fp-auto-height" id="section-partner">
+                    <div class="homever2-heading center">
+                        <div class="container">
+                            <h2 class="tt"><?php echo $mona_home_doitac['title']; ?></h2>
+                        </div>
+                    </div>
+                    <?php if (!empty($mona_home_doitac['repeater'])) { ?>
+                        <div class="homever2-partner-tab tabJS">
+                            <div class="homever2-partner-head">
+                                <div class="contaier">
+                                    <div class="homever2-partner-btns scrollContainer">
+                                        <?php foreach ($mona_home_doitac['repeater'] as $key => $item) { ?>
+                                            <div class="homever2-partner-btn tabBtn buttons <?php echo $key == 0 ? 'active' : ''; ?>">
+                                                <?php echo $item['title']; ?>
+                                            </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="homever2-partner-panels">
+                                    <?php foreach ($mona_home_doitac['repeater'] as $key => $item) { ?>
+                                        <div class="homever2-partner-panel tabPanel <?php echo $key == 0 ? 'open' : ''; ?>">
+                                            <div class="homever2-partner-flex swiper row gap-res">
+                                                <div class="swiper-wrapper">
+                                                    <?php if(!empty($item['album'])) foreach ($item['album'] as $value) { ?>
+                                                        <div class="swiper-slide col">
+                                                            <div class="homever2-partner-it">
+                                                                <div class="img">
+                                                                    <a href="javascript:void(0)" class="img-inner"><?php echo wp_get_attachment_image($value, 'full'); ?></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </section>
+            <?php } ?>
+
+            <?php /* --- SECTION FOOTER --- */ ?>
+            <?php $mona_home_footer = get_field('mona_home_footer');
+            if (content_exists($mona_home_footer)) { ?>
+                <section class="ft section fp-auto-height" id="section-footer">
+                    <div class="ft-wrapper">
+                        <div class="bg">
+                            <img src="<?php echo get_site_url() ?>/template-v2/assets/images/ver2/ft-bg.jpg" alt="">
+                        </div>
+                        <div class="container">
+                            <div class="ft-box">
+                                <div class="ft-logo">
+                                    <a href="<?php echo home_url(); ?>">
+                                        <?php echo wp_get_attachment_image($mona_home_footer['logo'], 'full'); ?>
+                                    </a>
+                                </div>
+                                <div class="social">
+                                    <div class="social-list">
+                                        <?php if(!empty($mona_home_footer['repeater'])) foreach ($mona_home_footer['repeater'] as $value) { ?>
+                                            <a href="<?php echo $value['link']; ?>" target="_blank" class="social-link">
+                                                <?php echo wp_get_attachment_image($value['image'], 'full'); ?>
+                                            </a>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="ft-flex row">
+                                    <div class="ft-it col">
+                                        <div class="wrapper">
+                                            <p class="tt"><?php echo $mona_home_footer['title']; ?></p>
+                                            <div class="des"><?php echo $mona_home_footer['content']; ?></div>
+                                        </div>
+                                    </div>
+                                    <div class="ft-it col">
+                                        <div class="wrapper">
+                                            <p class="tt"><?php echo $mona_home_footer['title_2']; ?></p>
+                                            <?php if (!empty($mona_home_footer['repeater_2'])) { ?>
+                                                <div class="lines">
+                                                    <?php foreach ($mona_home_footer['repeater_2'] as $value) { ?>
+                                                        <a href="<?php echo $value['link']; ?>" class="line"><?php echo $value['content']; ?></a>
+                                                    <?php } ?>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+
+                                    <?php 
+                                    // Danh sách các location menu cần hiển thị
+                                    $menu_locations = ['footer-menu', 'footer-menu-2'];
+                                    foreach ($menu_locations as $location) : 
+                                        // Kiểm tra nếu location này đã được gán menu trong Admin thì mới hiển thị
+                                        if ( has_nav_menu( $location ) ) :
+                                            $menu_name = wp_get_nav_menu_name($location);
+                                    ?>
+                                        <div class="ft-it col">
+                                            <div class="wrapper">
+                                                <p class="tt"><?php echo esc_html($menu_name); ?></p>
+                                                <?php
+                                                wp_nav_menu(array(
+                                                    'container' => false,
+                                                    'theme_location' => $location,
+                                                    'menu_class' => 'menu-list',
+                                                    'fallback_cb' => false,
+                                                    'walker' => new Mona_Custom2_Walker_Nav_Menu,
+                                                ));
+                                                ?>
+                                            </div>
+                                        </div>
+                                    <?php 
+                                        endif; 
+                                    endforeach; 
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            <?php } ?>
+        </div>
+    </main>
+<?php
+endwhile;
+get_footer('2');
+?>
