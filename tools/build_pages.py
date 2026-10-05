@@ -26,7 +26,7 @@ def press_html(data, lang):
     for it in data["items"]:
         cards.append(
             '<div style="border:1px solid #E3E8F0;border-radius:12px;padding:24px;margin-bottom:20px">'
-            f'<p style="margin:0 0 8px;color:#FF9014;font-weight:700">{esc(it["source"])} · {esc(it["date"])}</p>'
+            f'<p style="margin:0 0 8px;color:#FF9014;font-weight:700">{esc(it["source"])}{" · " + esc(it["date"]) if it.get("date") else ""}</p>'
             f'<h2 style="margin:0 0 12px;font-size:2rem;line-height:1.4"><a href="{esc(it["url"])}" target="_blank" rel="noopener">{esc(it["title"])}</a></h2>'
             f'<p style="margin:0 0 12px">{esc(it[lang])}</p>'
             f'<p style="margin:0"><a href="{esc(it["url"])}" target="_blank" rel="noopener" style="color:#002D72;font-weight:700">{esc(t["read"])} &rarr;</a></p>'
