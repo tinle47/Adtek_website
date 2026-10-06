@@ -19,4 +19,5 @@
 | 2026-10-05 17:14 | Đăng bài "AIO là gì? Cách tối ưu nội dung để được AI trích dẫn (cập nhật 2026)", tác giả Tin Le, chuyên mục Digital Marketing, kèm ảnh bìa, SEO title, meta description | Bài 6076, media 6075 | Đã đăng |
 | 2026-10-05 17:25 | Tạo bản nháp bài "Chiến lược digital marketing cho bất động sản khu công nghiệp", tác giả Tin Le | Bài 6078, media 6077 | Đã đăng |
 | 2026-10-05 17:30 | Chạy lại 30 SEO title còn thiếu (thuật ngữ, trang) | 30 bài glossary/trang | Đã áp dụng |
-| 2026-10-05 17:35 | Soạn phần "Ví dụ áp dụng: chiến lược digital cho ba KCN của TASECO Land" từ đề xuất 9/2026, bỏ ngân sách, giá thuê và chỉ số kết quả | Bài 6078 (file nguồn) | Chờ duyệt đăng |
+| 2026-10-05 17:35 | Soạn phần ví dụ 3 KCN từ đề xuất 9/2026, bỏ ngân sách, giá thuê và chỉ số kết quả | Bài 6078 (file nguồn) | Thay bằng bản ẩn danh |
+| 2026-10-06 09:47 | Đăng phần "Ví dụ áp dụng: chiến lược digital cho ba khu công nghiệp của một chủ đầu tư miền Bắc" (phương án B, ẩn tên khách hàng và chi tiết nhận diện) | Bài 6078 | Đã đăng |
