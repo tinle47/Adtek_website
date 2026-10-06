@@ -1,14 +1,13 @@
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
 import React from "react";
 import { Easing, Img, interpolate, staticFile, useCurrentFrame } from "remotion";
-import { INK } from "./Exhibit";
+import type { Visual } from "../types";
+import { C, SANS } from "./frame";
 
 // Dựng lại trang kết quả Google trên điện thoại (chế độ tối) để trông như quay màn hình thật:
 // gõ truy vấn, "Tổng quan do AI" hiện dần từng chữ, cuộn xuống kết quả tự nhiên rồi kết quả đó mờ đi.
 // Chữ trong khối AI tóm tắt đúng nội dung bài blog. Kết quả tự nhiên là bài thật của Adtek, không giả nguồn trích dẫn.
 
-const G = {
+export const G = {
   bg: "#1F1F1F",
   field: "#303134",
   text: "#E8EAED",
@@ -17,16 +16,11 @@ const G = {
   link: "#8AB4F8",
   line: "#3C4043",
 };
-const ROBOTO = '"Roboto", Arial, sans-serif';
+export const ROBOTO = '"Roboto", Arial, sans-serif';
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const ease = Easing.bezier(0.33, 0, 0.2, 1);
 
-export type SerpContent = {
-  query: string;
-  answer: { text: string; bold?: boolean }[];
-  result: { site: string; url: string; title: string; snippet: string; logo: string };
-  questions: string[];
-};
+export type SerpContent = Extract<Visual, { type: "serp" }>;
 
 // Thời điểm (frame) của từng bước, tính từ đầu cảnh.
 const T = { type: [6, 24], ai: 28, stream: [32, 74], more: 76, scroll: [84, 102], dim: 104 };
@@ -114,19 +108,10 @@ const AddressBar: React.FC = () => (
   </div>
 );
 
-export const GoogleSerp: React.FC<{ c: SerpContent; height: number }> = ({ c, height }) => {
+// Khung iPhone: viền, thanh trạng thái, màn hình thiết kế theo bề ngang 390 rồi phóng to. Đáy mờ dần vào nền.
+export const Phone: React.FC<{ height: number; bg: string; children: React.ReactNode }> = ({ height, bg, children }) => {
   const f = useCurrentFrame();
   const enter = interpolate(f, [0, 12], [0, 1], { ...clamp, easing: ease });
-  const typed = c.query.slice(0, Math.round(interpolate(f, T.type, [0, c.query.length], clamp)));
-  const caret = f < T.type[1] + 4 && f % 16 < 9;
-  const ai = interpolate(f, [T.ai, T.ai + 8], [0, 1], clamp);
-  const words = c.answer.flatMap((seg) => seg.text.split(" ").map((w) => ({ w, bold: seg.bold })));
-  const shown = Math.floor(interpolate(f, T.stream, [0, words.length], clamp));
-  const more = interpolate(f, [T.more, T.more + 8], [0, 1], clamp);
-  const scroll = interpolate(f, T.scroll, [0, SCROLL], { ...clamp, easing: ease });
-  const dim = interpolate(f, [T.dim, T.dim + 10], [1, 0.32], clamp) * interpolate(f, [T.ai + 4, T.ai + 12], [0, 1], clamp);
-  const screenH = height / SCALE;
-
   return (
     <div
       style={{
@@ -143,10 +128,32 @@ export const GoogleSerp: React.FC<{ c: SerpContent; height: number }> = ({ c, he
         maskImage: "linear-gradient(to bottom, #000 82%, transparent 100%)",
       }}
     >
-      <div style={{ borderRadius: "52px 52px 0 0", overflow: "hidden", height: height - BEZEL, background: G.bg }}>
-        <div style={{ width: 390, height: screenH, transform: `scale(${SCALE})`, transformOrigin: "0 0", fontFamily: ROBOTO, color: G.text, position: "relative" }}>
-          <div style={{ position: "relative", zIndex: 2, background: G.bg }}>
+      <div style={{ borderRadius: "52px 52px 0 0", overflow: "hidden", height: height - BEZEL, background: bg }}>
+        <div style={{ width: 390, height: height / SCALE, transform: `scale(${SCALE})`, transformOrigin: "0 0", fontFamily: ROBOTO, color: G.text, position: "relative" }}>
+          <div style={{ position: "relative", zIndex: 2, background: bg }}>
             <StatusBar />
+          </div>
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const GoogleSerp: React.FC<{ c: SerpContent; height: number }> = ({ c, height }) => {
+  const f = useCurrentFrame();
+  const typed = c.query.slice(0, Math.round(interpolate(f, T.type, [0, c.query.length], clamp)));
+  const caret = f < T.type[1] + 4 && f % 16 < 9;
+  const ai = interpolate(f, [T.ai, T.ai + 8], [0, 1], clamp);
+  const words = c.answer.flatMap((seg) => seg.text.split(" ").map((w) => ({ w, bold: seg.bold })));
+  const shown = Math.floor(interpolate(f, T.stream, [0, words.length], clamp));
+  const more = interpolate(f, [T.more, T.more + 8], [0, 1], clamp);
+  const scroll = interpolate(f, T.scroll, [0, SCROLL], { ...clamp, easing: ease });
+  const dim = interpolate(f, [T.dim, T.dim + 10], [1, 0.32], clamp) * interpolate(f, [T.ai + 4, T.ai + 12], [0, 1], clamp);
+
+  return (
+    <Phone height={height} bg={G.bg}>
+          <div style={{ position: "relative", zIndex: 2, background: G.bg }}>
             <AddressBar />
           </div>
           <div style={{ transform: `translateY(${-scroll}px)` }}>
@@ -208,7 +215,7 @@ export const GoogleSerp: React.FC<{ c: SerpContent; height: number }> = ({ c, he
             <div style={{ padding: "16px 18px", opacity: dim }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ width: 28, height: 28, borderRadius: 14, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Img src={staticFile(c.result.logo)} style={{ width: 18 }} />
+                  <Img src={staticFile("logo-adtek.png")} style={{ width: 18 }} />
                 </div>
                 <div>
                   <div style={{ fontSize: 14, color: G.text }}>{c.result.site}</div>
@@ -231,23 +238,22 @@ export const GoogleSerp: React.FC<{ c: SerpContent; height: number }> = ({ c, he
               ))}
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+    </Phone>
   );
 };
 
-// Chú thích kiểu McKinsey đặt ngoài điện thoại, chỉ vào kết quả tự nhiên sau khi cuộn.
-export const SerpNote: React.FC<{ top: number; left: number }> = ({ top, left }) => {
+export const SERP_NOTE_AT = T.dim;
+
+// Chú thích kiểu McKinsey đặt ngoài điện thoại: đường kẻ ngắn + phần chữ đậm + phần chữ thường.
+export const PhoneNote: React.FC<{ top: number; left: number; note: [string, string]; at: number }> = ({ top, left, note, at }) => {
   const f = useCurrentFrame();
-  const c = INK.dark;
-  const draw = interpolate(f, [T.dim, T.dim + 12], [0, 1], { ...clamp, easing: ease });
-  const txt = interpolate(f, [T.dim + 8, T.dim + 18], [0, 1], clamp);
+  const draw = interpolate(f, [at, at + 12], [0, 1], { ...clamp, easing: ease });
+  const txt = interpolate(f, [at + 8, at + 18], [0, 1], clamp);
   return (
-    <div style={{ position: "absolute", left, top, width: 290, color: c.text }}>
-      <div style={{ height: 2, width: 40 * draw, background: c.text, position: "absolute", left: -48, top: 16 }} />
+    <div style={{ position: "absolute", left, top, width: 290, color: C.white, fontFamily: SANS }}>
+      <div style={{ height: 2, width: 40 * draw, background: C.white, position: "absolute", left: -48, top: 16 }} />
       <div style={{ fontSize: 26, lineHeight: 1.35, opacity: txt }}>
-        <b>Kết quả tự nhiên bị đẩy xuống dưới.</b> Người dùng đọc tóm tắt AI rồi dừng lại.
+        <b>{note[0]}</b> {note[1]}
       </div>
     </div>
   );

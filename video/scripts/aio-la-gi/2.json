@@ -2,49 +2,122 @@
   "id": "aio-la-gi-2",
   "post_url": "https://adtek.agency/aio-la-gi/",
   "caption": "Ahrefs phân tích 75,000 thương hiệu: được nhắc tên trên web quan trọng gần gấp ba backlink khi muốn xuất hiện trong AI Overviews.",
-  "hashtags": ["#AIO", "#SEO", "#backlink", "#AIsearch", "#marketing", "#adtek"],
+  "hashtags": [
+    "#AIO",
+    "#SEO",
+    "#backlink",
+    "#AIsearch",
+    "#marketing",
+    "#adtek"
+  ],
   "scenes": [
     {
-      "type": "hook",
-      "kicker": "AIO",
-      "title": "Backlink không còn là vua trong thời AI",
-      "highlight": "Backlink",
-      "voice": "Muốn được AI nhắc tên? Backlink không còn là thứ quan trọng nhất."
+      "kicker": "AIO · Yếu tố xếp hạng",
+      "headline": "Muốn được AI nhắc tên?",
+      "accent": "Backlink không còn là vua.",
+      "voice": "Muốn được AI nhắc tên? Backlink không còn là thứ quan trọng nhất.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Tương quan với việc xuất hiện trong AI Overviews",
+        "unit": "hệ số tương quan",
+        "source": "Nguồn: Ahrefs, phân tích 75,000 thương hiệu",
+        "max": 0.664,
+        "rows": [
+          {
+            "label": "Số lần được nhắc tên trên web",
+            "value": 0.664,
+            "tone": "accent",
+            "step": 1
+          },
+          {
+            "label": "Lượng tìm kiếm tên thương hiệu",
+            "value": 0.392,
+            "tone": "main",
+            "step": 1
+          },
+          {
+            "label": "Backlink",
+            "value": 0.218,
+            "tone": "base"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 0,
+            "text": "Được nhắc tên mạnh gần gấp 3 lần backlink",
+            "step": 1
+          }
+        ]
+      }
     },
     {
-      "type": "bars",
-      "title": "Yếu tố gắn với việc xuất hiện trong AI Overviews",
-      "items": [
-        { "label": "Số lần thương hiệu được nhắc tên", "value": 0.664 },
-        { "label": "Lượng tìm kiếm tên thương hiệu", "value": 0.392 },
-        { "label": "Backlink", "value": 0.218 }
-      ],
-      "source": "Ahrefs, 75,000 thương hiệu",
-      "voice": "Ahrefs phân tích 75,000 thương hiệu. Yếu tố mạnh nhất là số lần thương hiệu được nhắc tên trên web, mạnh gần gấp ba backlink."
+      "kicker": "Ahrefs · 75,000 thương hiệu",
+      "headline": "Yếu tố mạnh nhất:",
+      "accent": "được người khác nhắc tên.",
+      "voice": "Ahrefs phân tích 75,000 thương hiệu. Yếu tố mạnh nhất là số lần thương hiệu được nhắc tên trên web, mạnh gần gấp ba backlink.",
+      "visual": {
+        "type": "continue"
+      }
     },
     {
-      "type": "stat",
-      "value": "40%",
-      "label": "hiển thị tăng thêm trong câu trả lời của AI nhờ số liệu, trích dẫn và nguồn rõ ràng",
-      "source": "Nghiên cứu GEO, KDD 2024",
-      "voice": "Nghiên cứu GEO từ Princeton cũng cho thấy: thêm số liệu, trích dẫn chuyên gia và nguồn rõ ràng giúp tăng hiển thị tới khoảng 40%."
+      "kicker": "Princeton · KDD 2024",
+      "headline": "Thêm số liệu và nguồn,",
+      "accent": "hiển thị tăng tới 40%.",
+      "voice": "Nghiên cứu GEO từ Princeton cũng cho thấy: thêm số liệu, trích dẫn chuyên gia và nguồn rõ ràng giúp tăng hiển thị tới khoảng 40%.",
+      "visual": {
+        "type": "columns",
+        "metric": "Mức hiển thị trong câu trả lời của AI",
+        "unit": "chỉ số, nội dung gốc = 100",
+        "source": "Nguồn: Aggarwal và cộng sự, GEO: Generative Engine Optimization, KDD 2024",
+        "max": 140,
+        "cols": [
+          {
+            "label": "Nội dung gốc",
+            "value": 100,
+            "tone": "base"
+          },
+          {
+            "label": "Thêm số liệu,\ntrích dẫn, nguồn",
+            "value": 140,
+            "tone": "accent"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 1,
+            "text": "Tăng tới khoảng 40%"
+          }
+        ]
+      }
     },
     {
-      "type": "list",
-      "title": "Làm gì ngay?",
-      "items": [
-        "Được báo chí nhắc tên",
-        "Chia sẻ tại sự kiện ngành",
-        "Có mặt trong các bài so sánh",
-        "Đưa số liệu có nguồn vào nội dung"
-      ],
-      "voice": "Vậy hãy để người khác nhắc tên bạn: báo chí, sự kiện ngành, các bài so sánh. Và đưa số liệu có nguồn vào mọi nội dung."
+      "kicker": "Làm gì ngay?",
+      "headline": "Để người khác nhắc tên bạn,",
+      "accent": "và đưa số liệu vào nội dung.",
+      "voice": "Vậy hãy để người khác nhắc tên bạn: báo chí, sự kiện ngành, các bài so sánh. Và đưa số liệu có nguồn vào mọi nội dung.",
+      "visual": {
+        "type": "list",
+        "items": [
+          "Được báo chí phỏng vấn, trích dẫn",
+          "Chia sẻ tại sự kiện ngành",
+          "Có mặt trong các bài so sánh",
+          "Thêm số liệu có nguồn vào bài viết"
+        ]
+      }
     },
     {
-      "type": "cta",
-      "title": "AI học về bạn qua những gì người khác viết",
-      "action": "Xem bài đầy đủ ở link bio",
-      "voice": "AI học về bạn qua những gì người khác viết. Xem bài đầy đủ ở link bio, và follow Adtek."
+      "kicker": "Đọc bài đầy đủ ở link bio",
+      "headline": "AI học về bạn qua",
+      "accent": "những gì người khác viết.",
+      "voice": "AI học về bạn qua những gì người khác viết. Xem bài đầy đủ ở link bio, và follow Adtek.",
+      "visual": {
+        "type": "article",
+        "image": "covers/aio-la-gi.jpg",
+        "title": "AIO là gì? Cách tối ưu để được AI trích dẫn",
+        "url": "adtek.agency/aio-la-gi"
+      }
     }
   ]
 }

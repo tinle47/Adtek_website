@@ -1,9 +1,11 @@
-import type { VideoProps, Word } from "./types";
+import type { Scene, VideoProps, Word } from "./types";
 
 export const FPS = 30;
 const GAP = 0.35; // nghỉ sau mỗi câu, giây
 const SEC_PER_WORD = 0.3; // tốc độ đọc ước tính khi chưa có giọng thật
 const MIN_SCENE = 2.5;
+// Màn hình điện thoại có diễn biến riêng (gõ, trả lời, cuộn, chú thích) nên cần tối thiểu từng này giây.
+const MIN_BY_VISUAL: Record<string, number> = { serp: 5.5, chat: 6 };
 
 export type TimedScene = { from: number; frames: number; words: Word[]; audio?: string };
 
@@ -18,12 +20,14 @@ function estimateWords(text: string): { words: Word[]; duration: number } {
   };
 }
 
+const minSeconds = (scene: Scene) => MIN_BY_VISUAL[scene.visual?.type ?? ""] ?? MIN_SCENE;
+
 export function timeline({ script, voice }: VideoProps): TimedScene[] {
   let from = 0;
   return script.scenes.map((scene, i) => {
     const v = voice?.scenes[i];
     const { words, duration } = v ?? estimateWords(scene.voice);
-    const frames = Math.round(Math.max(MIN_SCENE, duration + GAP) * FPS);
+    const frames = Math.round(Math.max(minSeconds(scene), duration + GAP) * FPS);
     const timed = { from, frames, words, audio: v?.file };
     from += frames;
     return timed;
@@ -31,4 +35,4 @@ export function timeline({ script, voice }: VideoProps): TimedScene[] {
 }
 
 export const totalFrames = (props: VideoProps) =>
-  timeline(props).reduce((sum, s) => sum + s.frames, 0);
+  timeline(props).reduce((sum, s) => sum + s.frames, 0) + 10;

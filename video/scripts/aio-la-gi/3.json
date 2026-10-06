@@ -2,44 +2,90 @@
   "id": "aio-la-gi-3",
   "post_url": "https://adtek.agency/aio-la-gi/",
   "caption": "Hỏi ChatGPT cùng một câu, danh sách thương hiệu gần như thay đổi mỗi lần. Đây là 4 chỉ số nên đo thay cho thứ hạng.",
-  "hashtags": ["#AIO", "#ChatGPT", "#SEO", "#AIsearch", "#marketing", "#adtek"],
+  "hashtags": [
+    "#AIO",
+    "#ChatGPT",
+    "#SEO",
+    "#AIsearch",
+    "#marketing",
+    "#adtek"
+  ],
   "scenes": [
     {
-      "type": "hook",
-      "kicker": "Cảnh báo",
-      "title": "Đừng tin ai hứa đưa bạn lên top ChatGPT",
-      "highlight": "top ChatGPT",
-      "voice": "Đừng tin bất kỳ ai hứa đưa bạn lên top ChatGPT."
+      "kicker": "AIO · Cảnh báo",
+      "headline": "Đừng tin ai hứa đưa bạn",
+      "accent": "lên top ChatGPT.",
+      "voice": "Đừng tin bất kỳ ai hứa đưa bạn lên top ChatGPT. Hỏi lại cùng một câu, danh sách đã khác.",
+      "visual": {
+        "type": "chat",
+        "question": "Agency SEO nào tốt nhất ở TP.HCM?",
+        "answers": [
+          [
+            "SEO tổng thể và nội dung",
+            "SEO kỹ thuật cho thương mại điện tử",
+            "SEO local cho doanh nghiệp nhỏ"
+          ],
+          [
+            "Content marketing và SEO",
+            "SEO tổng thể và nội dung",
+            "Quảng cáo tìm kiếm và SEO"
+          ]
+        ],
+        "note": [
+          "Hỏi lại cùng một câu,",
+          "danh sách thương hiệu đã khác."
+        ]
+      }
     },
     {
-      "type": "stat",
-      "value": "<1%",
-      "label": "khả năng ChatGPT trả về cùng một danh sách thương hiệu khi được hỏi lại",
-      "source": "SparkToro và Gumshoe.ai, 2,961 câu lệnh",
-      "voice": "SparkToro chạy gần 3,000 câu lệnh. Khả năng ChatGPT trả về cùng một danh sách thương hiệu khi hỏi lại: dưới 1%."
+      "kicker": "SparkToro · 2,961 câu lệnh",
+      "headline": "Hỏi lại 100 lần,",
+      "accent": "chưa tới 1 lần giống nhau.",
+      "voice": "SparkToro chạy gần 3,000 câu lệnh. Khả năng ChatGPT trả về cùng một danh sách thương hiệu khi hỏi lại: dưới 1%.",
+      "visual": {
+        "type": "waffle",
+        "metric": "Số lần trả về cùng danh sách thương hiệu",
+        "unit": "trên 100 lần hỏi lại",
+        "source": "Nguồn: SparkToro và Gumshoe.ai, 2,961 câu lệnh trên ChatGPT, Claude và AI của Google",
+        "lit": 1,
+        "legend": [
+          "Chưa tới 1 lần giống nhau",
+          "Hơn 99 lần danh sách khác đi"
+        ]
+      }
     },
     {
-      "type": "statement",
-      "text": "Đo tỷ lệ xuất hiện, không đo thứ hạng.",
-      "highlight": "tỷ lệ xuất hiện",
+      "kicker": "Đổi cách đo",
+      "headline": "Đừng đo thứ hạng.",
+      "accent": "Hãy đo tỷ lệ xuất hiện.",
       "voice": "Thứ hạng trên AI đổi sau mỗi lần hỏi. Thứ nên đo là tỷ lệ xuất hiện: hỏi 100 lần, bạn được nhắc bao nhiêu lần."
     },
     {
-      "type": "list",
-      "title": "4 chỉ số AIO nên theo dõi",
-      "items": [
-        "Tỷ lệ xuất hiện trên ChatGPT, Gemini, AI Mode",
-        "Độ chính xác khi AI mô tả bạn",
-        "Lượt truy cập từ AI trong GA4",
-        "Dữ liệu AI trong Search Console"
-      ],
-      "voice": "Bốn chỉ số nên theo dõi: tỷ lệ xuất hiện, độ chính xác khi AI mô tả bạn, lượt truy cập từ AI trong GA4, và dữ liệu AI trong Search Console."
+      "kicker": "Bộ chỉ số AIO",
+      "headline": "4 chỉ số nên theo dõi",
+      "accent": "mỗi tháng.",
+      "voice": "Bốn chỉ số nên theo dõi: tỷ lệ xuất hiện, độ chính xác khi AI mô tả bạn, lượt truy cập từ AI trong GA4, và dữ liệu AI trong Search Console.",
+      "visual": {
+        "type": "list",
+        "items": [
+          "Tỷ lệ xuất hiện trên ChatGPT, Gemini, AI Mode",
+          "Độ chính xác khi AI mô tả bạn",
+          "Lượt truy cập từ AI trong GA4",
+          "Dữ liệu AI trong Search Console"
+        ]
+      }
     },
     {
-      "type": "cta",
-      "title": "Đo đúng thì mới tối ưu đúng",
-      "action": "Xem bài đầy đủ ở link bio",
-      "voice": "Xem cách đo chi tiết ở link bio, và follow Adtek."
+      "kicker": "Đọc bài đầy đủ ở link bio",
+      "headline": "Đo đúng thì mới",
+      "accent": "tối ưu đúng.",
+      "voice": "Xem cách đo chi tiết ở link bio, và follow Adtek.",
+      "visual": {
+        "type": "article",
+        "image": "covers/aio-la-gi.jpg",
+        "title": "AIO là gì? Cách tối ưu để được AI trích dẫn",
+        "url": "adtek.agency/aio-la-gi"
+      }
     }
   ]
 }

@@ -2,48 +2,152 @@
   "id": "aio-la-gi-1",
   "post_url": "https://adtek.agency/aio-la-gi/",
   "caption": "Khi Google hiện tóm tắt AI, tỷ lệ bấm vào kết quả gần như giảm một nửa. Thương hiệu của bạn đã có mặt trong câu trả lời của AI chưa?",
-  "hashtags": ["#AIO", "#SEO", "#AIsearch", "#digitalmarketing", "#marketing", "#adtek"],
+  "hashtags": [
+    "#AIO",
+    "#SEO",
+    "#AIsearch",
+    "#digitalmarketing",
+    "#marketing",
+    "#adtek"
+  ],
   "scenes": [
     {
-      "type": "hook",
-      "kicker": "AIO là gì?",
-      "title": "Khách hàng đang ngừng bấm vào Google",
-      "highlight": "ngừng bấm",
-      "voice": "Khách hàng của bạn đang ngừng bấm vào Google. Đây là lý do."
+      "kicker": "AIO · Nghịch lý đầu tiên",
+      "headline": "Khách hàng vẫn tìm Google,",
+      "accent": "nhưng ngừng bấm vào bạn.",
+      "voice": "Khách hàng vẫn tìm trên Google. Nhưng họ đang ngừng bấm vào bạn.",
+      "visual": {
+        "type": "serp",
+        "query": "aio là gì",
+        "answer": [
+          {
+            "text": "AIO (AI Optimization)",
+            "bold": true
+          },
+          {
+            "text": "là việc tối ưu nội dung và thương hiệu để các công cụ AI như Google AI Overviews, ChatGPT, Gemini hay Perplexity hiểu đúng, trích dẫn và nhắc tên bạn trong câu trả lời. Hoạt động này còn được gọi là GEO hoặc AEO."
+          }
+        ],
+        "result": {
+          "site": "Adtek",
+          "url": "https://adtek.agency › aio-la-gi",
+          "title": "AIO là gì? Cách tối ưu để được AI trích dẫn | Adtek",
+          "snippet": "AIO (AI Optimization) là gì? Số liệu từ Pew, Ahrefs, Princeton và 7 bước tối ưu để thương hiệu xuất hiện trong AI Overviews, ChatGPT và Gemini."
+        },
+        "questions": [
+          "AIO và SEO khác nhau thế nào?",
+          "Làm sao để được AI Overviews trích dẫn?",
+          "GEO là gì?"
+        ],
+        "note": [
+          "Kết quả tự nhiên bị đẩy xuống dưới.",
+          "Người dùng đọc tóm tắt AI rồi dừng lại."
+        ]
+      }
     },
     {
-      "type": "compare",
-      "title": "Tỷ lệ bấm vào kết quả tìm kiếm",
-      "left": { "value": "15%", "label": "Không có tóm tắt AI" },
-      "right": { "value": "8%", "label": "Có tóm tắt AI" },
-      "source": "Pew Research Center, 2025",
-      "voice": "Pew Research theo dõi 900 người dùng. Khi Google hiện tóm tắt AI, tỷ lệ bấm vào kết quả giảm từ 15% xuống 8%."
+      "kicker": "Pew Research · 900 người dùng",
+      "headline": "Khi Google hiện tóm tắt AI,",
+      "accent": "tỷ lệ bấm giảm gần nửa.",
+      "voice": "Pew Research theo dõi 900 người dùng. Khi Google hiện tóm tắt AI, tỷ lệ bấm vào kết quả giảm từ 15% xuống 8%.",
+      "visual": {
+        "type": "columns",
+        "metric": "Tỷ lệ lượt tìm kiếm có bấm vào kết quả",
+        "unit": "%",
+        "source": "Nguồn: Pew Research Center, 07/2025; 900 người dùng tại Mỹ",
+        "max": 15,
+        "cols": [
+          {
+            "label": "Không có\ntóm tắt AI",
+            "value": 15,
+            "tone": "base"
+          },
+          {
+            "label": "Có\ntóm tắt AI",
+            "value": 8,
+            "tone": "main"
+          },
+          {
+            "label": "Link nằm trong\ntóm tắt AI",
+            "value": 1,
+            "tone": "accent",
+            "step": 1
+          }
+        ],
+        "notes": [
+          {
+            "kind": "drop",
+            "from": 0,
+            "to": 1,
+            "text": "Giảm 47%"
+          },
+          {
+            "kind": "callout",
+            "at": 2,
+            "text": "Chỉ khoảng 1 trong 100 lượt tìm kiếm",
+            "step": 1
+          }
+        ]
+      }
     },
     {
-      "type": "stat",
-      "value": "1%",
-      "label": "lượt tìm kiếm có người bấm vào link nằm trong tóm tắt AI",
-      "source": "Pew Research Center, 2025",
-      "voice": "Còn link nằm ngay trong tóm tắt AI? Chỉ khoảng 1% lượt được bấm."
+      "kicker": "Link nằm trong tóm tắt AI",
+      "headline": "Link nằm trong tóm tắt AI?",
+      "accent": "Tỷ lệ bấm còn thấp hơn.",
+      "voice": "Còn link nằm ngay trong tóm tắt AI? Chỉ khoảng 1% lượt được bấm.",
+      "visual": {
+        "type": "continue"
+      }
     },
     {
-      "type": "stat",
-      "value": "+35%",
-      "label": "lượt nhấp cho thương hiệu được AI Overviews trích dẫn",
-      "source": "Seer Interactive, 2026",
-      "voice": "Nhưng thương hiệu được AI trích dẫn lại nhận nhiều lượt nhấp hơn khoảng 35%."
+      "kicker": "Seer Interactive · 53 thương hiệu",
+      "headline": "Nhưng nếu được AI trích dẫn,",
+      "accent": "lượt nhấp tăng khoảng 35%.",
+      "voice": "Nhưng thương hiệu được AI trích dẫn lại nhận nhiều lượt nhấp hơn khoảng 35%.",
+      "visual": {
+        "type": "columns",
+        "metric": "Lượt nhấp trên cùng truy vấn có AI Overviews",
+        "unit": "chỉ số, không được trích dẫn = 100",
+        "source": "Nguồn: Seer Interactive, 01/2025 đến 02/2026",
+        "max": 135,
+        "cols": [
+          {
+            "label": "Không được\ntrích dẫn",
+            "value": 100,
+            "tone": "base"
+          },
+          {
+            "label": "Được AI Overviews\ntrích dẫn",
+            "value": 135,
+            "tone": "accent"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 1,
+            "text": "Nhiều hơn khoảng 35%"
+          }
+        ]
+      }
     },
     {
-      "type": "statement",
-      "text": "Không còn là đứng thứ mấy, mà là có mặt trong câu trả lời của AI hay không.",
-      "highlight": "có mặt trong câu trả lời của AI",
+      "kicker": "Cuộc chơi đã đổi",
+      "headline": "Không còn là đứng thứ mấy,",
+      "accent": "mà là có mặt trong câu trả lời của AI.",
       "voice": "Cuộc chơi đã đổi. Không còn là đứng thứ mấy, mà là có mặt trong câu trả lời của AI hay không. Việc đó gọi là AIO."
     },
     {
-      "type": "cta",
-      "title": "Thương hiệu của bạn có trong câu trả lời của AI?",
-      "action": "Xem bài đầy đủ ở link bio",
-      "voice": "Xem cách làm AIO đầy đủ ở link bio, và follow Adtek."
+      "kicker": "Đọc bài đầy đủ ở link bio",
+      "headline": "Thương hiệu của bạn đã có",
+      "accent": "trong câu trả lời của AI?",
+      "voice": "Xem cách làm AIO đầy đủ ở link bio, và follow Adtek.",
+      "visual": {
+        "type": "article",
+        "image": "covers/aio-la-gi.jpg",
+        "title": "AIO là gì? Cách tối ưu để được AI trích dẫn",
+        "url": "adtek.agency/aio-la-gi"
+      }
     }
   ]
 }

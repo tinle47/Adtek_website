@@ -8,24 +8,34 @@ Biến bài blog adtek.agency thành video infographic dọc 1080x1920 cho kênh
 2. **Giọng đọc** `tools/voice.mjs`: gửi lời đọc từng cảnh lên ElevenLabs, nhận file mp3 và thời điểm từng chữ, lưu vào `public/voice/<id>/`.
 3. **Dựng video** `tools/render.mjs`: Remotion đọc kịch bản và giọng đọc, độ dài mỗi cảnh bằng độ dài câu đọc, phụ đề tô cam đúng chữ đang đọc. Chưa có giọng thì xuất bản không tiếng, thời lượng ước tính.
 
-## Các loại cảnh
+## Thiết kế
 
-| type | Dùng khi | Trường |
+Khung navy phẳng, logo góc trái, tiêu đề 2 dòng font Source Serif 4 (dòng trắng + dòng cam), phụ đề Be Vietnam Pro.
+Biểu đồ theo chuẩn McKinsey: màu phẳng, cột vuông, không lưới, số ghi thẳng trên dữ liệu, chú thích bằng đường kẻ mảnh, chỉ một điểm nhấn cam.
+
+## Cấu trúc một cảnh
+
+`kicker` (dòng dẫn nhỏ), `headline` (dòng trắng), `accent` (dòng cam), `voice` (lời đọc, cũng là phụ đề), `visual` (hình minh họa, bỏ trống thì cảnh là câu chốt với tiêu đề lớn).
+
+| visual.type | Dùng khi | Trường chính |
 |---|---|---|
-| `hook` | 2 giây mở đầu | `kicker`, `title`, `highlight` (cụm từ tô cam) |
-| `stat` | Một con số lớn | `value` (ví dụ `61%`, `+35%`, `<1%`), `label`, `source` |
-| `compare` | Hai con số đối chiếu | `title`, `left` / `right` {`value`, `label`}, `source` |
-| `bars` | Xếp hạng 2 đến 4 mục | `title`, `items` [{`label`, `value`, `display`}], `source` |
-| `list` | Các bước, checklist (tối đa 4 ý) | `title`, `items` |
-| `statement` | Một câu chốt | `text`, `highlight` |
-| `cta` | Cảnh cuối | `title`, `action` |
+| `serp` | Mở đầu bằng cảnh tìm Google trên điện thoại | `query`, `answer`, `result` (bài thật), `questions`, `note` |
+| `chat` | Mở đầu bằng cảnh hỏi chatbot 2 lần | `question`, `answers` (tên thương hiệu luôn bị làm mờ), `note` |
+| `columns` | So sánh 2 đến 4 con số | `metric`, `unit`, `source`, `max`, `cols` [{`label`, `value`, `tone`, `step`}], `notes` |
+| `hbars` | Xếp hạng nhiều yếu tố | như `columns`, dùng `rows` |
+| `continue` | Giữ biểu đồ của cảnh trước, hiện thêm phần có `step: 1` | |
+| `waffle` | Tỷ lệ "x trên 100" | `metric`, `unit`, `source`, `lit`, `legend` |
+| `list` | Các bước, checklist (tối đa 4 ý) | `items` |
+| `article` | Cảnh cuối, thẻ bài blog | `image` (ảnh bìa trong public/covers), `title`, `url` |
+
+`tone`: `base` (nhóm đối chiếu), `main` (nhóm chính), `accent` (điểm nhấn cam, chỉ một). `notes`: `drop` (mũi tên từ cột `from` xuống cột `to`) hoặc `callout` (chữ đậm chỉ vào cột/thanh `at`).
 
 ## Lệnh
 
 ```
 cd video && npm install
 node tools/voice.mjs aio-la-gi          # tạo giọng (cần ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID)
-node tools/render.mjs aio-la-gi --stills  # chụp mỗi cảnh một ảnh để duyệt nhanh
+node tools/render.mjs aio-la-gi --stills  # chụp mỗi cảnh một ảnh để duyệt nhanh (out/)
 node tools/render.mjs aio-la-gi 1 2     # xuất out/aio-la-gi-1.mp4 và caption out/aio-la-gi-1.txt
 npm run studio                           # xem và chỉnh trực tiếp trên trình duyệt
 ```
