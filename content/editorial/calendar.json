@@ -1,0 +1,919 @@
+{
+ "_note": "Lịch blog: 2 bài sâu/tuần, khoảng 2,000 chữ. Quy tắc liên kết và cập nhật xem content/editorial/README.md. links_to: số = bài trong lịch, chuỗi = ID bài đã đăng.",
+ "refresh_tiers": {
+  "A": "3 tháng (luật, tính năng nền tảng, số liệu thị trường)",
+  "B": "6 tháng (hướng dẫn, quy trình)",
+  "C": "12 tháng (khái niệm nền tảng)",
+  "S": "mùa vụ: cập nhật 6 tuần trước mùa năm sau"
+ },
+ "clusters": {
+  "C1": {
+   "name": "Thương mại điện tử và Social Commerce",
+   "pillar": 3
+  },
+  "C2": {
+   "name": "Quảng cáo Performance và Creative",
+   "pillar": 2
+  },
+  "C3": {
+   "name": "Dữ liệu, CRM và đo lường",
+   "pillar": 5
+  },
+  "C4": {
+   "name": "SEO và AI Search",
+   "pillar": "6076"
+  },
+  "C5": {
+   "name": "Chiến lược tăng trưởng",
+   "pillar": "2215"
+  },
+  "C6": {
+   "name": "Playbook theo ngành",
+   "pillar": null
+  }
+ },
+ "posts": [
+  {
+   "no": 1,
+   "date": "2026-10-13",
+   "time": "08:00",
+   "title": "Checklist 30 ngày chuẩn bị 11.11 và 12.12 trên Shopee, TikTok Shop",
+   "keyword": "kế hoạch 11.11",
+   "cluster": "C1",
+   "role": "cluster",
+   "refresh": "S",
+   "links_to": [
+    3,
+    10,
+    16,
+    6,
+    "4204"
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 2,
+   "date": "2026-10-15",
+   "time": "08:00",
+   "title": "Quảng cáo Meta 2026: Andromeda, Advantage+ và chiến lược creative",
+   "keyword": "Meta Andromeda",
+   "cluster": "C2",
+   "role": "pillar",
+   "refresh": "A",
+   "links_to": [
+    13,
+    30,
+    17,
+    8,
+    23,
+    27,
+    5
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 3,
+   "date": "2026-10-20",
+   "time": "08:00",
+   "title": "TikTok Shop và Shopee 2026: chiến lược kênh và phân bổ ngân sách cho thương hiệu",
+   "keyword": "TikTok Shop vs Shopee",
+   "cluster": "C1",
+   "role": "pillar",
+   "refresh": "A",
+   "links_to": [
+    1,
+    6,
+    10,
+    14,
+    16,
+    25,
+    "4204"
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 4,
+   "date": "2026-10-22",
+   "time": "08:00",
+   "title": "Luật Bảo vệ dữ liệu cá nhân 2026: marketer cần thay đổi gì khi thu lead và remarketing",
+   "keyword": "luật bảo vệ dữ liệu cá nhân marketing",
+   "cluster": "C3",
+   "role": "cluster",
+   "refresh": "A",
+   "links_to": [
+    17,
+    15,
+    5,
+    "4175",
+    "3086"
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 5,
+   "date": "2026-10-27",
+   "time": "08:00",
+   "title": "Đo lường tăng trưởng khi ROAS giảm: MER, CAC, LTV và cách đọc đúng",
+   "keyword": "chỉ số growth marketing",
+   "cluster": "C3",
+   "role": "pillar",
+   "refresh": "C",
+   "links_to": [
+    4,
+    15,
+    17,
+    22,
+    26,
+    "4262",
+    "4175"
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 6,
+   "date": "2026-10-29",
+   "time": "08:00",
+   "title": "Luật Thương mại điện tử 2026: quy định mới về livestream, KOL/KOC và affiliate",
+   "keyword": "luật thương mại điện tử livestream",
+   "cluster": "C1",
+   "role": "cluster",
+   "refresh": "A",
+   "links_to": [
+    3,
+    14,
+    16,
+    28
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 7,
+   "date": "2026-11-03",
+   "time": "08:00",
+   "title": "Kế hoạch marketing Tết 2027: timeline từ tháng 11 đến tháng 2",
+   "keyword": "kế hoạch marketing Tết",
+   "cluster": "C5",
+   "role": "cluster",
+   "refresh": "S",
+   "links_to": [
+    11,
+    23,
+    1,
+    3,
+    2
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 8,
+   "date": "2026-11-05",
+   "time": "08:00",
+   "title": "Google AI Max for Search: có nên bật và cách kiểm soát",
+   "keyword": "AI Max for Search",
+   "cluster": "C2",
+   "role": "cluster",
+   "refresh": "A",
+   "links_to": [
+    2,
+    17,
+    5,
+    12
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 9,
+   "date": "2026-11-10",
+   "time": "08:00",
+   "title": "Lead generation bất động sản 2026: từ quảng cáo đến CRM",
+   "keyword": "lead bất động sản",
+   "cluster": "C6",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    "6078",
+    15,
+    17,
+    20,
+    31
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 10,
+   "date": "2026-11-12",
+   "time": "08:00",
+   "title": "Retail media tại Việt Nam: Shopee Ads, TikTok GMV Max hoạt động thế nào",
+   "keyword": "quảng cáo sàn thương mại điện tử",
+   "cluster": "C1",
+   "role": "cluster",
+   "refresh": "A",
+   "links_to": [
+    3,
+    1,
+    5,
+    25
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 11,
+   "date": "2026-11-17",
+   "time": "08:00",
+   "title": "Lập ngân sách marketing 2027 theo giai đoạn tăng trưởng doanh nghiệp",
+   "keyword": "ngân sách marketing",
+   "cluster": "C5",
+   "role": "cluster",
+   "refresh": "S",
+   "links_to": [
+    5,
+    22,
+    "2215",
+    7,
+    32
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 12,
+   "date": "2026-11-19",
+   "time": "08:00",
+   "title": "Đo lượng truy cập từ ChatGPT, Gemini, Perplexity trong GA4",
+   "keyword": "traffic từ AI GA4",
+   "cluster": "C4",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    "6076",
+    "5899",
+    5,
+    20
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 13,
+   "date": "2026-11-24",
+   "time": "08:00",
+   "title": "Sản xuất 30 mẫu quảng cáo mỗi tháng với AI mà vẫn giữ bản sắc thương hiệu",
+   "keyword": "creative strategy",
+   "cluster": "C2",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    2,
+    30,
+    "5726",
+    18
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 14,
+   "date": "2026-11-26",
+   "time": "08:00",
+   "title": "Xây mạng lưới KOC và affiliate trên TikTok Shop cho ngành mỹ phẩm",
+   "keyword": "KOC TikTok Shop",
+   "cluster": "C1",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    3,
+    6,
+    16,
+    28
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 15,
+   "date": "2026-12-01",
+   "time": "08:00",
+   "title": "Zalo OA và ZNS: kênh CRM hiệu quả nhất tại Việt Nam",
+   "keyword": "Zalo ZNS marketing",
+   "cluster": "C3",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    26,
+    4,
+    "3086",
+    9
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 16,
+   "date": "2026-12-03",
+   "time": "08:00",
+   "title": "Livestream bán hàng: kịch bản, KPI và cách tính lãi lỗ một phiên",
+   "keyword": "livestream bán hàng hiệu quả",
+   "cluster": "C1",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    3,
+    6,
+    14,
+    5
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 17,
+   "date": "2026-12-08",
+   "time": "08:00",
+   "title": "Conversions API và server-side tracking: vì sao dữ liệu quảng cáo bị thiếu",
+   "keyword": "Conversions API",
+   "cluster": "C3",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    2,
+    8,
+    5,
+    4
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 18,
+   "date": "2026-12-10",
+   "time": "08:00",
+   "title": "Brand Commerce: cân bằng giữa đầu tư thương hiệu và performance",
+   "keyword": "brand commerce",
+   "cluster": "C5",
+   "role": "cluster",
+   "refresh": "C",
+   "links_to": [
+    "2215",
+    5,
+    2,
+    22
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 19,
+   "date": "2026-12-15",
+   "time": "08:00",
+   "title": "Tuyển sinh online 2027: digital marketing cho ngành giáo dục",
+   "keyword": "marketing giáo dục",
+   "cluster": "C6",
+   "role": "cluster",
+   "refresh": "S",
+   "links_to": [
+    15,
+    2,
+    8,
+    31
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 20,
+   "date": "2026-12-17",
+   "time": "08:00",
+   "title": "SEO cho website B2B: nội dung chuyên môn (E-E-A-T) để tạo lead",
+   "keyword": "SEO B2B",
+   "cluster": "C4",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    "6076",
+    12,
+    9,
+    31,
+    "6078"
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 21,
+   "date": "2026-12-22",
+   "time": "08:00",
+   "title": "10 xu hướng digital marketing 2027 tại Việt Nam",
+   "keyword": "xu hướng digital marketing 2027",
+   "cluster": "C5",
+   "role": "cluster",
+   "refresh": "S",
+   "links_to": [
+    2,
+    3,
+    4,
+    6,
+    "6076",
+    29
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 22,
+   "date": "2026-12-24",
+   "time": "08:00",
+   "title": "Marketing Mix Modeling cho doanh nghiệp vừa",
+   "keyword": "marketing mix modeling",
+   "cluster": "C3",
+   "role": "cluster",
+   "refresh": "C",
+   "links_to": [
+    5,
+    17,
+    11
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 23,
+   "date": "2026-12-29",
+   "time": "08:00",
+   "title": "Quảng cáo mùa Tết: CPM tăng cao, khi nào tăng hoặc giảm ngân sách",
+   "keyword": "quảng cáo Tết",
+   "cluster": "C2",
+   "role": "cluster",
+   "refresh": "S",
+   "links_to": [
+    7,
+    2,
+    8,
+    13
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 24,
+   "date": "2026-12-31",
+   "time": "08:00",
+   "title": "Checklist audit marketing 30 ngày đầu năm 2027",
+   "keyword": "audit marketing",
+   "cluster": "C5",
+   "role": "cluster",
+   "refresh": "S",
+   "links_to": [
+    5,
+    17,
+    12,
+    11,
+    "2215"
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 25,
+   "date": "2027-01-05",
+   "time": "08:00",
+   "title": "Tổng kết thương mại điện tử Việt Nam 2026: số liệu và bài học",
+   "keyword": "thương mại điện tử Việt Nam 2026",
+   "cluster": "C1",
+   "role": "cluster",
+   "refresh": "S",
+   "links_to": [
+    3,
+    10,
+    1,
+    16
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 26,
+   "date": "2027-01-07",
+   "time": "08:00",
+   "title": "Retention marketing: tăng doanh thu từ khách hàng cũ",
+   "keyword": "retention marketing",
+   "cluster": "C3",
+   "role": "cluster",
+   "refresh": "C",
+   "links_to": [
+    5,
+    15,
+    "4119",
+    "4175"
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 27,
+   "date": "2027-01-12",
+   "time": "08:00",
+   "title": "App User Acquisition 2026: tăng người dùng ứng dụng với chi phí hợp lý",
+   "keyword": "app user acquisition",
+   "cluster": "C2",
+   "role": "cluster",
+   "refresh": "A",
+   "links_to": [
+    2,
+    5,
+    17,
+    30
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 28,
+   "date": "2027-01-14",
+   "time": "08:00",
+   "title": "Quảng cáo dược phẩm, thực phẩm chức năng đúng luật",
+   "keyword": "quảng cáo thực phẩm chức năng",
+   "cluster": "C6",
+   "role": "cluster",
+   "refresh": "A",
+   "links_to": [
+    6,
+    4,
+    2,
+    14
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 29,
+   "date": "2027-01-19",
+   "time": "08:00",
+   "title": "AI agent trong marketing: 5 quy trình doanh nghiệp có thể tự động hóa ngay",
+   "keyword": "AI agent marketing",
+   "cluster": "C5",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    15,
+    26,
+    "5431",
+    "5726"
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 30,
+   "date": "2027-01-21",
+   "time": "08:00",
+   "title": "Công thức hook 3 giây cho video ngắn bán hàng",
+   "keyword": "hook video TikTok",
+   "cluster": "C2",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    13,
+    2,
+    16
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 31,
+   "date": "2027-01-26",
+   "time": "08:00",
+   "title": "12 yếu tố giúp landing page chuyển đổi cao (CRO)",
+   "keyword": "tối ưu landing page",
+   "cluster": "C5",
+   "role": "cluster",
+   "refresh": "C",
+   "links_to": [
+    9,
+    20,
+    12,
+    5
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  },
+  {
+   "no": 32,
+   "date": "2027-01-28",
+   "time": "08:00",
+   "title": "Thuê agency hay xây đội in-house: so sánh chi phí năm 2027",
+   "keyword": "thuê agency marketing",
+   "cluster": "C5",
+   "role": "cluster",
+   "refresh": "C",
+   "links_to": [
+    "2215",
+    11,
+    24,
+    18
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null
+  }
+ ],
+ "existing": [
+  {
+   "wp_id": "6078",
+   "cluster": "C6",
+   "refresh": "B",
+   "action": "giữ"
+  },
+  {
+   "wp_id": "6076",
+   "cluster": "C4",
+   "refresh": "A",
+   "action": "pillar C4, giữ"
+  },
+  {
+   "wp_id": "5899",
+   "cluster": "C4",
+   "refresh": "A",
+   "action": "rà số liệu 12/2026"
+  },
+  {
+   "wp_id": "5726",
+   "cluster": "C2",
+   "refresh": "B",
+   "action": "rà 11/2026"
+  },
+  {
+   "wp_id": "5725",
+   "cluster": "C2",
+   "refresh": "B",
+   "action": "rà 11/2026"
+  },
+  {
+   "wp_id": "5724",
+   "cluster": "C6",
+   "refresh": "B",
+   "action": "rà 11/2026"
+  },
+  {
+   "wp_id": "5723",
+   "cluster": "C5",
+   "refresh": "B",
+   "action": "rà 11/2026"
+  },
+  {
+   "wp_id": "5714",
+   "cluster": "C5",
+   "refresh": "B",
+   "action": "rà 11/2026"
+  },
+  {
+   "wp_id": "5655",
+   "cluster": "C4",
+   "refresh": "B",
+   "action": "rà 11/2026"
+  },
+  {
+   "wp_id": "5594",
+   "cluster": "C4",
+   "refresh": "B",
+   "action": "rà 11/2026"
+  },
+  {
+   "wp_id": "5571",
+   "cluster": "C4",
+   "refresh": "B",
+   "action": "rà 11/2026"
+  },
+  {
+   "wp_id": "5431",
+   "cluster": "C5",
+   "refresh": "B",
+   "action": "rà 11/2026"
+  },
+  {
+   "wp_id": "5490",
+   "cluster": "C5",
+   "refresh": "B",
+   "action": "rà 11/2026"
+  },
+  {
+   "wp_id": "2215",
+   "cluster": "C5",
+   "refresh": "C",
+   "action": "cập nhật lớn, làm pillar C5"
+  },
+  {
+   "wp_id": "3073",
+   "cluster": "C3",
+   "refresh": "A",
+   "action": "cập nhật lớn: Google đã dừng kế hoạch bỏ cookie bên thứ ba"
+  },
+  {
+   "wp_id": "4232",
+   "cluster": "C3",
+   "refresh": "A",
+   "action": "tiêu đề và số liệu đã cũ, gộp vào 4262"
+  },
+  {
+   "wp_id": "4262",
+   "cluster": "C3",
+   "refresh": "B",
+   "action": "cập nhật"
+  },
+  {
+   "wp_id": "4204",
+   "cluster": "C1",
+   "refresh": "B",
+   "action": "cập nhật"
+  },
+  {
+   "wp_id": "3086",
+   "cluster": "C3",
+   "refresh": "C",
+   "action": "cập nhật"
+  },
+  {
+   "wp_id": "4175",
+   "cluster": "C3",
+   "refresh": "B",
+   "action": "gộp với 4187"
+  },
+  {
+   "wp_id": "4187",
+   "cluster": "C3",
+   "refresh": "B",
+   "action": "gộp vào 4175"
+  },
+  {
+   "wp_id": "4095",
+   "cluster": "C5",
+   "refresh": "C",
+   "action": "gộp với 4111"
+  },
+  {
+   "wp_id": "4111",
+   "cluster": "C5",
+   "refresh": "C",
+   "action": "gộp vào 4095"
+  },
+  {
+   "wp_id": "4119",
+   "cluster": "C5",
+   "refresh": "C",
+   "action": "giữ, case study"
+  },
+  {
+   "wp_id": "4072",
+   "cluster": "C2",
+   "refresh": "A",
+   "action": "chờ anh quyết: NFT"
+  },
+  {
+   "wp_id": "4042",
+   "cluster": "C2",
+   "refresh": "A",
+   "action": "chờ anh quyết: Metaverse"
+  },
+  {
+   "wp_id": "4034",
+   "cluster": "C2",
+   "refresh": "A",
+   "action": "chờ anh quyết: Metaverse"
+  },
+  {
+   "wp_id": "4012",
+   "cluster": "C2",
+   "refresh": "A",
+   "action": "chờ anh quyết: NFT"
+  },
+  {
+   "wp_id": "4216",
+   "cluster": "C5",
+   "refresh": "C",
+   "action": "giữ, thêm ghi chú bối cảnh"
+  },
+  {
+   "wp_id": "4135",
+   "cluster": "C5",
+   "refresh": "C",
+   "action": "giữ, thêm ghi chú bối cảnh"
+  },
+  {
+   "wp_id": "4166",
+   "cluster": "C5",
+   "refresh": "C",
+   "action": "giữ, thêm ghi chú bối cảnh"
+  },
+  {
+   "wp_id": "3487",
+   "cluster": "C1",
+   "refresh": "C",
+   "action": "giữ, thêm ghi chú bối cảnh"
+  }
+ ]
+}
