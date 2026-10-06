@@ -178,7 +178,8 @@ function adtek_perf_remove_attr( $tag, $name ) {
 }
 
 function adtek_perf_insert_early( $head, $html ) {
-	if ( preg_match( '/<meta\s+charset=[^>]*>/i', $head, $m, PREG_OFFSET_CAPTURE ) ) {
+	// Phải đứng sau meta viewport: nếu không, trình duyệt di động chọn ảnh theo bề rộng mặc định 980px và tải nhầm ảnh lớn.
+	if ( preg_match( '/<meta\b[^>]*name=["\']?viewport[^>]*>/i', $head, $m, PREG_OFFSET_CAPTURE ) ) {
 		$pos = $m[0][1] + strlen( $m[0][0] );
 		return substr( $head, 0, $pos ) . $html . substr( $head, $pos );
 	}

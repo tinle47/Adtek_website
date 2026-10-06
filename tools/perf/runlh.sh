@@ -18,7 +18,7 @@ for spec in "$@"; do n=${spec%%:*}; p=${spec#*:}
       "${MAP[@]}" --proxy-server=$HTTPS_PROXY --proxy-bypass-list=adtek.agency about:blank >/dev/null 2>&1 & cpid=$!
     sleep 2
     timeout 200 $S/lh/node_modules/.bin/lighthouse "https://adtek.agency$p" --port=9333 --quiet --only-categories=performance --form-factor=mobile \
-      --output=json --output-path=$S/res/$MODE-$n-$r.json >/dev/null 2>>$S/res/err.txt || echo "fail $MODE $n $r"
+      --output=json --output-path=$S/${RES:-res}/$MODE-$n-$r.json >/dev/null 2>>$S/res/err.txt || echo "fail $MODE $n $r"
     kill $cpid; wait $cpid 2>/dev/null
   done
 done
