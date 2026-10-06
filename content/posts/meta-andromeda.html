@@ -1,0 +1,163 @@
+<p>Tháng 12/2024, đội kỹ sư của Meta công bố một hệ thống chỉ làm một việc: từ hàng chục triệu quảng cáo đang chạy, chọn ra vài nghìn quảng cáo hợp với một người dùng cụ thể, trước khi các mô hình xếp hạng chọn quảng cáo hiển thị. Theo Meta, mô hình mới phức tạp gấp 10,000 lần mô hình cũ ở bước này, giúp recall tăng 6% và chất lượng quảng cáo tăng 8% trên các nhóm được đo.</p>
+
+<p>Gần hai năm sau, chia 12 ad set theo sở thích hay nhân một video thành 20 bản chỉ đổi tiêu đề, những cách từng hiệu quả, giờ thường làm dữ liệu bị chia nhỏ và đẩy chi phí lên. Ở Việt Nam, nơi quảng cáo Facebook tiếp cận khoảng 79.0 triệu người vào cuối năm 2025 theo DataReportal, thay đổi này chạm tới gần như mọi doanh nghiệp bán hàng online.</p>
+
+<h2>Meta Andromeda là gì?</h2>
+
+<p><strong>Meta Andromeda là hệ thống truy xuất quảng cáo (ads retrieval) do Meta công bố tháng 12/2024, chạy trên siêu chip NVIDIA Grace Hopper, có nhiệm vụ lọc hàng chục triệu quảng cáo xuống vài nghìn ứng viên phù hợp nhất với từng người dùng, trước bước xếp hạng và đấu giá.</strong> Andromeda không chọn quảng cáo thắng cuộc. Nó chọn quảng cáo nào được vào vòng trong.</p>
+
+<p>Nếu quảng cáo không được truy xuất cho một người, giá thầu và ngân sách không còn ý nghĩa với người đó. Meta cũng nêu lý do xây Andromeda: lượng creative tăng nhanh nhờ công cụ tạo quảng cáo bằng AI của Advantage+, và hệ thống cũ không theo kịp.</p>
+
+<h3>Andromeda, Lattice và GEM khác nhau thế nào?</h3>
+
+<table>
+<thead><tr><th>Hệ thống</th><th>Vai trò</th><th>Công bố</th><th>Kết quả Meta đưa ra</th></tr></thead>
+<tbody>
+<tr><td>Andromeda</td><td>Truy xuất: chọn vài nghìn ứng viên từ hàng chục triệu quảng cáo</td><td>12/2024</td><td>Recall +6%, chất lượng quảng cáo +8% trên nhóm được đo</td></tr>
+<tr><td>Lattice</td><td>Xếp hạng: một kiến trúc dự đoán cho nhiều mục tiêu, thay cho nhiều mô hình nhỏ chạy riêng</td><td>05/2023</td><td>Học chung giữa các mục tiêu, hữu ích khi dữ liệu đo lường bị hạn chế</td></tr>
+<tr><td>GEM</td><td>Mô hình nền huấn luyện ở quy mô tương đương LLM, truyền kiến thức cho các mô hình xếp hạng</td><td>11/2025</td><td>Chuyển đổi +5% trên Instagram và +3% trên Facebook Feed trong quý 2/2025</td></tr>
+</tbody>
+</table>
+
+<p>Nhà quảng cáo không chỉnh được mô hình nào trong số này. Thứ bạn kiểm soát là đầu vào: creative, tín hiệu chuyển đổi gửi về Meta, cấu trúc tài khoản và ngân sách.</p>
+
+<h2>Quảng cáo Facebook 2026 đã thay đổi những gì?</h2>
+
+<h3>Advantage+ trở thành mặc định</h3>
+
+<p>Năm 2025, Meta gộp luồng tạo chiến dịch thủ công và luồng Advantage+ làm một, đổi tên Advantage+ shopping campaigns thành Advantage+ sales campaigns. Với mục tiêu Sales, App hoặc Leads, Advantage+ được bật sẵn. Chiến dịch giữ trạng thái Advantage+ khi ba đòn bẩy cùng tự động: ngân sách cấp chiến dịch, đối tượng chỉ giới hạn địa lý hoặc dùng Advantage+ audience, vị trí hiển thị không loại trừ.</p>
+
+<p>Theo báo cáo quý 3/2025 của Meta, doanh thu hằng năm từ các giải pháp quảng cáo tự động bằng AI, gồm Advantage+, đã vượt 60 tỷ USD; chiến dịch leads dùng Advantage+ có chi phí mỗi lead thấp hơn trung bình 14%.</p>
+
+<h3>Nhắm chọn rộng: đầu vào chỉ còn là gợi ý</h3>
+
+<p>Với Advantage+ audience, độ tuổi, giới tính, nhắm chọn chi tiết, custom audience và lookalike chỉ là gợi ý. Hệ thống ưu tiên người khớp gợi ý rồi mở rộng khi dự đoán hiệu quả tốt hơn. Giới hạn bắt buộc chỉ gồm vị trí địa lý, ngôn ngữ, độ tuổi tối thiểu và danh sách loại trừ. Chia ad set "skincare" và "trang điểm" vì thế không còn tách được hai tệp người như trước.</p>
+
+<h3>Creative trở thành tín hiệu nhắm chọn</h3>
+
+<p>Khi đối tượng mở rộng, nội dung quảng cáo quyết định ai dừng lại xem. Video về da dầu mụn của sinh viên kéo về nhóm người khác hẳn video so sánh giá cho người mua quà. Jon Loomer tóm lại thông điệp của Meta: bớt đầu tư vào nhắm chọn, dồn sức làm nhiều quảng cáo thật sự khác nhau.</p>
+
+<h3>Meta gom các quảng cáo na ná thành một</h3>
+
+<p>Theo hướng dẫn của Meta về đa dạng hóa creative, các quảng cáo có chung thuộc tính hình ảnh và chủ đề được nhóm lại, coi là biến thể của cùng một creative và dùng chung dữ liệu học. Giới làm quảng cáo gọi đây là "Entity ID": 20 quảng cáo chung một ảnh sản phẩm, chỉ khác tiêu đề, có thể chỉ được tính như một. Từ cuối năm 2025, Meta đưa dần chỉ báo về độ tương đồng và độ mỏi của creative vào Ads Manager, có thể chưa có ở mọi tài khoản.</p>
+
+<h3>Advantage+ creative enhancements</h3>
+
+<p>Meta có hơn 20 tùy chọn chỉnh creative tự động như chỉnh sáng, thêm nhạc, mở rộng ảnh, tạo biến thể văn bản; danh sách và tên gọi thay đổi thường xuyên. Hãy xem trước từng tùy chọn trước khi bật, nhất là với văn bản tiếng Việt và ngành bị quản lý chặt về nội dung như thực phẩm bảo vệ sức khỏe.</p>
+
+<h3>Cách tính chuyển đổi cũng đã khác</h3>
+
+<p>Từ tháng 3/2026, click-through attribution chỉ còn tính link click. Chuyển đổi sau lượt thích, chia sẻ, lưu bài chuyển sang engage-through attribution với cửa sổ cố định 1 ngày. Từ tháng 4/2025, Ads Manager có thêm incremental attribution: chiến dịch tối ưu theo chuyển đổi mà Meta ước tính do quảng cáo tạo ra, nên số báo cáo thường ít hơn trước.</p>
+
+<h2>Cấu trúc tài khoản nên thay đổi ra sao?</h2>
+
+<p>Ít chiến dịch, ít ad set, mỗi ad set đủ dữ liệu để học. Theo Meta, một ad set cần khoảng 50 sự kiện tối ưu trong 7 ngày để thoát giai đoạn học (learning phase), và con số này tính theo ad set.</p>
+
+<p>Với chi phí mục tiêu 250,000 đồng mỗi đơn, mỗi ad set cần khoảng 12.5 triệu đồng mỗi tuần để có 50 đơn. Tài khoản 12 ad set cần 150 triệu đồng mỗi tuần chỉ để cùng thoát giai đoạn học, mức mà phần lớn doanh nghiệp vừa và nhỏ không có.</p>
+
+<p>Cấu trúc gợi ý cho đa số tài khoản bán hàng:</p>
+
+<ul>
+<li>Một chiến dịch Advantage+ sales giữ phần lớn ngân sách, chứa các creative đã chứng minh hiệu quả.</li>
+<li>Một chiến dịch thử nghiệm cho concept mới, để creative mới không phải cạnh tranh ngay với quảng cáo đã có lịch sử tốt.</li>
+<li>Chiến dịch cho khách hàng cũ chỉ tách riêng khi thông điệp thật sự khác (ưu đãi thành viên, mua lại).</li>
+<li>Với ứng dụng, Advantage+ app campaigns theo cùng logic, tối ưu cho sự kiện có giá trị trong app thay vì chỉ lượt cài.</li>
+</ul>
+
+<h2>Chiến lược creative Meta: đa dạng hóa thế nào cho đúng?</h2>
+
+<p>Creative diversification là làm các quảng cáo khác nhau ở cấp ý tưởng, mỗi quảng cáo nói chuyện với một nhóm người hoặc một nhu cầu riêng. Bốn trục tạo khác biệt:</p>
+
+<table>
+<thead><tr><th>Trục</th><th>Khác biệt thật</th><th>Chưa đủ khác biệt</th></tr></thead>
+<tbody>
+<tr><td>Concept</td><td>Vấn đề và giải pháp, review khách hàng, trước và sau, demo sản phẩm</td><td>Cùng một ý, viết lại câu chữ</td></tr>
+<tr><td>Persona</td><td>Sinh viên da dầu, mẹ sau sinh, nhân viên văn phòng, người mua quà</td><td>Cùng người mẫu, đổi màu nền</td></tr>
+<tr><td>Định dạng</td><td>Video dọc, ảnh tĩnh, carousel, clip cắt từ livestream, video KOC tự quay</td><td>Cùng video, xuất nhiều tỷ lệ</td></tr>
+<tr><td>Hook</td><td>Câu hỏi, kết quả, phản biện, cảnh dùng sản phẩm</td><td>Đổi font hoặc sticker giây đầu</td></tr>
+</tbody>
+</table>
+
+<p>Bao nhiêu concept là đủ? Meta không đưa ra con số chung. Hãy tính theo ngân sách, vì mỗi concept cần đủ chi tiêu để được đánh giá. Chi 5 triệu đồng mỗi ngày mà chạy 30 concept thì phần lớn gần như không được phân phối; ở mức đó, 4 đến 6 concept thật sự khác nhau, mỗi concept 2 đến 3 định dạng, dễ đọc kết quả hơn.</p>
+
+<p>Vài giây đầu của video ngắn quyết định quảng cáo có được xem tiếp, nên hook cần được test riêng. AI giúp sản xuất nhanh hơn: viết kịch bản cho từng persona, tạo biến thể hook, lồng tiếng (xem công cụ và ví dụ trong bài <a href="/ung-dung-generative-ai-trong-marketing-cong-cu-ho-tro-vi-du-thuc-te-va-case-study-dot-pha/">ứng dụng Generative AI trong marketing</a>). Ý tưởng khác biệt vẫn phải đến từ hiểu biết về khách hàng.</p>
+
+<h3>Khung test creative 4 bước</h3>
+
+<ol>
+<li>Lập ma trận 3 đến 4 persona nhân 3 đến 4 góc tiếp cận, chỉ chọn những ô có lý do kinh doanh rõ ràng.</li>
+<li>Chạy concept mới trong chiến dịch thử nghiệm 7 đến 10 ngày, không chỉnh sửa giữa chừng.</li>
+<li>Đọc chi phí mỗi kết quả, tỷ lệ xem 3 giây đầu và tỷ lệ nhấp trước, chỉ số doanh thu sau khi đủ dữ liệu.</li>
+<li>Đưa concept thắng sang chiến dịch chính, giữ nguyên ID bài đăng để không mất tương tác; ghi lại lý do concept thua.</li>
+</ol>
+
+<h2>Đo lường thế nào khi Meta tự tối ưu?</h2>
+
+<p>Mô hình của Meta học từ tín hiệu bạn gửi về; dữ liệu sai thì tối ưu sai hướng. Trước hết, chạy song song Meta Pixel và Conversions API (CAPI), có loại trùng sự kiện, và theo dõi Event Match Quality trong Events Manager. Ở Việt Nam, rất nhiều đơn được chốt qua Messenger, Zalo hoặc hotline. Nếu không đưa đơn đã chốt từ CRM về Meta, hệ thống chỉ thấy người nhắn tin chứ không biết ai thật sự mua.</p>
+
+<p>Tiếp theo, <a href="/glossary/attribution-modeling-mo-hinh-phan-bo/">mô hình phân bổ (attribution)</a> của Meta chỉ thấy điểm chạm trên nền tảng của Meta. Doanh nghiệp chạy cả Google, TikTok và sàn nên đối chiếu với <a href="/glossary/multi-touch-attribution/">multi-touch attribution</a> hoặc doanh thu tổng.</p>
+
+<p>Cuối cùng là đo mức tăng thực (incrementality). Conversion Lift của Meta chia người dùng thành nhóm thấy và không thấy quảng cáo. Chưa đủ điều kiện chạy lift test thì có thể tắt quảng cáo ở vài tỉnh trong 2 đến 4 tuần rồi so doanh số với các tỉnh tương đồng. Cách ghép các lớp đo này vào phễu có trong bài <a href="/lam-the-nao-de-toi-uu-hoa-toan-bo-pheu-marketing-voi-ai/">tối ưu toàn bộ phễu marketing với AI</a>.</p>
+
+<h2>Ngân sách nên phân bổ thế nào?</h2>
+
+<p>Tỷ lệ khởi đầu dễ áp dụng: 70% cho chiến dịch chính, 20% cho thử nghiệm concept, 10% cho thử nghiệm lớn hơn như định dạng mới hoặc lift test. Khi <a href="/glossary/frequency/">tần suất (frequency)</a> tăng và tỷ lệ nhấp giảm liên tục, phần thử nghiệm cần lớn hơn.</p>
+
+<p>Tránh tăng giảm ngân sách quá mạnh một lần vì thay đổi lớn có thể đưa ad set về lại giai đoạn học. Đánh giá <a href="/glossary/return-on-ad-spend-roas/">ROAS</a> theo chu kỳ 7 ngày thay vì từng ngày. Mùa 11.11, 12.12 và Tết, <a href="/glossary/cpm-2/">CPM</a> thường tăng mạnh, nên creative cho mùa cao điểm cần test xong trước vài tuần để khi vào mùa chỉ còn việc tăng ngân sách cho concept đã thắng.</p>
+
+<h2>Ví dụ minh họa: tái cấu trúc tài khoản thương hiệu mỹ phẩm</h2>
+
+<p>Đây là tình huống giả định để minh họa, không phải số liệu của một khách hàng cụ thể.</p>
+
+<p>Một thương hiệu chăm sóc da chi 300 triệu đồng mỗi tháng (10 triệu đồng mỗi ngày), chia đều cho 12 ad set nhắm theo sở thích và độ tuổi, bốn video nhân bản vào mọi ad set. Với chi phí mục tiêu 250,000 đồng mỗi đơn, mỗi ad set có khoảng 833,000 đồng mỗi ngày, tức chừng 23 đơn mỗi tuần, chưa bằng một nửa ngưỡng 50 sự kiện.</p>
+
+<table>
+<thead><tr><th>Hạng mục</th><th>Trước</th><th>Sau</th></tr></thead>
+<tbody>
+<tr><td>Cấu trúc</td><td>12 ad set theo sở thích, độ tuổi</td><td>1 chiến dịch Advantage+ sales (80% ngân sách), 1 chiến dịch thử nghiệm (20%)</td></tr>
+<tr><td>Nhắm chọn</td><td>Sở thích chi tiết</td><td>Toàn quốc, độ tuổi tối thiểu, loại trừ khách mua trong 30 ngày</td></tr>
+<tr><td>Creative</td><td>4 video nhân bản, đổi tiêu đề</td><td>8 concept cho 4 persona, mỗi concept có video dọc, ảnh tĩnh hoặc clip livestream của KOC</td></tr>
+<tr><td>Đo lường</td><td>Chỉ Pixel, đơn chốt qua inbox không được ghi nhận</td><td>Pixel và CAPI, đẩy đơn đã chốt từ CRM về Meta</td></tr>
+<tr><td>Chỉ số chính</td><td>ROAS từng ad set theo ngày</td><td>Chi phí mỗi đơn toàn tài khoản theo tuần, tỷ lệ khách mới, lift test sau 6 đến 8 tuần</td></tr>
+</tbody>
+</table>
+
+<p>Chiến dịch chính lúc này có khoảng 8 triệu đồng mỗi ngày, đủ cho hơn 200 đơn mỗi tuần ở cùng chi phí mục tiêu. Kết quả thực tế còn tùy chất lượng creative và dữ liệu, nên cần theo dõi 3 đến 4 tuần trước khi kết luận.</p>
+
+<h2>Sai lầm thường gặp của nhà quảng cáo Việt Nam</h2>
+
+<ul>
+<li>Chia nhỏ ad set theo sở thích, độ tuổi, giới tính trong khi Meta đã coi các đầu vào này là gợi ý.</li>
+<li>Gọi việc đổi tiêu đề, màu nền hay sticker là "test creative", trong khi hệ thống gom các bản này làm một.</li>
+<li>Tắt quảng cáo sau 1 đến 2 ngày hoặc chỉnh ngân sách hằng ngày, khiến ad set không bao giờ học xong.</li>
+<li>Tối ưu cho tin nhắn nhưng không gửi đơn đã chốt về Meta, nên hệ thống tìm thêm người thích nhắn tin, không phải người mua.</li>
+<li>Dựa vào một KOC hoặc một kiểu video cho mọi chiến dịch, không có concept dự phòng khi creative mỏi.</li>
+</ul>
+
+<h2>Checklist quảng cáo Meta năm 2026</h2>
+
+<ul>
+<li>Tối đa 2 đến 3 chiến dịch đang chạy cho cùng một mục tiêu.</li>
+<li>Mỗi ad set có thể đạt khoảng 50 sự kiện tối ưu trong 7 ngày với ngân sách hiện tại.</li>
+<li>Nhắm chọn chỉ giữ giới hạn bắt buộc: địa lý, ngôn ngữ, độ tuổi tối thiểu, loại trừ.</li>
+<li>Chiến dịch chính có ít nhất 4 concept khác nhau về góc tiếp cận hoặc persona.</li>
+<li>Có chiến dịch thử nghiệm, concept mới mỗi 2 đến 4 tuần.</li>
+<li>Pixel và CAPI chạy song song, đơn chốt qua Messenger, Zalo, hotline được đưa về từ CRM.</li>
+<li>Báo cáo đã tính tới thay đổi attribution tháng 3/2026, có ít nhất một phép đo incrementality mỗi năm.</li>
+<li>Từng tùy chọn Advantage+ creative enhancements được duyệt trước khi bật.</li>
+</ul>
+
+<p>Adtek triển khai quảng cáo performance và chiến lược creative cho các thương hiệu bán lẻ, mỹ phẩm và ứng dụng. Nếu bạn muốn rà lại cấu trúc tài khoản Meta theo cách vận hành mới, hãy <a href="/contact/">trao đổi với đội ngũ Adtek</a>.</p>
+
+<h2>Nguồn tham khảo</h2>
+
+<ul>
+<li>Engineering at Meta (12/2024). <a href="https://engineering.fb.com/2024/12/02/production-engineering/meta-andromeda-advantage-automation-next-gen-personalized-ads-retrieval-engine/" target="_blank" rel="noopener">Meta Andromeda: Supercharging Advantage+ automation with the next-gen personalized ads retrieval engine</a>.</li>
+<li>Engineering at Meta (11/2025). <a href="https://engineering.fb.com/2025/11/10/ml-applications/metas-generative-ads-model-gem-the-central-brain-accelerating-ads-recommendation-ai-innovation/" target="_blank" rel="noopener">Meta's Generative Ads Model (GEM): The central brain accelerating ads recommendation AI innovation</a>.</li>
+<li>Meta AI (05/2023). <a href="https://ai.meta.com/blog/ai-ads-performance-efficiency-meta-lattice/" target="_blank" rel="noopener">New AI advancements drive Meta's ads system performance and efficiency</a>.</li>
+<li>Meta for Developers (2025). <a href="https://developers.facebook.com/docs/marketing-api/advantage-campaigns" target="_blank" rel="noopener">Advantage+ Campaign Experience for Sales, App, and Leads</a>.</li>
+<li>Marketing Dive (10/2025). <a href="https://www.marketingdive.com/news/meta-ai-bets-supercharge-marketing-efficiency-costs/804238/" target="_blank" rel="noopener">Meta's AI bets supercharge marketing efficiency</a> (kết quả quý 3/2025 của Meta).</li>
+<li>Jon Loomer Digital (2025). <a href="https://www.jonloomer.com/meta-andromeda/" target="_blank" rel="noopener">Meta Andromeda: What It Means for Your Ad Strategy</a> và <a href="https://www.jonloomer.com/how-advantage-plus-audience-works/" target="_blank" rel="noopener">How Advantage+ Audience Works</a>.</li>
+<li>Jon Loomer Digital (2026). <a href="https://www.jonloomer.com/meta-ads-attribution-2026/" target="_blank" rel="noopener">How Meta Ads Attribution Works in 2026</a>.</li>
+<li>DataReportal (2026). <a href="https://datareportal.com/reports/digital-2026-vietnam" target="_blank" rel="noopener">Digital 2026: Vietnam</a>.</li>
+</ul>

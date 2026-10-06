@@ -37,7 +37,7 @@
    "no": 1,
    "date": "2026-10-13",
    "time": "08:00",
-   "title": "Checklist 30 ngày chuẩn bị 11.11 và 12.12 trên Shopee, TikTok Shop",
+   "title": "Kế hoạch 11.11: checklist 30 ngày cho Shopee, TikTok Shop và 12.12",
    "keyword": "kế hoạch 11.11",
    "cluster": "C1",
    "role": "cluster",
@@ -50,10 +50,25 @@
     "4204"
    ],
    "words": 2000,
-   "status": "planned",
-   "wp_id": null,
+   "status": "draft",
+   "wp_id": 6086,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "slug": "ke-hoach-11-11",
+   "seo_title": "Kế hoạch 11.11: checklist 30 ngày Shopee, TikTok Shop",
+   "meta_desc": "Kế hoạch 11.11 theo từng tuần từ D-30: tính mức giảm giá hòa vốn sau phí sàn 2026, quảng cáo GMV Max, KOC, livestream, vận hành và cách nối sang 12.12.",
+   "cover": {
+    "kicker": "Mega sale 2026",
+    "title": "Kế hoạch 11.11",
+    "subtitle": "Checklist 30 ngày: từ giá hòa vốn sau phí sàn đến giữ khách cho 12.12",
+    "chips": [
+     "Giá hòa vốn",
+     "GMV Max",
+     "Livestream",
+     "Giữ chân D+7"
+    ]
+   },
+   "media_id": 6085
   },
   {
    "no": 2,
