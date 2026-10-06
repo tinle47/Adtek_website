@@ -22,3 +22,4 @@
 | 2026-10-05 17:35 | Soạn phần ví dụ 3 KCN từ đề xuất 9/2026, bỏ ngân sách, giá thuê và chỉ số kết quả | Bài 6078 (file nguồn) | Thay bằng bản ẩn danh |
 | 2026-10-06 09:47 | Đăng phần "Ví dụ áp dụng: chiến lược digital cho ba khu công nghiệp của một chủ đầu tư miền Bắc" (phương án B, ẩn tên khách hàng và chi tiết nhận diện) | Bài 6078 | Đã đăng |
 | 2026-10-06 10:40 | Thêm mu-plugin tăng tốc trang (gộp CSS, font rút gọn, Font Awesome tải nền, ưu tiên ảnh chính, lazy-load, hoãn Crisp, tắt AOS trên di động, tắt emoji), file triển khai deploy/adtek-performance.zip | mu-plugin adtek-performance 1.0.0 | Đã áp dụng (đã kiểm tra 6 trang, HTTP 200, giao diện không đổi) |
+| 2026-10-06 12:10 | Chuyển 10,030 ảnh sang WebP (Converter for Media, tiết kiệm 392 MB), bật preload cache WP-Optimize hằng ngày. Đo Lighthouse mobile trên web thật: trang chủ 95, bài viết 98, giải pháp 98, blog 98, liên hệ 98 | Thư viện ảnh, WP-Optimize | Đã áp dụng |
