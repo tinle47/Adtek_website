@@ -6,6 +6,7 @@ import type { Script, VideoProps } from "./types";
 import { Video } from "./Video";
 import { Preview, previewFrames } from "./preview/Preview";
 import type { ThemeId } from "./preview/themes";
+import { Combo, comboFrames } from "./preview/Combo";
 
 // Một khuôn video dọc 1080x1920. Kịch bản và giọng đọc truyền vào qua props (tools/render.mjs).
 export const Root: React.FC = () => (
@@ -31,6 +32,19 @@ export const Root: React.FC = () => (
       fps={FPS}
       durationInFrames={previewFrames() + 10}
       defaultProps={{ theme }}
+    />
+  ))}
+  {/* Hướng A + C, biểu đồ chuẩn McKinsey: nền trắng (light) hoặc vẽ thẳng trên navy (dark) */}
+  {(["light", "dark"] as const).map((variant) => (
+    <Composition
+      key={variant}
+      id={`Combo-${variant}`}
+      component={Combo}
+      width={1080}
+      height={1920}
+      fps={FPS}
+      durationInFrames={comboFrames()}
+      defaultProps={{ variant }}
     />
   ))}
   </>

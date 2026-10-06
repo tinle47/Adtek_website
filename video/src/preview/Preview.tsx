@@ -18,7 +18,7 @@ import { useFonts } from "../Video";
 import { THEMES, type Theme, type ThemeId } from "./themes";
 
 // Đoạn demo khoảng 15 giây để so sánh 3 hướng thiết kế trên cùng một nội dung (video 1 bài AIO).
-type DemoScene = {
+export type DemoScene = {
   kicker: string;
   headline: string;
   accent: string;
@@ -54,14 +54,14 @@ const DEMO: DemoScene[] = [
   },
 ];
 
-const PAD = 80;
-const Y = { header: 140, head: 300, stage: 680, stageH: 560, caption: 1290, footer: 1800 };
-const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+export const PAD = 80;
+export const Y = { header: 140, head: 300, stage: 680, stageH: 560, caption: 1290, footer: 1800 };
+export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const props = { script: { scenes: DEMO }, voice: null } as unknown as VideoProps;
 export const previewFrames = () => timeline(props).reduce((s, x) => s + x.frames, 0);
 
 // ---------- Nền ----------
-const Background: React.FC<{ t: Theme }> = ({ t }) => {
+export const Background: React.FC<{ t: Theme }> = ({ t }) => {
   const f = useCurrentFrame();
   if (t.id === "glow") {
     const pulse = 0.75 + Math.sin(f / 18) * 0.25;
@@ -125,7 +125,7 @@ const Background: React.FC<{ t: Theme }> = ({ t }) => {
 };
 
 // ---------- Khung cố định: logo + nhãn series, chân trang, thanh tiến độ ----------
-const Header: React.FC<{ t: Theme }> = ({ t }) => (
+export const Header: React.FC<{ t: Theme }> = ({ t }) => (
   <div style={{ position: "absolute", left: PAD, right: PAD, top: Y.header }}>
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
       <Img src={staticFile(t.dark ? "logo-white.png" : "logo-adtek.png")} style={{ height: 58 }} />
@@ -137,7 +137,7 @@ const Header: React.FC<{ t: Theme }> = ({ t }) => (
   </div>
 );
 
-const Footer: React.FC<{ t: Theme }> = ({ t }) => {
+export const Footer: React.FC<{ t: Theme }> = ({ t }) => {
   const f = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   return (
@@ -164,7 +164,7 @@ const Footer: React.FC<{ t: Theme }> = ({ t }) => {
 };
 
 // ---------- Tiêu đề 2 dòng: dòng thường + dòng nhấn ----------
-const Headline: React.FC<{ t: Theme; s: DemoScene }> = ({ t, s }) => {
+export const Headline: React.FC<{ t: Theme; s: DemoScene }> = ({ t, s }) => {
   const k = useEnter(0);
   const words = [...s.headline.split(" ").map((w) => ({ w, a: false })), ...s.accent.split(" ").map((w) => ({ w, a: true }))];
   const split = s.headline.split(" ").length;
@@ -206,7 +206,7 @@ const HeadWord: React.FC<{ t: Theme; delay: number; accent: boolean; children: R
 };
 
 // ---------- Phụ đề ----------
-const Caption: React.FC<{ t: Theme; words: Word[] }> = ({ t, words }) => {
+export const Caption: React.FC<{ t: Theme; words: Word[]; top?: number }> = ({ t, words, top }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const time = f / fps;
@@ -220,7 +220,7 @@ const Caption: React.FC<{ t: Theme; words: Word[] }> = ({ t, words }) => {
         ? { display: "inline", background: "#002D72", color: "#fff", padding: "6px 14px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }
         : { color: "rgba(255,255,255,0.92)" };
   return (
-    <div style={{ position: "absolute", left: PAD + 20, right: PAD + 20, top: Y.caption + (t.caption === "highlight" ? 110 : 0), textAlign: "center" }}>
+    <div style={{ position: "absolute", left: PAD + 20, right: PAD + 20, top: top ?? Y.caption + (t.caption === "highlight" ? 110 : 0), textAlign: "center" }}>
       <span style={{ display: "inline-block", fontSize: 38, fontWeight: 600, lineHeight: 1.55, ...box }}>
         {g.map((w, i) => (
           <span key={i} style={{ color: on(w) ? (t.caption === "highlight" ? "#FFB25C" : t.accent) : undefined }}>
@@ -255,7 +255,7 @@ const Line: React.FC<{ t: Theme; w: string; h?: number; p?: number; color?: stri
 );
 
 // Người dùng gõ tìm kiếm, tóm tắt AI hiện ra, các kết quả bên dưới mờ đi: không ai bấm.
-const SearchMock: React.FC<{ t: Theme }> = ({ t }) => {
+export const SearchMock: React.FC<{ t: Theme }> = ({ t }) => {
   const f = useCurrentFrame();
   const q = "aio là gì";
   const typed = q.slice(0, Math.floor(interpolate(f, [6, 24], [0, q.length], clamp)));
@@ -546,7 +546,7 @@ const DataChart: React.FC<{ t: Theme; scenes: TimedScene[] }> = ({ t, scenes }) 
 };
 
 // ---------- Ghép cảnh ----------
-const Fade: React.FC<{ frames: number; children: React.ReactNode }> = ({ frames, children }) => {
+export const Fade: React.FC<{ frames: number; children: React.ReactNode }> = ({ frames, children }) => {
   const f = useCurrentFrame();
   const o = interpolate(f, [frames - 7, frames], [1, 0], clamp);
   return <AbsoluteFill style={{ opacity: o }}>{children}</AbsoluteFill>;
