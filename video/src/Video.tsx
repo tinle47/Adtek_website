@@ -10,7 +10,7 @@ import { timeline } from "./timing";
 import type { VideoProps } from "./types";
 
 // Chờ font tiếng Việt tải xong rồi mới chụp khung hình, tránh khung đầu bị font dự phòng.
-const useFonts = () => {
+export const useFonts = () => {
   const [handle] = useState(() => delayRender("Tải font Be Vietnam Pro"));
   useEffect(() => {
     const sample = "Tiếng Việt ăâđêôơư";

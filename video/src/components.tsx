@@ -105,7 +105,7 @@ export const Progress: React.FC<{ scenes: TimedScene[] }> = ({ scenes }) => {
 };
 
 // Phụ đề: mỗi lần hiện một cụm khoảng 5 chữ, chữ đang đọc tô cam.
-const chunk = (words: Word[], size = 5) => {
+export const chunk = (words: Word[], size = 5) => {
   const out: Word[][] = [];
   let cur: Word[] = [];
   for (const w of words) {
