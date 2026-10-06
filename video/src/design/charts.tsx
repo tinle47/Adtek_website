@@ -150,15 +150,15 @@ export const BarChart: React.FC<{ rows: TimedRow[]; max: number; notes: TimedNot
         const show = prog(f, r.at, 10);
         return (
           <div key={i} style={{ position: "absolute", top: i * ROW, left: 0, width: W, height: ROW, display: "flex", alignItems: "center" }}>
-            <div style={{ width: LABEL, paddingRight: 24, textAlign: "right", fontSize: 26, lineHeight: 1.3, color: INK.soft, opacity: show }}>{r.label}</div>
-            <div style={{ height: 64, width: (r.value / max) * BAR * g, background: TONE[r.tone] }} />
+            <div style={{ width: LABEL + 24, flex: "none", boxSizing: "border-box", paddingRight: 24, textAlign: "right", fontSize: 26, lineHeight: 1.3, color: INK.soft, opacity: show }}>{r.label}</div>
+            <div style={{ height: 64, flex: "none", width: (r.value / max) * BAR * g, background: TONE[r.tone] }} />
             <div style={{ marginLeft: 16, fontSize: 34, fontWeight: r.tone === "accent" ? 700 : 400, color: r.tone === "accent" ? TONE.accent : INK.text, opacity: prog(f, r.at + 16, 8) }}>
               {fmt(r.value, r.display)}
             </div>
           </div>
         );
       })}
-      <div style={{ position: "absolute", left: LABEL + 24 - 1.5, top: 12, height: rows.length * ROW - 24, width: 1.5, background: INK.rule }} />
+      <div style={{ position: "absolute", left: LABEL + 24 - 2, top: 12, height: rows.length * ROW - 24, width: 1.5, background: INK.rule }} />
       {notes.map((n, k) => (
         <NoteText key={k} at={n.at} style={{ left: LABEL + 24, top: rows.length * ROW + 10, width: BAR + 120, borderLeft: `2px solid ${INK.text}`, paddingLeft: 16 }}>
           {n.text}
