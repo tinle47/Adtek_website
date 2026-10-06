@@ -25,4 +25,6 @@
 | 2026-10-06 10:40 | Plugin adtek-seo-meta 1.3.2: đọc giá trị cũ bằng hàm Yoast trước khi gộp, trả số phiên bản trong trường adtek_seo để kiểm tra | mu-plugins/adtek-seo-meta.php | Đã upload, chạy đúng |
 | 2026-10-06 11:00 | Cập nhật SEO title và meta description cho 5 chuyên mục (Campaign Marketing, Case study, CRM, Digital Marketing, Growth Marketing), lưu lại term để Yoast làm mới indexable; apply_titles.py tự làm bước này | Chuyên mục 190, 197, 184, 185, 143 | Đã áp dụng |
 | 2026-10-06 11:15 | Đổi đường dẫn trang Báo chí tiếng Anh từ /en/bao-chi/ sang /en/press/ (link cũ tự chuyển 301 sang link mới, footer tiếng Anh đã cập nhật) | Trang 5242 | Đã áp dụng |
-| 2026-10-06 12:00 | Lập kế hoạch blog 32 bài (2 bài/tuần, 13/10/2026 đến 28/1/2027), 6 cụm chủ đề, quy tắc liên kết và quy trình cập nhật nội dung | content/editorial/ | Chờ duyệt |
+| 2026-10-06 12:00 | Lập kế hoạch blog 32 bài (2 bài/tuần, 13/10/2026 đến 28/1/2027), 6 cụm chủ đề, quy tắc liên kết và quy trình cập nhật nội dung | content/editorial/ | Đã duyệt |
+| 2026-10-06 13:10 | Thêm ghi chú "bài viết năm 2022" đầu 4 bài NFT/Metaverse (backup trong content/backups) | Bài 4072, 4042, 4034, 4012 | Đã áp dụng |
+| 2026-10-06 13:10 | Tạo lịch tự động: viết 2 bài mỗi thứ Sáu 8:52, rà soát nội dung ngày 1 hằng tháng 8:47; thêm tools/blog_post.py (ảnh bìa, nháp, đặt lịch) | content/editorial, tools | Đã áp dụng |

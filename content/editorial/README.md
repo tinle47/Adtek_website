@@ -8,6 +8,13 @@ Lịch đăng, cụm chủ đề và danh sách bài nằm trong `calendar.json`
 - Mỗi bài cần có một phần chỉ Adtek viết được: mini-case ẩn danh, số liệu từ dự án, khung hoặc checklist dùng ngay.
 - Tác giả Tin Le, có SEO title, meta description và ảnh bìa.
 
+## Quy trình viết và duyệt
+
+1. Thứ Sáu hằng tuần (lịch tự động 8:52 sáng): viết 2 bài `planned` có ngày đăng sớm nhất, đưa lên WordPress ở dạng nháp bằng `python3 tools/blog_post.py draft <số bài>`, gửi anh Tin link xem trước.
+2. Anh Tin duyệt từng bài. Chỉ sau khi được duyệt mới chạy `python3 tools/blog_post.py schedule <số bài>` để WordPress tự đăng đúng ngày giờ trong lịch.
+3. Cũng trong lần chạy thứ Sáu: làm liên kết ngược cho các bài đã lên sóng trong tuần.
+4. Ngày 1 hằng tháng (lịch tự động 8:47 sáng): rà soát và cập nhật nội dung, gửi báo cáo.
+
 ## Cụm chủ đề (topic cluster)
 
 Mỗi cụm có một bài trụ cột (pillar) bao quát, các bài con đi sâu từng khía cạnh.
