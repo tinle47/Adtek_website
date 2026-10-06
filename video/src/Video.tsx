@@ -5,7 +5,7 @@ import { BarChart, ColumnChart, Exhibit, Waffle, type TimedCol, type TimedNote }
 import { CHAT_NOTE_AT, ChatScreen } from "./design/chat";
 import { Background, Caption, Fade, Headline, L, Logo, SiteFooter, clamp, useFonts } from "./design/frame";
 import { GoogleSerp, PhoneNote, SERP_NOTE_AT } from "./design/serp";
-import { timeline, type TimedScene } from "./timing";
+import { FPS, timeline, totalFrames, type TimedScene } from "./timing";
 import type { Scene, VideoProps, Visual } from "./types";
 
 const PHONE_H = 600;
@@ -106,6 +106,24 @@ const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) =>
   }
 };
 
+// Nhạc nền: nhỏ khi đang đọc, nhỉnh lên ở quãng nghỉ, chuyển dần trong RAMP khung hình.
+const MUSIC = "music/nhe-nhang.mp3";
+const MUSIC_UNDER_VOICE = 0.1;
+const MUSIC_ALONE = 0.2;
+const RAMP = 8;
+
+const Music: React.FC<{ src: string; sc: TimedScene[]; total: number }> = ({ src, sc, total }) => {
+  const speech = sc
+    .filter((s) => s.audio && s.words.length)
+    .map((s) => [s.from + s.words[0].start * FPS, s.from + s.words.at(-1)!.end * FPS]);
+  const volume = (f: number) => {
+    const gap = Math.min(RAMP, ...speech.map(([a, b]) => (f < a ? a - f : f > b ? f - b : 0)));
+    const level = MUSIC_UNDER_VOICE + (MUSIC_ALONE - MUSIC_UNDER_VOICE) * (gap / RAMP);
+    return level * interpolate(f, [0, 15, total - 30, total], [0, 1, 1, 0], clamp);
+  };
+  return <Audio src={staticFile(src)} volume={volume} />;
+};
+
 export const Video: React.FC<VideoProps> = (props) => {
   useFonts();
   const sc = timeline(props);
@@ -131,6 +149,7 @@ export const Video: React.FC<VideoProps> = (props) => {
         );
       })}
       <SiteFooter />
+      {props.script.music !== false && <Music src={props.script.music ?? MUSIC} sc={sc} total={totalFrames(props)} />}
     </AbsoluteFill>
   );
 };

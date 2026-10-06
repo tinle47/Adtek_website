@@ -55,6 +55,7 @@ export type Script = {
   post_url: string;
   caption: string;
   hashtags: string[];
+  music?: string | false; // nhạc nền trong public/, mặc định music/nhe-nhang.mp3, false để tắt
   scenes: Scene[];
 };
 

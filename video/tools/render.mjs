@@ -50,7 +50,7 @@ for (const file of files) {
     crf: 18,
     outputLocation: output,
     browserExecutable,
-    muted: !voice,
+    muted: !voice && script.music === false,
   });
   writeFileSync(
     path.join(OUT, `${script.id}.txt`),
