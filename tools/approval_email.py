@@ -15,7 +15,7 @@ from blog_post import find, load
 TO = "hi@tinle.co"
 DAYS = ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"]
 BTN = ("display:inline-block;padding:10px 18px;border-radius:6px;text-decoration:none;"
-       "font-weight:600;font-size:14px;margin:0 8px 8px 0;")
+       "font-weight:600;font-size:14px;")
 
 
 def when(post):
@@ -57,8 +57,13 @@ def card(post):
     <h2 style="margin:6px 0 10px;font-size:19px;line-height:1.35;color:#002D72">{e(post['title'])}</h2>
     <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:#333">{e(post.get('summary', ''))}</p>
     {f'<p style="margin:0 0 4px;font-size:14px;font-weight:600;color:#333">Cần anh xác nhận:</p><ul style="margin:0 0 14px;padding-left:20px;font-size:14px;line-height:1.6;color:#333">{confirm}</ul>' if confirm else ''}
-    <a href="{preview}" style="{BTN}background:#002D72;color:#fff">Xem trước bài viết</a>
-    <a href="{edit}" style="{BTN}background:#fff;color:#002D72;border:1px solid #002D72">Sửa trên WordPress (cần đăng nhập)</a>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0"><tr>
+      <td bgcolor="#002D72" style="background-color:#002D72;border-radius:6px">
+        <a href="{preview}" style="{BTN}color:#ffffff;background-color:#002D72;border:1px solid #002D72">Xem trước bài viết</a></td>
+      <td width="10"></td>
+      <td bgcolor="#ffffff" style="background-color:#ffffff;border-radius:6px">
+        <a href="{edit}" style="{BTN}color:#002D72;background-color:#ffffff;border:1px solid #002D72">Sửa trên WordPress (cần đăng nhập)</a></td>
+    </tr></table>
   </div>
 </div>"""
 
