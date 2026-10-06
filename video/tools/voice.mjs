@@ -8,7 +8,7 @@ import path from "node:path";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const KEY = process.env.ELEVENLABS_API_KEY;
 const VOICE = process.env.ELEVENLABS_VOICE_ID;
-const MODEL = process.env.ELEVENLABS_MODEL || "eleven_turbo_v2_5"; // dòng model hỗ trợ tiếng Việt
+const MODEL = process.env.ELEVENLABS_MODEL || "eleven_flash_v2_5"; // Flash v2.5 có hỗ trợ tiếng Việt (vi)
 
 if (!KEY || !VOICE) {
   console.error("Thiếu ELEVENLABS_API_KEY hoặc ELEVENLABS_VOICE_ID trong biến môi trường.");
