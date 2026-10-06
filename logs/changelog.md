@@ -21,3 +21,4 @@
 | 2026-10-05 17:30 | Chạy lại 30 SEO title còn thiếu (thuật ngữ, trang) | 30 bài glossary/trang | Đã áp dụng |
 | 2026-10-05 17:35 | Soạn phần ví dụ 3 KCN từ đề xuất 9/2026, bỏ ngân sách, giá thuê và chỉ số kết quả | Bài 6078 (file nguồn) | Thay bằng bản ẩn danh |
 | 2026-10-06 09:47 | Đăng phần "Ví dụ áp dụng: chiến lược digital cho ba khu công nghiệp của một chủ đầu tư miền Bắc" (phương án B, ẩn tên khách hàng và chi tiết nhận diện) | Bài 6078 | Đã đăng |
+| 2026-10-06 10:20 | Plugin adtek-seo-meta 1.3.1: sửa lỗi lưu SEO chuyên mục (tiêu đề và mô tả ghi đè nhau), gộp dữ liệu trước khi lưu | mu-plugins/adtek-seo-meta.php | Chờ upload |
