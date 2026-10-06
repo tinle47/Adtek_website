@@ -26,3 +26,16 @@
 | 2026-10-06 11:00 | Cập nhật SEO title và meta description cho 5 chuyên mục (Campaign Marketing, Case study, CRM, Digital Marketing, Growth Marketing), lưu lại term để Yoast làm mới indexable; apply_titles.py tự làm bước này | Chuyên mục 190, 197, 184, 185, 143 | Đã áp dụng |
 | 2026-10-06 11:15 | Đổi đường dẫn trang Báo chí tiếng Anh từ /en/bao-chi/ sang /en/press/ (link cũ tự chuyển 301 sang link mới, footer tiếng Anh đã cập nhật) | Trang 5242 | Đã áp dụng |
 | 2026-10-06 11:40 | (Anh Tin) Cập nhật bộ WPML lên 5.1.0 (Multilingual CMS, String Translation, WPML SEO, CF7 Multilingual); em kiểm tra lại trang vi/en, sitemap /en/, plugin SEO 1.3.2 đều bình thường | Plugins | Đã kiểm tra |
+| 2026-10-06 12:00 | Lập kế hoạch blog 32 bài (2 bài/tuần, 13/10/2026 đến 28/1/2027), 6 cụm chủ đề, quy tắc liên kết và quy trình cập nhật nội dung | content/editorial/ | Đã duyệt |
+| 2026-10-06 13:10 | Thêm ghi chú "bài viết năm 2022" đầu 4 bài NFT/Metaverse (backup trong content/backups) | Bài 4072, 4042, 4034, 4012 | Đã áp dụng |
+| 2026-10-06 13:10 | Tạo lịch tự động: viết 2 bài mỗi thứ Sáu 8:52, rà soát nội dung ngày 1 hằng tháng 8:47; thêm tools/blog_post.py (ảnh bìa, nháp, đặt lịch) | content/editorial, tools | Đã áp dụng |
+| 2026-10-06 13:40 | Tạo bản nháp bài 1 "Kế hoạch 11.11: checklist 30 ngày cho Shopee, TikTok Shop và 12.12", chờ duyệt | Bài 6086, media 6085 | Nháp |
+| 2026-10-06 14:10 | Tạo bản nháp bài 2 "Quảng cáo Meta 2026: Andromeda, Advantage+ và chiến lược creative" (trụ cột cụm C2), chờ duyệt | Bài 6088 | Nháp |
+| 2026-10-06 15:00 | Anh Tin duyệt bài 1 và 2; gắn nofollow cho toàn bộ link ra ngoài (blog_post.py tự gắn cho các bài sau); đặt lịch đăng 13/10 và 15/10 lúc 8:00 | Bài 6086, 6088 | Đã lên lịch |
+| 2026-10-06 15:20 | Thêm nhắc duyệt qua email hi@tinle.co và push notification cho 2 lịch tự động; gửi email thử thành công | Lịch tự động | Đã áp dụng |
+| 2026-10-06 15:40 | Thêm mẫu email nhắc duyệt có ảnh bìa, link xem trước và link sửa (tools/approval_email.py), gửi email mẫu | tools, lịch tự động thứ Sáu | Đã áp dụng |
+| 2026-10-06 16:10 | Thêm mu-plugin adtek-public-preview.php (link xem trước không cần đăng nhập, hạn 7 ngày) theo phương án A anh Tin duyệt; email nhắc duyệt tự dùng link này khi plugin đã cài | mu-plugins, tools/approval_email.py | Đã upload, đã kiểm tra |
+| 2026-10-06 16:30 | Kiểm tra link xem trước không cần đăng nhập: đúng mã trả 200 kèm noindex và no-cache, sai mã hoặc không mã trả 404; gửi email mẫu có link mới | Bài 6086, 6088 | Đã kiểm tra |
+| 2026-10-06 16:45 | Ghi rõ "cần đăng nhập" trên nút Sửa trong email nhắc duyệt để phân biệt với nút Xem trước | tools/approval_email.py | Đã áp dụng |
+| 2026-10-06 17:00 | Sửa nút trong email nhắc duyệt: dùng ô bảng có màu nền (bgcolor) để nút Xem trước luôn hiện nền xanh trên mọi ứng dụng email | tools/approval_email.py | Đã áp dụng |
+| 2026-10-06 17:20 | Thêm hạn duyệt D+1: email ghi hạn chót, quá 24 giờ chưa phản hồi thì tự đặt lịch đăng theo kế hoạch (blog_post.py auto) và báo anh Tin; thêm lệnh changes, unschedule | tools, lịch tự động thứ Sáu, README | Đã áp dụng |

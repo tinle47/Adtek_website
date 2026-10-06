@@ -11,3 +11,13 @@ Hosting loại bỏ header `Authorization` từ kết nối bên ngoài, nên Ap
 - Khi header tới được WordPress, response có thêm `X-Adtek-Auth-Received: 1`.
 
 Cài đặt: upload file vào `httpdocs/wp-content/mu-plugins/` (tạo thư mục nếu chưa có). Plugin tự kích hoạt, xem tại Plugins > Must-Use.
+
+## wordpress/mu-plugins/adtek-public-preview.php
+
+Tạo link xem trước bản nháp không cần đăng nhập, dùng trong email nhắc duyệt bài (`tools/approval_email.py`).
+
+- `POST /wp-json/adtek/v1/preview/<id>` (tham số `days`, mặc định 7, tối đa 30) trả link dạng `https://adtek.agency/?p=<id>&preview=true&adtek_preview=<mã>`. Chỉ tài khoản có quyền sửa bài mới tạo được.
+- `DELETE /wp-json/adtek/v1/preview/<id>` thu hồi link.
+- Link chỉ hiện bài nháp, chờ duyệt hoặc đã hẹn giờ khi mã khớp và còn hạn. Trang xem trước có noindex, không lưu cache (kể cả LiteSpeed Cache).
+
+Cài đặt: upload file vào `httpdocs/wp-content/mu-plugins/`. Khi chưa cài, email tự dùng link xem trước cần đăng nhập.
