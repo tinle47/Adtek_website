@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Adtek SEO Meta REST
  * Description: Cho phép đọc và sửa SEO title, meta description, noindex của Yoast qua REST API (bài viết, trang, chuyên mục; chỉ người có quyền sửa).
- * Version:     1.3.1
+ * Version:     1.3.2
  * Author:      Adtek
  */
 
@@ -98,20 +98,24 @@ add_action(
 					return array(
 						'title' => (string) WPSEO_Taxonomy_Meta::get_term_meta( $term['id'], 'category', 'title' ),
 						'desc'  => (string) WPSEO_Taxonomy_Meta::get_term_meta( $term['id'], 'category', 'desc' ),
+						'v'     => '1.3.2',
 					);
 				},
 				'update_callback' => static function ( $value, $term ) {
 					if ( ! class_exists( 'WPSEO_Taxonomy_Meta' ) || ! current_user_can( 'manage_categories' ) ) {
 						return new WP_Error( 'adtek_seo_forbidden', 'Không thể cập nhật SEO chuyên mục.', array( 'status' => 403 ) );
 					}
-					// set_value() của Yoast thay cả bộ meta của term, nên gộp với dữ liệu đang có rồi lưu một lần.
+					// Yoast lưu cả bộ meta của term một lần, nên phải gộp giá trị đang có với giá trị mới rồi mới lưu.
 					$option  = get_option( 'wpseo_taxonomy_meta' );
 					$current = ( is_array( $option ) && isset( $option['category'][ $term->term_id ] ) && is_array( $option['category'][ $term->term_id ] ) )
 						? $option['category'][ $term->term_id ]
 						: array();
 					foreach ( array( 'title' => 'wpseo_title', 'desc' => 'wpseo_desc' ) as $field => $key ) {
+						$existing = (string) WPSEO_Taxonomy_Meta::get_term_meta( $term->term_id, 'category', $field );
 						if ( isset( $value[ $field ] ) ) {
 							$current[ $key ] = sanitize_text_field( $value[ $field ] );
+						} elseif ( '' !== $existing ) {
+							$current[ $key ] = $existing;
 						}
 					}
 					if ( method_exists( 'WPSEO_Taxonomy_Meta', 'set_values' ) ) {
