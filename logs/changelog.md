@@ -33,4 +33,5 @@
 | 2026-10-06 15:00 | Anh Tin duyệt bài 1 và 2; gắn nofollow cho toàn bộ link ra ngoài (blog_post.py tự gắn cho các bài sau); đặt lịch đăng 13/10 và 15/10 lúc 8:00 | Bài 6086, 6088 | Đã lên lịch |
 | 2026-10-06 15:20 | Thêm nhắc duyệt qua email hi@tinle.co và push notification cho 2 lịch tự động; gửi email thử thành công | Lịch tự động | Đã áp dụng |
 | 2026-10-06 15:40 | Thêm mẫu email nhắc duyệt có ảnh bìa, link xem trước và link sửa (tools/approval_email.py), gửi email mẫu | tools, lịch tự động thứ Sáu | Đã áp dụng |
-| 2026-10-06 16:10 | Thêm mu-plugin adtek-public-preview.php (link xem trước không cần đăng nhập, hạn 7 ngày) theo phương án A anh Tin duyệt; email nhắc duyệt tự dùng link này khi plugin đã cài | mu-plugins, tools/approval_email.py | Chờ upload |
+| 2026-10-06 16:10 | Thêm mu-plugin adtek-public-preview.php (link xem trước không cần đăng nhập, hạn 7 ngày) theo phương án A anh Tin duyệt; email nhắc duyệt tự dùng link này khi plugin đã cài | mu-plugins, tools/approval_email.py | Đã upload, đã kiểm tra |
+| 2026-10-06 16:30 | Kiểm tra link xem trước không cần đăng nhập: đúng mã trả 200 kèm noindex và no-cache, sai mã hoặc không mã trả 404; gửi email mẫu có link mới | Bài 6086, 6088 | Đã kiểm tra |
