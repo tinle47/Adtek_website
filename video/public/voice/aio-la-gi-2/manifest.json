@@ -1,0 +1,595 @@
+{
+ "model": "eleven_v4",
+ "scenes": [
+  {
+   "text": "Muốn được AI nhắc tên? Backlink không còn là thứ quan trọng nhất.",
+   "file": "voice/aio-la-gi-2/0.mp3",
+   "duration": 4.08,
+   "words": [
+    {
+     "text": "Muốn",
+     "start": 0,
+     "end": 0.2
+    },
+    {
+     "text": "được",
+     "start": 0.24,
+     "end": 0.4
+    },
+    {
+     "text": "AI",
+     "start": 0.48,
+     "end": 0.72
+    },
+    {
+     "text": "nhắc",
+     "start": 0.76,
+     "end": 0.88
+    },
+    {
+     "text": "tên?",
+     "start": 0.96,
+     "end": 1.28
+    },
+    {
+     "text": "Backlink",
+     "start": 1.76,
+     "end": 2.24
+    },
+    {
+     "text": "không",
+     "start": 2.32,
+     "end": 2.48
+    },
+    {
+     "text": "còn",
+     "start": 2.64,
+     "end": 2.8
+    },
+    {
+     "text": "là",
+     "start": 2.88,
+     "end": 2.96
+    },
+    {
+     "text": "thứ",
+     "start": 3,
+     "end": 3.12
+    },
+    {
+     "text": "quan",
+     "start": 3.2,
+     "end": 3.36
+    },
+    {
+     "text": "trọng",
+     "start": 3.4,
+     "end": 3.6
+    },
+    {
+     "text": "nhất.",
+     "start": 3.64,
+     "end": 4.08
+    }
+   ]
+  },
+  {
+   "text": "Ahrefs phân tích 75,000 thương hiệu. Yếu tố mạnh nhất là số lần thương hiệu được nhắc tên trên web, mạnh gần gấp ba backlink.",
+   "file": "voice/aio-la-gi-2/1.mp3",
+   "duration": 8.64,
+   "words": [
+    {
+     "text": "Ahrefs",
+     "start": 0,
+     "end": 0.56
+    },
+    {
+     "text": "phân",
+     "start": 0.64,
+     "end": 0.8
+    },
+    {
+     "text": "tích",
+     "start": 0.88,
+     "end": 1.12
+    },
+    {
+     "text": "75,000",
+     "start": 1.2,
+     "end": 1.84
+    },
+    {
+     "text": "thương",
+     "start": 1.92,
+     "end": 2.08
+    },
+    {
+     "text": "hiệu.",
+     "start": 2.16,
+     "end": 2.96
+    },
+    {
+     "text": "Yếu",
+     "start": 3,
+     "end": 3.08
+    },
+    {
+     "text": "tố",
+     "start": 3.12,
+     "end": 3.28
+    },
+    {
+     "text": "mạnh",
+     "start": 3.32,
+     "end": 3.52
+    },
+    {
+     "text": "nhất",
+     "start": 3.6,
+     "end": 3.84
+    },
+    {
+     "text": "là",
+     "start": 3.92,
+     "end": 4.08
+    },
+    {
+     "text": "số",
+     "start": 4.16,
+     "end": 4.32
+    },
+    {
+     "text": "lần",
+     "start": 4.36,
+     "end": 4.56
+    },
+    {
+     "text": "thương",
+     "start": 4.6,
+     "end": 4.72
+    },
+    {
+     "text": "hiệu",
+     "start": 4.8,
+     "end": 4.96
+    },
+    {
+     "text": "được",
+     "start": 5,
+     "end": 5.12
+    },
+    {
+     "text": "nhắc",
+     "start": 5.2,
+     "end": 5.36
+    },
+    {
+     "text": "tên",
+     "start": 5.44,
+     "end": 5.6
+    },
+    {
+     "text": "trên",
+     "start": 5.64,
+     "end": 5.84
+    },
+    {
+     "text": "web,",
+     "start": 5.96,
+     "end": 6.48
+    },
+    {
+     "text": "mạnh",
+     "start": 6.56,
+     "end": 6.8
+    },
+    {
+     "text": "gần",
+     "start": 6.84,
+     "end": 7.04
+    },
+    {
+     "text": "gấp",
+     "start": 7.08,
+     "end": 7.36
+    },
+    {
+     "text": "ba",
+     "start": 7.44,
+     "end": 7.52
+    },
+    {
+     "text": "backlink.",
+     "start": 7.6,
+     "end": 8.64
+    }
+   ]
+  },
+  {
+   "text": "Nghiên cứu GEO từ Princeton cũng cho thấy: thêm số liệu, trích dẫn chuyên gia và nguồn rõ ràng giúp tăng hiển thị tới khoảng 40%.",
+   "file": "voice/aio-la-gi-2/2.mp3",
+   "duration": 8.64,
+   "words": [
+    {
+     "text": "Nghiên",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "cứu",
+     "start": 0.24,
+     "end": 0.4
+    },
+    {
+     "text": "GEO",
+     "start": 0.48,
+     "end": 1.04
+    },
+    {
+     "text": "từ",
+     "start": 1.2,
+     "end": 1.28
+    },
+    {
+     "text": "Princeton",
+     "start": 1.44,
+     "end": 2
+    },
+    {
+     "text": "cũng",
+     "start": 2.04,
+     "end": 2.16
+    },
+    {
+     "text": "cho",
+     "start": 2.24,
+     "end": 2.32
+    },
+    {
+     "text": "thấy:",
+     "start": 2.4,
+     "end": 2.72
+    },
+    {
+     "text": "thêm",
+     "start": 3.2,
+     "end": 3.36
+    },
+    {
+     "text": "số",
+     "start": 3.44,
+     "end": 3.52
+    },
+    {
+     "text": "liệu,",
+     "start": 3.6,
+     "end": 4.16
+    },
+    {
+     "text": "trích",
+     "start": 4.2,
+     "end": 4.32
+    },
+    {
+     "text": "dẫn",
+     "start": 4.4,
+     "end": 4.56
+    },
+    {
+     "text": "chuyên",
+     "start": 4.64,
+     "end": 4.8
+    },
+    {
+     "text": "gia",
+     "start": 4.88,
+     "end": 5.12
+    },
+    {
+     "text": "và",
+     "start": 5.28,
+     "end": 5.36
+    },
+    {
+     "text": "nguồn",
+     "start": 5.44,
+     "end": 5.6
+    },
+    {
+     "text": "rõ",
+     "start": 5.68,
+     "end": 5.84
+    },
+    {
+     "text": "ràng",
+     "start": 5.92,
+     "end": 6.16
+    },
+    {
+     "text": "giúp",
+     "start": 6.4,
+     "end": 6.56
+    },
+    {
+     "text": "tăng",
+     "start": 6.64,
+     "end": 6.8
+    },
+    {
+     "text": "hiển",
+     "start": 6.84,
+     "end": 7.04
+    },
+    {
+     "text": "thị",
+     "start": 7.08,
+     "end": 7.2
+    },
+    {
+     "text": "tới",
+     "start": 7.28,
+     "end": 7.44
+    },
+    {
+     "text": "khoảng",
+     "start": 7.467,
+     "end": 7.68
+    },
+    {
+     "text": "40%.",
+     "start": 7.76,
+     "end": 8.64
+    }
+   ]
+  },
+  {
+   "text": "Vậy hãy để người khác nhắc tên bạn: báo chí, sự kiện ngành, các bài so sánh. Và đưa số liệu có nguồn vào mọi nội dung.",
+   "file": "voice/aio-la-gi-2/3.mp3",
+   "duration": 8.48,
+   "words": [
+    {
+     "text": "Vậy",
+     "start": 0,
+     "end": 0.32
+    },
+    {
+     "text": "hãy",
+     "start": 0.56,
+     "end": 0.68
+    },
+    {
+     "text": "để",
+     "start": 0.72,
+     "end": 0.88
+    },
+    {
+     "text": "người",
+     "start": 0.92,
+     "end": 1.12
+    },
+    {
+     "text": "khác",
+     "start": 1.16,
+     "end": 1.36
+    },
+    {
+     "text": "nhắc",
+     "start": 1.4,
+     "end": 1.6
+    },
+    {
+     "text": "tên",
+     "start": 1.64,
+     "end": 1.76
+    },
+    {
+     "text": "bạn:",
+     "start": 1.84,
+     "end": 2.16
+    },
+    {
+     "text": "báo",
+     "start": 2.64,
+     "end": 2.8
+    },
+    {
+     "text": "chí,",
+     "start": 2.88,
+     "end": 3.44
+    },
+    {
+     "text": "sự",
+     "start": 3.48,
+     "end": 3.6
+    },
+    {
+     "text": "kiện",
+     "start": 3.68,
+     "end": 3.84
+    },
+    {
+     "text": "ngành,",
+     "start": 3.88,
+     "end": 4.48
+    },
+    {
+     "text": "các",
+     "start": 4.52,
+     "end": 4.64
+    },
+    {
+     "text": "bài",
+     "start": 4.72,
+     "end": 4.8
+    },
+    {
+     "text": "so",
+     "start": 4.88,
+     "end": 5.04
+    },
+    {
+     "text": "sánh.",
+     "start": 5.12,
+     "end": 5.44
+    },
+    {
+     "text": "Và",
+     "start": 6,
+     "end": 6.16
+    },
+    {
+     "text": "đưa",
+     "start": 6.24,
+     "end": 6.4
+    },
+    {
+     "text": "số",
+     "start": 6.44,
+     "end": 6.56
+    },
+    {
+     "text": "liệu",
+     "start": 6.64,
+     "end": 6.8
+    },
+    {
+     "text": "có",
+     "start": 6.88,
+     "end": 6.96
+    },
+    {
+     "text": "nguồn",
+     "start": 7.04,
+     "end": 7.28
+    },
+    {
+     "text": "vào",
+     "start": 7.36,
+     "end": 7.52
+    },
+    {
+     "text": "mọi",
+     "start": 7.6,
+     "end": 7.84
+    },
+    {
+     "text": "nội",
+     "start": 7.88,
+     "end": 8
+    },
+    {
+     "text": "dung.",
+     "start": 8.04,
+     "end": 8.48
+    }
+   ]
+  },
+  {
+   "text": "AI học về bạn qua những gì người khác viết. Xem bài đầy đủ ở link bio, và follow Adtek.",
+   "file": "voice/aio-la-gi-2/4.mp3",
+   "duration": 6.56,
+   "words": [
+    {
+     "text": "AI",
+     "start": 0,
+     "end": 0.4
+    },
+    {
+     "text": "học",
+     "start": 0.44,
+     "end": 0.64
+    },
+    {
+     "text": "về",
+     "start": 0.68,
+     "end": 0.8
+    },
+    {
+     "text": "bạn",
+     "start": 0.88,
+     "end": 1.2
+    },
+    {
+     "text": "qua",
+     "start": 1.28,
+     "end": 1.36
+    },
+    {
+     "text": "những",
+     "start": 1.4,
+     "end": 1.52
+    },
+    {
+     "text": "gì",
+     "start": 1.6,
+     "end": 1.76
+    },
+    {
+     "text": "người",
+     "start": 1.8,
+     "end": 1.92
+    },
+    {
+     "text": "khác",
+     "start": 2,
+     "end": 2.16
+    },
+    {
+     "text": "viết.",
+     "start": 2.24,
+     "end": 3.12
+    },
+    {
+     "text": "Xem",
+     "start": 3.2,
+     "end": 3.36
+    },
+    {
+     "text": "bài",
+     "start": 3.4,
+     "end": 3.52
+    },
+    {
+     "text": "đầy",
+     "start": 3.6,
+     "end": 3.68
+    },
+    {
+     "text": "đủ",
+     "start": 3.76,
+     "end": 4
+    },
+    {
+     "text": "ở",
+     "start": 4.08,
+     "end": 4.12
+    },
+    {
+     "text": "link",
+     "start": 4.16,
+     "end": 4.32
+    },
+    {
+     "text": "bio,",
+     "start": 4.4,
+     "end": 5.08
+    },
+    {
+     "text": "và",
+     "start": 5.12,
+     "end": 5.36
+    },
+    {
+     "text": "follow",
+     "start": 5.52,
+     "end": 5.68
+    },
+    {
+     "text": "Adtek.",
+     "start": 5.76,
+     "end": 6.56
+    }
+   ]
+  }
+ ]
+}

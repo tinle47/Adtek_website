@@ -1,0 +1,572 @@
+{
+ "model": "eleven_v4",
+ "scenes": [
+  {
+   "text": "Khách hàng vẫn tìm trên Google. Nhưng họ đang ngừng bấm vào bạn.",
+   "file": "voice/aio-la-gi-1/0.mp3",
+   "duration": 4.32,
+   "words": [
+    {
+     "text": "Khách",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "hàng",
+     "start": 0.24,
+     "end": 0.48
+    },
+    {
+     "text": "vẫn",
+     "start": 0.56,
+     "end": 0.72
+    },
+    {
+     "text": "tìm",
+     "start": 0.8,
+     "end": 0.96
+    },
+    {
+     "text": "trên",
+     "start": 1.04,
+     "end": 1.2
+    },
+    {
+     "text": "Google.",
+     "start": 1.44,
+     "end": 1.96
+    },
+    {
+     "text": "Nhưng",
+     "start": 2.24,
+     "end": 2.48
+    },
+    {
+     "text": "họ",
+     "start": 2.72,
+     "end": 2.88
+    },
+    {
+     "text": "đang",
+     "start": 2.92,
+     "end": 3.04
+    },
+    {
+     "text": "ngừng",
+     "start": 3.12,
+     "end": 3.36
+    },
+    {
+     "text": "bấm",
+     "start": 3.4,
+     "end": 3.6
+    },
+    {
+     "text": "vào",
+     "start": 3.64,
+     "end": 3.76
+    },
+    {
+     "text": "bạn.",
+     "start": 3.8,
+     "end": 4.32
+    }
+   ]
+  },
+  {
+   "text": "Pew Research theo dõi 900 người dùng. Khi Google hiện tóm tắt AI, tỷ lệ bấm vào kết quả giảm từ 15% xuống 8%.",
+   "file": "voice/aio-la-gi-1/1.mp3",
+   "duration": 9.52,
+   "words": [
+    {
+     "text": "Pew",
+     "start": 0,
+     "end": 0.24
+    },
+    {
+     "text": "Research",
+     "start": 0.52,
+     "end": 0.8
+    },
+    {
+     "text": "theo",
+     "start": 0.96,
+     "end": 1.12
+    },
+    {
+     "text": "dõi",
+     "start": 1.16,
+     "end": 1.36
+    },
+    {
+     "text": "900",
+     "start": 1.44,
+     "end": 1.6
+    },
+    {
+     "text": "người",
+     "start": 1.68,
+     "end": 2.08
+    },
+    {
+     "text": "dùng.",
+     "start": 2.12,
+     "end": 2.96
+    },
+    {
+     "text": "Khi",
+     "start": 3,
+     "end": 3.12
+    },
+    {
+     "text": "Google",
+     "start": 3.32,
+     "end": 3.52
+    },
+    {
+     "text": "hiện",
+     "start": 3.6,
+     "end": 3.84
+    },
+    {
+     "text": "tóm",
+     "start": 3.88,
+     "end": 4
+    },
+    {
+     "text": "tắt",
+     "start": 4.08,
+     "end": 4.24
+    },
+    {
+     "text": "AI,",
+     "start": 4.32,
+     "end": 5.12
+    },
+    {
+     "text": "tỷ",
+     "start": 5.2,
+     "end": 5.28
+    },
+    {
+     "text": "lệ",
+     "start": 5.36,
+     "end": 5.52
+    },
+    {
+     "text": "bấm",
+     "start": 5.56,
+     "end": 5.76
+    },
+    {
+     "text": "vào",
+     "start": 5.8,
+     "end": 5.92
+    },
+    {
+     "text": "kết",
+     "start": 5.96,
+     "end": 6.16
+    },
+    {
+     "text": "quả",
+     "start": 6.2,
+     "end": 6.48
+    },
+    {
+     "text": "giảm",
+     "start": 6.56,
+     "end": 6.8
+    },
+    {
+     "text": "từ",
+     "start": 6.84,
+     "end": 6.96
+    },
+    {
+     "text": "15%",
+     "start": 7.04,
+     "end": 7.2
+    },
+    {
+     "text": "xuống",
+     "start": 7.24,
+     "end": 8.32
+    },
+    {
+     "text": "8%.",
+     "start": 8.36,
+     "end": 9.52
+    }
+   ]
+  },
+  {
+   "text": "Còn link nằm ngay trong tóm tắt AI? Chỉ khoảng 1% lượt được bấm.",
+   "file": "voice/aio-la-gi-1/2.mp3",
+   "duration": 4.96,
+   "words": [
+    {
+     "text": "Còn",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "link",
+     "start": 0.24,
+     "end": 0.48
+    },
+    {
+     "text": "nằm",
+     "start": 0.52,
+     "end": 0.72
+    },
+    {
+     "text": "ngay",
+     "start": 0.8,
+     "end": 0.96
+    },
+    {
+     "text": "trong",
+     "start": 1.04,
+     "end": 1.2
+    },
+    {
+     "text": "tóm",
+     "start": 1.24,
+     "end": 1.36
+    },
+    {
+     "text": "tắt",
+     "start": 1.44,
+     "end": 1.6
+    },
+    {
+     "text": "AI?",
+     "start": 1.68,
+     "end": 2.56
+    },
+    {
+     "text": "Chỉ",
+     "start": 2.64,
+     "end": 2.76
+    },
+    {
+     "text": "khoảng",
+     "start": 2.8,
+     "end": 3.04
+    },
+    {
+     "text": "1%",
+     "start": 3.12,
+     "end": 3.76
+    },
+    {
+     "text": "lượt",
+     "start": 3.84,
+     "end": 4
+    },
+    {
+     "text": "được",
+     "start": 4.04,
+     "end": 4.16
+    },
+    {
+     "text": "bấm.",
+     "start": 4.24,
+     "end": 4.96
+    }
+   ]
+  },
+  {
+   "text": "Nhưng thương hiệu được AI trích dẫn lại nhận nhiều lượt nhấp hơn khoảng 35%.",
+   "file": "voice/aio-la-gi-1/3.mp3",
+   "duration": 5.04,
+   "words": [
+    {
+     "text": "Nhưng",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "thương",
+     "start": 0.2,
+     "end": 0.32
+    },
+    {
+     "text": "hiệu",
+     "start": 0.4,
+     "end": 0.64
+    },
+    {
+     "text": "được",
+     "start": 0.68,
+     "end": 0.88
+    },
+    {
+     "text": "AI",
+     "start": 0.96,
+     "end": 1.28
+    },
+    {
+     "text": "trích",
+     "start": 1.32,
+     "end": 1.44
+    },
+    {
+     "text": "dẫn",
+     "start": 1.52,
+     "end": 1.84
+    },
+    {
+     "text": "lại",
+     "start": 2.08,
+     "end": 2.24
+    },
+    {
+     "text": "nhận",
+     "start": 2.28,
+     "end": 2.56
+    },
+    {
+     "text": "nhiều",
+     "start": 2.6,
+     "end": 2.8
+    },
+    {
+     "text": "lượt",
+     "start": 2.84,
+     "end": 2.96
+    },
+    {
+     "text": "nhấp",
+     "start": 3.04,
+     "end": 3.2
+    },
+    {
+     "text": "hơn",
+     "start": 3.28,
+     "end": 3.52
+    },
+    {
+     "text": "khoảng",
+     "start": 3.6,
+     "end": 3.84
+    },
+    {
+     "text": "35%.",
+     "start": 4,
+     "end": 5.04
+    }
+   ]
+  },
+  {
+   "text": "Cuộc chơi đã đổi. Không còn là đứng thứ mấy, mà là có mặt trong câu trả lời của AI hay không. Việc đó gọi là AIO.",
+   "file": "voice/aio-la-gi-1/4.mp3",
+   "duration": 8.8,
+   "words": [
+    {
+     "text": "Cuộc",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "chơi",
+     "start": 0.24,
+     "end": 0.48
+    },
+    {
+     "text": "đã",
+     "start": 0.56,
+     "end": 0.64
+    },
+    {
+     "text": "đổi.",
+     "start": 0.72,
+     "end": 1.52
+    },
+    {
+     "text": "Không",
+     "start": 1.64,
+     "end": 1.76
+    },
+    {
+     "text": "còn",
+     "start": 1.84,
+     "end": 2
+    },
+    {
+     "text": "là",
+     "start": 2.08,
+     "end": 2.16
+    },
+    {
+     "text": "đứng",
+     "start": 2.2,
+     "end": 2.32
+    },
+    {
+     "text": "thứ",
+     "start": 2.36,
+     "end": 2.48
+    },
+    {
+     "text": "mấy,",
+     "start": 2.56,
+     "end": 3.2
+    },
+    {
+     "text": "mà",
+     "start": 3.227,
+     "end": 3.28
+    },
+    {
+     "text": "là",
+     "start": 3.36,
+     "end": 3.52
+    },
+    {
+     "text": "có",
+     "start": 3.6,
+     "end": 3.76
+    },
+    {
+     "text": "mặt",
+     "start": 3.8,
+     "end": 4
+    },
+    {
+     "text": "trong",
+     "start": 4.04,
+     "end": 4.16
+    },
+    {
+     "text": "câu",
+     "start": 4.2,
+     "end": 4.32
+    },
+    {
+     "text": "trả",
+     "start": 4.36,
+     "end": 4.48
+    },
+    {
+     "text": "lời",
+     "start": 4.56,
+     "end": 4.72
+    },
+    {
+     "text": "của",
+     "start": 4.76,
+     "end": 4.88
+    },
+    {
+     "text": "AI",
+     "start": 4.96,
+     "end": 5.28
+    },
+    {
+     "text": "hay",
+     "start": 5.36,
+     "end": 5.44
+    },
+    {
+     "text": "không.",
+     "start": 5.52,
+     "end": 6.32
+    },
+    {
+     "text": "Việc",
+     "start": 6.4,
+     "end": 6.56
+    },
+    {
+     "text": "đó",
+     "start": 6.6,
+     "end": 6.88
+    },
+    {
+     "text": "gọi",
+     "start": 6.96,
+     "end": 7.12
+    },
+    {
+     "text": "là",
+     "start": 7.2,
+     "end": 7.44
+    },
+    {
+     "text": "AIO.",
+     "start": 7.52,
+     "end": 8.8
+    }
+   ]
+  },
+  {
+   "text": "Xem cách làm AIO đầy đủ ở link bio, và follow Adtek.",
+   "file": "voice/aio-la-gi-1/5.mp3",
+   "duration": 4.56,
+   "words": [
+    {
+     "text": "Xem",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "cách",
+     "start": 0.24,
+     "end": 0.4
+    },
+    {
+     "text": "làm",
+     "start": 0.48,
+     "end": 0.72
+    },
+    {
+     "text": "AIO",
+     "start": 0.8,
+     "end": 1.36
+    },
+    {
+     "text": "đầy",
+     "start": 1.44,
+     "end": 1.52
+    },
+    {
+     "text": "đủ",
+     "start": 1.68,
+     "end": 1.92
+    },
+    {
+     "text": "ở",
+     "start": 2,
+     "end": 2.08
+    },
+    {
+     "text": "link",
+     "start": 2.2,
+     "end": 2.32
+    },
+    {
+     "text": "bio,",
+     "start": 2.52,
+     "end": 3.12
+    },
+    {
+     "text": "và",
+     "start": 3.16,
+     "end": 3.28
+    },
+    {
+     "text": "follow",
+     "start": 3.44,
+     "end": 3.76
+    },
+    {
+     "text": "Adtek.",
+     "start": 3.84,
+     "end": 4.56
+    }
+   ]
+  }
+ ]
+}
