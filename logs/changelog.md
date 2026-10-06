@@ -22,4 +22,5 @@
 | 2026-10-05 17:35 | Soạn phần ví dụ 3 KCN từ đề xuất 9/2026, bỏ ngân sách, giá thuê và chỉ số kết quả | Bài 6078 (file nguồn) | Thay bằng bản ẩn danh |
 | 2026-10-06 09:47 | Đăng phần "Ví dụ áp dụng: chiến lược digital cho ba khu công nghiệp của một chủ đầu tư miền Bắc" (phương án B, ẩn tên khách hàng và chi tiết nhận diện) | Bài 6078 | Đã đăng |
 | 2026-10-06 10:20 | Plugin adtek-seo-meta 1.3.1: sửa lỗi lưu SEO chuyên mục (tiêu đề và mô tả ghi đè nhau), gộp dữ liệu trước khi lưu | mu-plugins/adtek-seo-meta.php | Đã upload, lỗi vẫn còn |
-| 2026-10-06 10:40 | Plugin adtek-seo-meta 1.3.2: đọc giá trị cũ bằng hàm Yoast trước khi gộp, trả số phiên bản trong trường adtek_seo để kiểm tra | mu-plugins/adtek-seo-meta.php | Chờ upload |
+| 2026-10-06 10:40 | Plugin adtek-seo-meta 1.3.2: đọc giá trị cũ bằng hàm Yoast trước khi gộp, trả số phiên bản trong trường adtek_seo để kiểm tra | mu-plugins/adtek-seo-meta.php | Đã upload, chạy đúng |
+| 2026-10-06 11:00 | Cập nhật SEO title và meta description cho 5 chuyên mục (Campaign Marketing, Case study, CRM, Digital Marketing, Growth Marketing), lưu lại term để Yoast làm mới indexable; apply_titles.py tự làm bước này | Chuyên mục 190, 197, 184, 185, 143 | Đã áp dụng |

@@ -33,6 +33,10 @@ def main():
                 seo = {"title": title, "desc": cat_desc.get(pid, "")}
                 r = api("POST", f"categories/{pid}?_fields=id,adtek_seo", {"adtek_seo": seo})
                 ok = (r.get("adtek_seo") or {}).get("title") == title
+                # Yoast chỉ dựng lại indexable khi term được lưu (edited_term), mà REST lưu term
+                # trước khi ghi adtek_seo, nên lưu lại term lần nữa để trang hiển thị giá trị mới.
+                cur = api("GET", f"categories/{pid}?context=edit&_fields=description")
+                api("POST", f"categories/{pid}?_fields=id", {"description": cur.get("description", "")})
             else:
                 r = api("POST", f"{group}/{pid}?_fields=id,meta", {"meta": {"_yoast_wpseo_title": title}})
                 ok = r.get("meta", {}).get("_yoast_wpseo_title") == title
