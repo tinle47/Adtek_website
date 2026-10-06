@@ -32,3 +32,4 @@
 | 2026-10-06 14:10 | Tạo bản nháp bài 2 "Quảng cáo Meta 2026: Andromeda, Advantage+ và chiến lược creative" (trụ cột cụm C2), chờ duyệt | Bài 6088 | Nháp |
 | 2026-10-06 15:00 | Anh Tin duyệt bài 1 và 2; gắn nofollow cho toàn bộ link ra ngoài (blog_post.py tự gắn cho các bài sau); đặt lịch đăng 13/10 và 15/10 lúc 8:00 | Bài 6086, 6088 | Đã lên lịch |
 | 2026-10-06 15:20 | Thêm nhắc duyệt qua email hi@tinle.co và push notification cho 2 lịch tự động; gửi email thử thành công | Lịch tự động | Đã áp dụng |
+| 2026-10-06 15:40 | Thêm mẫu email nhắc duyệt có ảnh bìa, link xem trước và link sửa (tools/approval_email.py), gửi email mẫu | tools, lịch tự động thứ Sáu | Đã áp dụng |
