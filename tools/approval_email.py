@@ -5,6 +5,7 @@ Cách dùng: python3 tools/approval_email.py 3 4  -> in JSON {to, subject, body,
 """
 import html
 import json
+import subprocess
 import sys
 from datetime import date
 
@@ -22,10 +23,25 @@ def when(post):
     return f"{DAYS[d.weekday()]} {d.day}/{d.month}, {post['time']}"
 
 
+def public_preview(pid, days=7):
+    """Link xem trước không cần đăng nhập (mu-plugin adtek-public-preview.php). None nếu plugin chưa cài."""
+    r = subprocess.run(["curl", "-sS", "--max-time", "60", "-X", "POST",
+                        f"https://adtek.agency/wp-json/adtek/v1/preview/{pid}", "-d", f"days={days}"],
+                       capture_output=True, text=True)
+    try:
+        return json.loads(r.stdout).get("url")
+    except (json.JSONDecodeError, AttributeError):
+        return None
+
+
+PREVIEWS = {}
+
+
 def links(post):
     pid = post["wp_id"]
-    return (f"https://adtek.agency/?p={pid}&preview=true",
-            f"https://adtek.agency/wp-admin/post.php?post={pid}&action=edit")
+    if pid not in PREVIEWS:
+        PREVIEWS[pid] = public_preview(pid) or f"https://adtek.agency/?p={pid}&preview=true"
+    return PREVIEWS[pid], f"https://adtek.agency/wp-admin/post.php?post={pid}&action=edit"
 
 
 def card(post):
@@ -53,7 +69,10 @@ def build(nos):
     subject = ("[Adtek Blog] Cần duyệt bài " + " và ".join(str(p["no"]) for p in posts)
                + ": đăng " + ", ".join(f"{date.fromisoformat(p['date']).day}/{date.fromisoformat(p['date']).month}" for p in posts))
     howto = ("Cách duyệt: trả lời trong phiên Claude Code \"duyệt bài X\", hoặc ghi chỗ cần sửa. "
-             "Bài chỉ được đặt lịch đăng sau khi anh duyệt. Link xem trước cần đăng nhập WordPress.")
+             "Bài chỉ được đặt lịch đăng sau khi anh duyệt. "
+             + ("Link xem trước mở được không cần đăng nhập, hết hạn sau 7 ngày."
+                if all("adtek_preview=" in links(p)[0] for p in posts)
+                else "Link xem trước cần đăng nhập WordPress."))
     htmlbody = f"""<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#333">
 <p style="font-size:15px;line-height:1.6">Chào anh Tin,</p>
 <p style="font-size:15px;line-height:1.6">{len(posts)} bài blog mới đã lên WordPress ở dạng nháp và đang chờ anh duyệt.</p>
