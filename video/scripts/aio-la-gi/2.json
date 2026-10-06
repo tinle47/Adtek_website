@@ -1,0 +1,50 @@
+{
+  "id": "aio-la-gi-2",
+  "post_url": "https://adtek.agency/aio-la-gi/",
+  "caption": "Ahrefs phân tích 75,000 thương hiệu: được nhắc tên trên web quan trọng gần gấp ba backlink khi muốn xuất hiện trong AI Overviews.",
+  "hashtags": ["#AIO", "#SEO", "#backlink", "#AIsearch", "#marketing", "#adtek"],
+  "scenes": [
+    {
+      "type": "hook",
+      "kicker": "AIO",
+      "title": "Backlink không còn là vua trong thời AI",
+      "highlight": "Backlink",
+      "voice": "Muốn được AI nhắc tên? Backlink không còn là thứ quan trọng nhất."
+    },
+    {
+      "type": "bars",
+      "title": "Yếu tố gắn với việc xuất hiện trong AI Overviews",
+      "items": [
+        { "label": "Số lần thương hiệu được nhắc tên", "value": 0.664 },
+        { "label": "Lượng tìm kiếm tên thương hiệu", "value": 0.392 },
+        { "label": "Backlink", "value": 0.218 }
+      ],
+      "source": "Ahrefs, 75,000 thương hiệu",
+      "voice": "Ahrefs phân tích 75,000 thương hiệu. Yếu tố mạnh nhất là số lần thương hiệu được nhắc tên trên web, mạnh gần gấp ba backlink."
+    },
+    {
+      "type": "stat",
+      "value": "40%",
+      "label": "hiển thị tăng thêm trong câu trả lời của AI nhờ số liệu, trích dẫn và nguồn rõ ràng",
+      "source": "Nghiên cứu GEO, KDD 2024",
+      "voice": "Nghiên cứu GEO từ Princeton cũng cho thấy: thêm số liệu, trích dẫn chuyên gia và nguồn rõ ràng giúp tăng hiển thị tới khoảng 40%."
+    },
+    {
+      "type": "list",
+      "title": "Làm gì ngay?",
+      "items": [
+        "Được báo chí nhắc tên",
+        "Chia sẻ tại sự kiện ngành",
+        "Có mặt trong các bài so sánh",
+        "Đưa số liệu có nguồn vào nội dung"
+      ],
+      "voice": "Vậy hãy để người khác nhắc tên bạn: báo chí, sự kiện ngành, các bài so sánh. Và đưa số liệu có nguồn vào mọi nội dung."
+    },
+    {
+      "type": "cta",
+      "title": "AI học về bạn qua những gì người khác viết",
+      "action": "Xem bài đầy đủ ở link bio",
+      "voice": "AI học về bạn qua những gì người khác viết. Xem bài đầy đủ ở link bio, và follow Adtek."
+    }
+  ]
+}

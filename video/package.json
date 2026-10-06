@@ -1,0 +1,23 @@
+{
+  "name": "adtek-tiktok-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "voice": "node tools/voice.mjs",
+    "render": "node tools/render.mjs"
+  },
+  "dependencies": {
+    "@fontsource/be-vietnam-pro": "5.3.0",
+    "@remotion/bundler": "4.0.533",
+    "@remotion/cli": "4.0.533",
+    "@remotion/renderer": "4.0.533",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.533"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}

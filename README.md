@@ -21,3 +21,7 @@ Tạo link xem trước bản nháp không cần đăng nhập, dùng trong emai
 - Link chỉ hiện bài nháp, chờ duyệt hoặc đã hẹn giờ khi mã khớp và còn hạn. Trang xem trước có noindex, không lưu cache (kể cả LiteSpeed Cache).
 
 Cài đặt: upload file vào `httpdocs/wp-content/mu-plugins/`. Khi chưa cài, email tự dùng link xem trước cần đăng nhập.
+
+## video/
+
+Hệ thống tạo video infographic TikTok từ bài blog (Remotion + giọng ElevenLabs). Xem `video/README.md`.

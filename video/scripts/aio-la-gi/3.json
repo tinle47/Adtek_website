@@ -1,0 +1,45 @@
+{
+  "id": "aio-la-gi-3",
+  "post_url": "https://adtek.agency/aio-la-gi/",
+  "caption": "Hỏi ChatGPT cùng một câu, danh sách thương hiệu gần như thay đổi mỗi lần. Đây là 4 chỉ số nên đo thay cho thứ hạng.",
+  "hashtags": ["#AIO", "#ChatGPT", "#SEO", "#AIsearch", "#marketing", "#adtek"],
+  "scenes": [
+    {
+      "type": "hook",
+      "kicker": "Cảnh báo",
+      "title": "Đừng tin ai hứa đưa bạn lên top ChatGPT",
+      "highlight": "top ChatGPT",
+      "voice": "Đừng tin bất kỳ ai hứa đưa bạn lên top ChatGPT."
+    },
+    {
+      "type": "stat",
+      "value": "<1%",
+      "label": "khả năng ChatGPT trả về cùng một danh sách thương hiệu khi được hỏi lại",
+      "source": "SparkToro và Gumshoe.ai, 2,961 câu lệnh",
+      "voice": "SparkToro chạy gần 3,000 câu lệnh. Khả năng ChatGPT trả về cùng một danh sách thương hiệu khi hỏi lại: dưới 1%."
+    },
+    {
+      "type": "statement",
+      "text": "Đo tỷ lệ xuất hiện, không đo thứ hạng.",
+      "highlight": "tỷ lệ xuất hiện",
+      "voice": "Thứ hạng trên AI đổi sau mỗi lần hỏi. Thứ nên đo là tỷ lệ xuất hiện: hỏi 100 lần, bạn được nhắc bao nhiêu lần."
+    },
+    {
+      "type": "list",
+      "title": "4 chỉ số AIO nên theo dõi",
+      "items": [
+        "Tỷ lệ xuất hiện trên ChatGPT, Gemini, AI Mode",
+        "Độ chính xác khi AI mô tả bạn",
+        "Lượt truy cập từ AI trong GA4",
+        "Dữ liệu AI trong Search Console"
+      ],
+      "voice": "Bốn chỉ số nên theo dõi: tỷ lệ xuất hiện, độ chính xác khi AI mô tả bạn, lượt truy cập từ AI trong GA4, và dữ liệu AI trong Search Console."
+    },
+    {
+      "type": "cta",
+      "title": "Đo đúng thì mới tối ưu đúng",
+      "action": "Xem bài đầy đủ ở link bio",
+      "voice": "Xem cách đo chi tiết ở link bio, và follow Adtek."
+    }
+  ]
+}

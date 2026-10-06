@@ -1,0 +1,49 @@
+{
+  "id": "aio-la-gi-1",
+  "post_url": "https://adtek.agency/aio-la-gi/",
+  "caption": "Khi Google hiện tóm tắt AI, tỷ lệ bấm vào kết quả gần như giảm một nửa. Thương hiệu của bạn đã có mặt trong câu trả lời của AI chưa?",
+  "hashtags": ["#AIO", "#SEO", "#AIsearch", "#digitalmarketing", "#marketing", "#adtek"],
+  "scenes": [
+    {
+      "type": "hook",
+      "kicker": "AIO là gì?",
+      "title": "Khách hàng đang ngừng bấm vào Google",
+      "highlight": "ngừng bấm",
+      "voice": "Khách hàng của bạn đang ngừng bấm vào Google. Đây là lý do."
+    },
+    {
+      "type": "compare",
+      "title": "Tỷ lệ bấm vào kết quả tìm kiếm",
+      "left": { "value": "15%", "label": "Không có tóm tắt AI" },
+      "right": { "value": "8%", "label": "Có tóm tắt AI" },
+      "source": "Pew Research Center, 2025",
+      "voice": "Pew Research theo dõi 900 người dùng. Khi Google hiện tóm tắt AI, tỷ lệ bấm vào kết quả giảm từ 15% xuống 8%."
+    },
+    {
+      "type": "stat",
+      "value": "1%",
+      "label": "lượt tìm kiếm có người bấm vào link nằm trong tóm tắt AI",
+      "source": "Pew Research Center, 2025",
+      "voice": "Còn link nằm ngay trong tóm tắt AI? Chỉ khoảng 1% lượt được bấm."
+    },
+    {
+      "type": "stat",
+      "value": "+35%",
+      "label": "lượt nhấp cho thương hiệu được AI Overviews trích dẫn",
+      "source": "Seer Interactive, 2026",
+      "voice": "Nhưng thương hiệu được AI trích dẫn lại nhận nhiều lượt nhấp hơn khoảng 35%."
+    },
+    {
+      "type": "statement",
+      "text": "Không còn là đứng thứ mấy, mà là có mặt trong câu trả lời của AI hay không.",
+      "highlight": "có mặt trong câu trả lời của AI",
+      "voice": "Cuộc chơi đã đổi. Không còn là đứng thứ mấy, mà là có mặt trong câu trả lời của AI hay không. Việc đó gọi là AIO."
+    },
+    {
+      "type": "cta",
+      "title": "Thương hiệu của bạn có trong câu trả lời của AI?",
+      "action": "Xem bài đầy đủ ở link bio",
+      "voice": "Xem cách làm AIO đầy đủ ở link bio, và follow Adtek."
+    }
+  ]
+}
