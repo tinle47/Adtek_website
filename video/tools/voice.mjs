@@ -8,7 +8,7 @@ import path from "node:path";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const KEY = process.env.ELEVENLABS_API_KEY;
 const VOICE = process.env.ELEVENLABS_VOICE_ID;
-const MODEL = process.env.ELEVENLABS_MODEL || "eleven_flash_v2_5"; // Flash v2.5 có hỗ trợ tiếng Việt (vi)
+const MODEL = process.env.ELEVENLABS_MODEL || "eleven_v4"; // Eleven v4 hỗ trợ tiếng Việt và trả thời điểm từng chữ
 
 if (!KEY || !VOICE) {
   console.error("Thiếu ELEVENLABS_API_KEY hoặc ELEVENLABS_VOICE_ID trong biến môi trường.");
@@ -38,23 +38,31 @@ function toWords({ characters, character_start_times_seconds: s, character_end_t
   return words;
 }
 
+const post = (body) =>
+  fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE}/with-timestamps?output_format=mp3_44100_128`, {
+    method: "POST",
+    headers: { "xi-api-key": KEY, "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+
+// Gửi đủ tùy chọn trước. Model mới có thể chưa nhận một số tùy chọn (lỗi 400/422):
+// khi đó gửi lại bản tối giản, chỉ có lời đọc và model, để không dừng giữa chừng.
+let minimal = false;
 async function speak(text, previous_text, next_text) {
-  const res = await fetch(
-    `https://api.elevenlabs.io/v1/text-to-speech/${VOICE}/with-timestamps?output_format=mp3_44100_128`,
-    {
-      method: "POST",
-      headers: { "xi-api-key": KEY, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        text,
-        model_id: MODEL,
-        language_code: "vi",
-        apply_text_normalization: "on", // đọc "15%" thành "mười lăm phần trăm"
-        previous_text, // câu trước và sau giúp ngữ điệu liền mạch giữa các cảnh
-        next_text,
-        voice_settings: { stability: 0.5, similarity_boost: 0.8, style: 0.2, use_speaker_boost: true },
-      }),
-    },
-  );
+  const full = {
+    text,
+    model_id: MODEL,
+    language_code: "vi",
+    previous_text, // câu trước và sau giúp ngữ điệu liền mạch giữa các cảnh
+    next_text,
+    voice_settings: { stability: 0.5, similarity_boost: 0.8, style: 0.2, use_speaker_boost: true },
+  };
+  let res = minimal ? null : await post(full);
+  if (!res || res.status === 400 || res.status === 422) {
+    if (res && !minimal) console.warn(`Model ${MODEL} không nhận đủ tùy chọn (${await res.text()}), chuyển sang bản tối giản.`);
+    minimal = true;
+    res = await post({ text, model_id: MODEL });
+  }
   if (!res.ok) throw new Error(`ElevenLabs ${res.status}: ${await res.text()}`);
   return res.json();
 }

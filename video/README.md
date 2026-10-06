@@ -34,7 +34,7 @@ Biểu đồ theo chuẩn McKinsey: màu phẳng, cột vuông, không lưới, 
 
 ```
 cd video && npm install
-node tools/voice.mjs aio-la-gi          # tạo giọng (cần ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID)
+node tools/voice.mjs aio-la-gi          # tạo giọng bằng Eleven v4 (cần ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID; đổi model bằng ELEVENLABS_MODEL)
 node tools/render.mjs aio-la-gi --stills  # chụp mỗi cảnh một ảnh để duyệt nhanh (out/)
 node tools/render.mjs aio-la-gi 1 2     # xuất out/aio-la-gi-1.mp4 và caption out/aio-la-gi-1.txt
 npm run studio                           # xem và chỉnh trực tiếp trên trình duyệt
