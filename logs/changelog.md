@@ -25,3 +25,4 @@
 | 2026-10-06 10:40 | Plugin adtek-seo-meta 1.3.2: đọc giá trị cũ bằng hàm Yoast trước khi gộp, trả số phiên bản trong trường adtek_seo để kiểm tra | mu-plugins/adtek-seo-meta.php | Đã upload, chạy đúng |
 | 2026-10-06 11:00 | Cập nhật SEO title và meta description cho 5 chuyên mục (Campaign Marketing, Case study, CRM, Digital Marketing, Growth Marketing), lưu lại term để Yoast làm mới indexable; apply_titles.py tự làm bước này | Chuyên mục 190, 197, 184, 185, 143 | Đã áp dụng |
 | 2026-10-06 11:15 | Đổi đường dẫn trang Báo chí tiếng Anh từ /en/bao-chi/ sang /en/press/ (link cũ tự chuyển 301 sang link mới, footer tiếng Anh đã cập nhật) | Trang 5242 | Đã áp dụng |
+| 2026-10-06 11:40 | (Anh Tin) Cập nhật bộ WPML lên 5.1.0 (Multilingual CMS, String Translation, WPML SEO, CF7 Multilingual); em kiểm tra lại trang vi/en, sitemap /en/, plugin SEO 1.3.2 đều bình thường | Plugins | Đã kiểm tra |
