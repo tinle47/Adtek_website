@@ -89,10 +89,25 @@
     5
    ],
    "words": 2000,
-   "status": "planned",
-   "wp_id": null,
+   "status": "draft",
+   "wp_id": 6088,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "slug": "meta-andromeda",
+   "seo_title": "Meta Andromeda: Advantage+ và chiến lược creative 2026",
+   "meta_desc": "Meta Andromeda thay đổi cách chạy quảng cáo Facebook 2026: Advantage+, nhắm chọn rộng, đa dạng hóa creative, CAPI và cấu trúc tài khoản mới.",
+   "cover": {
+    "kicker": "Performance Ads",
+    "title": "Meta Andromeda",
+    "subtitle": "Advantage+, creative đa dạng và cấu trúc tài khoản mới cho 2026",
+    "chips": [
+     "Advantage+",
+     "Creative",
+     "CAPI",
+     "Ngân sách"
+    ]
+   },
+   "media_id": 6087
   },
   {
    "no": 3,
