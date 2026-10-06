@@ -30,7 +30,7 @@ export const CleanBackground: React.FC = () => (
 );
 
 export const Logo: React.FC = () => (
-  <Img src={staticFile("logo-white.png")} style={{ position: "absolute", left: L.pad, top: L.logo, height: 54 }} />
+  <Img src={staticFile("logo-white.png")} style={{ position: "absolute", left: L.pad, top: L.logo, height: 66 }} />
 );
 
 export const SiteFooter: React.FC = () => (
