@@ -2,6 +2,7 @@
 // Cách dùng: node tools/voice.mjs <slug> [số video...]   ví dụ: node tools/voice.mjs aio-la-gi 1 2 3
 // Cần biến môi trường ELEVENLABS_API_KEY và ELEVENLABS_VOICE_ID. Tùy chọn ELEVENLABS_MODEL.
 // Kết quả: public/voice/<id>/<cảnh>.mp3 và manifest.json. Cảnh nào lời đọc không đổi thì dùng lại file cũ, không tốn thêm credit.
+// Từ máy hay đọc sai khai báo trong tools/pronunciation.json (chữ gốc -> cách đọc). Máy đọc theo cách đọc, phụ đề vẫn hiện chữ gốc.
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
@@ -19,22 +20,52 @@ const [slug, ...nums] = process.argv.slice(2);
 const dir = path.join(ROOT, "scripts", slug);
 const files = nums.length ? nums.map((n) => `${n}.json`) : readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
 
-// Gộp thời điểm từng ký tự thành thời điểm từng chữ.
-function toWords({ characters, character_start_times_seconds: s, character_end_times_seconds: e }) {
+// Từ điển phát âm: phân biệt hoa thường và chỉ thay nguyên chữ, nên "AI" không đụng tới "ai" hay "AIO".
+const DICT = JSON.parse(readFileSync(path.join(ROOT, "tools", "pronunciation.json"), "utf8"));
+const TERMS = Object.keys(DICT).sort((a, b) => b.length - a.length);
+const esc = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const TERM_RE = TERMS.length ? new RegExp(`(?<![\\p{L}\\p{N}])(${TERMS.map(esc).join("|")})(?![\\p{L}\\p{N}])`, "gu") : null;
+
+// Thay chữ gốc bằng cách đọc. map[i] = vị trí ký tự trong câu gốc ứng với ký tự thứ i của câu đọc.
+function pronounce(text) {
+  if (!TERM_RE) return { said: text, map: Array.from(text, (_, i) => i) };
+  let said = "";
+  const map = [];
+  let last = 0;
+  const keep = (from, to) => {
+    for (let i = from; i < to; i++) map.push(i);
+    said += text.slice(from, to);
+  };
+  for (const m of text.matchAll(TERM_RE)) {
+    keep(last, m.index);
+    const alias = DICT[m[0]];
+    for (let k = 0; k < alias.length; k++) map.push(m.index + Math.floor((k * m[0].length) / alias.length));
+    said += alias;
+    last = m.index + m[0].length;
+  }
+  keep(last, text.length);
+  return { said, map };
+}
+
+// Thời điểm từng chữ của câu gốc: lấy từ các ký tự đã đọc thuộc về chữ đó.
+// Không dùng [...text] vì ElevenLabs trả thời điểm theo từng đơn vị UTF-16, giống text.length.
+function toWords(text, map, { characters, character_start_times_seconds: s, character_end_times_seconds: e }) {
+  const owner = new Array(text.length).fill(-1);
   const words = [];
-  let cur = null;
+  for (const m of text.matchAll(/\S+/g)) {
+    for (let i = m.index; i < m.index + m[0].length; i++) owner[i] = words.length;
+    words.push({ text: m[0], start: Infinity, end: 0 });
+  }
   characters.forEach((ch, i) => {
-    if (/\s/.test(ch)) {
-      if (cur) words.push(cur);
-      cur = null;
-    } else if (cur) {
-      cur.text += ch;
-      cur.end = e[i];
-    } else {
-      cur = { text: ch, start: s[i], end: e[i] };
-    }
+    const w = words[owner[map[i]]];
+    if (!w || /\s/.test(ch)) return;
+    w.start = Math.min(w.start, s[i]);
+    w.end = Math.max(w.end, e[i]);
   });
-  if (cur) words.push(cur);
+  // Chữ không có ký tự nào được đọc (hiếm) thì lấy theo chữ liền trước.
+  words.forEach((w, i) => {
+    if (w.start === Infinity) w.start = w.end = words[i - 1]?.end ?? 0;
+  });
   return words;
 }
 
@@ -77,15 +108,20 @@ for (const file of files) {
   for (const [i, scene] of script.scenes.entries()) {
     const cached = old.scenes[i];
     const mp3 = path.join(out, `${i}.mp3`);
-    if (cached?.text === scene.voice && existsSync(mp3)) {
+    const { said, map } = pronounce(scene.voice);
+    // Sửa lời đọc hoặc sửa từ điển cho chữ có trong cảnh thì cảnh đó mới tạo lại giọng.
+    if (cached?.text === scene.voice && (cached.said ?? cached.text) === said && existsSync(mp3)) {
       scenes.push(cached);
       continue;
     }
-    const r = await speak(scene.voice, script.scenes[i - 1]?.voice, script.scenes[i + 1]?.voice);
+    const near = (j) => script.scenes[j] && pronounce(script.scenes[j].voice).said;
+    const r = await speak(said, near(i - 1), near(i + 1));
+    if (r.alignment.characters.join("") !== said) throw new Error(`${script.id} cảnh ${i + 1}: ElevenLabs trả thời điểm không khớp câu đã gửi.`);
     writeFileSync(mp3, Buffer.from(r.audio_base64, "base64"));
-    const words = toWords(r.alignment);
+    const words = toWords(scene.voice, map, r.alignment);
     scenes.push({
       text: scene.voice,
+      said,
       file: `voice/${script.id}/${i}.mp3`,
       duration: r.alignment.character_end_times_seconds.at(-1),
       words,

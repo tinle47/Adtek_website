@@ -48,4 +48,5 @@ Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chrom
 - Số viết theo US format (`75,000`, `0.61%`). ElevenLabs tự đọc thành chữ.
 - Không đặt link trong caption (TikTok không cho bấm), dùng "link ở bio".
 - Thay đổi lời đọc của cảnh nào thì chỉ cảnh đó tạo lại giọng, các cảnh khác dùng file cũ.
+- Từ máy đọc sai (viết tắt, tên tiếng Anh) khai báo một lần trong `tools/pronunciation.json`, dạng `"AIO": "ây ai âu"`. Máy đọc theo cách đọc, phụ đề vẫn hiện chữ gốc. Từ điển phân biệt hoa thường và chỉ thay nguyên chữ, nên `AI` không ảnh hưởng chữ "ai" tiếng Việt. Sửa từ điển xong chạy lại `voice.mjs`, chỉ những cảnh có chữ đó tạo lại giọng.
 - Remotion miễn phí cho công ty tối đa 3 người. Công ty lớn hơn cần mua Company License tại remotion.pro.

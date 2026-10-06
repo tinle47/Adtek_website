@@ -3,8 +3,9 @@
  "scenes": [
   {
    "text": "Đừng tin bất kỳ ai hứa đưa bạn lên top ChatGPT. Hỏi lại cùng một câu, danh sách đã khác.",
+   "said": "Đừng tin bất kỳ ai hứa đưa bạn lên top chát gi pi ti. Hỏi lại cùng một câu, danh sách đã khác.",
    "file": "voice/aio-la-gi-3/0.mp3",
-   "duration": 6.4,
+   "duration": 6.32,
    "words": [
     {
      "text": "Đừng",
@@ -13,22 +14,22 @@
     },
     {
      "text": "tin",
-     "start": 0.32,
+     "start": 0.36,
      "end": 0.48
     },
     {
      "text": "bất",
      "start": 0.56,
-     "end": 0.8
+     "end": 0.72
     },
     {
      "text": "kỳ",
-     "start": 0.84,
+     "start": 0.8,
      "end": 0.96
     },
     {
      "text": "ai",
-     "start": 1.12,
+     "start": 1.04,
      "end": 1.28
     },
     {
@@ -58,17 +59,17 @@
     },
     {
      "text": "ChatGPT.",
-     "start": 2.48,
-     "end": 3.36
+     "start": 2.44,
+     "end": 3.56
     },
     {
      "text": "Hỏi",
      "start": 3.84,
-     "end": 4
+     "end": 3.92
     },
     {
      "text": "lại",
-     "start": 4.04,
+     "start": 4,
      "end": 4.16
     },
     {
@@ -84,34 +85,35 @@
     {
      "text": "câu,",
      "start": 4.52,
-     "end": 5.2
+     "end": 5
     },
     {
      "text": "danh",
-     "start": 5.24,
-     "end": 5.44
+     "start": 5.2,
+     "end": 5.36
     },
     {
      "text": "sách",
-     "start": 5.52,
-     "end": 5.68
+     "start": 5.44,
+     "end": 5.6
     },
     {
      "text": "đã",
-     "start": 5.72,
-     "end": 5.84
+     "start": 5.68,
+     "end": 5.76
     },
     {
      "text": "khác.",
-     "start": 5.92,
-     "end": 6.4
+     "start": 5.84,
+     "end": 6.32
     }
    ]
   },
   {
    "text": "SparkToro chạy gần 3,000 câu lệnh. Khả năng ChatGPT trả về cùng một danh sách thương hiệu khi hỏi lại: dưới 1%.",
+   "said": "SparkToro chạy gần 3,000 câu lệnh. Khả năng chát gi pi ti trả về cùng một danh sách thương hiệu khi hỏi lại: dưới 1%.",
    "file": "voice/aio-la-gi-3/1.mp3",
-   "duration": 8.08,
+   "duration": 8.24,
    "words": [
     {
      "text": "SparkToro",
@@ -141,7 +143,7 @@
     {
      "text": "lệnh.",
      "start": 2.04,
-     "end": 2.6
+     "end": 2.4
     },
     {
      "text": "Khả",
@@ -156,11 +158,11 @@
     {
      "text": "ChatGPT",
      "start": 3.28,
-     "end": 4
+     "end": 4.08
     },
     {
      "text": "trả",
-     "start": 4.08,
+     "start": 4.16,
      "end": 4.32
     },
     {
@@ -170,65 +172,66 @@
     },
     {
      "text": "cùng",
-     "start": 4.64,
-     "end": 4.8
+     "start": 4.72,
+     "end": 4.88
     },
     {
      "text": "một",
-     "start": 4.84,
-     "end": 4.96
+     "start": 4.92,
+     "end": 5.04
     },
     {
      "text": "danh",
-     "start": 5,
-     "end": 5.12
+     "start": 5.08,
+     "end": 5.2
     },
     {
      "text": "sách",
-     "start": 5.2,
-     "end": 5.28
+     "start": 5.28,
+     "end": 5.36
     },
     {
      "text": "thương",
-     "start": 5.36,
-     "end": 5.52
+     "start": 5.44,
+     "end": 5.6
     },
     {
      "text": "hiệu",
-     "start": 5.6,
-     "end": 5.76
+     "start": 5.68,
+     "end": 5.84
     },
     {
      "text": "khi",
-     "start": 5.84,
-     "end": 6
+     "start": 5.92,
+     "end": 6.08
     },
     {
      "text": "hỏi",
-     "start": 6.04,
-     "end": 6.16
+     "start": 6.16,
+     "end": 6.32
     },
     {
      "text": "lại:",
-     "start": 6.24,
-     "end": 6.76
+     "start": 6.36,
+     "end": 6.64
     },
     {
      "text": "dưới",
-     "start": 7.04,
-     "end": 7.2
+     "start": 7.12,
+     "end": 7.28
     },
     {
      "text": "1%.",
-     "start": 7.28,
-     "end": 8.08
+     "start": 7.36,
+     "end": 8.24
     }
    ]
   },
   {
    "text": "Thứ hạng trên AI đổi sau mỗi lần hỏi. Thứ nên đo là tỷ lệ xuất hiện: hỏi 100 lần, bạn được nhắc bao nhiêu lần.",
+   "said": "Thứ hạng trên ây ai đổi sau mỗi lần hỏi. Thứ nên đo là tỷ lệ xuất hiện: hỏi 100 lần, bạn được nhắc bao nhiêu lần.",
    "file": "voice/aio-la-gi-3/2.mp3",
-   "duration": 8.48,
+   "duration": 8.56,
    "words": [
     {
      "text": "Thứ",
@@ -248,11 +251,11 @@
     {
      "text": "AI",
      "start": 0.8,
-     "end": 1.28
+     "end": 1.2
     },
     {
      "text": "đổi",
-     "start": 1.36,
+     "start": 1.28,
      "end": 1.6
     },
     {
@@ -263,11 +266,11 @@
     {
      "text": "mỗi",
      "start": 1.92,
-     "end": 2.08
+     "end": 2
     },
     {
      "text": "lần",
-     "start": 2.12,
+     "start": 2.08,
      "end": 2.24
     },
     {
@@ -278,21 +281,21 @@
     {
      "text": "Thứ",
      "start": 3.28,
-     "end": 3.44
+     "end": 3.4
     },
     {
      "text": "nên",
-     "start": 3.48,
-     "end": 3.68
+     "start": 3.44,
+     "end": 3.6
     },
     {
      "text": "đo",
-     "start": 3.72,
-     "end": 4
+     "start": 3.68,
+     "end": 3.92
     },
     {
      "text": "là",
-     "start": 4.16,
+     "start": 4.08,
      "end": 4.24
     },
     {
@@ -303,69 +306,70 @@
     {
      "text": "lệ",
      "start": 4.64,
-     "end": 4.72
+     "end": 4.8
     },
     {
      "text": "xuất",
-     "start": 4.8,
-     "end": 4.96
+     "start": 4.88,
+     "end": 5.04
     },
     {
      "text": "hiện:",
-     "start": 5.04,
-     "end": 5.36
+     "start": 5.12,
+     "end": 5.44
     },
     {
      "text": "hỏi",
-     "start": 5.84,
-     "end": 6
+     "start": 5.92,
+     "end": 6.08
     },
     {
      "text": "100",
-     "start": 6.08,
-     "end": 6.4
+     "start": 6.16,
+     "end": 6.48
     },
     {
      "text": "lần,",
-     "start": 6.48,
-     "end": 7.04
+     "start": 6.56,
+     "end": 7.12
     },
     {
      "text": "bạn",
-     "start": 7.08,
-     "end": 7.2
+     "start": 7.16,
+     "end": 7.28
     },
     {
      "text": "được",
-     "start": 7.24,
-     "end": 7.36
+     "start": 7.32,
+     "end": 7.44
     },
     {
      "text": "nhắc",
-     "start": 7.44,
-     "end": 7.68
+     "start": 7.52,
+     "end": 7.76
     },
     {
      "text": "bao",
-     "start": 7.76,
-     "end": 7.84
+     "start": 7.84,
+     "end": 7.92
     },
     {
      "text": "nhiêu",
-     "start": 7.92,
-     "end": 8.04
+     "start": 8,
+     "end": 8.12
     },
     {
      "text": "lần.",
-     "start": 8.08,
-     "end": 8.48
+     "start": 8.16,
+     "end": 8.56
     }
    ]
   },
   {
    "text": "Bốn chỉ số nên theo dõi: tỷ lệ xuất hiện, độ chính xác khi AI mô tả bạn, lượt truy cập từ AI trong GA4, và dữ liệu AI trong Search Console.",
+   "said": "Bốn chỉ số nên theo dõi: tỷ lệ xuất hiện, độ chính xác khi ây ai mô tả bạn, lượt truy cập từ ây ai trong gi ây phô, và dữ liệu ây ai trong Search Console.",
    "file": "voice/aio-la-gi-3/3.mp3",
-   "duration": 11.36,
+   "duration": 11.12,
    "words": [
     {
      "text": "Bốn",
@@ -380,76 +384,76 @@
     {
      "text": "số",
      "start": 0.48,
-     "end": 0.72
+     "end": 0.64
     },
     {
      "text": "nên",
-     "start": 0.8,
-     "end": 0.96
+     "start": 0.72,
+     "end": 0.88
     },
     {
      "text": "theo",
-     "start": 1.04,
-     "end": 1.16
+     "start": 0.96,
+     "end": 1.08
     },
     {
      "text": "dõi:",
-     "start": 1.2,
-     "end": 2.16
+     "start": 1.12,
+     "end": 1.52
     },
     {
      "text": "tỷ",
-     "start": 2.2,
-     "end": 2.28
+     "start": 2.08,
+     "end": 2.2
     },
     {
      "text": "lệ",
-     "start": 2.32,
-     "end": 2.48
+     "start": 2.24,
+     "end": 2.4
     },
     {
      "text": "xuất",
-     "start": 2.56,
-     "end": 2.64
+     "start": 2.44,
+     "end": 2.56
     },
     {
      "text": "hiện,",
-     "start": 2.72,
-     "end": 3.44
+     "start": 2.64,
+     "end": 3.36
     },
     {
      "text": "độ",
-     "start": 3.48,
-     "end": 3.6
+     "start": 3.44,
+     "end": 3.56
     },
     {
      "text": "chính",
-     "start": 3.68,
-     "end": 3.84
+     "start": 3.6,
+     "end": 3.76
     },
     {
      "text": "xác",
-     "start": 3.92,
-     "end": 4.16
+     "start": 3.84,
+     "end": 4.08
     },
     {
      "text": "khi",
-     "start": 4.2,
-     "end": 4.4
+     "start": 4.12,
+     "end": 4.32
     },
     {
      "text": "AI",
-     "start": 4.48,
+     "start": 4.4,
      "end": 4.72
     },
     {
      "text": "mô",
      "start": 4.8,
-     "end": 4.92
+     "end": 4.96
     },
     {
      "text": "tả",
-     "start": 4.96,
+     "start": 5.04,
      "end": 5.12
     },
     {
@@ -484,48 +488,48 @@
     },
     {
      "text": "trong",
-     "start": 7.24,
+     "start": 7.28,
      "end": 7.44
     },
     {
      "text": "GA4,",
      "start": 7.52,
-     "end": 8.56
+     "end": 8.64
     },
     {
      "text": "và",
-     "start": 8.64,
-     "end": 8.72
+     "start": 8.68,
+     "end": 8.8
     },
     {
      "text": "dữ",
-     "start": 8.8,
-     "end": 8.92
+     "start": 8.88,
+     "end": 9
     },
     {
      "text": "liệu",
-     "start": 8.96,
-     "end": 9.2
+     "start": 9.04,
+     "end": 9.28
     },
     {
      "text": "AI",
-     "start": 9.28,
-     "end": 9.6
+     "start": 9.36,
+     "end": 9.68
     },
     {
      "text": "trong",
-     "start": 9.68,
-     "end": 9.92
+     "start": 9.76,
+     "end": 10
     },
     {
      "text": "Search",
-     "start": 10.04,
-     "end": 10.16
+     "start": 10.08,
+     "end": 10.32
     },
     {
      "text": "Console.",
-     "start": 10.24,
-     "end": 11.36
+     "start": 10.4,
+     "end": 11.12
     }
    ]
   },

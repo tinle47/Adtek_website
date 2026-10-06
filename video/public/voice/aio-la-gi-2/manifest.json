@@ -3,8 +3,9 @@
  "scenes": [
   {
    "text": "Muốn được AI nhắc tên? Backlink không còn là thứ quan trọng nhất.",
+   "said": "Muốn được ây ai nhắc tên? Backlink không còn là thứ quan trọng nhất.",
    "file": "voice/aio-la-gi-2/0.mp3",
-   "duration": 4.08,
+   "duration": 4.24,
    "words": [
     {
      "text": "Muốn",
@@ -19,57 +20,57 @@
     {
      "text": "AI",
      "start": 0.48,
-     "end": 0.72
+     "end": 0.8
     },
     {
      "text": "nhắc",
-     "start": 0.76,
-     "end": 0.88
+     "start": 0.84,
+     "end": 1.04
     },
     {
      "text": "tên?",
-     "start": 0.96,
-     "end": 1.28
+     "start": 1.08,
+     "end": 1.36
     },
     {
      "text": "Backlink",
-     "start": 1.76,
-     "end": 2.24
+     "start": 1.84,
+     "end": 2.32
     },
     {
      "text": "không",
-     "start": 2.32,
-     "end": 2.48
+     "start": 2.4,
+     "end": 2.64
     },
     {
      "text": "còn",
-     "start": 2.64,
-     "end": 2.8
-    },
-    {
-     "text": "là",
-     "start": 2.88,
+     "start": 2.72,
      "end": 2.96
     },
     {
-     "text": "thứ",
-     "start": 3,
+     "text": "là",
+     "start": 3.04,
      "end": 3.12
     },
     {
+     "text": "thứ",
+     "start": 3.16,
+     "end": 3.28
+    },
+    {
      "text": "quan",
-     "start": 3.2,
-     "end": 3.36
+     "start": 3.36,
+     "end": 3.52
     },
     {
      "text": "trọng",
-     "start": 3.4,
-     "end": 3.6
+     "start": 3.6,
+     "end": 3.76
     },
     {
      "text": "nhất.",
-     "start": 3.64,
-     "end": 4.08
+     "start": 3.84,
+     "end": 4.24
     }
    ]
   },
@@ -207,13 +208,14 @@
   },
   {
    "text": "Nghiên cứu GEO từ Princeton cũng cho thấy: thêm số liệu, trích dẫn chuyên gia và nguồn rõ ràng giúp tăng hiển thị tới khoảng 40%.",
+   "said": "Nghiên cứu gi i âu từ Princeton cũng cho thấy: thêm số liệu, trích dẫn chuyên gia và nguồn rõ ràng giúp tăng hiển thị tới khoảng 40%.",
    "file": "voice/aio-la-gi-2/2.mp3",
    "duration": 8.64,
    "words": [
     {
      "text": "Nghiên",
      "start": 0,
-     "end": 0.16
+     "end": 0.2
     },
     {
      "text": "cứu",
@@ -223,66 +225,66 @@
     {
      "text": "GEO",
      "start": 0.48,
-     "end": 1.04
+     "end": 0.96
     },
     {
      "text": "từ",
-     "start": 1.2,
-     "end": 1.28
+     "start": 1.04,
+     "end": 1.2
     },
     {
      "text": "Princeton",
-     "start": 1.44,
-     "end": 2
+     "start": 1.28,
+     "end": 1.84
     },
     {
      "text": "cũng",
-     "start": 2.04,
-     "end": 2.16
+     "start": 1.92,
+     "end": 2.08
     },
     {
      "text": "cho",
-     "start": 2.24,
-     "end": 2.32
+     "start": 2.16,
+     "end": 2.24
     },
     {
      "text": "thấy:",
-     "start": 2.4,
-     "end": 2.72
+     "start": 2.28,
+     "end": 2.84
     },
     {
      "text": "thêm",
-     "start": 3.2,
-     "end": 3.36
+     "start": 3.12,
+     "end": 3.28
     },
     {
      "text": "số",
-     "start": 3.44,
+     "start": 3.36,
      "end": 3.52
     },
     {
      "text": "liệu,",
      "start": 3.6,
-     "end": 4.16
+     "end": 4.08
     },
     {
      "text": "trích",
-     "start": 4.2,
+     "start": 4.16,
      "end": 4.32
     },
     {
      "text": "dẫn",
-     "start": 4.4,
+     "start": 4.36,
      "end": 4.56
     },
     {
      "text": "chuyên",
-     "start": 4.64,
+     "start": 4.6,
      "end": 4.8
     },
     {
      "text": "gia",
-     "start": 4.88,
+     "start": 4.96,
      "end": 5.12
     },
     {
@@ -486,108 +488,109 @@
   },
   {
    "text": "AI học về bạn qua những gì người khác viết. Xem bài đầy đủ ở link bio, và follow Adtek.",
+   "said": "ây ai học về bạn qua những gì người khác viết. Xem bài đầy đủ ở link bio, và follow Adtek.",
    "file": "voice/aio-la-gi-2/4.mp3",
-   "duration": 6.56,
+   "duration": 6.32,
    "words": [
     {
      "text": "AI",
      "start": 0,
-     "end": 0.4
+     "end": 0.32
     },
     {
      "text": "học",
-     "start": 0.44,
-     "end": 0.64
+     "start": 0.4,
+     "end": 0.56
     },
     {
      "text": "về",
-     "start": 0.68,
-     "end": 0.8
+     "start": 0.6,
+     "end": 0.72
     },
     {
      "text": "bạn",
-     "start": 0.88,
-     "end": 1.2
+     "start": 0.8,
+     "end": 1.04
     },
     {
      "text": "qua",
-     "start": 1.28,
-     "end": 1.36
+     "start": 1.12,
+     "end": 1.28
     },
     {
      "text": "những",
-     "start": 1.4,
-     "end": 1.52
+     "start": 1.32,
+     "end": 1.44
     },
     {
      "text": "gì",
-     "start": 1.6,
-     "end": 1.76
+     "start": 1.52,
+     "end": 1.64
     },
     {
      "text": "người",
-     "start": 1.8,
-     "end": 1.92
+     "start": 1.68,
+     "end": 1.84
     },
     {
      "text": "khác",
-     "start": 2,
-     "end": 2.16
+     "start": 1.88,
+     "end": 2.08
     },
     {
      "text": "viết.",
-     "start": 2.24,
-     "end": 3.12
+     "start": 2.16,
+     "end": 2.96
     },
     {
      "text": "Xem",
-     "start": 3.2,
-     "end": 3.36
+     "start": 3,
+     "end": 3.12
     },
     {
      "text": "bài",
-     "start": 3.4,
-     "end": 3.52
+     "start": 3.16,
+     "end": 3.28
     },
     {
      "text": "đầy",
-     "start": 3.6,
-     "end": 3.68
+     "start": 3.36,
+     "end": 3.44
     },
     {
      "text": "đủ",
-     "start": 3.76,
-     "end": 4
+     "start": 3.52,
+     "end": 3.76
     },
     {
      "text": "ở",
-     "start": 4.08,
-     "end": 4.12
+     "start": 3.84,
+     "end": 3.92
     },
     {
      "text": "link",
-     "start": 4.16,
-     "end": 4.32
+     "start": 4.04,
+     "end": 4.16
     },
     {
      "text": "bio,",
-     "start": 4.4,
-     "end": 5.08
+     "start": 4.36,
+     "end": 4.88
     },
     {
      "text": "và",
-     "start": 5.12,
-     "end": 5.36
+     "start": 4.96,
+     "end": 5.12
     },
     {
      "text": "follow",
-     "start": 5.52,
-     "end": 5.68
+     "start": 5.28,
+     "end": 5.6
     },
     {
      "text": "Adtek.",
-     "start": 5.76,
-     "end": 6.56
+     "start": 5.72,
+     "end": 6.32
     }
    ]
   }
