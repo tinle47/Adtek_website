@@ -29,4 +29,4 @@
 | 2026-10-06 13:10 | Thêm ghi chú "bài viết năm 2022" đầu 4 bài NFT/Metaverse (backup trong content/backups) | Bài 4072, 4042, 4034, 4012 | Đã áp dụng |
 | 2026-10-06 13:10 | Tạo lịch tự động: viết 2 bài mỗi thứ Sáu 8:52, rà soát nội dung ngày 1 hằng tháng 8:47; thêm tools/blog_post.py (ảnh bìa, nháp, đặt lịch) | content/editorial, tools | Đã áp dụng |
 | 2026-10-06 13:40 | Tạo bản nháp bài 1 "Kế hoạch 11.11: checklist 30 ngày cho Shopee, TikTok Shop và 12.12", chờ duyệt | Bài 6086, media 6085 | Nháp |
-| 2026-10-06 14:10 | Tạo bản nháp bài 2 "Quảng cáo Meta 2026: Andromeda, Advantage+ và chiến lược creative" (trụ cột cụm C2), chờ duyệt | Bài nháp mới | Nháp |
+| 2026-10-06 14:10 | Tạo bản nháp bài 2 "Quảng cáo Meta 2026: Andromeda, Advantage+ và chiến lược creative" (trụ cột cụm C2), chờ duyệt | Bài 6088 | Nháp |
