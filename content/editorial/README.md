@@ -37,7 +37,7 @@ Mỗi bài mới khi đăng phải có:
 3. Ít nhất 1 link sang cụm khác nếu nội dung liên quan.
 4. Link thuật ngữ trong từ điển Adtek ở lần nhắc đầu tiên (ví dụ CDP, CRM, Brand Strategy).
 5. Anchor text là từ khóa của bài đích, không dùng "xem thêm" hay "tại đây".
-6. Ít nhất 3 nguồn bên ngoài uy tín (văn bản luật, cơ quan nhà nước, báo cáo nghiên cứu, tài liệu chính thức của nền tảng), ghi rõ tháng/năm của số liệu.
+6. Ít nhất 3 nguồn bên ngoài uy tín (văn bản luật, cơ quan nhà nước, báo cáo nghiên cứu, tài liệu chính thức của nền tảng), ghi rõ tháng/năm của số liệu. Link ra ngoài luôn có `rel="nofollow noopener"` và mở tab mới (`tools/blog_post.py draft` tự gắn).
 7. 1 lời mời liên hệ (`/contact/`) hoặc tài nguyên miễn phí của Adtek.
 
 Ngay sau khi bài lên sóng (liên kết ngược):

@@ -10,6 +10,7 @@ Cách dùng:
 """
 import html
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -74,13 +75,27 @@ def upload(path, alt):
     return media["id"]
 
 
+def nofollow(content):
+    """Link ra ngoài website: target _blank, rel nofollow noopener. Link nội bộ giữ nguyên."""
+    def fix(m):
+        tag = m.group(0)
+        if re.search(r'href="https?://(www\.)?adtek\.agency', tag):
+            return tag
+        tag = re.sub(r'\s(rel|target)="[^"]*"', "", tag)
+        return tag[:-1] + ' target="_blank" rel="nofollow noopener">'
+    return re.sub(r'<a\s[^>]*href="https?://[^"]*"[^>]*>', fix, content)
+
+
 def draft(data, post):
     path = ROOT / f"content/posts/{post['slug']}-cover.jpg"
+    src = ROOT / f"content/posts/{post['slug']}.html"
+    content = nofollow(src.read_text(encoding="utf-8"))
+    src.write_text(content, encoding="utf-8")
     if not post.get("media_id"):
         post["media_id"] = upload(path if path.exists() else cover(post), post["title"])
     body = {
         "title": post["title"], "slug": post["slug"], "author": AUTHOR,
-        "content": (ROOT / f"content/posts/{post['slug']}.html").read_text(encoding="utf-8"),
+        "content": content,
         "categories": CATEGORIES.get(post["cluster"], [185, 143]), "featured_media": post["media_id"],
         "meta": {"_yoast_wpseo_title": post["seo_title"], "_yoast_wpseo_metadesc": post["meta_desc"]},
     }
