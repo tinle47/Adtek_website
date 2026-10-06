@@ -37,3 +37,4 @@
 | 2026-10-06 16:30 | Kiểm tra link xem trước không cần đăng nhập: đúng mã trả 200 kèm noindex và no-cache, sai mã hoặc không mã trả 404; gửi email mẫu có link mới | Bài 6086, 6088 | Đã kiểm tra |
 | 2026-10-06 16:45 | Ghi rõ "cần đăng nhập" trên nút Sửa trong email nhắc duyệt để phân biệt với nút Xem trước | tools/approval_email.py | Đã áp dụng |
 | 2026-10-06 17:00 | Sửa nút trong email nhắc duyệt: dùng ô bảng có màu nền (bgcolor) để nút Xem trước luôn hiện nền xanh trên mọi ứng dụng email | tools/approval_email.py | Đã áp dụng |
+| 2026-10-06 17:20 | Thêm hạn duyệt D+1: email ghi hạn chót, quá 24 giờ chưa phản hồi thì tự đặt lịch đăng theo kế hoạch (blog_post.py auto) và báo anh Tin; thêm lệnh changes, unschedule | tools, lịch tự động thứ Sáu, README | Đã áp dụng |

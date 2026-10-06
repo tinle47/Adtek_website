@@ -11,7 +11,11 @@ Lịch đăng, cụm chủ đề và danh sách bài nằm trong `calendar.json`
 ## Quy trình viết và duyệt
 
 1. Thứ Sáu hằng tuần (lịch tự động 8:52 sáng): viết 2 bài `planned` có ngày đăng sớm nhất, đưa lên WordPress ở dạng nháp bằng `python3 tools/blog_post.py draft <số bài>`, nhắc anh Tin duyệt qua email (hi@tinle.co), push notification và tin nhắn trong phiên Claude Code.
-2. Anh Tin duyệt từng bài. Chỉ sau khi được duyệt mới chạy `python3 tools/blog_post.py schedule <số bài>` để WordPress tự đăng đúng ngày giờ trong lịch.
+2. Anh Tin duyệt từng bài:
+   - "duyệt bài X": chạy `python3 tools/blog_post.py schedule X`, WordPress tự đăng đúng ngày giờ trong lịch.
+   - Yêu cầu sửa: chạy `python3 tools/blog_post.py changes X`, sửa xong gửi email duyệt lại (hạn 24 giờ tính lại từ lần gửi mới).
+   - "hủy bài X" (kể cả khi đã đặt lịch): chạy `python3 tools/blog_post.py unschedule X`.
+   - Hạn duyệt D+1: email gửi bằng `tools/approval_email.py --mark` ghi thời điểm gửi. Đúng 24 giờ sau, lịch hẹn một lần (send_later) chạy `python3 tools/blog_post.py auto`: bài chưa có phản hồi được tự đặt lịch đăng theo kế hoạch (approval = auto), rồi báo anh Tin qua email và push notification. Bài đã duyệt hoặc đang chờ sửa thì bỏ qua.
 3. Cũng trong lần chạy thứ Sáu: làm liên kết ngược cho các bài đã lên sóng trong tuần.
 4. Ngày 1 hằng tháng (lịch tự động 8:47 sáng): rà soát và cập nhật nội dung, gửi báo cáo qua email, push notification và tin nhắn trong phiên.
 

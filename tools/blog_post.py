@@ -6,13 +6,19 @@ và file nội dung content/posts/<slug>.html.
 Cách dùng:
   python3 tools/blog_post.py cover <số bài>     tạo ảnh bìa content/posts/<slug>-cover.jpg
   python3 tools/blog_post.py draft <số bài>     tải ảnh bìa, tạo hoặc cập nhật bản nháp
-  python3 tools/blog_post.py schedule <số bài>  đặt lịch đăng theo date/time (chỉ sau khi đã được duyệt)
+  python3 tools/blog_post.py schedule <số bài>  đặt lịch đăng theo date/time (anh Tin đã duyệt)
+  python3 tools/blog_post.py changes <số bài>   anh Tin yêu cầu sửa: không tự đăng cho tới khi gửi duyệt lại
+  python3 tools/blog_post.py unschedule <số bài> hủy lịch đăng, đưa bài về nháp
+  python3 tools/blog_post.py auto               tự đặt lịch các bài đã gửi email quá 24 giờ mà chưa có phản hồi
+
+Trạng thái duyệt (trường approval): pending (đã gửi email, ghi approval_requested), approved, auto, changes_requested.
 """
 import html
 import json
 import re
 import subprocess
 import sys
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from fix_alt import API, api
@@ -111,18 +117,56 @@ def draft(data, post):
     print(f"Bài {post['no']}: post {r['id']} ({r['status']}), xem trước: https://adtek.agency/?p={r['id']}&preview=true")
 
 
-def schedule(data, post):
+VN = timezone(timedelta(hours=7))
+APPROVAL_WINDOW = timedelta(hours=24)  # D+1 kể từ khi gửi email mà chưa duyệt thì tự đặt lịch
+
+
+def schedule(data, post, approval="approved"):
     when = f"{post['date']}T{post['time']}:00"  # giờ Việt Nam (site đặt UTC+7)
     r = api("POST", f"posts/{post['wp_id']}?_fields=id,status,date,link", {"status": "future", "date": when})
     if r.get("status") not in ("future", "publish"):
         sys.exit(f"Lỗi: {str(r)[:300]}")
     post["status"] = "scheduled"
+    post["approval"] = approval
     save(data)
     print(f"Bài {post['no']}: {r['status']} lúc {r['date']}, {r['link']}")
 
 
+def changes(data, post):
+    post["approval"] = "changes_requested"
+    save(data)
+    print(f"Bài {post['no']}: chờ sửa, không tự đăng")
+
+
+def unschedule(data, post):
+    r = api("POST", f"posts/{post['wp_id']}?_fields=id,status", {"status": "draft"})
+    if r.get("status") != "draft":
+        sys.exit(f"Lỗi: {str(r)[:300]}")
+    post["status"] = "draft"
+    post["approval"] = "changes_requested"
+    save(data)
+    print(f"Bài {post['no']}: đã hủy lịch, về nháp")
+
+
+def auto(data):
+    now = datetime.now(VN)
+    done = []
+    for post in data["posts"]:
+        if post.get("approval") != "pending" or post.get("status") != "draft" or not post.get("approval_requested"):
+            continue
+        # trừ hao 5 phút vì lịch hẹn send_later làm tròn xuống theo phút
+        if now - datetime.fromisoformat(post["approval_requested"]) >= APPROVAL_WINDOW - timedelta(minutes=5):
+            schedule(data, post, approval="auto")
+            done.append(post["no"])
+    print(json.dumps({"auto_scheduled": done}))
+
+
 if __name__ == "__main__":
-    cmd, no = sys.argv[1], int(sys.argv[2])
+    cmd = sys.argv[1]
     data = load()
-    post = find(data, no)
-    {"cover": lambda: cover(post), "draft": lambda: draft(data, post), "schedule": lambda: schedule(data, post)}[cmd]()
+    if cmd == "auto":
+        auto(data)
+        sys.exit()
+    post = find(data, int(sys.argv[2]))
+    {"cover": lambda: cover(post), "draft": lambda: draft(data, post), "schedule": lambda: schedule(data, post),
+     "changes": lambda: changes(data, post), "unschedule": lambda: unschedule(data, post)}[cmd]()
