@@ -34,7 +34,7 @@ const T = { type: [6, 24], ai: 28, stream: [32, 74], more: 76, scroll: [84, 102]
 const PHONE_W = 540;
 const BEZEL = 12;
 const SCALE = (PHONE_W - BEZEL * 2) / 390; // thiết kế theo bề ngang 390 của iPhone
-const SCROLL = 236;
+const SCROLL = 280;
 
 const Icon = {
   search: (c: string) => (
@@ -244,7 +244,7 @@ export const SerpNote: React.FC<{ top: number; left: number }> = ({ top, left })
   const draw = interpolate(f, [T.dim, T.dim + 12], [0, 1], { ...clamp, easing: ease });
   const txt = interpolate(f, [T.dim + 8, T.dim + 18], [0, 1], clamp);
   return (
-    <div style={{ position: "absolute", left, top, width: 300, color: c.text }}>
+    <div style={{ position: "absolute", left, top, width: 290, color: c.text }}>
       <div style={{ height: 2, width: 40 * draw, background: c.text, position: "absolute", left: -48, top: 16 }} />
       <div style={{ fontSize: 26, lineHeight: 1.35, opacity: txt }}>
         <b>Kết quả tự nhiên bị đẩy xuống dưới.</b> Người dùng đọc tóm tắt AI rồi dừng lại.

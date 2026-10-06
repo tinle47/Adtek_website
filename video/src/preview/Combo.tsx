@@ -6,17 +6,18 @@ import type { VideoProps } from "../types";
 import { useFonts } from "../Video";
 import { ColumnChart, Exhibit, Note, Waffle, type Variant } from "./Exhibit";
 import { GoogleSerp, SerpNote, type SerpContent } from "./GoogleSerp";
-import { Background, Caption, Fade, Footer, Header, Headline, PAD, clamp, type DemoScene } from "./Preview";
+import { CleanBackground, L, Logo, SerifHeadline, SiteFooter, useSerif, type SerifId } from "./Frame";
+import { Caption, Fade, clamp, type DemoScene } from "./Preview";
 import { THEMES } from "./themes";
 
-// Hướng A + C: khung Navy Glow, biểu đồ chuẩn McKinsey biến đổi dần qua từng câu thoại.
+// Hướng A + C: khung navy sạch, tiêu đề font có chân, biểu đồ chuẩn McKinsey biến đổi dần qua từng câu thoại.
 const scene = (kicker: string, headline: string, accent: string, voice: string) =>
   ({ kicker, headline, accent, voice, narrative: ["", ""], visual: "search" }) as DemoScene;
 
 const SCENES = [
-  scene("AIO · Nghịch lý đầu tiên", "Khách hàng vẫn tìm trên Google.", "Nhưng ngừng bấm vào bạn.", "Khách hàng vẫn tìm trên Google. Nhưng họ đang ngừng bấm vào bạn."),
+  scene("AIO · Nghịch lý đầu tiên", "Khách hàng vẫn tìm Google,", "nhưng ngừng bấm vào bạn.", "Khách hàng vẫn tìm trên Google. Nhưng họ đang ngừng bấm vào bạn."),
   scene("Pew Research · 900 người dùng", "Khi Google hiện tóm tắt AI,", "tỷ lệ bấm giảm gần nửa.", "Khi Google hiện tóm tắt AI, tỷ lệ bấm vào kết quả giảm từ 15% xuống 8%."),
-  scene("Link nằm trong tóm tắt AI", "Link ngay trong tóm tắt AI?", "Còn thấp hơn.", "Còn link nằm ngay trong tóm tắt AI? Chỉ khoảng 1% lượt được bấm."),
+  scene("Link nằm trong tóm tắt AI", "Link nằm trong tóm tắt AI?", "Tỷ lệ bấm còn thấp hơn.", "Còn link nằm ngay trong tóm tắt AI? Chỉ khoảng 1% lượt được bấm."),
   scene("Quy ra 100 lượt tìm kiếm", "Cứ 100 lượt tìm kiếm,", "chỉ 1 lượt bấm vào link.", "Nghĩa là cứ 100 lượt tìm kiếm, chỉ 1 lượt bấm vào link trong tóm tắt AI."),
 ];
 
@@ -51,12 +52,13 @@ const SERP: SerpContent = {
   questions: ["AIO và SEO khác nhau thế nào?", "Làm sao để được AI Overviews trích dẫn?", "GEO là gì?"],
 };
 
-const STAGE_TOP = 590;
-const NOTE_TOP = 1000;
+const PAD = L.pad;
+const STAGE_TOP = L.stage;
+const NOTE_TOP = 1010;
 const SOURCE = "Nguồn: Pew Research Center, 07/2025; 900 người dùng tại Mỹ";
 
 const Stage: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div style={{ position: "absolute", left: PAD, right: PAD, top: STAGE_TOP, display: "flex", justifyContent: "center" }}>{children}</div>
+  <div style={{ position: "absolute", left: PAD, right: PAD, top: STAGE_TOP }}>{children}</div>
 );
 
 // Biểu đồ cột sống xuyên cảnh 2 và 3: cảnh 3 chỉ thêm cột và chú thích, không dựng lại.
@@ -107,43 +109,44 @@ const ClickChart: React.FC<{ v: Variant; from: number; to: number; s2: number }>
   );
 };
 
-export const Combo: React.FC<{ variant: Variant }> = ({ variant: v }) => {
+export const Combo: React.FC<{ variant: Variant; serif: SerifId }> = ({ variant: v, serif }) => {
   useFonts();
+  useSerif(serif);
   const t = THEMES.glow;
   const sc = scenesTimed();
   const end = (i: number) => sc[i].from + sc[i].frames;
   return (
     <AbsoluteFill style={{ fontFamily: FONT, color: t.text }}>
-      <Background t={t} />
-      <Header t={t} />
+      <CleanBackground />
+      <Logo />
       <ClickChart v={v} from={sc[1].from} to={end(2)} s2={sc[2].from} />
       {SCENES.map((s, i) => {
         const last = i === SCENES.length - 1;
         return (
           <Sequence key={i} from={sc[i].from} durationInFrames={sc[i].frames + (last ? 10 : 0)}>
             <Fade frames={sc[i].frames + (last ? 10 : 0)}>
-              <Headline t={t} s={s} />
+              <SerifHeadline serif={serif} kicker={s.kicker} headline={s.headline} accent={s.accent} />
               {i === 0 && (
                 <>
                   <div style={{ position: "absolute", left: PAD, top: STAGE_TOP }}>
-                    <GoogleSerp c={SERP} height={710} />
+                    <GoogleSerp c={SERP} height={600} />
                   </div>
-                  <SerpNote left={PAD + 540 + 56} top={NOTE_TOP} />
+                  <SerpNote left={PAD + 540 + 60} top={NOTE_TOP} />
                 </>
               )}
               {i === 3 && (
                 <Stage>
                   <Exhibit v={v} metric="Lượt bấm vào link trong tóm tắt AI" unit="trên 100 lượt tìm kiếm" source={SOURCE} appear={0}>
-                    <Waffle v={v} at={4} lit={1} legend={["1 lượt bấm vào link trong tóm tắt AI", "99 lượt không bấm"]} />
+                    <Waffle v={v} at={4} lit={1} legend={["1 lượt bấm vào link", "99 lượt không bấm"]} />
                   </Exhibit>
                 </Stage>
               )}
             </Fade>
-            <Caption t={t} words={sc[i].words} top={1310} />
+            <Caption t={t} words={sc[i].words} top={L.caption} />
           </Sequence>
         );
       })}
-      <Footer t={t} />
+      <SiteFooter />
     </AbsoluteFill>
   );
 };

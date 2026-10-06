@@ -34,17 +34,17 @@ export const Root: React.FC = () => (
       defaultProps={{ theme }}
     />
   ))}
-  {/* Hướng A + C, biểu đồ chuẩn McKinsey: nền trắng (light) hoặc vẽ thẳng trên navy (dark) */}
-  {(["light", "dark"] as const).map((variant) => (
+  {/* Hướng A + C, biểu đồ chuẩn McKinsey vẽ trên navy, thử 3 font có chân cho tiêu đề */}
+  {(["playfair", "source", "noto"] as const).map((serif) => (
     <Composition
-      key={variant}
-      id={`Combo-${variant}`}
+      key={serif}
+      id={`Combo-${serif}`}
       component={Combo}
       width={1080}
       height={1920}
       fps={FPS}
       durationInFrames={comboFrames()}
-      defaultProps={{ variant }}
+      defaultProps={{ variant: "dark" as const, serif }}
     />
   ))}
   </>
