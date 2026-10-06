@@ -5,7 +5,8 @@ import { timeline } from "../timing";
 import type { VideoProps } from "../types";
 import { useFonts } from "../Video";
 import { ColumnChart, Exhibit, Note, Waffle, type Variant } from "./Exhibit";
-import { Background, Caption, Fade, Footer, Header, Headline, PAD, SearchMock, clamp, type DemoScene } from "./Preview";
+import { GoogleSerp, SerpNote, type SerpContent } from "./GoogleSerp";
+import { Background, Caption, Fade, Footer, Header, Headline, PAD, clamp, type DemoScene } from "./Preview";
 import { THEMES } from "./themes";
 
 // Hướng A + C: khung Navy Glow, biểu đồ chuẩn McKinsey biến đổi dần qua từng câu thoại.
@@ -20,9 +21,38 @@ const SCENES = [
 ];
 
 const props = { script: { scenes: SCENES }, voice: null } as unknown as VideoProps;
-export const comboFrames = () => timeline(props).reduce((s, x) => s + x.frames, 0) + 10;
+// Giữ thêm cảnh 1 khoảng 1.2 giây để kịp đọc chú thích trên màn hình Google.
+const HOLD = [36, 0, 0, 0];
+const scenesTimed = () => {
+  let shift = 0;
+  return timeline(props).map((x, i) => {
+    const out = { ...x, from: x.from + shift, frames: x.frames + HOLD[i] };
+    shift += HOLD[i];
+    return out;
+  });
+};
+export const comboFrames = () => scenesTimed().reduce((s, x) => s + x.frames, 0) + 10;
+
+const SERP: SerpContent = {
+  query: "aio là gì",
+  answer: [
+    { text: "AIO (AI Optimization)", bold: true },
+    {
+      text: "là việc tối ưu nội dung và thương hiệu để các công cụ AI như Google AI Overviews, ChatGPT, Gemini hay Perplexity hiểu đúng, trích dẫn và nhắc tên bạn trong câu trả lời. Hoạt động này còn được gọi là GEO hoặc AEO.",
+    },
+  ],
+  result: {
+    site: "Adtek",
+    url: "https://adtek.agency › aio-la-gi",
+    title: "AIO là gì? Cách tối ưu để được AI trích dẫn | Adtek",
+    snippet: "AIO (AI Optimization) là gì? Số liệu từ Pew, Ahrefs, Princeton và 7 bước tối ưu để thương hiệu xuất hiện trong AI Overviews, ChatGPT và Gemini.",
+    logo: "logo-adtek.png",
+  },
+  questions: ["AIO và SEO khác nhau thế nào?", "Làm sao để được AI Overviews trích dẫn?", "GEO là gì?"],
+};
 
 const STAGE_TOP = 590;
+const NOTE_TOP = 1000;
 const SOURCE = "Nguồn: Pew Research Center, 07/2025; 900 người dùng tại Mỹ";
 
 const Stage: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -80,7 +110,7 @@ const ClickChart: React.FC<{ v: Variant; from: number; to: number; s2: number }>
 export const Combo: React.FC<{ variant: Variant }> = ({ variant: v }) => {
   useFonts();
   const t = THEMES.glow;
-  const sc = timeline(props);
+  const sc = scenesTimed();
   const end = (i: number) => sc[i].from + sc[i].frames;
   return (
     <AbsoluteFill style={{ fontFamily: FONT, color: t.text }}>
@@ -94,9 +124,12 @@ export const Combo: React.FC<{ variant: Variant }> = ({ variant: v }) => {
             <Fade frames={sc[i].frames + (last ? 10 : 0)}>
               <Headline t={t} s={s} />
               {i === 0 && (
-                <Stage>
-                  <SearchMock t={t} />
-                </Stage>
+                <>
+                  <div style={{ position: "absolute", left: PAD, top: STAGE_TOP }}>
+                    <GoogleSerp c={SERP} height={710} />
+                  </div>
+                  <SerpNote left={PAD + 540 + 56} top={NOTE_TOP} />
+                </>
               )}
               {i === 3 && (
                 <Stage>
