@@ -58,7 +58,7 @@ def card(post):
     <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:#333">{e(post.get('summary', ''))}</p>
     {f'<p style="margin:0 0 4px;font-size:14px;font-weight:600;color:#333">Cần anh xác nhận:</p><ul style="margin:0 0 14px;padding-left:20px;font-size:14px;line-height:1.6;color:#333">{confirm}</ul>' if confirm else ''}
     <a href="{preview}" style="{BTN}background:#002D72;color:#fff">Xem trước bài viết</a>
-    <a href="{edit}" style="{BTN}background:#fff;color:#002D72;border:1px solid #002D72">Sửa trên WordPress</a>
+    <a href="{edit}" style="{BTN}background:#fff;color:#002D72;border:1px solid #002D72">Sửa trên WordPress (cần đăng nhập)</a>
   </div>
 </div>"""
 
@@ -80,7 +80,7 @@ def build(nos):
 <p style="font-size:13px;line-height:1.6;color:#666">{html.escape(howto)}</p>
 </div>"""
     text = "Chào anh Tin,\n\n" + "\n\n".join(
-        f"Bài {p['no']}: {p['title']}\nĐăng: {when(p)}\nXem trước: {links(p)[0]}\nSửa: {links(p)[1]}\n{p.get('summary', '')}"
+        f"Bài {p['no']}: {p['title']}\nĐăng: {when(p)}\nXem trước: {links(p)[0]}\nSửa (cần đăng nhập): {links(p)[1]}\n{p.get('summary', '')}"
         + ("\nCần anh xác nhận:\n" + "\n".join(f"- {c}" for c in p["confirm"]) if p.get("confirm") else "")
         for p in posts) + "\n\n" + howto
     return {"to": [TO], "subject": subject, "body": text, "htmlBody": htmlbody}
