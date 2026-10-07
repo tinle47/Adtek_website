@@ -40,5 +40,6 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 - Thứ Bảy 08:47: viết kịch bản các video từ Chủ nhật đến hết Chủ nhật tuần sau, chụp ảnh duyệt, email hi@tinle.co tiêu đề "[Adtek TikTok] Kịch bản tuần ..., chờ duyệt".
 - Chủ nhật 08:52: đọc phản hồi trong thread đó, sửa theo góp ý (chưa có phản hồi thì sản xuất luôn), tạo giọng, xuất video, đưa lên trang hub https://claude.ai/artifact/72zNCsPigyqbV6P8kQtji5 (video là asset của trang, danh sách ở `hub/videos.json`), email "[Adtek TikTok] Video tuần ... đã xong" kèm link hub.
 - T6, CN, T2, T4 lúc 17:47: email "[Adtek TikTok] Nhắc đăng hôm nay ..." kèm link hub, caption copy sẵn, cấu hình nhạc, giờ đăng gợi ý 19:00 đến 21:00.
+- Trang hub có 4 mục (Video, Lịch đăng, Kịch bản, SOP). Sau mỗi thay đổi lịch hoặc kịch bản: chạy `python3 tools/hub_export.py` trong thư mục video rồi publish lại hub với files videos.json, schedule.json, scripts.json. Kịch bản mới có thêm trường "date" và "status".
 - Không gửi video qua Google Drive hay đính kèm email (file quá lớn để tải lên qua công cụ); luôn dùng trang hub.
 - Email gửi anh Tin: súc tích, chuyên nghiệp, không xưng anh/em, không dùng ký tự "—".

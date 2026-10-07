@@ -2,138 +2,332 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
 <style>
-/* Bố cục: một cột thẻ video theo ngày đăng; mỗi thẻ là video dọc bên trái, thông tin đăng bên phải, xếp chồng trên điện thoại. */
+/* Bố cục: thanh mục cố định trên cùng (Video, Lịch đăng, Kịch bản, SOP), mỗi mục là một cột nội dung rộng tối đa 920px. */
 :root {
   --bg: #F3F5F9;
   --surface: #FFFFFF;
+  --sunken: #EDF1F7;
   --ink: #0E1A33;
   --muted: #5B6880;
   --line: #DCE2EC;
   --navy: #002D72;
   --accent: #FF9014;
   --accent-ink: #0E1A33;
-  --ok: #1F7A4D;
-  --ok-bg: #E3F3EA;
-  --wait: #9A5B00;
-  --wait-bg: #FFF1DC;
+  --ok: #1F7A4D; --ok-bg: #E3F3EA;
+  --wait: #9A5B00; --wait-bg: #FFF1DC;
+  --info: #1D4F9C; --info-bg: #E4ECF8;
   --font-display: "Source Serif 4", Georgia, serif;
   --font-body: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0A1426; --surface: #12203A; --ink: #EAF0FA; --muted: #9AA9C4; --line: #22335A;
+    --bg: #0A1426; --surface: #12203A; --sunken: #0E1A30; --ink: #EAF0FA; --muted: #9AA9C4; --line: #22335A;
     --navy: #8FB0F0; --accent: #FF9F36; --accent-ink: #0A1426;
-    --ok: #6FD39F; --ok-bg: #12382A; --wait: #FFC46B; --wait-bg: #3A2A10; color-scheme: dark;
+    --ok: #6FD39F; --ok-bg: #12382A; --wait: #FFC46B; --wait-bg: #3A2A10; --info: #9CBCF5; --info-bg: #1A2E55; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0A1426; --surface: #12203A; --ink: #EAF0FA; --muted: #9AA9C4; --line: #22335A;
+  --bg: #0A1426; --surface: #12203A; --sunken: #0E1A30; --ink: #EAF0FA; --muted: #9AA9C4; --line: #22335A;
   --navy: #8FB0F0; --accent: #FF9F36; --accent-ink: #0A1426;
-  --ok: #6FD39F; --ok-bg: #12382A; --wait: #FFC46B; --wait-bg: #3A2A10; color-scheme: dark;
+  --ok: #6FD39F; --ok-bg: #12382A; --wait: #FFC46B; --wait-bg: #3A2A10; --info: #9CBCF5; --info-bg: #1A2E55; color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55; padding-inline: 16px; padding-block: 28px 48px; }
-.wrap { max-width: 900px; margin: 0 auto; display: grid; gap: 28px; }
-header { display: grid; gap: 6px; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55; margin: 0; }
+.wrap { max-width: 920px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 56px; display: grid; gap: 22px; }
+header.top { display: grid; gap: 4px; }
 .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 5vw, 36px); line-height: 1.15; margin: 0; color: var(--navy); text-wrap: balance; }
-.sub { color: var(--muted); margin: 0; }
-.rules { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--muted); padding-top: 4px; }
+.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); display: flex; gap: 4px; overflow-x: auto; border-bottom: 1px solid var(--line); padding-top: 6px; }
+.tabs button { font: inherit; font-size: 15px; font-weight: 600; background: none; border: 0; border-bottom: 3px solid transparent; color: var(--muted); padding: 10px 14px; cursor: pointer; white-space: nowrap; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tabs button:focus-visible { outline: 2px solid var(--navy); outline-offset: -2px; }
+section.panel { display: grid; gap: 16px; }
+.lead { margin: 0; color: var(--muted); max-width: 65ch; }
+.rules { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); }
 .rules b { color: var(--ink); font-weight: 600; }
-h2 { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
-.list { display: grid; gap: 16px; }
+h2 { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 6px 0 0; }
+h3 { margin: 0; }
+.list { display: grid; gap: 14px; }
+
+/* Thẻ video */
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 20px; }
 .card.today { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
 .media { width: 200px; aspect-ratio: 9 / 16; max-width: 100%; border-radius: 8px; overflow: hidden; background: #000; }
 .media video { width: 100%; height: 100%; display: block; object-fit: cover; }
 .media .empty { width: 100%; height: 100%; display: grid; place-items: center; text-align: center; padding: 16px; color: #C8D2E6; font-size: 13px; background: #00225A; }
 .info { min-width: 0; display: grid; gap: 10px; align-content: start; }
-.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 13px; color: var(--muted); }
 .date { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
-.chip { font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 999px; }
+.chip { font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 999px; white-space: nowrap; color: var(--muted); background: var(--sunken); }
 .chip.ok { color: var(--ok); background: var(--ok-bg); }
 .chip.wait { color: var(--wait); background: var(--wait-bg); }
+.chip.info { color: var(--info); background: var(--info-bg); }
 .chip.today { color: var(--accent-ink); background: var(--accent); }
 .topic { font-family: var(--font-display); font-weight: 600; font-size: 21px; line-height: 1.25; margin: 0; text-wrap: balance; }
 .hook { margin: 0; color: var(--muted); }
-.caption { border: 1px solid var(--line); border-radius: 8px; padding: 12px; font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--bg); }
+.caption { border: 1px solid var(--line); border-radius: 8px; padding: 12px; font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--sunken); }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; }
-button, .btn { font: inherit; font-size: 14px; font-weight: 600; border-radius: 8px; padding: 9px 16px; cursor: pointer; border: 1px solid var(--line); background: var(--surface); color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
-button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-button:focus-visible, .btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
-button:disabled { opacity: 0.55; cursor: default; }
+button.btn { font: inherit; font-size: 14px; font-weight: 600; border-radius: 8px; padding: 9px 16px; cursor: pointer; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+button.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+button.btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+button.btn:disabled { opacity: 0.55; cursor: default; }
 .status { font-size: 13px; color: var(--muted); min-height: 1.2em; }
 .note { font-size: 13px; color: var(--wait); }
-.past summary { cursor: pointer; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-.past .list { margin-top: 12px; }
 .empty-state { color: var(--muted); padding: 20px; border: 1px dashed var(--line); border-radius: 10px; text-align: center; }
-@media (max-width: 560px) {
+details.fold > summary { cursor: pointer; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+details.fold > .list { margin-top: 12px; }
+
+/* Lịch đăng */
+.stats { display: flex; flex-wrap: wrap; gap: 8px; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters button { font: inherit; font-size: 13px; font-weight: 600; border: 1px solid var(--line); background: var(--surface); color: var(--muted); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.rows { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.row { border-top: 1px solid var(--line); }
+.row:first-child { border-top: 0; }
+.row > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 112px 130px minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 12px 14px; }
+.row > summary::-webkit-details-marker { display: none; }
+.row > summary:focus-visible { outline: 2px solid var(--navy); outline-offset: -2px; }
+.row.slot > summary { color: var(--muted); }
+.row.week-start { border-top: 2px solid var(--line); }
+.row .d { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 14px; }
+.row .d small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; }
+.row .svc { font-size: 13px; color: var(--muted); }
+.row .t { min-width: 0; }
+.row .t strong { display: block; font-weight: 600; }
+.row .t span { display: block; color: var(--muted); font-size: 14px; }
+.row .more { padding: 0 14px 14px; display: grid; gap: 10px; font-size: 14px; }
+.kv { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 4px 12px; }
+.kv dt { color: var(--muted); font-size: 13px; }
+.kv dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.kv a { color: var(--info); }
+
+/* Kịch bản */
+.script { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.script > summary { cursor: pointer; padding: 14px 16px; display: grid; gap: 6px; list-style: none; }
+.script > summary::-webkit-details-marker { display: none; }
+.script > summary:focus-visible { outline: 2px solid var(--navy); outline-offset: -2px; }
+.script .body { padding: 0 16px 16px; display: grid; gap: 14px; }
+.scenes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: sc; }
+.scenes li { counter-increment: sc; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; padding: 12px 0; border-top: 1px solid var(--line); }
+.scenes li::before { content: counter(sc); font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--accent); line-height: 1.1; }
+.scenes .k { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.scenes .h { font-weight: 600; }
+.scenes .v { margin: 4px 0 0; }
+.scenes .s { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* SOP */
+.doc { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; display: grid; gap: 10px; }
+.doc h3 { font-family: var(--font-display); font-weight: 600; font-size: 20px; color: var(--navy); }
+.doc p, .doc li { max-width: 70ch; }
+.doc ul, .doc ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+.flow { width: 100%; border-collapse: collapse; font-size: 14px; }
+.flow th, .flow td { text-align: left; padding: 9px 10px; border-top: 1px solid var(--line); vertical-align: top; }
+.flow th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); border-top: 0; }
+.flow td:first-child { font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.scroll { overflow-x: auto; }
+.swap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4px 16px; font-size: 14px; }
+.swap .no { color: var(--muted); text-decoration: line-through; }
+
+@media (max-width: 640px) {
   .card { grid-template-columns: minmax(0, 1fr); }
   .media { width: 100%; max-width: 320px; margin: 0 auto; }
+  .row > summary { grid-template-columns: 92px minmax(0, 1fr); }
+  .row .svc { display: none; }
+  .row .chip { grid-column: 2; justify-self: start; }
+  .kv { grid-template-columns: minmax(0, 1fr); }
+  .kv dt { margin-top: 6px; }
 }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
 </style>
 
 <div class="wrap">
-  <header>
+  <header class="top">
     <div class="eyebrow">@adtek.growth.marketing</div>
     <h1>Video TikTok Adtek</h1>
-    <p class="sub">Video đã sản xuất, sắp xếp theo ngày đăng. Tải video về máy, copy caption, rồi đăng trên TikTok.</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Mục">
+    <button role="tab" id="tab-video" aria-controls="video" aria-selected="true">Video</button>
+    <button role="tab" id="tab-lich" aria-controls="lich" aria-selected="false">Lịch đăng</button>
+    <button role="tab" id="tab-kichban" aria-controls="kichban" aria-selected="false">Kịch bản</button>
+    <button role="tab" id="tab-sop" aria-controls="sop" aria-selected="false">SOP</button>
+  </nav>
+
+  <section class="panel" id="video" role="tabpanel" aria-labelledby="tab-video">
+    <p class="lead">Video đã sản xuất, xếp theo ngày đăng. Tải video về máy, copy caption, rồi đăng trên TikTok.</p>
     <div class="rules">
       <span>Nhạc: <b>Commercial Music Library</b>, nhạc nhẹ không lời</span>
       <span>Volume: <b>Original 100%</b>, <b>Sound khoảng 15%</b></span>
       <span>Giờ đăng gợi ý: <b>19:00 đến 21:00</b></span>
     </div>
-  </header>
-
-  <section>
     <h2>Sắp đăng</h2>
     <div class="list" id="upcoming"><div class="empty-state">Đang tải danh sách video…</div></div>
+    <details class="fold" id="pastWrap" hidden>
+      <summary>Đã qua ngày đăng</summary>
+      <div class="list" id="past"></div>
+    </details>
   </section>
 
-  <details class="past" id="pastWrap" hidden>
-    <summary>Đã qua ngày đăng</summary>
-    <div class="list" id="past"></div>
-  </details>
+  <section class="panel" id="lich" role="tabpanel" aria-labelledby="tab-lich" hidden>
+    <p class="lead">4 video mỗi tuần: thứ Sáu, Chủ nhật, thứ Hai, thứ Tư. Bấm vào một dòng để xem số liệu, nguồn và lưu ý.</p>
+    <div class="stats" id="stats"></div>
+    <div class="filters" id="filters" role="group" aria-label="Lọc theo trạng thái"></div>
+    <div class="rows" id="rows"><div class="empty-state">Đang tải lịch…</div></div>
+  </section>
+
+  <section class="panel" id="kichban" role="tabpanel" aria-labelledby="tab-kichban" hidden>
+    <p class="lead">Lời đọc từng cảnh, hình minh họa và nguồn số liệu. Kịch bản tuần tới được gửi duyệt mỗi thứ Bảy.</p>
+    <div class="list" id="scripts"><div class="empty-state">Đang tải kịch bản…</div></div>
+  </section>
+
+  <section class="panel" id="sop" role="tabpanel" aria-labelledby="tab-sop" hidden>
+    <div class="doc">
+      <h3>Quy trình hằng tuần</h3>
+      <p>Giờ Việt Nam. Claude tự chạy theo lịch, Tin Le duyệt và đăng.</p>
+      <div class="scroll">
+        <table class="flow">
+          <thead><tr><th>Khi nào</th><th>Ai</th><th>Việc</th><th>Kết quả</th></tr></thead>
+          <tbody>
+            <tr><td>Thứ Bảy 08:47</td><td>Claude</td><td>Viết kịch bản các video từ Chủ nhật đến hết Chủ nhật tuần sau. Chọn chủ đề cho slot trống, kiểm tra lại số liệu ở nguồn gốc, chụp ảnh 6 cảnh.</td><td>Email "Kịch bản tuần ..., chờ duyệt"</td></tr>
+            <tr><td>Thứ Bảy đến 08:52 Chủ nhật</td><td>Tin Le</td><td>Trả lời email: "Duyệt" hoặc ghi chỉnh sửa theo từng video.</td><td>Không trả lời thì sản xuất theo kịch bản đã gửi</td></tr>
+            <tr><td>Chủ nhật 08:52</td><td>Claude</td><td>Sửa theo góp ý, tạo giọng đọc, xuất video, cân âm lượng, đưa lên trang này.</td><td>Email "Video tuần ... đã xong"</td></tr>
+            <tr><td>T6, CN, T2, T4 17:47</td><td>Claude</td><td>Nhắc đăng video trong ngày, kèm caption copy sẵn.</td><td>Email "Nhắc đăng hôm nay ..."</td></tr>
+            <tr><td>T6, CN, T2, T4 19:00 đến 21:00</td><td>Tin Le</td><td>Tải video, đăng TikTok, chèn nhạc, dán caption.</td><td>Video lên kênh</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="doc">
+      <h3>Đăng video lên TikTok</h3>
+      <ol>
+        <li>Mở mục Video trên trang này, bấm <b>Tải video</b> ở video của ngày hôm nay.</li>
+        <li>Trên TikTok, tải video lên, bấm <b>Sounds</b>, chọn nhạc nhẹ không lời trong Commercial Music Library.</li>
+        <li>Bấm <b>Volume</b>: Original 100%, Sound khoảng 15%.</li>
+        <li>Bấm <b>Copy caption</b> trên trang này, dán vào phần mô tả. Caption không chứa link.</li>
+        <li>Đăng trong khung 19:00 đến 21:00.</li>
+      </ol>
+    </div>
+
+    <div class="doc">
+      <h3>Chuẩn video</h3>
+      <ul>
+        <li>Khoảng 1 phút (50 đến 65 giây), 6 cảnh: câu hỏi mở đầu, 3 đến 4 cảnh số liệu, 1 cảnh "làm gì ngay", cảnh Follow.</li>
+        <li>Câu đầu tiên của lời đọc là một câu hỏi khơi tò mò.</li>
+        <li>Chỉ giữ ý mạnh, số liệu ấn tượng. Một chủ đề làm thành một video, không tách nhỏ.</li>
+        <li>Bám dịch vụ Adtek: Digital Marketing, Growth Marketing, App Marketing, SEO, AIO, Performance Marketing.</li>
+        <li>Kênh TikTok độc lập với website: không dẫn về blog, không đặt link trong caption. Cảnh cuối là thẻ Follow, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi tuần."</li>
+        <li>Thiết kế: nền navy, tiêu đề 2 dòng (trắng và cam), biểu đồ phẳng, số ghi thẳng trên dữ liệu, mỗi biểu đồ chỉ một điểm nhấn cam, nguồn ghi dưới biểu đồ.</li>
+      </ul>
+    </div>
+
+    <div class="doc">
+      <h3>Viết tiếng Việt tự nhiên</h3>
+      <p>Viết như người Việt nói, không dịch thẳng từ tiếng Anh. Áp dụng cho lời đọc, tiêu đề, nhãn biểu đồ, chú thích, dòng nguồn và caption. Đọc to lên, câu nào nghe như văn bản dịch thì viết lại.</p>
+      <div class="swap">
+        <span class="no">lọc bạn, danh sách lọc</span><span>so sánh bạn, lọt vào danh sách</span>
+        <span class="no">hành trình mua</span><span>cách khách hàng mua hàng</span>
+        <span class="no">hệ sinh thái</span><span>doanh nghiệp lớn ở gần</span>
+        <span class="no">ổn định chính trị</span><span>chính trị ổn định</span>
+        <span class="no">cá nhân hóa theo thời gian thực</span><span>nhắn đúng người, đúng lúc</span>
+        <span class="no">người mua B2B</span><span>khách hàng doanh nghiệp</span>
+      </div>
+      <p>Tránh từ sáo rỗng: đóng vai trò quan trọng, bứt phá, giải pháp toàn diện, hành trình, kỷ nguyên, chìa khóa thành công, trong bối cảnh hiện nay. Số viết theo kiểu 75,000 và 0.61%.</p>
+    </div>
+
+    <div class="doc">
+      <h3>Chuẩn số liệu</h3>
+      <ul>
+        <li>Chỉ lấy từ tổ chức phát hành gốc: Google, Meta, OpenAI, Pew, Gartner, McKinsey, Bain, AppsFlyer, Adjust, Sensor Tower, Metric, DataReportal, e-Conomy SEA, văn bản luật. Không dùng trang tổng hợp số liệu.</li>
+        <li>Kiểm tra lại con số ở trang gốc trước khi viết kịch bản. Số không khớp thì bỏ.</li>
+        <li>Số liệu cũ, số liệu nước ngoài hoặc mẫu khảo sát nhỏ phải nói rõ trên video. Nội dung pháp lý nên nhờ luật sư duyệt.</li>
+      </ul>
+    </div>
+
+    <div class="doc">
+      <h3>Giọng đọc và kỹ thuật</h3>
+      <ul>
+        <li>Giọng "Tin Le v1" (giọng nhân bản chuyên nghiệp, miền Nam), model Eleven v4. Khi giọng chưa được huấn luyện cho v4, vẫn dùng v4 như hiện tại.</li>
+        <li>Từ máy đọc sai (viết tắt, tên tiếng Anh) khai báo trong từ điển phát âm. Máy đọc theo cách đọc, phụ đề vẫn hiện chữ gốc.</li>
+        <li>Âm thanh được cân về -14 LUFS khi xuất video, để nhạc TikTok ở mức 15% nằm nhẹ phía sau giọng.</li>
+        <li>Mã nguồn, kịch bản và lịch nằm trong repo Adtek_website, thư mục video, nhánh claude/confident-ramanujan-t3jbi6.</li>
+      </ul>
+    </div>
+  </section>
 </div>
 
 <script>
 (function () {
   const WEEKDAY = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
   let downloads = null;
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Ho_Chi_Minh", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 
-  // Ngày hôm nay theo giờ Việt Nam, dạng YYYY-MM-DD.
-  function todayVN() {
-    const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Ho_Chi_Minh", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
-    return parts;
-  }
-  function fmtDate(iso) {
-    const [y, m, d] = iso.split("-").map(Number);
-    const wd = WEEKDAY[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
-    return wd + " " + String(d).padStart(2, "0") + "/" + String(m).padStart(2, "0");
-  }
   function el(tag, cls, text) {
     const e = document.createElement(tag);
     if (cls) e.className = cls;
     if (text != null) e.textContent = text;
     return e;
   }
-  function captionText(v) {
-    return (v.caption || "") + (v.hashtags && v.hashtags.length ? "\n\n" + v.hashtags.join(" ") : "");
+  function isDate(s) { return /^\d{4}-\d{2}-\d{2}$/.test(s || ""); }
+  function wd(iso) { const [y, m, d] = iso.split("-").map(Number); return WEEKDAY[new Date(Date.UTC(y, m - 1, d)).getUTCDay()]; }
+  function dm(iso) { const [, m, d] = iso.split("-"); return d + "/" + m; }
+  function fmtDate(iso) { return isDate(iso) ? wd(iso) + " " + dm(iso) : iso; }
+  function statusClass(s) {
+    if (s === "Đã có video") return "ok";
+    if (s === "Đã viết kịch bản" || s === "Đã kiểm tra nguồn") return "info";
+    if (s === "Cần chủ đề") return "wait";
+    return "";
   }
+  function getJSON(name) { return fetch(name, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }); }
 
-  function card(v, today) {
+  /* Mục */
+  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+  function show(id, push) {
+    tabs.forEach(t => {
+      const on = t.getAttribute("aria-controls") === id;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (push) { try { history.replaceState(null, "", "#" + id); } catch (e) {} }
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => show(t.getAttribute("aria-controls"), true));
+    t.addEventListener("keydown", e => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      const n = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+      n.focus(); show(n.getAttribute("aria-controls"), true);
+    });
+  });
+  const start = (location.hash || "").slice(1);
+  show(["video", "lich", "kichban", "sop"].includes(start) ? start : "video", false);
+
+  /* Video */
+  function captionText(v) { return (v.caption || "") + (v.hashtags && v.hashtags.length ? "\n\n" + v.hashtags.join(" ") : ""); }
+  function copyBtn(text, box, status) {
+    const cp = el("button", "btn", "Copy caption");
+    cp.type = "button";
+    cp.addEventListener("click", () => {
+      navigator.clipboard.writeText(text).then(
+        () => { status.textContent = "Đã copy caption."; },
+        () => {
+          const r = document.createRange(); r.selectNodeContents(box);
+          const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+          status.textContent = "Caption đã được bôi đen, bấm giữ để copy.";
+        });
+    });
+    return cp;
+  }
+  function videoCard(v) {
     const c = el("article", "card" + (v.date === today ? " today" : ""));
     const media = el("div", "media");
     if (v.url) {
       const vid = document.createElement("video");
       vid.src = v.url; vid.controls = true; vid.playsInline = true; vid.preload = "metadata";
       media.appendChild(vid);
-    } else {
-      media.appendChild(el("div", "empty", v.note || "Video chưa sản xuất"));
-    }
+    } else media.appendChild(el("div", "empty", v.note || "Video chưa sản xuất"));
     c.appendChild(media);
-
     const info = el("div", "info");
     const meta = el("div", "meta");
     meta.appendChild(el("span", "date", fmtDate(v.date)));
@@ -145,13 +339,13 @@ button:disabled { opacity: 0.55; cursor: default; }
     info.appendChild(el("h3", "topic", v.topic));
     if (v.hook) info.appendChild(el("p", "hook", "Mở đầu: " + v.hook));
     const cap = captionText(v);
-    if (cap.trim()) info.appendChild(el("div", "caption", cap));
+    let box = null;
+    if (cap.trim()) { box = el("div", "caption", cap); info.appendChild(box); }
     if (v.note && v.url) info.appendChild(el("div", "note", v.note));
-
     const actions = el("div", "actions");
     const status = el("div", "status");
     if (v.url) {
-      const dl = el("button", "primary", "Tải video");
+      const dl = el("button", "btn primary", "Tải video");
       dl.type = "button";
       dl.addEventListener("click", async () => {
         if (!downloads) { status.textContent = "Trình xem này không cho tải trực tiếp. Mở video, bấm giữ để lưu."; return; }
@@ -166,52 +360,135 @@ button:disabled { opacity: 0.55; cursor: default; }
       });
       actions.appendChild(dl);
     }
-    if (cap.trim()) {
-      const cp = el("button", null, "Copy caption");
-      cp.type = "button";
-      cp.addEventListener("click", () => {
-        navigator.clipboard.writeText(cap).then(
-          () => { status.textContent = "Đã copy caption."; },
-          () => {
-            const box = c.querySelector(".caption");
-            const r = document.createRange(); r.selectNodeContents(box);
-            const s = getSelection(); s.removeAllRanges(); s.addRange(r);
-            status.textContent = "Caption đã được bôi đen, bấm giữ để copy.";
-          });
-      });
-      actions.appendChild(cp);
-    }
+    if (box) actions.appendChild(copyBtn(cap, box, status));
     info.appendChild(actions);
     info.appendChild(status);
     c.appendChild(info);
     return c;
   }
-
-  function render(videos) {
-    const today = todayVN();
-    const up = document.getElementById("upcoming");
-    const past = document.getElementById("past");
+  getJSON("videos.json").then(videos => {
+    const up = document.getElementById("upcoming"), past = document.getElementById("past");
     up.textContent = ""; past.textContent = "";
     const sorted = videos.slice().sort((a, b) => a.date.localeCompare(b.date));
-    const coming = sorted.filter(v => v.date >= today);
-    const gone = sorted.filter(v => v.date < today).reverse();
+    const coming = sorted.filter(v => v.date >= today), gone = sorted.filter(v => v.date < today).reverse();
     if (!coming.length) up.appendChild(el("div", "empty-state", "Chưa có video nào sắp đăng. Video mới được thêm vào mỗi Chủ nhật."));
-    coming.forEach(v => up.appendChild(card(v, today)));
-    gone.forEach(v => past.appendChild(card(v, today)));
+    coming.forEach(v => up.appendChild(videoCard(v)));
+    gone.forEach(v => past.appendChild(videoCard(v)));
     document.getElementById("pastWrap").hidden = !gone.length;
-  }
+  }).catch(() => {
+    const up = document.getElementById("upcoming"); up.textContent = "";
+    up.appendChild(el("div", "empty-state", "Chưa tải được danh sách video. Tải lại trang để thử lại."));
+  });
 
-  fetch("videos.json", { cache: "no-store" })
-    .then(r => r.json())
-    .then(render)
-    .catch(() => {
-      const up = document.getElementById("upcoming");
-      up.textContent = "";
-      up.appendChild(el("div", "empty-state", "Chưa tải được danh sách video. Tải lại trang để thử lại."));
+  /* Lịch đăng */
+  let schedule = [], filter = "Tất cả";
+  const FILTERS = ["Tất cả", "Sắp tới", "Đã có video", "Đã viết kịch bản", "Ý tưởng", "Cần chủ đề", "Đã đăng"];
+  function renderFilters() {
+    const f = document.getElementById("filters"); f.textContent = "";
+    FILTERS.forEach(name => {
+      const b = el("button", null, name);
+      b.type = "button"; b.setAttribute("aria-pressed", name === filter ? "true" : "false");
+      b.addEventListener("click", () => { filter = name; renderFilters(); renderRows(); });
+      f.appendChild(b);
     });
-
-  if (window.claude && window.claude.use) {
-    window.claude.use("downloads").then(d => { downloads = d; }).catch(() => {});
   }
+  function renderStats() {
+    const s = document.getElementById("stats"); s.textContent = "";
+    const count = st => schedule.filter(r => r.status === st).length;
+    [["Đã đăng", ""], ["Đã có video", "ok"], ["Đã viết kịch bản", "info"], ["Ý tưởng", ""], ["Cần chủ đề", "wait"]].forEach(([st, cls]) => {
+      const n = count(st); if (n) s.appendChild(el("span", "chip " + cls, st + ": " + n));
+    });
+  }
+  function renderRows() {
+    const box = document.getElementById("rows"); box.textContent = "";
+    let rows = schedule;
+    if (filter === "Sắp tới") rows = rows.filter(r => isDate(r.date) && r.date >= today);
+    else if (filter !== "Tất cả") rows = rows.filter(r => r.status === filter);
+    if (!rows.length) { box.appendChild(el("div", "empty-state", "Không có dòng nào.")); return; }
+    let lastFri = null;
+    rows.forEach(r => {
+      const slot = r.status === "Cần chủ đề";
+      const d = el("details", "row" + (slot ? " slot" : ""));
+      if (isDate(r.date) && wd(r.date) === "Thứ Sáu" && lastFri !== null) d.classList.add("week-start");
+      if (isDate(r.date) && wd(r.date) === "Thứ Sáu") lastFri = r.date;
+      const sum = el("summary");
+      const dc = el("div", "d", isDate(r.date) ? dm(r.date) : r.date || "");
+      if (isDate(r.date)) dc.appendChild(el("small", null, wd(r.date) + (r.date === today ? " · hôm nay" : "")));
+      sum.appendChild(dc);
+      sum.appendChild(el("div", "svc", r.service || ""));
+      const t = el("div", "t");
+      t.appendChild(el("strong", null, slot ? "Slot trống" : r.topic));
+      if (r.hook) t.appendChild(el("span", null, r.hook));
+      else if (slot) t.appendChild(el("span", null, "Chủ đề được chọn khi viết kịch bản thứ Bảy"));
+      sum.appendChild(t);
+      sum.appendChild(el("span", "chip " + statusClass(r.status), r.status || ""));
+      d.appendChild(sum);
+      const more = el("div", "more");
+      const dl = el("dl", "kv");
+      const add = (k, v, link) => {
+        if (!v) return;
+        dl.appendChild(el("dt", null, k));
+        const dd = el("dd");
+        if (link) v.split("\n").filter(Boolean).forEach((u, i) => {
+          if (i) dd.appendChild(document.createElement("br"));
+          if (/^https?:\/\//.test(u)) { const a = el("a", null, u); a.href = u; a.target = "_blank"; a.rel = "noopener"; dd.appendChild(a); }
+          else dd.appendChild(document.createTextNode(u));
+        }); else dd.textContent = v;
+        dl.appendChild(dd);
+      };
+      add("Số liệu", r.data); add("Nguồn", r.sources); add("Link nguồn", r.links, true);
+      add("Kiểm tra nguồn", r.check); add("Lưu ý", r.notes); add("Từ khóa", r.keywords); add("Nhu cầu tìm kiếm", r.demand);
+      if (dl.children.length) { more.appendChild(dl); d.appendChild(more); }
+      box.appendChild(d);
+    });
+  }
+  getJSON("schedule.json").then(data => { schedule = data; renderStats(); renderFilters(); renderRows(); })
+    .catch(() => { const b = document.getElementById("rows"); b.textContent = ""; b.appendChild(el("div", "empty-state", "Chưa tải được lịch. Tải lại trang để thử lại.")); });
+
+  /* Kịch bản */
+  getJSON("scripts.json").then(list => {
+    const box = document.getElementById("scripts"); box.textContent = "";
+    if (!list.length) { box.appendChild(el("div", "empty-state", "Chưa có kịch bản.")); return; }
+    const order = list.slice().sort((a, b) => {
+      const ka = isDate(a.date) ? (a.date >= today ? "0" + a.date : "1" + a.date) : "2";
+      const kb = isDate(b.date) ? (b.date >= today ? "0" + b.date : "1" + b.date) : "2";
+      return ka.localeCompare(kb);
+    });
+    order.forEach((s, i) => {
+      const d = el("details", "script");
+      if (i === 0 && isDate(s.date) && s.date >= today) d.open = true;
+      const sum = el("summary");
+      const meta = el("div", "meta");
+      meta.appendChild(el("span", "date", isDate(s.date) ? fmtDate(s.date) : "Đã đăng"));
+      if (s.status) meta.appendChild(el("span", "chip " + statusClass(s.status), s.status));
+      meta.appendChild(el("span", null, s.words + " chữ" + (s.seconds ? " · khoảng " + s.seconds + " giây" : "")));
+      sum.appendChild(meta);
+      sum.appendChild(el("h3", "topic", s.title));
+      d.appendChild(sum);
+      const body = el("div", "body");
+      const cap = captionText(s);
+      if (cap.trim()) {
+        const capBox = el("div", "caption", cap);
+        const status = el("div", "status");
+        const act = el("div", "actions"); act.appendChild(copyBtn(cap, capBox, status));
+        body.appendChild(capBox); body.appendChild(act); body.appendChild(status);
+      }
+      const ol = el("ol", "scenes");
+      s.scenes.forEach(sc => {
+        const li = el("li");
+        const w = el("div");
+        if (sc.kicker) w.appendChild(el("div", "k", sc.kicker));
+        w.appendChild(el("div", "h", sc.title));
+        w.appendChild(el("p", "v", "Lời đọc: " + sc.voice));
+        w.appendChild(el("div", "s", sc.visual + (sc.source ? " · " + sc.source : "")));
+        li.appendChild(w); ol.appendChild(li);
+      });
+      body.appendChild(ol);
+      d.appendChild(body);
+      box.appendChild(d);
+    });
+  }).catch(() => { const b = document.getElementById("scripts"); b.textContent = ""; b.appendChild(el("div", "empty-state", "Chưa tải được kịch bản. Tải lại trang để thử lại.")); });
+
+  if (window.claude && window.claude.use) window.claude.use("downloads").then(d => { downloads = d; }).catch(() => {});
 })();
 </script>
