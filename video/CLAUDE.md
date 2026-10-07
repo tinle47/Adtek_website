@@ -34,3 +34,10 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 
 - Giọng "Tin Le v1" (Professional Voice Clone, giọng miền Nam). Dùng Eleven v4 khi giọng đã được huấn luyện cho v4; `voice.mjs` tự kiểm tra và dừng nếu chưa.
 - Từ máy đọc sai thêm vào `tools/pronunciation.json`.
+
+## Quy trình hằng tuần (Routine tự chạy, giờ Việt Nam)
+
+- Thứ Bảy 08:47: viết kịch bản các video từ Chủ nhật đến hết Chủ nhật tuần sau, chụp ảnh duyệt, email hi@tinle.co tiêu đề "[Adtek TikTok] Kịch bản tuần ..., chờ duyệt".
+- Chủ nhật 08:52: đọc phản hồi trong thread đó, sửa theo góp ý, tạo giọng, xuất video, tải lên Google Drive thư mục "Adtek TikTok", email "[Adtek TikTok] Video tuần ... đã xong" kèm link và caption.
+- T6, CN, T2, T4 lúc 17:47: email "[Adtek TikTok] Nhắc đăng hôm nay ..." kèm link video, caption, cấu hình nhạc, giờ đăng gợi ý 19:00 đến 21:00.
+- Email gửi anh Tin: súc tích, chuyên nghiệp, không xưng anh/em, không dùng ký tự "—".
