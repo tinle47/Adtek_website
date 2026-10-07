@@ -1,5 +1,7 @@
 // Tạo giọng đọc bằng ElevenLabs (giọng nhân bản của anh Tin) kèm thời điểm từng chữ để khớp phụ đề.
 // Cách dùng: node tools/voice.mjs <slug> [số video...]   ví dụ: node tools/voice.mjs aio-la-gi 1 2 3
+//            thêm --force để tạo lại toàn bộ, ví dụ sau khi ElevenLabs huấn luyện lại giọng.
+//            thêm --skip-check để vẫn tạo giọng dù giọng chưa được huấn luyện cho model (giọng dễ bị pha).
 // Cần biến môi trường ELEVENLABS_API_KEY và ELEVENLABS_VOICE_ID. Tùy chọn ELEVENLABS_MODEL.
 // Kết quả: public/voice/<id>/<cảnh>.mp3 và manifest.json. Cảnh nào lời đọc không đổi thì dùng lại file cũ, không tốn thêm credit.
 // Từ máy hay đọc sai khai báo trong tools/pronunciation.json (chữ gốc -> cách đọc). Máy đọc theo cách đọc, phụ đề vẫn hiện chữ gốc.
@@ -16,9 +18,26 @@ if (!KEY || !VOICE) {
   process.exit(1);
 }
 
-const [slug, ...nums] = process.argv.slice(2);
+const args = process.argv.slice(2);
+const force = args.includes("--force");
+const [slug, ...nums] = args.filter((a) => !a.startsWith("--"));
 const dir = path.join(ROOT, "scripts", slug);
 const files = nums.length ? nums.map((n) => `${n}.json`) : readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
+
+// Giọng nhân bản chuyên nghiệp phải được huấn luyện riêng cho từng model. Chưa huấn luyện thì model chỉ bắt chước
+// gần đúng (ví dụ giọng miền Nam bị pha giọng Bắc), nên dừng lại thay vì tốn credit. Huấn luyện thêm ở ElevenLabs:
+// My Voices, bấm dấu cộng cạnh tên model.
+if (!args.includes("--skip-check")) {
+  const res = await fetch(`https://api.elevenlabs.io/v1/voices/${VOICE}`, { headers: { "xi-api-key": KEY } });
+  const state = res.ok ? (await res.json()).fine_tuning?.state ?? {} : null;
+  if (!state) console.warn(`Không kiểm tra được giọng đã huấn luyện cho ${MODEL} chưa (ElevenLabs ${res.status}), vẫn tiếp tục.`);
+  else if (Object.keys(state).length && state[MODEL] !== "fine_tuned") {
+    const ready = Object.keys(state).filter((m) => state[m] === "fine_tuned").join(", ");
+    console.error(`Giọng chưa được huấn luyện cho ${MODEL} (trạng thái: ${state[MODEL] ?? "chưa bắt đầu"}). Đã huấn luyện: ${ready}.`);
+    console.error("Huấn luyện thêm trên ElevenLabs (My Voices, dấu cộng cạnh model), hoặc chạy với --skip-check.");
+    process.exit(1);
+  }
+}
 
 // Từ điển phát âm: phân biệt hoa thường và chỉ thay nguyên chữ, nên "AI" không đụng tới "ai" hay "AIO".
 const DICT = JSON.parse(readFileSync(path.join(ROOT, "tools", "pronunciation.json"), "utf8"));
@@ -110,7 +129,8 @@ for (const file of files) {
     const mp3 = path.join(out, `${i}.mp3`);
     const { said, map } = pronounce(scene.voice);
     // Sửa lời đọc hoặc sửa từ điển cho chữ có trong cảnh thì cảnh đó mới tạo lại giọng.
-    if (cached?.text === scene.voice && (cached.said ?? cached.text) === said && existsSync(mp3)) {
+    // Đổi model cũng tạo lại, vì giọng mỗi model mỗi khác.
+    if (!force && old.model === MODEL && cached?.text === scene.voice && (cached.said ?? cached.text) === said && existsSync(mp3)) {
       scenes.push(cached);
       continue;
     }

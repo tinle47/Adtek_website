@@ -49,6 +49,11 @@ Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chrom
 2. Bấm **Sounds**, chọn nhạc nhẹ không lời trong Commercial Music Library (tài khoản doanh nghiệp chỉ được dùng kho này).
 3. Bấm **Volume**: **Original** (giọng đọc) kéo hết cỡ 100%, **Sound** (nhạc) khoảng 15%. Giọng đã ở -14 LUFS nên mức này nhạc nằm nhẹ phía sau, không lấn lời.
 
+## Giọng đọc
+
+- Giọng "Tin Le v1" là Professional Voice Clone giọng miền Nam. Mỗi model phải được huấn luyện riêng (ElevenLabs, My Voices, dấu cộng cạnh tên model). Model chưa huấn luyện chỉ bắt chước gần đúng, giọng bị pha Bắc.
+- `voice.mjs` kiểm tra việc này trước khi tạo giọng và dừng lại nếu chưa huấn luyện. Sau khi huấn luyện xong, chạy lại với `--force` để tạo lại toàn bộ giọng cũ.
+
 ## Lưu ý khi viết kịch bản
 
 - Mỗi video 30 đến 45 giây, 5 đến 6 cảnh. Câu mở đầu phải gây tò mò hoặc có con số gây sốc.
