@@ -138,15 +138,12 @@
       "voice": "Cuộc chơi đã đổi. Không còn là đứng thứ mấy, mà là có mặt trong câu trả lời của AI hay không. Việc đó gọi là AIO."
     },
     {
-      "kicker": "Đọc bài đầy đủ ở link bio",
+      "kicker": "Follow Adtek",
       "headline": "Thương hiệu của bạn đã có",
       "accent": "trong câu trả lời của AI?",
-      "voice": "Xem cách làm AIO đầy đủ ở link bio, và follow Adtek.",
+      "voice": "Follow Adtek để xem số liệu marketing mới mỗi tuần.",
       "visual": {
-        "type": "article",
-        "image": "covers/aio-la-gi.jpg",
-        "title": "AIO là gì? Cách tối ưu để được AI trích dẫn",
-        "url": "adtek.agency/aio-la-gi"
+        "type": "follow"
       }
     }
   ]

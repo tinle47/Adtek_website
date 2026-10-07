@@ -45,14 +45,15 @@ export type Visual =
     }
   | { type: "waffle"; metric: string; unit: string; source: string; lit: number; legend: [string, string] }
   | { type: "list"; items: string[] }
-  | { type: "article"; image: string; title: string; url: string } // thẻ bài blog ở cảnh cuối
+  | { type: "article"; image: string; title: string; url: string } // thẻ bài blog (không dùng cho kênh TikTok độc lập)
+  | { type: "follow"; note?: string } // cảnh cuối kêu gọi theo dõi kênh
   | { type: "continue" }; // giữ biểu đồ của cảnh trước, hiện thêm phần có step tương ứng
 
 export type Scene = { kicker: string; headline: string; accent: string; voice: string; visual?: Visual };
 
 export type Script = {
   id: string;
-  post_url: string;
+  post_url?: string; // bài blog liên quan nếu có, không đưa vào caption
   caption: string;
   hashtags: string[];
   scenes: Scene[];

@@ -76,15 +76,12 @@
       }
     },
     {
-      "kicker": "Đọc bài đầy đủ ở link bio",
+      "kicker": "Follow Adtek",
       "headline": "Đo đúng thì mới",
       "accent": "tối ưu đúng.",
-      "voice": "Xem cách đo chi tiết ở link bio, và follow Adtek.",
+      "voice": "Follow Adtek để xem số liệu marketing mới mỗi tuần.",
       "visual": {
-        "type": "article",
-        "image": "covers/aio-la-gi.jpg",
-        "title": "AIO là gì? Cách tối ưu để được AI trích dẫn",
-        "url": "adtek.agency/aio-la-gi"
+        "type": "follow"
       }
     }
   ]

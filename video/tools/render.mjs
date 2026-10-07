@@ -74,7 +74,7 @@ for (const file of files) {
   const before = voice ? normalize(output) : null;
   writeFileSync(
     path.join(OUT, `${script.id}.txt`),
-    `${script.caption}\n\n${script.hashtags.join(" ")}\n\nBài gốc: ${script.post_url}\n`,
+    `${script.caption}\n\n${script.hashtags.join(" ")}\n`,
   );
   const secs = (composition.durationInFrames / composition.fps).toFixed(1);
   console.log(`${script.id}: ${secs}s ${voice ? `có giọng, âm lượng ${before} -> -14 LUFS` : "chưa có giọng"} -> ${path.relative(ROOT, output)}`);

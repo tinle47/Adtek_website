@@ -87,15 +87,12 @@
       }
     },
     {
-      "kicker": "Đọc bài đầy đủ ở link bio",
+      "kicker": "Follow Adtek",
       "headline": "Nói điều nhà đầu tư lo,",
       "accent": "đừng chỉ nói giá.",
-      "voice": "Xem chiến lược đầy đủ ở link bio, và follow Adtek.",
+      "voice": "Follow Adtek để xem số liệu marketing mới mỗi tuần.",
       "visual": {
-        "type": "article",
-        "image": "covers/khu-cong-nghiep-fdi.jpg",
-        "title": "Chiến lược digital marketing cho bất động sản khu công nghiệp",
-        "url": "adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep"
+        "type": "follow"
       }
     }
   ]

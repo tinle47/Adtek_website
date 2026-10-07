@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
-import { Article, List } from "./design/blocks";
+import { Article, Follow, List } from "./design/blocks";
 import { BarChart, ColumnChart, Exhibit, Waffle, type TimedCol, type TimedNote } from "./design/charts";
 import { CHAT_NOTE_AT, ChatScreen } from "./design/chat";
 import { Background, Caption, Fade, Headline, L, Logo, SiteFooter, clamp, useFonts } from "./design/frame";
@@ -99,6 +99,12 @@ const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) =>
       return (
         <div style={stage}>
           <Article image={v.image} title={v.title} url={v.url} />
+        </div>
+      );
+    case "follow":
+      return (
+        <div style={stage}>
+          <Follow note={v.note ?? "Số liệu marketing có nguồn, mỗi tuần."} />
         </div>
       );
     default:

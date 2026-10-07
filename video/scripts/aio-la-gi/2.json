@@ -108,15 +108,12 @@
       }
     },
     {
-      "kicker": "Đọc bài đầy đủ ở link bio",
+      "kicker": "Follow Adtek",
       "headline": "AI học về bạn qua",
       "accent": "những gì người khác viết.",
-      "voice": "AI học về bạn qua những gì người khác viết. Xem bài đầy đủ ở link bio, và follow Adtek.",
+      "voice": "AI học về bạn qua những gì người khác viết. Follow Adtek để xem thêm số liệu mỗi tuần.",
       "visual": {
-        "type": "article",
-        "image": "covers/aio-la-gi.jpg",
-        "title": "AIO là gì? Cách tối ưu để được AI trích dẫn",
-        "url": "adtek.agency/aio-la-gi"
+        "type": "follow"
       }
     }
   ]

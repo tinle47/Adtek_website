@@ -71,15 +71,12 @@
       "voice": "Một chi tiết dễ bỏ sót: sau sáp nhập tỉnh, nhà đầu tư vẫn tìm khu công nghiệp Bắc Giang, khu công nghiệp Hà Nam. Bộ từ khóa phải giữ cả tên cũ."
     },
     {
-      "kicker": "Đọc bài đầy đủ ở link bio",
+      "kicker": "Follow Adtek",
       "headline": "Đừng dịch máy.",
       "accent": "Viết theo cách họ tìm kiếm.",
-      "voice": "Đừng dịch máy từ tiếng Việt. Xem cách xây bộ từ khóa năm ngôn ngữ ở link bio, và follow Adtek.",
+      "voice": "Đừng dịch máy từ tiếng Việt. Follow Adtek để xem thêm số liệu mỗi tuần.",
       "visual": {
-        "type": "article",
-        "image": "covers/khu-cong-nghiep-fdi.jpg",
-        "title": "Chiến lược digital marketing cho bất động sản khu công nghiệp",
-        "url": "adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep"
+        "type": "follow"
       }
     }
   ]
