@@ -1,0 +1,147 @@
+{
+  "id": "top-1-google-van-mat-khach",
+  "date": "2026-10-08",
+  "status": "Đã có video",
+  "caption": "Cùng đứng top 1 Google, trang có tóm tắt AI phía trên mất 58% lượt bấm. Nhưng 62% nguồn được AI trích dẫn lại nằm ngoài top 10. Làm SEO năm nay cần đổi cách nào?",
+  "hashtags": [
+    "#SEO",
+    "#google",
+    "#AIO",
+    "#seo2026",
+    "#marketing",
+    "#adtek"
+  ],
+  "scenes": [
+    {
+      "kicker": "SEO · Ahrefs",
+      "headline": "Đứng top 1 Google,",
+      "accent": "vẫn mất hơn nửa lượt bấm.",
+      "voice": "Đứng top 1 Google, vì sao bạn vẫn mất hơn nửa lượt bấm? Ahrefs đo 300 nghìn từ khóa. Cùng là trang top 1, có tóm tắt AI phía trên thì tỷ lệ bấm chỉ còn 1.6%, thay vì 3.9%.",
+      "visual": {
+        "type": "versus",
+        "metric": "Tỷ lệ bấm vào trang top 1 Google, 12/2025",
+        "unit": "%",
+        "source": "Nguồn: Ahrefs, 300,000 từ khóa, 05/2026. Số liệu quốc tế",
+        "items": [
+          {
+            "label": "Không có tóm tắt AI",
+            "value": 3.9,
+            "suffix": "%"
+          },
+          {
+            "label": "Có tóm tắt AI phía trên",
+            "value": 1.6,
+            "suffix": "%"
+          }
+        ],
+        "winner": 1,
+        "note": "Mất 58% lượt bấm"
+      }
+    },
+    {
+      "kicker": "Mất khách ngày càng nhanh",
+      "headline": "Chỉ sau 8 tháng,",
+      "accent": "mất khách từ 34.5% lên 58%.",
+      "voice": "Mức mất khách còn tăng rất nhanh. Tháng 4 năm ngoái, trang top 1 mất 34.5% lượt bấm. Tám tháng sau đã là 58%.",
+      "visual": {
+        "type": "columns",
+        "metric": "Lượt bấm trang top 1 bị mất khi có tóm tắt AI",
+        "unit": "%",
+        "source": "Nguồn: Ahrefs, 04/2025 và 05/2026",
+        "max": 58,
+        "cols": [
+          {
+            "label": "Lần đo\n04/2025",
+            "value": 34.5,
+            "tone": "main"
+          },
+          {
+            "label": "Lần đo\n12/2025",
+            "value": 58,
+            "tone": "accent"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 1,
+            "text": "Chỉ sau 8 tháng"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Pew Research Center",
+      "headline": "Đọc xong tóm tắt AI,",
+      "accent": "1/4 người dùng rời đi luôn.",
+      "voice": "Pew Research còn thấy một điều đáng lo hơn. Khi có tóm tắt AI, cứ 100 lượt tìm thì 26 lượt người dùng đọc xong rồi rời đi luôn, không xem thêm trang nào. Không có tóm tắt AI, con số này là 16.",
+      "visual": {
+        "type": "waffle",
+        "metric": "Lượt tìm có tóm tắt AI mà người dùng rời đi luôn",
+        "unit": "trên 100 lượt tìm",
+        "source": "Nguồn: Pew Research Center, 07/2025, 68,879 lượt tìm của 900 người Mỹ",
+        "lit": 26,
+        "legend": [
+          "26 lượt rời đi luôn, so với 16 khi không có tóm tắt AI",
+          "74 lượt xem tiếp trang khác"
+        ]
+      }
+    },
+    {
+      "kicker": "Cơ hội cho trang nhỏ",
+      "headline": "Không đứng top,",
+      "accent": "vẫn có thể được AI nhắc tên.",
+      "voice": "Nhưng có tin tốt. Chỉ 37.9% nguồn được AI trích dẫn nằm trong top 10, giảm từ 76% hồi tháng 7 năm ngoái. Chưa lên top vẫn có cơ hội được nhắc tên.",
+      "visual": {
+        "type": "donut",
+        "metric": "Nguồn được tóm tắt AI trích dẫn, theo thứ hạng Google",
+        "unit": "%",
+        "source": "Nguồn: Ahrefs, 863,000 từ khóa, 03/2026",
+        "center": "62%",
+        "centerLabel": "nằm ngoài top 10",
+        "parts": [
+          {
+            "label": "Top 10",
+            "value": 37.9,
+            "tone": "main"
+          },
+          {
+            "label": "Hạng 11 đến 100",
+            "value": 31.2,
+            "tone": "accent"
+          },
+          {
+            "label": "Ngoài top 100",
+            "value": 31,
+            "tone": "base",
+            "display": "31.0"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "SEO năm nay:",
+      "accent": "để AI chọn bạn.",
+      "voice": "Vậy làm gì ngay? Trả lời ngắn, rõ ngay đầu bài. Làm video YouTube cho từ khóa chính. Theo dõi số lần được AI nhắc tên. Và kéo khách về Zalo, email để bớt phụ thuộc Google.",
+      "visual": {
+        "type": "list",
+        "items": [
+          "Câu trả lời ngắn, rõ ngay đầu bài",
+          "Video YouTube cho từ khóa chính",
+          "Đo số lần được AI nhắc tên",
+          "Kéo khách về Zalo OA, email"
+        ]
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Top 1 chưa đủ,",
+      "accent": "phải được AI nhắc tên.",
+      "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow"
+      }
+    }
+  ]
+}
