@@ -61,69 +61,8 @@
   ]
  },
  {
-  "id": "top-1-google-van-mat-khach",
-  "date": "2026-10-08",
-  "status": "Đã có video",
-  "title": "Đứng top 1 Google, vẫn mất hơn nửa lượt bấm.",
-  "caption": "Cùng đứng top 1 Google, trang có tóm tắt AI phía trên mất 58% lượt bấm. Nhưng 62% nguồn được AI trích dẫn lại nằm ngoài top 10. Làm SEO năm nay cần đổi cách nào?",
-  "hashtags": [
-   "#SEO",
-   "#google",
-   "#AIO",
-   "#seo2026",
-   "#marketing",
-   "#adtek"
-  ],
-  "words": 188,
-  "seconds": 63,
-  "scenes": [
-   {
-    "kicker": "SEO · Ahrefs",
-    "title": "Đứng top 1 Google, vẫn mất hơn nửa lượt bấm.",
-    "voice": "Đứng top 1 Google, vì sao bạn vẫn mất hơn nửa lượt bấm? Ahrefs đo 300 nghìn từ khóa. Cùng là trang top 1, có tóm tắt AI phía trên thì tỷ lệ bấm chỉ còn 1.6%, thay vì 3.9%.",
-    "visual": "Đối đầu",
-    "source": "Nguồn: Ahrefs, 300,000 từ khóa, 05/2026. Số liệu quốc tế"
-   },
-   {
-    "kicker": "Mất khách ngày càng nhanh",
-    "title": "Chỉ sau 8 tháng, mất khách từ 34.5% lên 58%.",
-    "voice": "Mức mất khách còn tăng rất nhanh. Tháng 4 năm ngoái, trang top 1 mất 34.5% lượt bấm. Tám tháng sau đã là 58%.",
-    "visual": "Biểu đồ cột",
-    "source": "Nguồn: Ahrefs, 04/2025 và 05/2026"
-   },
-   {
-    "kicker": "Pew Research Center",
-    "title": "Đọc xong tóm tắt AI, 1/4 người dùng rời đi luôn.",
-    "voice": "Pew Research còn thấy một điều đáng lo hơn. Khi có tóm tắt AI, cứ 100 lượt tìm thì 26 lượt người dùng đọc xong rồi rời đi luôn, không xem thêm trang nào. Không có tóm tắt AI, con số này là 16.",
-    "visual": "Ô vuông 100",
-    "source": "Nguồn: Pew Research Center, 07/2025, 68,879 lượt tìm của 900 người Mỹ"
-   },
-   {
-    "kicker": "Cơ hội cho trang nhỏ",
-    "title": "Không đứng top, vẫn có thể được AI nhắc tên.",
-    "voice": "Nhưng có tin tốt. Chỉ 37.9% nguồn được AI trích dẫn nằm trong top 10, giảm từ 76% hồi tháng 7 năm ngoái. Chưa lên top vẫn có cơ hội được nhắc tên.",
-    "visual": "Vòng tròn",
-    "source": "Nguồn: Ahrefs, 863,000 từ khóa, 03/2026"
-   },
-   {
-    "kicker": "Làm gì ngay?",
-    "title": "SEO năm nay: để AI chọn bạn.",
-    "voice": "Vậy làm gì ngay? Trả lời ngắn, rõ ngay đầu bài. Làm video YouTube cho từ khóa chính. Theo dõi số lần được AI nhắc tên. Và kéo khách về Zalo, email để bớt phụ thuộc Google.",
-    "visual": "Danh sách",
-    "source": ""
-   },
-   {
-    "kicker": "Follow Adtek",
-    "title": "Top 1 chưa đủ, phải được AI nhắc tên.",
-    "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
-    "visual": "Thẻ Follow Adtek",
-    "source": ""
-   }
-  ]
- },
- {
   "id": "nhan-tin-truoc-khi-mua",
-  "date": "2026-10-09",
+  "date": "2026-10-08",
   "status": "Đã có video",
   "title": "8/10 khách muốn nhắn tin, shop bạn trả lời kịp không?",
   "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Mùa mua sắm từ 12.12 đến Tết sắp tới, shop của bạn đã sẵn sàng trả lời chưa?",
@@ -184,7 +123,7 @@
  },
  {
   "id": "khach-hang-dang-hoi-ai",
-  "date": "2026-10-10",
+  "date": "2026-10-09",
   "status": "Đã có video",
   "title": "900 triệu người mỗi tuần đang hỏi ChatGPT.",
   "caption": "ChatGPT có 900 triệu người dùng mỗi tuần, 81% người Việt dùng AI mỗi ngày. Khi khách hỏi AI về ngành của bạn, thương hiệu nào đang được gợi ý?",
@@ -237,6 +176,67 @@
    {
     "kicker": "Follow Adtek",
     "title": "Khách đang hỏi AI, AI có nhắc tên bạn?",
+    "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ]
+ },
+ {
+  "id": "khach-bo-gio-hang",
+  "date": "2026-10-10",
+  "status": "Đã có video",
+  "title": "7/10 giỏ hàng không được thanh toán.",
+  "caption": "7 trên 10 giỏ hàng bị bỏ lại trước khi thanh toán. Ở Việt Nam, cứ 2 người thì 1 người bỏ giỏ khi thấy phí phát sinh. Shop của bạn đang mất khách ở bước nào?",
+  "hashtags": [
+   "#banhangonline",
+   "#thuongmaidientu",
+   "#growthmarketing",
+   "#chotdon",
+   "#marketing",
+   "#adtek"
+  ],
+  "words": 189,
+  "seconds": 57,
+  "scenes": [
+   {
+    "kicker": "Growth · Baymard Institute",
+    "title": "7/10 giỏ hàng không được thanh toán.",
+    "voice": "Cứ 10 người bỏ hàng vào giỏ, bao nhiêu người thật sự thanh toán? Chỉ khoảng 3. Baymard tổng hợp 50 nghiên cứu: trung bình hơn 70% giỏ hàng bị bỏ lại.",
+    "visual": "Hình người",
+    "source": "Nguồn: Baymard Institute, tổng hợp 50 nghiên cứu, cập nhật 2025. Số liệu quốc tế"
+   },
+   {
+    "kicker": "Người mua Việt Nam · 2025",
+    "title": "Thấy phí phát sinh, một nửa khách bỏ đi.",
+    "voice": "Người mua Việt Nam bỏ giỏ vì đâu? Theo khảo sát năm 2025, cứ 2 người thì 1 người bỏ đi nếu thấy phí phát sinh lúc thanh toán. 49% bỏ đi nếu shop chưa có đánh giá, 46% nếu đổi trả không rõ ràng.",
+    "visual": "Thanh ngang",
+    "source": "Nguồn: Milieu Insight, khảo sát người mua online Việt Nam, 09/2025"
+   },
+   {
+    "kicker": "Giao hàng",
+    "title": "Giao đúng hẹn được coi trọng hơn ship rẻ.",
+    "voice": "Điều bất ngờ là người Việt coi trọng giao hàng đúng hẹn hơn phí ship rẻ. Và chỉ một lần giao tệ, cứ 3 người thì 1 người ngừng mua ở shop đó.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: Milieu Insight, 09/2025"
+   },
+   {
+    "kicker": "Sửa trang thanh toán",
+    "title": "Sửa bước thanh toán, chuyển đổi có thể tăng 35%.",
+    "voice": "Tin tốt là phần lớn lý do này sửa được. Baymard ước tính, chỉ cần làm lại bước thanh toán cho gọn, tỷ lệ chuyển đổi có thể tăng 35%.",
+    "visual": "Số lớn",
+    "source": "Nguồn: Baymard Institute, nghiên cứu trải nghiệm thanh toán"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Giữ khách ở bước cuối cùng.",
+    "voice": "Vậy làm gì ngay? Hiện tổng tiền và phí ship ngay từ trang sản phẩm. Ghi rõ đổi trả, có đánh giá thật. Cho mua không cần tạo tài khoản. Và nhắc khách quay lại giỏ qua Zalo, email.",
+    "visual": "Danh sách",
+    "source": ""
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Khách đã chọn hàng, đừng để mất ở bước cuối.",
     "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
     "visual": "Thẻ Follow Adtek",
     "source": ""

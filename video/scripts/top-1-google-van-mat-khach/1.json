@@ -1,7 +1,7 @@
 {
   "id": "top-1-google-van-mat-khach",
-  "date": "2026-10-08",
-  "status": "Đã có video",
+  "date": "",
+  "status": "Bỏ qua",
   "caption": "Cùng đứng top 1 Google, trang có tóm tắt AI phía trên mất 58% lượt bấm. Nhưng 62% nguồn được AI trích dẫn lại nằm ngoài top 10. Làm SEO năm nay cần đổi cách nào?",
   "hashtags": [
     "#SEO",
@@ -143,5 +143,6 @@
         "type": "follow"
       }
     }
-  ]
+  ],
+  "archived": true
 }

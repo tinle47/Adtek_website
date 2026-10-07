@@ -1,28 +1,8 @@
 [
  {
-  "slug": "top-1-google-van-mat-khach",
-  "filename": "08-10 top 1 google van mat khach",
-  "date": "2026-10-08",
-  "service": "SEO, AIO",
-  "topic": "Đứng top 1 Google vẫn mất khách",
-  "hook": "Đứng top 1 Google, vì sao bạn vẫn mất hơn nửa lượt bấm?",
-  "duration": "63 giây",
-  "url": "/_blob/baf179187d3655278b741eb9e774a1bc",
-  "caption": "Cùng đứng top 1 Google, trang có tóm tắt AI phía trên mất 58% lượt bấm. Nhưng 62% nguồn được AI trích dẫn lại nằm ngoài top 10. Làm SEO năm nay cần đổi cách nào?",
-  "hashtags": [
-   "#SEO",
-   "#google",
-   "#AIO",
-   "#seo2026",
-   "#marketing",
-   "#adtek"
-  ],
-  "note": ""
- },
- {
   "slug": "nhan-tin-truoc-khi-mua",
-  "filename": "09-10 nhan tin truoc khi mua",
-  "date": "2026-10-09",
+  "filename": "08-10 nhan tin truoc khi mua",
+  "date": "2026-10-08",
   "service": "Performance, Digital",
   "topic": "Khách muốn nhắn tin trước khi mua",
   "hook": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua?",
@@ -41,8 +21,8 @@
  },
  {
   "slug": "khach-hang-dang-hoi-ai",
-  "filename": "10-10 khach hang dang hoi ai",
-  "date": "2026-10-10",
+  "filename": "09-10 khach hang dang hoi ai",
+  "date": "2026-10-09",
   "service": "AIO",
   "topic": "Khách hàng của bạn đang hỏi AI",
   "hook": "Mỗi tuần 900 triệu người hỏi ChatGPT. Có ai được nó gợi ý tên thương hiệu của bạn chưa?",
@@ -54,6 +34,26 @@
    "#ChatGPT",
    "#AI",
    "#SEO",
+   "#marketing",
+   "#adtek"
+  ],
+  "note": ""
+ },
+ {
+  "slug": "khach-bo-gio-hang",
+  "filename": "10-10 khach bo gio hang",
+  "date": "2026-10-10",
+  "service": "Growth Marketing",
+  "topic": "Khách bỏ đi ở phút cuối",
+  "hook": "Cứ 10 người bỏ hàng vào giỏ, bao nhiêu người thật sự thanh toán?",
+  "duration": "57 giây",
+  "url": "/_blob/f626d206dca54fda0225d317caf8606b",
+  "caption": "7 trên 10 giỏ hàng bị bỏ lại trước khi thanh toán. Ở Việt Nam, cứ 2 người thì 1 người bỏ giỏ khi thấy phí phát sinh. Shop của bạn đang mất khách ở bước nào?",
+  "hashtags": [
+   "#banhangonline",
+   "#thuongmaidientu",
+   "#growthmarketing",
+   "#chotdon",
    "#marketing",
    "#adtek"
   ],
