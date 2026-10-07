@@ -1,7 +1,7 @@
 import type { Scene, VideoProps, Word } from "./types";
 
 export const FPS = 30;
-const GAP = 0.35; // nghỉ sau mỗi câu, giây
+const GAP = 0.25; // nghỉ sau mỗi câu, giây
 const SEC_PER_WORD = 0.3; // tốc độ đọc ước tính khi chưa có giọng thật
 const MIN_SCENE = 2.5;
 // Màn hình điện thoại có diễn biến riêng (gõ, trả lời, cuộn, chú thích) nên cần tối thiểu từng này giây.

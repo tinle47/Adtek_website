@@ -5,13 +5,24 @@
 // Cần biến môi trường ELEVENLABS_API_KEY và ELEVENLABS_VOICE_ID. Tùy chọn ELEVENLABS_MODEL.
 // Kết quả: public/voice/<id>/<cảnh>.mp3 và manifest.json. Cảnh nào lời đọc không đổi thì dùng lại file cũ, không tốn thêm credit.
 // Từ máy hay đọc sai khai báo trong tools/pronunciation.json (chữ gốc -> cách đọc). Máy đọc theo cách đọc, phụ đề vẫn hiện chữ gốc.
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const KEY = process.env.ELEVENLABS_API_KEY;
 const VOICE = process.env.ELEVENLABS_VOICE_ID;
 const MODEL = process.env.ELEVENLABS_MODEL || "eleven_v4"; // Eleven v4 hỗ trợ tiếng Việt và trả thời điểm từng chữ
+// Tốc độ đọc. Eleven v4 bỏ qua tham số speed của ElevenLabs, nên giọng được tăng nhịp sau khi tạo
+// bằng bộ lọc atempo (giữ nguyên cao độ), thời điểm từng chữ co lại theo. Đổi bằng ELEVENLABS_SPEED.
+const SPEED = Number(process.env.ELEVENLABS_SPEED || 1);
+function tempo(file) {
+  if (SPEED === 1) return;
+  const tmp = file.replace(/\.mp3$/, ".tmp.mp3");
+  const r = spawnSync(path.join(ROOT, "node_modules", ".bin", "remotion"), ["ffmpeg", "-y", "-loglevel", "error", "-i", file, "-filter:a", `atempo=${SPEED}`, "-c:a", "libmp3lame", "-b:a", "128k", tmp], { encoding: "utf8" });
+  if (r.status !== 0) throw new Error(`Tăng nhịp giọng lỗi: ${r.stderr}`);
+  renameSync(tmp, file);
+}
 
 if (!KEY || !VOICE) {
   console.error("Thiếu ELEVENLABS_API_KEY hoặc ELEVENLABS_VOICE_ID trong biến môi trường.");
@@ -130,7 +141,7 @@ for (const file of files) {
     const { said, map } = pronounce(scene.voice);
     // Sửa lời đọc hoặc sửa từ điển cho chữ có trong cảnh thì cảnh đó mới tạo lại giọng.
     // Đổi model cũng tạo lại, vì giọng mỗi model mỗi khác.
-    if (!force && old.model === MODEL && cached?.text === scene.voice && (cached.said ?? cached.text) === said && existsSync(mp3)) {
+    if (!force && old.model === MODEL && (old.speed ?? 1) === SPEED && cached?.text === scene.voice && (cached.said ?? cached.text) === said && existsSync(mp3)) {
       scenes.push(cached);
       continue;
     }
@@ -138,15 +149,16 @@ for (const file of files) {
     const r = await speak(said, near(i - 1), near(i + 1));
     if (r.alignment.characters.join("") !== said) throw new Error(`${script.id} cảnh ${i + 1}: ElevenLabs trả thời điểm không khớp câu đã gửi.`);
     writeFileSync(mp3, Buffer.from(r.audio_base64, "base64"));
-    const words = toWords(scene.voice, map, r.alignment);
+    tempo(mp3);
+    const words = toWords(scene.voice, map, r.alignment).map((w) => ({ ...w, start: w.start / SPEED, end: w.end / SPEED }));
     scenes.push({
       text: scene.voice,
       said,
       file: `voice/${script.id}/${i}.mp3`,
-      duration: r.alignment.character_end_times_seconds.at(-1),
+      duration: r.alignment.character_end_times_seconds.at(-1) / SPEED,
       words,
     });
     console.log(`${script.id} cảnh ${i + 1}: ${words.length} chữ`);
   }
-  writeFileSync(manifestPath, JSON.stringify({ model: MODEL, scenes }, null, 1));
+  writeFileSync(manifestPath, JSON.stringify({ model: MODEL, speed: SPEED, scenes }, null, 1));
 }
