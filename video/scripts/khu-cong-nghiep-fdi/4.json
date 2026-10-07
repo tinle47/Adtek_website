@@ -1,0 +1,176 @@
+{
+  "id": "khu-cong-nghiep-fdi-4",
+  "caption": "Vốn FDI vào Việt Nam tăng 76%, nhưng nhà đầu tư đã lọc xong danh sách khu công nghiệp trước khi gọi cho bạn. 4 con số chủ đầu tư khu công nghiệp nên biết.",
+  "hashtags": [
+    "#FDI",
+    "#khucongnghiep",
+    "#batdongsancongnghiep",
+    "#B2B",
+    "#digitalmarketing",
+    "#adtek"
+  ],
+  "scenes": [
+    {
+      "kicker": "Khu công nghiệp · FDI 9 tháng 2026",
+      "headline": "Vốn FDI tăng 76%,",
+      "accent": "sao họ chưa gọi bạn?",
+      "voice": "Vốn FDI vào Việt Nam tăng 76%. Vậy tại sao nhà đầu tư vẫn chưa gọi cho khu công nghiệp của bạn?",
+      "visual": {
+        "type": "columns",
+        "metric": "Vốn FDI đăng ký vào Việt Nam, 9 tháng đầu năm",
+        "unit": "tỷ USD",
+        "source": "Nguồn: Cục Thống kê; 2025 tính ngược từ mức tăng 76.4%",
+        "max": 50.4,
+        "cols": [
+          {
+            "label": "9 tháng\n2025",
+            "value": 28.5,
+            "tone": "base"
+          },
+          {
+            "label": "9 tháng\n2026",
+            "value": 50.4,
+            "tone": "accent"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 1,
+            "text": "Tăng 76.4%"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Gartner · Hành trình mua B2B",
+      "headline": "Họ đã lọc bạn",
+      "accent": "từ trên mạng.",
+      "voice": "Vì họ đã lọc bạn từ trên mạng. Người mua B2B dành 27% thời gian tự nghiên cứu, chỉ 17% để gặp nhà cung cấp. So sánh 3 khu, mỗi khu chỉ được khoảng 6%.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Tỷ lệ thời gian trong cả quá trình mua B2B",
+        "unit": "%",
+        "source": "Nguồn: Gartner, hành trình mua của khách hàng B2B",
+        "max": 27,
+        "rows": [
+          {
+            "label": "Tự nghiên cứu trên mạng",
+            "value": 27,
+            "tone": "main"
+          },
+          {
+            "label": "Gặp gỡ mọi nhà cung cấp",
+            "value": 17,
+            "tone": "base"
+          },
+          {
+            "label": "Mỗi khu, khi so sánh 3 khu",
+            "value": 6,
+            "tone": "accent"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 2,
+            "text": "17% chia cho 3 khu, mỗi khu khoảng 6%"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "FDI đăng ký mới · 8 tháng 2026",
+      "headline": "61% vốn mới đến từ",
+      "accent": "Singapore và Hàn Quốc.",
+      "voice": "Họ là ai? Singapore và Hàn Quốc chiếm 61% vốn FDI mới. Nhà đầu tư Hàn tìm kiếm bằng tiếng Hàn, trên Naver, không phải Google.",
+      "visual": {
+        "type": "columns",
+        "metric": "Tỷ trọng vốn FDI đăng ký mới, 8 tháng đầu năm 2026",
+        "unit": "%",
+        "source": "Nguồn: Cổng Thông tin điện tử Chính phủ, 09/2026",
+        "max": 35.1,
+        "cols": [
+          {
+            "label": "Singapore",
+            "value": 35.1,
+            "tone": "main"
+          },
+          {
+            "label": "Hàn Quốc",
+            "value": 26.1,
+            "tone": "accent"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 1,
+            "text": "Nhà đầu tư Hàn tìm trên Naver, bằng tiếng Hàn"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "JETRO · 906 doanh nghiệp Nhật",
+      "headline": "Họ chọn vì đâu?",
+      "accent": "Không phải giá đất.",
+      "voice": "Họ chọn vì đâu? Không phải giá đất. Doanh nghiệp Nhật chọn Việt Nam vì quy mô thị trường, chi phí nhân công và ổn định chính trị. Nỗi lo lớn nhất là thủ tục hành chính.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Lợi thế đầu tư tại Việt Nam, doanh nghiệp Nhật lựa chọn",
+        "unit": "% doanh nghiệp",
+        "source": "Nguồn: JETRO, khảo sát FY2025, 906 doanh nghiệp Nhật tại Việt Nam",
+        "max": 68.4,
+        "rows": [
+          {
+            "label": "Quy mô thị trường",
+            "value": 68.4,
+            "tone": "accent"
+          },
+          {
+            "label": "Chi phí nhân công",
+            "value": 55.2,
+            "tone": "main"
+          },
+          {
+            "label": "Ổn định chính trị",
+            "value": 53.2,
+            "tone": "main"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 2,
+            "text": "Giá thuê đất không nằm trong top 3"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Cho nhà đầu tư",
+      "accent": "thứ họ cần để so sánh.",
+      "voice": "Vậy hãy cho họ thứ họ cần: bộ số liệu tải về được, website đúng ngôn ngữ, và thông điệp về pháp lý, hệ sinh thái thay vì giá rẻ.",
+      "visual": {
+        "type": "list",
+        "items": [
+          "Bộ số liệu kỹ thuật tải về được",
+          "Website theo ngôn ngữ nhà đầu tư",
+          "Tốc độ pháp lý, hỗ trợ một cửa",
+          "Hệ sinh thái doanh nghiệp xung quanh"
+        ]
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Khu công nghiệp của bạn",
+      "accent": "đã có trong danh sách lọc?",
+      "voice": "Follow Adtek để xem số liệu marketing mới mỗi tuần.",
+      "visual": {
+        "type": "follow"
+      }
+    }
+  ]
+}

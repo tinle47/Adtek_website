@@ -57,7 +57,9 @@ Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chrom
 
 ## Lưu ý khi viết kịch bản
 
-- Mỗi video 30 đến 45 giây, 5 đến 6 cảnh. Câu mở đầu phải gây tò mò hoặc có con số gây sốc.
+- Mỗi video khoảng 1 phút (50 đến 65 giây), 6 cảnh: câu hỏi mở đầu, 3 đến 4 cảnh số liệu, 1 cảnh "làm gì ngay", cảnh Follow.
+- Câu đầu tiên của lời đọc là một câu hỏi khơi tò mò, ví dụ "Vốn FDI tăng 76%. Vậy tại sao nhà đầu tư vẫn chưa gọi cho bạn?". Cảnh mở đầu nên có biểu đồ để người xem dừng lại.
+- Chỉ giữ ý mạnh, số liệu ấn tượng. Một chủ đề làm thành một video, không tách nhỏ thành nhiều video.
 - Số viết theo US format (`75,000`, `0.61%`). ElevenLabs tự đọc thành chữ.
 - Kênh TikTok độc lập với website: mỗi video một chủ đề riêng, không dẫn về blog, không đặt link trong caption. Cảnh cuối dùng `follow`, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi tuần."
 - Số liệu chỉ lấy từ tổ chức phát hành gốc (danh sách chủ đề và nguồn: `plan/lich-noi-dung-tiktok.xlsx`), ghi nguồn trên biểu đồ.
