@@ -60,6 +60,14 @@ Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chrom
 - Mỗi video khoảng 1 phút (50 đến 65 giây), 6 cảnh: câu hỏi mở đầu, 3 đến 4 cảnh số liệu, 1 cảnh "làm gì ngay", cảnh Follow.
 - Câu đầu tiên của lời đọc là một câu hỏi khơi tò mò, ví dụ "Vốn FDI tăng 76%. Vậy tại sao nhà đầu tư vẫn chưa gọi cho bạn?". Cảnh mở đầu nên có biểu đồ để người xem dừng lại.
 - Chỉ giữ ý mạnh, số liệu ấn tượng. Một chủ đề làm thành một video, không tách nhỏ thành nhiều video.
+- Viết tiếng Việt tự nhiên như người Việt nói, không dịch thẳng từ tiếng Anh. Áp dụng cho cả lời đọc, tiêu đề, nhãn biểu đồ, chú thích và dòng nguồn. Đọc to lên, câu nào nghe như văn bản dịch thì viết lại. Ví dụ:
+  - "lọc bạn", "danh sách lọc" (screen, shortlist) → "so sánh bạn", "lọt vào danh sách"
+  - "hành trình mua" (buyer journey) → "cách khách hàng mua hàng"
+  - "hệ sinh thái" (ecosystem) → "doanh nghiệp lớn ở gần", "các bên liên quan"
+  - "ổn định chính trị" (political stability) → "chính trị ổn định"
+  - "cá nhân hóa theo thời gian thực" (real-time personalization) → "nhắn đúng người, đúng lúc"
+  - "người mua B2B" → "khách hàng doanh nghiệp"
+- Tránh từ sáo rỗng: đóng vai trò quan trọng, bứt phá, giải pháp toàn diện, hành trình, kỷ nguyên, chìa khóa thành công, trong bối cảnh hiện nay.
 - Số viết theo US format (`75,000`, `0.61%`). ElevenLabs tự đọc thành chữ.
 - Kênh TikTok độc lập với website: mỗi video một chủ đề riêng, không dẫn về blog, không đặt link trong caption. Cảnh cuối dùng `follow`, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi tuần."
 - Số liệu chỉ lấy từ tổ chức phát hành gốc (danh sách chủ đề và nguồn: `plan/lich-noi-dung-tiktok.xlsx`), ghi nguồn trên biểu đồ.
