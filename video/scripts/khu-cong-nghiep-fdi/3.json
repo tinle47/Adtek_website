@@ -1,0 +1,102 @@
+{
+  "id": "khu-cong-nghiep-fdi-3",
+  "post_url": "https://adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep/",
+  "caption": "Khảo sát JETRO với 906 doanh nghiệp Nhật tại Việt Nam: giá thuê đất không nằm trong 3 lợi thế được chọn nhiều nhất. Rủi ro họ lo nhất là thủ tục hành chính.",
+  "hashtags": [
+    "#FDI",
+    "#khucongnghiep",
+    "#batdongsancongnghiep",
+    "#JETRO",
+    "#marketing",
+    "#adtek"
+  ],
+  "scenes": [
+    {
+      "kicker": "Khu công nghiệp · Thông điệp",
+      "headline": "Giá thuê đất rẻ",
+      "accent": "không phải lý do họ chọn bạn.",
+      "voice": "Quảng cáo khu công nghiệp bằng giá thuê đất rẻ? Với nhà đầu tư Nhật, đó không phải lý do hàng đầu."
+    },
+    {
+      "kicker": "JETRO · 906 doanh nghiệp Nhật",
+      "headline": "Ba lợi thế hàng đầu",
+      "accent": "không có giá thuê đất.",
+      "voice": "JETRO khảo sát 906 doanh nghiệp Nhật tại Việt Nam. Ba lợi thế được chọn nhiều nhất là quy mô thị trường, chi phí nhân công và ổn định chính trị.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Lợi thế đầu tư tại Việt Nam, doanh nghiệp Nhật lựa chọn",
+        "unit": "% doanh nghiệp",
+        "source": "Nguồn: JETRO, khảo sát FY2025, 906 doanh nghiệp Nhật tại Việt Nam",
+        "max": 68.4,
+        "rows": [
+          {
+            "label": "Quy mô thị trường",
+            "value": 68.4,
+            "tone": "accent"
+          },
+          {
+            "label": "Chi phí nhân công",
+            "value": 55.2,
+            "tone": "main"
+          },
+          {
+            "label": "Ổn định chính trị",
+            "value": 53.2,
+            "tone": "main"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 2,
+            "text": "Giá thuê đất không nằm trong top 3"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Rủi ro lớn nhất",
+      "headline": "2 trên 3 doanh nghiệp",
+      "accent": "ngại thủ tục hành chính.",
+      "voice": "Còn rủi ro lớn nhất? Gần 68% doanh nghiệp chọn thủ tục hành chính phức tạp.",
+      "visual": {
+        "type": "waffle",
+        "metric": "Doanh nghiệp Nhật chọn thủ tục hành chính là rủi ro",
+        "unit": "trên 100 doanh nghiệp",
+        "source": "Nguồn: JETRO, khảo sát FY2025, 906 doanh nghiệp Nhật tại Việt Nam",
+        "lit": 68,
+        "legend": [
+          "Chọn thủ tục hành chính phức tạp (67.5%)",
+          "Không chọn rủi ro này"
+        ]
+      }
+    },
+    {
+      "kicker": "Đổi thông điệp",
+      "headline": "Dẫn bằng pháp lý",
+      "accent": "và hệ sinh thái.",
+      "voice": "Vì vậy, hãy dẫn bằng tốc độ pháp lý, hỗ trợ thủ tục một cửa, và hệ sinh thái doanh nghiệp xung quanh.",
+      "visual": {
+        "type": "list",
+        "items": [
+          "Tốc độ cấp phép, pháp lý rõ ràng",
+          "Hỗ trợ thủ tục một cửa",
+          "Doanh nghiệp lớn đang hoạt động gần kề",
+          "Hạ tầng: điện riêng, gần cảng"
+        ]
+      }
+    },
+    {
+      "kicker": "Đọc bài đầy đủ ở link bio",
+      "headline": "Nói điều nhà đầu tư lo,",
+      "accent": "đừng chỉ nói giá.",
+      "voice": "Xem chiến lược đầy đủ ở link bio, và follow Adtek.",
+      "visual": {
+        "type": "article",
+        "image": "covers/khu-cong-nghiep-fdi.jpg",
+        "title": "Chiến lược digital marketing cho bất động sản khu công nghiệp",
+        "url": "adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep"
+      }
+    }
+  ]
+}

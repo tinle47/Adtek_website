@@ -1,0 +1,560 @@
+{
+ "model": "eleven_v4",
+ "scenes": [
+  {
+   "text": "Quảng cáo khu công nghiệp bằng giá thuê đất rẻ? Với nhà đầu tư Nhật, đó không phải lý do hàng đầu.",
+   "said": "Quảng cáo khu công nghiệp bằng giá thuê đất rẻ? Với nhà đầu tư Nhật, đó không phải lý do hàng đầu.",
+   "file": "voice/khu-cong-nghiep-fdi-3/0.mp3",
+   "duration": 5.76,
+   "words": [
+    {
+     "text": "Quảng",
+     "start": 0,
+     "end": 0.24
+    },
+    {
+     "text": "cáo",
+     "start": 0.32,
+     "end": 0.48
+    },
+    {
+     "text": "khu",
+     "start": 0.56,
+     "end": 0.64
+    },
+    {
+     "text": "công",
+     "start": 0.72,
+     "end": 0.88
+    },
+    {
+     "text": "nghiệp",
+     "start": 0.907,
+     "end": 1.12
+    },
+    {
+     "text": "bằng",
+     "start": 1.2,
+     "end": 1.36
+    },
+    {
+     "text": "giá",
+     "start": 1.44,
+     "end": 1.6
+    },
+    {
+     "text": "thuê",
+     "start": 1.68,
+     "end": 1.8
+    },
+    {
+     "text": "đất",
+     "start": 1.84,
+     "end": 2
+    },
+    {
+     "text": "rẻ?",
+     "start": 2.08,
+     "end": 2.6
+    },
+    {
+     "text": "Với",
+     "start": 2.88,
+     "end": 3
+    },
+    {
+     "text": "nhà",
+     "start": 3.04,
+     "end": 3.16
+    },
+    {
+     "text": "đầu",
+     "start": 3.2,
+     "end": 3.28
+    },
+    {
+     "text": "tư",
+     "start": 3.36,
+     "end": 3.44
+    },
+    {
+     "text": "Nhật,",
+     "start": 3.52,
+     "end": 4
+    },
+    {
+     "text": "đó",
+     "start": 4.08,
+     "end": 4.24
+    },
+    {
+     "text": "không",
+     "start": 4.4,
+     "end": 4.56
+    },
+    {
+     "text": "phải",
+     "start": 4.64,
+     "end": 4.76
+    },
+    {
+     "text": "lý",
+     "start": 4.8,
+     "end": 4.92
+    },
+    {
+     "text": "do",
+     "start": 4.96,
+     "end": 5.04
+    },
+    {
+     "text": "hàng",
+     "start": 5.12,
+     "end": 5.28
+    },
+    {
+     "text": "đầu.",
+     "start": 5.32,
+     "end": 5.76
+    }
+   ]
+  },
+  {
+   "text": "JETRO khảo sát 906 doanh nghiệp Nhật tại Việt Nam. Ba lợi thế được chọn nhiều nhất là quy mô thị trường, chi phí nhân công và ổn định chính trị.",
+   "said": "giét trô khảo sát 906 doanh nghiệp Nhật tại Việt Nam. Ba lợi thế được chọn nhiều nhất là quy mô thị trường, chi phí nhân công và ổn định chính trị.",
+   "file": "voice/khu-cong-nghiep-fdi-3/1.mp3",
+   "duration": 10.16,
+   "words": [
+    {
+     "text": "JETRO",
+     "start": 0,
+     "end": 0.4
+    },
+    {
+     "text": "khảo",
+     "start": 0.48,
+     "end": 0.64
+    },
+    {
+     "text": "sát",
+     "start": 0.72,
+     "end": 0.96
+    },
+    {
+     "text": "906",
+     "start": 1,
+     "end": 1.867
+    },
+    {
+     "text": "doanh",
+     "start": 1.92,
+     "end": 2.08
+    },
+    {
+     "text": "nghiệp",
+     "start": 2.107,
+     "end": 2.24
+    },
+    {
+     "text": "Nhật",
+     "start": 2.32,
+     "end": 2.56
+    },
+    {
+     "text": "tại",
+     "start": 2.6,
+     "end": 2.72
+    },
+    {
+     "text": "Việt",
+     "start": 2.8,
+     "end": 2.88
+    },
+    {
+     "text": "Nam.",
+     "start": 2.96,
+     "end": 3.84
+    },
+    {
+     "text": "Ba",
+     "start": 3.92,
+     "end": 4
+    },
+    {
+     "text": "lợi",
+     "start": 4.08,
+     "end": 4.24
+    },
+    {
+     "text": "thế",
+     "start": 4.32,
+     "end": 4.48
+    },
+    {
+     "text": "được",
+     "start": 4.52,
+     "end": 4.64
+    },
+    {
+     "text": "chọn",
+     "start": 4.72,
+     "end": 4.88
+    },
+    {
+     "text": "nhiều",
+     "start": 4.96,
+     "end": 5.12
+    },
+    {
+     "text": "nhất",
+     "start": 5.2,
+     "end": 5.44
+    },
+    {
+     "text": "là",
+     "start": 5.6,
+     "end": 5.84
+    },
+    {
+     "text": "quy",
+     "start": 6.24,
+     "end": 6.36
+    },
+    {
+     "text": "mô",
+     "start": 6.4,
+     "end": 6.56
+    },
+    {
+     "text": "thị",
+     "start": 6.6,
+     "end": 6.72
+    },
+    {
+     "text": "trường,",
+     "start": 6.8,
+     "end": 7.52
+    },
+    {
+     "text": "chi",
+     "start": 7.6,
+     "end": 7.68
+    },
+    {
+     "text": "phí",
+     "start": 7.76,
+     "end": 7.88
+    },
+    {
+     "text": "nhân",
+     "start": 7.92,
+     "end": 8.08
+    },
+    {
+     "text": "công",
+     "start": 8.16,
+     "end": 8.4
+    },
+    {
+     "text": "và",
+     "start": 8.72,
+     "end": 8.88
+    },
+    {
+     "text": "ổn",
+     "start": 9.12,
+     "end": 9.28
+    },
+    {
+     "text": "định",
+     "start": 9.32,
+     "end": 9.44
+    },
+    {
+     "text": "chính",
+     "start": 9.52,
+     "end": 9.68
+    },
+    {
+     "text": "trị.",
+     "start": 9.76,
+     "end": 10.16
+    }
+   ]
+  },
+  {
+   "text": "Còn rủi ro lớn nhất? Gần 68% doanh nghiệp chọn thủ tục hành chính phức tạp.",
+   "said": "Còn rủi ro lớn nhất? Gần 68% doanh nghiệp chọn thủ tục hành chính phức tạp.",
+   "file": "voice/khu-cong-nghiep-fdi-3/2.mp3",
+   "duration": 5.12,
+   "words": [
+    {
+     "text": "Còn",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "rủi",
+     "start": 0.24,
+     "end": 0.4
+    },
+    {
+     "text": "ro",
+     "start": 0.48,
+     "end": 0.56
+    },
+    {
+     "text": "lớn",
+     "start": 0.64,
+     "end": 0.8
+    },
+    {
+     "text": "nhất?",
+     "start": 0.84,
+     "end": 1.12
+    },
+    {
+     "text": "Gần",
+     "start": 1.6,
+     "end": 1.84
+    },
+    {
+     "text": "68%",
+     "start": 1.92,
+     "end": 2.76
+    },
+    {
+     "text": "doanh",
+     "start": 2.8,
+     "end": 2.96
+    },
+    {
+     "text": "nghiệp",
+     "start": 3.04,
+     "end": 3.2
+    },
+    {
+     "text": "chọn",
+     "start": 3.36,
+     "end": 3.6
+    },
+    {
+     "text": "thủ",
+     "start": 3.68,
+     "end": 3.84
+    },
+    {
+     "text": "tục",
+     "start": 3.88,
+     "end": 4
+    },
+    {
+     "text": "hành",
+     "start": 4.04,
+     "end": 4.16
+    },
+    {
+     "text": "chính",
+     "start": 4.24,
+     "end": 4.4
+    },
+    {
+     "text": "phức",
+     "start": 4.48,
+     "end": 4.64
+    },
+    {
+     "text": "tạp.",
+     "start": 4.72,
+     "end": 5.12
+    }
+   ]
+  },
+  {
+   "text": "Vì vậy, hãy dẫn bằng tốc độ pháp lý, hỗ trợ thủ tục một cửa, và hệ sinh thái doanh nghiệp xung quanh.",
+   "said": "Vì vậy, hãy dẫn bằng tốc độ pháp lý, hỗ trợ thủ tục một cửa, và hệ sinh thái doanh nghiệp xung quanh.",
+   "file": "voice/khu-cong-nghiep-fdi-3/3.mp3",
+   "duration": 6.32,
+   "words": [
+    {
+     "text": "Vì",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "vậy,",
+     "start": 0.24,
+     "end": 0.8
+    },
+    {
+     "text": "hãy",
+     "start": 0.84,
+     "end": 0.96
+    },
+    {
+     "text": "dẫn",
+     "start": 1,
+     "end": 1.2
+    },
+    {
+     "text": "bằng",
+     "start": 1.24,
+     "end": 1.36
+    },
+    {
+     "text": "tốc",
+     "start": 1.44,
+     "end": 1.6
+    },
+    {
+     "text": "độ",
+     "start": 1.68,
+     "end": 1.76
+    },
+    {
+     "text": "pháp",
+     "start": 1.84,
+     "end": 2.08
+    },
+    {
+     "text": "lý,",
+     "start": 2.12,
+     "end": 2.72
+    },
+    {
+     "text": "hỗ",
+     "start": 2.76,
+     "end": 2.88
+    },
+    {
+     "text": "trợ",
+     "start": 2.96,
+     "end": 3.12
+    },
+    {
+     "text": "thủ",
+     "start": 3.2,
+     "end": 3.36
+    },
+    {
+     "text": "tục",
+     "start": 3.4,
+     "end": 3.52
+    },
+    {
+     "text": "một",
+     "start": 3.6,
+     "end": 3.76
+    },
+    {
+     "text": "cửa,",
+     "start": 3.84,
+     "end": 4.4
+    },
+    {
+     "text": "và",
+     "start": 4.48,
+     "end": 4.56
+    },
+    {
+     "text": "hệ",
+     "start": 4.64,
+     "end": 4.76
+    },
+    {
+     "text": "sinh",
+     "start": 4.8,
+     "end": 5
+    },
+    {
+     "text": "thái",
+     "start": 5.04,
+     "end": 5.2
+    },
+    {
+     "text": "doanh",
+     "start": 5.28,
+     "end": 5.44
+    },
+    {
+     "text": "nghiệp",
+     "start": 5.467,
+     "end": 5.6
+    },
+    {
+     "text": "xung",
+     "start": 5.68,
+     "end": 5.76
+    },
+    {
+     "text": "quanh.",
+     "start": 5.84,
+     "end": 6.32
+    }
+   ]
+  },
+  {
+   "text": "Xem chiến lược đầy đủ ở link bio, và follow Adtek.",
+   "said": "Xem chiến lược đầy đủ ở link bio, và follow Adtek.",
+   "file": "voice/khu-cong-nghiep-fdi-3/4.mp3",
+   "duration": 3.68,
+   "words": [
+    {
+     "text": "Xem",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "chiến",
+     "start": 0.24,
+     "end": 0.4
+    },
+    {
+     "text": "lược",
+     "start": 0.44,
+     "end": 0.64
+    },
+    {
+     "text": "đầy",
+     "start": 0.68,
+     "end": 0.8
+    },
+    {
+     "text": "đủ",
+     "start": 0.88,
+     "end": 1.12
+    },
+    {
+     "text": "ở",
+     "start": 1.16,
+     "end": 1.2
+    },
+    {
+     "text": "link",
+     "start": 1.28,
+     "end": 1.44
+    },
+    {
+     "text": "bio,",
+     "start": 1.64,
+     "end": 2.16
+    },
+    {
+     "text": "và",
+     "start": 2.2,
+     "end": 2.32
+    },
+    {
+     "text": "follow",
+     "start": 2.48,
+     "end": 2.8
+    },
+    {
+     "text": "Adtek.",
+     "start": 2.88,
+     "end": 3.68
+    }
+   ]
+  }
+ ]
+}

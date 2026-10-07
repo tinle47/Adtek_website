@@ -1,0 +1,86 @@
+{
+  "id": "khu-cong-nghiep-fdi-2",
+  "post_url": "https://adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep/",
+  "caption": "Singapore và Hàn Quốc chiếm 61% vốn FDI đăng ký mới 8 tháng đầu năm 2026. Website khu công nghiệp của bạn đã có tiếng Hàn, tiếng Trung, tiếng Nhật chưa?",
+  "hashtags": [
+    "#FDI",
+    "#khucongnghiep",
+    "#batdongsancongnghiep",
+    "#SEO",
+    "#digitalmarketing",
+    "#adtek"
+  ],
+  "scenes": [
+    {
+      "kicker": "Khu công nghiệp · Thị trường FDI",
+      "headline": "Website song ngữ",
+      "accent": "là chưa đủ.",
+      "voice": "Website khu công nghiệp chỉ có tiếng Việt và tiếng Anh? Bạn đang bỏ lỡ phần lớn nhà đầu tư."
+    },
+    {
+      "kicker": "FDI đăng ký mới · 8 tháng 2026",
+      "headline": "Singapore và Hàn Quốc",
+      "accent": "chiếm 61% vốn FDI mới.",
+      "voice": "8 tháng đầu năm 2026, Singapore chiếm 35% vốn FDI đăng ký mới, Hàn Quốc 26%. Tiếp theo là Hồng Kông, Trung Quốc và Nhật Bản.",
+      "visual": {
+        "type": "columns",
+        "metric": "Tỷ trọng vốn FDI đăng ký mới, 8 tháng đầu năm 2026",
+        "unit": "%",
+        "source": "Nguồn: Cổng Thông tin điện tử Chính phủ, 09/2026",
+        "max": 35.1,
+        "cols": [
+          {
+            "label": "Singapore",
+            "value": 35.1,
+            "tone": "main"
+          },
+          {
+            "label": "Hàn Quốc",
+            "value": 26.1,
+            "tone": "accent"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 1,
+            "text": "Tìm kiếm bằng tiếng Hàn, trên Naver"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Kênh bản địa",
+      "headline": "Mỗi thị trường",
+      "accent": "một bộ kênh riêng.",
+      "voice": "Mỗi thị trường cần kênh riêng. Trung Quốc dùng Baidu và WeChat. Hàn Quốc tìm trên Naver. Nhật Bản đọc Nikkei và tìm trên Yahoo Japan.",
+      "visual": {
+        "type": "list",
+        "items": [
+          "Trung Quốc: Baidu, WeChat",
+          "Hàn Quốc: Naver, KakaoTalk",
+          "Nhật Bản: Yahoo Japan, Nikkei",
+          "Đài Loan: Facebook, Digitimes"
+        ]
+      }
+    },
+    {
+      "kicker": "Chi tiết dễ bỏ sót",
+      "headline": "Tỉnh đã sáp nhập,",
+      "accent": "nhà đầu tư vẫn tìm tên cũ.",
+      "voice": "Một chi tiết dễ bỏ sót: sau sáp nhập tỉnh, nhà đầu tư vẫn tìm khu công nghiệp Bắc Giang, khu công nghiệp Hà Nam. Bộ từ khóa phải giữ cả tên cũ."
+    },
+    {
+      "kicker": "Đọc bài đầy đủ ở link bio",
+      "headline": "Đừng dịch máy.",
+      "accent": "Viết theo cách họ tìm kiếm.",
+      "voice": "Đừng dịch máy từ tiếng Việt. Xem cách xây bộ từ khóa năm ngôn ngữ ở link bio, và follow Adtek.",
+      "visual": {
+        "type": "article",
+        "image": "covers/khu-cong-nghiep-fdi.jpg",
+        "title": "Chiến lược digital marketing cho bất động sản khu công nghiệp",
+        "url": "adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep"
+      }
+    }
+  ]
+}

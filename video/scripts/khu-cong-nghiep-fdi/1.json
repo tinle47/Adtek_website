@@ -1,0 +1,128 @@
+{
+  "id": "khu-cong-nghiep-fdi-1",
+  "post_url": "https://adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep/",
+  "caption": "Người mua B2B chỉ dành khoảng 17% thời gian để gặp nhà cung cấp. Khi nhà đầu tư FDI liên hệ, họ đã lọc xong danh sách khu công nghiệp từ trên mạng.",
+  "hashtags": [
+    "#FDI",
+    "#khucongnghiep",
+    "#batdongsancongnghiep",
+    "#B2B",
+    "#digitalmarketing",
+    "#adtek"
+  ],
+  "scenes": [
+    {
+      "kicker": "Khu công nghiệp · FDI 9 tháng 2026",
+      "headline": "Vốn FDI tăng 76%, nhưng",
+      "accent": "họ không gọi bạn trước.",
+      "voice": "9 tháng đầu năm 2026, vốn FDI đăng ký vào Việt Nam tăng 76%. Nhưng nhà đầu tư sẽ không gọi cho bạn đầu tiên.",
+      "visual": {
+        "type": "columns",
+        "metric": "Vốn FDI đăng ký vào Việt Nam, 9 tháng đầu năm",
+        "unit": "tỷ USD",
+        "source": "Nguồn: Cục Thống kê; 2025 tính ngược từ mức tăng 76.4%",
+        "max": 50.4,
+        "cols": [
+          {
+            "label": "9 tháng\n2025",
+            "value": 28.5,
+            "tone": "base"
+          },
+          {
+            "label": "9 tháng\n2026",
+            "value": 50.4,
+            "tone": "accent"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 1,
+            "text": "Tăng 76.4%"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Gartner · Hành trình mua B2B",
+      "headline": "Người mua B2B dành 27%",
+      "accent": "để tự tìm hiểu trên mạng.",
+      "voice": "Gartner ước tính người mua B2B dành khoảng 27% thời gian để tự nghiên cứu trên mạng. Chỉ 17% là gặp gỡ nhà cung cấp.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Tỷ lệ thời gian trong cả quá trình mua B2B",
+        "unit": "%",
+        "source": "Nguồn: Gartner, hành trình mua của khách hàng B2B",
+        "max": 27,
+        "rows": [
+          {
+            "label": "Tự nghiên cứu trên mạng",
+            "value": 27,
+            "tone": "main"
+          },
+          {
+            "label": "Gặp gỡ mọi nhà cung cấp",
+            "value": 17,
+            "tone": "base"
+          },
+          {
+            "label": "Mỗi khu, khi so sánh 3 khu",
+            "value": 6,
+            "tone": "accent",
+            "step": 1
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 2,
+            "text": "17% chia cho 3 khu, mỗi khu khoảng 6%",
+            "step": 1
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Nếu đang so sánh 3 khu",
+      "headline": "Mỗi khu chỉ được",
+      "accent": "vài phần trăm thời gian.",
+      "voice": "Nếu nhà đầu tư đang so sánh ba khu công nghiệp, mỗi bên chỉ được vài phần trăm. Phần còn lại, website làm việc thay bạn.",
+      "visual": {
+        "type": "continue"
+      }
+    },
+    {
+      "kicker": "Vòng lọc đầu tiên",
+      "headline": "Nhà đầu tư cần số liệu",
+      "accent": "để đưa vào bảng so sánh.",
+      "voice": "Họ không cần ảnh phối cảnh đẹp. Họ cần số liệu: quỹ đất, chi phí, hạ tầng, khoảng cách tới cảng.",
+      "visual": {
+        "type": "list",
+        "items": [
+          "Quỹ đất trống, kích thước lô",
+          "Giá thuê, giá điện, giá nước",
+          "Công suất điện, xử lý nước thải",
+          "Khoảng cách tới cảng, sân bay"
+        ]
+      }
+    },
+    {
+      "kicker": "Đổi cách làm website",
+      "headline": "Website khu công nghiệp",
+      "accent": "là phòng dữ liệu, không phải tờ rơi.",
+      "voice": "Hãy xây website như một phòng dữ liệu, có bộ thông số tải về được bằng nhiều ngôn ngữ."
+    },
+    {
+      "kicker": "Đọc bài đầy đủ ở link bio",
+      "headline": "Khu công nghiệp của bạn",
+      "accent": "đã có trong danh sách lọc?",
+      "voice": "Xem chiến lược đầy đủ ở link bio, và follow Adtek.",
+      "visual": {
+        "type": "article",
+        "image": "covers/khu-cong-nghiep-fdi.jpg",
+        "title": "Chiến lược digital marketing cho bất động sản khu công nghiệp",
+        "url": "adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep"
+      }
+    }
+  ]
+}
