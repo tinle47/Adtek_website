@@ -18,30 +18,12 @@
       "accent": "đang hỏi ChatGPT.",
       "voice": "Mỗi tuần 900 triệu người hỏi ChatGPT. Có ai được nó gợi ý tên thương hiệu của bạn chưa? Chỉ trong 4 tháng, ChatGPT có thêm 100 triệu người dùng.",
       "visual": {
-        "type": "columns",
-        "metric": "Người dùng ChatGPT hằng tuần",
-        "unit": "triệu người",
-        "source": "Nguồn: OpenAI, 02/2026",
-        "max": 900,
-        "cols": [
-          {
-            "label": "10/2025",
-            "value": 800,
-            "tone": "base"
-          },
-          {
-            "label": "02/2026",
-            "value": 900,
-            "tone": "accent"
-          }
-        ],
-        "notes": [
-          {
-            "kind": "callout",
-            "at": 1,
-            "text": "Thêm 100 triệu người trong 4 tháng"
-          }
-        ]
+        "type": "bignumber",
+        "value": 900,
+        "suffix": "triệu",
+        "label": "người dùng ChatGPT mỗi tuần",
+        "context": "Thêm 100 triệu người chỉ trong 4 tháng",
+        "source": "Nguồn: OpenAI, 02/2026"
       }
     },
     {
@@ -112,20 +94,21 @@
       "accent": "không cần gõ chữ.",
       "voice": "Người ta còn tìm bằng hình ảnh. Google Lens có hơn 25 tỷ lượt tìm mỗi tháng, tăng từ khoảng 20 tỷ năm 2024.",
       "visual": {
-        "type": "columns",
+        "type": "slope",
         "metric": "Lượt tìm bằng Google Lens mỗi tháng",
         "unit": "tỷ lượt",
         "source": "Nguồn: Google, 10/2024 và 03/2026",
-        "max": 25,
-        "cols": [
+        "from": "2024",
+        "to": "2026",
+        "series": [
           {
-            "label": "2024",
-            "value": 20,
-            "tone": "base"
-          },
-          {
-            "label": "2026",
-            "value": 25,
+            "label": "Google Lens",
+            "a": 20,
+            "b": 25,
+            "display": [
+              "khoảng 20",
+              "25"
+            ],
             "tone": "accent"
           }
         ]

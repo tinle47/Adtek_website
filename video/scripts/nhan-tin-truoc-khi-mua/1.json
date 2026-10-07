@@ -18,14 +18,13 @@
       "accent": "shop bạn trả lời kịp không?",
       "voice": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua? Khảo sát cho Meta cho thấy 82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp.",
       "visual": {
-        "type": "waffle",
+        "type": "people",
         "metric": "Người Việt chọn nhắn tin để liên lạc với doanh nghiệp",
-        "unit": "trên 100 người dùng mạng",
         "source": "Nguồn: Meta, khảo sát do Kantar thực hiện, 11/2025",
-        "lit": 83,
+        "lit": 8,
         "legend": [
-          "Chọn nhắn tin (82.8%)",
-          "Chọn cách khác"
+          "chọn nhắn tin để liên lạc với doanh nghiệp",
+          "Con số chính xác: 82.8% người được hỏi"
         ]
       }
     },
@@ -65,30 +64,22 @@
       "accent": "mở Zalo mỗi tháng.",
       "voice": "Nhắn ở đâu? Zalo có 81.3 triệu người dùng mỗi tháng, hơn 2.2 tỷ tin nhắn mỗi ngày. Số tài khoản Zalo OA của doanh nghiệp tăng 24% trong một năm.",
       "visual": {
-        "type": "columns",
+        "type": "versus",
         "metric": "Người dùng hằng tháng tại Việt Nam",
         "unit": "triệu người",
         "source": "Nguồn: VNG, quý 2/2026; TikTok, 2025; số liệu doanh nghiệp tự công bố",
-        "max": 81.3,
-        "cols": [
+        "items": [
           {
             "label": "Zalo",
-            "value": 81.3,
-            "tone": "accent"
+            "value": 81.3
           },
           {
             "label": "TikTok",
-            "value": 70,
-            "tone": "base"
+            "value": 70
           }
         ],
-        "notes": [
-          {
-            "kind": "callout",
-            "at": 0,
-            "text": "Hơn 2.2 tỷ tin nhắn mỗi ngày"
-          }
-        ]
+        "winner": 0,
+        "note": "Zalo có hơn 2.2 tỷ tin nhắn mỗi ngày"
       }
     },
     {
@@ -97,26 +88,26 @@
       "accent": "từ 12.12 đến Tết.",
       "voice": "Mà mùa cao điểm sắp tới rồi. 85% người Việt mua sắm dịp Tết, 66% mua dịp Tết Dương lịch, và 44% săn sale 12.12.",
       "visual": {
-        "type": "hbars",
+        "type": "columns",
         "metric": "Người Việt mua sắm theo từng dịp",
         "unit": "%",
         "source": "Nguồn: Meta, nghiên cứu mua sắm mùa lễ do Ipsos thực hiện",
         "max": 85,
-        "rows": [
+        "cols": [
           {
-            "label": "Tết Nguyên đán",
-            "value": 85,
-            "tone": "accent"
+            "label": "Sale 12.12",
+            "value": 44,
+            "tone": "base"
           },
           {
-            "label": "Tết Dương lịch",
+            "label": "Tết\nDương lịch",
             "value": 66,
             "tone": "main"
           },
           {
-            "label": "Sale 12.12",
-            "value": 44,
-            "tone": "main"
+            "label": "Tết\nNguyên đán",
+            "value": 85,
+            "tone": "accent"
           }
         ]
       }

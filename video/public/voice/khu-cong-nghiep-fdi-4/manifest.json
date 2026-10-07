@@ -872,8 +872,8 @@
    ]
   },
   {
-   "text": "Follow Adtek để xem số liệu marketing mới mỗi tuần.",
-   "said": "Follow Adtek để xem số liệu marketing mới mỗi tuần.",
+   "text": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+   "said": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
    "file": "voice/khu-cong-nghiep-fdi-4/5.mp3",
    "duration": 3.36,
    "words": [
@@ -884,32 +884,32 @@
     },
     {
      "text": "Adtek",
-     "start": 0.48,
-     "end": 1.04
+     "start": 0.4,
+     "end": 0.96
     },
     {
      "text": "để",
-     "start": 1.12,
-     "end": 1.24
+     "start": 1.04,
+     "end": 1.2
     },
     {
      "text": "xem",
-     "start": 1.28,
+     "start": 1.24,
      "end": 1.44
     },
     {
      "text": "số",
-     "start": 1.52,
-     "end": 1.64
+     "start": 1.48,
+     "end": 1.6
     },
     {
      "text": "liệu",
-     "start": 1.68,
-     "end": 1.84
+     "start": 1.64,
+     "end": 1.76
     },
     {
      "text": "marketing",
-     "start": 2.08,
+     "start": 1.84,
      "end": 2.32
     },
     {
@@ -923,7 +923,7 @@
      "end": 2.8
     },
     {
-     "text": "tuần.",
+     "text": "ngày.",
      "start": 2.88,
      "end": 3.36
     }

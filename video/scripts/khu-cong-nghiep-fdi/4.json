@@ -16,30 +16,12 @@
       "accent": "sao họ chưa gọi bạn?",
       "voice": "Vốn FDI vào Việt Nam tăng 76%. Vậy tại sao nhà đầu tư vẫn chưa gọi cho khu công nghiệp của bạn?",
       "visual": {
-        "type": "columns",
-        "metric": "Vốn FDI đăng ký vào Việt Nam, 9 tháng đầu năm",
-        "unit": "tỷ USD",
-        "source": "Nguồn: Cục Thống kê; 2025 tính ngược từ mức tăng 76.4%",
-        "max": 50.4,
-        "cols": [
-          {
-            "label": "9 tháng\n2025",
-            "value": 28.5,
-            "tone": "base"
-          },
-          {
-            "label": "9 tháng\n2026",
-            "value": 50.4,
-            "tone": "accent"
-          }
-        ],
-        "notes": [
-          {
-            "kind": "callout",
-            "at": 1,
-            "text": "Tăng 76.4%"
-          }
-        ]
+        "type": "bignumber",
+        "value": 76.4,
+        "suffix": "%",
+        "label": "vốn FDI đăng ký vào Việt Nam tăng, 9 tháng đầu năm 2026",
+        "context": "Từ 28.5 tỷ USD lên 50.4 tỷ USD so với cùng kỳ",
+        "source": "Nguồn: Cục Thống kê; số 2025 tính ngược từ mức tăng 76.4%"
       }
     },
     {
@@ -85,12 +67,13 @@
       "accent": "Singapore và Hàn Quốc.",
       "voice": "Họ là ai? Singapore và Hàn Quốc chiếm 61% vốn FDI mới. Nhà đầu tư Hàn Quốc thì tìm bằng tiếng Hàn, trên Naver, chứ không phải Google.",
       "visual": {
-        "type": "columns",
+        "type": "donut",
         "metric": "Tỷ trọng vốn FDI đăng ký mới, 8 tháng đầu năm 2026",
         "unit": "%",
         "source": "Nguồn: Cổng Thông tin điện tử Chính phủ, 09/2026",
-        "max": 35.1,
-        "cols": [
+        "center": "61.2%",
+        "centerLabel": "Singapore và Hàn Quốc",
+        "parts": [
           {
             "label": "Singapore",
             "value": 35.1,
@@ -100,13 +83,11 @@
             "label": "Hàn Quốc",
             "value": 26.1,
             "tone": "accent"
-          }
-        ],
-        "notes": [
+          },
           {
-            "kind": "callout",
-            "at": 1,
-            "text": "Nhà đầu tư Hàn tìm bằng tiếng Hàn, trên Naver"
+            "label": "Các nước khác",
+            "value": 38.8,
+            "tone": "base"
           }
         ]
       }
@@ -167,7 +148,7 @@
       "kicker": "Follow Adtek",
       "headline": "Khu công nghiệp của bạn",
       "accent": "đã lọt vào danh sách chưa?",
-      "voice": "Follow Adtek để xem số liệu marketing mới mỗi tuần.",
+      "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
       "visual": {
         "type": "follow"
       }

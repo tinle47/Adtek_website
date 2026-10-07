@@ -20,8 +20,8 @@
     "kicker": "Khu công nghiệp · FDI 9 tháng 2026",
     "title": "Vốn FDI tăng 76%, sao họ chưa gọi bạn?",
     "voice": "Vốn FDI vào Việt Nam tăng 76%. Vậy tại sao nhà đầu tư vẫn chưa gọi cho khu công nghiệp của bạn?",
-    "visual": "Biểu đồ cột",
-    "source": "Nguồn: Cục Thống kê; 2025 tính ngược từ mức tăng 76.4%"
+    "visual": "Số lớn",
+    "source": "Nguồn: Cục Thống kê; số 2025 tính ngược từ mức tăng 76.4%"
    },
    {
     "kicker": "Gartner · Doanh nghiệp mua hàng thế nào",
@@ -34,7 +34,7 @@
     "kicker": "FDI đăng ký mới · 8 tháng 2026",
     "title": "61% vốn mới đến từ Singapore và Hàn Quốc.",
     "voice": "Họ là ai? Singapore và Hàn Quốc chiếm 61% vốn FDI mới. Nhà đầu tư Hàn Quốc thì tìm bằng tiếng Hàn, trên Naver, chứ không phải Google.",
-    "visual": "Biểu đồ cột",
+    "visual": "Vòng tròn",
     "source": "Nguồn: Cổng Thông tin điện tử Chính phủ, 09/2026"
    },
    {
@@ -54,7 +54,7 @@
    {
     "kicker": "Follow Adtek",
     "title": "Khu công nghiệp của bạn đã lọt vào danh sách chưa?",
-    "voice": "Follow Adtek để xem số liệu marketing mới mỗi tuần.",
+    "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
     "visual": "Thẻ Follow Adtek",
     "source": ""
    }
@@ -81,7 +81,7 @@
     "kicker": "Performance · Meta và Kantar",
     "title": "8/10 khách muốn nhắn tin, shop bạn trả lời kịp không?",
     "voice": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua? Khảo sát cho Meta cho thấy 82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp.",
-    "visual": "Ô vuông 100",
+    "visual": "Hình người",
     "source": "Nguồn: Meta, khảo sát do Kantar thực hiện, 11/2025"
    },
    {
@@ -95,14 +95,14 @@
     "kicker": "Kênh nhắn tin lớn nhất",
     "title": "81 triệu người mở Zalo mỗi tháng.",
     "voice": "Nhắn ở đâu? Zalo có 81.3 triệu người dùng mỗi tháng, hơn 2.2 tỷ tin nhắn mỗi ngày. Số tài khoản Zalo OA của doanh nghiệp tăng 24% trong một năm.",
-    "visual": "Biểu đồ cột",
+    "visual": "Đối đầu",
     "source": "Nguồn: VNG, quý 2/2026; TikTok, 2025; số liệu doanh nghiệp tự công bố"
    },
    {
     "kicker": "Mùa mua sắm cuối năm",
     "title": "Mùa cao điểm kéo dài từ 12.12 đến Tết.",
     "voice": "Mà mùa cao điểm sắp tới rồi. 85% người Việt mua sắm dịp Tết, 66% mua dịp Tết Dương lịch, và 44% săn sale 12.12.",
-    "visual": "Thanh ngang",
+    "visual": "Biểu đồ cột",
     "source": "Nguồn: Meta, nghiên cứu mua sắm mùa lễ do Ipsos thực hiện"
    },
    {
@@ -142,7 +142,7 @@
     "kicker": "AIO · OpenAI",
     "title": "900 triệu người mỗi tuần đang hỏi ChatGPT.",
     "voice": "Mỗi tuần 900 triệu người hỏi ChatGPT. Có ai được nó gợi ý tên thương hiệu của bạn chưa? Chỉ trong 4 tháng, ChatGPT có thêm 100 triệu người dùng.",
-    "visual": "Biểu đồ cột",
+    "visual": "Số lớn",
     "source": "Nguồn: OpenAI, 02/2026"
    },
    {
@@ -163,7 +163,7 @@
     "kicker": "Google Lens",
     "title": "25 tỷ lượt tìm mỗi tháng không cần gõ chữ.",
     "voice": "Người ta còn tìm bằng hình ảnh. Google Lens có hơn 25 tỷ lượt tìm mỗi tháng, tăng từ khoảng 20 tỷ năm 2024.",
-    "visual": "Biểu đồ cột",
+    "visual": "Đường dốc",
     "source": "Nguồn: Google, 10/2024 và 03/2026"
    },
    {

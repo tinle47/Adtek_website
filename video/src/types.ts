@@ -50,7 +50,7 @@ export type Visual =
   // Chọn biểu đồ theo kiểu dữ liệu (xem README): mỗi loại có hiệu ứng riêng.
   | { type: "bignumber"; value: number; display?: string; prefix?: string; suffix?: string; label: string; context?: string; source: string } // 1 con số gây sốc
   | { type: "versus"; metric: string; unit?: string; source: string; items: [VsItem, VsItem]; winner: 0 | 1; note?: string } // 2 con số đối đầu
-  | { type: "slope"; metric: string; unit?: string; source: string; from: string; to: string; series: { label: string; a: number; b: number; display?: [string, string]; tone: Tone }[] } // trước và sau, 1 đến 3 nhóm
+  | { type: "slope"; metric: string; unit?: string; source: string; from: string; to: string; series: { label: string; a: number; b: number; display?: [string, string]; tone: Tone }[]; min?: number } // trước và sau, 1 đến 3 nhóm
   | { type: "trend"; metric: string; unit?: string; source: string; points: { label: string; value: number; display?: string }[]; min?: number; note?: string } // xu hướng 3 mốc trở lên
   | { type: "donut"; metric: string; unit?: string; source: string; parts: { label: string; value: number; display?: string; tone: Tone }[]; center?: string; centerLabel?: string } // các phần trong một tổng
   | { type: "people"; metric: string; unit?: string; source: string; lit: number; legend: [string, string] } // x trên 10 người

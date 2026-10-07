@@ -101,18 +101,18 @@ export const Versus: React.FC<{ metric: string; unit?: string; source: string; i
 
 // ---------- Đường dốc: trước và sau của 1 đến 3 nhóm ----------
 type SlopeSeries = { label: string; a: number; b: number; display?: [string, string]; tone: Tone };
-export const Slope: React.FC<{ metric: string; unit?: string; source: string; from: string; to: string; series: SlopeSeries[] }> = ({
-  metric, unit, source, from, to, series,
+export const Slope: React.FC<{ metric: string; unit?: string; source: string; from: string; to: string; series: SlopeSeries[]; min?: number }> = ({
+  metric, unit, source, from, to, series, min = 0,
 }) => {
   const f = useCurrentFrame();
   const H = 380;
   const X0 = 230;
   const X1 = 620;
   const vals = series.flatMap((s) => [s.a, s.b]);
-  const lo = Math.min(...vals);
-  const hi = Math.max(...vals);
-  const pad = (hi - lo || hi || 1) * 0.12;
-  const y = (v: number) => H - ((v - (lo - pad)) / (hi + pad - (lo - pad))) * H;
+  // Trục dọc bắt đầu từ min (mặc định 0) để độ dốc đúng tỷ lệ, không phóng đại thay đổi nhỏ.
+  const lo = min;
+  const hi = Math.max(...vals) * 1.08;
+  const y = (v: number) => H - ((v - lo) / (hi - lo)) * H;
   // Đẩy nhãn hai đầu ra xa nhau nếu quá gần.
   const spread = (ys: number[]) => {
     const idx = ys.map((v, i) => [v, i]).sort((p, q) => p[0] - q[0]);
