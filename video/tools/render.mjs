@@ -21,6 +21,10 @@ const files = nums.length ? nums.map((n) => `${n}.json`) : readdirSync(dir).filt
 
 // Cân giọng về -14 LUFS (mức to chuẩn của TikTok), để khi chèn nhạc TikTok ở mức Sound khoảng 15% nhạc vẫn nằm dưới giọng.
 // Đo trước, chỉnh sau (loudnorm 2 lượt), giữ nguyên hình. Dùng ffmpeg đi kèm Remotion nên không cần cài thêm.
+// Hai hashtag mặc định luôn đứng đầu, sau đó là hashtag riêng của video (bỏ trùng).
+const DEFAULT_TAGS = ["#adtekagency", "#growthmarketing"];
+const hashtags = (tags = []) => [...new Set([...DEFAULT_TAGS, ...tags])];
+
 const LOUDNESS = "I=-14:TP=-1.5:LRA=11";
 function ffmpeg(args) {
   const r = spawnSync(path.join(ROOT, "node_modules", ".bin", "remotion"), ["ffmpeg", "-hide_banner", "-y", ...args], { encoding: "utf8" });
@@ -74,7 +78,7 @@ for (const file of files) {
   const before = voice ? normalize(output) : null;
   writeFileSync(
     path.join(OUT, `${script.id}.txt`),
-    `${script.caption}\n\n${script.hashtags.join(" ")}\n`,
+    `${script.caption}\n\n${hashtags(script.hashtags).join(" ")}\n`,
   );
   const secs = (composition.durationInFrames / composition.fps).toFixed(1);
   console.log(`${script.id}: ${secs}s ${voice ? `có giọng, âm lượng ${before} -> -14 LUFS` : "chưa có giọng"} -> ${path.relative(ROOT, output)}`);
