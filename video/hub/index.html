@@ -1,0 +1,217 @@
+<title>Video TikTok Adtek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<style>
+/* Bố cục: một cột thẻ video theo ngày đăng; mỗi thẻ là video dọc bên trái, thông tin đăng bên phải, xếp chồng trên điện thoại. */
+:root {
+  --bg: #F3F5F9;
+  --surface: #FFFFFF;
+  --ink: #0E1A33;
+  --muted: #5B6880;
+  --line: #DCE2EC;
+  --navy: #002D72;
+  --accent: #FF9014;
+  --accent-ink: #0E1A33;
+  --ok: #1F7A4D;
+  --ok-bg: #E3F3EA;
+  --wait: #9A5B00;
+  --wait-bg: #FFF1DC;
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A1426; --surface: #12203A; --ink: #EAF0FA; --muted: #9AA9C4; --line: #22335A;
+    --navy: #8FB0F0; --accent: #FF9F36; --accent-ink: #0A1426;
+    --ok: #6FD39F; --ok-bg: #12382A; --wait: #FFC46B; --wait-bg: #3A2A10; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0A1426; --surface: #12203A; --ink: #EAF0FA; --muted: #9AA9C4; --line: #22335A;
+  --navy: #8FB0F0; --accent: #FF9F36; --accent-ink: #0A1426;
+  --ok: #6FD39F; --ok-bg: #12382A; --wait: #FFC46B; --wait-bg: #3A2A10; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55; padding-inline: 16px; padding-block: 28px 48px; }
+.wrap { max-width: 900px; margin: 0 auto; display: grid; gap: 28px; }
+header { display: grid; gap: 6px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 5vw, 36px); line-height: 1.15; margin: 0; color: var(--navy); text-wrap: balance; }
+.sub { color: var(--muted); margin: 0; }
+.rules { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--muted); padding-top: 4px; }
+.rules b { color: var(--ink); font-weight: 600; }
+h2 { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+.list { display: grid; gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 20px; }
+.card.today { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.media { width: 200px; aspect-ratio: 9 / 16; max-width: 100%; border-radius: 8px; overflow: hidden; background: #000; }
+.media video { width: 100%; height: 100%; display: block; object-fit: cover; }
+.media .empty { width: 100%; height: 100%; display: grid; place-items: center; text-align: center; padding: 16px; color: #C8D2E6; font-size: 13px; background: #00225A; }
+.info { min-width: 0; display: grid; gap: 10px; align-content: start; }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.date { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.chip { font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 999px; }
+.chip.ok { color: var(--ok); background: var(--ok-bg); }
+.chip.wait { color: var(--wait); background: var(--wait-bg); }
+.chip.today { color: var(--accent-ink); background: var(--accent); }
+.topic { font-family: var(--font-display); font-weight: 600; font-size: 21px; line-height: 1.25; margin: 0; text-wrap: balance; }
+.hook { margin: 0; color: var(--muted); }
+.caption { border: 1px solid var(--line); border-radius: 8px; padding: 12px; font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--bg); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+button, .btn { font: inherit; font-size: 14px; font-weight: 600; border-radius: 8px; padding: 9px 16px; cursor: pointer; border: 1px solid var(--line); background: var(--surface); color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+button:focus-visible, .btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+button:disabled { opacity: 0.55; cursor: default; }
+.status { font-size: 13px; color: var(--muted); min-height: 1.2em; }
+.note { font-size: 13px; color: var(--wait); }
+.past summary { cursor: pointer; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.past .list { margin-top: 12px; }
+.empty-state { color: var(--muted); padding: 20px; border: 1px dashed var(--line); border-radius: 10px; text-align: center; }
+@media (max-width: 560px) {
+  .card { grid-template-columns: minmax(0, 1fr); }
+  .media { width: 100%; max-width: 320px; margin: 0 auto; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">@adtek.growth.marketing</div>
+    <h1>Video TikTok Adtek</h1>
+    <p class="sub">Video đã sản xuất, sắp xếp theo ngày đăng. Tải video về máy, copy caption, rồi đăng trên TikTok.</p>
+    <div class="rules">
+      <span>Nhạc: <b>Commercial Music Library</b>, nhạc nhẹ không lời</span>
+      <span>Volume: <b>Original 100%</b>, <b>Sound khoảng 15%</b></span>
+      <span>Giờ đăng gợi ý: <b>19:00 đến 21:00</b></span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Sắp đăng</h2>
+    <div class="list" id="upcoming"><div class="empty-state">Đang tải danh sách video…</div></div>
+  </section>
+
+  <details class="past" id="pastWrap" hidden>
+    <summary>Đã qua ngày đăng</summary>
+    <div class="list" id="past"></div>
+  </details>
+</div>
+
+<script>
+(function () {
+  const WEEKDAY = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+  let downloads = null;
+
+  // Ngày hôm nay theo giờ Việt Nam, dạng YYYY-MM-DD.
+  function todayVN() {
+    const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Ho_Chi_Minh", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+    return parts;
+  }
+  function fmtDate(iso) {
+    const [y, m, d] = iso.split("-").map(Number);
+    const wd = WEEKDAY[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
+    return wd + " " + String(d).padStart(2, "0") + "/" + String(m).padStart(2, "0");
+  }
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function captionText(v) {
+    return (v.caption || "") + (v.hashtags && v.hashtags.length ? "\n\n" + v.hashtags.join(" ") : "");
+  }
+
+  function card(v, today) {
+    const c = el("article", "card" + (v.date === today ? " today" : ""));
+    const media = el("div", "media");
+    if (v.url) {
+      const vid = document.createElement("video");
+      vid.src = v.url; vid.controls = true; vid.playsInline = true; vid.preload = "metadata";
+      media.appendChild(vid);
+    } else {
+      media.appendChild(el("div", "empty", v.note || "Video chưa sản xuất"));
+    }
+    c.appendChild(media);
+
+    const info = el("div", "info");
+    const meta = el("div", "meta");
+    meta.appendChild(el("span", "date", fmtDate(v.date)));
+    if (v.date === today) meta.appendChild(el("span", "chip today", "Đăng hôm nay"));
+    meta.appendChild(el("span", "chip " + (v.url ? "ok" : "wait"), v.url ? "Sẵn sàng" : "Chưa có video"));
+    if (v.service) meta.appendChild(el("span", null, v.service));
+    if (v.duration) meta.appendChild(el("span", null, v.duration));
+    info.appendChild(meta);
+    info.appendChild(el("h3", "topic", v.topic));
+    if (v.hook) info.appendChild(el("p", "hook", "Mở đầu: " + v.hook));
+    const cap = captionText(v);
+    if (cap.trim()) info.appendChild(el("div", "caption", cap));
+    if (v.note && v.url) info.appendChild(el("div", "note", v.note));
+
+    const actions = el("div", "actions");
+    const status = el("div", "status");
+    if (v.url) {
+      const dl = el("button", "primary", "Tải video");
+      dl.type = "button";
+      dl.addEventListener("click", async () => {
+        if (!downloads) { status.textContent = "Trình xem này không cho tải trực tiếp. Mở video, bấm giữ để lưu."; return; }
+        dl.disabled = true; status.textContent = "Đang chuẩn bị file…";
+        try {
+          const blob = await (await fetch(v.url)).blob();
+          await downloads.save({ filename: (v.filename || v.slug || "video") + ".mp4", data: blob });
+          status.textContent = "Đã lưu video.";
+        } catch (e) {
+          status.textContent = e && e.code === "declined" ? "Đã huỷ tải." : "Chưa tải được video. Mở video, bấm giữ để lưu.";
+        } finally { dl.disabled = false; }
+      });
+      actions.appendChild(dl);
+    }
+    if (cap.trim()) {
+      const cp = el("button", null, "Copy caption");
+      cp.type = "button";
+      cp.addEventListener("click", () => {
+        navigator.clipboard.writeText(cap).then(
+          () => { status.textContent = "Đã copy caption."; },
+          () => {
+            const box = c.querySelector(".caption");
+            const r = document.createRange(); r.selectNodeContents(box);
+            const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+            status.textContent = "Caption đã được bôi đen, bấm giữ để copy.";
+          });
+      });
+      actions.appendChild(cp);
+    }
+    info.appendChild(actions);
+    info.appendChild(status);
+    c.appendChild(info);
+    return c;
+  }
+
+  function render(videos) {
+    const today = todayVN();
+    const up = document.getElementById("upcoming");
+    const past = document.getElementById("past");
+    up.textContent = ""; past.textContent = "";
+    const sorted = videos.slice().sort((a, b) => a.date.localeCompare(b.date));
+    const coming = sorted.filter(v => v.date >= today);
+    const gone = sorted.filter(v => v.date < today).reverse();
+    if (!coming.length) up.appendChild(el("div", "empty-state", "Chưa có video nào sắp đăng. Video mới được thêm vào mỗi Chủ nhật."));
+    coming.forEach(v => up.appendChild(card(v, today)));
+    gone.forEach(v => past.appendChild(card(v, today)));
+    document.getElementById("pastWrap").hidden = !gone.length;
+  }
+
+  fetch("videos.json", { cache: "no-store" })
+    .then(r => r.json())
+    .then(render)
+    .catch(() => {
+      const up = document.getElementById("upcoming");
+      up.textContent = "";
+      up.appendChild(el("div", "empty-state", "Chưa tải được danh sách video. Tải lại trang để thử lại."));
+    });
+
+  if (window.claude && window.claude.use) {
+    window.claude.use("downloads").then(d => { downloads = d; }).catch(() => {});
+  }
+})();
+</script>

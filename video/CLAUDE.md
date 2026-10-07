@@ -28,16 +28,17 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 
 - 4 video mỗi tuần: thứ Sáu, Chủ nhật, thứ Hai, thứ Tư.
 - Anh Tin đăng tay, chèn nhạc từ Commercial Music Library của TikTok: Original 100%, Sound khoảng 15%.
-- Slot trống trong lịch dành cho chủ đề trend anh Tin chụp từ TikTok Creator Search Insights (ưu tiên Content gap).
+- Slot trống trong lịch: Claude tự chọn chủ đề đang được quan tâm khi viết kịch bản thứ Bảy (tin tức, báo cáo 1 đến 2 tháng gần đây, sự kiện theo mùa). Không dùng Creator Search Insights.
 
 ## Giọng đọc
 
-- Giọng "Tin Le v1" (Professional Voice Clone, giọng miền Nam). Dùng Eleven v4 khi giọng đã được huấn luyện cho v4; `voice.mjs` tự kiểm tra và dừng nếu chưa.
+- Giọng "Tin Le v1" (Professional Voice Clone, giọng miền Nam), model Eleven v4. Nếu giọng chưa được huấn luyện cho v4, `voice.mjs` sẽ dừng; khi đó chạy lại với `--skip-check` để dùng v4 như hiện tại (anh Tin đã đồng ý). Không đổi sang model khác.
 - Từ máy đọc sai thêm vào `tools/pronunciation.json`.
 
 ## Quy trình hằng tuần (Routine tự chạy, giờ Việt Nam)
 
 - Thứ Bảy 08:47: viết kịch bản các video từ Chủ nhật đến hết Chủ nhật tuần sau, chụp ảnh duyệt, email hi@tinle.co tiêu đề "[Adtek TikTok] Kịch bản tuần ..., chờ duyệt".
-- Chủ nhật 08:52: đọc phản hồi trong thread đó, sửa theo góp ý, tạo giọng, xuất video, tải lên Google Drive thư mục "Adtek TikTok", email "[Adtek TikTok] Video tuần ... đã xong" kèm link và caption.
-- T6, CN, T2, T4 lúc 17:47: email "[Adtek TikTok] Nhắc đăng hôm nay ..." kèm link video, caption, cấu hình nhạc, giờ đăng gợi ý 19:00 đến 21:00.
+- Chủ nhật 08:52: đọc phản hồi trong thread đó, sửa theo góp ý (chưa có phản hồi thì sản xuất luôn), tạo giọng, xuất video, đưa lên trang hub https://claude.ai/artifact/72zNCsPigyqbV6P8kQtji5 (video là asset của trang, danh sách ở `hub/videos.json`), email "[Adtek TikTok] Video tuần ... đã xong" kèm link hub.
+- T6, CN, T2, T4 lúc 17:47: email "[Adtek TikTok] Nhắc đăng hôm nay ..." kèm link hub, caption copy sẵn, cấu hình nhạc, giờ đăng gợi ý 19:00 đến 21:00.
+- Không gửi video qua Google Drive hay đính kèm email (file quá lớn để tải lên qua công cụ); luôn dùng trang hub.
 - Email gửi anh Tin: súc tích, chuyên nghiệp, không xưng anh/em, không dùng ký tự "—".
