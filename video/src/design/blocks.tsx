@@ -59,6 +59,7 @@ export const Follow: React.FC<{ note: string }> = ({ note }) => {
       </div>
       <div style={{ marginTop: 24, fontFamily: SERIF, fontWeight: 600, fontSize: 56, color: C.white }}>Adtek</div>
       <div style={{ marginTop: 4, fontFamily: SANS, fontSize: 26, letterSpacing: 2, textTransform: "uppercase", color: C.muted }}>Growth Marketing Agency</div>
+      <div style={{ marginTop: 10, fontFamily: SANS, fontWeight: 600, fontSize: 30, color: C.white }}>@adtek.growth.mark</div>
       <div style={{ marginTop: 28, width: 600, borderTop: "1.5px solid rgba(255,255,255,0.18)" }} />
       <div style={{ marginTop: 26, fontFamily: SANS, fontSize: 32, lineHeight: 1.4, color: C.white, textAlign: "center", maxWidth: 760 }}>{note}</div>
       <div
