@@ -9,12 +9,14 @@ Cách dùng:
   python3 tools/blog_post.py schedule <số bài>  đặt lịch đăng theo date/time (anh Tin đã duyệt)
   python3 tools/blog_post.py changes <số bài>   anh Tin yêu cầu sửa: không tự đăng cho tới khi gửi duyệt lại
   python3 tools/blog_post.py unschedule <số bài> hủy lịch đăng, đưa bài về nháp
+  python3 tools/blog_post.py retime             gán giờ đăng ngẫu nhiên cho các bài chưa đăng (khung 12:00-12:59 hoặc 20:00-20:59)
   python3 tools/blog_post.py auto               tự đặt lịch các bài đã gửi email quá 24 giờ mà chưa có phản hồi
 
 Trạng thái duyệt (trường approval): pending (đã gửi email, ghi approval_requested), approved, auto, changes_requested.
 """
 import html
 import json
+import random
 import re
 import subprocess
 import sys
@@ -119,6 +121,19 @@ def draft(data, post):
 
 VN = timezone(timedelta(hours=7))
 APPROVAL_WINDOW = timedelta(hours=24)  # D+1 kể từ khi gửi email mà chưa duyệt thì tự đặt lịch
+SLOTS = (12, 20)  # giờ đăng: ngẫu nhiên trong khung 12:00-12:59 hoặc 20:00-20:59, không cố định một mốc
+
+
+def random_time():
+    return f"{random.choice(SLOTS)}:{random.randint(1, 58):02d}"
+
+
+def retime(data):
+    for post in data["posts"]:
+        if post["status"] in ("planned", "draft"):
+            post["time"] = random_time()
+            print(f"Bài {post['no']}: {post['date']} {post['time']}")
+    save(data)
 
 
 def schedule(data, post, approval="approved"):
@@ -164,8 +179,8 @@ def auto(data):
 if __name__ == "__main__":
     cmd = sys.argv[1]
     data = load()
-    if cmd == "auto":
-        auto(data)
+    if cmd in ("auto", "retime"):
+        {"auto": auto, "retime": retime}[cmd](data)
         sys.exit()
     post = find(data, int(sys.argv[2]))
     {"cover": lambda: cover(post), "draft": lambda: draft(data, post), "schedule": lambda: schedule(data, post),

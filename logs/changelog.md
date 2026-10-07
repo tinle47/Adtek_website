@@ -39,3 +39,4 @@
 | 2026-10-06 16:45 | Ghi rõ "cần đăng nhập" trên nút Sửa trong email nhắc duyệt để phân biệt với nút Xem trước | tools/approval_email.py | Đã áp dụng |
 | 2026-10-06 17:00 | Sửa nút trong email nhắc duyệt: dùng ô bảng có màu nền (bgcolor) để nút Xem trước luôn hiện nền xanh trên mọi ứng dụng email | tools/approval_email.py | Đã áp dụng |
 | 2026-10-06 17:20 | Thêm hạn duyệt D+1: email ghi hạn chót, quá 24 giờ chưa phản hồi thì tự đặt lịch đăng theo kế hoạch (blog_post.py auto) và báo anh Tin; thêm lệnh changes, unschedule | tools, lịch tự động thứ Sáu, README | Đã áp dụng |
+| 2026-10-07 | Bỏ giờ đăng cố định 8:00: mỗi bài đăng ngẫu nhiên trong khung 12:00-12:59 hoặc 20:00-20:59; đổi lịch bài 1 sang 20:53 13/10, bài 2 sang 20:20 15/10; gán giờ cho bài 3 đến 32 | Bài 6086, 6088, calendar.json, tools/blog_post.py | Đã áp dụng |

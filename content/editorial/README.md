@@ -4,7 +4,7 @@ Lịch đăng, cụm chủ đề và danh sách bài nằm trong `calendar.json`
 
 ## Nhịp đăng
 
-- 2 bài/tuần, mỗi bài khoảng 2,000 chữ, đăng 8:00 sáng Thứ Ba và Thứ Năm.
+- 2 bài/tuần, mỗi bài khoảng 2,000 chữ, đăng Thứ Ba và Thứ Năm. Giờ đăng không cố định: mỗi bài chọn ngẫu nhiên khung 12:00-12:59 hoặc 20:00-20:59 (trường `time` trong `calendar.json`, gán bằng `python3 tools/blog_post.py retime` cho bài chưa đăng).
 - Mỗi bài cần có một phần chỉ Adtek viết được: mini-case ẩn danh, số liệu từ dự án, khung hoặc checklist dùng ngay.
 - Tác giả Tin Le, có SEO title, meta description và ảnh bìa.
 
