@@ -2,6 +2,7 @@ import React from "react";
 import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
 import { Article, Follow, List } from "./design/blocks";
 import { BarChart, ColumnChart, Exhibit, Waffle, type TimedCol, type TimedNote } from "./design/charts";
+import { BigNumber, Donut, Funnel, People, Slope, Trend, Versus } from "./design/charts2";
 import { CHAT_NOTE_AT, ChatScreen } from "./design/chat";
 import { Background, Caption, Fade, Headline, L, Logo, SiteFooter, clamp, useFonts } from "./design/frame";
 import { GoogleSerp, PhoneNote, SERP_NOTE_AT } from "./design/serp";
@@ -89,6 +90,20 @@ const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) =>
           </Exhibit>
         </div>
       );
+    case "bignumber":
+      return <div style={stage}><BigNumber {...v} /></div>;
+    case "versus":
+      return <div style={stage}><Versus {...v} /></div>;
+    case "slope":
+      return <div style={stage}><Slope {...v} /></div>;
+    case "trend":
+      return <div style={stage}><Trend {...v} /></div>;
+    case "donut":
+      return <div style={stage}><Donut {...v} /></div>;
+    case "people":
+      return <div style={stage}><People {...v} /></div>;
+    case "funnel":
+      return <div style={stage}><Funnel {...v} /></div>;
     case "list":
       return (
         <div style={stage}>

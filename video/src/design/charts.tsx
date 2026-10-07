@@ -16,7 +16,12 @@ const TONE: Record<Tone, string> = { base: "#5E7DB3", main: "#D6E2F5", accent: "
 export const W = 900; // bề ngang vùng biểu đồ
 
 const prog = (f: number, at: number, len = 20) => interpolate(f - at, [0, len], [0, 1], { ...clamp, easing: ease });
-const fmt = (v: number, display?: string) => display ?? v.toLocaleString("en-US");
+// Số đếm tăng dần theo tiến độ p (0 đến 1), giữ đúng số chữ số thập phân của giá trị cuối.
+export const count = (v: number, p: number, display?: string) => {
+  if (display && p >= 0.999) return display;
+  const d = (String(v).split(".")[1] ?? "").length;
+  return (v * p).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+};
 
 // Tên chỉ số in đậm + đơn vị in thường, biểu đồ, dòng nguồn.
 export const Exhibit: React.FC<{ metric: string; unit: string; source: string; appear: number; children: React.ReactNode }> = ({
@@ -91,7 +96,7 @@ export const ColumnChart: React.FC<{ cols: TimedCol[]; max: number; notes: Timed
                 opacity: prog(f, c.at + 16, 8),
               }}
             >
-              {fmt(c.value, c.display)}
+              {count(c.value, g, c.display)}
             </div>
             <div style={{ position: "absolute", left: slot * i, width: slot, top: H + 18, textAlign: "center", fontSize: 25, lineHeight: 1.3, color: INK.soft, whiteSpace: "pre-line", opacity: prog(f, c.at, 10) }}>
               {c.label}
@@ -153,7 +158,7 @@ export const BarChart: React.FC<{ rows: TimedRow[]; max: number; notes: TimedNot
             <div style={{ width: LABEL + 24, flex: "none", boxSizing: "border-box", paddingRight: 24, textAlign: "right", fontSize: 26, lineHeight: 1.3, color: INK.soft, opacity: show }}>{r.label}</div>
             <div style={{ height: 64, flex: "none", width: (r.value / max) * BAR * g, background: TONE[r.tone] }} />
             <div style={{ marginLeft: 16, fontSize: 34, fontWeight: r.tone === "accent" ? 700 : 400, color: r.tone === "accent" ? TONE.accent : INK.text, opacity: prog(f, r.at + 16, 8) }}>
-              {fmt(r.value, r.display)}
+              {count(r.value, g, r.display)}
             </div>
           </div>
         );

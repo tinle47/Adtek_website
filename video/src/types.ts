@@ -10,6 +10,8 @@ export type ChartNote =
   | ({ kind: "drop"; from: number; to: number; text: string } & Step) // mũi tên từ cột cao xuống cột thấp
   | ({ kind: "callout"; at: number; text: string } & Step); // chữ đậm + đường dẫn trên một cột/thanh
 
+type VsItem = { label: string; value: number; display?: string; suffix?: string };
+
 export type Visual =
   | {
       type: "serp"; // màn hình Google trên điện thoại
@@ -45,6 +47,14 @@ export type Visual =
     }
   | { type: "waffle"; metric: string; unit: string; source: string; lit: number; legend: [string, string] }
   | { type: "list"; items: string[] }
+  // Chọn biểu đồ theo kiểu dữ liệu (xem README): mỗi loại có hiệu ứng riêng.
+  | { type: "bignumber"; value: number; display?: string; prefix?: string; suffix?: string; label: string; context?: string; source: string } // 1 con số gây sốc
+  | { type: "versus"; metric: string; unit?: string; source: string; items: [VsItem, VsItem]; winner: 0 | 1; note?: string } // 2 con số đối đầu
+  | { type: "slope"; metric: string; unit?: string; source: string; from: string; to: string; series: { label: string; a: number; b: number; display?: [string, string]; tone: Tone }[] } // trước và sau, 1 đến 3 nhóm
+  | { type: "trend"; metric: string; unit?: string; source: string; points: { label: string; value: number; display?: string }[]; min?: number; note?: string } // xu hướng 3 mốc trở lên
+  | { type: "donut"; metric: string; unit?: string; source: string; parts: { label: string; value: number; display?: string; tone: Tone }[]; center?: string; centerLabel?: string } // các phần trong một tổng
+  | { type: "people"; metric: string; unit?: string; source: string; lit: number; legend: [string, string] } // x trên 10 người
+  | { type: "funnel"; metric: string; unit?: string; source: string; stages: { label: string; value: number; display?: string }[] } // rơi rụng qua từng bước
   | { type: "article"; image: string; title: string; url: string } // thẻ bài blog (không dùng cho kênh TikTok độc lập)
   | { type: "follow"; note?: string } // cảnh cuối kêu gọi theo dõi kênh
   | { type: "continue" }; // giữ biểu đồ của cảnh trước, hiện thêm phần có step tương ứng

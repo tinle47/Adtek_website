@@ -12,7 +12,8 @@ os.chdir(ROOT)
 
 VISUAL = {"serp": "Màn hình Google", "chat": "Màn hình chatbot", "columns": "Biểu đồ cột", "hbars": "Thanh ngang",
           "continue": "Tiếp biểu đồ trước", "waffle": "Ô vuông 100", "list": "Danh sách", "article": "Thẻ bài viết",
-          "follow": "Thẻ Follow Adtek"}
+          "follow": "Thẻ Follow Adtek", "bignumber": "Số lớn", "versus": "Đối đầu", "slope": "Đường dốc",
+          "trend": "Đường xu hướng", "donut": "Vòng tròn", "people": "Hình người", "funnel": "Phễu"}
 
 def cell(v):
     if isinstance(v, datetime):

@@ -1,0 +1,181 @@
+{
+  "id": "demo-bieu-do",
+  "archived": true,
+  "caption": "",
+  "hashtags": [],
+  "scenes": [
+    {
+      "kicker": "Số lớn · OpenAI",
+      "headline": "Mỗi tuần 900 triệu người",
+      "accent": "đang hỏi ChatGPT.",
+      "voice": "Số lớn: con số đếm từ 0 lên 900 triệu, dùng khi chỉ có một con số gây sốc.",
+      "visual": {
+        "type": "bignumber",
+        "value": 900,
+        "suffix": "triệu",
+        "label": "người dùng ChatGPT mỗi tuần",
+        "context": "Tăng từ 800 triệu vào tháng 10/2025",
+        "source": "Nguồn: OpenAI, 02/2026"
+      }
+    },
+    {
+      "kicker": "Đối đầu · McKinsey",
+      "headline": "Khách trả phí làm thành viên",
+      "accent": "chi nhiều gấp đôi.",
+      "voice": "Đối đầu: hai con số chạy song song, bên thắng phóng to, dùng khi so sánh hai lựa chọn.",
+      "visual": {
+        "type": "versus",
+        "metric": "Khả năng chi tiêu nhiều hơn sau khi tham gia",
+        "unit": "% thành viên",
+        "source": "Nguồn: McKinsey & Company, khảo sát 2020, Mỹ",
+        "items": [
+          {
+            "label": "Thành viên trả phí",
+            "value": 60,
+            "suffix": "%"
+          },
+          {
+            "label": "Tích điểm miễn phí",
+            "value": 30,
+            "suffix": "%"
+          }
+        ],
+        "winner": 0,
+        "note": "Khách trả phí chịu chi nhiều gấp đôi"
+      }
+    },
+    {
+      "kicker": "Đường dốc · AppsFlyer",
+      "headline": "iPhone chiếm 1/3",
+      "accent": "lượt cài app ở Việt Nam.",
+      "voice": "Đường dốc: đường kẻ vẽ dần từ năm 2017 tới 2025, dùng cho trước và sau của nhiều nhóm.",
+      "visual": {
+        "type": "slope",
+        "metric": "Tỷ trọng lượt cài app tại Việt Nam",
+        "unit": "%",
+        "source": "Nguồn: AppsFlyer, State of App Marketing in Vietnam 2025",
+        "from": "2017",
+        "to": "2025",
+        "series": [
+          {
+            "label": "Android",
+            "a": 78,
+            "b": 66,
+            "tone": "main"
+          },
+          {
+            "label": "iOS",
+            "a": 22,
+            "b": 33,
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Xu hướng · VNG",
+      "headline": "Zalo vẫn tăng",
+      "accent": "dù đã có 81 triệu người.",
+      "voice": "Xu hướng: đường vẽ dần qua từng quý, vùng bên dưới hiện mờ, dùng khi có từ ba mốc trở lên.",
+      "visual": {
+        "type": "trend",
+        "metric": "Người dùng Zalo hằng tháng",
+        "unit": "triệu người",
+        "source": "Nguồn: VNG, báo cáo kết quả kinh doanh (doanh nghiệp tự công bố)",
+        "min": 75,
+        "points": [
+          {
+            "label": "Cuối 2024",
+            "value": 77.8
+          },
+          {
+            "label": "Quý 3/2025",
+            "value": 79.2
+          },
+          {
+            "label": "Cuối 2025",
+            "value": 79.6
+          },
+          {
+            "label": "Quý 2/2026",
+            "value": 81.3
+          }
+        ],
+        "note": "Trục dọc bắt đầu từ 75 triệu"
+      }
+    },
+    {
+      "kicker": "Vòng tròn · Metric",
+      "headline": "TikTok Shop chiếm",
+      "accent": "41% doanh số sàn.",
+      "voice": "Vòng tròn: từng phần quét vòng lần lượt, dùng khi chia thị phần trong một tổng.",
+      "visual": {
+        "type": "donut",
+        "metric": "Thị phần doanh số 4 sàn thương mại điện tử năm 2025",
+        "unit": "%",
+        "source": "Nguồn: Metric.vn, Báo cáo thị trường TMĐT Việt Nam 2025",
+        "center": "41.31%",
+        "centerLabel": "TikTok Shop",
+        "parts": [
+          {
+            "label": "TikTok Shop",
+            "value": 41.31,
+            "tone": "accent"
+          },
+          {
+            "label": "Shopee",
+            "value": 56.04,
+            "tone": "main"
+          },
+          {
+            "label": "Lazada và Tiki",
+            "value": 2.65,
+            "tone": "base"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Hình người · Meta và Kantar",
+      "headline": "8 trên 10 người",
+      "accent": "muốn nhắn tin với shop.",
+      "voice": "Hình người: từng người sáng lên, dùng khi số liệu nói về x trên 10 người.",
+      "visual": {
+        "type": "people",
+        "metric": "Người Việt chọn nhắn tin để liên lạc với doanh nghiệp",
+        "source": "Nguồn: Meta, khảo sát do Kantar thực hiện, 11/2025",
+        "lit": 8,
+        "legend": [
+          "chọn nhắn tin để liên lạc với doanh nghiệp",
+          "Con số chính xác: 82.8% người được hỏi"
+        ]
+      }
+    },
+    {
+      "kicker": "Phễu · Pew Research",
+      "headline": "100 lượt xem tóm tắt AI,",
+      "accent": "chỉ 1 lượt bấm link nguồn.",
+      "voice": "Phễu: từng tầng rơi xuống, độ rộng đúng tỷ lệ, dùng khi khách rơi rụng qua từng bước.",
+      "visual": {
+        "type": "funnel",
+        "metric": "Điều gì xảy ra khi Google hiện tóm tắt AI",
+        "unit": "trên 100 lượt xem",
+        "source": "Nguồn: Pew Research Center, 07/2025, 900 người dùng tại Mỹ",
+        "stages": [
+          {
+            "label": "Lượt xem trang có tóm tắt AI",
+            "value": 100
+          },
+          {
+            "label": "Có bấm vào kết quả",
+            "value": 8
+          },
+          {
+            "label": "Bấm link nằm trong tóm tắt",
+            "value": 1
+          }
+        ]
+      }
+    }
+  ]
+}

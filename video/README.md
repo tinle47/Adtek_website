@@ -25,6 +25,13 @@ Biểu đồ theo chuẩn McKinsey: màu phẳng, cột vuông, không lưới, 
 | `columns` | So sánh 2 đến 4 con số | `metric`, `unit`, `source`, `max`, `cols` [{`label`, `value`, `tone`, `step`}], `notes` |
 | `hbars` | Xếp hạng nhiều yếu tố | như `columns`, dùng `rows` |
 | `continue` | Giữ biểu đồ của cảnh trước, hiện thêm phần có `step: 1` | |
+| `bignumber` | Một con số gây sốc, đếm từ 0 | `value`, `display`, `prefix`, `suffix`, `label`, `context`, `source` |
+| `versus` | Hai con số đối đầu, bên thắng phóng to | `metric`, `unit`, `source`, `items` [2 × {`label`, `value`, `suffix`}], `winner`, `note` |
+| `slope` | Trước và sau của 1 đến 3 nhóm, đường vẽ dần | `metric`, `unit`, `source`, `from`, `to`, `series` [{`label`, `a`, `b`, `tone`}] |
+| `trend` | Xu hướng từ 3 mốc trở lên, đường và vùng mờ | `metric`, `unit`, `source`, `points` [{`label`, `value`}], `min` (trục không bắt đầu từ 0 thì ghi rõ trong `note`), `note` |
+| `donut` | Các phần trong một tổng (thị phần) | `metric`, `unit`, `source`, `parts` [{`label`, `value`, `tone`}], `center`, `centerLabel` |
+| `people` | "x trên 10 người", từng người sáng lên | `metric`, `unit`, `source`, `lit` (0 đến 10), `legend` |
+| `funnel` | Rơi rụng qua từng bước, độ rộng đúng tỷ lệ | `metric`, `unit`, `source`, `stages` [{`label`, `value`}] |
 | `waffle` | Tỷ lệ "x trên 100" | `metric`, `unit`, `source`, `lit`, `legend` |
 | `list` | Các bước, checklist (tối đa 4 ý) | `items` |
 | `follow` | Cảnh cuối, kêu gọi theo dõi kênh Adtek | `note` (lời hứa nội dung, mặc định "Số liệu marketing có nguồn, mỗi ngày.") |
