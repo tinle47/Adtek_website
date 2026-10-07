@@ -40,6 +40,7 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 ## Giọng đọc
 
 - Giọng "Tin Le v1" (Professional Voice Clone, giọng miền Nam), model Eleven v4. Nếu giọng chưa được huấn luyện cho v4, `voice.mjs` sẽ dừng; khi đó chạy lại với `--skip-check` để dùng v4 như hiện tại (anh Tin đã đồng ý). Không đổi sang model khác.
+- Tốc độ đọc 1.1x (mặc định trong `voice.mjs`, đổi bằng ELEVENLABS_SPEED). Eleven v4 bỏ qua tham số speed nên giọng được tăng nhịp bằng atempo sau khi tạo. Với 1.1x, khoảng 3 chữ mỗi giây: video 50 đến 65 giây cần khoảng 150 đến 190 chữ lời đọc.
 - Từ máy đọc sai thêm vào `tools/pronunciation.json`.
 
 ## Quy trình hằng tuần (Routine tự chạy, giờ Việt Nam)

@@ -15,7 +15,7 @@ const VOICE = process.env.ELEVENLABS_VOICE_ID;
 const MODEL = process.env.ELEVENLABS_MODEL || "eleven_v4"; // Eleven v4 hỗ trợ tiếng Việt và trả thời điểm từng chữ
 // Tốc độ đọc. Eleven v4 bỏ qua tham số speed của ElevenLabs, nên giọng được tăng nhịp sau khi tạo
 // bằng bộ lọc atempo (giữ nguyên cao độ), thời điểm từng chữ co lại theo. Đổi bằng ELEVENLABS_SPEED.
-const SPEED = Number(process.env.ELEVENLABS_SPEED || 1);
+const SPEED = Number(process.env.ELEVENLABS_SPEED || 1.1);
 function tempo(file) {
   if (SPEED === 1) return;
   const tmp = file.replace(/\.mp3$/, ".tmp.mp3");
