@@ -1,6 +1,6 @@
 # Video TikTok từ bài blog
 
-Biến bài blog adtek.agency thành video infographic dọc 1080x1920 cho kênh TikTok Adtek, giọng đọc nhân bản của anh Tin (ElevenLabs). Lịch: 3 video mỗi tuần, mỗi bài blog tách thành 3 video theo 3 góc khác nhau.
+Biến bài blog adtek.agency thành video infographic dọc 1080x1920 cho kênh TikTok Adtek, giọng đọc nhân bản của anh Tin (ElevenLabs). Lịch: 4 video mỗi tuần (thứ Sáu, Chủ nhật, thứ Hai, thứ Tư), mỗi video một chủ đề độc lập, xem `plan/lich-noi-dung-tiktok.xlsx`.
 
 ## Cách hoạt động
 
