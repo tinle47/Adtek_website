@@ -61,6 +61,128 @@
   ]
  },
  {
+  "id": "nhan-tin-truoc-khi-mua",
+  "date": "2026-10-10",
+  "status": "Đã có video",
+  "title": "8/10 khách muốn nhắn tin, shop bạn trả lời kịp không?",
+  "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Mùa mua sắm từ 12.12 đến Tết sắp tới, shop của bạn đã sẵn sàng trả lời chưa?",
+  "hashtags": [
+   "#banhangonline",
+   "#zalo",
+   "#quangcaofacebook",
+   "#chotdon",
+   "#marketing",
+   "#adtek"
+  ],
+  "words": 165,
+  "seconds": 59,
+  "scenes": [
+   {
+    "kicker": "Performance · Meta và Kantar",
+    "title": "8/10 khách muốn nhắn tin, shop bạn trả lời kịp không?",
+    "voice": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua? Khảo sát cho Meta cho thấy 82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp.",
+    "visual": "Ô vuông 100",
+    "source": "Nguồn: Meta, khảo sát do Kantar thực hiện, 11/2025"
+   },
+   {
+    "kicker": "Thói quen nhắn tin",
+    "title": "Nhắn tin với shop đã thành chuyện hằng ngày.",
+    "voice": "Và đây là thói quen hằng ngày. 61.2% nhắn tin với doanh nghiệp mỗi ngày. 85.6% thích nhận tin nhắn đúng nhu cầu của mình, hơn là tin gửi hàng loạt.",
+    "visual": "Thanh ngang",
+    "source": "Nguồn: Meta, khảo sát do Kantar thực hiện, 11/2025"
+   },
+   {
+    "kicker": "Kênh nhắn tin lớn nhất",
+    "title": "81 triệu người mở Zalo mỗi tháng.",
+    "voice": "Nhắn ở đâu? Zalo có 81.3 triệu người dùng mỗi tháng, hơn 2.2 tỷ tin nhắn mỗi ngày. Số tài khoản Zalo OA của doanh nghiệp tăng 24% trong một năm.",
+    "visual": "Biểu đồ cột",
+    "source": "Nguồn: VNG, quý 2/2026; TikTok, 2025; số liệu doanh nghiệp tự công bố"
+   },
+   {
+    "kicker": "Mùa mua sắm cuối năm",
+    "title": "Mùa cao điểm kéo dài từ 12.12 đến Tết.",
+    "voice": "Mà mùa cao điểm sắp tới rồi. 85% người Việt mua sắm dịp Tết, 66% mua dịp Tết Dương lịch, và 44% săn sale 12.12.",
+    "visual": "Thanh ngang",
+    "source": "Nguồn: Meta, nghiên cứu mua sắm mùa lễ do Ipsos thực hiện"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Đừng để khách chờ tin nhắn quá lâu.",
+    "voice": "Vậy trước mùa cao điểm, hãy bật quảng cáo nhắn tin, có người trực giờ đông khách, soạn sẵn câu trả lời về giá, phí ship, đổi trả, và nhắn đúng nhu cầu từng khách.",
+    "visual": "Danh sách",
+    "source": ""
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Khách đang nhắn tin, shop bạn có đang trả lời?",
+    "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ]
+ },
+ {
+  "id": "khach-hang-dang-hoi-ai",
+  "date": "2026-10-11",
+  "status": "Đã có video",
+  "title": "900 triệu người mỗi tuần đang hỏi ChatGPT.",
+  "caption": "ChatGPT có 900 triệu người dùng mỗi tuần, 81% người Việt dùng AI mỗi ngày. Khi khách hỏi AI về ngành của bạn, thương hiệu nào đang được gợi ý?",
+  "hashtags": [
+   "#AIO",
+   "#ChatGPT",
+   "#AI",
+   "#SEO",
+   "#marketing",
+   "#adtek"
+  ],
+  "words": 158,
+  "seconds": 52,
+  "scenes": [
+   {
+    "kicker": "AIO · OpenAI",
+    "title": "900 triệu người mỗi tuần đang hỏi ChatGPT.",
+    "voice": "Mỗi tuần 900 triệu người hỏi ChatGPT. Có ai được nó gợi ý tên thương hiệu của bạn chưa? Chỉ trong 4 tháng, ChatGPT có thêm 100 triệu người dùng.",
+    "visual": "Biểu đồ cột",
+    "source": "Nguồn: OpenAI, 02/2026"
+   },
+   {
+    "kicker": "e-Conomy SEA 2025",
+    "title": "Người Việt dùng AI nhiều nhất Đông Nam Á.",
+    "voice": "Ở Việt Nam còn rõ hơn. 81% người dùng tương tác với AI mỗi ngày, cao nhất Đông Nam Á, trên cả Indonesia và Thái Lan.",
+    "visual": "Thanh ngang",
+    "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025"
+   },
+   {
+    "kicker": "Google · I/O 2026",
+    "title": "Google cũng đang trả lời bằng AI.",
+    "voice": "Google cũng vậy. Chế độ AI có tiếng Việt từ tháng 10 năm ngoái, giờ đã có hơn 1 tỷ người dùng mỗi tháng. Phần tóm tắt AI trên Google có hơn 2.5 tỷ.",
+    "visual": "Biểu đồ cột",
+    "source": "Nguồn: Google, I/O 2026"
+   },
+   {
+    "kicker": "Google Lens",
+    "title": "25 tỷ lượt tìm mỗi tháng không cần gõ chữ.",
+    "voice": "Người ta còn tìm bằng hình ảnh. Google Lens có hơn 25 tỷ lượt tìm mỗi tháng, tăng từ khoảng 20 tỷ năm 2024.",
+    "visual": "Biểu đồ cột",
+    "source": "Nguồn: Google, 10/2024 và 03/2026"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Để AI nhắc tên bạn khi khách hỏi.",
+    "voice": "Muốn được AI gợi ý, hãy trả lời thẳng những câu khách hay hỏi, đưa số liệu có nguồn vào nội dung, được báo chí nhắc tên, và có ảnh sản phẩm rõ ràng.",
+    "visual": "Danh sách",
+    "source": ""
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Khách đang hỏi AI, AI có nhắc tên bạn?",
+    "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ]
+ },
+ {
   "id": "aio-la-gi-1",
   "date": "",
   "status": "Đã đăng",

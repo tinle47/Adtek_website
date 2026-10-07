@@ -1,0 +1,843 @@
+{
+ "model": "eleven_v4",
+ "scenes": [
+  {
+   "text": "Mỗi tuần 900 triệu người hỏi ChatGPT. Có ai được nó gợi ý tên thương hiệu của bạn chưa? Chỉ trong 4 tháng, ChatGPT có thêm 100 triệu người dùng.",
+   "said": "Mỗi tuần 900 triệu người hỏi chát gi pi ti. Có ai được nó gợi ý tên thương hiệu của bạn chưa? Chỉ trong 4 tháng, chát gi pi ti có thêm 100 triệu người dùng.",
+   "file": "voice/khach-hang-dang-hoi-ai/0.mp3",
+   "duration": 9.44,
+   "words": [
+    {
+     "text": "Mỗi",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "tuần",
+     "start": 0.2,
+     "end": 0.4
+    },
+    {
+     "text": "900",
+     "start": 0.48,
+     "end": 0.64
+    },
+    {
+     "text": "triệu",
+     "start": 0.72,
+     "end": 1.12
+    },
+    {
+     "text": "người",
+     "start": 1.16,
+     "end": 1.36
+    },
+    {
+     "text": "hỏi",
+     "start": 1.4,
+     "end": 1.6
+    },
+    {
+     "text": "ChatGPT.",
+     "start": 1.68,
+     "end": 2.48
+    },
+    {
+     "text": "Có",
+     "start": 2.96,
+     "end": 3.08
+    },
+    {
+     "text": "ai",
+     "start": 3.12,
+     "end": 3.2
+    },
+    {
+     "text": "được",
+     "start": 3.24,
+     "end": 3.36
+    },
+    {
+     "text": "nó",
+     "start": 3.44,
+     "end": 3.6
+    },
+    {
+     "text": "gợi",
+     "start": 3.68,
+     "end": 3.84
+    },
+    {
+     "text": "ý",
+     "start": 3.92,
+     "end": 4
+    },
+    {
+     "text": "tên",
+     "start": 4.08,
+     "end": 4.16
+    },
+    {
+     "text": "thương",
+     "start": 4.24,
+     "end": 4.32
+    },
+    {
+     "text": "hiệu",
+     "start": 4.4,
+     "end": 4.48
+    },
+    {
+     "text": "của",
+     "start": 4.56,
+     "end": 4.64
+    },
+    {
+     "text": "bạn",
+     "start": 4.68,
+     "end": 4.8
+    },
+    {
+     "text": "chưa?",
+     "start": 4.88,
+     "end": 5.4
+    },
+    {
+     "text": "Chỉ",
+     "start": 5.68,
+     "end": 5.76
+    },
+    {
+     "text": "trong",
+     "start": 5.8,
+     "end": 6
+    },
+    {
+     "text": "4",
+     "start": 6.08,
+     "end": 6.24
+    },
+    {
+     "text": "tháng,",
+     "start": 6.32,
+     "end": 6.96
+    },
+    {
+     "text": "ChatGPT",
+     "start": 7,
+     "end": 7.6
+    },
+    {
+     "text": "có",
+     "start": 7.68,
+     "end": 7.84
+    },
+    {
+     "text": "thêm",
+     "start": 7.88,
+     "end": 8
+    },
+    {
+     "text": "100",
+     "start": 8.08,
+     "end": 8.48
+    },
+    {
+     "text": "triệu",
+     "start": 8.56,
+     "end": 8.76
+    },
+    {
+     "text": "người",
+     "start": 8.8,
+     "end": 8.92
+    },
+    {
+     "text": "dùng.",
+     "start": 8.96,
+     "end": 9.44
+    }
+   ]
+  },
+  {
+   "text": "Ở Việt Nam còn rõ hơn. 81% người dùng tương tác với AI mỗi ngày, cao nhất Đông Nam Á, trên cả Indonesia và Thái Lan.",
+   "said": "Ở Việt Nam còn rõ hơn. 81% người dùng tương tác với ây ai mỗi ngày, cao nhất Đông Nam Á, trên cả Indonesia và Thái Lan.",
+   "file": "voice/khach-hang-dang-hoi-ai/1.mp3",
+   "duration": 8.72,
+   "words": [
+    {
+     "text": "Ở",
+     "start": 0,
+     "end": 0.08
+    },
+    {
+     "text": "Việt",
+     "start": 0.16,
+     "end": 0.24
+    },
+    {
+     "text": "Nam",
+     "start": 0.32,
+     "end": 0.48
+    },
+    {
+     "text": "còn",
+     "start": 0.56,
+     "end": 0.72
+    },
+    {
+     "text": "rõ",
+     "start": 0.8,
+     "end": 0.96
+    },
+    {
+     "text": "hơn.",
+     "start": 1.04,
+     "end": 1.76
+    },
+    {
+     "text": "81%",
+     "start": 1.84,
+     "end": 2.64
+    },
+    {
+     "text": "người",
+     "start": 2.72,
+     "end": 2.84
+    },
+    {
+     "text": "dùng",
+     "start": 2.88,
+     "end": 3.12
+    },
+    {
+     "text": "tương",
+     "start": 3.16,
+     "end": 3.36
+    },
+    {
+     "text": "tác",
+     "start": 3.4,
+     "end": 3.52
+    },
+    {
+     "text": "với",
+     "start": 3.6,
+     "end": 3.76
+    },
+    {
+     "text": "AI",
+     "start": 3.84,
+     "end": 4.08
+    },
+    {
+     "text": "mỗi",
+     "start": 4.16,
+     "end": 4.32
+    },
+    {
+     "text": "ngày,",
+     "start": 4.4,
+     "end": 5
+    },
+    {
+     "text": "cao",
+     "start": 5.04,
+     "end": 5.28
+    },
+    {
+     "text": "nhất",
+     "start": 5.32,
+     "end": 5.44
+    },
+    {
+     "text": "Đông",
+     "start": 5.52,
+     "end": 5.6
+    },
+    {
+     "text": "Nam",
+     "start": 5.68,
+     "end": 5.76
+    },
+    {
+     "text": "Á,",
+     "start": 5.92,
+     "end": 6.36
+    },
+    {
+     "text": "trên",
+     "start": 6.4,
+     "end": 6.64
+    },
+    {
+     "text": "cả",
+     "start": 6.68,
+     "end": 6.8
+    },
+    {
+     "text": "Indonesia",
+     "start": 6.88,
+     "end": 7.52
+    },
+    {
+     "text": "và",
+     "start": 7.6,
+     "end": 7.68
+    },
+    {
+     "text": "Thái",
+     "start": 7.76,
+     "end": 7.84
+    },
+    {
+     "text": "Lan.",
+     "start": 7.92,
+     "end": 8.72
+    }
+   ]
+  },
+  {
+   "text": "Google cũng vậy. Chế độ AI có tiếng Việt từ tháng 10 năm ngoái, giờ đã có hơn 1 tỷ người dùng mỗi tháng. Phần tóm tắt AI trên Google có hơn 2.5 tỷ.",
+   "said": "Google cũng vậy. Chế độ ây ai có tiếng Việt từ tháng 10 năm ngoái, giờ đã có hơn 1 tỷ người dùng mỗi tháng. Phần tóm tắt ây ai trên Google có hơn 2.5 tỷ.",
+   "file": "voice/khach-hang-dang-hoi-ai/2.mp3",
+   "duration": 10.48,
+   "words": [
+    {
+     "text": "Google",
+     "start": 0,
+     "end": 0.32
+    },
+    {
+     "text": "cũng",
+     "start": 0.4,
+     "end": 0.56
+    },
+    {
+     "text": "vậy.",
+     "start": 0.64,
+     "end": 0.96
+    },
+    {
+     "text": "Chế",
+     "start": 1.36,
+     "end": 1.48
+    },
+    {
+     "text": "độ",
+     "start": 1.52,
+     "end": 1.68
+    },
+    {
+     "text": "AI",
+     "start": 1.76,
+     "end": 2.16
+    },
+    {
+     "text": "có",
+     "start": 2.24,
+     "end": 2.32
+    },
+    {
+     "text": "tiếng",
+     "start": 2.36,
+     "end": 2.48
+    },
+    {
+     "text": "Việt",
+     "start": 2.56,
+     "end": 2.8
+    },
+    {
+     "text": "từ",
+     "start": 2.84,
+     "end": 2.92
+    },
+    {
+     "text": "tháng",
+     "start": 2.96,
+     "end": 3.12
+    },
+    {
+     "text": "10",
+     "start": 3.2,
+     "end": 3.36
+    },
+    {
+     "text": "năm",
+     "start": 3.44,
+     "end": 3.52
+    },
+    {
+     "text": "ngoái,",
+     "start": 3.6,
+     "end": 4.4
+    },
+    {
+     "text": "giờ",
+     "start": 4.48,
+     "end": 4.64
+    },
+    {
+     "text": "đã",
+     "start": 4.72,
+     "end": 4.8
+    },
+    {
+     "text": "có",
+     "start": 4.88,
+     "end": 4.96
+    },
+    {
+     "text": "hơn",
+     "start": 5.04,
+     "end": 5.2
+    },
+    {
+     "text": "1",
+     "start": 5.24,
+     "end": 5.36
+    },
+    {
+     "text": "tỷ",
+     "start": 5.44,
+     "end": 5.6
+    },
+    {
+     "text": "người",
+     "start": 5.68,
+     "end": 5.84
+    },
+    {
+     "text": "dùng",
+     "start": 5.92,
+     "end": 6.08
+    },
+    {
+     "text": "mỗi",
+     "start": 6.12,
+     "end": 6.24
+    },
+    {
+     "text": "tháng.",
+     "start": 6.32,
+     "end": 6.72
+    },
+    {
+     "text": "Phần",
+     "start": 7.2,
+     "end": 7.36
+    },
+    {
+     "text": "tóm",
+     "start": 7.44,
+     "end": 7.52
+    },
+    {
+     "text": "tắt",
+     "start": 7.6,
+     "end": 7.76
+    },
+    {
+     "text": "AI",
+     "start": 7.84,
+     "end": 8.24
+    },
+    {
+     "text": "trên",
+     "start": 8.28,
+     "end": 8.4
+    },
+    {
+     "text": "Google",
+     "start": 8.48,
+     "end": 8.88
+    },
+    {
+     "text": "có",
+     "start": 8.96,
+     "end": 9.12
+    },
+    {
+     "text": "hơn",
+     "start": 9.2,
+     "end": 9.36
+    },
+    {
+     "text": "2.5",
+     "start": 9.52,
+     "end": 10
+    },
+    {
+     "text": "tỷ.",
+     "start": 10.08,
+     "end": 10.48
+    }
+   ]
+  },
+  {
+   "text": "Người ta còn tìm bằng hình ảnh. Google Lens có hơn 25 tỷ lượt tìm mỗi tháng, tăng từ khoảng 20 tỷ năm 2024.",
+   "said": "Người ta còn tìm bằng hình ảnh. Google Lens có hơn 25 tỷ lượt tìm mỗi tháng, tăng từ khoảng 20 tỷ năm 2024.",
+   "file": "voice/khach-hang-dang-hoi-ai/3.mp3",
+   "duration": 8.8,
+   "words": [
+    {
+     "text": "Người",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "ta",
+     "start": 0.24,
+     "end": 0.32
+    },
+    {
+     "text": "còn",
+     "start": 0.36,
+     "end": 0.48
+    },
+    {
+     "text": "tìm",
+     "start": 0.56,
+     "end": 0.72
+    },
+    {
+     "text": "bằng",
+     "start": 0.8,
+     "end": 0.88
+    },
+    {
+     "text": "hình",
+     "start": 0.96,
+     "end": 1.04
+    },
+    {
+     "text": "ảnh.",
+     "start": 1.12,
+     "end": 1.44
+    },
+    {
+     "text": "Google",
+     "start": 1.92,
+     "end": 2.24
+    },
+    {
+     "text": "Lens",
+     "start": 2.44,
+     "end": 2.64
+    },
+    {
+     "text": "có",
+     "start": 2.72,
+     "end": 2.88
+    },
+    {
+     "text": "hơn",
+     "start": 2.92,
+     "end": 3.12
+    },
+    {
+     "text": "25",
+     "start": 3.2,
+     "end": 3.28
+    },
+    {
+     "text": "tỷ",
+     "start": 3.36,
+     "end": 3.88
+    },
+    {
+     "text": "lượt",
+     "start": 3.92,
+     "end": 4.16
+    },
+    {
+     "text": "tìm",
+     "start": 4.2,
+     "end": 4.32
+    },
+    {
+     "text": "mỗi",
+     "start": 4.4,
+     "end": 4.56
+    },
+    {
+     "text": "tháng,",
+     "start": 4.64,
+     "end": 5.28
+    },
+    {
+     "text": "tăng",
+     "start": 5.32,
+     "end": 5.52
+    },
+    {
+     "text": "từ",
+     "start": 5.6,
+     "end": 5.68
+    },
+    {
+     "text": "khoảng",
+     "start": 5.76,
+     "end": 6
+    },
+    {
+     "text": "20",
+     "start": 6.08,
+     "end": 6.24
+    },
+    {
+     "text": "tỷ",
+     "start": 6.32,
+     "end": 6.72
+    },
+    {
+     "text": "năm",
+     "start": 6.76,
+     "end": 6.88
+    },
+    {
+     "text": "2024.",
+     "start": 6.96,
+     "end": 8.8
+    }
+   ]
+  },
+  {
+   "text": "Muốn được AI gợi ý, hãy trả lời thẳng những câu khách hay hỏi, đưa số liệu có nguồn vào nội dung, được báo chí nhắc tên, và có ảnh sản phẩm rõ ràng.",
+   "said": "Muốn được ây ai gợi ý, hãy trả lời thẳng những câu khách hay hỏi, đưa số liệu có nguồn vào nội dung, được báo chí nhắc tên, và có ảnh sản phẩm rõ ràng.",
+   "file": "voice/khach-hang-dang-hoi-ai/4.mp3",
+   "duration": 9.28,
+   "words": [
+    {
+     "text": "Muốn",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "được",
+     "start": 0.2,
+     "end": 0.32
+    },
+    {
+     "text": "AI",
+     "start": 0.4,
+     "end": 0.72
+    },
+    {
+     "text": "gợi",
+     "start": 0.76,
+     "end": 0.96
+    },
+    {
+     "text": "ý,",
+     "start": 1.04,
+     "end": 1.6
+    },
+    {
+     "text": "hãy",
+     "start": 1.627,
+     "end": 1.72
+    },
+    {
+     "text": "trả",
+     "start": 1.76,
+     "end": 1.88
+    },
+    {
+     "text": "lời",
+     "start": 1.92,
+     "end": 2.08
+    },
+    {
+     "text": "thẳng",
+     "start": 2.16,
+     "end": 2.4
+    },
+    {
+     "text": "những",
+     "start": 2.44,
+     "end": 2.56
+    },
+    {
+     "text": "câu",
+     "start": 2.6,
+     "end": 2.8
+    },
+    {
+     "text": "khách",
+     "start": 2.84,
+     "end": 3.04
+    },
+    {
+     "text": "hay",
+     "start": 3.16,
+     "end": 3.28
+    },
+    {
+     "text": "hỏi,",
+     "start": 3.32,
+     "end": 4.08
+    },
+    {
+     "text": "đưa",
+     "start": 4.12,
+     "end": 4.24
+    },
+    {
+     "text": "số",
+     "start": 4.28,
+     "end": 4.4
+    },
+    {
+     "text": "liệu",
+     "start": 4.48,
+     "end": 4.64
+    },
+    {
+     "text": "có",
+     "start": 4.72,
+     "end": 4.8
+    },
+    {
+     "text": "nguồn",
+     "start": 4.88,
+     "end": 5.12
+    },
+    {
+     "text": "vào",
+     "start": 5.16,
+     "end": 5.28
+    },
+    {
+     "text": "nội",
+     "start": 5.32,
+     "end": 5.44
+    },
+    {
+     "text": "dung,",
+     "start": 5.52,
+     "end": 6.08
+    },
+    {
+     "text": "được",
+     "start": 6.16,
+     "end": 6.32
+    },
+    {
+     "text": "báo",
+     "start": 6.36,
+     "end": 6.48
+    },
+    {
+     "text": "chí",
+     "start": 6.56,
+     "end": 6.68
+    },
+    {
+     "text": "nhắc",
+     "start": 6.72,
+     "end": 6.88
+    },
+    {
+     "text": "tên,",
+     "start": 6.96,
+     "end": 7.52
+    },
+    {
+     "text": "và",
+     "start": 7.56,
+     "end": 7.68
+    },
+    {
+     "text": "có",
+     "start": 7.76,
+     "end": 7.84
+    },
+    {
+     "text": "ảnh",
+     "start": 7.92,
+     "end": 8
+    },
+    {
+     "text": "sản",
+     "start": 8.08,
+     "end": 8.24
+    },
+    {
+     "text": "phẩm",
+     "start": 8.32,
+     "end": 8.48
+    },
+    {
+     "text": "rõ",
+     "start": 8.56,
+     "end": 8.72
+    },
+    {
+     "text": "ràng.",
+     "start": 8.8,
+     "end": 9.28
+    }
+   ]
+  },
+  {
+   "text": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+   "said": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+   "file": "voice/khach-hang-dang-hoi-ai/5.mp3",
+   "duration": 3.36,
+   "words": [
+    {
+     "text": "Follow",
+     "start": 0,
+     "end": 0.32
+    },
+    {
+     "text": "Adtek",
+     "start": 0.4,
+     "end": 0.96
+    },
+    {
+     "text": "để",
+     "start": 1.04,
+     "end": 1.2
+    },
+    {
+     "text": "xem",
+     "start": 1.28,
+     "end": 1.44
+    },
+    {
+     "text": "số",
+     "start": 1.48,
+     "end": 1.6
+    },
+    {
+     "text": "liệu",
+     "start": 1.64,
+     "end": 1.84
+    },
+    {
+     "text": "marketing",
+     "start": 2.08,
+     "end": 2.32
+    },
+    {
+     "text": "mới",
+     "start": 2.4,
+     "end": 2.64
+    },
+    {
+     "text": "mỗi",
+     "start": 2.72,
+     "end": 2.88
+    },
+    {
+     "text": "ngày.",
+     "start": 2.96,
+     "end": 3.36
+    }
+   ]
+  }
+ ]
+}
