@@ -74,8 +74,8 @@
    "#quangcaofacebook",
    "#chotdon"
   ],
-  "words": 165,
-  "seconds": 54,
+  "words": 186,
+  "seconds": 59,
   "scenes": [
    {
     "kicker": "Performance · Meta và Kantar",
@@ -107,10 +107,10 @@
    },
    {
     "kicker": "Làm gì ngay?",
-    "title": "Đừng để khách chờ tin nhắn quá lâu.",
-    "voice": "Vậy trước mùa cao điểm, hãy bật quảng cáo nhắn tin, có người trực giờ đông khách, soạn sẵn câu trả lời về giá, phí ship, đổi trả, và nhắn đúng nhu cầu từng khách.",
+    "title": "Trước mùa cao điểm, chuẩn bị 4 việc này.",
+    "voice": "Vậy trước mùa cao điểm, làm gì? Cài trả lời tức thì và tin nhắn vắng mặt. Cài sẵn câu trả lời về giá, phí ship, đổi trả. Gửi dữ liệu đơn hàng về Meta để quảng cáo tin nhắn tối ưu theo đơn. Và đăng ký mẫu tin Zalo sớm để báo đơn tự động.",
     "visual": "Danh sách",
-    "source": ""
+    "source": "Nguồn: Trung tâm trợ giúp Meta; Meta for Developers; Zalo for Developers"
    },
    {
     "kicker": "Follow Adtek",
@@ -135,8 +135,8 @@
    "#AI",
    "#SEO"
   ],
-  "words": 158,
-  "seconds": 48,
+  "words": 178,
+  "seconds": 57,
   "scenes": [
    {
     "kicker": "AIO · OpenAI",
@@ -168,10 +168,10 @@
    },
    {
     "kicker": "Làm gì ngay?",
-    "title": "Để AI nhắc tên bạn khi khách hỏi.",
-    "voice": "Muốn được AI gợi ý, hãy trả lời thẳng những câu khách hay hỏi, đưa số liệu có nguồn vào nội dung, được báo chí nhắc tên, và có ảnh sản phẩm rõ ràng.",
+    "title": "Để AI tìm thấy và nhắc tên bạn.",
+    "voice": "Muốn được AI nhắc tên, làm 4 việc. Đừng chặn bot tìm kiếm của ChatGPT, chặn là website không được trích khi khách tìm trên ChatGPT. Kiểm tra trang đã được Google lập chỉ mục và cho hiện đoạn trích. Thêm ảnh, video chất lượng cao. Và cập nhật Google Business Profile, Merchant Center.",
     "visual": "Danh sách",
-    "source": ""
+    "source": "Nguồn: OpenAI, tài liệu về bot; Google Search Central, 05/2025"
    },
    {
     "kicker": "Follow Adtek",
@@ -230,9 +230,9 @@
    {
     "kicker": "Làm gì ngay?",
     "title": "Giữ khách ở bước cuối cùng.",
-    "voice": "Vậy làm gì ngay? Hiện tổng tiền và phí ship ngay từ trang sản phẩm. Ghi rõ đổi trả, có đánh giá thật. Cho mua không cần tạo tài khoản. Và nhắc khách quay lại giỏ qua Zalo, email.",
+    "voice": "Vậy làm gì ngay? Hiện phí ship, tổng tiền ngay trang sản phẩm. Rút form thanh toán còn khoảng 8 ô. Ghi rõ ngày giao và chính sách đổi trả. Và tự động nhắc giỏ hàng qua email, Zalo.",
     "visual": "Danh sách",
-    "source": ""
+    "source": "Nguồn: Baymard Institute; Klaviyo, dữ liệu 143,000 chuỗi email nhắc giỏ năm 2023"
    },
    {
     "kicker": "Follow Adtek",

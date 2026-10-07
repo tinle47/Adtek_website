@@ -116,17 +116,30 @@
     },
     {
       "kicker": "Làm gì ngay?",
-      "headline": "Để AI nhắc tên bạn",
-      "accent": "khi khách hỏi.",
-      "voice": "Muốn được AI gợi ý, hãy trả lời thẳng những câu khách hay hỏi, đưa số liệu có nguồn vào nội dung, được báo chí nhắc tên, và có ảnh sản phẩm rõ ràng.",
+      "headline": "Để AI tìm thấy",
+      "accent": "và nhắc tên bạn.",
+      "voice": "Muốn được AI nhắc tên, làm 4 việc. Đừng chặn bot tìm kiếm của ChatGPT, chặn là website không được trích khi khách tìm trên ChatGPT. Kiểm tra trang đã được Google lập chỉ mục và cho hiện đoạn trích. Thêm ảnh, video chất lượng cao. Và cập nhật Google Business Profile, Merchant Center.",
       "visual": {
         "type": "list",
         "items": [
-          "Trả lời thẳng câu khách hay hỏi",
-          "Đưa số liệu có nguồn vào nội dung",
-          "Được báo chí, trang khác nhắc tên",
-          "Ảnh sản phẩm rõ, mô tả đầy đủ"
-        ]
+          {
+            "text": "Không chặn OAI-SearchBot trong robots.txt",
+            "detail": "Chặn bot này thì không được trích khi khách tìm trên ChatGPT"
+          },
+          {
+            "text": "Trang được Google lập chỉ mục",
+            "detail": "Cho hiện đoạn trích: điều kiện để vào tóm tắt AI, Chế độ AI"
+          },
+          {
+            "text": "Thêm ảnh, video chất lượng cao",
+            "detail": "Google khuyên dùng khi người dùng tìm bằng AI và hình ảnh"
+          },
+          {
+            "text": "Cập nhật Business Profile, Merchant Center",
+            "detail": "Giờ mở cửa, giá, tồn kho luôn đúng với thực tế"
+          }
+        ],
+        "source": "Nguồn: OpenAI, tài liệu về bot; Google Search Central, 05/2025"
       }
     },
     {

@@ -104,15 +104,28 @@
       "kicker": "Làm gì ngay?",
       "headline": "Giữ khách",
       "accent": "ở bước cuối cùng.",
-      "voice": "Vậy làm gì ngay? Hiện tổng tiền và phí ship ngay từ trang sản phẩm. Ghi rõ đổi trả, có đánh giá thật. Cho mua không cần tạo tài khoản. Và nhắc khách quay lại giỏ qua Zalo, email.",
+      "voice": "Vậy làm gì ngay? Hiện phí ship, tổng tiền ngay trang sản phẩm. Rút form thanh toán còn khoảng 8 ô. Ghi rõ ngày giao và chính sách đổi trả. Và tự động nhắc giỏ hàng qua email, Zalo.",
       "visual": {
         "type": "list",
         "items": [
-          "Hiện tổng tiền, phí ship từ đầu",
-          "Ghi rõ đổi trả, có đánh giá thật",
-          "Mua không cần tạo tài khoản",
-          "Nhắc khách quay lại giỏ qua Zalo, email"
-        ]
+          {
+            "text": "Hiện phí ship, tổng tiền từ trang sản phẩm",
+            "detail": "Phí bất ngờ là lý do bỏ giỏ số 1 theo Baymard"
+          },
+          {
+            "text": "Rút form thanh toán còn khoảng 8 ô",
+            "detail": "Trung bình hiện nay là 11.3 ô"
+          },
+          {
+            "text": "Ghi ngày giao dự kiến và chính sách đổi trả",
+            "detail": "Đặt ngay tại bước thanh toán, không giấu ở trang khác"
+          },
+          {
+            "text": "Tự động nhắc giỏ hàng qua email, Zalo",
+            "detail": "Email nhắc giỏ: trung bình 3.33% người nhận quay lại mua"
+          }
+        ],
+        "source": "Nguồn: Baymard Institute; Klaviyo, dữ liệu 143,000 chuỗi email nhắc giỏ năm 2023"
       }
     },
     {

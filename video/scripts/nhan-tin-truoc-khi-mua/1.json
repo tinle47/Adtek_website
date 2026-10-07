@@ -114,17 +114,30 @@
     },
     {
       "kicker": "Làm gì ngay?",
-      "headline": "Đừng để khách",
-      "accent": "chờ tin nhắn quá lâu.",
-      "voice": "Vậy trước mùa cao điểm, hãy bật quảng cáo nhắn tin, có người trực giờ đông khách, soạn sẵn câu trả lời về giá, phí ship, đổi trả, và nhắn đúng nhu cầu từng khách.",
+      "headline": "Trước mùa cao điểm,",
+      "accent": "chuẩn bị 4 việc này.",
+      "voice": "Vậy trước mùa cao điểm, làm gì? Cài trả lời tức thì và tin nhắn vắng mặt. Cài sẵn câu trả lời về giá, phí ship, đổi trả. Gửi dữ liệu đơn hàng về Meta để quảng cáo tin nhắn tối ưu theo đơn. Và đăng ký mẫu tin Zalo sớm để báo đơn tự động.",
       "visual": {
         "type": "list",
         "items": [
-          "Bật quảng cáo nhắn tin trên Facebook, Zalo",
-          "Có người trực tin nhắn giờ đông khách",
-          "Soạn sẵn câu trả lời giá, ship, đổi trả",
-          "Nhắn đúng nhu cầu, không gửi hàng loạt"
-        ]
+          {
+            "text": "Cài trả lời tức thì và tin nhắn vắng mặt",
+            "detail": "Trong Meta Business Suite, mục Tự động hóa"
+          },
+          {
+            "text": "Cài sẵn câu hỏi thường gặp",
+            "detail": "Giá, phí ship, đổi trả: khách bấm là có câu trả lời"
+          },
+          {
+            "text": "Gửi sự kiện mua hàng qua Conversions API",
+            "detail": "Quảng cáo tin nhắn tối ưu theo đơn, không chỉ theo số tin"
+          },
+          {
+            "text": "Đăng ký mẫu tin Zalo ZNS từ sớm",
+            "detail": "Báo xác nhận đơn, giao hàng; mẫu tin phải được Zalo duyệt trước"
+          }
+        ],
+        "source": "Nguồn: Trung tâm trợ giúp Meta; Meta for Developers; Zalo for Developers"
       }
     },
     {

@@ -46,7 +46,7 @@ export type Visual =
       notes?: ChartNote[];
     }
   | { type: "waffle"; metric: string; unit: string; source: string; lit: number; legend: [string, string] }
-  | { type: "list"; items: string[] }
+  | { type: "list"; items: (string | { text: string; detail?: string })[]; source?: string } // việc cần làm, mỗi việc có căn cứ
   // Chọn biểu đồ theo kiểu dữ liệu (xem README): mỗi loại có hiệu ứng riêng.
   | { type: "bignumber"; value: number; display?: string; prefix?: string; suffix?: string; label: string; context?: string; source: string } // 1 con số gây sốc
   | { type: "versus"; metric: string; unit?: string; source: string; items: [VsItem, VsItem]; winner: 0 | 1; note?: string } // 2 con số đối đầu

@@ -107,7 +107,7 @@ const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) =>
     case "list":
       return (
         <div style={stage}>
-          <List items={v.items} frames={frames} />
+          <List items={v.items} frames={frames} source={v.source} />
         </div>
       );
     case "article":

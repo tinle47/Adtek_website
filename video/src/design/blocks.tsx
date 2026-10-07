@@ -3,18 +3,23 @@ import { Img, staticFile, useCurrentFrame } from "remotion";
 import { C, SANS, SERIF, useEnter } from "./frame";
 
 // Danh sách đánh số: số màu cam font có chân, kẻ mảnh giữa các ý, từng ý hiện lần lượt trong cảnh.
-export const List: React.FC<{ items: string[]; frames: number }> = ({ items, frames }) => {
+export type ListItem = string | { text: string; detail?: string };
+
+// Danh sách việc cần làm. Mỗi việc có thể kèm một dòng chi tiết (căn cứ hoặc cách làm), nguồn ghi ở cuối.
+export const List: React.FC<{ items: ListItem[]; frames: number; source?: string }> = ({ items, frames, source }) => {
   const step = (frames * 0.7) / items.length;
+  const p = useEnter(10);
   return (
     <div style={{ width: 900 }}>
       {items.map((it, i) => (
-        <Item key={i} n={i + 1} text={it} delay={6 + i * step} last={i === items.length - 1} />
+        <Item key={i} n={i + 1} item={typeof it === "string" ? { text: it } : it} delay={6 + i * step} last={i === items.length - 1} />
       ))}
+      {source && <div style={{ marginTop: 22, fontFamily: SANS, fontSize: 19, lineHeight: 1.35, color: "#8FA3C4", opacity: p }}>{source}</div>}
     </div>
   );
 };
 
-const Item: React.FC<{ n: number; text: string; delay: number; last: boolean }> = ({ n, text, delay, last }) => {
+const Item: React.FC<{ n: number; item: { text: string; detail?: string }; delay: number; last: boolean }> = ({ n, item, delay, last }) => {
   const p = useEnter(delay);
   return (
     <div
@@ -22,14 +27,17 @@ const Item: React.FC<{ n: number; text: string; delay: number; last: boolean }> 
         display: "flex",
         alignItems: "baseline",
         gap: 32,
-        padding: "26px 0",
+        padding: item.detail ? "20px 0" : "26px 0",
         borderBottom: last ? "none" : "1.5px solid rgba(255,255,255,0.18)",
         opacity: p,
         transform: `translateY(${(1 - p) * 14}px)`,
       }}
     >
-      <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 48, color: C.orange, width: 40 }}>{n}</div>
-      <div style={{ fontFamily: SANS, fontSize: 34, lineHeight: 1.35, color: C.white }}>{text}</div>
+      <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 48, color: C.orange, width: 40, flex: "none" }}>{n}</div>
+      <div>
+        <div style={{ fontFamily: SANS, fontSize: 34, lineHeight: 1.3, color: C.white }}>{item.text}</div>
+        {item.detail && <div style={{ marginTop: 6, fontFamily: SANS, fontSize: 25, lineHeight: 1.35, color: "#C9D5EA" }}>{item.detail}</div>}
+      </div>
     </div>
   );
 };

@@ -10,6 +10,11 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 - Câu đầu tiên của lời đọc là một câu hỏi khơi tò mò.
 - Chỉ giữ ý mạnh, số liệu ấn tượng. Một chủ đề làm thành một video, không tách nhỏ thành nhiều video.
 - Không trùng video đã đăng: trước khi viết, đọc mọi kịch bản có status "Đã đăng" (kể cả bản archived) và các video đã có lịch. Không lặp lại góc nhìn chính hay số liệu đã dùng. Ví dụ: video AIO đã đăng nói tóm tắt AI của Google làm giảm lượt bấm (Pew 15% xuống 8%), nên chủ đề "đứng top 1 Google vẫn mất khách" bị bỏ vì trùng ý.
+- Cảnh "Làm gì ngay" thể hiện chuyên môn của Adtek nên phải nghiên cứu kỹ, không viết chung chung, không tự bịa. Mỗi việc phải:
+  - Cụ thể tới mức làm được ngay: tên tính năng, công cụ, con số hoặc vị trí cài đặt. Ví dụ: "Không chặn OAI-SearchBot trong robots.txt", không viết "tối ưu cho AI".
+  - Có căn cứ từ nguồn chính thức (tài liệu của Google, Meta, OpenAI, Zalo, TikTok) hoặc nghiên cứu gốc (Baymard, Klaviyo...). Kiểm tra nguồn như với số liệu.
+  - Trả lời đúng vấn đề mà các cảnh số liệu trước đó nêu ra.
+  - Dùng `items` dạng `{ "text": việc cần làm, "detail": căn cứ hoặc cách làm }` và ghi `source` ở cuối danh sách. Ghi nguồn của từng việc vào email duyệt kịch bản.
 - Cảnh cuối dùng `follow`, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi ngày."
 
 ## Chọn biểu đồ theo kiểu dữ liệu
