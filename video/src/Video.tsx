@@ -104,7 +104,7 @@ const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) =>
     case "follow":
       return (
         <div style={stage}>
-          <Follow note={v.note ?? "Số liệu marketing có nguồn, mỗi tuần."} />
+          <Follow note={v.note ?? "Số liệu marketing có nguồn, mỗi ngày."} />
         </div>
       );
     default:

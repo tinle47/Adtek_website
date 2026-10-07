@@ -1,0 +1,159 @@
+{
+  "id": "khach-hang-dang-hoi-ai",
+  "date": "2026-10-11",
+  "status": "Đã viết kịch bản",
+  "caption": "ChatGPT có 900 triệu người dùng mỗi tuần, 81% người Việt dùng AI mỗi ngày. Khi khách hỏi AI về ngành của bạn, thương hiệu nào đang được gợi ý?",
+  "hashtags": [
+    "#AIO",
+    "#ChatGPT",
+    "#AI",
+    "#SEO",
+    "#marketing",
+    "#adtek"
+  ],
+  "scenes": [
+    {
+      "kicker": "AIO · OpenAI",
+      "headline": "900 triệu người mỗi tuần",
+      "accent": "đang hỏi ChatGPT.",
+      "voice": "Mỗi tuần 900 triệu người hỏi ChatGPT. Có ai được nó gợi ý tên thương hiệu của bạn chưa? Chỉ trong 4 tháng, ChatGPT có thêm 100 triệu người dùng.",
+      "visual": {
+        "type": "columns",
+        "metric": "Người dùng ChatGPT hằng tuần",
+        "unit": "triệu người",
+        "source": "Nguồn: OpenAI, 02/2026",
+        "max": 900,
+        "cols": [
+          {
+            "label": "10/2025",
+            "value": 800,
+            "tone": "base"
+          },
+          {
+            "label": "02/2026",
+            "value": 900,
+            "tone": "accent"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 1,
+            "text": "Thêm 100 triệu người trong 4 tháng"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "e-Conomy SEA 2025",
+      "headline": "Người Việt dùng AI",
+      "accent": "nhiều nhất Đông Nam Á.",
+      "voice": "Ở Việt Nam còn rõ hơn. 81% người dùng tương tác với AI mỗi ngày, cao nhất Đông Nam Á, trên cả Indonesia và Thái Lan.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Người dùng tương tác với AI hằng ngày",
+        "unit": "%",
+        "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025",
+        "max": 81,
+        "rows": [
+          {
+            "label": "Việt Nam",
+            "value": 81,
+            "tone": "accent"
+          },
+          {
+            "label": "Indonesia",
+            "value": 80,
+            "tone": "main"
+          },
+          {
+            "label": "Thái Lan",
+            "value": 74,
+            "tone": "main"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Google · I/O 2026",
+      "headline": "Google cũng đang",
+      "accent": "trả lời bằng AI.",
+      "voice": "Google cũng vậy. Chế độ AI có tiếng Việt từ tháng 10 năm ngoái, giờ đã có hơn 1 tỷ người dùng mỗi tháng. Phần tóm tắt AI trên Google có hơn 2.5 tỷ.",
+      "visual": {
+        "type": "columns",
+        "metric": "Người dùng hằng tháng các tính năng AI của Google",
+        "unit": "tỷ người",
+        "source": "Nguồn: Google, I/O 2026",
+        "max": 2.5,
+        "cols": [
+          {
+            "label": "Chế độ AI",
+            "value": 1,
+            "tone": "accent"
+          },
+          {
+            "label": "Tóm tắt AI",
+            "value": 2.5,
+            "tone": "main"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 0,
+            "text": "Có tiếng Việt từ 10/2025"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Google Lens",
+      "headline": "25 tỷ lượt tìm mỗi tháng",
+      "accent": "không cần gõ chữ.",
+      "voice": "Người ta còn tìm bằng hình ảnh. Google Lens có hơn 25 tỷ lượt tìm mỗi tháng, tăng từ khoảng 20 tỷ năm 2024.",
+      "visual": {
+        "type": "columns",
+        "metric": "Lượt tìm bằng Google Lens mỗi tháng",
+        "unit": "tỷ lượt",
+        "source": "Nguồn: Google, 10/2024 và 03/2026",
+        "max": 25,
+        "cols": [
+          {
+            "label": "2024",
+            "value": 20,
+            "tone": "base"
+          },
+          {
+            "label": "2026",
+            "value": 25,
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Để AI nhắc tên bạn",
+      "accent": "khi khách hỏi.",
+      "voice": "Muốn được AI gợi ý, hãy trả lời thẳng những câu khách hay hỏi, đưa số liệu có nguồn vào nội dung, được báo chí nhắc tên, và có ảnh sản phẩm rõ ràng.",
+      "visual": {
+        "type": "list",
+        "items": [
+          "Trả lời thẳng câu khách hay hỏi",
+          "Đưa số liệu có nguồn vào nội dung",
+          "Được báo chí, trang khác nhắc tên",
+          "Ảnh sản phẩm rõ, mô tả đầy đủ"
+        ]
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Khách đang hỏi AI,",
+      "accent": "AI có nhắc tên bạn?",
+      "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow"
+      }
+    }
+  ]
+}

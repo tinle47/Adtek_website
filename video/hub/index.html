@@ -159,7 +159,7 @@ details.fold > .list { margin-top: 12px; }
     <div class="rules">
       <span>Nhạc: <b>Commercial Music Library</b>, nhạc nhẹ không lời</span>
       <span>Volume: <b>Original 100%</b>, <b>Sound khoảng 15%</b></span>
-      <span>Giờ đăng gợi ý: <b>19:00 đến 21:00</b></span>
+      <span>Giờ đăng: <b>T2 đến T6 12:00</b>, <b>T7, CN 09:00</b>, lỡ khung thì 20:00</span>
     </div>
     <h2>Sắp đăng</h2>
     <div class="list" id="upcoming"><div class="empty-state">Đang tải danh sách video…</div></div>
@@ -170,7 +170,7 @@ details.fold > .list { margin-top: 12px; }
   </section>
 
   <section class="panel" id="lich" role="tabpanel" aria-labelledby="tab-lich" hidden>
-    <p class="lead">4 video mỗi tuần: thứ Sáu, Chủ nhật, thứ Hai, thứ Tư. Bấm vào một dòng để xem số liệu, nguồn và lưu ý.</p>
+    <p class="lead">Mỗi ngày 1 video. Bấm vào một dòng để xem số liệu, nguồn và lưu ý.</p>
     <div class="stats" id="stats"></div>
     <div class="filters" id="filters" role="group" aria-label="Lọc theo trạng thái"></div>
     <div class="rows" id="rows"><div class="empty-state">Đang tải lịch…</div></div>
@@ -189,11 +189,11 @@ details.fold > .list { margin-top: 12px; }
         <table class="flow">
           <thead><tr><th>Khi nào</th><th>Ai</th><th>Việc</th><th>Kết quả</th></tr></thead>
           <tbody>
-            <tr><td>Thứ Bảy 08:47</td><td>Claude</td><td>Viết kịch bản các video từ Chủ nhật đến hết Chủ nhật tuần sau. Chọn chủ đề cho slot trống, kiểm tra lại số liệu ở nguồn gốc, chụp ảnh 6 cảnh.</td><td>Email "Kịch bản tuần ..., chờ duyệt"</td></tr>
+            <tr><td>Thứ Bảy 08:47</td><td>Claude</td><td>Viết kịch bản 7 đến 8 video (mỗi ngày 1 video) từ Chủ nhật đến hết Chủ nhật tuần sau. Chọn chủ đề cho slot trống, kiểm tra lại số liệu ở nguồn gốc, chụp ảnh 6 cảnh.</td><td>Email "Kịch bản tuần ..., chờ duyệt"</td></tr>
             <tr><td>Thứ Bảy đến 08:52 Chủ nhật</td><td>Tin Le</td><td>Trả lời email: "Duyệt" hoặc ghi chỉnh sửa theo từng video.</td><td>Không trả lời thì sản xuất theo kịch bản đã gửi</td></tr>
             <tr><td>Chủ nhật 08:52</td><td>Claude</td><td>Sửa theo góp ý, tạo giọng đọc, xuất video, cân âm lượng, đưa lên trang này.</td><td>Email "Video tuần ... đã xong"</td></tr>
-            <tr><td>T6, CN, T2, T4 17:47</td><td>Claude</td><td>Nhắc đăng video trong ngày, kèm caption copy sẵn.</td><td>Email "Nhắc đăng hôm nay ..."</td></tr>
-            <tr><td>T6, CN, T2, T4 19:00 đến 21:00</td><td>Tin Le</td><td>Tải video, đăng TikTok, chèn nhạc, dán caption.</td><td>Video lên kênh</td></tr>
+            <tr><td>Mỗi ngày 07:47</td><td>Claude</td><td>Nhắc đăng video trong ngày, kèm giờ đăng gợi ý và caption copy sẵn.</td><td>Email "Đăng hôm nay ..."</td></tr>
+            <tr><td>T2 đến T6 12:00, T7 và CN 09:00</td><td>Tin Le</td><td>Tải video, đăng TikTok, chèn nhạc, dán caption.</td><td>Video lên kênh</td></tr>
           </tbody>
         </table>
       </div>
@@ -206,7 +206,7 @@ details.fold > .list { margin-top: 12px; }
         <li>Trên TikTok, tải video lên, bấm <b>Sounds</b>, chọn nhạc nhẹ không lời trong Commercial Music Library.</li>
         <li>Bấm <b>Volume</b>: Original 100%, Sound khoảng 15%.</li>
         <li>Bấm <b>Copy caption</b> trên trang này, dán vào phần mô tả. Caption không chứa link.</li>
-        <li>Đăng trong khung 19:00 đến 21:00.</li>
+        <li>Đăng lúc 12:00 (thứ Hai đến thứ Sáu) hoặc 09:00 (thứ Bảy, Chủ nhật). Lỡ khung thì đăng 20:00. Sau 2 đến 3 tuần, xem giờ người theo dõi hoạt động trong TikTok Analytics để chỉnh lại.</li>
       </ol>
     </div>
 
@@ -215,9 +215,9 @@ details.fold > .list { margin-top: 12px; }
       <ul>
         <li>Khoảng 1 phút (50 đến 65 giây), 6 cảnh: câu hỏi mở đầu, 3 đến 4 cảnh số liệu, 1 cảnh "làm gì ngay", cảnh Follow.</li>
         <li>Câu đầu tiên của lời đọc là một câu hỏi khơi tò mò.</li>
-        <li>Chỉ giữ ý mạnh, số liệu ấn tượng. Một chủ đề làm thành một video, không tách nhỏ.</li>
+        <li>Mỗi ngày 1 video, mỗi video nhiều insight: 3 đến 4 số liệu mạnh, mỗi số liệu kèm ý nghĩa với doanh nghiệp. Một chủ đề làm thành một video, không tách nhỏ.</li>
         <li>Bám dịch vụ Adtek: Digital Marketing, Growth Marketing, App Marketing, SEO, AIO, Performance Marketing.</li>
-        <li>Kênh TikTok độc lập với website: không dẫn về blog, không đặt link trong caption. Cảnh cuối là thẻ Follow, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi tuần."</li>
+        <li>Kênh TikTok độc lập với website: không dẫn về blog, không đặt link trong caption. Cảnh cuối là thẻ Follow, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi ngày."</li>
         <li>Thiết kế: nền navy, tiêu đề 2 dòng (trắng và cam), biểu đồ phẳng, số ghi thẳng trên dữ liệu, mỗi biểu đồ chỉ một điểm nhấn cam, nguồn ghi dưới biểu đồ.</li>
       </ul>
     </div>

@@ -1,6 +1,6 @@
 # Video TikTok từ bài blog
 
-Biến bài blog adtek.agency thành video infographic dọc 1080x1920 cho kênh TikTok Adtek, giọng đọc nhân bản của anh Tin (ElevenLabs). Lịch: 4 video mỗi tuần (thứ Sáu, Chủ nhật, thứ Hai, thứ Tư), mỗi video một chủ đề độc lập, xem `plan/lich-noi-dung-tiktok.xlsx`.
+Video infographic dọc 1080x1920 cho kênh TikTok Adtek (@adtek.growth.marketing), giọng đọc nhân bản của anh Tin (ElevenLabs). Lịch: mỗi ngày 1 video, mỗi video một chủ đề độc lập, xem `plan/lich-noi-dung-tiktok.xlsx` và `CLAUDE.md`.
 
 ## Cách hoạt động
 
@@ -27,7 +27,7 @@ Biểu đồ theo chuẩn McKinsey: màu phẳng, cột vuông, không lưới, 
 | `continue` | Giữ biểu đồ của cảnh trước, hiện thêm phần có `step: 1` | |
 | `waffle` | Tỷ lệ "x trên 100" | `metric`, `unit`, `source`, `lit`, `legend` |
 | `list` | Các bước, checklist (tối đa 4 ý) | `items` |
-| `follow` | Cảnh cuối, kêu gọi theo dõi kênh Adtek | `note` (lời hứa nội dung, mặc định "Số liệu marketing có nguồn, mỗi tuần.") |
+| `follow` | Cảnh cuối, kêu gọi theo dõi kênh Adtek | `note` (lời hứa nội dung, mặc định "Số liệu marketing có nguồn, mỗi ngày.") |
 | `article` | Thẻ bài blog (không dùng cho kênh TikTok vì kênh độc lập với website) | `image`, `title`, `url` |
 
 `tone`: `base` (nhóm đối chiếu), `main` (nhóm chính), `accent` (điểm nhấn cam, chỉ một). `notes`: `drop` (mũi tên từ cột `from` xuống cột `to`) hoặc `callout` (chữ đậm chỉ vào cột/thanh `at`).
@@ -69,7 +69,7 @@ Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chrom
   - "người mua B2B" → "khách hàng doanh nghiệp"
 - Tránh từ sáo rỗng: đóng vai trò quan trọng, bứt phá, giải pháp toàn diện, hành trình, kỷ nguyên, chìa khóa thành công, trong bối cảnh hiện nay.
 - Số viết theo US format (`75,000`, `0.61%`). ElevenLabs tự đọc thành chữ.
-- Kênh TikTok độc lập với website: mỗi video một chủ đề riêng, không dẫn về blog, không đặt link trong caption. Cảnh cuối dùng `follow`, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi tuần."
+- Kênh TikTok độc lập với website: mỗi video một chủ đề riêng, không dẫn về blog, không đặt link trong caption. Cảnh cuối dùng `follow`, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi ngày."
 - Số liệu chỉ lấy từ tổ chức phát hành gốc (danh sách chủ đề và nguồn: `plan/lich-noi-dung-tiktok.xlsx`), ghi nguồn trên biểu đồ.
 - Thay đổi lời đọc của cảnh nào thì chỉ cảnh đó tạo lại giọng, các cảnh khác dùng file cũ.
 - Từ máy đọc sai (viết tắt, tên tiếng Anh) khai báo một lần trong `tools/pronunciation.json`, dạng `"AIO": "ây ai âu"`. Máy đọc theo cách đọc, phụ đề vẫn hiện chữ gốc. Từ điển phân biệt hoa thường và chỉ thay nguyên chữ, nên `AI` không ảnh hưởng chữ "ai" tiếng Việt. Sửa từ điển xong chạy lại `voice.mjs`, chỉ những cảnh có chữ đó tạo lại giọng.

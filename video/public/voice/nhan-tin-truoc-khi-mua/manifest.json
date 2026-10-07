@@ -1,0 +1,878 @@
+{
+ "model": "eleven_v4",
+ "scenes": [
+  {
+   "text": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua? Khảo sát cho Meta cho thấy 82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp.",
+   "said": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua? Khảo sát cho Meta cho thấy 82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp.",
+   "file": "voice/nhan-tin-truoc-khi-mua/0.mp3",
+   "duration": 10,
+   "words": [
+    {
+     "text": "Vì",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "sao",
+     "start": 0.24,
+     "end": 0.48
+    },
+    {
+     "text": "8",
+     "start": 0.64,
+     "end": 0.8
+    },
+    {
+     "text": "trên",
+     "start": 0.88,
+     "end": 1.04
+    },
+    {
+     "text": "10",
+     "start": 1.12,
+     "end": 1.2
+    },
+    {
+     "text": "khách",
+     "start": 1.28,
+     "end": 1.52
+    },
+    {
+     "text": "muốn",
+     "start": 1.6,
+     "end": 1.76
+    },
+    {
+     "text": "nhắn",
+     "start": 1.8,
+     "end": 1.92
+    },
+    {
+     "text": "tin",
+     "start": 2,
+     "end": 2.16
+    },
+    {
+     "text": "với",
+     "start": 2.2,
+     "end": 2.32
+    },
+    {
+     "text": "shop",
+     "start": 2.48,
+     "end": 2.64
+    },
+    {
+     "text": "trước",
+     "start": 2.72,
+     "end": 2.88
+    },
+    {
+     "text": "khi",
+     "start": 2.907,
+     "end": 2.96
+    },
+    {
+     "text": "bấm",
+     "start": 3.04,
+     "end": 3.2
+    },
+    {
+     "text": "mua?",
+     "start": 3.24,
+     "end": 3.52
+    },
+    {
+     "text": "Khảo",
+     "start": 4,
+     "end": 4.16
+    },
+    {
+     "text": "sát",
+     "start": 4.24,
+     "end": 4.4
+    },
+    {
+     "text": "cho",
+     "start": 4.48,
+     "end": 4.56
+    },
+    {
+     "text": "Meta",
+     "start": 4.76,
+     "end": 4.96
+    },
+    {
+     "text": "cho",
+     "start": 5.04,
+     "end": 5.12
+    },
+    {
+     "text": "thấy",
+     "start": 5.2,
+     "end": 5.44
+    },
+    {
+     "text": "82.8%",
+     "start": 5.84,
+     "end": 7.2
+    },
+    {
+     "text": "người",
+     "start": 7.28,
+     "end": 7.44
+    },
+    {
+     "text": "Việt",
+     "start": 7.52,
+     "end": 7.68
+    },
+    {
+     "text": "chọn",
+     "start": 7.84,
+     "end": 8
+    },
+    {
+     "text": "nhắn",
+     "start": 8.08,
+     "end": 8.32
+    },
+    {
+     "text": "tin",
+     "start": 8.4,
+     "end": 8.56
+    },
+    {
+     "text": "để",
+     "start": 8.72,
+     "end": 8.88
+    },
+    {
+     "text": "liên",
+     "start": 8.92,
+     "end": 9.04
+    },
+    {
+     "text": "lạc",
+     "start": 9.12,
+     "end": 9.2
+    },
+    {
+     "text": "với",
+     "start": 9.28,
+     "end": 9.36
+    },
+    {
+     "text": "doanh",
+     "start": 9.4,
+     "end": 9.52
+    },
+    {
+     "text": "nghiệp.",
+     "start": 9.56,
+     "end": 10
+    }
+   ]
+  },
+  {
+   "text": "Và đây là thói quen hằng ngày. 61.2% nhắn tin với doanh nghiệp mỗi ngày. 85.6% thích nhận tin nhắn đúng nhu cầu của mình, hơn là tin gửi hàng loạt.",
+   "said": "Và đây là thói quen hằng ngày. 61.2% nhắn tin với doanh nghiệp mỗi ngày. 85.6% thích nhận tin nhắn đúng nhu cầu của mình, hơn là tin gửi hàng loạt.",
+   "file": "voice/nhan-tin-truoc-khi-mua/1.mp3",
+   "duration": 11.76,
+   "words": [
+    {
+     "text": "Và",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "đây",
+     "start": 0.2,
+     "end": 0.4
+    },
+    {
+     "text": "là",
+     "start": 0.48,
+     "end": 0.64
+    },
+    {
+     "text": "thói",
+     "start": 0.72,
+     "end": 0.88
+    },
+    {
+     "text": "quen",
+     "start": 0.96,
+     "end": 1.12
+    },
+    {
+     "text": "hằng",
+     "start": 1.16,
+     "end": 1.28
+    },
+    {
+     "text": "ngày.",
+     "start": 1.36,
+     "end": 2.32
+    },
+    {
+     "text": "61.2%",
+     "start": 2.4,
+     "end": 2.64
+    },
+    {
+     "text": "nhắn",
+     "start": 2.72,
+     "end": 4.16
+    },
+    {
+     "text": "tin",
+     "start": 4.24,
+     "end": 4.4
+    },
+    {
+     "text": "với",
+     "start": 4.48,
+     "end": 4.56
+    },
+    {
+     "text": "doanh",
+     "start": 4.6,
+     "end": 4.72
+    },
+    {
+     "text": "nghiệp",
+     "start": 4.8,
+     "end": 4.96
+    },
+    {
+     "text": "mỗi",
+     "start": 5.04,
+     "end": 5.2
+    },
+    {
+     "text": "ngày.",
+     "start": 5.28,
+     "end": 6.08
+    },
+    {
+     "text": "85.6%",
+     "start": 6.12,
+     "end": 7.44
+    },
+    {
+     "text": "thích",
+     "start": 7.68,
+     "end": 7.84
+    },
+    {
+     "text": "nhận",
+     "start": 7.88,
+     "end": 8.08
+    },
+    {
+     "text": "tin",
+     "start": 8.16,
+     "end": 8.24
+    },
+    {
+     "text": "nhắn",
+     "start": 8.28,
+     "end": 8.56
+    },
+    {
+     "text": "đúng",
+     "start": 8.6,
+     "end": 8.72
+    },
+    {
+     "text": "nhu",
+     "start": 8.8,
+     "end": 8.92
+    },
+    {
+     "text": "cầu",
+     "start": 8.96,
+     "end": 9.12
+    },
+    {
+     "text": "của",
+     "start": 9.2,
+     "end": 9.28
+    },
+    {
+     "text": "mình,",
+     "start": 9.36,
+     "end": 9.92
+    },
+    {
+     "text": "hơn",
+     "start": 9.96,
+     "end": 10.16
+    },
+    {
+     "text": "là",
+     "start": 10.24,
+     "end": 10.32
+    },
+    {
+     "text": "tin",
+     "start": 10.4,
+     "end": 10.56
+    },
+    {
+     "text": "gửi",
+     "start": 10.64,
+     "end": 10.8
+    },
+    {
+     "text": "hàng",
+     "start": 10.84,
+     "end": 10.96
+    },
+    {
+     "text": "loạt.",
+     "start": 11.04,
+     "end": 11.76
+    }
+   ]
+  },
+  {
+   "text": "Nhắn ở đâu? Zalo có 81.3 triệu người dùng mỗi tháng, hơn 2.2 tỷ tin nhắn mỗi ngày. Số tài khoản Zalo OA của doanh nghiệp tăng 24% trong một năm.",
+   "said": "Nhắn ở đâu? Zalo có 81.3 triệu người dùng mỗi tháng, hơn 2.2 tỷ tin nhắn mỗi ngày. Số tài khoản Zalo ô a của doanh nghiệp tăng 24% trong một năm.",
+   "file": "voice/nhan-tin-truoc-khi-mua/2.mp3",
+   "duration": 11.84,
+   "words": [
+    {
+     "text": "Nhắn",
+     "start": 0,
+     "end": 0.16
+    },
+    {
+     "text": "ở",
+     "start": 0.24,
+     "end": 0.32
+    },
+    {
+     "text": "đâu?",
+     "start": 0.36,
+     "end": 1.2
+    },
+    {
+     "text": "Zalo",
+     "start": 1.24,
+     "end": 1.68
+    },
+    {
+     "text": "có",
+     "start": 1.76,
+     "end": 2
+    },
+    {
+     "text": "81.3",
+     "start": 2.08,
+     "end": 2.36
+    },
+    {
+     "text": "triệu",
+     "start": 2.4,
+     "end": 3.28
+    },
+    {
+     "text": "người",
+     "start": 3.32,
+     "end": 3.44
+    },
+    {
+     "text": "dùng",
+     "start": 3.48,
+     "end": 3.68
+    },
+    {
+     "text": "mỗi",
+     "start": 3.72,
+     "end": 3.84
+    },
+    {
+     "text": "tháng,",
+     "start": 3.92,
+     "end": 4.64
+    },
+    {
+     "text": "hơn",
+     "start": 4.68,
+     "end": 4.88
+    },
+    {
+     "text": "2.2",
+     "start": 5.04,
+     "end": 5.12
+    },
+    {
+     "text": "tỷ",
+     "start": 5.2,
+     "end": 5.84
+    },
+    {
+     "text": "tin",
+     "start": 5.92,
+     "end": 6.08
+    },
+    {
+     "text": "nhắn",
+     "start": 6.12,
+     "end": 6.32
+    },
+    {
+     "text": "mỗi",
+     "start": 6.36,
+     "end": 6.48
+    },
+    {
+     "text": "ngày.",
+     "start": 6.56,
+     "end": 7.44
+    },
+    {
+     "text": "Số",
+     "start": 7.48,
+     "end": 7.6
+    },
+    {
+     "text": "tài",
+     "start": 7.64,
+     "end": 7.76
+    },
+    {
+     "text": "khoản",
+     "start": 7.787,
+     "end": 8
+    },
+    {
+     "text": "Zalo",
+     "start": 8.04,
+     "end": 8.4
+    },
+    {
+     "text": "OA",
+     "start": 8.48,
+     "end": 8.8
+    },
+    {
+     "text": "của",
+     "start": 8.88,
+     "end": 8.96
+    },
+    {
+     "text": "doanh",
+     "start": 9,
+     "end": 9.12
+    },
+    {
+     "text": "nghiệp",
+     "start": 9.2,
+     "end": 9.44
+    },
+    {
+     "text": "tăng",
+     "start": 9.52,
+     "end": 9.76
+    },
+    {
+     "text": "24%",
+     "start": 9.84,
+     "end": 10.72
+    },
+    {
+     "text": "trong",
+     "start": 10.8,
+     "end": 10.92
+    },
+    {
+     "text": "một",
+     "start": 10.96,
+     "end": 11.04
+    },
+    {
+     "text": "năm.",
+     "start": 11.12,
+     "end": 11.84
+    }
+   ]
+  },
+  {
+   "text": "Mà mùa cao điểm sắp tới rồi. 85% người Việt mua sắm dịp Tết, 66% mua dịp Tết Dương lịch, và 44% săn sale 12.12.",
+   "said": "Mà mùa cao điểm sắp tới rồi. 85% người Việt mua sắm dịp Tết, 66% mua dịp Tết Dương lịch, và 44% săn sale mười hai mười hai.",
+   "file": "voice/nhan-tin-truoc-khi-mua/3.mp3",
+   "duration": 9.84,
+   "words": [
+    {
+     "text": "Mà",
+     "start": 0,
+     "end": 0.08
+    },
+    {
+     "text": "mùa",
+     "start": 0.16,
+     "end": 0.32
+    },
+    {
+     "text": "cao",
+     "start": 0.4,
+     "end": 0.48
+    },
+    {
+     "text": "điểm",
+     "start": 0.52,
+     "end": 0.64
+    },
+    {
+     "text": "sắp",
+     "start": 0.72,
+     "end": 0.88
+    },
+    {
+     "text": "tới",
+     "start": 0.92,
+     "end": 1.12
+    },
+    {
+     "text": "rồi.",
+     "start": 1.2,
+     "end": 1.52
+    },
+    {
+     "text": "85%",
+     "start": 2,
+     "end": 2.08
+    },
+    {
+     "text": "người",
+     "start": 2.16,
+     "end": 3.04
+    },
+    {
+     "text": "Việt",
+     "start": 3.08,
+     "end": 3.28
+    },
+    {
+     "text": "mua",
+     "start": 3.36,
+     "end": 3.44
+    },
+    {
+     "text": "sắm",
+     "start": 3.52,
+     "end": 3.68
+    },
+    {
+     "text": "dịp",
+     "start": 3.76,
+     "end": 3.92
+    },
+    {
+     "text": "Tết,",
+     "start": 3.96,
+     "end": 4.64
+    },
+    {
+     "text": "66%",
+     "start": 4.72,
+     "end": 4.84
+    },
+    {
+     "text": "mua",
+     "start": 4.88,
+     "end": 5.92
+    },
+    {
+     "text": "dịp",
+     "start": 6,
+     "end": 6.16
+    },
+    {
+     "text": "Tết",
+     "start": 6.2,
+     "end": 6.32
+    },
+    {
+     "text": "Dương",
+     "start": 6.4,
+     "end": 6.48
+    },
+    {
+     "text": "lịch,",
+     "start": 6.56,
+     "end": 7.12
+    },
+    {
+     "text": "và",
+     "start": 7.2,
+     "end": 7.28
+    },
+    {
+     "text": "44%",
+     "start": 7.52,
+     "end": 8.32
+    },
+    {
+     "text": "săn",
+     "start": 8.48,
+     "end": 8.64
+    },
+    {
+     "text": "sale",
+     "start": 8.72,
+     "end": 8.96
+    },
+    {
+     "text": "12.12.",
+     "start": 9.04,
+     "end": 9.84
+    }
+   ]
+  },
+  {
+   "text": "Vậy trước mùa cao điểm, hãy bật quảng cáo nhắn tin, có người trực giờ đông khách, soạn sẵn câu trả lời về giá, phí ship, đổi trả, và nhắn đúng nhu cầu từng khách.",
+   "said": "Vậy trước mùa cao điểm, hãy bật quảng cáo nhắn tin, có người trực giờ đông khách, soạn sẵn câu trả lời về giá, phí ship, đổi trả, và nhắn đúng nhu cầu từng khách.",
+   "file": "voice/nhan-tin-truoc-khi-mua/4.mp3",
+   "duration": 10.16,
+   "words": [
+    {
+     "text": "Vậy",
+     "start": 0,
+     "end": 0.24
+    },
+    {
+     "text": "trước",
+     "start": 0.4,
+     "end": 0.56
+    },
+    {
+     "text": "mùa",
+     "start": 0.6,
+     "end": 0.76
+    },
+    {
+     "text": "cao",
+     "start": 0.8,
+     "end": 0.88
+    },
+    {
+     "text": "điểm,",
+     "start": 0.96,
+     "end": 1.52
+    },
+    {
+     "text": "hãy",
+     "start": 1.56,
+     "end": 1.68
+    },
+    {
+     "text": "bật",
+     "start": 1.76,
+     "end": 1.92
+    },
+    {
+     "text": "quảng",
+     "start": 1.96,
+     "end": 2.16
+    },
+    {
+     "text": "cáo",
+     "start": 2.2,
+     "end": 2.32
+    },
+    {
+     "text": "nhắn",
+     "start": 2.36,
+     "end": 2.56
+    },
+    {
+     "text": "tin,",
+     "start": 2.68,
+     "end": 3.2
+    },
+    {
+     "text": "có",
+     "start": 3.28,
+     "end": 3.36
+    },
+    {
+     "text": "người",
+     "start": 3.44,
+     "end": 3.6
+    },
+    {
+     "text": "trực",
+     "start": 3.68,
+     "end": 3.84
+    },
+    {
+     "text": "giờ",
+     "start": 3.92,
+     "end": 4.08
+    },
+    {
+     "text": "đông",
+     "start": 4.12,
+     "end": 4.24
+    },
+    {
+     "text": "khách,",
+     "start": 4.32,
+     "end": 4.88
+    },
+    {
+     "text": "soạn",
+     "start": 4.96,
+     "end": 5.12
+    },
+    {
+     "text": "sẵn",
+     "start": 5.2,
+     "end": 5.36
+    },
+    {
+     "text": "câu",
+     "start": 5.44,
+     "end": 5.52
+    },
+    {
+     "text": "trả",
+     "start": 5.6,
+     "end": 5.72
+    },
+    {
+     "text": "lời",
+     "start": 5.76,
+     "end": 5.92
+    },
+    {
+     "text": "về",
+     "start": 6,
+     "end": 6.08
+    },
+    {
+     "text": "giá,",
+     "start": 6.16,
+     "end": 6.72
+    },
+    {
+     "text": "phí",
+     "start": 6.76,
+     "end": 6.88
+    },
+    {
+     "text": "ship,",
+     "start": 6.96,
+     "end": 7.44
+    },
+    {
+     "text": "đổi",
+     "start": 7.48,
+     "end": 7.6
+    },
+    {
+     "text": "trả,",
+     "start": 7.68,
+     "end": 8.32
+    },
+    {
+     "text": "và",
+     "start": 8.36,
+     "end": 8.48
+    },
+    {
+     "text": "nhắn",
+     "start": 8.56,
+     "end": 8.8
+    },
+    {
+     "text": "đúng",
+     "start": 8.84,
+     "end": 9.04
+    },
+    {
+     "text": "nhu",
+     "start": 9.08,
+     "end": 9.2
+    },
+    {
+     "text": "cầu",
+     "start": 9.28,
+     "end": 9.44
+    },
+    {
+     "text": "từng",
+     "start": 9.52,
+     "end": 9.68
+    },
+    {
+     "text": "khách.",
+     "start": 9.72,
+     "end": 10.16
+    }
+   ]
+  },
+  {
+   "text": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+   "said": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+   "file": "voice/nhan-tin-truoc-khi-mua/5.mp3",
+   "duration": 3.36,
+   "words": [
+    {
+     "text": "Follow",
+     "start": 0,
+     "end": 0.32
+    },
+    {
+     "text": "Adtek",
+     "start": 0.4,
+     "end": 0.96
+    },
+    {
+     "text": "để",
+     "start": 1.04,
+     "end": 1.2
+    },
+    {
+     "text": "xem",
+     "start": 1.24,
+     "end": 1.36
+    },
+    {
+     "text": "số",
+     "start": 1.44,
+     "end": 1.52
+    },
+    {
+     "text": "liệu",
+     "start": 1.6,
+     "end": 1.76
+    },
+    {
+     "text": "marketing",
+     "start": 2.04,
+     "end": 2.32
+    },
+    {
+     "text": "mới",
+     "start": 2.36,
+     "end": 2.56
+    },
+    {
+     "text": "mỗi",
+     "start": 2.64,
+     "end": 2.8
+    },
+    {
+     "text": "ngày.",
+     "start": 2.88,
+     "end": 3.36
+    }
+   ]
+  }
+ ]
+}

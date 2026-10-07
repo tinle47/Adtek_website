@@ -1,0 +1,149 @@
+{
+  "id": "nhan-tin-truoc-khi-mua",
+  "date": "2026-10-10",
+  "status": "Đã viết kịch bản",
+  "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Mùa mua sắm từ 12.12 đến Tết sắp tới, shop của bạn đã sẵn sàng trả lời chưa?",
+  "hashtags": [
+    "#banhangonline",
+    "#zalo",
+    "#quangcaofacebook",
+    "#chotdon",
+    "#marketing",
+    "#adtek"
+  ],
+  "scenes": [
+    {
+      "kicker": "Performance · Meta và Kantar",
+      "headline": "8/10 khách muốn nhắn tin,",
+      "accent": "shop bạn trả lời kịp không?",
+      "voice": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua? Khảo sát cho Meta cho thấy 82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp.",
+      "visual": {
+        "type": "waffle",
+        "metric": "Người Việt chọn nhắn tin để liên lạc với doanh nghiệp",
+        "unit": "trên 100 người dùng mạng",
+        "source": "Nguồn: Meta, khảo sát do Kantar thực hiện, 11/2025",
+        "lit": 83,
+        "legend": [
+          "Chọn nhắn tin (82.8%)",
+          "Chọn cách khác"
+        ]
+      }
+    },
+    {
+      "kicker": "Thói quen nhắn tin",
+      "headline": "Nhắn tin với shop",
+      "accent": "đã thành chuyện hằng ngày.",
+      "voice": "Và đây là thói quen hằng ngày. 61.2% nhắn tin với doanh nghiệp mỗi ngày. 85.6% thích nhận tin nhắn đúng nhu cầu của mình, hơn là tin gửi hàng loạt.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Thói quen nhắn tin với doanh nghiệp của người Việt",
+        "unit": "%",
+        "source": "Nguồn: Meta, khảo sát do Kantar thực hiện, 11/2025",
+        "max": 85.6,
+        "rows": [
+          {
+            "label": "Thích tin nhắn đúng nhu cầu",
+            "value": 85.6,
+            "tone": "accent"
+          },
+          {
+            "label": "Chọn nhắn tin để liên lạc",
+            "value": 82.8,
+            "tone": "main"
+          },
+          {
+            "label": "Nhắn với doanh nghiệp mỗi ngày",
+            "value": 61.2,
+            "tone": "main"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Kênh nhắn tin lớn nhất",
+      "headline": "81 triệu người",
+      "accent": "mở Zalo mỗi tháng.",
+      "voice": "Nhắn ở đâu? Zalo có 81.3 triệu người dùng mỗi tháng, hơn 2.2 tỷ tin nhắn mỗi ngày. Số tài khoản Zalo OA của doanh nghiệp tăng 24% trong một năm.",
+      "visual": {
+        "type": "columns",
+        "metric": "Người dùng hằng tháng tại Việt Nam",
+        "unit": "triệu người",
+        "source": "Nguồn: VNG, quý 2/2026; TikTok, 2025; số liệu doanh nghiệp tự công bố",
+        "max": 81.3,
+        "cols": [
+          {
+            "label": "Zalo",
+            "value": 81.3,
+            "tone": "accent"
+          },
+          {
+            "label": "TikTok",
+            "value": 70,
+            "tone": "base"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 0,
+            "text": "Hơn 2.2 tỷ tin nhắn mỗi ngày"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Mùa mua sắm cuối năm",
+      "headline": "Mùa cao điểm kéo dài",
+      "accent": "từ 12.12 đến Tết.",
+      "voice": "Mà mùa cao điểm sắp tới rồi. 85% người Việt mua sắm dịp Tết, 66% mua dịp Tết Dương lịch, và 44% săn sale 12.12.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Người Việt mua sắm theo từng dịp",
+        "unit": "%",
+        "source": "Nguồn: Meta, nghiên cứu mua sắm mùa lễ do Ipsos thực hiện",
+        "max": 85,
+        "rows": [
+          {
+            "label": "Tết Nguyên đán",
+            "value": 85,
+            "tone": "accent"
+          },
+          {
+            "label": "Tết Dương lịch",
+            "value": 66,
+            "tone": "main"
+          },
+          {
+            "label": "Sale 12.12",
+            "value": 44,
+            "tone": "main"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Đừng để khách",
+      "accent": "chờ tin nhắn quá lâu.",
+      "voice": "Vậy trước mùa cao điểm, hãy bật quảng cáo nhắn tin, có người trực giờ đông khách, soạn sẵn câu trả lời về giá, phí ship, đổi trả, và nhắn đúng nhu cầu từng khách.",
+      "visual": {
+        "type": "list",
+        "items": [
+          "Bật quảng cáo nhắn tin trên Facebook, Zalo",
+          "Có người trực tin nhắn giờ đông khách",
+          "Soạn sẵn câu trả lời giá, ship, đổi trả",
+          "Nhắn đúng nhu cầu, không gửi hàng loạt"
+        ]
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Khách đang nhắn tin,",
+      "accent": "shop bạn có đang trả lời?",
+      "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow"
+      }
+    }
+  ]
+}

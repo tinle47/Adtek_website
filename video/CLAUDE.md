@@ -9,7 +9,7 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 - Mỗi video khoảng 1 phút (50 đến 65 giây), 6 cảnh: câu hỏi mở đầu, 3 đến 4 cảnh số liệu, 1 cảnh "làm gì ngay", cảnh Follow.
 - Câu đầu tiên của lời đọc là một câu hỏi khơi tò mò.
 - Chỉ giữ ý mạnh, số liệu ấn tượng. Một chủ đề làm thành một video, không tách nhỏ thành nhiều video.
-- Cảnh cuối dùng `follow`, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi tuần."
+- Cảnh cuối dùng `follow`, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi ngày."
 
 ## Viết tiếng Việt tự nhiên
 
@@ -26,7 +26,8 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 
 ## Lịch và đăng
 
-- 4 video mỗi tuần: thứ Sáu, Chủ nhật, thứ Hai, thứ Tư.
+- Mỗi ngày 1 video, từ 09/10/2026. Giờ đăng gợi ý: thứ Hai đến thứ Sáu 12:00, thứ Bảy và Chủ nhật 09:00; lỡ khung thì 20:00. Sau 2 đến 3 tuần, chỉnh theo giờ người theo dõi hoạt động trong TikTok Analytics.
+- Mỗi video phải có nhiều insight hay: 3 đến 4 số liệu mạnh, mỗi số liệu kèm ý nghĩa với doanh nghiệp (vì sao nên quan tâm), không nhồi số cho đủ.
 - Anh Tin đăng tay, chèn nhạc từ Commercial Music Library của TikTok: Original 100%, Sound khoảng 15%.
 - Slot trống trong lịch: Claude tự chọn chủ đề đang được quan tâm khi viết kịch bản thứ Bảy (tin tức, báo cáo 1 đến 2 tháng gần đây, sự kiện theo mùa). Không dùng Creator Search Insights.
 
@@ -37,9 +38,9 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 
 ## Quy trình hằng tuần (Routine tự chạy, giờ Việt Nam)
 
-- Thứ Bảy 08:47: viết kịch bản các video từ Chủ nhật đến hết Chủ nhật tuần sau, chụp ảnh duyệt, email hi@tinle.co tiêu đề "[Adtek TikTok] Kịch bản tuần ..., chờ duyệt".
+- Thứ Bảy 08:47: viết kịch bản các video (mỗi ngày 1 video) từ Chủ nhật đến hết Chủ nhật tuần sau, chụp ảnh duyệt, email hi@tinle.co tiêu đề "[Adtek TikTok] Kịch bản tuần ..., chờ duyệt".
 - Chủ nhật 08:52: đọc phản hồi trong thread đó, sửa theo góp ý (chưa có phản hồi thì sản xuất luôn), tạo giọng, xuất video, đưa lên trang hub https://claude.ai/artifact/72zNCsPigyqbV6P8kQtji5 (video là asset của trang, danh sách ở `hub/videos.json`), email "[Adtek TikTok] Video tuần ... đã xong" kèm link hub.
-- T6, CN, T2, T4 lúc 17:47: email "[Adtek TikTok] Nhắc đăng hôm nay ..." kèm link hub, caption copy sẵn, cấu hình nhạc, giờ đăng gợi ý 19:00 đến 21:00.
+- Mỗi ngày 07:47: email "[Adtek TikTok] Nhắc đăng hôm nay ..." kèm giờ đăng gợi ý của ngày, link hub, caption copy sẵn, cấu hình nhạc.
 - Trang hub có 4 mục (Video, Lịch đăng, Kịch bản, SOP). Sau mỗi thay đổi lịch hoặc kịch bản: chạy `python3 tools/hub_export.py` trong thư mục video rồi publish lại hub với files videos.json, schedule.json, scripts.json. Kịch bản mới có thêm trường "date" và "status".
 - Không gửi video qua Google Drive hay đính kèm email (file quá lớn để tải lên qua công cụ); luôn dùng trang hub.
 - Email gửi anh Tin: súc tích, chuyên nghiệp, không xưng anh/em, không dùng ký tự "—".
