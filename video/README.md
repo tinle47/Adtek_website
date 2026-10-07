@@ -6,7 +6,8 @@ Biến bài blog adtek.agency thành video infographic dọc 1080x1920 cho kênh
 
 1. **Kịch bản** `scripts/<slug>/<số>.json`: danh sách cảnh, mỗi cảnh có `voice` (lời đọc, cũng là phụ đề) và nội dung hiển thị.
 2. **Giọng đọc** `tools/voice.mjs`: gửi lời đọc từng cảnh lên ElevenLabs, nhận file mp3 và thời điểm từng chữ, lưu vào `public/voice/<id>/`.
-3. **Dựng video** `tools/render.mjs`: Remotion đọc kịch bản và giọng đọc, độ dài mỗi cảnh bằng độ dài câu đọc, phụ đề tô cam đúng chữ đang đọc. Chưa có giọng thì xuất bản không tiếng, thời lượng ước tính.
+3. **Dựng video** `tools/render.mjs`: Remotion đọc kịch bản và giọng đọc, độ dài mỗi cảnh bằng độ dài câu đọc, phụ đề tô cam đúng chữ đang đọc. Chưa có giọng thì xuất bản không tiếng, thời lượng ước tính. Âm thanh được cân về -14 LUFS (mức to chuẩn của TikTok).
+4. **Nhạc nền** chèn trên TikTok lúc đăng, video xuất ra chỉ có giọng đọc.
 
 ## Thiết kế
 
@@ -41,6 +42,12 @@ npm run studio                           # xem và chỉnh trực tiếp trên t
 ```
 
 Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`. Trên máy cá nhân không cần, Remotion tự tải trình duyệt.
+
+## Đăng lên TikTok
+
+1. Tải `out/<id>.mp4` lên, dán caption từ `out/<id>.txt`.
+2. Bấm **Sounds**, chọn nhạc nhẹ không lời trong Commercial Music Library (tài khoản doanh nghiệp chỉ được dùng kho này).
+3. Bấm **Volume**: **Original** (giọng đọc) kéo hết cỡ 100%, **Sound** (nhạc) khoảng 15%. Giọng đã ở -14 LUFS nên mức này nhạc nằm nhẹ phía sau, không lấn lời.
 
 ## Lưu ý khi viết kịch bản
 

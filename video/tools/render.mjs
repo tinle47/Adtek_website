@@ -2,7 +2,8 @@
 // Cách dùng: node tools/render.mjs <slug> [số video...]          ví dụ: node tools/render.mjs aio-la-gi
 //            node tools/render.mjs <slug> [số...] --stills        chỉ chụp 1 khung mỗi cảnh để duyệt nhanh
 // Kết quả: out/<id>.mp4 và out/<id>.txt (caption + hashtag để đăng TikTok).
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, renderStill, selectComposition } from "@remotion/renderer";
@@ -17,6 +18,24 @@ const stills = args.includes("--stills");
 const [slug, ...nums] = args.filter((a) => !a.startsWith("--"));
 const dir = path.join(ROOT, "scripts", slug);
 const files = nums.length ? nums.map((n) => `${n}.json`) : readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
+
+// Cân giọng về -14 LUFS (mức to chuẩn của TikTok), để khi chèn nhạc TikTok ở mức Sound khoảng 15% nhạc vẫn nằm dưới giọng.
+// Đo trước, chỉnh sau (loudnorm 2 lượt), giữ nguyên hình. Dùng ffmpeg đi kèm Remotion nên không cần cài thêm.
+const LOUDNESS = "I=-14:TP=-1.5:LRA=11";
+function ffmpeg(args) {
+  const r = spawnSync(path.join(ROOT, "node_modules", ".bin", "remotion"), ["ffmpeg", "-hide_banner", "-y", ...args], { encoding: "utf8" });
+  if (r.status !== 0) throw new Error(`ffmpeg lỗi: ${r.stderr.slice(-500)}`);
+  return r.stderr;
+}
+function normalize(file) {
+  const log = ffmpeg(["-i", file, "-vn", "-af", `loudnorm=${LOUDNESS}:print_format=json`, "-f", "null", "-"]);
+  const m = JSON.parse(log.match(/\{[^{}]*"input_i"[^{}]*\}/)[0]);
+  const tmp = file.replace(/\.mp4$/, ".tmp.mp4");
+  const measured = `measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}`;
+  ffmpeg(["-i", file, "-c:v", "copy", "-af", `loudnorm=${LOUDNESS}:${measured}:linear=true`, "-ar", "48000", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", tmp]);
+  renameSync(tmp, file);
+  return Number(m.input_i);
+}
 
 mkdirSync(OUT, { recursive: true });
 const serveUrl = await bundle({ entryPoint: path.join(ROOT, "src/index.ts") });
@@ -52,10 +71,11 @@ for (const file of files) {
     browserExecutable,
     muted: !voice,
   });
+  const before = voice ? normalize(output) : null;
   writeFileSync(
     path.join(OUT, `${script.id}.txt`),
     `${script.caption}\n\n${script.hashtags.join(" ")}\n\nBài gốc: ${script.post_url}\n`,
   );
   const secs = (composition.durationInFrames / composition.fps).toFixed(1);
-  console.log(`${script.id}: ${secs}s ${voice ? "có giọng" : "chưa có giọng"} -> ${path.relative(ROOT, output)}`);
+  console.log(`${script.id}: ${secs}s ${voice ? `có giọng, âm lượng ${before} -> -14 LUFS` : "chưa có giọng"} -> ${path.relative(ROOT, output)}`);
 }
