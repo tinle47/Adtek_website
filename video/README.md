@@ -6,8 +6,7 @@ Biến bài blog adtek.agency thành video infographic dọc 1080x1920 cho kênh
 
 1. **Kịch bản** `scripts/<slug>/<số>.json`: danh sách cảnh, mỗi cảnh có `voice` (lời đọc, cũng là phụ đề) và nội dung hiển thị.
 2. **Giọng đọc** `tools/voice.mjs`: gửi lời đọc từng cảnh lên ElevenLabs, nhận file mp3 và thời điểm từng chữ, lưu vào `public/voice/<id>/`.
-3. **Nhạc nền** `tools/music.mjs`: tạo bản nhạc nhẹ bằng code (`public/music/nhe-nhang.mp3`, 55 giây), không lấy nhạc của ai nên không lo bản quyền. Trong video, nhạc nhỏ khi đang đọc và nhỉnh lên ở quãng nghỉ. Đổi nhạc cho một video bằng trường `music` trong kịch bản (đường dẫn trong `public/`), `false` để tắt.
-4. **Dựng video** `tools/render.mjs`: Remotion đọc kịch bản và giọng đọc, độ dài mỗi cảnh bằng độ dài câu đọc, phụ đề tô cam đúng chữ đang đọc. Chưa có giọng thì xuất bản không tiếng, thời lượng ước tính.
+3. **Dựng video** `tools/render.mjs`: Remotion đọc kịch bản và giọng đọc, độ dài mỗi cảnh bằng độ dài câu đọc, phụ đề tô cam đúng chữ đang đọc. Chưa có giọng thì xuất bản không tiếng, thời lượng ước tính.
 
 ## Thiết kế
 
@@ -36,7 +35,6 @@ Biểu đồ theo chuẩn McKinsey: màu phẳng, cột vuông, không lưới, 
 ```
 cd video && npm install
 node tools/voice.mjs aio-la-gi          # tạo giọng bằng Eleven v4 (cần ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID; đổi model bằng ELEVENLABS_MODEL)
-node tools/music.mjs                    # tạo lại nhạc nền (cần ffmpeg), chỉ cần khi sửa nhạc
 node tools/render.mjs aio-la-gi --stills  # chụp mỗi cảnh một ảnh để duyệt nhanh (out/)
 node tools/render.mjs aio-la-gi 1 2     # xuất out/aio-la-gi-1.mp4 và caption out/aio-la-gi-1.txt
 npm run studio                           # xem và chỉnh trực tiếp trên trình duyệt
