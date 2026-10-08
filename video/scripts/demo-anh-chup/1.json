@@ -1,0 +1,76 @@
+{
+  "id": "demo-anh-chup",
+  "archived": true,
+  "status": "Mẫu",
+  "caption": "Video mẫu: thể hiện con số bằng ảnh chụp bài viết.",
+  "hashtags": [],
+  "scenes": [
+    {
+      "kicker": "Mẫu · Ảnh chụp bài viết",
+      "headline": "Vốn FDI tăng 76.4%",
+      "accent": "trong 9 tháng đầu năm.",
+      "voice": "Vốn FDI vào Việt Nam 9 tháng đầu năm tăng 76.4% so với cùng kỳ. Đây là con số từ Cục Thống kê, được trích lại ngay trong bài viết.",
+      "visual": {
+        "type": "shot",
+        "image": "shots/demo-fdi.png",
+        "width": 1080,
+        "height": 2700,
+        "highlight": [
+          {
+            "x": 688.03125,
+            "y": 1260,
+            "w": 299.765625,
+            "h": 57
+          },
+          {
+            "x": 45,
+            "y": 1332,
+            "w": 235.3125,
+            "h": 57
+          }
+        ],
+        "url": "https://adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep/",
+        "source": "Ảnh chụp: adtek.agency, 08/10/2026 (bản mẫu). Video thật sẽ chụp trang gốc của nguồn",
+        "note": "Số liệu gốc: Cục Thống kê, 10/2026"
+      }
+    },
+    {
+      "kicker": "Mẫu · Ảnh chụp bài viết",
+      "headline": "Nhà đầu tư Nhật chọn Việt Nam",
+      "accent": "vì thị trường lớn.",
+      "voice": "Còn doanh nghiệp Nhật chọn Việt Nam vì đâu? 68.4% chọn vì quy mô thị trường, không phải vì giá thuê đất.",
+      "visual": {
+        "type": "shot",
+        "image": "shots/demo-jetro.png",
+        "width": 1080,
+        "height": 2700,
+        "highlight": [
+          {
+            "x": 569.671875,
+            "y": 1260,
+            "w": 377.765625,
+            "h": 57
+          },
+          {
+            "x": 45,
+            "y": 1332,
+            "w": 161.765625,
+            "h": 57
+          }
+        ],
+        "url": "https://adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep/",
+        "source": "Ảnh chụp: adtek.agency, 08/10/2026 (bản mẫu). Video thật sẽ chụp trang gốc của nguồn",
+        "note": "Số liệu gốc: JETRO, khảo sát FY2025"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Số liệu có nguồn,",
+      "accent": "mỗi ngày.",
+      "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow"
+      }
+    }
+  ]
+}

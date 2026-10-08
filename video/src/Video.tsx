@@ -5,6 +5,7 @@ import { BarChart, ColumnChart, Exhibit, Waffle, type TimedCol, type TimedNote }
 import { BigNumber, Donut, Funnel, People, Slope, Trend, Versus } from "./design/charts2";
 import { CHAT_NOTE_AT, ChatScreen } from "./design/chat";
 import { Background, Caption, Fade, Headline, L, Logo, SiteFooter, clamp, useFonts } from "./design/frame";
+import { Shot } from "./design/shot";
 import { GoogleSerp, PhoneNote, SERP_NOTE_AT } from "./design/serp";
 import { timeline, type TimedScene } from "./timing";
 import type { Scene, VideoProps, Visual } from "./types";
@@ -104,6 +105,8 @@ const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) =>
       return <div style={stage}><People {...v} /></div>;
     case "funnel":
       return <div style={stage}><Funnel {...v} /></div>;
+    case "shot":
+      return <div style={stage}><Shot {...v} /></div>;
     case "list":
       return (
         <div style={stage}>

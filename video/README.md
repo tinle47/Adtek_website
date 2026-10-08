@@ -47,7 +47,10 @@ node tools/voice.mjs aio-la-gi          # tạo giọng bằng Eleven v4 (cần 
 node tools/render.mjs aio-la-gi --stills  # chụp mỗi cảnh một ảnh để duyệt nhanh (out/)
 node tools/render.mjs aio-la-gi 1 2     # xuất out/aio-la-gi-1.mp4 và caption out/aio-la-gi-1.txt
 npm run studio                           # xem và chỉnh trực tiếp trên trình duyệt
+node tools/shot.mjs <url> "<câu có con số>" <tên>  # chụp trang gốc, ghi vị trí câu cần tô sáng (public/shots/)
 ```
+
+Cảnh `shot` dùng ảnh chụp thật của bài báo hoặc báo cáo: khung trình duyệt, trang trượt tới câu có con số, bút dạ quang cam quét qua con số, phần còn lại tối đi. Chép `width`, `height`, `highlight`, `url` từ file `public/shots/<tên>.json` vào kịch bản, thêm `source` và `note` (ví dụ: `scripts/demo-anh-chup/1.json`). Chỉ chụp trang gốc của nguồn, không sửa ảnh, không dựng giả giao diện trang báo. Mạng của môi trường cloud phải cho phép tên miền của trang cần chụp.
 
 Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`. Trên máy cá nhân không cần, Remotion tự tải trình duyệt.
 

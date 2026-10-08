@@ -56,6 +56,7 @@ export type Visual =
   | { type: "people"; metric: string; unit?: string; source: string; lit: number; legend: [string, string] } // x trên 10 người
   | { type: "funnel"; metric: string; unit?: string; source: string; stages: { label: string; value: number; display?: string }[] } // rơi rụng qua từng bước
   | { type: "article"; image: string; title: string; url: string } // thẻ bài blog (không dùng cho kênh TikTok độc lập)
+  | { type: "shot"; image: string; width: number; height: number; highlight: { x: number; y: number; w: number; h: number }[]; url: string; source: string; note?: string } // ảnh chụp thật bài báo, báo cáo (tools/shot.mjs)
   | { type: "follow"; note?: string } // cảnh cuối kêu gọi theo dõi kênh
   | { type: "continue" }; // giữ biểu đồ của cảnh trước, hiện thêm phần có step tương ứng
 
