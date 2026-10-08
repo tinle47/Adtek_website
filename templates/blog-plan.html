@@ -1,0 +1,409 @@
+<title>Lịch blog Adtek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: một trang cuộn, thanh mục lục dính trên cùng; 3 phần Danh sách, Lịch đăng, SOP. Màu theo bộ nhận diện Adtek. */
+:root {
+  --navy: #002D72;
+  --orange: #FF9014;
+  --orange-ink: #B85E00;
+  --bg: #F4F6FA;
+  --surface: #FFFFFF;
+  --line: #DCE2EC;
+  --fg: #16223A;
+  --muted: #5B6880;
+  --primary: #002D72;
+  --chip: #E9EEF7;
+  --ok: #1E7A4C; --ok-bg: #E3F4EA;
+  --warn: #9A5B00; --warn-bg: #FFF1DD;
+  --info: #0B4BA8; --info-bg: #E2ECFB;
+  --idle: #5B6880; --idle-bg: #EDF0F5;
+  --font-display: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1426; --surface: #121D33; --line: #24324F; --fg: #E5EBF6; --muted: #9AA8C2;
+    --primary: #9DBBF0; --chip: #1B2844; --orange-ink: #FFB25C;
+    --ok: #6FD39C; --ok-bg: #12301F; --warn: #FFC274; --warn-bg: #352411;
+    --info: #9DBBF0; --info-bg: #15284A; --idle: #9AA8C2; --idle-bg: #1B2640;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1426; --surface: #121D33; --line: #24324F; --fg: #E5EBF6; --muted: #9AA8C2;
+  --primary: #9DBBF0; --chip: #1B2844; --orange-ink: #FFB25C;
+  --ok: #6FD39C; --ok-bg: #12301F; --warn: #FFC274; --warn-bg: #352411;
+  --info: #9DBBF0; --info-bg: #15284A; --idle: #9AA8C2; --idle-bg: #1B2640;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.6; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.25; margin: 0; }
+a { color: var(--primary); }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); font-size: 0.86em; }
+
+/* Đầu trang */
+header.top { background: var(--navy); color: #fff; padding-block: 36px 28px; }
+header.top .eyebrow { color: var(--orange); font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; }
+header.top h1 { font-size: clamp(28px, 4.4vw, 40px); font-weight: 800; margin-top: 6px; }
+header.top p { color: #C9D5EC; max-width: 62ch; margin: 10px 0 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 22px; }
+.stat b { display: block; font-size: 24px; font-weight: 700; color: #fff; }
+.stat span { font-size: 12px; color: #A9B9D8; letter-spacing: 0.04em; }
+
+/* Mục lục dính */
+nav.toc { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+nav.toc .wrap { display: flex; gap: 4px; overflow-x: auto; }
+nav.toc a { padding: 13px 14px; text-decoration: none; color: var(--muted); font-weight: 600; font-size: 14px; white-space: nowrap; border-bottom: 3px solid transparent; }
+nav.toc a:hover, nav.toc a:focus-visible { color: var(--fg); outline: none; border-bottom-color: var(--orange); }
+
+section.part { padding-block: 40px 8px; scroll-margin-top: 52px; }
+.part-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.part-head h2 { font-size: 24px; font-weight: 700; }
+.part-head p { margin: 4px 0 0; color: var(--muted); max-width: 62ch; }
+
+/* Bộ lọc */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
+.filters button { font: inherit; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+.filters button:focus-visible, .filters input:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.filters input { font: inherit; font-size: 14px; padding: 7px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); min-width: 0; flex: 1 1 220px; max-width: 320px; }
+
+/* Bảng danh sách */
+.table-box { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+table { width: 100%; border-collapse: collapse; min-width: 760px; }
+th { text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 700; padding: 11px 14px; border-bottom: 1px solid var(--line); background: var(--surface); }
+td { padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 14px; }
+tr:last-child td { border-bottom: 0; }
+td.n { color: var(--muted); font-weight: 600; width: 44px; }
+.t-title { font-weight: 600; }
+.t-kw { color: var(--muted); font-size: 13px; margin-top: 2px; }
+.pillar { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange-ink); border: 1px solid currentColor; border-radius: 4px; padding: 0 5px; margin-left: 6px; vertical-align: 2px; }
+.ctag { display: inline-block; font-size: 12px; font-weight: 600; background: var(--chip); color: var(--fg); border-radius: 6px; padding: 2px 8px; white-space: nowrap; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; border-radius: 999px; padding: 2px 10px; white-space: nowrap; }
+.pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.s-planned { color: var(--idle); background: var(--idle-bg); }
+.s-draft { color: var(--warn); background: var(--warn-bg); }
+.s-scheduled { color: var(--info); background: var(--info-bg); }
+.s-published { color: var(--ok); background: var(--ok-bg); }
+.tier { font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--muted); }
+.empty { padding: 24px; color: var(--muted); text-align: center; }
+
+/* Lịch đăng */
+.next { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 22px; }
+.next div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; min-width: 0; }
+.next b { display: block; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange-ink); }
+.next span { font-size: 14px; }
+.month { margin-bottom: 26px; }
+.month h3 { font-size: 15px; font-weight: 700; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+.week { display: grid; grid-template-columns: 120px 1fr 1fr; gap: 10px; align-items: stretch; margin-bottom: 10px; }
+.wk { font-size: 13px; color: var(--muted); font-weight: 600; padding-top: 12px; }
+.slot { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; min-width: 0; display: grid; gap: 6px; align-content: start; }
+.slot .when { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; font-size: 13px; }
+.slot .day { font-weight: 700; }
+.slot .time { font-family: var(--font-mono); font-size: 13px; font-weight: 500; }
+.slot .tod { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.tod-noon { color: var(--orange-ink); }
+.tod-eve { color: var(--primary); }
+.slot .title { font-weight: 600; font-size: 14px; line-height: 1.45; }
+.slot .meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 16px; font-size: 13px; color: var(--muted); }
+
+/* SOP */
+.sop { display: grid; gap: 28px; }
+.sop h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.sop p, .sop li { max-width: 72ch; }
+.cycle { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; border-left: 2px solid var(--line); }
+.cycle li { position: relative; padding: 0 0 18px 22px; }
+.cycle li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 3px solid var(--orange); }
+.cycle .when { font-weight: 700; color: var(--primary); font-size: 13px; letter-spacing: 0.02em; }
+.cycle .what { font-weight: 600; }
+.cycle .how { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.cmds { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.cmd { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; min-width: 0; }
+.cmd code { display: inline-block; font-family: var(--font-mono); font-size: 13px; background: var(--chip); padding: 3px 8px; border-radius: 6px; margin-bottom: 8px; }
+.cmd p { margin: 0; font-size: 14px; color: var(--muted); }
+.rules { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+.small-table { min-width: 0; }
+.small-table td, .small-table th { padding: 9px 12px; }
+footer { padding-block: 32px 40px; color: var(--muted); font-size: 13px; }
+
+@media (max-width: 640px) {
+  .filters .cn { display: none; }
+  .week { grid-template-columns: 1fr; gap: 8px; }
+  .wk { padding-top: 6px; }
+  section.part { padding-block: 30px 4px; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">Adtek · Blog Growth Marketing</div>
+    <h1>Lịch blog Adtek</h1>
+    <p>32 bài chuyên sâu về digital marketing và growth marketing, đăng từ 13/10/2026 đến 28/1/2027, kèm quy trình viết, duyệt, liên kết và cập nhật nội dung.</p>
+    <div class="stats num" id="stats"></div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Mục lục">
+  <div class="wrap">
+    <a href="#danhsach">Danh sách bài viết</a>
+    <a href="#lich">Lịch đăng</a>
+    <a href="#sop">SOP làm việc</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="part" id="danhsach">
+    <div class="part-head">
+      <div>
+        <h2>Danh sách bài viết</h2>
+        <p>Mỗi bài thuộc một cụm chủ đề. Bài trụ cột (Pillar) bao quát cả cụm, các bài khác đi sâu từng khía cạnh và liên kết về trụ cột.</p>
+      </div>
+    </div>
+    <div class="filters" role="group" aria-label="Lọc theo cụm">
+      <div id="clusterFilters" style="display:contents"></div>
+      <input id="q" type="search" placeholder="Tìm theo tiêu đề hoặc từ khóa" aria-label="Tìm bài viết">
+    </div>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>#</th><th>Bài viết và từ khóa chính</th><th>Cụm</th><th>Ngày đăng</th><th>Trạng thái</th><th title="Chu kỳ rà soát">Làm mới</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="empty" id="empty" hidden>Không có bài nào khớp bộ lọc.</div>
+    </div>
+  </section>
+
+  <section class="part" id="lich">
+    <div class="part-head">
+      <div>
+        <h2>Lịch đăng</h2>
+        <p>2 bài mỗi tuần vào Thứ Ba và Thứ Năm. Giờ đăng không cố định: mỗi bài lên ngẫu nhiên trong khung trưa 12:00 đến 12:59 hoặc khung tối 20:00 đến 20:59.</p>
+      </div>
+    </div>
+    <div class="next" id="next">
+      <div><b>Viết bài kỳ tới</b><span>Thứ Sáu 9/10, 8:52: viết bài 3 và 4, gửi email duyệt</span></div>
+      <div><b>Bài lên sóng đầu tiên</b><span>Thứ Ba 13/10, 20:53: Kế hoạch 11.11</span></div>
+      <div><b>Rà soát nội dung</b><span>Ngày 1/11, 8:47: rà soát tháng đầu tiên</span></div>
+    </div>
+    <div class="legend">
+      <span class="pill s-planned">Chưa viết</span>
+      <span class="pill s-draft">Nháp chờ duyệt</span>
+      <span class="pill s-scheduled">Đã đặt lịch</span>
+      <span class="pill s-published">Đã đăng</span>
+    </div>
+    <div id="calendar"></div>
+  </section>
+
+  <section class="part" id="sop">
+    <div class="part-head">
+      <div>
+        <h2>SOP làm việc</h2>
+        <p>Quy trình chuẩn cho toàn bộ vòng đời một bài viết, từ lúc viết đến lúc cập nhật lại sau khi đăng.</p>
+      </div>
+    </div>
+    <div class="sop">
+      <div>
+        <h3>1. Vòng đời một bài viết</h3>
+        <ol class="cycle">
+          <li><div class="when">Thứ Sáu, 8:52 (tự động)</div><div class="what">Viết 2 bài kế tiếp và đưa lên WordPress ở dạng nháp</div><div class="how">Chọn 2 bài "Chưa viết" có ngày đăng sớm nhất. Nghiên cứu nguồn mới nhất, viết khoảng 2,000 chữ, tạo ảnh bìa, SEO title, meta description.</div></li>
+          <li><div class="when">Ngay sau khi viết xong</div><div class="what">Gửi yêu cầu duyệt qua 3 kênh</div><div class="how">Email tới hi@tinle.co (ảnh bìa, tóm tắt, nút Xem trước không cần đăng nhập, hạn duyệt), thông báo đẩy trên điện thoại, tin nhắn trong phiên Claude Code.</div></li>
+          <li><div class="when">Trong 24 giờ</div><div class="what">Người duyệt phản hồi</div><div class="how">Duyệt, yêu cầu sửa, hoặc hủy. Xem các câu lệnh ở mục 2.</div></li>
+          <li><div class="when">Hết 24 giờ (D+1)</div><div class="what">Tự đặt lịch nếu chưa có phản hồi</div><div class="how">Bài chưa được phản hồi tự đặt lịch đăng theo kế hoạch và có thông báo qua email, thông báo đẩy. Bài đang chờ sửa không tự đăng.</div></li>
+          <li><div class="when">Thứ Ba hoặc Thứ Năm, khung 12h hoặc 20h</div><div class="what">WordPress tự đăng bài</div><div class="how">Trước giờ đăng vẫn hủy được bằng câu lệnh "hủy bài X".</div></li>
+          <li><div class="when">Thứ Sáu kế tiếp</div><div class="what">Liên kết ngược</div><div class="how">Thêm link từ bài trụ cột và 2 đến 3 bài liên quan về bài vừa đăng, để không bài nào bị mồ côi.</div></li>
+          <li><div class="when">Ngày 1 hằng tháng, 8:47 (tự động)</div><div class="what">Rà soát và cập nhật nội dung</div><div class="how">Kiểm tra bài đến hạn theo hạng làm mới, sửa số liệu và link hỏng, soạn bản cập nhật lớn để duyệt, gửi báo cáo.</div></li>
+        </ol>
+      </div>
+
+      <div>
+        <h3>2. Câu lệnh duyệt bài</h3>
+        <div class="cmds">
+          <div class="cmd"><code>duyệt bài 3</code><p>Đặt lịch đăng ngay theo ngày giờ trong kế hoạch.</p></div>
+          <div class="cmd"><code>sửa bài 3: …</code><p>Ghi rõ chỗ cần sửa. Bài không tự đăng; sửa xong gửi lại email, hạn 24 giờ tính lại từ lần gửi mới.</p></div>
+          <div class="cmd"><code>hủy bài 3</code><p>Đưa bài về nháp, kể cả khi đã đặt lịch, miễn là trước giờ đăng.</p></div>
+        </div>
+        <p style="color:var(--muted);font-size:14px;margin-top:10px">Nhắn câu lệnh trong phiên Claude Code của dự án Adtek website. Nút "Xem trước bài viết" trong email mở được không cần đăng nhập, link hết hạn sau 7 ngày. Nút "Sửa trên WordPress" cần đăng nhập.</p>
+      </div>
+
+      <div class="two">
+        <div>
+          <h3>3. Tiêu chuẩn mỗi bài</h3>
+          <ul class="rules">
+            <li>Khoảng 2,000 chữ, tiếng Việt có dấu, tác giả Tin Le.</li>
+            <li>Có ít nhất một phần chỉ Adtek viết được: mini-case ẩn danh, số liệu từ dự án, bảng tính hoặc checklist dùng ngay.</li>
+            <li>Ít nhất 3 nguồn uy tín (văn bản luật, cơ quan nhà nước, báo cáo nghiên cứu, tài liệu chính thức của nền tảng), ghi tháng/năm của số liệu.</li>
+            <li>Link ra ngoài gắn <span class="mono">nofollow</span> và mở tab mới.</li>
+            <li>Số viết theo định dạng US (1,600; 13.6%), không dùng gạch dài.</li>
+            <li>SEO title 30 đến 60 ký tự, từ khóa chính đứng đầu. Meta description 120 đến 155 ký tự.</li>
+            <li>Ảnh bìa 1200 × 630 theo mẫu Adtek (nền xanh hoàng gia, điểm nhấn cam).</li>
+            <li>Kết bài bằng lời mời liên hệ hoặc tài nguyên miễn phí của Adtek.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>4. Quy tắc liên kết</h3>
+          <ul class="rules">
+            <li>1 link lên bài trụ cột của cụm.</li>
+            <li>Ít nhất 2 link sang bài cùng cụm, tính cả bài cũ.</li>
+            <li>Ít nhất 1 link sang cụm khác nếu nội dung liên quan.</li>
+            <li>Link thuật ngữ trong từ điển Adtek ở lần nhắc đầu tiên.</li>
+            <li>Anchor text là từ khóa của bài đích, không dùng "xem thêm" hay "tại đây".</li>
+            <li>Chỉ link tới bài đã đăng. Bài chưa đăng sẽ được nối bằng liên kết ngược khi lên sóng.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="two">
+        <div>
+          <h3>5. Hạng làm mới nội dung</h3>
+          <div class="table-box">
+            <table class="small-table">
+              <thead><tr><th>Hạng</th><th>Rà lại sau</th><th>Loại nội dung</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">A</td><td>3 tháng</td><td>Luật, tính năng nền tảng quảng cáo, số liệu thị trường</td></tr>
+                <tr><td class="mono">B</td><td>6 tháng</td><td>Hướng dẫn, quy trình</td></tr>
+                <tr><td class="mono">C</td><td>12 tháng</td><td>Khái niệm nền tảng</td></tr>
+                <tr><td class="mono">S</td><td>6 tuần trước mùa năm sau</td><td>Bài theo mùa: 11.11, Tết, ngân sách năm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="rules" style="margin-top:12px">
+            <li>Sửa nhỏ (số liệu, link hỏng, tên tính năng): sửa trực tiếp, thêm dòng "Cập nhật ngày …" đầu bài.</li>
+            <li>Sửa lớn (nhận định chính không còn đúng): soạn bản cập nhật, chờ duyệt rồi mới đăng.</li>
+            <li>Giữ nguyên URL. Gộp bài thì chuyển hướng 301.</li>
+            <li>Có luật mới hoặc nền tảng đổi tính năng lớn: cập nhật ngay, không chờ đến kỳ.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>6. Cụm chủ đề</h3>
+          <div class="table-box">
+            <table class="small-table">
+              <thead><tr><th>Cụm</th><th>Bài trụ cột</th><th>Số bài mới</th></tr></thead>
+              <tbody id="clusterRows"></tbody>
+            </table>
+          </div>
+          <h3 style="margin-top:22px">7. Nơi lưu và công cụ</h3>
+          <ul class="rules">
+            <li><span class="mono">content/editorial/calendar.json</span>: danh sách, lịch, trạng thái từng bài.</li>
+            <li><span class="mono">content/posts/</span>: nội dung HTML và ảnh bìa.</li>
+            <li><span class="mono">tools/blog_post.py</span>: tạo ảnh bìa, đưa nháp, đặt lịch, hủy lịch, tự duyệt D+1.</li>
+            <li><span class="mono">tools/approval_email.py</span>: soạn email duyệt.</li>
+            <li><span class="mono">logs/changelog.md</span>: nhật ký mọi thay đổi trên website.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">Cập nhật theo dữ liệu ngày __UPDATED__. Repo: tinle47/adtek_website, nhánh claude/brave-curie-2c6zbc.</footer>
+
+<script>
+const DATA = __DATA__;
+const STATUS = { planned: "Chưa viết", draft: "Nháp chờ duyệt", scheduled: "Đã đặt lịch", published: "Đã đăng" };
+const DAYS = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+const MONTHS = ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"];
+const posts = DATA.posts;
+const clusters = DATA.clusters;
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const d = p => new Date(p.date + "T00:00:00");
+const dm = p => { const x = d(p); return `${x.getDate()}/${x.getMonth() + 1}`; };
+const pill = p => `<span class="pill s-${p.status}">${STATUS[p.status] || p.status}</span>`;
+const ctag = c => `<span class="ctag" title="${esc(clusters[c].name)}">${c}</span>`;
+const isPillar = p => p.role === "pillar";
+
+// Số liệu tóm tắt
+const count = s => posts.filter(p => p.status === s).length;
+document.getElementById("stats").innerHTML = [
+  [posts.length, "bài viết"],
+  [16, "tuần"],
+  [count("scheduled") + count("published"), "đã đặt lịch hoặc đã đăng"],
+  [count("draft"), "nháp chờ duyệt"],
+  [count("planned"), "chưa viết"],
+].map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
+
+// Danh sách
+let active = "all";
+try { active = localStorage.getItem("adtek-cluster") || "all"; } catch (e) {}
+if (active !== "all" && !clusters[active]) active = "all";
+const filterBox = document.getElementById("clusterFilters");
+function renderFilters() {
+  const btns = [["all", "Tất cả", ""], ...Object.entries(clusters).map(([k, v]) => [k, k, v.name])];
+  filterBox.innerHTML = btns.map(([k, l, n]) => `<button type="button" data-c="${k}" aria-pressed="${k === active}" title="${esc(n)}">${esc(l)}${n ? `<span class="cn"> · ${esc(n)}</span>` : ""}</button>`).join("");
+}
+function renderRows() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const list = posts.filter(p => (active === "all" || p.cluster === active)
+    && (!q || p.title.toLowerCase().includes(q) || p.keyword.toLowerCase().includes(q)));
+  document.getElementById("rows").innerHTML = list.map(p => `
+    <tr>
+      <td class="n num">${p.no}</td>
+      <td><div class="t-title">${esc(p.title)}${isPillar(p) ? '<span class="pillar">Pillar</span>' : ""}</div><div class="t-kw">Từ khóa: ${esc(p.keyword)}</div></td>
+      <td>${ctag(p.cluster)}</td>
+      <td class="num" style="white-space:nowrap">${DAYS[d(p).getDay()]} ${dm(p)}<br><span class="mono" style="color:var(--muted)">${esc(p.time)}</span></td>
+      <td>${pill(p)}</td>
+      <td class="tier">${p.refresh}</td>
+    </tr>`).join("");
+  document.getElementById("empty").hidden = list.length > 0;
+}
+filterBox.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  active = b.dataset.c;
+  try { localStorage.setItem("adtek-cluster", active); } catch (e) {}
+  renderFilters(); renderRows();
+});
+document.getElementById("q").addEventListener("input", renderRows);
+renderFilters(); renderRows();
+
+// Lịch theo tuần
+function weekStart(x) { const s = new Date(x); s.setDate(s.getDate() - ((s.getDay() + 6) % 7)); return s; }
+const weeks = new Map();
+posts.forEach(p => {
+  const ws = weekStart(d(p));
+  const key = ws.toISOString().slice(0, 10);
+  if (!weeks.has(key)) weeks.set(key, { start: ws, items: [] });
+  weeks.get(key).items.push(p);
+});
+const months = new Map();
+[...weeks.values()].sort((a, b) => a.start - b.start).forEach(w => {
+  const first = d(w.items[0]);
+  const mk = `${first.getFullYear()}-${first.getMonth()}`;
+  if (!months.has(mk)) months.set(mk, { label: `${MONTHS[first.getMonth()]}/${first.getFullYear()}`, weeks: [] });
+  months.get(mk).weeks.push(w);
+});
+function slot(p) {
+  const h = parseInt(p.time, 10);
+  const tod = h < 15 ? '<span class="tod tod-noon">Trưa</span>' : '<span class="tod tod-eve">Tối</span>';
+  return `<div class="slot">
+    <div class="when"><span class="day">${DAYS[d(p).getDay()]} ${dm(p)}</span><span class="time">${esc(p.time)}</span>${tod}</div>
+    <div class="title">${p.no}. ${esc(p.title)}</div>
+    <div class="meta">${ctag(p.cluster)}${isPillar(p) ? '<span class="pillar" style="margin:0">Pillar</span>' : ""}${pill(p)}</div>
+  </div>`;
+}
+document.getElementById("calendar").innerHTML = [...months.values()].map(m => `
+  <div class="month"><h3>${m.label}</h3>
+    ${m.weeks.map(w => {
+      const end = new Date(w.start); end.setDate(end.getDate() + 6);
+      const items = w.items.sort((a, b) => d(a) - d(b));
+      return `<div class="week"><div class="wk num">Tuần ${w.start.getDate()}/${w.start.getMonth() + 1} đến ${end.getDate()}/${end.getMonth() + 1}</div>${items.map(slot).join("")}</div>`;
+    }).join("")}
+  </div>`).join("");
+
+// Cụm chủ đề
+const pillarName = c => {
+  const pl = clusters[c].pillar;
+  if (pl === null) return "Không có, trỏ về trụ cột của phương pháp liên quan";
+  if (typeof pl === "number") { const p = posts.find(x => x.no === pl); return `Bài ${pl}: ${esc(p.title)}`; }
+  return { "6076": "Bài đã đăng: AIO là gì?", "2215": "Bài đã đăng: Growth Marketing (cần cập nhật lớn)" }[pl] || `Bài ${pl}`;
+};
+document.getElementById("clusterRows").innerHTML = Object.entries(clusters).map(([k, v]) => `
+  <tr><td><span class="ctag">${k}</span><div style="margin-top:4px;font-weight:600">${esc(v.name)}</div></td><td>${pillarName(k)}</td><td class="num">${posts.filter(p => p.cluster === k).length}</td></tr>`).join("");
+</script>
