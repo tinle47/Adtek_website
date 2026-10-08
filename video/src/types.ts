@@ -57,13 +57,16 @@ export type Visual =
   | { type: "funnel"; metric: string; unit?: string; source: string; stages: { label: string; value: number; display?: string }[] } // rơi rụng qua từng bước
   | { type: "article"; image: string; title: string; url: string } // thẻ bài blog (không dùng cho kênh TikTok độc lập)
   | { type: "shot"; image: string; width: number; height: number; highlight: { x: number; y: number; w: number; h: number }[]; url: string; source: string; note?: string } // ảnh chụp thật bài báo, báo cáo (tools/shot.mjs)
-  | { type: "follow"; note?: string } // cảnh cuối kêu gọi theo dõi kênh
+  | { type: "quiz"; options: { label: string; text: string }[]; answer: number; reveal?: boolean; tag?: string; note?: string; source?: string } // đố số liệu: hỏi ở cảnh đầu, cảnh sau reveal: true để lật đáp án
+  | { type: "myth"; claim: string; verdict: string; note?: string; source?: string } // phá hiểu lầm: câu nhiều người tin, đóng dấu
+  | { type: "follow"; note?: string; ask?: string } // ask: câu hỏi kêu gọi bình luận // cảnh cuối kêu gọi theo dõi kênh
   | { type: "continue" }; // giữ biểu đồ của cảnh trước, hiện thêm phần có step tương ứng
 
 export type Scene = { kicker: string; headline: string; accent: string; voice: string; visual?: Visual };
 
 export type Script = {
   id: string;
+  cover?: { title: string; accent: string; kicker?: string }; // ảnh bìa 3 đến 5 chữ
   post_url?: string; // bài blog liên quan nếu có, không đưa vào caption
   caption: string;
   hashtags: string[];

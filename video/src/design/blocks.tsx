@@ -55,7 +55,7 @@ export const Article: React.FC<{ image: string; title: string; url: string }> = 
 };
 
 // Cảnh cuối kêu gọi theo dõi kênh: ảnh đại diện, tên kênh, lời hứa nội dung, nút Follow (điểm nhấn cam duy nhất).
-export const Follow: React.FC<{ note: string }> = ({ note }) => {
+export const Follow: React.FC<{ note: string; ask?: string }> = ({ note, ask }) => {
   const frame = useCurrentFrame();
   const p = useEnter(2);
   const b = useEnter(10);
@@ -69,7 +69,15 @@ export const Follow: React.FC<{ note: string }> = ({ note }) => {
       <div style={{ marginTop: 4, fontFamily: SANS, fontSize: 26, letterSpacing: 2, textTransform: "uppercase", color: C.muted }}>Growth Marketing Agency</div>
       <div style={{ marginTop: 10, fontFamily: SANS, fontWeight: 600, fontSize: 30, color: C.white }}>@adtek.growth.marketing</div>
       <div style={{ marginTop: 28, width: 600, borderTop: "1.5px solid rgba(255,255,255,0.18)" }} />
-      <div style={{ marginTop: 26, fontFamily: SANS, fontSize: 32, lineHeight: 1.4, color: C.white, textAlign: "center", maxWidth: 760 }}>{note}</div>
+      {ask ? (
+        // Câu hỏi để người xem bình luận: bình luận là tín hiệu giúp video được đẩy tiếp.
+        <div style={{ position: "relative", marginTop: 30, padding: "22px 34px", borderRadius: 22, border: `3px solid ${C.orange}`, fontFamily: SANS, fontWeight: 700, fontSize: 34, lineHeight: 1.35, color: C.white, textAlign: "center", maxWidth: 800 }}>
+          {ask}
+          <div style={{ position: "absolute", left: 70, bottom: -18, width: 30, height: 30, background: "#00245F", borderRight: `3px solid ${C.orange}`, borderBottom: `3px solid ${C.orange}`, transform: "rotate(45deg)" }} />
+        </div>
+      ) : (
+        <div style={{ marginTop: 26, fontFamily: SANS, fontSize: 32, lineHeight: 1.4, color: C.white, textAlign: "center", maxWidth: 760 }}>{note}</div>
+      )}
       <div
         style={{
           marginTop: 34,

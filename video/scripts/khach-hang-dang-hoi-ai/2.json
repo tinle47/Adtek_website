@@ -1,0 +1,159 @@
+{
+  "id": "khach-hang-dang-hoi-ai-2",
+  "date": "",
+  "status": "Không dùng (trùng chủ đề đã đăng)",
+  "caption": "78.4% người tiêu dùng trẻ đã dùng AI khi mua sắm, 81% người Việt dùng AI mỗi ngày, cao nhất Đông Nam Á. Khi khách hỏi AI về ngành của bạn, thương hiệu nào đang được gợi ý?",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#AIO",
+    "#AI",
+    "#SEO",
+    "#muasamonline"
+  ],
+  "scenes": [
+    {
+      "kicker": "AIO · Vietnam Report",
+      "headline": "78% người mua trẻ",
+      "accent": "đã dùng AI khi mua sắm.",
+      "voice": "Khi khách hỏi AI nên mua gì, thương hiệu của bạn có được nhắc tên không? Theo Vietnam Report, 78.4% người tiêu dùng Gen Y và Gen Z đã dùng AI khi mua sắm.",
+      "visual": {
+        "type": "bignumber",
+        "value": 78.4,
+        "suffix": "%",
+        "label": "người tiêu dùng Gen Y, Gen Z đã dùng AI khi mua sắm",
+        "context": "19.9% dùng thường xuyên",
+        "source": "Nguồn: Vietnam Report, khảo sát người tiêu dùng ngành bán lẻ, 08/2026"
+      }
+    },
+    {
+      "kicker": "e-Conomy SEA 2025",
+      "headline": "Người Việt dùng AI",
+      "accent": "nhiều nhất Đông Nam Á.",
+      "voice": "Người Việt cũng dùng AI nhiều nhất Đông Nam Á: 81% tương tác với AI mỗi ngày.",
+      "visual": {
+        "type": "columns",
+        "metric": "Người dùng tương tác với AI mỗi ngày",
+        "unit": "%",
+        "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025 (khảo sát Google và Milieu, 09/2025, 7,200 người)",
+        "max": 81,
+        "cols": [
+          {
+            "label": "Việt Nam",
+            "value": 81,
+            "tone": "accent"
+          },
+          {
+            "label": "Indonesia",
+            "value": 80,
+            "tone": "main"
+          },
+          {
+            "label": "Thái Lan",
+            "value": 76,
+            "tone": "main"
+          },
+          {
+            "label": "Singapore",
+            "value": 65,
+            "tone": "base"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Vietnam Report · 08/2026",
+      "headline": "AI là nơi khách",
+      "accent": "bắt đầu tìm hiểu.",
+      "voice": "Họ dùng AI để làm gì? 44.4% tìm hiểu thông tin sản phẩm, 23.5% nhờ gợi ý sản phẩm, 19.8% so sánh thương hiệu. Khách đang bắt đầu tìm hiểu từ AI.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Người tiêu dùng dùng AI khi mua sắm để",
+        "unit": "%",
+        "source": "Nguồn: Vietnam Report, khảo sát người tiêu dùng ngành bán lẻ, 08/2026",
+        "max": 44.4,
+        "rows": [
+          {
+            "label": "Tìm hiểu thông tin sản phẩm",
+            "value": 44.4,
+            "tone": "accent"
+          },
+          {
+            "label": "Tìm, gợi ý sản phẩm hợp nhu cầu",
+            "value": 23.5,
+            "tone": "main"
+          },
+          {
+            "label": "So sánh sản phẩm, thương hiệu",
+            "value": 19.8,
+            "tone": "main"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Niềm tin vào AI",
+      "headline": "Người Việt tin AI",
+      "accent": "hơn cả khu vực.",
+      "voice": "Người Việt cũng tin AI hơn. Chỉ 42% lo về bảo mật khi để AI làm thay, thấp hơn mức 50% của khu vực. Và 96% sẵn sàng cho AI xem lịch sử mua sắm.",
+      "visual": {
+        "type": "versus",
+        "metric": "Lo ngại bảo mật khi để AI làm thay mình",
+        "unit": "%",
+        "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025 (khảo sát Google và Milieu, 09/2025, 7,200 người)",
+        "items": [
+          {
+            "label": "Việt Nam",
+            "value": 42,
+            "suffix": "%"
+          },
+          {
+            "label": "Trung bình Đông Nam Á",
+            "value": 50,
+            "suffix": "%"
+          }
+        ],
+        "winner": 0,
+        "note": "96% sẵn sàng chia sẻ dữ liệu mua sắm với AI"
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Để AI tìm thấy",
+      "accent": "và nhắc tên bạn.",
+      "voice": "Muốn được AI nhắc tên, làm 4 việc. Đừng chặn bot tìm kiếm của ChatGPT. Kiểm tra trang đã được Google lập chỉ mục và cho hiện đoạn trích. Ghi đủ thông số, giá, bảo hành trên trang sản phẩm. Và cập nhật Google Business Profile, Merchant Center.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Không chặn OAI-SearchBot trong robots.txt",
+            "detail": "Chặn bot này thì không được trích khi khách tìm trên ChatGPT"
+          },
+          {
+            "text": "Trang được Google lập chỉ mục",
+            "detail": "Cho hiện đoạn trích: điều kiện để vào tóm tắt AI, Chế độ AI"
+          },
+          {
+            "text": "Ghi đủ thông số, giá, bảo hành",
+            "detail": "Trên trang sản phẩm, rõ ràng, nhất quán để AI đọc và trích đúng"
+          },
+          {
+            "text": "Cập nhật Business Profile, Merchant Center",
+            "detail": "Giờ mở cửa, giá, tồn kho luôn đúng với thực tế"
+          }
+        ],
+        "source": "Nguồn: OpenAI, tài liệu về bot; Google Search Central; Vietnam Report, 2026"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Khách đang hỏi AI,",
+      "accent": "AI có nhắc tên bạn?",
+      "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow"
+      }
+    }
+  ],
+  "archived": true
+}

@@ -1,12 +1,19 @@
 import React from "react";
-import { Composition } from "remotion";
+import { Composition, Still } from "remotion";
+import { Cover } from "./design/hook";
 import sample from "../scripts/aio-la-gi/1.json";
 import { FPS, totalFrames } from "./timing";
 import type { Script, VideoProps } from "./types";
 import { Video } from "./Video";
 
 // Một khuôn video dọc 1080x1920. Kịch bản và giọng đọc truyền vào qua props (tools/render.mjs).
+const CoverStill: React.FC<VideoProps> = ({ script }) => {
+  const c = script.cover ?? { title: script.scenes[0].headline, accent: script.scenes[0].accent };
+  return <Cover title={c.title} accent={c.accent} kicker={c.kicker} />;
+};
+
 export const Root: React.FC = () => (
+  <>
   <Composition
     id="Infographic"
     component={Video}
@@ -17,4 +24,7 @@ export const Root: React.FC = () => (
     defaultProps={{ script: sample as Script, voice: null } satisfies VideoProps}
     calculateMetadata={({ props }) => ({ durationInFrames: totalFrames(props) })}
   />
+  {/* Ảnh bìa riêng cho từng video (out/<id>-cover.png). */}
+  <Still id="Cover" component={CoverStill} width={1080} height={1920} defaultProps={{ script: sample as Script, voice: null } satisfies VideoProps} />
+  </>
 );

@@ -1,8 +1,8 @@
 [
  {
   "slug": "nhan-tin-truoc-khi-mua",
-  "filename": "08-10 nhan tin truoc khi mua",
-  "date": "2026-10-08",
+  "filename": "09-10 nhan tin truoc khi mua",
+  "date": "2026-10-09",
   "service": "Performance, Digital",
   "topic": "Khách muốn nhắn tin trước khi mua",
   "hook": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua?",
@@ -17,45 +17,25 @@
    "#quangcaofacebook",
    "#chotdon"
   ],
-  "note": ""
+  "note": "Đang nằm trong Drafts của TikTok"
  },
  {
-  "slug": "khach-hang-dang-hoi-ai",
-  "filename": "09-10 khach hang dang hoi ai",
-  "date": "2026-10-09",
-  "service": "AIO",
-  "topic": "Khách hàng của bạn đang hỏi AI",
-  "hook": "Khi khách hỏi AI nên mua gì, thương hiệu của bạn có được nhắc tên không?",
-  "duration": "63 giây",
-  "url": "/_blob/3023060111c7ce13a2c1f454d6d2d17b",
-  "caption": "78.4% người tiêu dùng trẻ đã dùng AI khi mua sắm, 81% người Việt dùng AI mỗi ngày, cao nhất Đông Nam Á. Khi khách hỏi AI về ngành của bạn, thương hiệu nào đang được gợi ý?",
-  "hashtags": [
-   "#adtekagency",
-   "#growthmarketing",
-   "#AIO",
-   "#AI",
-   "#SEO",
-   "#muasamonline"
-  ],
-  "note": ""
- },
- {
-  "slug": "khach-bo-gio-hang",
-  "filename": "10-10 khach bo gio hang",
+  "slug": "khach-so-gia-cho-sale",
+  "filename": "10-10 khach so gia cho sale",
   "date": "2026-10-10",
-  "service": "Growth Marketing",
-  "topic": "Khách bỏ đi ở phút cuối",
-  "hook": "Vì sao khách bỏ hàng vào giỏ rồi lại không thanh toán?",
+  "service": "Growth, Performance",
+  "topic": "Khách so giá, chờ sale (đố số liệu)",
+  "hook": "Đoán thử: bao nhiêu % người Việt so giá ở nhiều nơi trước khi mua?",
   "duration": "59 giây",
-  "url": "/_blob/b3caf3817abbc4adbd70e901d48c01ad",
-  "caption": "89.5% người tiêu dùng so giá nhiều nơi trước khi mua, cứ 2 người thì 1 người bỏ giỏ khi thấy phí phát sinh. Shop của bạn đang mất khách ở bước nào?",
+  "url": "/_blob/8dbbcaf55b21bd3bf06f9445ef98a125",
+  "caption": "Đoán thử: bao nhiêu % người Việt so giá ở nhiều nơi trước khi mua? Comment A, B hay C trước khi xem đáp án.",
   "hashtags": [
    "#adtekagency",
    "#growthmarketing",
    "#banhangonline",
-   "#thuongmaidientu",
-   "#chotdon",
-   "#ecommerce"
+   "#sansale",
+   "#khuyenmai",
+   "#thuongmaidientu"
   ],
   "note": ""
  },

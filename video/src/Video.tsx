@@ -6,11 +6,17 @@ import { BigNumber, Donut, Funnel, People, Slope, Trend, Versus } from "./design
 import { CHAT_NOTE_AT, ChatScreen } from "./design/chat";
 import { Background, Caption, Fade, Headline, L, Logo, SiteFooter, clamp, useFonts } from "./design/frame";
 import { Shot } from "./design/shot";
+import { MYTH_STAMP_AT, Myth, QUIZ_REVEAL_AT, Quiz } from "./design/hook";
 import { GoogleSerp, PhoneNote, SERP_NOTE_AT } from "./design/serp";
 import { timeline, type TimedScene } from "./timing";
 import type { Scene, VideoProps, Visual } from "./types";
 
 const PHONE_H = 600;
+// Cảnh đầu hiện sẵn trạng thái cuối của hiệu ứng: khung đầu tiên (cũng là ảnh bìa mặc định) đã có con số và câu hook.
+const HOOK = 75;
+const sfx = (name: string) => staticFile(`sfx/${name}.mp3`);
+// Khung (tính từ đầu cảnh) lúc con số chính hiện ra, để đặt tiếng "bật".
+const POP_AT: Partial<Record<Visual["type"], number>> = { bignumber: 34, versus: 40, people: 30, waffle: 40, donut: 30, slope: 30, trend: 30, funnel: 30, shot: 46 };
 const NOTE = { left: L.pad + 600, top: 1010 };
 
 type Chart = Extract<Visual, { type: "columns" | "hbars" }>;
@@ -29,10 +35,11 @@ const chartGroups = (scenes: Scene[]): Group[] => {
 
 const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc }) => {
   const f = useCurrentFrame();
-  const start = sc[g.first].from;
+  const shift = g.first === 0 ? HOOK : 0;
+  const start = sc[g.first].from - shift;
   const end = sc[g.last].from + sc[g.last].frames;
   if (f < start || f > end) return null;
-  const stepStart = (step = 0) => sc[Math.min(g.first + step, g.last)].from;
+  const stepStart = (step = 0) => sc[Math.min(g.first + step, g.last)].from - (step === 0 ? shift : 0);
   const items = g.chart.type === "columns" ? g.chart.cols : g.chart.rows;
   // Phần tử cùng một bước hiện lần lượt cách nhau 12 frame.
   const order: Record<number, number> = {};
@@ -47,7 +54,14 @@ const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc }) => {
     return n.kind === "drop" ? { ...n, at } : { kind: "callout", target: n.at, text: n.text, at };
   });
   const o = interpolate(f, [end - 7, end], [1, 0], clamp);
+  const pops = timed.filter((t) => t.at + 16 > 0).map((t, i) => (
+    <Sequence key={i} from={t.at + 16} durationInFrames={10}>
+      <Audio src={sfx("pop")} volume={0.32} />
+    </Sequence>
+  ));
   return (
+    <>
+    {pops}
     <div style={{ position: "absolute", left: L.pad, top: L.stage, opacity: o }}>
       <Exhibit metric={g.chart.metric} unit={g.chart.unit} source={g.chart.source} appear={start}>
         {g.chart.type === "columns" ? (
@@ -57,6 +71,7 @@ const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc }) => {
         )}
       </Exhibit>
     </div>
+    </>
   );
 };
 
@@ -107,6 +122,10 @@ const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) =>
       return <div style={stage}><Funnel {...v} /></div>;
     case "shot":
       return <div style={stage}><Shot {...v} /></div>;
+    case "quiz":
+      return <div style={stage}><Quiz {...v} /></div>;
+    case "myth":
+      return <div style={stage}><Myth {...v} /></div>;
     case "list":
       return (
         <div style={stage}>
@@ -122,7 +141,7 @@ const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) =>
     case "follow":
       return (
         <div style={stage}>
-          <Follow note={v.note ?? "Số liệu marketing có nguồn, mỗi ngày."} />
+          <Follow note={v.note ?? "Số liệu marketing có nguồn, mỗi ngày."} ask={v.ask} />
         </div>
       );
     default:
@@ -146,9 +165,27 @@ export const Video: React.FC<VideoProps> = (props) => {
         return (
           <Sequence key={i} from={sc[i].from} durationInFrames={frames}>
             <Fade frames={frames}>
-              <Headline kicker={s.kicker} headline={s.headline} accent={s.accent} big={!s.visual} />
-              <SceneVisual v={s.visual} frames={sc[i].frames} />
+              <Sequence from={i === 0 ? -HOOK : 0} layout="none">
+                <Headline kicker={s.kicker} headline={s.headline} accent={s.accent} big={!s.visual} />
+                <SceneVisual v={s.visual} frames={sc[i].frames} />
+              </Sequence>
             </Fade>
+            {i > 0 && <Audio src={sfx("whoosh")} volume={0.28} />}
+            {i > 0 && s.visual && POP_AT[s.visual.type] !== undefined && (
+              <Sequence from={POP_AT[s.visual.type]!} layout="none">
+                <Audio src={sfx("pop")} volume={0.35} />
+              </Sequence>
+            )}
+            {s.visual?.type === "quiz" && s.visual.reveal && (
+              <Sequence from={QUIZ_REVEAL_AT} layout="none">
+                <Audio src={sfx("ding")} volume={0.4} />
+              </Sequence>
+            )}
+            {i > 0 && s.visual?.type === "myth" && (
+              <Sequence from={MYTH_STAMP_AT} layout="none">
+                <Audio src={sfx("pop")} volume={0.45} />
+              </Sequence>
+            )}
             <Caption words={sc[i].words} />
             {sc[i].audio && <Audio src={staticFile(sc[i].audio!)} />}
           </Sequence>

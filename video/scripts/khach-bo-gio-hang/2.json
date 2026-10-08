@@ -1,8 +1,8 @@
 {
-  "id": "khach-bo-gio-hang",
-  "date": "2026-10-08",
-  "status": "Đã đăng",
-  "caption": "7 trên 10 giỏ hàng bị bỏ lại trước khi thanh toán. Ở Việt Nam, cứ 2 người thì 1 người bỏ giỏ khi thấy phí phát sinh. Shop của bạn đang mất khách ở bước nào?",
+  "id": "khach-bo-gio-hang-2",
+  "date": "",
+  "status": "Không dùng (trùng chủ đề đã đăng)",
+  "caption": "89.5% người tiêu dùng so giá nhiều nơi trước khi mua, cứ 2 người thì 1 người bỏ giỏ khi thấy phí phát sinh. Shop của bạn đang mất khách ở bước nào?",
   "hashtags": [
     "#adtekagency",
     "#growthmarketing",
@@ -13,18 +13,18 @@
   ],
   "scenes": [
     {
-      "kicker": "Growth · Baymard Institute",
-      "headline": "7/10 giỏ hàng",
-      "accent": "không được thanh toán.",
-      "voice": "Cứ 10 người bỏ hàng vào giỏ, bao nhiêu người thật sự thanh toán? Chỉ khoảng 3. Baymard tổng hợp 50 nghiên cứu: trung bình hơn 70% giỏ hàng bị bỏ lại.",
+      "kicker": "Growth · Vietnam Report",
+      "headline": "9/10 khách",
+      "accent": "so giá trước khi mua.",
+      "voice": "Vì sao khách bỏ hàng vào giỏ rồi lại không thanh toán? Ở Việt Nam, 89.5% người tiêu dùng so giá nhiều nơi trước khi mua, và 39.5% thường hoãn mua để chờ khuyến mãi.",
       "visual": {
         "type": "people",
-        "metric": "Giỏ hàng online bị bỏ lại trước khi thanh toán",
-        "source": "Nguồn: Baymard Institute, tổng hợp 50 nghiên cứu, cập nhật 2025. Số liệu quốc tế",
-        "lit": 7,
+        "metric": "Người tiêu dùng so sánh giá giữa nhiều nơi bán trước khi mua",
+        "source": "Nguồn: Vietnam Report, khảo sát người tiêu dùng ngành bán lẻ, 08/2026",
+        "lit": 9,
         "legend": [
-          "bỏ giỏ, không thanh toán",
-          "Con số chính xác: 70.22%"
+          "so giá nhiều nơi trước khi mua",
+          "Con số chính xác: 89.5%. 39.5% thường hoãn mua chờ khuyến mãi"
         ]
       }
     },
@@ -63,7 +63,7 @@
       "kicker": "Giao hàng",
       "headline": "Giao đúng hẹn",
       "accent": "được coi trọng hơn ship rẻ.",
-      "voice": "Điều bất ngờ là người Việt coi trọng giao hàng đúng hẹn hơn phí ship rẻ. Và chỉ một lần giao tệ, cứ 3 người thì 1 người ngừng mua ở shop đó.",
+      "voice": "Điều bất ngờ là người Việt coi trọng giao hàng đúng hẹn hơn phí ship rẻ. Và cứ 3 người thì 1 người ngừng mua ở shop từng giao trễ hoặc hoàn tiền không rõ ràng.",
       "visual": {
         "type": "versus",
         "metric": "Điều người mua Việt Nam muốn cải thiện nhất khi mua online",
@@ -82,22 +82,21 @@
           }
         ],
         "winner": 0,
-        "note": "1/3 ngừng mua sau một lần giao tệ"
+        "note": "1/3 ngừng mua sau trải nghiệm tệ như giao trễ"
       }
     },
     {
-      "kicker": "Sửa trang thanh toán",
-      "headline": "Sửa bước thanh toán,",
-      "accent": "chuyển đổi có thể tăng 35%.",
-      "voice": "Tin tốt là phần lớn lý do này sửa được. Baymard ước tính, chỉ cần làm lại bước thanh toán cho gọn, tỷ lệ chuyển đổi có thể tăng 35%.",
+      "kicker": "Giữ khách bằng dịch vụ",
+      "headline": "Phục vụ tốt,",
+      "accent": "khách sẵn sàng trả thêm.",
+      "voice": "Tin tốt là 7 trên 10 người mua Việt sẵn sàng chi nhiều hơn cho shop có dịch vụ đáng tin: giao hàng ổn định, đổi trả linh hoạt.",
       "visual": {
         "type": "bignumber",
-        "value": 35.26,
-        "prefix": "+",
-        "suffix": "%",
-        "label": "tỷ lệ chuyển đổi có thể tăng nhờ bước thanh toán tốt hơn",
-        "context": "Ước tính cho website thương mại điện tử lớn",
-        "source": "Nguồn: Baymard Institute, nghiên cứu trải nghiệm thanh toán"
+        "value": 7,
+        "suffix": "/10",
+        "label": "người mua online sẵn sàng chi nhiều hơn cho shop có dịch vụ đáng tin",
+        "context": "Giao hàng ổn định, đổi trả linh hoạt, ưu đãi riêng",
+        "source": "Nguồn: Milieu Insight, người mua online Việt Nam, 09/2025"
       }
     },
     {
@@ -110,7 +109,7 @@
         "items": [
           {
             "text": "Hiện phí ship, tổng tiền từ trang sản phẩm",
-            "detail": "Phí phát sinh là lý do bỏ giỏ số 1: 40% (Baymard)"
+            "detail": "Cứ 2 người Việt thì 1 người bỏ giỏ khi thấy phí phát sinh"
           },
           {
             "text": "Rút form thanh toán còn khoảng 8 ô",
@@ -118,14 +117,14 @@
           },
           {
             "text": "Ghi ngày giao dự kiến và chính sách đổi trả",
-            "detail": "Đặt ngay tại bước thanh toán, không giấu ở trang khác"
+            "detail": "53% coi trọng giao đúng hẹn, 46% bỏ đi nếu đổi trả không rõ"
           },
           {
             "text": "Tự động nhắc giỏ hàng qua email, Zalo",
-            "detail": "Email nhắc giỏ mang lại doanh thu cao nhất trong các chuỗi email tự động"
+            "detail": "Doanh thu cao nhất trong các chuỗi email tự động (Klaviyo)"
           }
         ],
-        "source": "Nguồn: Baymard Institute, 2026; Klaviyo, dữ liệu hơn 110,000 khách hàng, 2026"
+        "source": "Nguồn: Milieu Insight, 09/2025; Baymard Institute, 2026; Klaviyo, 2026"
       }
     },
     {
@@ -137,5 +136,6 @@
         "type": "follow"
       }
     }
-  ]
+  ],
+  "archived": true
 }

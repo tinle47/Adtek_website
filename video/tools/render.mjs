@@ -64,6 +64,10 @@ for (const file of files) {
     continue;
   }
 
+  // Ảnh bìa: 3 đến 5 chữ thật to (trường "cover" trong kịch bản, mặc định lấy tiêu đề cảnh đầu).
+  const cover = await selectComposition({ serveUrl, id: "Cover", inputProps, browserExecutable });
+  await renderStill({ serveUrl, composition: cover, inputProps, frame: 0, output: path.join(OUT, `${script.id}-cover.png`), browserExecutable });
+
   const output = path.join(OUT, `${script.id}.mp4`);
   await renderMedia({
     serveUrl,

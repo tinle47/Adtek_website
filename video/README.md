@@ -50,6 +50,8 @@ npm run studio                           # xem và chỉnh trực tiếp trên t
 node tools/shot.mjs <url> "<câu có con số>" <tên>  # chụp trang gốc, ghi vị trí câu cần tô sáng (public/shots/)
 ```
 
+Cảnh `quiz` là câu đố 3 lựa chọn (`options`, `answer`, `tag`); dùng lại ở cảnh sau với `reveal: true` và `note` để lật đáp án. Cảnh `myth` là câu nhiều người tin (`claim`) bị đóng dấu (`verdict`, ví dụ "SAI"). Cảnh `follow` nhận `ask` là câu hỏi kêu gọi bình luận. Trường `cover` của kịch bản tạo ảnh bìa `out/<id>-cover.png`. Ví dụ đầy đủ: `scripts/khach-so-gia-cho-sale/1.json`.
+
 Cảnh `shot` dùng ảnh chụp thật của bài báo hoặc báo cáo: khung trình duyệt, trang trượt tới câu có con số, bút dạ quang cam quét qua con số, phần còn lại tối đi. Chép `width`, `height`, `highlight`, `url` từ file `public/shots/<tên>.json` vào kịch bản, thêm `source` và `note` (ví dụ: `scripts/demo-anh-chup/1.json`). Chỉ chụp trang gốc của nguồn, không sửa ảnh, không dựng giả giao diện trang báo. Mạng của môi trường cloud phải cho phép tên miền của trang cần chụp.
 
 Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`. Trên máy cá nhân không cần, Remotion tự tải trình duyệt.

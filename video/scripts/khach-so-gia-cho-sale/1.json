@@ -1,0 +1,166 @@
+{
+  "id": "khach-so-gia-cho-sale",
+  "date": "2026-10-10",
+  "status": "Đã có video",
+  "cover": {
+    "kicker": "Đố số liệu",
+    "title": "9/10 khách",
+    "accent": "so giá trước khi mua"
+  },
+  "caption": "Đoán thử: bao nhiêu % người Việt so giá ở nhiều nơi trước khi mua? Comment A, B hay C trước khi xem đáp án.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#banhangonline",
+    "#sansale",
+    "#khuyenmai",
+    "#thuongmaidientu"
+  ],
+  "scenes": [
+    {
+      "kicker": "Đố số liệu · Vietnam Report",
+      "headline": "Bao nhiêu % người Việt",
+      "accent": "so giá trước khi mua?",
+      "voice": "Đoán thử: bao nhiêu phần trăm người Việt so giá ở nhiều nơi trước khi mua? A, 50%. B, 70%. C, 90%. Comment đáp án của bạn, kết quả ở cuối video.",
+      "visual": {
+        "type": "quiz",
+        "options": [
+          {
+            "label": "A",
+            "text": "50%"
+          },
+          {
+            "label": "B",
+            "text": "70%"
+          },
+          {
+            "label": "C",
+            "text": "90%"
+          }
+        ],
+        "answer": 2,
+        "tag": "Comment A, B hay C"
+      }
+    },
+    {
+      "kicker": "Gợi ý 1 · Milieu Insight",
+      "headline": "Người Việt mua online",
+      "accent": "nhiều hơn khu vực.",
+      "voice": "Gợi ý thứ nhất: 65% người Việt mua online ít nhất mỗi tuần một lần, trong khi trung bình Đông Nam Á là 50%.",
+      "visual": {
+        "type": "versus",
+        "metric": "Người mua online ít nhất mỗi tuần một lần",
+        "unit": "%",
+        "source": "Nguồn: Milieu Insight, người mua online Việt Nam, 09/2025",
+        "items": [
+          {
+            "label": "Việt Nam",
+            "value": 65,
+            "suffix": "%"
+          },
+          {
+            "label": "Trung bình Đông Nam Á",
+            "value": 50,
+            "suffix": "%"
+          }
+        ],
+        "winner": 0
+      }
+    },
+    {
+      "kicker": "Gợi ý 2 · Milieu Insight",
+      "headline": "Giảm giá vẫn là",
+      "accent": "lý do mua số 1.",
+      "voice": "Gợi ý thứ hai: người Việt chọn mua vì giảm giá, 64%, vì phí ship thấp hoặc miễn phí, 55%, và vì nhiều lựa chọn, 52%.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Lý do người Việt chọn mua online",
+        "unit": "%",
+        "source": "Nguồn: Milieu Insight, người mua online Việt Nam, 09/2025",
+        "max": 64,
+        "rows": [
+          {
+            "label": "Giảm giá",
+            "value": 64,
+            "tone": "accent"
+          },
+          {
+            "label": "Phí ship thấp, miễn phí",
+            "value": 55,
+            "tone": "main"
+          },
+          {
+            "label": "Nhiều lựa chọn",
+            "value": 52,
+            "tone": "main"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Đáp án · Vietnam Report",
+      "headline": "Đáp án C:",
+      "accent": "89.5% so giá trước khi mua.",
+      "voice": "Đáp án là C. 89.5% người tiêu dùng so giá nhiều nơi trước khi mua, và 39.5% thường hoãn mua để chờ khuyến mãi.",
+      "visual": {
+        "type": "quiz",
+        "reveal": true,
+        "options": [
+          {
+            "label": "A",
+            "text": "50%"
+          },
+          {
+            "label": "B",
+            "text": "70%"
+          },
+          {
+            "label": "C",
+            "text": "90%"
+          }
+        ],
+        "answer": 2,
+        "note": "Con số chính xác 89.5%. 39.5% thường hoãn mua để chờ khuyến mãi",
+        "source": "Nguồn: Vietnam Report, khảo sát người tiêu dùng ngành bán lẻ, 08/2026"
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Khách so giá, chờ sale:",
+      "accent": "shop nên làm gì?",
+      "voice": "Vậy shop nên làm gì? Báo trước lịch khuyến mãi cho khách đã quan tâm. Đưa phí ship vào ưu đãi. Kiểm tra giá đối thủ trước mỗi đợt sale. Và thêm mẫu mã, size, màu.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Báo trước lịch sale cho khách đã quan tâm",
+            "detail": "39.5% hoãn mua để chờ khuyến mãi"
+          },
+          {
+            "text": "Đưa phí ship vào ưu đãi",
+            "detail": "55% chọn mua vì ship rẻ hoặc miễn phí"
+          },
+          {
+            "text": "Kiểm tra giá đối thủ trước mỗi đợt sale",
+            "detail": "89.5% khách so giá nhiều nơi trước khi mua"
+          },
+          {
+            "text": "Thêm mẫu mã, size, màu",
+            "detail": "52% chọn vì nhiều lựa chọn, cao hơn khu vực (47%)"
+          }
+        ],
+        "source": "Nguồn: Vietnam Report, 08/2026; Milieu Insight, 09/2025"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Mỗi ngày một số liệu,",
+      "accent": "bạn đoán được bao nhiêu?",
+      "voice": "Bạn đoán đúng không? Comment cho Adtek biết, và follow để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Bạn đoán A, B hay C? Comment cho Adtek biết nhé"
+      }
+    }
+  ]
+}

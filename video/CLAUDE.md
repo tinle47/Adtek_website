@@ -15,6 +15,12 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
   - Có căn cứ từ nguồn chính thức (tài liệu của Google, Meta, OpenAI, Zalo, TikTok) hoặc nghiên cứu gốc (Baymard, Klaviyo...). Kiểm tra nguồn như với số liệu.
   - Trả lời đúng vấn đề mà các cảnh số liệu trước đó nêu ra.
   - Dùng `items` dạng `{ "text": việc cần làm, "detail": căn cứ hoặc cách làm }` và ghi `source` ở cuối danh sách. Ghi nguồn của từng việc vào email duyệt kịch bản.
+- Giữ chân người xem (anh Tin chốt hướng A và C, 08/10/2026):
+  - Khung đầu tiên phải có ngay câu hook và con số: `Video.tsx` tự hiện cảnh đầu ở trạng thái cuối của hiệu ứng, không đếm từ 0.
+  - Mỗi kịch bản có trường `cover` (3 đến 5 chữ, ví dụ "9/10 khách" + "so giá trước khi mua"); `render.mjs` xuất `out/<id>-cover.png` để làm ảnh bìa.
+  - Âm thanh chuyển cảnh và tiếng "bật" khi số hiện được thêm tự động (`public/sfx`).
+  - Đổi kiểu video, mỗi tuần ít nhất 2 video kiểu mới: **đố số liệu** (`quiz`: hỏi ở cảnh đầu với 3 lựa chọn, 2 cảnh gợi ý, cảnh lật đáp án `reveal: true`) và **phá hiểu lầm** (`myth`: câu nhiều người tin, đóng dấu "SAI" hoặc "CHƯA ĐÚNG", rồi số liệu chứng minh). Kiểu video hướng dẫn (quay màn hình) cần anh Tin quay, chỉ đề xuất trong email.
+  - Cảnh cuối có `ask`: câu hỏi cụ thể để người xem bình luận (ví dụ "Shop bạn trả lời tin nhắn trong bao lâu? Comment số phút"), không chỉ "Follow". Caption cũng kết bằng câu hỏi đó.
 - Cảnh cuối dùng `follow`, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi ngày."
 
 ## Chọn biểu đồ theo kiểu dữ liệu
