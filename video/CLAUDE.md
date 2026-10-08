@@ -21,6 +21,7 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 
 - 1 con số gây sốc: `bignumber`. 2 con số đối đầu: `versus`. Trước và sau của vài nhóm: `slope`. Xu hướng từ 3 mốc: `trend`. Chia phần trong tổng: `donut`. "x trên 10 người": `people`, "x trên 100": `waffle`. Rơi rụng qua từng bước: `funnel`. Xếp hạng từ 3 mục: `hbars`. So sánh 2 đến 4 nhóm: `columns`. Việc cần làm: `list`.
 - Mỗi video dùng ít nhất 3 loại biểu đồ khác nhau, không dùng cùng một loại cho 2 cảnh liền nhau. Video liền kề trong lịch nên mở đầu bằng loại biểu đồ khác nhau.
+- Ảnh chụp bài báo, báo cáo (`shot`, chụp bằng `tools/shot.mjs`): dùng cho con số mạnh nhất của video, nhất là số từ cơ quan nhà nước, báo chí hoặc báo cáo gốc. Tối đa 1 cảnh mỗi video, các cảnh còn lại vẫn là biểu đồ. Chỉ chụp trang gốc, không sửa ảnh, không dựng giả giao diện trang báo.
 - Không bóp méo dữ liệu cho đẹp: độ rộng, độ cao luôn đúng tỷ lệ; trục không bắt đầu từ 0 thì ghi rõ.
 
 ## Viết tiếng Việt tự nhiên
@@ -33,7 +34,7 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 ## Số liệu
 
 - Chỉ lấy từ tổ chức phát hành gốc (Google, Meta, OpenAI, Pew, Gartner, McKinsey, Bain, AppsFlyer, Adjust, Sensor Tower, Metric, DataReportal, e-Conomy SEA, văn bản luật...). Không dùng trang tổng hợp số liệu.
-- Trước khi viết kịch bản phải mở link gốc kiểm tra lại con số. Số cũ, số nước ngoài, mẫu nhỏ thì nói rõ trên video. Nội dung pháp lý nên nhờ luật sư duyệt.
+- Trước khi viết kịch bản phải mở link gốc kiểm tra lại con số (mạng đã mở từ 08/10/2026, không còn lý do chỉ đối chiếu qua báo). Trang tổng hợp hay trích sai hoặc dùng số cũ: ví dụ Baymard ghi trung bình 14.88 ô nhập ở trang thanh toán, nhiều trang trích lại thành 11.3. Số cũ, số nước ngoài, mẫu nhỏ thì nói rõ trên video. Nội dung pháp lý nên nhờ luật sư duyệt.
 - Ghi nguồn trên mỗi biểu đồ.
 
 ## Lịch và đăng

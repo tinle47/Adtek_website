@@ -6,61 +6,55 @@
   "hashtags": [],
   "scenes": [
     {
-      "kicker": "Mẫu · Ảnh chụp bài viết",
+      "kicker": "Cục Thống kê · 9 tháng 2026",
       "headline": "Vốn FDI tăng 76.4%",
       "accent": "trong 9 tháng đầu năm.",
-      "voice": "Vốn FDI vào Việt Nam 9 tháng đầu năm tăng 76.4% so với cùng kỳ. Đây là con số từ Cục Thống kê, được trích lại ngay trong bài viết.",
+      "voice": "Vốn FDI vào Việt Nam 9 tháng đầu năm nay đạt 50.36 tỷ USD, tăng 76.4% so với cùng kỳ. Đây là số liệu trong báo cáo của Cục Thống kê.",
       "visual": {
         "type": "shot",
-        "image": "shots/demo-fdi.png",
+        "image": "shots/nso-fdi-9t-2026.png",
         "width": 1080,
         "height": 2700,
         "highlight": [
           {
-            "x": 688.03125,
+            "x": 204.5625,
             "y": 1260,
-            "w": 299.765625,
-            "h": 57
+            "w": 785.4375,
+            "h": 48
           },
           {
-            "x": 45,
-            "y": 1332,
-            "w": 235.3125,
-            "h": 57
+            "x": 90,
+            "y": 1318.78125,
+            "w": 249.375,
+            "h": 48
           }
         ],
-        "url": "https://adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep/",
-        "source": "Ảnh chụp: adtek.agency, 08/10/2026 (bản mẫu). Video thật sẽ chụp trang gốc của nguồn",
-        "note": "Số liệu gốc: Cục Thống kê, 10/2026"
+        "url": "https://www.nso.gov.vn/bai-top/2026/10/bao-cao-tinh-hinh-kinh-te-xa-hoi-quy-iii-va-9-thang-nam-2026/",
+        "source": "Ảnh chụp: nso.gov.vn, Báo cáo tình hình kinh tế xã hội quý III và 9 tháng năm 2026",
+        "note": "50.36 tỷ USD vốn FDI đăng ký"
       }
     },
     {
-      "kicker": "Mẫu · Ảnh chụp bài viết",
-      "headline": "Nhà đầu tư Nhật chọn Việt Nam",
-      "accent": "vì thị trường lớn.",
-      "voice": "Còn doanh nghiệp Nhật chọn Việt Nam vì đâu? 68.4% chọn vì quy mô thị trường, không phải vì giá thuê đất.",
+      "kicker": "Baymard Institute",
+      "headline": "7/10 giỏ hàng online",
+      "accent": "bị bỏ lại.",
+      "voice": "Còn bán hàng online thì sao? Baymard tổng hợp 50 nghiên cứu: trung bình 70.22% giỏ hàng bị bỏ lại trước khi thanh toán.",
       "visual": {
         "type": "shot",
-        "image": "shots/demo-jetro.png",
+        "image": "shots/baymard-70.png",
         "width": 1080,
         "height": 2700,
         "highlight": [
           {
-            "x": 569.671875,
-            "y": 1260,
-            "w": 377.765625,
-            "h": 57
-          },
-          {
-            "x": 45,
-            "y": 1332,
-            "w": 161.765625,
-            "h": 57
+            "x": 72,
+            "y": 840.375,
+            "w": 145.96875,
+            "h": 72
           }
         ],
-        "url": "https://adtek.agency/chien-luoc-digital-marketing-bat-dong-san-khu-cong-nghiep/",
-        "source": "Ảnh chụp: adtek.agency, 08/10/2026 (bản mẫu). Video thật sẽ chụp trang gốc của nguồn",
-        "note": "Số liệu gốc: JETRO, khảo sát FY2025"
+        "url": "https://baymard.com/lists/cart-abandonment-rate",
+        "source": "Ảnh chụp: baymard.com, Cart Abandonment Rate Statistics 2026",
+        "note": "Trung bình từ 50 nghiên cứu"
       }
     },
     {

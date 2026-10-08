@@ -110,11 +110,11 @@
         "items": [
           {
             "text": "Hiện phí ship, tổng tiền từ trang sản phẩm",
-            "detail": "Phí bất ngờ là lý do bỏ giỏ số 1 theo Baymard"
+            "detail": "Phí phát sinh là lý do bỏ giỏ số 1: 40% (Baymard)"
           },
           {
             "text": "Rút form thanh toán còn khoảng 8 ô",
-            "detail": "Trung bình hiện nay là 11.3 ô"
+            "detail": "Baymard: 7 đến 8 ô là đủ; trung bình ở Mỹ đang là 14.88 ô"
           },
           {
             "text": "Ghi ngày giao dự kiến và chính sách đổi trả",
@@ -122,10 +122,10 @@
           },
           {
             "text": "Tự động nhắc giỏ hàng qua email, Zalo",
-            "detail": "Email nhắc giỏ: trung bình 3.33% người nhận quay lại mua"
+            "detail": "Email nhắc giỏ mang lại doanh thu cao nhất trong các chuỗi email tự động"
           }
         ],
-        "source": "Nguồn: Baymard Institute; Klaviyo, dữ liệu 143,000 chuỗi email nhắc giỏ năm 2023"
+        "source": "Nguồn: Baymard Institute, 2026; Klaviyo, dữ liệu hơn 110,000 khách hàng, 2026"
       }
     },
     {
