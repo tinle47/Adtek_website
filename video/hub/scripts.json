@@ -125,53 +125,53 @@
   "id": "khach-hang-dang-hoi-ai",
   "date": "2026-10-09",
   "status": "Đã có video",
-  "title": "900 triệu người mỗi tuần đang hỏi ChatGPT.",
-  "caption": "ChatGPT có 900 triệu người dùng mỗi tuần, 81% người Việt dùng AI mỗi ngày. Khi khách hỏi AI về ngành của bạn, thương hiệu nào đang được gợi ý?",
+  "title": "78% người mua trẻ đã dùng AI khi mua sắm.",
+  "caption": "78.4% người tiêu dùng trẻ đã dùng AI khi mua sắm, 81% người Việt dùng AI mỗi ngày, cao nhất Đông Nam Á. Khi khách hỏi AI về ngành của bạn, thương hiệu nào đang được gợi ý?",
   "hashtags": [
    "#adtekagency",
    "#growthmarketing",
    "#AIO",
-   "#ChatGPT",
    "#AI",
-   "#SEO"
+   "#SEO",
+   "#muasamonline"
   ],
-  "words": 178,
-  "seconds": 57,
+  "words": 176,
+  "seconds": 63,
   "scenes": [
    {
-    "kicker": "AIO · OpenAI",
-    "title": "900 triệu người mỗi tuần đang hỏi ChatGPT.",
-    "voice": "Mỗi tuần 900 triệu người hỏi ChatGPT. Có ai được nó gợi ý tên thương hiệu của bạn chưa? Chỉ trong 4 tháng, ChatGPT có thêm 100 triệu người dùng.",
+    "kicker": "AIO · Vietnam Report",
+    "title": "78% người mua trẻ đã dùng AI khi mua sắm.",
+    "voice": "Khi khách hỏi AI nên mua gì, thương hiệu của bạn có được nhắc tên không? Theo Vietnam Report, 78.4% người tiêu dùng Gen Y và Gen Z đã dùng AI khi mua sắm.",
     "visual": "Số lớn",
-    "source": "Nguồn: OpenAI, 02/2026"
+    "source": "Nguồn: Vietnam Report, khảo sát người tiêu dùng ngành bán lẻ, 08/2026"
    },
    {
     "kicker": "e-Conomy SEA 2025",
     "title": "Người Việt dùng AI nhiều nhất Đông Nam Á.",
-    "voice": "Ở Việt Nam còn rõ hơn. 81% người dùng tương tác với AI mỗi ngày, cao nhất Đông Nam Á, trên cả Indonesia và Thái Lan.",
-    "visual": "Thanh ngang",
-    "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025"
-   },
-   {
-    "kicker": "Google · I/O 2026",
-    "title": "Google cũng đang trả lời bằng AI.",
-    "voice": "Google cũng vậy. Chế độ AI có tiếng Việt từ tháng 10 năm ngoái, giờ đã có hơn 1 tỷ người dùng mỗi tháng. Phần tóm tắt AI trên Google có hơn 2.5 tỷ.",
+    "voice": "Người Việt cũng dùng AI nhiều nhất Đông Nam Á: 81% tương tác với AI mỗi ngày.",
     "visual": "Biểu đồ cột",
-    "source": "Nguồn: Google, I/O 2026"
+    "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025 (khảo sát Google và Milieu, 09/2025, 7,200 người)"
    },
    {
-    "kicker": "Google Lens",
-    "title": "25 tỷ lượt tìm mỗi tháng không cần gõ chữ.",
-    "voice": "Người ta còn tìm bằng hình ảnh. Google Lens có hơn 25 tỷ lượt tìm mỗi tháng, tăng từ khoảng 20 tỷ năm 2024.",
-    "visual": "Đường dốc",
-    "source": "Nguồn: Google, 10/2024 và 03/2026"
+    "kicker": "Vietnam Report · 08/2026",
+    "title": "AI là nơi khách bắt đầu tìm hiểu.",
+    "voice": "Họ dùng AI để làm gì? 44.4% tìm hiểu thông tin sản phẩm, 23.5% nhờ gợi ý sản phẩm, 19.8% so sánh thương hiệu. Khách đang bắt đầu tìm hiểu từ AI.",
+    "visual": "Thanh ngang",
+    "source": "Nguồn: Vietnam Report, khảo sát người tiêu dùng ngành bán lẻ, 08/2026"
+   },
+   {
+    "kicker": "Niềm tin vào AI",
+    "title": "Người Việt tin AI hơn cả khu vực.",
+    "voice": "Người Việt cũng tin AI hơn. Chỉ 42% lo về bảo mật khi để AI làm thay, thấp hơn mức 50% của khu vực. Và 96% sẵn sàng cho AI xem lịch sử mua sắm.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025 (khảo sát Google và Milieu, 09/2025, 7,200 người)"
    },
    {
     "kicker": "Làm gì ngay?",
     "title": "Để AI tìm thấy và nhắc tên bạn.",
-    "voice": "Muốn được AI nhắc tên, làm 4 việc. Đừng chặn bot tìm kiếm của ChatGPT, chặn là website không được trích khi khách tìm trên ChatGPT. Kiểm tra trang đã được Google lập chỉ mục và cho hiện đoạn trích. Thêm ảnh, video chất lượng cao. Và cập nhật Google Business Profile, Merchant Center.",
+    "voice": "Muốn được AI nhắc tên, làm 4 việc. Đừng chặn bot tìm kiếm của ChatGPT. Kiểm tra trang đã được Google lập chỉ mục và cho hiện đoạn trích. Ghi đủ thông số, giá, bảo hành trên trang sản phẩm. Và cập nhật Google Business Profile, Merchant Center.",
     "visual": "Danh sách",
-    "source": "Nguồn: OpenAI, tài liệu về bot; Google Search Central, 05/2025"
+    "source": "Nguồn: OpenAI, tài liệu về bot; Google Search Central; Vietnam Report, 2026"
    },
    {
     "kicker": "Follow Adtek",
@@ -186,8 +186,8 @@
   "id": "khach-bo-gio-hang",
   "date": "2026-10-10",
   "status": "Đã có video",
-  "title": "7/10 giỏ hàng không được thanh toán.",
-  "caption": "7 trên 10 giỏ hàng bị bỏ lại trước khi thanh toán. Ở Việt Nam, cứ 2 người thì 1 người bỏ giỏ khi thấy phí phát sinh. Shop của bạn đang mất khách ở bước nào?",
+  "title": "9/10 khách so giá trước khi mua.",
+  "caption": "89.5% người tiêu dùng so giá nhiều nơi trước khi mua, cứ 2 người thì 1 người bỏ giỏ khi thấy phí phát sinh. Shop của bạn đang mất khách ở bước nào?",
   "hashtags": [
    "#adtekagency",
    "#growthmarketing",
@@ -196,15 +196,15 @@
    "#chotdon",
    "#ecommerce"
   ],
-  "words": 189,
-  "seconds": 57,
+  "words": 194,
+  "seconds": 59,
   "scenes": [
    {
-    "kicker": "Growth · Baymard Institute",
-    "title": "7/10 giỏ hàng không được thanh toán.",
-    "voice": "Cứ 10 người bỏ hàng vào giỏ, bao nhiêu người thật sự thanh toán? Chỉ khoảng 3. Baymard tổng hợp 50 nghiên cứu: trung bình hơn 70% giỏ hàng bị bỏ lại.",
+    "kicker": "Growth · Vietnam Report",
+    "title": "9/10 khách so giá trước khi mua.",
+    "voice": "Vì sao khách bỏ hàng vào giỏ rồi lại không thanh toán? Ở Việt Nam, 89.5% người tiêu dùng so giá nhiều nơi trước khi mua, và 39.5% thường hoãn mua để chờ khuyến mãi.",
     "visual": "Hình người",
-    "source": "Nguồn: Baymard Institute, tổng hợp 50 nghiên cứu, cập nhật 2025. Số liệu quốc tế"
+    "source": "Nguồn: Vietnam Report, khảo sát người tiêu dùng ngành bán lẻ, 08/2026"
    },
    {
     "kicker": "Người mua Việt Nam · 2025",
@@ -216,23 +216,23 @@
    {
     "kicker": "Giao hàng",
     "title": "Giao đúng hẹn được coi trọng hơn ship rẻ.",
-    "voice": "Điều bất ngờ là người Việt coi trọng giao hàng đúng hẹn hơn phí ship rẻ. Và chỉ một lần giao tệ, cứ 3 người thì 1 người ngừng mua ở shop đó.",
+    "voice": "Điều bất ngờ là người Việt coi trọng giao hàng đúng hẹn hơn phí ship rẻ. Và cứ 3 người thì 1 người ngừng mua ở shop từng giao trễ hoặc hoàn tiền không rõ ràng.",
     "visual": "Đối đầu",
     "source": "Nguồn: Milieu Insight, 09/2025"
    },
    {
-    "kicker": "Sửa trang thanh toán",
-    "title": "Sửa bước thanh toán, chuyển đổi có thể tăng 35%.",
-    "voice": "Tin tốt là phần lớn lý do này sửa được. Baymard ước tính, chỉ cần làm lại bước thanh toán cho gọn, tỷ lệ chuyển đổi có thể tăng 35%.",
+    "kicker": "Giữ khách bằng dịch vụ",
+    "title": "Phục vụ tốt, khách sẵn sàng trả thêm.",
+    "voice": "Tin tốt là 7 trên 10 người mua Việt sẵn sàng chi nhiều hơn cho shop có dịch vụ đáng tin: giao hàng ổn định, đổi trả linh hoạt.",
     "visual": "Số lớn",
-    "source": "Nguồn: Baymard Institute, nghiên cứu trải nghiệm thanh toán"
+    "source": "Nguồn: Milieu Insight, người mua online Việt Nam, 09/2025"
    },
    {
     "kicker": "Làm gì ngay?",
     "title": "Giữ khách ở bước cuối cùng.",
     "voice": "Vậy làm gì ngay? Hiện phí ship, tổng tiền ngay trang sản phẩm. Rút form thanh toán còn khoảng 8 ô. Ghi rõ ngày giao và chính sách đổi trả. Và tự động nhắc giỏ hàng qua email, Zalo.",
     "visual": "Danh sách",
-    "source": "Nguồn: Baymard Institute, 2026; Klaviyo, dữ liệu hơn 110,000 khách hàng, 2026"
+    "source": "Nguồn: Milieu Insight, 09/2025; Baymard Institute, 2026; Klaviyo, 2026"
    },
    {
     "kicker": "Follow Adtek",

@@ -33,6 +33,7 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 
 ## Số liệu
 
+- Ưu tiên theo thị trường: số liệu Việt Nam trước; không có mới dùng Đông Nam Á; không có nữa mới dùng toàn cầu hoặc Mỹ, và phải ghi rõ trên video ("số liệu Mỹ", "số liệu quốc tế"). Nguồn Việt Nam nên tìm: Cục Thống kê, Bộ Công Thương, Vietnam Report, Decision Lab, Q&Me, Milieu Insight, Kantar, NielsenIQ Việt Nam, Metric, phần Việt Nam trong e-Conomy SEA. Ví dụ: video khách hỏi AI dùng 78.4% người tiêu dùng Gen Y, Gen Z đã dùng AI khi mua sắm (Vietnam Report) thay cho 900 triệu người dùng ChatGPT toàn cầu.
 - Chỉ lấy từ tổ chức phát hành gốc (Google, Meta, OpenAI, Pew, Gartner, McKinsey, Bain, AppsFlyer, Adjust, Sensor Tower, Metric, DataReportal, e-Conomy SEA, văn bản luật...). Không dùng trang tổng hợp số liệu.
 - Trước khi viết kịch bản phải mở link gốc kiểm tra lại con số (mạng đã mở từ 08/10/2026, không còn lý do chỉ đối chiếu qua báo). Trang tổng hợp hay trích sai hoặc dùng số cũ: ví dụ Baymard ghi trung bình 14.88 ô nhập ở trang thanh toán, nhiều trang trích lại thành 11.3. Số cũ, số nước ngoài, mẫu nhỏ thì nói rõ trên video. Nội dung pháp lý nên nhờ luật sư duyệt.
 - Ghi nguồn trên mỗi biểu đồ.

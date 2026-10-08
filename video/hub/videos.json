@@ -25,17 +25,17 @@
   "date": "2026-10-09",
   "service": "AIO",
   "topic": "Khách hàng của bạn đang hỏi AI",
-  "hook": "Mỗi tuần 900 triệu người hỏi ChatGPT. Có ai được nó gợi ý tên thương hiệu của bạn chưa?",
-  "duration": "57 giây",
-  "url": "/_blob/543657e5f94554713c7782ebb3dff0f6",
-  "caption": "ChatGPT có 900 triệu người dùng mỗi tuần, 81% người Việt dùng AI mỗi ngày. Khi khách hỏi AI về ngành của bạn, thương hiệu nào đang được gợi ý?",
+  "hook": "Khi khách hỏi AI nên mua gì, thương hiệu của bạn có được nhắc tên không?",
+  "duration": "63 giây",
+  "url": "/_blob/3023060111c7ce13a2c1f454d6d2d17b",
+  "caption": "78.4% người tiêu dùng trẻ đã dùng AI khi mua sắm, 81% người Việt dùng AI mỗi ngày, cao nhất Đông Nam Á. Khi khách hỏi AI về ngành của bạn, thương hiệu nào đang được gợi ý?",
   "hashtags": [
    "#adtekagency",
    "#growthmarketing",
    "#AIO",
-   "#ChatGPT",
    "#AI",
-   "#SEO"
+   "#SEO",
+   "#muasamonline"
   ],
   "note": ""
  },
@@ -45,10 +45,10 @@
   "date": "2026-10-10",
   "service": "Growth Marketing",
   "topic": "Khách bỏ đi ở phút cuối",
-  "hook": "Cứ 10 người bỏ hàng vào giỏ, bao nhiêu người thật sự thanh toán?",
-  "duration": "57 giây",
-  "url": "/_blob/20e03ae6a4275071d38410bd110eaec3",
-  "caption": "7 trên 10 giỏ hàng bị bỏ lại trước khi thanh toán. Ở Việt Nam, cứ 2 người thì 1 người bỏ giỏ khi thấy phí phát sinh. Shop của bạn đang mất khách ở bước nào?",
+  "hook": "Vì sao khách bỏ hàng vào giỏ rồi lại không thanh toán?",
+  "duration": "59 giây",
+  "url": "/_blob/b3caf3817abbc4adbd70e901d48c01ad",
+  "caption": "89.5% người tiêu dùng so giá nhiều nơi trước khi mua, cứ 2 người thì 1 người bỏ giỏ khi thấy phí phát sinh. Shop của bạn đang mất khách ở bước nào?",
   "hashtags": [
    "#adtekagency",
    "#growthmarketing",

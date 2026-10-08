@@ -2,42 +2,42 @@
   "id": "khach-hang-dang-hoi-ai",
   "date": "2026-10-09",
   "status": "Đã có video",
-  "caption": "ChatGPT có 900 triệu người dùng mỗi tuần, 81% người Việt dùng AI mỗi ngày. Khi khách hỏi AI về ngành của bạn, thương hiệu nào đang được gợi ý?",
+  "caption": "78.4% người tiêu dùng trẻ đã dùng AI khi mua sắm, 81% người Việt dùng AI mỗi ngày, cao nhất Đông Nam Á. Khi khách hỏi AI về ngành của bạn, thương hiệu nào đang được gợi ý?",
   "hashtags": [
     "#adtekagency",
     "#growthmarketing",
     "#AIO",
-    "#ChatGPT",
     "#AI",
-    "#SEO"
+    "#SEO",
+    "#muasamonline"
   ],
   "scenes": [
     {
-      "kicker": "AIO · OpenAI",
-      "headline": "900 triệu người mỗi tuần",
-      "accent": "đang hỏi ChatGPT.",
-      "voice": "Mỗi tuần 900 triệu người hỏi ChatGPT. Có ai được nó gợi ý tên thương hiệu của bạn chưa? Chỉ trong 4 tháng, ChatGPT có thêm 100 triệu người dùng.",
+      "kicker": "AIO · Vietnam Report",
+      "headline": "78% người mua trẻ",
+      "accent": "đã dùng AI khi mua sắm.",
+      "voice": "Khi khách hỏi AI nên mua gì, thương hiệu của bạn có được nhắc tên không? Theo Vietnam Report, 78.4% người tiêu dùng Gen Y và Gen Z đã dùng AI khi mua sắm.",
       "visual": {
         "type": "bignumber",
-        "value": 900,
-        "suffix": "triệu",
-        "label": "người dùng ChatGPT mỗi tuần",
-        "context": "Thêm 100 triệu người chỉ trong 4 tháng",
-        "source": "Nguồn: OpenAI, 02/2026"
+        "value": 78.4,
+        "suffix": "%",
+        "label": "người tiêu dùng Gen Y, Gen Z đã dùng AI khi mua sắm",
+        "context": "19.9% dùng thường xuyên",
+        "source": "Nguồn: Vietnam Report, khảo sát người tiêu dùng ngành bán lẻ, 08/2026"
       }
     },
     {
       "kicker": "e-Conomy SEA 2025",
       "headline": "Người Việt dùng AI",
       "accent": "nhiều nhất Đông Nam Á.",
-      "voice": "Ở Việt Nam còn rõ hơn. 81% người dùng tương tác với AI mỗi ngày, cao nhất Đông Nam Á, trên cả Indonesia và Thái Lan.",
+      "voice": "Người Việt cũng dùng AI nhiều nhất Đông Nam Á: 81% tương tác với AI mỗi ngày.",
       "visual": {
-        "type": "hbars",
-        "metric": "Người dùng tương tác với AI hằng ngày",
+        "type": "columns",
+        "metric": "Người dùng tương tác với AI mỗi ngày",
         "unit": "%",
-        "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025",
+        "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025 (khảo sát Google và Milieu, 09/2025, 7,200 người)",
         "max": 81,
-        "rows": [
+        "cols": [
           {
             "label": "Việt Nam",
             "value": 81,
@@ -50,75 +50,78 @@
           },
           {
             "label": "Thái Lan",
-            "value": 74,
+            "value": 76,
             "tone": "main"
+          },
+          {
+            "label": "Singapore",
+            "value": 65,
+            "tone": "base"
           }
         ]
       }
     },
     {
-      "kicker": "Google · I/O 2026",
-      "headline": "Google cũng đang",
-      "accent": "trả lời bằng AI.",
-      "voice": "Google cũng vậy. Chế độ AI có tiếng Việt từ tháng 10 năm ngoái, giờ đã có hơn 1 tỷ người dùng mỗi tháng. Phần tóm tắt AI trên Google có hơn 2.5 tỷ.",
+      "kicker": "Vietnam Report · 08/2026",
+      "headline": "AI là nơi khách",
+      "accent": "bắt đầu tìm hiểu.",
+      "voice": "Họ dùng AI để làm gì? 44.4% tìm hiểu thông tin sản phẩm, 23.5% nhờ gợi ý sản phẩm, 19.8% so sánh thương hiệu. Khách đang bắt đầu tìm hiểu từ AI.",
       "visual": {
-        "type": "columns",
-        "metric": "Người dùng hằng tháng các tính năng AI của Google",
-        "unit": "tỷ người",
-        "source": "Nguồn: Google, I/O 2026",
-        "max": 2.5,
-        "cols": [
+        "type": "hbars",
+        "metric": "Người tiêu dùng dùng AI khi mua sắm để",
+        "unit": "%",
+        "source": "Nguồn: Vietnam Report, khảo sát người tiêu dùng ngành bán lẻ, 08/2026",
+        "max": 44.4,
+        "rows": [
           {
-            "label": "Chế độ AI",
-            "value": 1,
+            "label": "Tìm hiểu thông tin sản phẩm",
+            "value": 44.4,
             "tone": "accent"
           },
           {
-            "label": "Tóm tắt AI",
-            "value": 2.5,
+            "label": "Tìm, gợi ý sản phẩm hợp nhu cầu",
+            "value": 23.5,
             "tone": "main"
-          }
-        ],
-        "notes": [
+          },
           {
-            "kind": "callout",
-            "at": 0,
-            "text": "Có tiếng Việt từ 10/2025"
+            "label": "So sánh sản phẩm, thương hiệu",
+            "value": 19.8,
+            "tone": "main"
           }
         ]
       }
     },
     {
-      "kicker": "Google Lens",
-      "headline": "25 tỷ lượt tìm mỗi tháng",
-      "accent": "không cần gõ chữ.",
-      "voice": "Người ta còn tìm bằng hình ảnh. Google Lens có hơn 25 tỷ lượt tìm mỗi tháng, tăng từ khoảng 20 tỷ năm 2024.",
+      "kicker": "Niềm tin vào AI",
+      "headline": "Người Việt tin AI",
+      "accent": "hơn cả khu vực.",
+      "voice": "Người Việt cũng tin AI hơn. Chỉ 42% lo về bảo mật khi để AI làm thay, thấp hơn mức 50% của khu vực. Và 96% sẵn sàng cho AI xem lịch sử mua sắm.",
       "visual": {
-        "type": "slope",
-        "metric": "Lượt tìm bằng Google Lens mỗi tháng",
-        "unit": "tỷ lượt",
-        "source": "Nguồn: Google, 10/2024 và 03/2026",
-        "from": "2024",
-        "to": "2026",
-        "series": [
+        "type": "versus",
+        "metric": "Lo ngại bảo mật khi để AI làm thay mình",
+        "unit": "%",
+        "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025 (khảo sát Google và Milieu, 09/2025, 7,200 người)",
+        "items": [
           {
-            "label": "Google Lens",
-            "a": 20,
-            "b": 25,
-            "display": [
-              "khoảng 20",
-              "25"
-            ],
-            "tone": "accent"
+            "label": "Việt Nam",
+            "value": 42,
+            "suffix": "%"
+          },
+          {
+            "label": "Trung bình Đông Nam Á",
+            "value": 50,
+            "suffix": "%"
           }
-        ]
+        ],
+        "winner": 0,
+        "note": "96% sẵn sàng chia sẻ dữ liệu mua sắm với AI"
       }
     },
     {
       "kicker": "Làm gì ngay?",
       "headline": "Để AI tìm thấy",
       "accent": "và nhắc tên bạn.",
-      "voice": "Muốn được AI nhắc tên, làm 4 việc. Đừng chặn bot tìm kiếm của ChatGPT, chặn là website không được trích khi khách tìm trên ChatGPT. Kiểm tra trang đã được Google lập chỉ mục và cho hiện đoạn trích. Thêm ảnh, video chất lượng cao. Và cập nhật Google Business Profile, Merchant Center.",
+      "voice": "Muốn được AI nhắc tên, làm 4 việc. Đừng chặn bot tìm kiếm của ChatGPT. Kiểm tra trang đã được Google lập chỉ mục và cho hiện đoạn trích. Ghi đủ thông số, giá, bảo hành trên trang sản phẩm. Và cập nhật Google Business Profile, Merchant Center.",
       "visual": {
         "type": "list",
         "items": [
@@ -131,15 +134,15 @@
             "detail": "Cho hiện đoạn trích: điều kiện để vào tóm tắt AI, Chế độ AI"
           },
           {
-            "text": "Thêm ảnh, video chất lượng cao",
-            "detail": "Google khuyên dùng khi người dùng tìm bằng AI và hình ảnh"
+            "text": "Ghi đủ thông số, giá, bảo hành",
+            "detail": "Trên trang sản phẩm, rõ ràng, nhất quán để AI đọc và trích đúng"
           },
           {
             "text": "Cập nhật Business Profile, Merchant Center",
             "detail": "Giờ mở cửa, giá, tồn kho luôn đúng với thực tế"
           }
         ],
-        "source": "Nguồn: OpenAI, tài liệu về bot; Google Search Central, 05/2025"
+        "source": "Nguồn: OpenAI, tài liệu về bot; Google Search Central; Vietnam Report, 2026"
       }
     },
     {
