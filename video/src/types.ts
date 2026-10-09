@@ -66,7 +66,7 @@ export type Scene = { kicker: string; headline: string; accent: string; voice: s
 
 export type Script = {
   id: string;
-  cover?: { title: string; accent: string; kicker?: string }; // ảnh bìa 3 đến 5 chữ
+  cover?: { title: string; accent: string; kicker?: string; options?: string[] }; // ảnh bìa 3 đến 5 chữ; video đố số liệu thì là câu hỏi + lựa chọn, không lộ đáp án
   post_url?: string; // bài blog liên quan nếu có, không đưa vào caption
   caption: string;
   hashtags: string[];

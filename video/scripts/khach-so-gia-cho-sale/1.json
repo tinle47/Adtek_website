@@ -4,8 +4,13 @@
   "status": "Đã có video",
   "cover": {
     "kicker": "Đố số liệu",
-    "title": "9/10 khách",
-    "accent": "so giá trước khi mua"
+    "title": "Bao nhiêu % khách",
+    "accent": "so giá trước khi mua?",
+    "options": [
+      "50%",
+      "70%",
+      "90%"
+    ]
   },
   "caption": "Đoán thử: bao nhiêu % người Việt so giá ở nhiều nơi trước khi mua? Comment A, B hay C trước khi xem đáp án.",
   "hashtags": [

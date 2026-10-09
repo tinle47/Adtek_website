@@ -112,7 +112,8 @@ export const Myth: React.FC<{ claim: string; verdict: string; note?: string; sou
 };
 
 // ---------- Ảnh bìa: 3 đến 5 chữ thật to để kênh nhìn rõ từng video ----------
-export const Cover: React.FC<{ title: string; accent: string; kicker?: string }> = ({ title, accent, kicker }) => {
+// Video đố số liệu: ảnh bìa chỉ đặt câu hỏi và hiện các lựa chọn, không bao giờ lộ đáp án.
+export const Cover: React.FC<{ title: string; accent: string; kicker?: string; options?: string[] }> = ({ title, accent, kicker, options }) => {
   useFonts();
   return (
     <div style={{ position: "absolute", inset: 0 }}>
@@ -122,6 +123,16 @@ export const Cover: React.FC<{ title: string; accent: string; kicker?: string }>
         {kicker && <div style={{ fontFamily: SANS, fontSize: 30, fontWeight: 700, letterSpacing: 4, textTransform: "uppercase", color: C.muted, marginBottom: 34 }}>{kicker}</div>}
         <div style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 132, lineHeight: 1.05, color: C.white, letterSpacing: -1 }}>{title}</div>
         <div style={{ fontFamily: SERIF, fontWeight: 700, fontSize: 132, lineHeight: 1.05, color: C.orange, letterSpacing: -1, marginTop: 10 }}>{accent}</div>
+        {options && (
+          <div style={{ display: "flex", gap: 24, marginTop: 70 }}>
+            {options.map((o, i) => (
+              <div key={i} style={{ flex: 1, height: 190, borderRadius: 18, border: "3px solid rgba(255,255,255,0.45)", background: "rgba(255,255,255,0.06)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10 }}>
+                <div style={{ fontFamily: SANS, fontSize: 34, fontWeight: 700, color: C.orange }}>{String.fromCharCode(65 + i)}</div>
+                <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 64, color: C.white }}>{o}</div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import { Video } from "./Video";
 // Một khuôn video dọc 1080x1920. Kịch bản và giọng đọc truyền vào qua props (tools/render.mjs).
 const CoverStill: React.FC<VideoProps> = ({ script }) => {
   const c = script.cover ?? { title: script.scenes[0].headline, accent: script.scenes[0].accent };
-  return <Cover title={c.title} accent={c.accent} kicker={c.kicker} />;
+  return <Cover title={c.title} accent={c.accent} kicker={c.kicker} options={c.options} />;
 };
 
 export const Root: React.FC = () => (
