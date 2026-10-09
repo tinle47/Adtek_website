@@ -119,7 +119,7 @@
    "no": 3,
    "date": "2026-10-20",
    "time": "12:21",
-   "title": "TikTok Shop và Shopee 2026: chiến lược kênh và phân bổ ngân sách cho thương hiệu",
+   "title": "TikTok Shop vs Shopee 2026: chiến lược kênh và phân bổ ngân sách",
    "keyword": "TikTok Shop vs Shopee",
    "cluster": "C1",
    "role": "pillar",
@@ -134,10 +134,31 @@
     "4204"
    ],
    "words": 2000,
-   "status": "planned",
-   "wp_id": null,
+   "status": "draft",
+   "wp_id": 6093,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "slug": "tiktok-shop-vs-shopee",
+   "seo_title": "TikTok Shop vs Shopee 2026: chia vai trò và ngân sách",
+   "meta_desc": "So sánh TikTok Shop và Shopee 2026: thị phần theo ngành, phí sàn mới, Shopee Ads và GMV Max, cách chia ngân sách theo giai đoạn thương hiệu.",
+   "cover": {
+    "kicker": "Social Commerce 2026",
+    "title": "TikTok Shop vs Shopee",
+    "subtitle": "Chia vai trò và ngân sách giữa hai sàn theo ngành hàng",
+    "chips": [
+     "Thị phần ngành",
+     "Phí sàn 2026",
+     "GMV Max",
+     "Chia ngân sách"
+    ]
+   },
+   "summary": "Bài trụ cột cụm Thương mại điện tử: thị trường hai sàn theo ngành hàng (Metric, Q&Me, YouNet ECI), phí sàn 2026, Shopee Ads và GMV Max, vai trò affiliate, KOC, livestream. Phần chính là khung chia vai trò và ngân sách theo giai đoạn thương hiệu, kèm ví dụ giả định thương hiệu skincare chi 1 tỷ đồng mỗi tháng.",
+   "confirm": [
+    "Tỷ lệ chia ngân sách gợi ý (mới 60-70/30-40, tăng trưởng 50/50, đã có tên tuổi 35-45/55-65) là đề xuất của Adtek, cần anh đồng ý.",
+    "Thị phần theo ngành của YouNet ECI 2025 (làm đẹp Shopee 54.4%, thời trang TikTok Shop 53.1%, FMCG Shopee 57%, điện tử Shopee 73%) chỉ lấy được qua bài báo tóm tắt.",
+    "Số chỉ có một nguồn: phí xử lý giao dịch Shopee từ 4.91% lên 6%, chi phí sàn 23-24% doanh thu (VnBusiness), Shopee Live và Video Tết 2026 gần 16 tỷ lượt xem."
+   ],
+   "media_id": 6092
   },
   {
    "no": 4,

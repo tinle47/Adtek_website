@@ -41,3 +41,4 @@
 | 2026-10-06 17:20 | Thêm hạn duyệt D+1: email ghi hạn chót, quá 24 giờ chưa phản hồi thì tự đặt lịch đăng theo kế hoạch (blog_post.py auto) và báo anh Tin; thêm lệnh changes, unschedule | tools, lịch tự động thứ Sáu, README | Đã áp dụng |
 | 2026-10-07 | Bỏ giờ đăng cố định 8:00: mỗi bài đăng ngẫu nhiên trong khung 12:00-12:59 hoặc 20:00-20:59; đổi lịch bài 1 sang 20:53 13/10, bài 2 sang 20:20 15/10; gán giờ cho bài 3 đến 32 | Bài 6086, 6088, calendar.json, tools/blog_post.py | Đã áp dụng |
 | 2026-10-08 | Tạo artifact "Lịch blog Adtek" (danh sách bài, lịch đăng, SOP): https://claude.ai/artifact/7ZLbGKYQzkizUqvhmuWNLf; template trong templates/blog-plan.html, dựng bằng tools/build_blog_page.py | Artifact | Đã đăng |
+| 2026-10-09 | Tạo bản nháp bài 3 "TikTok Shop vs Shopee 2026" (trụ cột C1); sửa bài 1: bỏ con số 144,300 tỷ đồng của Shopee chưa xác minh được (bài vẫn giữ lịch 20:53 13/10) | Bài 6093, 6086 | Nháp, đã cập nhật |
