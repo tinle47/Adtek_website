@@ -7,8 +7,8 @@
   "topic": "Khách muốn nhắn tin trước khi mua",
   "hook": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua?",
   "duration": "59 giây",
-  "url": "/_blob/07fdf7482d924cdf134f07dc7f6dea00",
-  "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Mùa mua sắm từ 12.12 đến Tết sắp tới, shop của bạn đã sẵn sàng trả lời chưa?",
+  "url": "/_blob/1d8c462e7c2c2e1d8a82bd6be7bd1e17",
+  "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Shop bạn đang trả lời tin nhắn trong bao lâu? Comment số phút.",
   "hashtags": [
    "#adtekagency",
    "#growthmarketing",
@@ -17,7 +17,8 @@
    "#quangcaofacebook",
    "#chotdon"
   ],
-  "note": "Đang nằm trong Drafts của TikTok"
+  "note": "Bản mới 09/10: khung đầu hiện sẵn hook, có âm thanh, cảnh cuối hỏi để khách bình luận. Nên đăng bản này thay bản trong Drafts.",
+  "cover": "/_blob/e1d2f0c121e9882edaa023dd6f0bfc11"
  },
  {
   "slug": "khach-so-gia-cho-sale",
@@ -37,7 +38,8 @@
    "#khuyenmai",
    "#thuongmaidientu"
   ],
-  "note": ""
+  "note": "",
+  "cover": "/_blob/507fb97b6063b95dfadaccdb2a6eaad9"
  },
  {
   "slug": "khu-cong-nghiep-fdi-4",

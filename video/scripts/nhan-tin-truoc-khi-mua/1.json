@@ -2,7 +2,7 @@
   "id": "nhan-tin-truoc-khi-mua",
   "date": "2026-10-09",
   "status": "Đã có video",
-  "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Mùa mua sắm từ 12.12 đến Tết sắp tới, shop của bạn đã sẵn sàng trả lời chưa?",
+  "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Shop bạn đang trả lời tin nhắn trong bao lâu? Comment số phút.",
   "hashtags": [
     "#adtekagency",
     "#growthmarketing",
@@ -146,8 +146,14 @@
       "accent": "shop bạn có đang trả lời?",
       "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
       "visual": {
-        "type": "follow"
+        "type": "follow",
+        "ask": "Shop bạn trả lời tin nhắn trong bao lâu? Comment số phút"
       }
     }
-  ]
+  ],
+  "cover": {
+    "kicker": "Performance",
+    "title": "8/10 khách",
+    "accent": "muốn nhắn tin trước khi mua"
+  }
 }
