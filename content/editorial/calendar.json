@@ -158,13 +158,15 @@
     "Thị phần theo ngành của YouNet ECI 2025 (làm đẹp Shopee 54.4%, thời trang TikTok Shop 53.1%, FMCG Shopee 57%, điện tử Shopee 73%) chỉ lấy được qua bài báo tóm tắt.",
     "Số chỉ có một nguồn: phí xử lý giao dịch Shopee từ 4.91% lên 6%, chi phí sàn 23-24% doanh thu (VnBusiness), Shopee Live và Video Tết 2026 gần 16 tỷ lượt xem."
    ],
-   "media_id": 6092
+   "media_id": 6092,
+   "approval": "pending",
+   "approval_requested": "2026-10-09T09:03:59+07:00"
   },
   {
    "no": 4,
    "date": "2026-10-22",
    "time": "20:11",
-   "title": "Luật Bảo vệ dữ liệu cá nhân 2026: marketer cần thay đổi gì khi thu lead và remarketing",
+   "title": "Luật bảo vệ dữ liệu cá nhân 2026: thu lead và remarketing cần đổi gì?",
    "keyword": "luật bảo vệ dữ liệu cá nhân marketing",
    "cluster": "C3",
    "role": "cluster",
@@ -177,10 +179,34 @@
     "3086"
    ],
    "words": 2000,
-   "status": "planned",
-   "wp_id": null,
+   "status": "draft",
+   "wp_id": 6096,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "slug": "luat-bao-ve-du-lieu-ca-nhan-marketing",
+   "seo_title": "Luật bảo vệ dữ liệu cá nhân marketing: thu lead, remarketing",
+   "meta_desc": "Luật bảo vệ dữ liệu cá nhân 91/2025 và Nghị định 356 buộc marketer đổi cách xin đồng ý, chia sẻ lead, chạy remarketing. Mức phạt mới và checklist.",
+   "cover": {
+    "kicker": "Dữ liệu & CRM",
+    "title": "Luật dữ liệu 2026",
+    "subtitle": "Thu lead và remarketing đúng Luật 91/2025, Nghị định 356 và 330",
+    "chips": [
+     "Form đồng ý",
+     "Remarketing",
+     "Mức phạt mới",
+     "Rút đồng ý"
+    ]
+   },
+   "summary": "Luật 91/2025/QH15, Nghị định 356/2025 và Nghị định 330/2026 (xử phạt) tác động thế nào tới form lead, mua bán và chia sẻ danh sách, telesales và ZNS, pixel, CAPI, custom audience, dữ liệu nhạy cảm. Có bảng mức phạt, thời hạn xử lý yêu cầu, mẫu nội dung xin đồng ý 3 ô, ví dụ giả định chủ đầu tư bất động sản và checklist.",
+   "confirm": [
+    "Các khung phạt của Nghị định 330/2026 (30-50, 50-70, 50-80 triệu đồng...) lấy từ LSVN và GV Lawyers 8/2026, chưa đọc được văn bản gốc; chưa rõ là mức cho tổ chức hay cá nhân.",
+    "Thời hạn xử lý yêu cầu (2 ngày làm việc phản hồi; 10/15/20 ngày thực hiện) chỉ có chi tiết từ EY 3/2026.",
+    "Miễn trừ cho doanh nghiệp siêu nhỏ, nhỏ và ngưỡng 100,000 người; quy định cấm agency thuê lại toàn bộ dịch vụ quảng cáo có dùng dữ liệu cá nhân: chưa đối chiếu văn bản gốc.",
+    "Bài pháp lý: nên nhờ luật sư đọc lướt trước khi đăng."
+   ],
+   "media_id": 6095,
+   "approval": "pending",
+   "approval_requested": "2026-10-09T09:03:59+07:00"
   },
   {
    "no": 5,

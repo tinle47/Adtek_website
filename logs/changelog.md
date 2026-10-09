@@ -42,3 +42,4 @@
 | 2026-10-07 | Bỏ giờ đăng cố định 8:00: mỗi bài đăng ngẫu nhiên trong khung 12:00-12:59 hoặc 20:00-20:59; đổi lịch bài 1 sang 20:53 13/10, bài 2 sang 20:20 15/10; gán giờ cho bài 3 đến 32 | Bài 6086, 6088, calendar.json, tools/blog_post.py | Đã áp dụng |
 | 2026-10-08 | Tạo artifact "Lịch blog Adtek" (danh sách bài, lịch đăng, SOP): https://claude.ai/artifact/7ZLbGKYQzkizUqvhmuWNLf; template trong templates/blog-plan.html, dựng bằng tools/build_blog_page.py | Artifact | Đã đăng |
 | 2026-10-09 | Tạo bản nháp bài 3 "TikTok Shop vs Shopee 2026" (trụ cột C1); sửa bài 1: bỏ con số 144,300 tỷ đồng của Shopee chưa xác minh được (bài vẫn giữ lịch 20:53 13/10) | Bài 6093, 6086 | Nháp, đã cập nhật |
+| 2026-10-09 | Tạo bản nháp bài 4 "Luật bảo vệ dữ liệu cá nhân 2026"; gửi email, push nhắc duyệt bài 3 và 4 (hạn 9:03 10/10), hẹn kiểm tra hạn D+1 | Bài 6093, 6096 | Chờ duyệt |
