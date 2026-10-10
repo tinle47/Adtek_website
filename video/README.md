@@ -68,7 +68,7 @@ Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chrom
 
 ## Video thử bằng bộ animate (phong cách minh họa)
 
-`pieces/thue-kol-cut-paper/` là bản giấy cắt dán của video 11/10, dựng bằng skill [animate](https://github.com/cth9191/animate) (MIT): vẽ từng khung bằng canvas, có nhân vật. Dùng lại giọng đọc sẵn có (`tools/make-voice.mjs` lấy thời điểm từng chữ từ `public/voice/<id>/manifest.json`), không gọi ElevenLabs. Mất khoảng 1 giờ cho một video (xuất 7.5 phút), file khoảng 31MB nên phải nén lại trước khi đưa lên hub (giới hạn 20MB).
+Chỉ là bản thử một lần, không làm tiếp (anh Tin chốt 10/10/2026). `pieces/thue-kol-cut-paper/` là bản giấy cắt dán của video 11/10, dựng bằng skill [animate](https://github.com/cth9191/animate) (MIT): vẽ từng khung bằng canvas, có nhân vật. Dùng lại giọng đọc sẵn có (`tools/make-voice.mjs` lấy thời điểm từng chữ từ `public/voice/<id>/manifest.json`), không gọi ElevenLabs. Mất khoảng 1 giờ cho một video (xuất 7.5 phút), file khoảng 31MB nên phải nén lại trước khi đưa lên hub (giới hạn 20MB).
 
 Skill không nằm trong repo. Môi trường cloud mỗi phiên là máy mới, cần cài lại: `git clone --depth 1 https://github.com/cth9191/animate` rồi chép `plugins/animate/skills/animate` vào `~/.claude/skills/animate`. Đọc lại mã trước khi cài bản mới.
 

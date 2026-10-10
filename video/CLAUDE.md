@@ -22,6 +22,7 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
   - Đổi kiểu video, mỗi tuần ít nhất 2 video kiểu mới: **đố số liệu** (`quiz`: hỏi ở cảnh đầu với 3 lựa chọn, 2 cảnh gợi ý, cảnh lật đáp án `reveal: true`) và **phá hiểu lầm** (`myth`: câu nhiều người tin, đóng dấu "SAI" hoặc "CHƯA ĐÚNG", rồi số liệu chứng minh). Kiểu video hướng dẫn (quay màn hình) cần anh Tin quay, chỉ đề xuất trong email.
   - Cảnh cuối có `ask`: câu hỏi cụ thể để người xem bình luận (ví dụ "Shop bạn trả lời tin nhắn trong bao lâu? Comment số phút"), không chỉ "Follow". Caption cũng kết bằng câu hỏi đó.
 - Cảnh cuối dùng `follow`, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi ngày."
+- Chỉ làm video bằng Remotion. Không làm thêm bản giấy cắt dán hay phong cách minh họa bằng bộ animate (anh Tin chốt 10/10/2026: chỉ đăng thử 1 bản cho video 11/10, các lần sau không làm). Chỉ làm lại khi anh Tin yêu cầu.
 - Giọng đọc là đồng hồ (anh Tin duyệt hướng A từ bộ animate, 10/10/2026): hình hiện theo lúc giọng nhắc tới, nên khi viết lời đọc:
   - Đọc con số đúng như trên biểu đồ và theo thứ tự hiển thị (thanh 69, 60, 51 thì đọc 69%, 60%, 51%).
   - Mỗi việc trong "Làm gì ngay" được đọc lại ít nhất 2 chữ liền nhau của dòng chữ trên màn hình; dòng chi tiết cũng vậy nếu muốn nó hiện sau.
