@@ -186,7 +186,10 @@ export const Video: React.FC<VideoProps> = (props) => {
           <Sequence key={i} from={sc[i].from} durationInFrames={frames}>
             <Fade frames={frames}>
               <Sequence from={i === 0 ? -at(HOOK) : 0} layout="none">
-                <Headline kicker={s.kicker} headline={s.headline} accent={s.accent} big={!s.visual} />
+                {/* Cảnh lật đáp án: tiêu đề (thường chứa đáp án) chỉ hiện cùng lúc thẻ lật, không lộ trong khoảng lặng. */}
+                <Sequence from={reveal ? at(QUIZ_REVEAL_AT) : 0} layout="none">
+                  <Headline kicker={s.kicker} headline={s.headline} accent={s.accent} big={!s.visual} />
+                </Sequence>
                 <CueContext.Provider value={{ words: sc[i].words, offset: sc[i].lead + (i === 0 ? HOOK : 0), hook: i === 0 }}>
                   <SceneVisual v={s.visual} frames={(sc[i].frames * BASE_FPS) / fps} />
                 </CueContext.Provider>

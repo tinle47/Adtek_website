@@ -7,7 +7,7 @@
   "topic": "Khách so giá, chờ sale (đố số liệu)",
   "hook": "Đoán thử: bao nhiêu % người Việt so giá ở nhiều nơi trước khi mua?",
   "duration": "59 giây",
-  "url": "/_blob/8dbbcaf55b21bd3bf06f9445ef98a125",
+  "url": "/_blob/35fbbeab85fa5f10eef39eca1e7b014f",
   "caption": "Đoán thử: bao nhiêu % người Việt so giá ở nhiều nơi trước khi mua? Comment A, B hay C trước khi xem đáp án.",
   "hashtags": [
    "#adtekagency",
@@ -17,7 +17,7 @@
    "#khuyenmai",
    "#thuongmaidientu"
   ],
-  "note": "",
+  "note": "Bản mới 10/10: hình hiện theo giọng đọc, lặng 1 giây trước khi lật đáp án.",
   "cover": "/_blob/116dad68b5329f6bb2094959c03642ef"
  },
  {
@@ -28,7 +28,7 @@
   "topic": "Thuê KOL nổi tiếng là khách sẽ tin? (phá hiểu lầm)",
   "hook": "Cứ thuê KOL nổi tiếng là khách sẽ tin và chốt đơn?",
   "duration": "62 giây",
-  "url": "/_blob/f16be5cfa520fd72165e30c9a0431592",
+  "url": "/_blob/dcc767ed3c8b735407705d3dd7ac96b5",
   "caption": "Thuê KOL nổi tiếng là khách sẽ tin? 54% người mua tin review của người dùng thật hơn KOL. Bạn tin review của ai hơn? Comment cho Adtek.",
   "hashtags": [
    "#adtekagency",
@@ -38,8 +38,13 @@
    "#banhangonline",
    "#marketing"
   ],
-  "note": "",
-  "cover": "/_blob/106a7a9ee0001444aba0ecf64e2249ab"
+  "note": "Bản mới 10/10: hình hiện theo giọng đọc. Có thêm bản 60 hình/giây để thử, chỉ đăng 1 trong 2 bản.",
+  "cover": "/_blob/106a7a9ee0001444aba0ecf64e2249ab",
+  "alt": {
+   "label": "Tải bản 60 hình/giây",
+   "url": "/_blob/12bf76e6aaf315e2b534d844101573aa",
+   "suffix": "60fps"
+  }
  },
  {
   "slug": "khu-cong-nghiep-fdi-4",

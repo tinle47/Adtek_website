@@ -93,7 +93,7 @@ export const Quiz: React.FC<{ options: Option[]; answer: number; reveal?: boolea
         </div>
       )}
       {reveal && note && (
-        <div style={{ marginTop: 38, fontSize: 34, fontWeight: 700, borderLeft: `3px solid ${C.orange}`, paddingLeft: 18 }}>
+        <div style={{ marginTop: 38, fontSize: 34, fontWeight: 700, borderLeft: `3px solid ${C.orange}`, paddingLeft: 18, opacity: prog(f, notes[0]?.at ?? 0, 12) }}>
           {notes.map((n, k) => (
             <span key={k} style={{ opacity: prog(f, n.at, 12) }}>
               {n.text}
