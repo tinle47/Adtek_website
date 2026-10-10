@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thuê KOL cut paper</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #1b1714; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { height: min(100vh, calc(100vw * 16 / 9)); width: auto; aspect-ratio: 9 / 16; display: block; cursor: pointer; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+// =====================================================================
+//  THUÊ KOL, KHÁCH CÓ TIN? (cut paper) — Adtek TikTok trial. 9:16, 30fps, voice-led (the voice is the clock).
+//  The approved Vietnamese narration (6 takes) sets every cut: each scene starts 0.15s before its line,
+//  on the 8th grid of 112.5 BPM at 30fps (8 frames). Inside a scene the picture cues on the spoken numbers.
+//  Two paper characters carry it: the ordinary buyer (orange shirt) and the flashy KOL (purple sequins, shades).
+//  Colour: Adtek orange = real buyers and their reviews, and only that. Adtek navy = the ink of every word.
+//  The end is the start, changed: the same stage, the buyer now holds the mic and the banner tells the truth.
+// =====================================================================
+const FPS = 30, W = 1080, H = 1920;
+const BPM = 112.5, BEAT = 60 / BPM, E8 = BEAT / 2, E16 = BEAT / 4;   // 0.533 / 0.267 / 0.133s = 16 / 8 / 4 frames
+const DURATION = VOICE.duration;
+const NFRAMES = Math.round(DURATION * FPS);
+const LOOP_T = NFRAMES / FPS;
+const SAFE = { top: 240, bottom: 420, right: 140 };            // 9:16 platform UI; content in x 60-940, y 250-1500
+// Inter has every Vietnamese diacritic (fc-list :lang=vi); the style's handwriting fonts are not on this machine
+const HAND = '"Inter", "DejaVu Sans", "Liberation Sans", sans-serif';
+const DISPLAY = '"Inter Display", "Inter", "DejaVu Sans", sans-serif';
+const CX = 470;
+const BR = { navy: '#00245F', navyL: '#2c4a85', orange: '#FF9014', orangeD: '#d4700a', orangeL: '#ffc27a', red: '#c8322b', gold: '#e9c24a' };
+
+// ---- the voice: VL(id) a line; VW(id, word, n) the start of the n-th match of word in that line
+const VL = (id) => VOICE.lines.find((l) => l.id === id);
+const vnorm = (s) => s.toLowerCase().normalize('NFC').replace(/[.,:;?!"]/g, '');
+function VW(id, word, n = 1) {
+  const L = VL(id), k = vnorm(word); let c = 0;
+  for (const w of L.words) if (vnorm(w.w) === k && ++c === n) return w.t0;
+  throw new Error(`VW: no "${word}" #${n} in line ${id}`);
+}
+const G8 = (t) => Math.round(t / E8) * E8;                       // nearest 8th
+const CUT = (id) => +(Math.ceil((VL(id).t0 - 0.15) / E8 - 1e-6) * E8).toFixed(4);   // a scene's cut: on the grid, just before its line
+
+// the shots: [key, t0, scene]; every boundary is a hard cut on the grid (no morphs: the voice drives a beat-cut)
+const SHOT_LIST = [
+  ['stage',   0,                       () => sStage()],
+  ['survey',  G8(VW('myth', 'Khảo')),  () => sSurvey()],
+  ['versus',  CUT('versus'),           () => sVersus()],
+  ['shoppers', CUT('weight'),          () => sShoppers()],
+  ['age20',   G8(VW('weight', 'Ở')),   () => sAge20()],
+  ['bars',    CUT('trust'),            () => sBars()],
+  ['drop',    G8(VW('trust', 'Sản') - 0.1), () => sDrop()],
+  ['fifty',   G8(VW('trust', '74%') - 0.1), () => sFifty()],
+  ['todo',    CUT('todo'),             () => sTodo()],
+  ['finale',  CUT('follow'),           () => sStage({ end: true })],
+];
+const ERA_LIST = SHOT_LIST.map(([, t0, f], i) => [+t0.toFixed(4), i + 1 < SHOT_LIST.length ? +SHOT_LIST[i + 1][1].toFixed(4) : DURATION, f]);
+const T_ = (k) => ERA_LIST[SHOT_LIST.findIndex((s) => s[0] === k)][0];
+const SHOT_TITLES = {
+  stage: 'the myth on stage; SAI is stamped', survey: 'Q&Me survey: who was asked', versus: '54% vs 13%: the columns rise',
+  shoppers: '78%: eight of ten phones light up', age20: 'age 20: 87%', bars: 'what makes a review trustworthy',
+  drop: 'under 3.6 stars: into the bin', fifty: '74% need 50 reviews', todo: 'what to do now: four steps', finale: 'the same stage, changed: comment + follow',
+};
+const CUES = {
+  kol: VW('myth', 'KOL'), hush: 2.6, sai: VW('myth', 'Sai') - 0.06, survey: VW('myth', 'Khảo'), ppl: VW('myth', 'người'), hn: VW('myth', 'Hà'), hcm: VW('myth', 'Thành'), thay: VW('myth', 'thấy'), nguoc: VW('myth', 'ngược'),
+  p54: VW('versus', '54%'), kolWord: VW('versus', 'KOL'), p13: VW('versus', '13%'),
+  heavy: VW('weight', 'nặng'), p78: VW('weight', '78%'), mua: VW('weight', 'mua'), tuoi: VW('weight', 'Ở'), p87: VW('weight', '87%'),
+  q: VW('trust', 'Review'), photo: VW('trust', 'Có'), p69: VW('trust', '69%'), detail: VW('trust', 'viết'), p60: VW('trust', '60%'), star: VW('trust', 'số'), p51: VW('trust', '51%'),
+  p36: VW('trust', '3.6'), loai: VW('trust', 'loại'), p74: VW('trust', '74%'), n50: VW('trust', '50'),
+  todo: VW('todo', 'Vậy'), i1: VW('todo', 'Xin'), i1b: VW('todo', '50'), i2: VW('todo', 'Xin', 2), i3: VW('todo', 'Đừng'), i4: VW('todo', 'trả'), che: VW('todo', 'chê'),
+  ask: VW('follow', 'Bạn'), comment: VW('follow', 'Comment'), follow: VW('follow', 'Follow'),
+};
+const TIMELINE = {
+  width: W, height: H, fps: FPS, bpm: BPM, duration: DURATION, frames: NFRAMES, loop: LOOP_T, safe: SAFE,
+  format: 'voice-cut',   // a narrated beat-cut: hard cuts on sentence ends, snapped to the 8th grid; no morphs
+  shots: ERA_LIST.map(([t0, t1], i) => ({ id: i + 1, key: SHOT_LIST[i][0], era: i, t0, t1, title: SHOT_TITLES[SHOT_LIST[i][0]] })),
+  cuts: ERA_LIST.slice(1).map(([t0]) => t0),
+  morphs: [],
+  cues: CUES,
+  acts: [
+    { name: '1 Hook',    role: 'stakes',     t0: 0,             t1: CUES.hush },
+    { name: '2 Hush',    role: 'silence',    t0: CUES.hush,     t1: CUES.sai - 0.05 },
+    { name: '3 SAI',     role: 'gift',       t0: CUES.sai - 0.05, t1: T_('survey') },
+    { name: '4 Survey',  role: 'build',      t0: T_('survey'),  t1: T_('versus') },
+    { name: '5 Proof',   role: 'build',      t0: T_('versus'),  t1: T_('bars') },
+    { name: '6 Trust',   role: 'peak',       t0: T_('bars'),    t1: T_('todo') },
+    { name: '7 Do now',  role: 'connection', t0: T_('todo'),    t1: T_('finale') },
+    { name: '8 Ask',     role: 'title',      t0: T_('finale'),  t1: DURATION },
+  ],
+  board: [
+    { t: 1.6, title: 'Hook: the KOL performs', sound: 'glossy pad, glitter 8ths', next: 'the score stops dead' },
+    { t: 4.0, title: 'SAI is stamped', sound: 'silence, then the loudest hit', next: 'cut: who was asked' },
+    { t: 8.8, title: 'Q&Me survey', sound: 'pencil ticks', next: 'cut on the sentence end' },
+    { t: 15.2, title: '54% vs 13%', sound: 'her motif; his falling notes', next: 'cut: the shop' },
+    { t: 20.0, title: '78%: 8 of 10 light up', sound: '8 plucks, one per phone', next: 'cut-in: age 20' },
+    { t: 24.6, title: 'Age 20: 87%', sound: 'a chime', next: 'cut: the bars' },
+    { t: 34.2, title: 'Photo 69, detail 60, stars 51', sound: '8th groove, a slap per bar', next: 'cut: the bin' },
+    { t: 36.95, title: 'Under 3.6 stars: out', sound: 'whoosh, bin thud', next: 'cut: the stack' },
+    { t: 40.2, title: '74% need 50 reviews', sound: 'cards tick on 2s, chime', next: 'cut: what to do' },
+    { t: 53.9, title: 'What to do now', sound: 'warm; a chime per step', next: 'cut: back to the stage' },
+    { t: 61.5, title: 'Same stage, changed: ask + Follow', sound: 'her motif, a held chord', next: 'end' },
+  ],
+  narration: VOICE.lines.map((l) => ({ t0: l.t0, t1: l.t1, text: l.text })),
+};
+window.TIMELINE = TIMELINE;

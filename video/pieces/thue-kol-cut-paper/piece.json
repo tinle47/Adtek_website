@@ -1,0 +1,10 @@
+{
+  "name": "thue-kol-cut-paper",
+  "title": "Thuê KOL, khách có tin? (cut paper)",
+  "format": { "width": 1080, "height": 1920, "fps": 30, "bpm": 112.5 },
+  "storyFormat": "voice-led beat-cut (myth bust: claim, stamp, proof, what to do, ask); hard cuts on sentence ends snapped to the 8th grid",
+  "style": "cut-paper",
+  "scenes": ["src/people.js", "src/scenes-a.js", "src/scenes-b.js"],
+  "voice": { "file": "voice/voice.wav", "music": -15 },
+  "review": { "safe": { "top": 240, "bottom": 420, "right": 140 }, "refs": {} }
+}

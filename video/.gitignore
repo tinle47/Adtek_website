@@ -1,2 +1,5 @@
 node_modules/
 out/
+# Video thử bằng bộ animate: chỉ giữ mã nguồn, bỏ bản dựng và ảnh kiểm tra
+pieces/*/check/
+pieces/*/index.html
