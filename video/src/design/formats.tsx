@@ -38,7 +38,13 @@ const useCueCtx = () => useContext(CueContext);
 
 // ---------- Chữ động: từng dòng chữ to đập xuống đúng lúc giọng đọc ----------
 // Cảnh không có tiêu đề, nên chữ chiếm cả vùng từ dưới logo tới trên phụ đề.
-export const wordsCues = (lines: string[], words: Word[], offset: number) => cueSeq(words, offset, lines, 4, 40);
+// Dòng đầu hiện ngay khi vào cảnh (không để màn hình trống lúc giọng đang đọc "Một:", "Hai:"), các dòng sau theo giọng.
+export const wordsCues = (lines: string[], words: Word[], offset: number) => {
+  const ats = cueSeq(words, offset, lines, 4, 40);
+  ats[0] = Math.min(ats[0], offset + 4);
+  for (let i = 1; i < ats.length; i++) ats[i] = Math.max(ats[i], ats[i - 1] + 6);
+  return ats;
+};
 export const Words: React.FC<{ lines: string[]; emph?: string[]; source?: string }> = ({ lines, emph = [], source }) => {
   const f = useFrame();
   const { fps } = useVideoConfig();

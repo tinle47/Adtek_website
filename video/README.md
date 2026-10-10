@@ -58,6 +58,15 @@ Cảnh `shot` dùng ảnh chụp thật của bài báo hoặc báo cáo: khung 
 
 Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`. Trên máy cá nhân không cần, Remotion tự tải trình duyệt.
 
+## Dạng video khác (mẫu 10/2026, xem mục "Mẫu dạng video mới" trên hub)
+
+- `words` (chữ động): cảnh không có tiêu đề, `lines` là 2 đến 3 dòng chữ to hiện theo giọng đọc, `emph` là chữ tô cam, `source` dòng nguồn. Ví dụ `scripts/3-dieu-truoc-sale-11-11/1.json`.
+- `race` (biểu đồ đua): `periods` (mốc thời gian, lời đọc nhắc đúng tên mốc như "Tháng 4"), `series` [{name, values}], `top`, `note`. Ví dụ `scripts/tiktok-shop-duoi-sat-shopee/1.json`.
+- `map` (bản đồ Đông Nam Á): `items` [{iso3, name, value, display}], nước nào hiện khi giọng đọc tới con số của nước đó; `highlight` mặc định VNM. Đường viền tạo bằng `node tools/make-map.mjs` (Natural Earth). Ví dụ `scripts/kinh-te-so-viet-nam-dung-thu-may/1.json`.
+- `countdown` (đếm ngược top 5): `items` [{rank, label, note}], hạng hiện khi giọng đọc "Hạng N", hạng 1 lật cuối với tiếng ding; `teaser: true` ở cảnh mở đầu chỉ hiện các ô "?". Ví dụ `scripts/top5-tu-khoa-tang-manh-2025/1.json`.
+- Ảnh lướt: `node tools/render.mjs <slug> --carousel` xuất mỗi cảnh 1 ảnh (ẩn phụ đề, có số trang).
+- Khổ khác: `--format 1:1` hoặc `--format 16:9`, bố cục xếp lại theo `LAYOUTS` trong `design/frame.tsx`.
+
 ## Chuyển động (học từ bộ animate, 10/2026)
 
 - **Giọng đọc là đồng hồ** (`src/cue.ts`, `useCue` trong `design/frame.tsx`): con số, thanh biểu đồ, hình người, con dấu "SAI", từng việc trong danh sách và dòng chi tiết hiện đúng lúc giọng đọc nhắc tới. Khớp con số (54 khớp "54%") hoặc 2 chữ liền nhau ("Không tặng quà" khớp "Đừng tặng quà"). Không khớp được thì dùng nhịp mặc định. Cảnh đầu vẫn hiện sẵn trạng thái cuối (khung hook), chỉ con dấu và việc nhấn lựa chọn đố mới đợi giọng.
