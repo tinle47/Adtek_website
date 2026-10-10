@@ -122,7 +122,7 @@
   "sources": "• Vietnam Report, khảo sát người tiêu dùng ngành bán lẻ, 08/2026\n• Milieu Insight, 09/2025",
   "links": "https://vietnamreport.net.vn/Top-10-Cong-ty-uy-tin-nganh-Ban-le-nam-2026-12576-1006.html\nhttps://www.mili.eu/vn/insights/vietnams-online-shoppers-demand-speed-and-reliability-in-2025",
   "check": "• Đã mở trang gốc, khớp số liệu (08/10/2026)",
-  "notes": "• Video mẫu kiểu đố số liệu (scripts/khach-so-gia-cho-sale/1.json)\n• Giọng v4 chưa huấn luyện; video trên trang hub",
+  "notes": "• Video mẫu kiểu đố số liệu (scripts/khach-so-gia-cho-sale/1.json)\n• Giọng v4 chưa huấn luyện; video trên trang hub\n• Đã nhắc",
   "keywords": "so sánh giá; săn sale; khuyến mãi",
   "demand": "Cao",
   "status": "Đã có video"
