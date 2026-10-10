@@ -6,7 +6,7 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 
 - Kênh TikTok độc lập với website: mỗi video một chủ đề riêng, không dẫn về blog, không đặt link trong caption.
 - Bám dịch vụ Adtek: Digital Marketing, Growth Marketing, App Marketing, SEO, AIO, Performance Marketing. Ưu tiên chủ đề đang trend, có nhu cầu tìm kiếm.
-- Mỗi video khoảng 1 phút (50 đến 65 giây), 6 cảnh: câu hỏi mở đầu, 3 đến 4 cảnh số liệu, 1 cảnh "làm gì ngay", cảnh Follow.
+- Mỗi video khoảng 1 phút (50 đến 65 giây). Dạng infographic chuẩn có 6 cảnh: câu hỏi mở đầu, 3 đến 4 cảnh số liệu, 1 cảnh "làm gì ngay", cảnh Follow. Các dạng khác theo cấu trúc riêng ở mục "Đa dạng dạng video".
 - Câu đầu tiên của lời đọc là một câu hỏi khơi tò mò.
 - Chỉ giữ ý mạnh, số liệu ấn tượng. Một chủ đề làm thành một video, không tách nhỏ thành nhiều video.
 - Không trùng video đã đăng: trước khi viết, đọc mọi kịch bản có status "Đã đăng" (kể cả bản archived) và các video đã có lịch. Không lặp lại góc nhìn chính hay số liệu đã dùng. Ví dụ: video AIO đã đăng nói tóm tắt AI của Google làm giảm lượt bấm (Pew 15% xuống 8%), nên chủ đề "đứng top 1 Google vẫn mất khách" bị bỏ vì trùng ý.
@@ -19,7 +19,7 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
   - Khung đầu tiên phải có ngay câu hook và con số: `Video.tsx` tự hiện cảnh đầu ở trạng thái cuối của hiệu ứng, không đếm từ 0.
   - Mỗi kịch bản có trường `cover` (3 đến 5 chữ, ví dụ "8/10 khách" + "muốn nhắn tin trước khi mua"). Video đố số liệu: ảnh bìa, khung đầu, caption và tiêu đề cảnh 1 chỉ được đặt câu hỏi và hiện lựa chọn (`cover.options`), tuyệt đối không lộ đáp án; lộ đáp án là mất lý do để bình luận và xem đến cuối; `render.mjs` xuất `out/<id>-cover.png` để làm ảnh bìa; tải ảnh này lên kho asset của hub và ghi url vào trường `cover` trong `hub/videos.json` (hub có nút Tải ảnh bìa).
   - Âm thanh chuyển cảnh và tiếng "bật" khi số hiện được thêm tự động (`public/sfx`).
-  - Đổi kiểu video, mỗi tuần ít nhất 2 video kiểu mới: **đố số liệu** (`quiz`: hỏi ở cảnh đầu với 3 lựa chọn, 2 cảnh gợi ý, cảnh lật đáp án `reveal: true`) và **phá hiểu lầm** (`myth`: câu nhiều người tin, đóng dấu "SAI" hoặc "CHƯA ĐÚNG", rồi số liệu chứng minh). Kiểu video hướng dẫn (quay màn hình) cần anh Tin quay, chỉ đề xuất trong email.
+  - Đổi kiểu video (xem thêm mục "Đa dạng dạng video"), trong đó có **đố số liệu** (`quiz`: hỏi ở cảnh đầu với 3 lựa chọn, 2 cảnh gợi ý, cảnh lật đáp án `reveal: true`) và **phá hiểu lầm** (`myth`: câu nhiều người tin, đóng dấu "SAI" hoặc "CHƯA ĐÚNG", rồi số liệu chứng minh). Kiểu video hướng dẫn (quay màn hình) cần anh Tin quay, chỉ đề xuất trong email.
   - Cảnh cuối có `ask`: câu hỏi cụ thể để người xem bình luận (ví dụ "Shop bạn trả lời tin nhắn trong bao lâu? Comment số phút"), không chỉ "Follow". Caption cũng kết bằng câu hỏi đó.
 - Cảnh cuối dùng `follow`, lời đọc kết bằng "Follow Adtek để xem số liệu marketing mới mỗi ngày."
 - Chỉ làm video bằng Remotion. Không làm thêm bản giấy cắt dán hay phong cách minh họa bằng bộ animate (anh Tin chốt 10/10/2026: chỉ đăng thử 1 bản cho video 11/10, các lần sau không làm). Chỉ làm lại khi anh Tin yêu cầu.
@@ -30,10 +30,26 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
   - Không để màn hình đứng yên quá 4 giây: câu dài thì chia ý, mỗi ý một con số hoặc một dòng hiện thêm.
   - Trước khi xuất, chạy `node tools/check.mjs <slug>`: FAIL phải sửa; WARN đứng hình hoặc nhịp đọc (trên 3.5 chữ/giây) thì sửa lời đọc hoặc bố cục nếu được, không được thì ghi lý do trong email.
 
+## Đa dạng dạng video (anh Tin chốt 10/10/2026: mọi dạng đều phù hợp, làm đa dạng để người xem không nhàm chán)
+
+- 7 dạng video, chọn theo dữ liệu và góc nhìn của chủ đề:
+  1. **Infographic chuẩn**: 6 cảnh, mỗi cảnh một biểu đồ.
+  2. **Đố số liệu** (`quiz`): hỏi đầu video, 2 cảnh gợi ý, lật đáp án.
+  3. **Phá hiểu lầm** (`myth`): câu nhiều người tin, đóng dấu "SAI", rồi số liệu.
+  4. **Chữ động** (`words`): 8 đến 12 nhịp, mỗi nhịp 2 đến 3 dòng chữ to (mỗi dòng tối đa 18 ký tự), không biểu đồ; hợp chủ đề quan điểm, lời khuyên, sự kiện theo mùa. Mỗi nhịp có số liệu vẫn ghi nguồn.
+  5. **Đếm ngược top 5** (`countdown`): cảnh mở đầu `teaser: true` (5 ô "?"), đọc "Hạng 5" tới "Hạng 1", hạng 1 sau một câu nhử. Chỉ dùng bảng xếp hạng chính thức có thứ tự rõ ràng.
+  6. **Bản đồ** (`map`): số liệu theo từng nước Đông Nam Á từ cùng một nguồn, Việt Nam tô cam.
+  7. **Biểu đồ đua** (`race`): ít nhất 5 mốc thời gian từ cùng một nguồn, không trộn nguồn, không tự nội suy số thiếu. Ưu tiên chuỗi số có vượt mặt thật; không có thì nói rõ là "thu hẹp khoảng cách".
+- Mỗi tuần (7 video) dùng ít nhất 5 dạng khác nhau, không dạng nào lặp lại 2 ngày liền, infographic chuẩn tối đa 2 video. Dạng cần dữ liệu đặc biệt (bản đồ, biểu đồ đua, đếm ngược) chỉ làm khi có số liệu gốc phù hợp; không có thì đổi dạng khác và ghi lý do trong email duyệt.
+- Mọi dạng vẫn giữ: câu đầu là câu hỏi, số liệu gốc đã kiểm tra, lời đọc 150 đến 190 chữ, cảnh cuối `follow` có `ask`, ảnh bìa (`cover`) không lộ đáp án hay hạng 1.
+- Ảnh lướt (TikTok photo mode): mỗi tuần xuất 1 bộ từ video nhiều số liệu nhất của tuần (`render.mjs <slug> --carousel`), đưa lên hub kèm video đó (trường `carousel` trong `hub/videos.json`). Đăng thêm lúc 20:00, cách ngày đăng video gốc ít nhất 3 ngày.
+- Khổ vuông 1:1 và khổ ngang 16:9 (`--format`): chỉ xuất khi anh Tin cần đăng Facebook, Instagram, YouTube.
+- Mẫu từng dạng: `scripts/3-dieu-truoc-sale-11-11` (chữ động), `scripts/top5-tu-khoa-tang-manh-2025` (đếm ngược), `scripts/kinh-te-so-viet-nam-dung-thu-may` (bản đồ), `scripts/tiktok-shop-duoi-sat-shopee` (biểu đồ đua), `scripts/khach-so-gia-cho-sale` (đố số liệu), `scripts/thue-kol-khach-co-tin` (phá hiểu lầm).
+
 ## Chọn biểu đồ theo kiểu dữ liệu
 
 - 1 con số gây sốc: `bignumber`. 2 con số đối đầu: `versus`. Trước và sau của vài nhóm: `slope`. Xu hướng từ 3 mốc: `trend`. Chia phần trong tổng: `donut`. "x trên 10 người": `people`, "x trên 100": `waffle`. Rơi rụng qua từng bước: `funnel`. Xếp hạng từ 3 mục: `hbars`. So sánh 2 đến 4 nhóm: `columns`. Việc cần làm: `list`.
-- Mỗi video dùng ít nhất 3 loại biểu đồ khác nhau, không dùng cùng một loại cho 2 cảnh liền nhau. Video liền kề trong lịch nên mở đầu bằng loại biểu đồ khác nhau.
+- Video infographic dùng ít nhất 3 loại biểu đồ khác nhau, không dùng cùng một loại cho 2 cảnh liền nhau. Video liền kề trong lịch nên mở đầu bằng loại biểu đồ khác nhau.
 - Ảnh chụp bài báo, báo cáo (`shot`, chụp bằng `tools/shot.mjs`): dùng cho con số mạnh nhất của video, nhất là số từ cơ quan nhà nước, báo chí hoặc báo cáo gốc. Tối đa 1 cảnh mỗi video, các cảnh còn lại vẫn là biểu đồ. Chỉ chụp trang gốc, không sửa ảnh, không dựng giả giao diện trang báo.
 - Không bóp méo dữ liệu cho đẹp: độ rộng, độ cao luôn đúng tỷ lệ; trục không bắt đầu từ 0 thì ghi rõ.
 

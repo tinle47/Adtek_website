@@ -1,13 +1,13 @@
 {
   "id": "3-dieu-truoc-sale-11-11",
-  "status": "Mẫu",
+  "status": "Đã có video",
   "format_demo": "Chữ động",
   "cover": {
     "kicker": "Trước 11.11",
     "title": "6,608 tỷ trong 1 ngày",
     "accent": "3 điều chủ shop cần biết"
   },
-  "caption": "Ngày 10.10 năm ngoái, 4 sàn bán 6,608 tỷ đồng chỉ trong 1 ngày, nhưng có tới 376,000 gian hàng cùng giành khách. Trước 11.11, chủ shop cần biết 3 điều: khách thêm vào giỏ sớm 3 đến 5 ngày, quảng cáo mới trên Meta cần khoảng 50 kết quả trong 1 tuần để học xong, và Google Ads có điều chỉnh thời vụ cho đợt sale 1 đến 7 ngày. Bạn lên quảng cáo 11.11 từ ngày nào? Comment ngày cho Adtek biết.",
+  "caption": "Ngày 10.10 năm ngoái, 4 sàn bán 6,608 tỷ đồng chỉ trong 1 ngày, nhưng có tới 376,000 gian hàng cùng giành khách. Còn 3 tuần nữa là 11.11, chủ shop cần biết 3 điều: khách thêm vào giỏ sớm 3 đến 5 ngày, quảng cáo mới trên Meta cần khoảng 50 kết quả trong 1 tuần để học xong, và Google Ads có điều chỉnh thời vụ cho đợt sale 1 đến 7 ngày. Bạn lên quảng cáo 11.11 từ ngày nào? Comment ngày cho Adtek biết.",
   "hashtags": [
     "#adtekagency",
     "#growthmarketing",
@@ -21,7 +21,7 @@
       "kicker": "",
       "headline": "",
       "accent": "",
-      "voice": "Còn đúng một tháng nữa là 11.11, bạn định chạy sale mà chưa chuẩn bị gì sao?",
+      "voice": "Chỉ còn 3 tuần nữa là 11.11, bạn định chạy sale mà chưa chuẩn bị gì sao?",
       "visual": {
         "type": "words",
         "lines": [
@@ -200,5 +200,6 @@
         "ask": "Bạn lên quảng cáo 11.11 từ ngày nào? Comment ngày cho Adtek biết"
       }
     }
-  ]
+  ],
+  "date": "2026-10-21"
 }

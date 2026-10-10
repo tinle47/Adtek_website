@@ -371,16 +371,17 @@ details.fold > .list { margin-top: 12px; }
       });
       actions.appendChild(dl);
     }
-    if (v.images && v.images.length) {
-      // Ảnh lướt: tải lần lượt từng ảnh theo thứ tự đăng.
-      const im = el("button", "btn primary", `Tải ${v.images.length} ảnh`);
+    // Ảnh lướt: mẫu chỉ có ảnh (images) hoặc bộ ảnh đi kèm video trong tuần (carousel). Tải lần lượt theo thứ tự đăng.
+    const pics = v.images || v.carousel;
+    if (pics && pics.length) {
+      const im = el("button", v.images ? "btn primary" : "btn", v.images ? `Tải ${pics.length} ảnh` : `Tải ${pics.length} ảnh lướt`);
       im.type = "button";
       im.addEventListener("click", async () => {
-        if (!downloads) { v.images.forEach((u) => window.open(u, "_blank")); return; }
+        if (!downloads) { pics.forEach((u) => window.open(u, "_blank")); return; }
         im.disabled = true;
         try {
-          for (const [k, u] of v.images.entries()) {
-            status.textContent = `Đang tải ảnh ${k + 1}/${v.images.length}…`;
+          for (const [k, u] of pics.entries()) {
+            status.textContent = `Đang tải ảnh ${k + 1}/${pics.length}…`;
             const blob = await (await fetch(u)).blob();
             await downloads.save({ filename: `${v.filename || v.slug || "anh"} ${k + 1}.png`, data: blob });
           }

@@ -1,6 +1,6 @@
 {
   "id": "kinh-te-so-viet-nam-dung-thu-may",
-  "status": "Mẫu",
+  "status": "Đã có video",
   "format_demo": "Bản đồ",
   "cover": {
     "kicker": "e-Conomy SEA 2025",
@@ -143,5 +143,6 @@
         "ask": "Doanh thu online của bạn năm nay tăng bao nhiêu %? Comment con số"
       }
     }
-  ]
+  ],
+  "date": "2026-10-20"
 }

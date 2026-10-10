@@ -1,6 +1,6 @@
 {
   "id": "top5-tu-khoa-tang-manh-2025",
-  "status": "Mẫu",
+  "status": "Đã có video",
   "format_demo": "Đếm ngược top 5",
   "cover": {
     "kicker": "Google Year in Search 2025",
@@ -128,5 +128,6 @@
         "ask": "Từ khóa nào trong ngành bạn đang tăng mạnh? Comment cho Adtek biết"
       }
     }
-  ]
+  ],
+  "date": "2026-10-22"
 }

@@ -1,6 +1,6 @@
 {
   "id": "tiktok-shop-duoi-sat-shopee",
-  "status": "Mẫu",
+  "status": "Đã có video",
   "format_demo": "Biểu đồ đua",
   "cover": {
     "kicker": "9 tháng năm 2025",
@@ -145,5 +145,6 @@
         "ask": "Bạn chia ngân sách 2 sàn theo tỷ lệ nào? Comment, ví dụ 60/40"
       }
     }
-  ]
+  ],
+  "date": "2026-10-28"
 }
