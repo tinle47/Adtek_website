@@ -66,6 +66,12 @@ Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chrom
 - **Mốc thời gian theo 30 hình/giây** (`useFrame`, `springAt`): cùng một video xuất được 30 hoặc 60 hình/giây mà nhịp không đổi.
 - **Kiểm tra bằng máy** (`tools/check.mjs`, khoảng 45 giây mỗi video): đo vị trí thật của từng dòng chữ trên các khung mẫu (6 khung mỗi giây) và đếm điểm ảnh thay đổi giữa các khung. FAIL (chữ bị cắt, chữ chồng nhau) phải sửa trước khi xuất. WARN đứng hình: viết lại lời đọc để nhắc lần lượt từng con số, tách cảnh, hoặc thêm ý hiện sau. Ảnh khung mẫu ở `out/check/<id>/`.
 
+## Video thử bằng bộ animate (phong cách minh họa)
+
+`pieces/thue-kol-cut-paper/` là bản giấy cắt dán của video 11/10, dựng bằng skill [animate](https://github.com/cth9191/animate) (MIT): vẽ từng khung bằng canvas, có nhân vật. Dùng lại giọng đọc sẵn có (`tools/make-voice.mjs` lấy thời điểm từng chữ từ `public/voice/<id>/manifest.json`), không gọi ElevenLabs. Mất khoảng 1 giờ cho một video (xuất 7.5 phút), file khoảng 31MB nên phải nén lại trước khi đưa lên hub (giới hạn 20MB).
+
+Skill không nằm trong repo. Môi trường cloud mỗi phiên là máy mới, cần cài lại: `git clone --depth 1 https://github.com/cth9191/animate` rồi chép `plugins/animate/skills/animate` vào `~/.claude/skills/animate`. Đọc lại mã trước khi cài bản mới.
+
 ## Đăng lên TikTok
 
 1. Tải `out/<id>.mp4` lên, dán caption từ `out/<id>.txt`.

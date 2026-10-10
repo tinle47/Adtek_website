@@ -38,13 +38,22 @@
    "#banhangonline",
    "#marketing"
   ],
-  "note": "Bản mới 10/10: hình hiện theo giọng đọc. Có thêm bản 60 hình/giây để thử, chỉ đăng 1 trong 2 bản.",
+  "note": "Bản mới 10/10: hình hiện theo giọng đọc. Có thêm 2 bản để thử: 60 hình/giây và phong cách giấy cắt dán (có nhân vật). Chỉ đăng 1 bản.",
   "cover": "/_blob/106a7a9ee0001444aba0ecf64e2249ab",
-  "alt": {
-   "label": "Tải bản 60 hình/giây",
-   "url": "/_blob/12bf76e6aaf315e2b534d844101573aa",
-   "suffix": "60fps"
-  }
+  "alts": [
+   {
+    "label": "Tải bản 60 hình/giây",
+    "url": "/_blob/12bf76e6aaf315e2b534d844101573aa",
+    "suffix": "60fps"
+   },
+   {
+    "label": "Tải bản giấy cắt dán",
+    "url": "/_blob/e80733d569c5754a8988bef4ab7c2e36",
+    "suffix": "giay cat dan",
+    "cover": "/_blob/27f91b1c1b83f0d2c3be2d340545099b",
+    "coverLabel": "Tải ảnh bìa giấy cắt dán"
+   }
+  ]
  },
  {
   "slug": "khu-cong-nghiep-fdi-4",

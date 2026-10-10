@@ -377,22 +377,26 @@ details.fold > .list { margin-top: 12px; }
       });
       actions.appendChild(cv);
     }
-    if (v.alt && v.alt.url) {
-      // Bản thay thế để so sánh (ví dụ bản 60 hình/giây): chỉ đăng 1 trong 2 bản.
-      const al = el("button", "btn", v.alt.label || "Tải bản khác");
-      al.type = "button";
-      al.addEventListener("click", async () => {
-        if (!downloads) { window.open(v.alt.url, "_blank"); return; }
-        al.disabled = true; status.textContent = "Đang chuẩn bị file…";
-        try {
-          const blob = await (await fetch(v.alt.url)).blob();
-          await downloads.save({ filename: (v.filename || v.slug || "video") + " " + (v.alt.suffix || "ban khac") + ".mp4", data: blob });
-          status.textContent = "Đã lưu video.";
-        } catch (e) {
-          status.textContent = e && e.code === "declined" ? "Đã huỷ tải." : "Chưa tải được video.";
-        } finally { al.disabled = false; }
-      });
-      actions.appendChild(al);
+    // Bản thay thế để so sánh (bản 60 hình/giây, bản giấy cắt dán...): chỉ đăng 1 bản. Mỗi bản có thể kèm ảnh bìa riêng.
+    for (const alt of v.alts || (v.alt ? [v.alt] : [])) {
+      const files = [[alt.label || "Tải bản khác", alt.url, (alt.suffix || "ban khac") + ".mp4"]];
+      if (alt.cover) files.push([alt.coverLabel || "Tải ảnh bìa bản này", alt.cover, (alt.suffix || "ban khac") + " anh bia.png"]);
+      for (const [label, url, suffix] of files) {
+        const al = el("button", "btn", label);
+        al.type = "button";
+        al.addEventListener("click", async () => {
+          if (!downloads) { window.open(url, "_blank"); return; }
+          al.disabled = true; status.textContent = "Đang chuẩn bị file…";
+          try {
+            const blob = await (await fetch(url)).blob();
+            await downloads.save({ filename: (v.filename || v.slug || "video") + " " + suffix, data: blob });
+            status.textContent = "Đã lưu file.";
+          } catch (e) {
+            status.textContent = e && e.code === "declined" ? "Đã huỷ tải." : "Chưa tải được file.";
+          } finally { al.disabled = false; }
+        });
+        actions.appendChild(al);
+      }
     }
     if (box) actions.appendChild(copyBtn(cap, box, status));
     info.appendChild(actions);
