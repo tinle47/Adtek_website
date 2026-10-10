@@ -1,0 +1,142 @@
+{
+  "id": "giao-het-cho-advantage-plus",
+  "date": "2026-10-14",
+  "status": "Đã viết kịch bản",
+  "cover": {
+    "kicker": "Performance · Quảng cáo Meta",
+    "title": "Giá quảng cáo +12%",
+    "accent": "có nên giao hết cho AI?"
+  },
+  "caption": "Giá mỗi quảng cáo trên Meta tăng 12% trong một năm, tiền chạy qua Advantage+ vượt 75 tỷ USD mỗi năm. Nhưng trong thử nghiệm của Haus, 58% thương hiệu thu về nhiều hơn khi tự cài chiến dịch. Shop bạn để Advantage+ chạy bao nhiêu % ngân sách? Comment con số.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#quangcaofacebook",
+    "#metaads",
+    "#advantageplus",
+    "#performancemarketing"
+  ],
+  "scenes": [
+    {
+      "kicker": "Performance · Số liệu toàn cầu",
+      "headline": "Giá quảng cáo Meta +12%,",
+      "accent": "có nên giao hết cho AI?",
+      "voice": "Quảng cáo Facebook đang đắt lên, có nên giao hết cho AI chạy? Quý 2 năm nay, giá trung bình mỗi quảng cáo của Meta tăng 12%. Số liệu toàn cầu.",
+      "visual": {
+        "type": "bignumber",
+        "value": 12,
+        "prefix": "+",
+        "suffix": "%",
+        "label": "Giá trung bình mỗi quảng cáo trên các app của Meta, quý 2/2026 so với cùng kỳ",
+        "context": "Số liệu toàn cầu. Lượt hiển thị quảng cáo cũng tăng 14%",
+        "source": "Nguồn: Meta, kết quả kinh doanh quý 2/2026, công bố 29/07/2026"
+      }
+    },
+    {
+      "kicker": "Tiền đang dồn vào AI",
+      "headline": "Advantage+ vượt",
+      "accent": "75 tỷ USD mỗi năm.",
+      "voice": "Tiền đang dồn vào AI. Advantage+, công cụ quảng cáo tự động của Meta, đã vượt 75 tỷ USD mỗi năm, từ mức 60 tỷ hồi quý 3 năm ngoái.",
+      "visual": {
+        "type": "versus",
+        "metric": "Doanh thu quảng cáo chạy qua công cụ tự động của Meta, tính theo năm",
+        "unit": "tỷ USD",
+        "source": "Nguồn: Meta, họp công bố kết quả quý 3/2025 và quý 2/2026",
+        "items": [
+          {
+            "label": "Quý 3/2025",
+            "value": 60
+          },
+          {
+            "label": "Quý 2/2026",
+            "value": 75,
+            "display": "75+"
+          }
+        ],
+        "winner": 1,
+        "note": "Số liệu toàn cầu, Meta tự công bố"
+      }
+    },
+    {
+      "kicker": "Thử nghiệm độc lập · Haus",
+      "headline": "Hơn nửa thương hiệu",
+      "accent": "tự chạy lại hiệu quả hơn.",
+      "voice": "Nhưng AI có mang về nhiều đơn hơn? Haus, công ty đo hiệu quả quảng cáo, cho hai cách chạy đấu nhau: 58% thương hiệu thu về nhiều doanh thu thật hơn khi tự cài chiến dịch.",
+      "visual": {
+        "type": "waffle",
+        "metric": "Thương hiệu có doanh thu tăng thêm trên mỗi đồng quảng cáo cao hơn khi tự cài chiến dịch",
+        "unit": "trên 100 thương hiệu",
+        "source": "Nguồn: Haus, 640 thử nghiệm trên Meta, 07/2025. Số liệu quốc tế, phần lớn là thương hiệu lớn",
+        "lit": 58,
+        "legend": [
+          "tự cài chiến dịch hiệu quả hơn",
+          "42 thương hiệu còn lại: Advantage+ hiệu quả hơn"
+        ]
+      }
+    },
+    {
+      "kicker": "Sau khi tắt quảng cáo · Haus",
+      "headline": "Tắt quảng cáo,",
+      "accent": "Advantage+ hụt hơi nhanh hơn.",
+      "voice": "Không chỉ vậy. Sau khi tắt quảng cáo, chiến dịch tự cài vẫn giúp bán thêm 32%, còn Advantage+ chỉ còn 17%.",
+      "visual": {
+        "type": "columns",
+        "metric": "Mức tăng doanh số còn lại sau khi tắt quảng cáo",
+        "unit": "%",
+        "source": "Nguồn: Haus, 640 thử nghiệm trên Meta, 07/2025. Số liệu quốc tế",
+        "max": 32,
+        "cols": [
+          {
+            "label": "Advantage+",
+            "value": 17,
+            "tone": "base"
+          },
+          {
+            "label": "Tự cài\nchiến dịch",
+            "value": 32,
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Đừng giao hết,",
+      "accent": "hãy cho AI thi với bạn.",
+      "voice": "Vậy làm gì ngay? Thử nghiệm A/B giữa Advantage+ và chiến dịch tự cài, cùng ngân sách. Khai báo nhóm khách cũ. Đặt mức chi tối đa cho khách cũ. Và thử tối ưu theo đơn do quảng cáo thật sự tạo ra.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "A/B test Advantage+ với chiến dịch tự cài",
+            "detail": "Experiments > A/B testing, 2 bên cùng ngân sách"
+          },
+          {
+            "text": "Khai báo nhóm khách cũ",
+            "detail": "Advertising settings > Audience segments"
+          },
+          {
+            "text": "Đặt mức chi tối đa cho khách cũ",
+            "detail": "Tách nhóm khách cũ có giới hạn chi, nhóm còn lại loại trừ khách cũ"
+          },
+          {
+            "text": "Thử Incremental attribution",
+            "detail": "Tối ưu theo đơn do quảng cáo thật sự tạo ra"
+          }
+        ],
+        "source": "Nguồn: Trung tâm trợ giúp Meta Business"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "AI hay tự chạy,",
+      "accent": "bạn đang chọn bên nào?",
+      "voice": "Shop bạn để Advantage+ chạy bao nhiêu phần trăm ngân sách? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Shop bạn để Advantage+ chạy bao nhiêu % ngân sách? Comment con số"
+      }
+    }
+  ],
+  "review": "/_blob/08d24d1a4403c4a376479c6ba396c1bf"
+}

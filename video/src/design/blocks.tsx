@@ -9,17 +9,20 @@ export type ListItem = string | { text: string; detail?: string };
 export const List: React.FC<{ items: ListItem[]; frames: number; source?: string }> = ({ items, frames, source }) => {
   const step = (frames * 0.7) / items.length;
   const p = useEnter(10);
+  // Chữ dài thì thu gọn để danh sách không đè xuống phụ đề.
+  const len = items.reduce((n, it) => n + (typeof it === "string" ? it.length : it.text.length + (it.detail?.length ?? 0)), 0);
+  const compact = len > 220;
   return (
     <div style={{ width: 900 }}>
       {items.map((it, i) => (
-        <Item key={i} n={i + 1} item={typeof it === "string" ? { text: it } : it} delay={6 + i * step} last={i === items.length - 1} />
+        <Item key={i} n={i + 1} item={typeof it === "string" ? { text: it } : it} delay={6 + i * step} last={i === items.length - 1} compact={compact} />
       ))}
       {source && <div style={{ marginTop: 22, fontFamily: SANS, fontSize: 19, lineHeight: 1.35, color: "#8FA3C4", opacity: p }}>{source}</div>}
     </div>
   );
 };
 
-const Item: React.FC<{ n: number; item: { text: string; detail?: string }; delay: number; last: boolean }> = ({ n, item, delay, last }) => {
+const Item: React.FC<{ n: number; item: { text: string; detail?: string }; delay: number; last: boolean; compact?: boolean }> = ({ n, item, delay, last, compact }) => {
   const p = useEnter(delay);
   return (
     <div
@@ -27,7 +30,7 @@ const Item: React.FC<{ n: number; item: { text: string; detail?: string }; delay
         display: "flex",
         alignItems: "baseline",
         gap: 32,
-        padding: item.detail ? "20px 0" : "26px 0",
+        padding: compact ? "14px 0" : item.detail ? "20px 0" : "26px 0",
         borderBottom: last ? "none" : "1.5px solid rgba(255,255,255,0.18)",
         opacity: p,
         transform: `translateY(${(1 - p) * 14}px)`,
@@ -35,8 +38,8 @@ const Item: React.FC<{ n: number; item: { text: string; detail?: string }; delay
     >
       <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 48, color: C.orange, width: 40, flex: "none" }}>{n}</div>
       <div>
-        <div style={{ fontFamily: SANS, fontSize: 34, lineHeight: 1.3, color: C.white }}>{item.text}</div>
-        {item.detail && <div style={{ marginTop: 6, fontFamily: SANS, fontSize: 25, lineHeight: 1.35, color: "#C9D5EA" }}>{item.detail}</div>}
+        <div style={{ fontFamily: SANS, fontSize: compact ? 30 : 34, lineHeight: 1.3, color: C.white }}>{item.text}</div>
+        {item.detail && <div style={{ marginTop: 4, fontFamily: SANS, fontSize: compact ? 22 : 25, lineHeight: 1.3, color: "#C9D5EA" }}>{item.detail}</div>}
       </div>
     </div>
   );

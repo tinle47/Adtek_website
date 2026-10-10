@@ -490,6 +490,13 @@ details.fold > .list { margin-top: 12px; }
         const act = el("div", "actions"); act.appendChild(copyBtn(cap, capBox, status));
         body.appendChild(capBox); body.appendChild(act); body.appendChild(status);
       }
+      if (s.review) {
+        // Ảnh duyệt 6 cảnh của kịch bản.
+        const img = document.createElement("img");
+        img.src = s.review; img.alt = "Ảnh duyệt 6 cảnh"; img.loading = "lazy";
+        img.style.cssText = "width:100%;height:auto;border-radius:8px;margin:8px 0 4px;display:block";
+        body.appendChild(img);
+      }
       const ol = el("ol", "scenes");
       s.scenes.forEach(sc => {
         const li = el("li");

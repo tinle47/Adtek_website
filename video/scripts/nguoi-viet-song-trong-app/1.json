@@ -1,0 +1,147 @@
+{
+  "id": "nguoi-viet-song-trong-app",
+  "date": "2026-10-18",
+  "status": "Đã viết kịch bản",
+  "cover": {
+    "kicker": "App Marketing",
+    "title": "127 tỷ giờ",
+    "accent": "người Việt ở trong app"
+  },
+  "caption": "Năm 2025, người Việt dành 127 tỷ giờ để dùng app. Nhưng cứ 100 người cài app giải trí, chỉ 8 người mở lại vào ngày hôm sau. Bạn dùng app nào nhiều nhất mỗi ngày? Comment tên app.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#appmarketing",
+    "#mobileapp",
+    "#digitalmarketing",
+    "#giuchankhachhang"
+  ],
+  "scenes": [
+    {
+      "kicker": "App Marketing · Adjust",
+      "headline": "Người Việt dùng app",
+      "accent": "bao nhiêu giờ một năm?",
+      "voice": "Một năm, người Việt dành bao nhiêu giờ trong app? Theo Adjust, riêng năm 2025 là 127 tỷ giờ. Còn trên thế giới, mỗi người dùng ở trong app khoảng 3.6 giờ mỗi ngày.",
+      "visual": {
+        "type": "bignumber",
+        "value": 127,
+        "suffix": "tỷ giờ",
+        "label": "người Việt dùng app trong năm 2025",
+        "context": "Số liệu toàn cầu: khoảng 3.6 giờ mỗi người dùng mỗi ngày (Sensor Tower)",
+        "source": "Nguồn: Adjust, Vietnam 2026, 06/2026; Sensor Tower, State of Mobile 2026, 01/2026"
+      }
+    },
+    {
+      "kicker": "Thời gian mỗi lần mở app",
+      "headline": "Mở app giải trí,",
+      "accent": "người Việt ở lại lâu hơn.",
+      "voice": "Mỗi lần mở app giải trí như xem phim, nghe nhạc, người Việt ở lại 24.46 phút, cao hơn hẳn mức 14.28 phút của Đông Nam Á.",
+      "visual": {
+        "type": "trend",
+        "metric": "Thời gian trung bình mỗi lần mở app giải trí tại Việt Nam",
+        "unit": "phút",
+        "source": "Nguồn: Adjust, Vietnam 2026, dữ liệu 01/2024 đến 03/2026",
+        "points": [
+          {
+            "label": "2024",
+            "value": 21.51
+          },
+          {
+            "label": "2025",
+            "value": 21.94
+          },
+          {
+            "label": "Quý 1/2026",
+            "value": 24.46
+          }
+        ],
+        "min": 0,
+        "note": "Đông Nam Á quý 1/2026: 14.28 phút"
+      }
+    },
+    {
+      "kicker": "App giải trí · quý 1/2026",
+      "headline": "Số lần mở app tăng",
+      "accent": "nhanh hơn lượt cài mới.",
+      "voice": "Quý 1 năm nay, lượt cài app giải trí tăng 32%, còn số lần mở app tăng tới 76%. Người đã cài đang mở app nhiều hơn hẳn.",
+      "visual": {
+        "type": "versus",
+        "metric": "App giải trí tại Việt Nam, quý 1/2026 so với quý 1/2025",
+        "unit": "%",
+        "source": "Nguồn: Adjust, Vietnam 2026, 06/2026",
+        "items": [
+          {
+            "label": "Lượt cài",
+            "value": 32,
+            "display": "+32",
+            "suffix": "%"
+          },
+          {
+            "label": "Số lần mở app",
+            "value": 76,
+            "display": "+76",
+            "suffix": "%"
+          }
+        ],
+        "winner": 1,
+        "note": "Số lần mở app tăng nhanh hơn lượt cài mới"
+      }
+    },
+    {
+      "kicker": "Giữ chân người dùng",
+      "headline": "100 người cài app,",
+      "accent": "8 người quay lại hôm sau.",
+      "voice": "Nhưng giữ chân người mới thì khó. Cứ 100 người cài app giải trí, chỉ 8 người mở lại vào hôm sau. Tới ngày thứ 30 chỉ còn 1 người.",
+      "visual": {
+        "type": "waffle",
+        "metric": "Người dùng mở lại app giải trí 1 ngày sau khi cài, Việt Nam, quý 1/2026",
+        "unit": "%",
+        "source": "Nguồn: Adjust, Vietnam 2026, 06/2026",
+        "lit": 8,
+        "legend": [
+          "mở lại app vào ngày hôm sau",
+          "Ngày thứ 7 còn 2%, ngày thứ 30 còn 1%. App game: 19% sau ngày đầu"
+        ]
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Người dùng rời app nhanh:",
+      "accent": "làm ngay 4 việc này.",
+      "voice": "Vậy nên làm gì? Đo tỷ lệ quay lại theo ngày cài trong GA4. Hướng dẫn tính năng chính ngay lần mở đầu bằng thông báo trong app. Chạy quảng cáo kéo người 7 ngày chưa mở app quay lại. Và tạo sự kiện trong app trên App Store.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Đo tỷ lệ quay lại theo ngày cài",
+            "detail": "GA4, Khám phá, mẫu Cohort exploration: tách ngày 1, ngày 7 theo từng kênh"
+          },
+          {
+            "text": "Hướng dẫn tính năng chính ngay phiên đầu",
+            "detail": "Firebase In-App Messaging: thẻ, banner hiện đúng lúc theo sự kiện"
+          },
+          {
+            "text": "Chạy App campaign for engagement",
+            "detail": "Google Ads, mục tiêu người đã cài nhưng 7 ngày chưa mở app"
+          },
+          {
+            "text": "Tạo In-App Events trên App Store",
+            "detail": "Mỗi sự kiện tối đa 31 ngày, hiện cho cả người dùng cũ"
+          }
+        ],
+        "source": "Nguồn: Trợ giúp Google Analytics; Firebase; Trợ giúp Google Ads; Apple Developer"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "127 tỷ giờ trong app,",
+      "accent": "bạn đóng góp bao nhiêu?",
+      "voice": "Bạn mở app nào nhiều nhất mỗi ngày? Comment tên app cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Bạn dùng app nào nhiều nhất mỗi ngày? Comment tên app"
+      }
+    }
+  ],
+  "review": "/_blob/8c3612cbb28902842917a0d4f2e774e6"
+}

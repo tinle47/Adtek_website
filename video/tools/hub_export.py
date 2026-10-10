@@ -13,7 +13,8 @@ os.chdir(ROOT)
 VISUAL = {"serp": "Màn hình Google", "chat": "Màn hình chatbot", "columns": "Biểu đồ cột", "hbars": "Thanh ngang",
           "continue": "Tiếp biểu đồ trước", "waffle": "Ô vuông 100", "list": "Danh sách", "article": "Thẻ bài viết",
           "follow": "Thẻ Follow Adtek", "bignumber": "Số lớn", "versus": "Đối đầu", "slope": "Đường dốc",
-          "trend": "Đường xu hướng", "donut": "Vòng tròn", "people": "Hình người", "funnel": "Phễu"}
+          "trend": "Đường xu hướng", "donut": "Vòng tròn", "people": "Hình người", "funnel": "Phễu",
+          "quiz": "Đố số liệu (3 lựa chọn)", "myth": "Phá hiểu lầm (đóng dấu)", "shot": "Ảnh chụp bài viết"}
 
 def cell(v):
     if isinstance(v, datetime):
@@ -56,7 +57,8 @@ for path in sorted(glob.glob("scripts/*/*.json")):
     scripts.append({"id": s["id"], "date": s.get("date", ""), "status": s.get("status", ""),
                     "title": (first.get("headline", "") + " " + first.get("accent", "")).strip(),
                     "caption": s.get("caption", ""), "hashtags": s.get("hashtags", []),
-                    "words": sum(len(x["voice"].split()) for x in s["scenes"]), "seconds": secs, "scenes": scenes})
+                    "words": sum(len(x["voice"].split()) for x in s["scenes"]), "seconds": secs, "scenes": scenes,
+                    "review": s.get("review", "")})
 scripts.sort(key=lambda x: (x["date"] == "", x["date"]), reverse=False)
 json.dump(scripts, open("hub/scripts.json", "w"), ensure_ascii=False, indent=1)
 print(f"schedule.json: {len(schedule)} dòng, scripts.json: {len(scripts)} kịch bản")

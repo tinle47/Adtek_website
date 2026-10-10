@@ -58,7 +58,8 @@
     "visual": "Thẻ Follow Adtek",
     "source": ""
    }
-  ]
+  ],
+  "review": ""
  },
  {
   "id": "khach-bo-gio-hang",
@@ -119,7 +120,8 @@
     "visual": "Thẻ Follow Adtek",
     "source": ""
    }
-  ]
+  ],
+  "review": ""
  },
  {
   "id": "khach-hang-dang-hoi-ai",
@@ -180,7 +182,8 @@
     "visual": "Thẻ Follow Adtek",
     "source": ""
    }
-  ]
+  ],
+  "review": ""
  },
  {
   "id": "nhan-tin-truoc-khi-mua",
@@ -241,7 +244,8 @@
     "visual": "Thẻ Follow Adtek",
     "source": ""
    }
-  ]
+  ],
+  "review": ""
  },
  {
   "id": "khach-so-gia-cho-sale",
@@ -264,7 +268,7 @@
     "kicker": "Đố số liệu · Vietnam Report",
     "title": "Bao nhiêu % người Việt so giá trước khi mua?",
     "voice": "Đoán thử: bao nhiêu phần trăm người Việt so giá ở nhiều nơi trước khi mua? A, 50%. B, 70%. C, 90%. Comment đáp án của bạn, kết quả ở cuối video.",
-    "visual": "Câu chốt, chữ lớn",
+    "visual": "Đố số liệu (3 lựa chọn)",
     "source": ""
    },
    {
@@ -285,7 +289,7 @@
     "kicker": "Đáp án · Vietnam Report",
     "title": "Đáp án C: 89.5% so giá trước khi mua.",
     "voice": "Đáp án là C. 89.5% người tiêu dùng so giá nhiều nơi trước khi mua, và 39.5% thường hoãn mua để chờ khuyến mãi.",
-    "visual": "Câu chốt, chữ lớn",
+    "visual": "Đố số liệu (3 lựa chọn)",
     "source": "Nguồn: Vietnam Report, khảo sát người tiêu dùng ngành bán lẻ, 08/2026"
    },
    {
@@ -302,7 +306,504 @@
     "visual": "Thẻ Follow Adtek",
     "source": ""
    }
-  ]
+  ],
+  "review": ""
+ },
+ {
+  "id": "thue-kol-khach-co-tin",
+  "date": "2026-10-11",
+  "status": "Đã viết kịch bản",
+  "title": "Thuê KOL nổi tiếng là khách sẽ tin?",
+  "caption": "Thuê KOL nổi tiếng là khách sẽ tin? 54% người mua tin review của người dùng thật hơn KOL. Bạn tin review của ai hơn? Comment cho Adtek.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#kol",
+   "#review",
+   "#banhangonline",
+   "#marketing"
+  ],
+  "words": 181,
+  "seconds": null,
+  "scenes": [
+   {
+    "kicker": "Phá hiểu lầm · Q&Me",
+    "title": "Thuê KOL nổi tiếng là khách sẽ tin?",
+    "voice": "Cứ thuê KOL nổi tiếng là khách sẽ tin và chốt đơn? Sai. Khảo sát mới của Q&Me với người mua ở Hà Nội và Thành phố Hồ Chí Minh cho thấy điều ngược lại.",
+    "visual": "Phá hiểu lầm (đóng dấu)",
+    "source": "Nguồn: Q&Me, How Vietnamese consumers trust online reviews, 09/2026"
+   },
+   {
+    "kicker": "Khách tin ai?",
+    "title": "Khách tin người mua thật hơn người nổi tiếng.",
+    "voice": "54% tin đánh giá của người mua bình thường hơn KOL. Chỉ 13% nghiêng về người nổi tiếng.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: Q&Me, khảo sát 200 người 20 đến 49 tuổi tại Hà Nội và TP.HCM, 09/2026"
+   },
+   {
+    "kicker": "Sức nặng của review",
+    "title": "8/10 khách chọn mua theo review.",
+    "voice": "Và review có sức nặng thật: 78% nói đánh giá online ảnh hưởng mạnh tới lựa chọn mua. Ở tuổi 20, con số là 87%.",
+    "visual": "Hình người",
+    "source": "Nguồn: Q&Me, khảo sát 200 người 20 đến 49 tuổi tại Hà Nội và TP.HCM, 09/2026"
+   },
+   {
+    "kicker": "Review nào đáng tin?",
+    "title": "Ảnh thật, video thật đáng tin hơn số sao.",
+    "voice": "Review nào đáng tin? Có ảnh hoặc video thật: 69%, viết chi tiết: 60%, hơn hẳn số sao: 51%. Sản phẩm dưới 3.6 sao bị loại, và 74% cần từ 50 đánh giá mới tin.",
+    "visual": "Thanh ngang",
+    "source": "Nguồn: Q&Me, khảo sát 200 người 20 đến 49 tuổi tại Hà Nội và TP.HCM, 09/2026"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Đầu tư vào review thật trước khi thuê KOL.",
+    "voice": "Vậy làm gì ngay? Xin đánh giá bằng link hoặc mã QR trên gói hàng, nhắm tới 50 đánh giá đầu tiên. Xin khách kèm ảnh, video. Đừng tặng quà để đổi đánh giá. Và trả lời mọi đánh giá, kể cả lời chê.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Google Business Profile Help; Q&Me, 09/2026"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Review thật, bán hàng thật.",
+    "voice": "Bạn tin review của KOL hay của người mua thật? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/aa416cbec39d6314a7fb1b2ca167fa98"
+ },
+ {
+  "id": "shop-mall-nam-mot-phan-ba-doanh-so",
+  "date": "2026-10-12",
+  "status": "Đã viết kịch bản",
+  "title": "Chưa tới 3% gian hàng nắm 1/3 doanh số sàn.",
+  "caption": "Chưa tới 3% gian hàng là shop Mall nhưng nắm 34.2% doanh số trên Shopee, TikTok Shop, Lazada. Shop bạn đang bán trên sàn nào nhiều nhất? Comment tên sàn.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#shopee",
+   "#tiktokshop",
+   "#banhangonline",
+   "#thuongmaidientu"
+  ],
+  "words": 189,
+  "seconds": null,
+  "scenes": [
+   {
+    "kicker": "Performance · Metric",
+    "title": "Chưa tới 3% gian hàng nắm 1/3 doanh số sàn.",
+    "voice": "Trên Shopee, TikTok Shop và Lazada, cứ 100 gian hàng thì chưa tới 3 là shop Mall. Họ đang nắm bao nhiêu doanh số? Theo Metric, 2.79% số gian hàng mang về 34.2% doanh số.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: Metric, 6 tháng đầu năm 2026, Shopee, Lazada, TikTok Shop"
+   },
+   {
+    "kicker": "Shop Mall",
+    "title": "Ít shop hơn, mỗi shop bán nhiều hơn.",
+    "voice": "Số shop Mall còn giảm 6%, nhưng tổng doanh số của họ tăng 54%. Tính ra, mỗi shop Mall bán được nhiều hơn 63.8% so với cùng kỳ.",
+    "visual": "Số lớn",
+    "source": "Nguồn: Metric, 6 tháng đầu năm 2026, Shopee, Lazada, TikTok Shop"
+   },
+   {
+    "kicker": "YouNet ECI",
+    "title": "Gần 98% tiền dồn về 2 sàn.",
+    "voice": "Tiền cũng dồn về 2 sàn. Shopee chiếm 54.5% tổng giá trị đơn hàng, TikTok Shop 43.4%, cộng lại gần 98%.",
+    "visual": "Vòng tròn",
+    "source": "Nguồn: YouNet ECI, GMV 6 tháng đầu năm 2026"
+   },
+   {
+    "kicker": "Mỗi ngành một sàn mạnh",
+    "title": "Thời trang chọn TikTok, điện máy chọn Shopee.",
+    "voice": "Nhưng mỗi ngành có sàn mạnh riêng. Điện máy, hàng tiêu dùng nhanh và mỹ phẩm, Shopee dẫn đầu. Riêng thời trang, ngành lớn nhất, TikTok Shop nắm 56.2%.",
+    "visual": "Thanh ngang",
+    "source": "Nguồn: YouNet ECI, GMV 6 tháng đầu năm 2026"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Trước mùa 11.11, nhà bán nên làm gì?",
+    "voice": "Vậy nhà bán nên làm gì? Đăng ký TikTok Shop Mall nếu đủ điều kiện. Đăng ký chiến dịch 11.11 ngay trong Seller Center. Bật Cộng tác mở để nhà sáng tạo tự chọn bán hàng của bạn. Và dùng tiếp thị liên kết trả hoa hồng theo đơn của Shopee.",
+    "visual": "Danh sách",
+    "source": "Nguồn: TikTok Shop Seller University; Shopee Help Center"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Bán đúng sàn, đúng mùa.",
+    "voice": "Shop bạn đang bán trên sàn nào nhiều nhất? Comment tên sàn cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/dedbabe77aa958ae45b09ec4ac0f8014"
+ },
+ {
+  "id": "quang-cao-tiep-can-nhieu-nhat",
+  "date": "2026-10-13",
+  "status": "Đã viết kịch bản",
+  "title": "Quảng cáo nền tảng nào tiếp cận nhiều người Việt nhất?",
+  "caption": "Đoán thử: quảng cáo trên nền tảng nào tiếp cận nhiều người Việt nhất? TikTok, Facebook hay YouTube? Comment A, B hay C trước khi xem đáp án.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#quangcaofacebook",
+   "#tiktokads",
+   "#youtubeads",
+   "#digitalmarketing"
+  ],
+  "words": 177,
+  "seconds": null,
+  "scenes": [
+   {
+    "kicker": "Đố số liệu · DataReportal",
+    "title": "Quảng cáo nền tảng nào tiếp cận nhiều người Việt nhất?",
+    "voice": "Đoán thử: quảng cáo trên nền tảng nào tiếp cận được nhiều người Việt nhất? A, TikTok. B, Facebook. C, YouTube. Comment đáp án của bạn, kết quả ở cuối video.",
+    "visual": "Đố số liệu (3 lựa chọn)",
+    "source": ""
+   },
+   {
+    "kicker": "Gợi ý 1",
+    "title": "Người Việt ở lại TikTok lâu nhất.",
+    "voice": "Gợi ý thứ nhất: người Việt dùng TikTok lâu nhất, trung bình 1 giờ 56 phút mỗi ngày. YouTube 1 giờ 21 phút, Facebook 1 giờ 11 phút.",
+    "visual": "Thanh ngang",
+    "source": "Nguồn: DataReportal, Digital 2026 Vietnam (Similarweb, 08/2025)"
+   },
+   {
+    "kicker": "Gợi ý 2",
+    "title": "Khách tìm thương hiệu trên mạng xã hội.",
+    "voice": "Gợi ý thứ hai: 84.9% người dùng internet tìm thông tin thương hiệu và sản phẩm trên mạng xã hội.",
+    "visual": "Ô vuông 100",
+    "source": "Nguồn: DataReportal, Digital 2026 Vietnam (GWI, quý 2/2025)"
+   },
+   {
+    "kicker": "Đáp án · DataReportal",
+    "title": "Đáp án B: Facebook, 79 triệu người.",
+    "voice": "Đáp án là B, Facebook. Quảng cáo Facebook tiếp cận 79 triệu người, TikTok 76.1 triệu người từ 18 tuổi, YouTube 62.1 triệu. TikTok giữ chân lâu nhất, nhưng Facebook vẫn phủ rộng nhất.",
+    "visual": "Đố số liệu (3 lựa chọn)",
+    "source": "Nguồn: DataReportal, Digital 2026 Vietnam. Số người quảng cáo có thể tiếp cận, cuối 2025, có thể trùng"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Mỗi kênh một cách chạy riêng.",
+    "voice": "Vậy chạy quảng cáo thế nào? Trên TikTok, dùng Spark Ads cho video đang có lượt xem tốt. Trên YouTube, chạy Demand Gen chỉ trên Shorts và bật Lookalike. Còn Zalo, gửi Business Message tới khách có số điện thoại, giá từ 200 đồng mỗi tin.",
+    "visual": "Danh sách",
+    "source": "Nguồn: TikTok Ads Help; Google Ads Help; Zalo Business Message"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Mỗi ngày một số liệu, bạn đoán đúng bao nhiêu?",
+    "voice": "Bạn đoán đúng không? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/6d83048876ed4f9c38ce45bead54025e"
+ },
+ {
+  "id": "giao-het-cho-advantage-plus",
+  "date": "2026-10-14",
+  "status": "Đã viết kịch bản",
+  "title": "Giá quảng cáo Meta +12%, có nên giao hết cho AI?",
+  "caption": "Giá mỗi quảng cáo trên Meta tăng 12% trong một năm, tiền chạy qua Advantage+ vượt 75 tỷ USD mỗi năm. Nhưng trong thử nghiệm của Haus, 58% thương hiệu thu về nhiều hơn khi tự cài chiến dịch. Shop bạn để Advantage+ chạy bao nhiêu % ngân sách? Comment con số.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#quangcaofacebook",
+   "#metaads",
+   "#advantageplus",
+   "#performancemarketing"
+  ],
+  "words": 188,
+  "seconds": null,
+  "scenes": [
+   {
+    "kicker": "Performance · Số liệu toàn cầu",
+    "title": "Giá quảng cáo Meta +12%, có nên giao hết cho AI?",
+    "voice": "Quảng cáo Facebook đang đắt lên, có nên giao hết cho AI chạy? Quý 2 năm nay, giá trung bình mỗi quảng cáo của Meta tăng 12%. Số liệu toàn cầu.",
+    "visual": "Số lớn",
+    "source": "Nguồn: Meta, kết quả kinh doanh quý 2/2026, công bố 29/07/2026"
+   },
+   {
+    "kicker": "Tiền đang dồn vào AI",
+    "title": "Advantage+ vượt 75 tỷ USD mỗi năm.",
+    "voice": "Tiền đang dồn vào AI. Advantage+, công cụ quảng cáo tự động của Meta, đã vượt 75 tỷ USD mỗi năm, từ mức 60 tỷ hồi quý 3 năm ngoái.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: Meta, họp công bố kết quả quý 3/2025 và quý 2/2026"
+   },
+   {
+    "kicker": "Thử nghiệm độc lập · Haus",
+    "title": "Hơn nửa thương hiệu tự chạy lại hiệu quả hơn.",
+    "voice": "Nhưng AI có mang về nhiều đơn hơn? Haus, công ty đo hiệu quả quảng cáo, cho hai cách chạy đấu nhau: 58% thương hiệu thu về nhiều doanh thu thật hơn khi tự cài chiến dịch.",
+    "visual": "Ô vuông 100",
+    "source": "Nguồn: Haus, 640 thử nghiệm trên Meta, 07/2025. Số liệu quốc tế, phần lớn là thương hiệu lớn"
+   },
+   {
+    "kicker": "Sau khi tắt quảng cáo · Haus",
+    "title": "Tắt quảng cáo, Advantage+ hụt hơi nhanh hơn.",
+    "voice": "Không chỉ vậy. Sau khi tắt quảng cáo, chiến dịch tự cài vẫn giúp bán thêm 32%, còn Advantage+ chỉ còn 17%.",
+    "visual": "Biểu đồ cột",
+    "source": "Nguồn: Haus, 640 thử nghiệm trên Meta, 07/2025. Số liệu quốc tế"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Đừng giao hết, hãy cho AI thi với bạn.",
+    "voice": "Vậy làm gì ngay? Thử nghiệm A/B giữa Advantage+ và chiến dịch tự cài, cùng ngân sách. Khai báo nhóm khách cũ. Đặt mức chi tối đa cho khách cũ. Và thử tối ưu theo đơn do quảng cáo thật sự tạo ra.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Trung tâm trợ giúp Meta Business"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "AI hay tự chạy, bạn đang chọn bên nào?",
+    "voice": "Shop bạn để Advantage+ chạy bao nhiêu phần trăm ngân sách? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/08d24d1a4403c4a376479c6ba396c1bf"
+ },
+ {
+  "id": "livestream-nguoi-mua-tin-ai",
+  "date": "2026-10-15",
+  "status": "Đã viết kịch bản",
+  "title": "Chỉ 13% mua ngẫu hứng khi xem livestream.",
+  "caption": "Livestream sống nhờ khách mua ngẫu hứng? Chỉ 13% người mua qua live là mua ngẫu hứng, 47% đã cân nhắc từ trước. Shop bạn live bằng tài khoản chính thức hay thuê KOC? Comment cho Adtek biết.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#livestream",
+   "#tiktokshop",
+   "#banhangonline",
+   "#thuongmaidientu"
+  ],
+  "words": 187,
+  "seconds": null,
+  "scenes": [
+   {
+    "kicker": "Performance · Q&Me",
+    "title": "Chỉ 13% mua ngẫu hứng khi xem livestream.",
+    "voice": "Livestream sống nhờ khách mua ngẫu hứng? Không hẳn. Theo Q&Me, chỉ 13% người mua qua live là mua ngẫu hứng. 47% đã cân nhắc từ trước, 40% định mua sẵn.",
+    "visual": "Hình người",
+    "source": "Nguồn: Q&Me, 04/2026, khảo sát 245 người mua qua livestream tại TP.HCM và Hà Nội (mẫu nhỏ)"
+   },
+   {
+    "kicker": "e-Conomy SEA 2025",
+    "title": "650,000 người bán đang chen nhau lên video.",
+    "voice": "Trong khi người bán ngày càng đông: khoảng 650,000 người bán và cửa hàng trên video, tăng 60% trong một năm. Người mua phải chọn tin ai.",
+    "visual": "Số lớn",
+    "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025 (số liệu Cube)"
+   },
+   {
+    "kicker": "Người mua chọn ai?",
+    "title": "Một nửa người mua chọn tài khoản chính hãng.",
+    "voice": "Vậy họ chọn ai? 5 trên 10 người chủ yếu mua từ tài khoản chính thức của thương hiệu, nhiều hơn mua qua KOL.",
+    "visual": "Ô vuông 100",
+    "source": "Nguồn: Q&Me, 04/2026, khảo sát 245 người mua qua livestream tại TP.HCM và Hà Nội (mẫu nhỏ)"
+   },
+   {
+    "kicker": "Luật mới về livestream",
+    "title": "Giới thiệu hàng chưa dùng, có thể bị phạt tới 100 triệu.",
+    "voice": "Luật cũng đã siết. Từ 01/07/2026, sàn phải xác thực danh tính người live, lưu buổi live ít nhất 1 năm. KOL, KOC giới thiệu hàng chưa dùng có thể bị phạt tới 100 triệu đồng.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: Nghị định 87/2026/NĐ-CP, Điều 6 và Điều 51; Luật Thương mại điện tử 122/2025/QH15, Điều 22"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Muốn người xem live tin, làm ngay 4 việc này.",
+    "voice": "Shop nên làm gì? Live bằng tài khoản chính thức. Đăng video nhá hàng trước 1 ngày và 1 giờ. Khi demo, ghim sản phẩm, mở Flash Sale riêng cho live. Và gửi KOC dùng thử kèm giấy tờ chất lượng trước khi live.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Học viện TikTok Shop (seller-vn.tiktok.com/university); Luật Thương mại điện tử 122/2025/QH15; Nghị định 87/2026/NĐ-CP"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Người mua tin thương hiệu, shop bạn đã live chưa?",
+    "voice": "Shop bạn live bằng tài khoản chính thức hay thuê KOC? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/2d350f91554a03091aa4cfb35f008776"
+ },
+ {
+  "id": "thi-truong-app-cham-dinh",
+  "date": "2026-10-16",
+  "status": "Đã viết kịch bản",
+  "title": "Thị trường app Việt Nam đã chạm đỉnh?",
+  "caption": "Lượt cài app ở Việt Nam đã chững lại sau khi tăng 136% từ 2018. Nhưng tiền quảng cáo không rút đi mà đổi chỗ: quý 2/2026, ngân sách trên Android cho app tài chính tăng 153%, game giảm 46%. App bạn đang dồn tiền cho iOS hay Android? Comment cho Adtek biết.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#appmarketing",
+   "#quangcaoapp",
+   "#mobilemarketing",
+   "#fintech"
+  ],
+  "words": 188,
+  "seconds": null,
+  "scenes": [
+   {
+    "kicker": "App Marketing · AppsFlyer",
+    "title": "Thị trường app Việt Nam đã chạm đỉnh?",
+    "voice": "Thị trường app Việt Nam đã chạm đỉnh? Theo AppsFlyer, lượt cài app tăng 136% từ 2018, lên 2.17 tỷ lượt năm 2024, rồi giảm nhẹ.",
+    "visual": "Đường xu hướng",
+    "source": "Nguồn: AppsFlyer, State of App Marketing in Vietnam 2025, 11/2025"
+   },
+   {
+    "kicker": "Người cài app đã đổi",
+    "title": "iPhone đang lấy dần phần của Android.",
+    "voice": "Nhưng người cài đã đổi. Từ 2017 đến 2025, iOS tăng từ 22% lên 33% lượt cài, Android giảm từ 78% còn 66%. Đây là nhóm khách giá trị cao hơn.",
+    "visual": "Đường dốc",
+    "source": "Nguồn: AppsFlyer, State of App Marketing in Vietnam 2025, 11/2025"
+   },
+   {
+    "kicker": "App tài chính",
+    "title": "App tài chính: iOS đã chiếm hơn một nửa.",
+    "voice": "Rõ nhất là app tài chính. Nửa đầu 2025, lượt cài trên iOS tăng 27%, Android giảm 39%. Cả năm, iOS dự kiến chiếm hơn nửa lượt cài.",
+    "visual": "Vòng tròn",
+    "source": "Nguồn: AppsFlyer, State of App Marketing in Vietnam 2025, 11/2025"
+   },
+   {
+    "kicker": "Tiền quảng cáo 2026",
+    "title": "Tiền không rút đi, mà đổi chỗ.",
+    "voice": "Vậy tiền quảng cáo đi đâu? Quý 2 năm nay, ngân sách kéo người dùng trên Android cho app tài chính tăng 153%, app giải trí tăng 194%, còn game giảm 46%.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: AppsFlyer, State of Marketing in APAC 2026, 09/2026"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Lượt cài chững lại, tiền nên đổ vào 4 chỗ này.",
+    "voice": "Làm gì ngay? Làm trang App Store riêng cho từng nhóm khách, gắn vào Apple Ads. Làm trang Google Play riêng cho từng chiến dịch. Chạy quảng cáo kéo người đã cài quay lại. Và chia tiền theo tỷ lệ giữ chân, không chỉ giá mỗi lượt cài.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Apple Developer; Play Console Help; Google Ads Help; AppsFlyer Help Center"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Lượt cài chững lại, app bạn đang dồn tiền vào đâu?",
+    "voice": "App bạn đang dồn tiền cho iOS hay Android? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/e117504c1b02b23fd0a030c301349594"
+ },
+ {
+  "id": "cai-app-gian-lan",
+  "date": "2026-10-17",
+  "status": "Đã viết kịch bản",
+  "title": "100 lượt cài app ở Việt Nam, bao nhiêu lượt là gian lận?",
+  "caption": "Cứ 100 lượt cài app ở Việt Nam, bao nhiêu lượt là gian lận? Xem 2 gợi ý từ báo cáo của AppsFlyer rồi đoán thử. Bạn đoán A, B hay C? Comment đáp án cho Adtek nhé",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#appmarketing",
+   "#quangcaoapp",
+   "#adfraud",
+   "#mobilemarketing"
+  ],
+  "words": 188,
+  "seconds": null,
+  "scenes": [
+   {
+    "kicker": "Đố số liệu · AppsFlyer",
+    "title": "100 lượt cài app ở Việt Nam, bao nhiêu lượt là gian lận?",
+    "voice": "Cứ 100 lượt cài app ở Việt Nam, bao nhiêu lượt là gian lận? A, 5 lượt. B, 20 lượt. C, 50 lượt. Comment đáp án, kết quả ở cuối video.",
+    "visual": "Đố số liệu (3 lựa chọn)",
+    "source": ""
+   },
+   {
+    "kicker": "Gợi ý 1 · App tài chính",
+    "title": "App tài chính Việt Nam bị gian lận gấp đôi khu vực.",
+    "voice": "Gợi ý một: riêng app tài chính năm 2025, Việt Nam có tỷ lệ gian lận 46%, gấp đôi trung bình châu Á Thái Bình Dương. Nhưng đó mới là một ngành.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: AppsFlyer, State of Finance for Marketers APAC 2026, số liệu năm 2025"
+   },
+   {
+    "kicker": "Gợi ý 2 · Tính chung thị trường",
+    "title": "Indonesia đã giảm còn 13 trên 100 lượt.",
+    "voice": "Gợi ý hai: tính chung cả thị trường, Indonesia giảm từ 17% xuống 13%. Việt Nam cũng giảm, nhưng vẫn cao hơn hẳn trung bình thế giới.",
+    "visual": "Đường dốc",
+    "source": "Nguồn: AppsFlyer, State of Fraud for Marketers 2026, 06/2026"
+   },
+   {
+    "kicker": "Đáp án · AppsFlyer",
+    "title": "Đáp án B: 20 trên 100 lượt cài.",
+    "voice": "Đáp án là B. Quý 1 năm nay, cứ 100 lượt cài app ở Việt Nam có 20 lượt gian lận, giảm từ 29 lượt năm trước. Toàn cầu, 52% lượt cài gian lận đội lốt lượt cài tự nhiên.",
+    "visual": "Đố số liệu (3 lựa chọn)",
+    "source": "Nguồn: AppsFlyer, State of Fraud for Marketers 2026, 06/2026"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Đừng trả tiền cho lượt cài giả.",
+    "voice": "Vậy làm gì ngay? Trong Protect360, soi cả nguồn tự nhiên. Đặt luật kiểm tra riêng cho từng đối tác affiliate. Trên Android, bật lọc click giả. Trên iOS, chỉ tính lượt cài có chữ ký của Apple.",
+    "visual": "Danh sách",
+    "source": "Nguồn: AppsFlyer Knowledge Base; Adjust Help Center; Apple Developer (AdAttributionKit)"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "App của bạn đang trả tiền cho bao nhiêu lượt giả?",
+    "voice": "Bạn đoán A, B hay C? Comment cho Adtek nhé. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/4b96b4b283f521c4089353015e6295c0"
+ },
+ {
+  "id": "nguoi-viet-song-trong-app",
+  "date": "2026-10-18",
+  "status": "Đã viết kịch bản",
+  "title": "Người Việt dùng app bao nhiêu giờ một năm?",
+  "caption": "Năm 2025, người Việt dành 127 tỷ giờ để dùng app. Nhưng cứ 100 người cài app giải trí, chỉ 8 người mở lại vào ngày hôm sau. Bạn dùng app nào nhiều nhất mỗi ngày? Comment tên app.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#appmarketing",
+   "#mobileapp",
+   "#digitalmarketing",
+   "#giuchankhachhang"
+  ],
+  "words": 192,
+  "seconds": null,
+  "scenes": [
+   {
+    "kicker": "App Marketing · Adjust",
+    "title": "Người Việt dùng app bao nhiêu giờ một năm?",
+    "voice": "Một năm, người Việt dành bao nhiêu giờ trong app? Theo Adjust, riêng năm 2025 là 127 tỷ giờ. Còn trên thế giới, mỗi người dùng ở trong app khoảng 3.6 giờ mỗi ngày.",
+    "visual": "Số lớn",
+    "source": "Nguồn: Adjust, Vietnam 2026, 06/2026; Sensor Tower, State of Mobile 2026, 01/2026"
+   },
+   {
+    "kicker": "Thời gian mỗi lần mở app",
+    "title": "Mở app giải trí, người Việt ở lại lâu hơn.",
+    "voice": "Mỗi lần mở app giải trí như xem phim, nghe nhạc, người Việt ở lại 24.46 phút, cao hơn hẳn mức 14.28 phút của Đông Nam Á.",
+    "visual": "Đường xu hướng",
+    "source": "Nguồn: Adjust, Vietnam 2026, dữ liệu 01/2024 đến 03/2026"
+   },
+   {
+    "kicker": "App giải trí · quý 1/2026",
+    "title": "Số lần mở app tăng nhanh hơn lượt cài mới.",
+    "voice": "Quý 1 năm nay, lượt cài app giải trí tăng 32%, còn số lần mở app tăng tới 76%. Người đã cài đang mở app nhiều hơn hẳn.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: Adjust, Vietnam 2026, 06/2026"
+   },
+   {
+    "kicker": "Giữ chân người dùng",
+    "title": "100 người cài app, 8 người quay lại hôm sau.",
+    "voice": "Nhưng giữ chân người mới thì khó. Cứ 100 người cài app giải trí, chỉ 8 người mở lại vào hôm sau. Tới ngày thứ 30 chỉ còn 1 người.",
+    "visual": "Ô vuông 100",
+    "source": "Nguồn: Adjust, Vietnam 2026, 06/2026"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Người dùng rời app nhanh: làm ngay 4 việc này.",
+    "voice": "Vậy nên làm gì? Đo tỷ lệ quay lại theo ngày cài trong GA4. Hướng dẫn tính năng chính ngay lần mở đầu bằng thông báo trong app. Chạy quảng cáo kéo người 7 ngày chưa mở app quay lại. Và tạo sự kiện trong app trên App Store.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Trợ giúp Google Analytics; Firebase; Trợ giúp Google Ads; Apple Developer"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "127 tỷ giờ trong app, bạn đóng góp bao nhiêu?",
+    "voice": "Bạn mở app nào nhiều nhất mỗi ngày? Comment tên app cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/8c3612cbb28902842917a0d4f2e774e6"
  },
  {
   "id": "aio-la-gi-1",
@@ -363,7 +864,8 @@
     "visual": "Thẻ Follow Adtek",
     "source": ""
    }
-  ]
+  ],
+  "review": ""
  },
  {
   "id": "aio-la-gi-2",
@@ -417,7 +919,8 @@
     "visual": "Thẻ Follow Adtek",
     "source": ""
    }
-  ]
+  ],
+  "review": ""
  },
  {
   "id": "aio-la-gi-3",
@@ -471,6 +974,7 @@
     "visual": "Thẻ Follow Adtek",
     "source": ""
    }
-  ]
+  ],
+  "review": ""
  }
 ]

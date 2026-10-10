@@ -1,0 +1,169 @@
+{
+  "id": "cai-app-gian-lan",
+  "date": "2026-10-17",
+  "status": "Đã viết kịch bản",
+  "cover": {
+    "kicker": "Đố số liệu",
+    "title": "100 lượt cài app",
+    "accent": "bao nhiêu lượt gian lận?",
+    "options": [
+      "5 lượt",
+      "20 lượt",
+      "50 lượt"
+    ]
+  },
+  "caption": "Cứ 100 lượt cài app ở Việt Nam, bao nhiêu lượt là gian lận? Xem 2 gợi ý từ báo cáo của AppsFlyer rồi đoán thử. Bạn đoán A, B hay C? Comment đáp án cho Adtek nhé",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#appmarketing",
+    "#quangcaoapp",
+    "#adfraud",
+    "#mobilemarketing"
+  ],
+  "scenes": [
+    {
+      "kicker": "Đố số liệu · AppsFlyer",
+      "headline": "100 lượt cài app ở Việt Nam,",
+      "accent": "bao nhiêu lượt là gian lận?",
+      "voice": "Cứ 100 lượt cài app ở Việt Nam, bao nhiêu lượt là gian lận? A, 5 lượt. B, 20 lượt. C, 50 lượt. Comment đáp án, kết quả ở cuối video.",
+      "visual": {
+        "type": "quiz",
+        "options": [
+          {
+            "label": "A",
+            "text": "5 lượt"
+          },
+          {
+            "label": "B",
+            "text": "20 lượt"
+          },
+          {
+            "label": "C",
+            "text": "50 lượt"
+          }
+        ],
+        "answer": 1,
+        "tag": "Comment A, B hay C"
+      }
+    },
+    {
+      "kicker": "Gợi ý 1 · App tài chính",
+      "headline": "App tài chính Việt Nam",
+      "accent": "bị gian lận gấp đôi khu vực.",
+      "voice": "Gợi ý một: riêng app tài chính năm 2025, Việt Nam có tỷ lệ gian lận 46%, gấp đôi trung bình châu Á Thái Bình Dương. Nhưng đó mới là một ngành.",
+      "visual": {
+        "type": "versus",
+        "metric": "Tỷ lệ lượt cài gian lận của app tài chính, năm 2025",
+        "unit": "%",
+        "source": "Nguồn: AppsFlyer, State of Finance for Marketers APAC 2026, số liệu năm 2025",
+        "items": [
+          {
+            "label": "Việt Nam",
+            "value": 46,
+            "suffix": "%"
+          },
+          {
+            "label": "Châu Á - Thái Bình Dương",
+            "value": 22,
+            "suffix": "%"
+          }
+        ],
+        "winner": 0,
+        "note": "Chỉ tính app tài chính, chưa phải mọi ngành"
+      }
+    },
+    {
+      "kicker": "Gợi ý 2 · Tính chung thị trường",
+      "headline": "Indonesia đã giảm",
+      "accent": "còn 13 trên 100 lượt.",
+      "voice": "Gợi ý hai: tính chung cả thị trường, Indonesia giảm từ 17% xuống 13%. Việt Nam cũng giảm, nhưng vẫn cao hơn hẳn trung bình thế giới.",
+      "visual": {
+        "type": "slope",
+        "metric": "Tỷ lệ lượt cài gian lận theo thị trường",
+        "unit": "%",
+        "source": "Nguồn: AppsFlyer, State of Fraud for Marketers 2026, 06/2026",
+        "from": "Quý 1/2025",
+        "to": "Quý 1/2026",
+        "series": [
+          {
+            "label": "Indonesia",
+            "a": 17,
+            "b": 13,
+            "display": [
+              "17%",
+              "13%"
+            ],
+            "tone": "accent"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Đáp án · AppsFlyer",
+      "headline": "Đáp án B:",
+      "accent": "20 trên 100 lượt cài.",
+      "voice": "Đáp án là B. Quý 1 năm nay, cứ 100 lượt cài app ở Việt Nam có 20 lượt gian lận, giảm từ 29 lượt năm trước. Toàn cầu, 52% lượt cài gian lận đội lốt lượt cài tự nhiên.",
+      "visual": {
+        "type": "quiz",
+        "reveal": true,
+        "options": [
+          {
+            "label": "A",
+            "text": "5 lượt"
+          },
+          {
+            "label": "B",
+            "text": "20 lượt"
+          },
+          {
+            "label": "C",
+            "text": "50 lượt"
+          }
+        ],
+        "answer": 1,
+        "note": "Con số chính xác 20% (quý 1/2026), giảm từ 29% (quý 1/2025). Số liệu quốc tế: 52% lượt cài gian lận nằm ở nguồn tự nhiên",
+        "source": "Nguồn: AppsFlyer, State of Fraud for Marketers 2026, 06/2026"
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Đừng trả tiền",
+      "accent": "cho lượt cài giả.",
+      "voice": "Vậy làm gì ngay? Trong Protect360, soi cả nguồn tự nhiên. Đặt luật kiểm tra riêng cho từng đối tác affiliate. Trên Android, bật lọc click giả. Trên iOS, chỉ tính lượt cài có chữ ký của Apple.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Soi cả nguồn tự nhiên trong Protect360",
+            "detail": "52% lượt cài gian lận nằm ở nguồn tự nhiên"
+          },
+          {
+            "text": "Đặt Validation Rules cho từng nguồn affiliate",
+            "detail": "Chặn sai quốc gia, sai hệ điều hành; thử chế độ Tagged trước"
+          },
+          {
+            "text": "Android: bật lọc click injection",
+            "detail": "Adjust, tab Protection"
+          },
+          {
+            "text": "iOS: chỉ tính postback có chữ ký Apple",
+            "detail": "Xác minh chữ ký AdAttributionKit rồi mới tính chuyển đổi"
+          }
+        ],
+        "source": "Nguồn: AppsFlyer Knowledge Base; Adjust Help Center; Apple Developer (AdAttributionKit)"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "App của bạn đang trả tiền",
+      "accent": "cho bao nhiêu lượt giả?",
+      "voice": "Bạn đoán A, B hay C? Comment cho Adtek nhé. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Bạn đoán A, B hay C? Comment đáp án cho Adtek nhé"
+      }
+    }
+  ],
+  "review": "/_blob/4b96b4b283f521c4089353015e6295c0"
+}
