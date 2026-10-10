@@ -163,6 +163,10 @@ details.fold > .list { margin-top: 12px; }
     </div>
     <h2>Sắp đăng</h2>
     <div class="list" id="upcoming"><div class="empty-state">Đang tải danh sách video…</div></div>
+    <details class="fold" id="sampleWrap" open hidden>
+      <summary>Mẫu dạng video mới (chưa lên lịch)</summary>
+      <div class="list" id="samples"></div>
+    </details>
     <details class="fold" id="pastWrap" hidden>
       <summary>Đã qua ngày đăng</summary>
       <div class="list" id="past"></div>
@@ -322,7 +326,13 @@ details.fold > .list { margin-top: 12px; }
   function videoCard(v) {
     const c = el("article", "card" + (v.date === today ? " today" : ""));
     const media = el("div", "media");
-    if (v.url) {
+    // Mẫu khổ khác (1:1, 16:9) hiện đúng tỷ lệ; mẫu ảnh lướt hiện ảnh đầu tiên.
+    if (v.aspect) { media.style.aspectRatio = v.aspect; if (v.aspect === "16 / 9") media.style.width = "320px"; }
+    if (v.images && v.images.length) {
+      const img = document.createElement("img");
+      img.src = v.images[0]; img.alt = v.topic || ""; img.style.cssText = "width:100%;height:100%;object-fit:cover;display:block";
+      media.appendChild(img);
+    } else if (v.url) {
       const vid = document.createElement("video");
       vid.src = v.url; vid.controls = true; vid.playsInline = true; vid.preload = "metadata";
       media.appendChild(vid);
@@ -330,9 +340,10 @@ details.fold > .list { margin-top: 12px; }
     c.appendChild(media);
     const info = el("div", "info");
     const meta = el("div", "meta");
-    meta.appendChild(el("span", "date", fmtDate(v.date)));
-    if (v.date === today) meta.appendChild(el("span", "chip today", "Đăng hôm nay"));
-    meta.appendChild(el("span", "chip " + (v.url ? "ok" : "wait"), v.url ? "Sẵn sàng" : "Chưa có video"));
+    if (v.date) meta.appendChild(el("span", "date", fmtDate(v.date)));
+    if (v.date && v.date === today) meta.appendChild(el("span", "chip today", "Đăng hôm nay"));
+    if (v.format) meta.appendChild(el("span", "chip ok", "Mẫu: " + v.format));
+    else meta.appendChild(el("span", "chip " + (v.url ? "ok" : "wait"), v.url ? "Sẵn sàng" : "Chưa có video"));
     if (v.service) meta.appendChild(el("span", null, v.service));
     if (v.duration) meta.appendChild(el("span", null, v.duration));
     info.appendChild(meta);
@@ -341,7 +352,7 @@ details.fold > .list { margin-top: 12px; }
     const cap = captionText(v);
     let box = null;
     if (cap.trim()) { box = el("div", "caption", cap); info.appendChild(box); }
-    if (v.note && v.url) info.appendChild(el("div", "note", v.note));
+    if (v.note && (v.url || v.images)) info.appendChild(el("div", "note", v.note));
     const actions = el("div", "actions");
     const status = el("div", "status");
     if (v.url) {
@@ -359,6 +370,26 @@ details.fold > .list { margin-top: 12px; }
         } finally { dl.disabled = false; }
       });
       actions.appendChild(dl);
+    }
+    if (v.images && v.images.length) {
+      // Ảnh lướt: tải lần lượt từng ảnh theo thứ tự đăng.
+      const im = el("button", "btn primary", `Tải ${v.images.length} ảnh`);
+      im.type = "button";
+      im.addEventListener("click", async () => {
+        if (!downloads) { v.images.forEach((u) => window.open(u, "_blank")); return; }
+        im.disabled = true;
+        try {
+          for (const [k, u] of v.images.entries()) {
+            status.textContent = `Đang tải ảnh ${k + 1}/${v.images.length}…`;
+            const blob = await (await fetch(u)).blob();
+            await downloads.save({ filename: `${v.filename || v.slug || "anh"} ${k + 1}.png`, data: blob });
+          }
+          status.textContent = "Đã lưu ảnh.";
+        } catch (e) {
+          status.textContent = e && e.code === "declined" ? "Đã huỷ tải." : "Chưa tải được ảnh.";
+        } finally { im.disabled = false; }
+      });
+      actions.appendChild(im);
     }
     if (v.cover) {
       // Ảnh bìa riêng: chọn ở bước "Chọn ảnh bìa" khi đăng.
@@ -417,6 +448,13 @@ details.fold > .list { margin-top: 12px; }
     const up = document.getElementById("upcoming"); up.textContent = "";
     up.appendChild(el("div", "empty-state", "Chưa tải được danh sách video. Tải lại trang để thử lại."));
   });
+
+  // Mẫu dạng video mới: chưa có ngày đăng, anh Tin xem thử rồi chọn dạng nào làm tiếp.
+  getJSON("samples.json").then(list => {
+    const box = document.getElementById("samples"); box.textContent = "";
+    list.forEach(v => box.appendChild(videoCard(v)));
+    document.getElementById("sampleWrap").hidden = !list.length;
+  }).catch(() => {});
 
   /* Lịch đăng */
   let schedule = [], filter = "Tất cả";

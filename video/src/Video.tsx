@@ -5,12 +5,13 @@ import { Article, Follow, List, listDelays } from "./design/blocks";
 import { BarChart, ColumnChart, Exhibit, Waffle, type TimedCol, type TimedNote } from "./design/charts";
 import { BigNumber, Donut, Funnel, People, Slope, Trend, Versus } from "./design/charts2";
 import { CHAT_NOTE_AT, ChatScreen } from "./design/chat";
-import { BASE_FPS, Background, Caption, CueContext, Fade, Headline, L, Logo, SiteFooter, clamp, cueTime, numbersIn, useFonts, useFrame } from "./design/frame";
+import { BASE_FPS, Background, C, Caption, CueContext, Fade, Headline, LAYOUTS, LayoutContext, Logo, SANS, SiteFooter, clamp, cueTime, numbersIn, useFonts, useFrame, useLayout } from "./design/frame";
 import { Shot } from "./design/shot";
+import { Countdown, Race, SeaMap, Words, countdownCues, mapCues, raceCues, wordsCues } from "./design/formats";
 import { Myth, QUIZ_REVEAL_AT, Quiz, mythStampAt } from "./design/hook";
 import { GoogleSerp, PhoneNote, SERP_NOTE_AT } from "./design/serp";
 import { timeline, type TimedScene } from "./timing";
-import type { Scene, VideoProps, Visual } from "./types";
+import type { Scene, VideoProps, Visual, Word } from "./types";
 
 const PHONE_H = 600;
 // Cảnh đầu hiện sẵn trạng thái cuối của hiệu ứng: khung đầu tiên (cũng là ảnh bìa mặc định) đã có con số và câu hook.
@@ -18,7 +19,17 @@ const HOOK = 75;
 const sfx = (name: string) => staticFile(`sfx/${name}.mp3`);
 // Khung (tính từ đầu cảnh) lúc con số chính hiện ra, để đặt tiếng "bật".
 const POP_AT: Partial<Record<Visual["type"], number>> = { bignumber: 34, versus: 40, people: 30, waffle: 40, donut: 30, slope: 30, trend: 30, funnel: 30, shot: 46 };
-const NOTE = { left: L.pad + 600, top: 1010 };
+const NOTE = { left: 600, top: 350 }; // chú thích cạnh màn hình điện thoại, tính trong vùng hình
+
+// Vùng hình minh họa: thiết kế gốc rộng 900px, mỗi khổ video đặt vị trí và thu nhỏ khác nhau.
+const Stage: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => {
+  const { stage } = useLayout();
+  return (
+    <div style={{ position: "absolute", left: stage.left, top: stage.top, width: 900, transform: `scale(${stage.scale})`, transformOrigin: "top left", ...style }}>
+      {children}
+    </div>
+  );
+};
 
 type Chart = Extract<Visual, { type: "columns" | "hbars" }>;
 type Group = { chart: Chart; first: number; last: number };
@@ -75,7 +86,7 @@ const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc: real }) =
   return (
     <>
     {pops}
-    <div style={{ position: "absolute", left: L.pad, top: L.stage, opacity: o }}>
+    <Stage style={{ opacity: o }}>
       <Exhibit metric={g.chart.metric} unit={g.chart.unit} source={g.chart.source} appear={start}>
         {g.chart.type === "columns" ? (
           <ColumnChart cols={timed} max={g.chart.max} notes={notes} />
@@ -83,7 +94,7 @@ const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc: real }) =
           <BarChart rows={timed} max={g.chart.max} notes={notes} />
         )}
       </Exhibit>
-    </div>
+    </Stage>
     </>
   );
 };
@@ -91,7 +102,7 @@ const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc: real }) =
 // Hình minh họa riêng của một cảnh (biểu đồ cột/thanh được vẽ ở ChartGroup).
 const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) => {
   if (!v) return null;
-  const stage: React.CSSProperties = { position: "absolute", left: L.pad, top: L.stage };
+  const stage: React.CSSProperties = { position: "relative" };
   switch (v.type) {
     case "serp":
       return (
@@ -139,6 +150,14 @@ const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) =>
       return <div style={stage}><Quiz {...v} /></div>;
     case "myth":
       return <div style={stage}><Myth {...v} /></div>;
+    case "words":
+      return <Words {...v} />;
+    case "race":
+      return <Race {...v} frames={frames} />;
+    case "map":
+      return <SeaMap {...v} frames={frames} />;
+    case "countdown":
+      return <Countdown {...v} frames={frames} />;
     case "list":
       return (
         <div style={stage}>
@@ -170,6 +189,7 @@ export const Video: React.FC<VideoProps> = (props) => {
   // Đổi mốc 30 hình/giây sang khung thật của video (60 hình/giây thì nhân 2).
   const at = (x: number) => Math.round((x * fps) / BASE_FPS);
   return (
+    <LayoutContext.Provider value={LAYOUTS[props.format ?? "9:16"]}>
     <AbsoluteFill>
       <Background />
       <Logo />
@@ -191,7 +211,9 @@ export const Video: React.FC<VideoProps> = (props) => {
                   <Headline kicker={s.kicker} headline={s.headline} accent={s.accent} big={!s.visual} />
                 </Sequence>
                 <CueContext.Provider value={{ words: sc[i].words, offset: sc[i].lead + (i === 0 ? HOOK : 0), hook: i === 0 }}>
-                  <SceneVisual v={s.visual} frames={(sc[i].frames * BASE_FPS) / fps} />
+                  <Stage>
+                    <SceneVisual v={s.visual} frames={(sc[i].frames * BASE_FPS) / fps} />
+                  </Stage>
                 </CueContext.Provider>
               </Sequence>
             </Fade>
@@ -208,6 +230,12 @@ export const Video: React.FC<VideoProps> = (props) => {
                   <Audio src={sfx("pop")} volume={0.22} />
                 </Sequence>
               ))}
+            {i > 0 &&
+              formatPops(s.visual, sc[i].words, sc[i].lead, (sc[i].frames * BASE_FPS) / fps).map(([d, kind], j) => (
+                <Sequence key={`f${j}`} from={at(d + 2)} layout="none">
+                  <Audio src={sfx(kind)} volume={kind === "ding" ? 0.7 : 0.25} />
+                </Sequence>
+              ))}
             {reveal && (
               <Sequence from={at(QUIZ_REVEAL_AT)} layout="none">
                 <Audio src={sfx("ding")} volume={0.75} />
@@ -219,14 +247,43 @@ export const Video: React.FC<VideoProps> = (props) => {
               </Sequence>
             )}
             <Sequence from={at(sc[i].lead)} layout="none">
-              <Caption words={sc[i].words} />
+              {!props.carousel && <Caption words={sc[i].words} />}
               {sc[i].audio && <Audio src={staticFile(sc[i].audio!)} />}
             </Sequence>
+            {props.carousel && <SlideBadge n={i + 1} total={scenes.length} />}
           </Sequence>
         );
       })}
       <SiteFooter />
       {props.audit && <Audit />}
     </AbsoluteFill>
+    </LayoutContext.Provider>
+  );
+};
+
+// Tiếng "bật" khi từng phần của các dạng mới hiện ra (dòng chữ, mốc thời gian, nước, hạng); hạng 1 là tiếng ding.
+const formatPops = (v: Visual | undefined, words: Word[], lead: number, frames: number): [number, "pop" | "ding"][] => {
+  if (!v) return [];
+  if (v.type === "words") return wordsCues(v.lines, words, lead).map((d) => [d, "pop"]);
+  if (v.type === "race") return raceCues(v.periods, words, lead, frames).slice(1).map((d) => [d, "pop"]);
+  if (v.type === "map") return mapCues(v.items, words, lead, frames).map((d) => [d, "pop"]);
+  if (v.type === "countdown" && !v.teaser) return [...countdownCues(v.items, words, lead, frames)].map(([r, d]) => [d, r === 1 ? "ding" : "pop"]);
+  return [];
+};
+
+// Bản ảnh lướt (TikTok photo mode): số trang ở góc phải, trang đầu có lời nhắc lướt sang.
+const SlideBadge: React.FC<{ n: number; total: number }> = ({ n, total }) => {
+  const { logo, caption, w } = useLayout();
+  return (
+    <>
+      <div style={{ position: "absolute", right: logo.left, top: logo.top + 8, padding: "8px 20px", borderRadius: 30, background: "rgba(255,255,255,0.12)", color: "#FFFFFF", fontFamily: SANS, fontSize: 28, fontWeight: 700 }}>
+        {n}/{total}
+      </div>
+      {n === 1 && (
+        <div style={{ position: "absolute", left: 0, width: w, top: caption.top, display: "flex", justifyContent: "center" }}>
+          <div style={{ padding: "16px 34px", borderRadius: 40, background: C.orange, color: C.navyDeep, fontFamily: SANS, fontSize: 32, fontWeight: 700 }}>Lướt để xem tiếp →</div>
+        </div>
+      )}
+    </>
   );
 };

@@ -2,6 +2,8 @@
 // Cách dùng: node tools/render.mjs <slug> [số video...]          ví dụ: node tools/render.mjs aio-la-gi
 //            node tools/render.mjs <slug> [số...] --stills        chỉ chụp 1 khung mỗi cảnh để duyệt nhanh
 //            node tools/render.mjs <slug> [số...] --fps 60        xuất 60 hình/giây (mượt hơn, render lâu gấp đôi)
+//            node tools/render.mjs <slug> [số...] --format 1:1    khổ vuông 1080x1080 (hoặc 16:9: 1920x1080), file out/<id>-1x1.mp4
+//            node tools/render.mjs <slug> [số...] --carousel      bản ảnh lướt cho TikTok: mỗi cảnh 1 ảnh out/<id>-slide<n>.png
 // Kết quả: out/<id>.mp4 và out/<id>.txt (caption + hashtag để đăng TikTok).
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from "node:fs";
@@ -16,8 +18,12 @@ const browserExecutable = process.env.REMOTION_BROWSER || null;
 
 const args = process.argv.slice(2);
 const stills = args.includes("--stills");
-const fps = args.includes("--fps") ? Number(args[args.indexOf("--fps") + 1]) : 30;
-const [slug, ...nums] = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--fps");
+const opt = (k) => (args.includes(k) ? args[args.indexOf(k) + 1] : undefined);
+const fps = Number(opt("--fps") ?? 30);
+const format = opt("--format") ?? "9:16";
+const carousel = args.includes("--carousel");
+const suffix = format === "9:16" ? "" : `-${format.replace(":", "x")}`;
+const [slug, ...nums] = args.filter((a, i) => !a.startsWith("--") && !["--fps", "--format"].includes(args[i - 1]));
 const dir = path.join(ROOT, "scripts", slug);
 const files = nums.length ? nums.map((n) => `${n}.json`) : readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
 
@@ -53,7 +59,7 @@ for (const file of files) {
   if (voice && voice.scenes.length !== script.scenes.length) {
     throw new Error(`${script.id}: giọng đọc cũ không khớp số cảnh, chạy lại tools/voice.mjs`);
   }
-  const inputProps = { script, voice, fps };
+  const inputProps = { script, voice, fps, format, carousel };
   const composition = await selectComposition({ serveUrl, id: "Infographic", inputProps, browserExecutable });
 
   if (stills) {
@@ -66,11 +72,23 @@ for (const file of files) {
     continue;
   }
 
+  if (carousel) {
+    // Mỗi cảnh 1 ảnh, chụp ngay trước khi cảnh mờ dần (mọi phần tử đã hiện đủ).
+    for (const [i, s] of timeline(inputProps).entries()) {
+      const output = path.join(OUT, `${script.id}${suffix}-slide${i + 1}.png`);
+      await renderStill({ serveUrl, composition, inputProps, frame: s.from + s.frames - Math.round((9 * fps) / 30), output, browserExecutable });
+    }
+    console.log(`${script.id}: ${script.scenes.length} ảnh lướt -> out/${script.id}${suffix}-slide*.png`);
+    continue;
+  }
+
   // Ảnh bìa: 3 đến 5 chữ thật to (trường "cover" trong kịch bản, mặc định lấy tiêu đề cảnh đầu).
+  if (format === "9:16") {
   const cover = await selectComposition({ serveUrl, id: "Cover", inputProps, browserExecutable });
   await renderStill({ serveUrl, composition: cover, inputProps, frame: 0, output: path.join(OUT, `${script.id}-cover.png`), browserExecutable });
+  }
 
-  const output = path.join(OUT, `${script.id}.mp4`);
+  const output = path.join(OUT, `${script.id}${suffix}.mp4`);
   await renderMedia({
     serveUrl,
     composition,
@@ -83,7 +101,7 @@ for (const file of files) {
   });
   const before = voice ? normalize(output) : null;
   writeFileSync(
-    path.join(OUT, `${script.id}.txt`),
+    path.join(OUT, `${script.id}${suffix}.txt`),
     `${script.caption}\n\n${hashtags(script.hashtags).join(" ")}\n`,
   );
   const secs = (composition.durationInFrames / composition.fps).toFixed(1);

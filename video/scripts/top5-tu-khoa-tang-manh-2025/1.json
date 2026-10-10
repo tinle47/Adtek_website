@@ -1,0 +1,132 @@
+{
+  "id": "top5-tu-khoa-tang-manh-2025",
+  "status": "Mẫu",
+  "format_demo": "Đếm ngược top 5",
+  "cover": {
+    "kicker": "Google Year in Search 2025",
+    "title": "Top 5 từ khóa tăng mạnh nhất",
+    "accent": "Hạng 1 là gì?"
+  },
+  "caption": "Top 5 từ khóa người Việt tìm trên Google tăng mạnh nhất năm 2025, theo Google Year in Search. Bạn đoán hạng 1 là gì? Từ khóa nào trong ngành của bạn đang tăng mạnh?",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#seo",
+    "#googletrends",
+    "#yearinsearch",
+    "#xuhuongtimkiem"
+  ],
+  "scenes": [
+    {
+      "kicker": "Google Year in Search 2025",
+      "headline": "Top 5 từ khóa tăng mạnh nhất 2025",
+      "accent": "Hạng 1 là gì?",
+      "voice": "Năm 2025, người Việt tìm gì trên Google tăng mạnh nhất? Đoán thử hạng 1 rồi comment trước nhé.",
+      "visual": {
+        "type": "countdown",
+        "metric": "Từ khóa tăng mạnh nhất ở Việt Nam năm 2025 so với 2024",
+        "source": "Nguồn: Google Year in Search 2025 Việt Nam, bảng Xu hướng chung (xếp theo mức tăng, không phải lượt tìm)",
+        "items": [
+          {
+            "rank": 5,
+            "label": "Pixverse AI",
+            "note": "Công cụ làm video bằng AI"
+          },
+          {
+            "rank": 4,
+            "label": "Gemini",
+            "note": "AI của Google, có bảng tạo ảnh riêng"
+          },
+          {
+            "rank": 3,
+            "label": "Phụ nữ trong các ngành STEM",
+            "note": "Cái tên duy nhất không phải AI"
+          },
+          {
+            "rank": 2,
+            "label": "Chat GPT",
+            "note": "Ra mắt từ 2022 vẫn tăng mạnh"
+          },
+          {
+            "rank": 1,
+            "label": "Deep Seek",
+            "note": "AI Trung Quốc, vượt cả Chat GPT"
+          }
+        ],
+        "teaser": true
+      }
+    },
+    {
+      "kicker": "Xu hướng chung · Google",
+      "headline": "Xu hướng Google 2025",
+      "accent": "4/5 là AI.",
+      "voice": "Google xếp theo mức tăng so với năm 2024, không phải lượt tìm nhiều nhất. Hạng 5, Pixverse AI, công cụ làm video bằng AI. Hạng 4, Gemini, AI của Google. Hạng 3, Phụ nữ trong các ngành STEM, cái tên duy nhất không phải AI. Hạng 2, Chat GPT, ra mắt từ 2022 mà vẫn tăng mạnh. Vậy cái tên nào vượt cả Chat GPT? Và hạng 1 là Deep Seek, chatbot AI của Trung Quốc. Còn phim Mưa đỏ chỉ đứng thứ 7.",
+      "visual": {
+        "type": "countdown",
+        "metric": "Từ khóa tăng mạnh nhất ở Việt Nam năm 2025 so với 2024",
+        "source": "Nguồn: Google Year in Search 2025 Việt Nam, bảng Xu hướng chung (xếp theo mức tăng, không phải lượt tìm)",
+        "items": [
+          {
+            "rank": 5,
+            "label": "Pixverse AI",
+            "note": "Công cụ làm video bằng AI"
+          },
+          {
+            "rank": 4,
+            "label": "Gemini",
+            "note": "AI của Google, có bảng tạo ảnh riêng"
+          },
+          {
+            "rank": 3,
+            "label": "Phụ nữ trong các ngành STEM",
+            "note": "Cái tên duy nhất không phải AI"
+          },
+          {
+            "rank": 2,
+            "label": "Chat GPT",
+            "note": "Ra mắt từ 2022 vẫn tăng mạnh"
+          },
+          {
+            "rank": 1,
+            "label": "Deep Seek",
+            "note": "AI Trung Quốc, vượt cả Chat GPT"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Làm gì ngay",
+      "accent": "Bắt từ khóa sớm",
+      "voice": "Doanh nghiệp nên làm gì? Một, xem từ khóa đang tăng trên Google Trends, tăng trên 5,000% sẽ hiện chữ Đột phá. Hai, viết bài cách làm, không chỉ là gì, vì bảng Cách làm 2025 có video AI đứng thứ 3. Ba, đăng bài trước mùa cao điểm: xem năm trước từ khóa bắt đầu tăng từ tuần nào.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Xem từ khóa đang tăng trên Google Trends",
+            "detail": "Mục truy vấn liên quan: tăng trên 5,000% sẽ hiện chữ Đột phá"
+          },
+          {
+            "text": "Viết bài cách làm, không chỉ là gì",
+            "detail": "Bảng Cách làm 2025 có Video AI đứng thứ 3"
+          },
+          {
+            "text": "Đăng bài trước mùa cao điểm",
+            "detail": "Xem năm trước từ khóa bắt đầu tăng từ tuần nào"
+          }
+        ],
+        "source": "Nguồn: Google Trends Help; Google Year in Search 2025 Việt Nam"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Bắt từ khóa sớm,",
+      "accent": "đón khách trước.",
+      "voice": "Từ khóa nào trong ngành của bạn đang tăng mạnh? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Từ khóa nào trong ngành bạn đang tăng mạnh? Comment cho Adtek biết"
+      }
+    }
+  ]
+}

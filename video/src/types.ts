@@ -60,6 +60,10 @@ export type Visual =
   | { type: "quiz"; options: { label: string; text: string }[]; answer: number; reveal?: boolean; tag?: string; note?: string; source?: string } // đố số liệu: hỏi ở cảnh đầu, cảnh sau reveal: true để lật đáp án
   | { type: "myth"; claim: string; verdict: string; note?: string; source?: string } // phá hiểu lầm: câu nhiều người tin, đóng dấu
   | { type: "follow"; note?: string; ask?: string } // ask: câu hỏi kêu gọi bình luận // cảnh cuối kêu gọi theo dõi kênh
+  | { type: "words"; lines: string[]; emph?: string[]; source?: string } // chữ động: từng dòng chữ to hiện theo giọng đọc, cảnh không cần tiêu đề
+  | { type: "race"; metric: string; unit?: string; source: string; periods: string[]; series: { name: string; values: (number | null)[] }[]; top?: number; note?: string } // biểu đồ đua; note hiện khi giọng đọc tới con số của nó
+  | { type: "map"; metric: string; unit?: string; source: string; items: { iso3: string; name: string; value: number; display?: string }[]; highlight?: string } // bản đồ Đông Nam Á
+  | { type: "countdown"; metric: string; source: string; items: { rank: number; label: string; value?: number | null; display?: string; note?: string }[]; teaser?: boolean } // đếm ngược top 5; teaser: cảnh mở đầu chỉ hiện các ô "?" chưa lật
   | { type: "continue" }; // giữ biểu đồ của cảnh trước, hiện thêm phần có step tương ứng
 
 export type Scene = { kicker: string; headline: string; accent: string; voice: string; visual?: Visual };
@@ -79,4 +83,5 @@ export type VoiceScene = { file: string; duration: number; words: Word[] };
 export type Voice = { scenes: VoiceScene[] } | null;
 
 // fps: 30 (mặc định) hoặc 60 cho bản mượt hơn. audit: chỉ tools/check.mjs bật, để đo vị trí chữ.
-export type VideoProps = { script: Script; voice: Voice; fps?: number; audit?: boolean };
+// format: khổ video (mặc định 9:16). carousel: bản ảnh lướt, ẩn phụ đề, hiện số trang.
+export type VideoProps = { script: Script; voice: Voice; fps?: number; audit?: boolean; format?: "9:16" | "1:1" | "16:9"; carousel?: boolean };

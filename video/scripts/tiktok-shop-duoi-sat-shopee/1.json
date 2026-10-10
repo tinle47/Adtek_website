@@ -1,0 +1,149 @@
+{
+  "id": "tiktok-shop-duoi-sat-shopee",
+  "status": "Mẫu",
+  "format_demo": "Biểu đồ đua",
+  "cover": {
+    "kicker": "9 tháng năm 2025",
+    "title": "Shopee vs TikTok Shop",
+    "accent": "khoảng cách còn một nửa"
+  },
+  "caption": "9 tháng năm 2025, khoảng cách thị phần giữa Shopee và TikTok Shop từ 22 điểm còn 11 điểm (Metric). Năm 2026 bạn chia ngân sách cho Shopee và TikTok Shop theo tỷ lệ nào? Comment tỷ lệ.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#tiktokshop",
+    "#shopee",
+    "#thuongmaidientu",
+    "#banhangonline"
+  ],
+  "scenes": [
+    {
+      "kicker": "Thị phần sàn · Metric",
+      "headline": "Shopee còn giữ ngôi",
+      "accent": "được bao lâu?",
+      "voice": "Shopee còn giữ ngôi số 1 được bao lâu? Năm 2024, Shopee chiếm 64% doanh số các sàn, TikTok Shop 29%.",
+      "visual": {
+        "type": "versus",
+        "metric": "Thị phần doanh số các sàn năm 2024",
+        "unit": "%",
+        "source": "Nguồn: Metric.vn, Báo cáo TMĐT Việt Nam 2025, thị phần doanh số năm 2024",
+        "items": [
+          {
+            "label": "Shopee",
+            "value": 64,
+            "suffix": "%"
+          },
+          {
+            "label": "TikTok Shop",
+            "value": 29,
+            "suffix": "%"
+          }
+        ],
+        "winner": 0
+      }
+    },
+    {
+      "kicker": "Từng tháng năm 2025",
+      "headline": "Khoảng cách 22 điểm",
+      "accent": "còn 11 điểm sau 9 tháng.",
+      "voice": "Sang 2025, xem từng tháng. Tháng 1, Shopee 59%, TikTok Shop 37%. Tháng 4, TikTok Shop vọt lên 42%. Tháng 6, Shopee lấy lại 57%. Tháng 9, Shopee còn 54%, TikTok Shop 43%. Khoảng cách 22 điểm chỉ còn 11 điểm.",
+      "visual": {
+        "type": "race",
+        "metric": "Thị phần doanh số từng tháng năm 2025",
+        "unit": "%",
+        "source": "Nguồn: Metric.vn, Báo cáo thị trường sàn TMĐT Việt Nam Quý 3/2025, 04/11/2025. Tiki dưới 1%, không ghi số",
+        "periods": [
+          "Tháng 1",
+          "Tháng 2",
+          "Tháng 3",
+          "Tháng 4",
+          "Tháng 5",
+          "Tháng 6",
+          "Tháng 7",
+          "Tháng 8",
+          "Tháng 9"
+        ],
+        "series": [
+          {
+            "name": "Shopee",
+            "values": [
+              59,
+              59,
+              58,
+              55,
+              55,
+              57,
+              56,
+              56,
+              54
+            ]
+          },
+          {
+            "name": "TikTok Shop",
+            "values": [
+              37,
+              38,
+              38,
+              42,
+              42,
+              40,
+              41,
+              42,
+              43
+            ]
+          },
+          {
+            "name": "Lazada",
+            "values": [
+              3,
+              3,
+              4,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ]
+          }
+        ],
+        "top": 3,
+        "note": "Khoảng cách: 22 điểm còn 11 điểm"
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Làm gì ngay?",
+      "accent": "Tiền đang chia đôi 2 sàn.",
+      "voice": "Vậy shop nên làm gì? Giữ Shopee làm kênh chính, vì cả năm 2025 sàn này vẫn chiếm 56.04% doanh số. Trên TikTok Shop, bật GMV Max cho sản phẩm trong mục Quảng cáo mua sắm. Rồi đưa video nhà sáng tạo vào GMV Max bằng cách chọn nguồn video là Bài đăng liên kết.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Giữ Shopee làm kênh chính",
+            "detail": "Cả năm 2025 Shopee vẫn chiếm 56.04% doanh số (Metric)"
+          },
+          {
+            "text": "Bật GMV Max cho sản phẩm",
+            "detail": "Seller Center > Quảng cáo mua sắm > Create GMV Max ads, đặt mục tiêu ROI"
+          },
+          {
+            "text": "Đưa video nhà sáng tạo vào GMV Max",
+            "detail": "Chọn nguồn video là Bài đăng liên kết"
+          }
+        ],
+        "source": "Nguồn: Metric.vn, Báo cáo TMĐT Việt Nam 2025; TikTok Ads Help Center, GMV Max của sản phẩm"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Shopee hay TikTok Shop,",
+      "accent": "bạn chia bao nhiêu?",
+      "voice": "Năm 2026 bạn chia ngân sách cho Shopee và TikTok Shop theo tỷ lệ nào? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Bạn chia ngân sách 2 sàn theo tỷ lệ nào? Comment, ví dụ 60/40"
+      }
+    }
+  ]
+}

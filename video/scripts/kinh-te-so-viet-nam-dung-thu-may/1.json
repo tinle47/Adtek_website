@@ -1,0 +1,147 @@
+{
+  "id": "kinh-te-so-viet-nam-dung-thu-may",
+  "status": "Mẫu",
+  "format_demo": "Bản đồ",
+  "cover": {
+    "kicker": "e-Conomy SEA 2025",
+    "title": "Kinh tế số +17%",
+    "accent": "Việt Nam đứng thứ mấy?"
+  },
+  "caption": "Kinh tế số Việt Nam tăng 17% năm 2025, nhanh thứ 2 Đông Nam Á, chỉ sau Malaysia (19%). Quy mô ước đạt 39 tỷ USD, dự báo 2030 khoảng 85 đến 190 tỷ USD. Doanh thu online của bạn năm nay tăng bao nhiêu %? Comment con số nhé.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#kinhteso",
+    "#thuongmaidientu",
+    "#dongnama",
+    "#digitalmarketing"
+  ],
+  "scenes": [
+    {
+      "kicker": "e-Conomy SEA 2025",
+      "headline": "Kinh tế số Việt Nam tăng 17%",
+      "accent": "nhanh hay chậm?",
+      "voice": "Kinh tế số Việt Nam tăng nhanh hay chậm so với láng giềng? Năm 2025, con số là 17%.",
+      "visual": {
+        "type": "bignumber",
+        "value": 17,
+        "prefix": "+",
+        "suffix": "%",
+        "label": "Kinh tế số Việt Nam năm 2025 so với 2024",
+        "context": "Ước tính, quy đổi cả năm từ 6 tháng đầu 2025",
+        "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025"
+      }
+    },
+    {
+      "kicker": "Đông Nam Á · e-Conomy SEA",
+      "headline": "Việt Nam tăng nhanh thứ 2",
+      "accent": "Đông Nam Á.",
+      "voice": "Năm 2025, kinh tế số Malaysia tăng 19%, dẫn đầu. Việt Nam 17%, đứng thứ hai. Thái Lan 16%, Philippines cũng 16%. Indonesia 14%. Singapore chỉ 7%.",
+      "visual": {
+        "type": "map",
+        "metric": "Kinh tế số tăng bao nhiêu năm 2025 so với 2024",
+        "unit": "%",
+        "source": "Nguồn: Google, Temasek, Bain & Company, e-Conomy SEA 2025. Số năm 2025 là ước tính (quy đổi cả năm từ 6 tháng đầu 2025)",
+        "items": [
+          {
+            "iso3": "MYS",
+            "name": "Malaysia",
+            "value": 19,
+            "display": "+19%"
+          },
+          {
+            "iso3": "VNM",
+            "name": "Việt Nam",
+            "value": 17,
+            "display": "+17%"
+          },
+          {
+            "iso3": "THA",
+            "name": "Thái Lan",
+            "value": 16,
+            "display": "+16%"
+          },
+          {
+            "iso3": "PHL",
+            "name": "Philippines",
+            "value": 16,
+            "display": "+16%"
+          },
+          {
+            "iso3": "IDN",
+            "name": "Indonesia",
+            "value": 14,
+            "display": "+14%"
+          },
+          {
+            "iso3": "SGP",
+            "name": "Singapore",
+            "value": 7,
+            "display": "+7%"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Riêng Việt Nam",
+      "headline": "39 tỷ USD năm 2025,",
+      "accent": "2030 có thể gấp đôi.",
+      "voice": "Riêng Việt Nam, kinh tế số tăng từ 30 tỷ USD năm 2023, lên 34 tỷ, rồi ước đạt 39 tỷ USD năm 2025. Năm 2030 có thể lên 85 đến 190 tỷ USD.",
+      "visual": {
+        "type": "trend",
+        "metric": "Tổng giá trị giao dịch kinh tế số Việt Nam",
+        "unit": "tỷ USD",
+        "source": "Nguồn: e-Conomy SEA 2025, phần Việt Nam (trang 140)",
+        "points": [
+          {
+            "label": "2023",
+            "value": 30
+          },
+          {
+            "label": "2024",
+            "value": 34
+          },
+          {
+            "label": "2025 (ước tính)",
+            "value": 39
+          }
+        ],
+        "note": "Dự báo 2030: khoảng 85 đến 190 tỷ USD"
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Làm gì ngay?",
+      "accent": "Đi theo dòng tiền.",
+      "voice": "Doanh nghiệp nên làm gì? Một, ưu tiên thương mại điện tử: chiếm 25 trong 39 tỷ USD. Hai, nhận thanh toán bằng mã QR: mục tiêu 80% giao dịch online không dùng tiền mặt vào 2030. Ba, đón khách Thái Lan và Campuchia bằng mã QR liên thông.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Ưu tiên thương mại điện tử",
+            "detail": "25 trong 39 tỷ USD kinh tế số là thương mại điện tử, tăng 17%"
+          },
+          {
+            "text": "Nhận thanh toán bằng mã QR",
+            "detail": "Mục tiêu 80% giao dịch thương mại điện tử không dùng tiền mặt vào 2030; 30 triệu ví điện tử đang hoạt động"
+          },
+          {
+            "text": "Đón khách Thái Lan và Campuchia",
+            "detail": "Mã QR Việt Nam đã thanh toán qua lại được với Thái Lan, Campuchia"
+          }
+        ],
+        "source": "Nguồn: e-Conomy SEA 2025, phần Việt Nam (trang 139, 140)"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Kinh tế số tăng 17%,",
+      "accent": "còn shop bạn?",
+      "voice": "Doanh thu online của bạn năm nay tăng nhanh hơn 17% không? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Doanh thu online của bạn năm nay tăng bao nhiêu %? Comment con số"
+      }
+    }
+  ]
+}

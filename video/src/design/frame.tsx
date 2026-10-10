@@ -35,6 +35,46 @@ export const SERIF = '"Source Serif 4", serif';
 // Bố cục dọc 1080x1920. Trên 260 và dưới 1500 là vùng giao diện TikTok che, chỉ để logo và tên miền.
 export const L = { pad: 90, logo: 150, head: 300, stage: 660, caption: 1350, footer: 1800 };
 
+// ---------- Khổ video: cùng một kịch bản xếp lại bố cục cho từng khổ, không cắt xén ----------
+// stage: vùng hình minh họa (thiết kế gốc rộng 900px), thu nhỏ theo scale. head: khối tiêu đề. caption: phụ đề.
+export type Format = "9:16" | "1:1" | "16:9";
+export type Layout = {
+  w: number; h: number;
+  logo: { left: number; top: number; height: number };
+  head: { left: number; top: number; width: number; size: number; bigTop: number; bigSize: number };
+  stage: { left: number; top: number; scale: number };
+  caption: { left: number; top: number; width: number; size: number };
+  footer: { right: number; top: number };
+};
+export const LAYOUTS: Record<Format, Layout> = {
+  "9:16": {
+    w: 1080, h: 1920,
+    logo: { left: 90, top: 150, height: 66 },
+    head: { left: 90, top: 300, width: 900, size: 64, bigTop: 640, bigSize: 84 },
+    stage: { left: 90, top: 660, scale: 1 },
+    caption: { left: 110, top: 1350, width: 860, size: 38 },
+    footer: { right: 90, top: 1800 },
+  },
+  "1:1": {
+    w: 1080, h: 1080,
+    logo: { left: 60, top: 48, height: 46 },
+    head: { left: 60, top: 120, width: 960, size: 50, bigTop: 330, bigSize: 72 },
+    stage: { left: 216, top: 318, scale: 0.72 },
+    caption: { left: 60, top: 900, width: 960, size: 34 },
+    footer: { right: 60, top: 1030 },
+  },
+  "16:9": {
+    w: 1920, h: 1080,
+    logo: { left: 90, top: 70, height: 56 },
+    head: { left: 90, top: 230, width: 760, size: 62, bigTop: 330, bigSize: 80 },
+    stage: { left: 960, top: 210, scale: 0.9 },
+    caption: { left: 90, top: 820, width: 760, size: 36 },
+    footer: { right: 90, top: 1010 },
+  },
+};
+export const LayoutContext = createContext<Layout>(LAYOUTS["9:16"]);
+export const useLayout = () => useContext(LayoutContext);
+
 export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 export const ease = Easing.bezier(0.33, 0, 0.2, 1);
 
@@ -140,15 +180,19 @@ export const Background: React.FC = () => (
   <AbsoluteFill style={{ background: `linear-gradient(180deg, ${C.navy} 0%, ${C.navyDeep} 100%)` }} />
 );
 
-export const Logo: React.FC = () => (
-  <Img src={staticFile("logo-white.png")} style={{ position: "absolute", left: L.pad, top: L.logo, height: 66 }} />
-);
+export const Logo: React.FC = () => {
+  const { logo } = useLayout();
+  return <Img src={staticFile("logo-white.png")} style={{ position: "absolute", left: logo.left, top: logo.top, height: logo.height }} />;
+};
 
-export const SiteFooter: React.FC = () => (
-  <div data-audit="skip" style={{ position: "absolute", right: L.pad, top: L.footer, fontFamily: SANS, fontSize: 22, fontWeight: 600, letterSpacing: 1, color: C.muted }}>
-    adtek.agency
-  </div>
-);
+export const SiteFooter: React.FC = () => {
+  const { footer } = useLayout();
+  return (
+    <div data-audit="skip" style={{ position: "absolute", right: footer.right, top: footer.top, fontFamily: SANS, fontSize: 22, fontWeight: 600, letterSpacing: 1, color: C.muted }}>
+      adtek.agency
+    </div>
+  );
+};
 
 // Tiêu đề 2 dòng: dòng trắng + dòng cam. Cảnh không có hình minh họa (câu chốt) dùng cỡ lớn và đặt thấp hơn.
 export const Headline: React.FC<{ kicker: string; headline: string; accent: string; big?: boolean }> = ({
@@ -160,12 +204,14 @@ export const Headline: React.FC<{ kicker: string; headline: string; accent: stri
   const k = useEnter(0);
   const a = useEnter(4);
   const b = useEnter(10);
+  const { head } = useLayout();
+  if (!headline && !accent && !kicker) return null;
   const line = (p: number, color: string, text: string) => (
     <div
       style={{
         fontFamily: SERIF,
         fontWeight: 600,
-        fontSize: big ? 84 : 64,
+        fontSize: big ? head.bigSize : head.size,
         lineHeight: 1.16,
         letterSpacing: -0.5,
         color,
@@ -178,7 +224,7 @@ export const Headline: React.FC<{ kicker: string; headline: string; accent: stri
     </div>
   );
   return (
-    <div style={{ position: "absolute", left: L.pad, right: L.pad, top: big ? 640 : L.head }}>
+    <div style={{ position: "absolute", left: head.left, width: head.width, top: big ? head.bigTop : head.top }}>
       <div style={{ fontFamily: SANS, fontSize: 22, fontWeight: 600, letterSpacing: 3, textTransform: "uppercase", color: C.muted, marginBottom: big ? 32 : 22, opacity: k }}>
         {kicker}
       </div>
@@ -208,11 +254,12 @@ export const Caption: React.FC<{ words: Word[] }> = ({ words }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = f / fps;
+  const { caption } = useLayout();
   const groups = chunk(words);
   const g = groups.find((x) => t < x[x.length - 1].end) ?? groups[groups.length - 1];
   if (!g) return null;
   return (
-    <div style={{ position: "absolute", left: L.pad + 20, right: L.pad + 20, top: L.caption, textAlign: "center", fontFamily: SANS, fontSize: 38, fontWeight: 600, lineHeight: 1.5, color: "rgba(255,255,255,0.92)" }}>
+    <div style={{ position: "absolute", left: caption.left, width: caption.width, top: caption.top, textAlign: "center", fontFamily: SANS, fontSize: caption.size, fontWeight: 600, lineHeight: 1.5, color: "rgba(255,255,255,0.92)" }}>
       {g.map((w, i) => (
         <span key={i} style={{ color: t >= w.start && t < w.end + 0.05 ? C.orange : undefined }}>
           {w.text}

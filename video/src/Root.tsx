@@ -1,5 +1,6 @@
 import React from "react";
 import { Composition, Still } from "remotion";
+import { LAYOUTS } from "./design/frame";
 import { Cover } from "./design/hook";
 import sample from "../scripts/aio-la-gi/1.json";
 import { FPS, totalFrames } from "./timing";
@@ -22,7 +23,7 @@ export const Root: React.FC = () => (
     fps={FPS}
     durationInFrames={300}
     defaultProps={{ script: sample as Script, voice: null } satisfies VideoProps}
-    calculateMetadata={({ props }) => ({ durationInFrames: totalFrames(props), fps: props.fps ?? FPS })}
+    calculateMetadata={({ props }) => ({ durationInFrames: totalFrames(props), fps: props.fps ?? FPS, width: LAYOUTS[props.format ?? "9:16"].w, height: LAYOUTS[props.format ?? "9:16"].h })}
   />
   {/* Ảnh bìa riêng cho từng video (out/<id>-cover.png). */}
   <Still id="Cover" component={CoverStill} width={1080} height={1920} defaultProps={{ script: sample as Script, voice: null } satisfies VideoProps} />
