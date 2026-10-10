@@ -1,26 +1,5 @@
 [
  {
-  "slug": "nhan-tin-truoc-khi-mua",
-  "filename": "09-10 nhan tin truoc khi mua",
-  "date": "2026-10-09",
-  "service": "Performance, Digital",
-  "topic": "Khách muốn nhắn tin trước khi mua",
-  "hook": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua?",
-  "duration": "59 giây",
-  "url": "/_blob/1d8c462e7c2c2e1d8a82bd6be7bd1e17",
-  "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Shop bạn đang trả lời tin nhắn trong bao lâu? Comment số phút.",
-  "hashtags": [
-   "#adtekagency",
-   "#growthmarketing",
-   "#banhangonline",
-   "#zalo",
-   "#quangcaofacebook",
-   "#chotdon"
-  ],
-  "note": "Bản mới 09/10: khung đầu hiện sẵn hook, có âm thanh, cảnh cuối hỏi để khách bình luận. Nên đăng bản này thay bản trong Drafts.",
-  "cover": "/_blob/e1d2f0c121e9882edaa023dd6f0bfc11"
- },
- {
   "slug": "khach-so-gia-cho-sale",
   "filename": "10-10 khach so gia cho sale",
   "date": "2026-10-10",
@@ -42,6 +21,27 @@
   "cover": "/_blob/116dad68b5329f6bb2094959c03642ef"
  },
  {
+  "slug": "thue-kol-khach-co-tin",
+  "filename": "11-10 thue kol khach co tin",
+  "date": "2026-10-11",
+  "service": "Digital, Performance",
+  "topic": "Thuê KOL nổi tiếng là khách sẽ tin? (phá hiểu lầm)",
+  "hook": "Cứ thuê KOL nổi tiếng là khách sẽ tin và chốt đơn?",
+  "duration": "62 giây",
+  "url": "/_blob/f16be5cfa520fd72165e30c9a0431592",
+  "caption": "Thuê KOL nổi tiếng là khách sẽ tin? 54% người mua tin review của người dùng thật hơn KOL. Bạn tin review của ai hơn? Comment cho Adtek.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#kol",
+   "#review",
+   "#banhangonline",
+   "#marketing"
+  ],
+  "note": "",
+  "cover": "/_blob/106a7a9ee0001444aba0ecf64e2249ab"
+ },
+ {
   "slug": "khu-cong-nghiep-fdi-4",
   "filename": "07-10 khu cong nghiep FDI",
   "date": "2026-10-07",
@@ -60,5 +60,26 @@
    "#adtek"
   ],
   "note": "Đã đăng ngày 07/10/2026"
+ },
+ {
+  "slug": "nhan-tin-truoc-khi-mua",
+  "filename": "09-10 nhan tin truoc khi mua",
+  "date": "2026-10-09",
+  "service": "Performance, Digital",
+  "topic": "Khách muốn nhắn tin trước khi mua",
+  "hook": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua?",
+  "duration": "59 giây",
+  "url": "/_blob/1d8c462e7c2c2e1d8a82bd6be7bd1e17",
+  "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Shop bạn đang trả lời tin nhắn trong bao lâu? Comment số phút.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#banhangonline",
+   "#zalo",
+   "#quangcaofacebook",
+   "#chotdon"
+  ],
+  "note": "Bản mới 09/10: khung đầu hiện sẵn hook, có âm thanh, cảnh cuối hỏi để khách bình luận. Nên đăng bản này thay bản trong Drafts.",
+  "cover": "/_blob/e1d2f0c121e9882edaa023dd6f0bfc11"
  }
 ]
