@@ -78,4 +78,5 @@ export type Word = { text: string; start: number; end: number };
 export type VoiceScene = { file: string; duration: number; words: Word[] };
 export type Voice = { scenes: VoiceScene[] } | null;
 
-export type VideoProps = { script: Script; voice: Voice };
+// fps: 30 (mặc định) hoặc 60 cho bản mượt hơn. audit: chỉ tools/check.mjs bật, để đo vị trí chữ.
+export type VideoProps = { script: Script; voice: Voice; fps?: number; audit?: boolean };

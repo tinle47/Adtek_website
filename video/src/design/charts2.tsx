@@ -1,7 +1,7 @@
 import React from "react";
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { interpolate, useVideoConfig } from "remotion";
 import type { Tone } from "../types";
-import { SANS, clamp, ease } from "./frame";
+import { SANS, clamp, ease, numbersIn, springAt, useCue, useFrame } from "./frame";
 import { W, count } from "./charts";
 
 // Các biểu đồ chọn theo kiểu dữ liệu, mỗi loại một hiệu ứng riêng để video không lặp lại.
@@ -12,11 +12,11 @@ const TONE: Record<Tone, string> = { base: "#5E7DB3", main: "#D6E2F5", accent: "
 const prog = (f: number, at: number, len = 20) => interpolate(f - at, [0, len], [0, 1], { ...clamp, easing: ease });
 
 const Source: React.FC<{ text: string; at: number }> = ({ text, at }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   return <div style={{ marginTop: 28, fontSize: 19, color: INK.source, opacity: prog(f, at, 12) }}>{text}</div>;
 };
 const Metric: React.FC<{ metric: string; unit?: string }> = ({ metric, unit }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   return (
     <div style={{ fontSize: 30, lineHeight: 1.3, opacity: prog(f, 0, 12) }}>
       <b style={{ fontWeight: 700 }}>{metric}</b>
@@ -30,10 +30,14 @@ const Frame: React.FC<{ children: React.ReactNode }> = ({ children }) => <div st
 export const BigNumber: React.FC<{ value: number; display?: string; prefix?: string; suffix?: string; label: string; context?: string; source: string }> = ({
   value, display, prefix, suffix, label, context, source,
 }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const { fps } = useVideoConfig();
-  const p = prog(f, 4, 34);
-  const pop = spring({ frame: f - 36, fps, config: { damping: 12, stiffness: 160 }, durationInFrames: 20 });
+  const cue = useCue();
+  // Số đếm lên lúc giọng đọc tới nó; dòng bối cảnh hiện khi giọng đọc tới con số trong dòng đó.
+  const at = cue(value, 4);
+  const p = prog(f, at, 34);
+  const pop = springAt(f, fps, at + 32, { damping: 12, stiffness: 160 }, 20);
+  const ctxAt = cue(context ? numbersIn(context)[0] : undefined, at + 36, { after: at + 10 });
   return (
     <Frame>
       <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginTop: 30, transform: `scale(${1 + 0.04 * pop * (1 - pop) * 4})`, transformOrigin: "left bottom" }}>
@@ -41,10 +45,10 @@ export const BigNumber: React.FC<{ value: number; display?: string; prefix?: str
         <span style={{ fontSize: 210, lineHeight: 0.95, fontWeight: 700, color: TONE.accent, fontVariantNumeric: "tabular-nums", letterSpacing: -4 }}>{count(value, p, display)}</span>
         {suffix && <span style={{ fontSize: 76, fontWeight: 700, color: TONE.accent }}>{suffix}</span>}
       </div>
-      <div style={{ marginTop: 18, height: 4, width: 520 * prog(f, 30, 16), background: TONE.accent }} />
-      <div style={{ marginTop: 28, fontSize: 40, lineHeight: 1.3, fontWeight: 600, opacity: prog(f, 24, 12) }}>{label}</div>
-      {context && <div style={{ marginTop: 14, fontSize: 30, lineHeight: 1.35, color: INK.soft, opacity: prog(f, 40, 12) }}>{context}</div>}
-      <Source text={source} at={44} />
+      <div style={{ marginTop: 18, height: 4, width: 520 * prog(f, at + 26, 16), background: TONE.accent }} />
+      <div style={{ marginTop: 28, fontSize: 40, lineHeight: 1.3, fontWeight: 600, opacity: prog(f, at + 20, 12) }}>{label}</div>
+      {context && <div style={{ marginTop: 14, fontSize: 30, lineHeight: 1.35, color: INK.soft, opacity: prog(f, ctxAt, 12), transform: `translateY(${(1 - prog(f, ctxAt, 12)) * 12}px)` }}>{context}</div>}
+      <Source text={source} at={at + 40} />
     </Frame>
   );
 };
@@ -54,10 +58,19 @@ type VsItem = { label: string; value: number; display?: string; suffix?: string 
 export const Versus: React.FC<{ metric: string; unit?: string; source: string; items: [VsItem, VsItem]; winner: 0 | 1; note?: string }> = ({
   metric, unit, source, items, winner, note,
 }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const { fps } = useVideoConfig();
-  const p = prog(f, 8, 30);
-  const win = spring({ frame: f - 40, fps, config: { damping: 14 }, durationInFrames: 22 });
+  const cue = useCue();
+  // Mỗi bên hiện lúc giọng đọc tới con số của nó, bên thắng phóng to sau khi cả hai đã hiện.
+  // Bên nào được nhắc trước (bằng tên hoặc con số) thì hiện trước.
+  const said = (it: VsItem, floor: number, after?: number) =>
+    Math.min(cue(it.value, Infinity, { after, floor }), cue(it.label, Infinity, { after, floor }));
+  const s0 = said(items[0], 6);
+  const a0 = Number.isFinite(s0) ? s0 : 6;
+  const s1 = said(items[1], 12, a0);
+  const a1 = Number.isFinite(s1) ? s1 : 12;
+  const ats = [a0, a1];
+  const win = springAt(f, fps, Math.max(40, Math.max(a0, a1) + 26), { damping: 14 }, 22);
   return (
     <Frame>
       <Metric metric={metric} unit={unit} />
@@ -65,11 +78,11 @@ export const Versus: React.FC<{ metric: string; unit?: string; source: string; i
         {[0, 1].map((i) => {
           const it = items[i];
           const w = i === winner;
-          const slide = interpolate(prog(f, 6 + i * 6, 18), [0, 1], [i ? 60 : -60, 0]);
+          const slide = interpolate(prog(f, ats[i], 18), [0, 1], [i ? 60 : -60, 0]);
           return (
             <React.Fragment key={i}>
               {i === 1 && <div style={{ background: INK.rule, height: 260 * prog(f, 4, 16), alignSelf: "center" }} />}
-              <div style={{ textAlign: i ? "left" : "right", transform: `translateX(${slide}px)`, opacity: prog(f, 6 + i * 6, 12) }}>
+              <div style={{ textAlign: i ? "left" : "right", transform: `translateX(${slide}px)`, opacity: prog(f, ats[i], 12) }}>
                 <div
                   style={{
                     fontSize: 128,
@@ -82,7 +95,7 @@ export const Versus: React.FC<{ metric: string; unit?: string; source: string; i
                     opacity: w ? 1 : 1 - 0.35 * win,
                   }}
                 >
-                  {count(it.value, p, it.display)}
+                  {count(it.value, prog(f, ats[i] + 2, 30), it.display)}
                   {it.suffix && <span style={{ fontSize: 60 }}>{it.suffix}</span>}
                 </div>
                 <div style={{ marginTop: 20, fontSize: 28, lineHeight: 1.3, color: INK.soft }}>{it.label}</div>
@@ -92,7 +105,7 @@ export const Versus: React.FC<{ metric: string; unit?: string; source: string; i
         })}
       </div>
       {note && (
-        <div style={{ marginTop: 46, fontSize: 32, fontWeight: 700, color: INK.text, opacity: prog(f, 48, 12), borderLeft: `3px solid ${TONE.accent}`, paddingLeft: 18 }}>{note}</div>
+        <div style={{ marginTop: 46, fontSize: 32, fontWeight: 700, color: INK.text, opacity: prog(f, Math.max(a0, a1) + 36, 12), borderLeft: `3px solid ${TONE.accent}`, paddingLeft: 18 }}>{note}</div>
       )}
       <Source text={source} at={20} />
     </Frame>
@@ -104,7 +117,7 @@ type SlopeSeries = { label: string; a: number; b: number; display?: [string, str
 export const Slope: React.FC<{ metric: string; unit?: string; source: string; from: string; to: string; series: SlopeSeries[]; min?: number }> = ({
   metric, unit, source, from, to, series, min = 0,
 }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const H = 380;
   const X0 = 230;
   const X1 = 620;
@@ -171,7 +184,7 @@ export const Slope: React.FC<{ metric: string; unit?: string; source: string; fr
 // ---------- Đường xu hướng: 3 điểm thời gian trở lên ----------
 type Pt = { label: string; value: number; display?: string };
 export const Trend: React.FC<{ metric: string; unit?: string; source: string; points: Pt[]; min?: number; note?: string }> = ({ metric, unit, source, points, min = 0, note }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const H = 340;
   const PADX = 60;
   const hi = Math.max(...points.map((p) => p.value));
@@ -227,7 +240,7 @@ type Part = { label: string; value: number; display?: string; tone: Tone };
 export const Donut: React.FC<{ metric: string; unit?: string; source: string; parts: Part[]; center?: string; centerLabel?: string }> = ({
   metric, unit, source, parts, center, centerLabel,
 }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const R = 160;
   const SW = 64;
   const Cc = 2 * Math.PI * R;
@@ -287,28 +300,39 @@ const Person: React.FC<{ color: string; size: number }> = ({ color, size }) => (
   </svg>
 );
 export const People: React.FC<{ metric: string; unit?: string; source: string; lit: number; legend: [string, string] }> = ({ metric, unit, source, lit, legend }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const { fps } = useVideoConfig();
+  const cue = useCue();
+  // Tô màu từng người lúc giọng đọc tới con số đầu tiên; dòng chú thích thứ hai hiện khi giọng đọc tới con số cuối của nó.
+  const nums = numbersIn(legend.join(" "));
+  const first = Math.min(...[lit * 10, ...nums].map((n) => cue(n, Infinity, { floor: 30 })));
+  const litAt = Number.isFinite(first) ? first : 30;
+  const last = numbersIn(legend[1]);
+  const l0At = cue(legend[0], litAt + lit * 4, { after: litAt });
+  // Dòng thứ hai hiện lúc giọng đọc tới con số sớm nhất của nó còn chưa đọc (ví dụ "ở tuổi 20").
+  const l1First = Math.min(...last.map((n) => cue(n, Infinity, { after: l0At + 2, floor: l0At + 6 })));
+  const l1At = Number.isFinite(l1First) ? l1First : l0At + 6;
   return (
     <Frame>
       <Metric metric={metric} unit={unit} />
       <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "26px 34px", marginTop: 46, width: 600 }}>
         {Array.from({ length: 10 }).map((_, i) => {
-          const s = spring({ frame: f - 4 - i * 2, fps, config: { damping: 14 }, durationInFrames: 16 });
-          const on = i < lit && f > 30 + i * 4;
+          const s = springAt(f, fps, 4 + i * 2, { damping: 14 }, 16);
+          const on = i < lit && f > litAt + i * 4;
+          const flash = i < lit ? springAt(f, fps, litAt + i * 4, { stiffness: 260, damping: 14 }) : 1;
           return (
-            <div key={i} style={{ transform: `scale(${s})`, transformOrigin: "center bottom" }}>
+            <div key={i} style={{ transform: `scale(${s * (on ? 0.85 + 0.15 * flash : 1)})`, transformOrigin: "center bottom" }}>
               <Person color={on ? TONE.accent : INK.cell} size={72} />
             </div>
           );
         })}
       </div>
       <div style={{ marginTop: 40, display: "grid", gap: 14, fontSize: 30 }}>
-        <div style={{ display: "flex", gap: 14, alignItems: "baseline", opacity: prog(f, 30 + lit * 4, 10) }}>
+        <div style={{ display: "flex", gap: 14, alignItems: "baseline", opacity: prog(f, l0At, 10) }}>
           <b style={{ color: TONE.accent, fontSize: 44 }}>{lit}/10</b>
           <span style={{ fontWeight: 600 }}>{legend[0]}</span>
         </div>
-        <div style={{ color: INK.soft, opacity: prog(f, 36 + lit * 4, 10) }}>{legend[1]}</div>
+        <div style={{ color: INK.soft, opacity: prog(f, l1At, 10), transform: `translateY(${(1 - prog(f, l1At, 10)) * 12}px)` }}>{legend[1]}</div>
       </div>
       <Source text={source} at={20} />
     </Frame>
@@ -318,7 +342,7 @@ export const People: React.FC<{ metric: string; unit?: string; source: string; l
 // ---------- Phễu: rơi rụng qua từng bước ----------
 type Stage = { label: string; value: number; display?: string };
 export const Funnel: React.FC<{ metric: string; unit?: string; source: string; stages: Stage[] }> = ({ metric, unit, source, stages }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const top = stages[0].value;
   const ROW = Math.min(104, 440 / stages.length);
   const LABEL = 270;

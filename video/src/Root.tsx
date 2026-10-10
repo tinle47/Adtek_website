@@ -22,7 +22,7 @@ export const Root: React.FC = () => (
     fps={FPS}
     durationInFrames={300}
     defaultProps={{ script: sample as Script, voice: null } satisfies VideoProps}
-    calculateMetadata={({ props }) => ({ durationInFrames: totalFrames(props) })}
+    calculateMetadata={({ props }) => ({ durationInFrames: totalFrames(props), fps: props.fps ?? FPS })}
   />
   {/* Ảnh bìa riêng cho từng video (out/<id>-cover.png). */}
   <Still id="Cover" component={CoverStill} width={1080} height={1920} defaultProps={{ script: sample as Script, voice: null } satisfies VideoProps} />

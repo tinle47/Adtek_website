@@ -1,12 +1,13 @@
 import React from "react";
-import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
-import { Article, Follow, List } from "./design/blocks";
+import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useVideoConfig } from "remotion";
+import { Audit } from "./design/audit";
+import { Article, Follow, List, listDelays } from "./design/blocks";
 import { BarChart, ColumnChart, Exhibit, Waffle, type TimedCol, type TimedNote } from "./design/charts";
 import { BigNumber, Donut, Funnel, People, Slope, Trend, Versus } from "./design/charts2";
 import { CHAT_NOTE_AT, ChatScreen } from "./design/chat";
-import { Background, Caption, Fade, Headline, L, Logo, SiteFooter, clamp, useFonts } from "./design/frame";
+import { BASE_FPS, Background, Caption, CueContext, Fade, Headline, L, Logo, SiteFooter, clamp, cueTime, numbersIn, useFonts, useFrame } from "./design/frame";
 import { Shot } from "./design/shot";
-import { MYTH_STAMP_AT, Myth, QUIZ_REVEAL_AT, Quiz } from "./design/hook";
+import { Myth, QUIZ_REVEAL_AT, Quiz, mythStampAt } from "./design/hook";
 import { GoogleSerp, PhoneNote, SERP_NOTE_AT } from "./design/serp";
 import { timeline, type TimedScene } from "./timing";
 import type { Scene, VideoProps, Visual } from "./types";
@@ -33,8 +34,11 @@ const chartGroups = (scenes: Scene[]): Group[] => {
   return groups;
 };
 
-const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc }) => {
-  const f = useCurrentFrame();
+// Mọi mốc trong ChartGroup tính theo 30 hình/giây (useFrame); k đổi sang khung thật cho Sequence.
+const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc: real }) => {
+  const f = useFrame();
+  const k = useVideoConfig().fps / BASE_FPS;
+  const sc = real.map((s) => ({ ...s, from: s.from / k, frames: s.frames / k }));
   const shift = g.first === 0 ? HOOK : 0;
   const start = sc[g.first].from - shift;
   const end = sc[g.last].from + sc[g.last].frames;
@@ -43,19 +47,28 @@ const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc }) => {
   const items = g.chart.type === "columns" ? g.chart.cols : g.chart.rows;
   // Phần tử cùng một bước hiện lần lượt cách nhau 12 frame.
   const order: Record<number, number> = {};
+  // Thanh/cột hiện lúc giọng đọc tới giá trị của nó (cảnh đầu đang hiện sẵn trạng thái cuối thì giữ nhịp cũ).
+  const voiceAt = (step: number, needle: number | undefined, fallback: number, after = -1) => {
+    const idx = Math.min(g.first + step, g.last);
+    if (idx === 0 || needle === undefined) return fallback;
+    const start = sc[idx].from + sc[idx].lead;
+    const t = cueTime(sc[idx].words, needle, (after - start) / BASE_FPS);
+    return t === undefined ? fallback : Math.max(fallback, start + t * BASE_FPS - 2);
+  };
   const timed: TimedCol[] = items.map((it) => {
     const step = it.step ?? 0;
     order[step] = (order[step] ?? -1) + 1;
-    return { ...it, at: stepStart(step) + 6 + order[step] * 12 };
+    return { ...it, at: voiceAt(step, it.value, stepStart(step) + 6 + order[step] * 12) };
   });
   const lastAt = (step: number) => Math.max(...timed.filter((_, i) => (items[i].step ?? 0) === step).map((t) => t.at), stepStart(step));
   const notes: TimedNote[] = (g.chart.notes ?? []).map((n) => {
-    const at = lastAt(n.step ?? 0) + 26;
+    const step = n.step ?? 0;
+    const at = voiceAt(step, numbersIn(n.text)[0], lastAt(step) + 26, lastAt(step));
     return n.kind === "drop" ? { ...n, at } : { kind: "callout", target: n.at, text: n.text, at };
   });
   const o = interpolate(f, [end - 7, end], [1, 0], clamp);
   const pops = timed.filter((t) => t.at + 16 > 0).map((t, i) => (
-    <Sequence key={i} from={t.at + 16} durationInFrames={10}>
+    <Sequence key={i} from={Math.round((t.at + 16) * k)} durationInFrames={Math.round(10 * k)}>
       <Audio src={sfx("pop")} volume={0.32} />
     </Sequence>
   ));
@@ -151,8 +164,11 @@ const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) =>
 
 export const Video: React.FC<VideoProps> = (props) => {
   useFonts();
-  const sc = timeline(props);
+  const { fps } = useVideoConfig();
+  const sc = timeline({ ...props, fps });
   const scenes = props.script.scenes;
+  // Đổi mốc 30 hình/giây sang khung thật của video (60 hình/giây thì nhân 2).
+  const at = (x: number) => Math.round((x * fps) / BASE_FPS);
   return (
     <AbsoluteFill>
       <Background />
@@ -161,37 +177,53 @@ export const Video: React.FC<VideoProps> = (props) => {
         <ChartGroup key={g.first} g={g} sc={sc} />
       ))}
       {scenes.map((s, i) => {
-        const frames = sc[i].frames + (i === scenes.length - 1 ? 10 : 0);
+        const frames = sc[i].frames + (i === scenes.length - 1 ? at(10) : 0);
+        const reveal = s.visual?.type === "quiz" && s.visual.reveal;
+        // Khung con dấu "SAI" đóng xuống, tính từ đầu cảnh (cảnh đầu đã lùi HOOK khung); âm là đã đóng sẵn ở khung đầu.
+        const shift = i === 0 ? HOOK : 0;
+        const stamp = s.visual?.type === "myth" ? mythStampAt(sc[i].words, sc[i].lead + shift, s.visual.verdict) - shift : -1;
         return (
           <Sequence key={i} from={sc[i].from} durationInFrames={frames}>
             <Fade frames={frames}>
-              <Sequence from={i === 0 ? -HOOK : 0} layout="none">
+              <Sequence from={i === 0 ? -at(HOOK) : 0} layout="none">
                 <Headline kicker={s.kicker} headline={s.headline} accent={s.accent} big={!s.visual} />
-                <SceneVisual v={s.visual} frames={sc[i].frames} />
+                <CueContext.Provider value={{ words: sc[i].words, offset: sc[i].lead + (i === 0 ? HOOK : 0), hook: i === 0 }}>
+                  <SceneVisual v={s.visual} frames={(sc[i].frames * BASE_FPS) / fps} />
+                </CueContext.Provider>
               </Sequence>
             </Fade>
-            {i > 0 && <Audio src={sfx("whoosh")} volume={0.28} />}
+            {/* Cảnh lật đáp án không có tiếng chuyển cảnh: giữ khoảng lặng trước tiếng "ding". */}
+            {i > 0 && !reveal && <Audio src={sfx("whoosh")} volume={0.28} />}
             {i > 0 && s.visual && POP_AT[s.visual.type] !== undefined && (
-              <Sequence from={POP_AT[s.visual.type]!} layout="none">
+              <Sequence from={at(POP_AT[s.visual.type]!)} layout="none">
                 <Audio src={sfx("pop")} volume={0.35} />
               </Sequence>
             )}
-            {s.visual?.type === "quiz" && s.visual.reveal && (
-              <Sequence from={QUIZ_REVEAL_AT} layout="none">
-                <Audio src={sfx("ding")} volume={0.4} />
+            {s.visual?.type === "list" &&
+              listDelays(s.visual.items, (sc[i].frames * BASE_FPS) / fps, i === 0 ? [] : sc[i].words, sc[i].lead).map((d, j) => (
+                <Sequence key={j} from={at(d + 2)} layout="none">
+                  <Audio src={sfx("pop")} volume={0.22} />
+                </Sequence>
+              ))}
+            {reveal && (
+              <Sequence from={at(QUIZ_REVEAL_AT)} layout="none">
+                <Audio src={sfx("ding")} volume={0.75} />
               </Sequence>
             )}
-            {i > 0 && s.visual?.type === "myth" && (
-              <Sequence from={MYTH_STAMP_AT} layout="none">
+            {stamp >= 0 && (
+              <Sequence from={at(stamp)} layout="none">
                 <Audio src={sfx("pop")} volume={0.45} />
               </Sequence>
             )}
-            <Caption words={sc[i].words} />
-            {sc[i].audio && <Audio src={staticFile(sc[i].audio!)} />}
+            <Sequence from={at(sc[i].lead)} layout="none">
+              <Caption words={sc[i].words} />
+              {sc[i].audio && <Audio src={staticFile(sc[i].audio!)} />}
+            </Sequence>
           </Sequence>
         );
       })}
       <SiteFooter />
+      {props.audit && <Audit />}
     </AbsoluteFill>
   );
 };

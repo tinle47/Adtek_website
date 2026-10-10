@@ -1,7 +1,7 @@
 import React from "react";
-import { Easing, Img, interpolate, staticFile, useCurrentFrame } from "remotion";
+import { Easing, Img, interpolate, staticFile } from "remotion";
 import type { Visual } from "../types";
-import { C, SANS } from "./frame";
+import { C, SANS, useFrame } from "./frame";
 
 // Dựng lại trang kết quả Google trên điện thoại (chế độ tối) để trông như quay màn hình thật:
 // gõ truy vấn, "Tổng quan do AI" hiện dần từng chữ, cuộn xuống kết quả tự nhiên rồi kết quả đó mờ đi.
@@ -110,7 +110,7 @@ const AddressBar: React.FC = () => (
 
 // Khung iPhone: viền, thanh trạng thái, màn hình thiết kế theo bề ngang 390 rồi phóng to. Đáy mờ dần vào nền.
 export const Phone: React.FC<{ height: number; bg: string; children: React.ReactNode }> = ({ height, bg, children }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const enter = interpolate(f, [0, 12], [0, 1], { ...clamp, easing: ease });
   return (
     <div
@@ -141,7 +141,7 @@ export const Phone: React.FC<{ height: number; bg: string; children: React.React
 };
 
 export const GoogleSerp: React.FC<{ c: SerpContent; height: number }> = ({ c, height }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const typed = c.query.slice(0, Math.round(interpolate(f, T.type, [0, c.query.length], clamp)));
   const caret = f < T.type[1] + 4 && f % 16 < 9;
   const ai = interpolate(f, [T.ai, T.ai + 8], [0, 1], clamp);
@@ -246,7 +246,7 @@ export const SERP_NOTE_AT = T.dim;
 
 // Chú thích kiểu McKinsey đặt ngoài điện thoại: đường kẻ ngắn + phần chữ đậm + phần chữ thường.
 export const PhoneNote: React.FC<{ top: number; left: number; note: [string, string]; at: number }> = ({ top, left, note, at }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const draw = interpolate(f, [at, at + 12], [0, 1], { ...clamp, easing: ease });
   const txt = interpolate(f, [at + 8, at + 18], [0, 1], clamp);
   return (

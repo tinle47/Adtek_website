@@ -45,7 +45,9 @@ Biểu đồ theo chuẩn McKinsey: màu phẳng, cột vuông, không lưới, 
 cd video && npm install
 node tools/voice.mjs aio-la-gi          # tạo giọng bằng Eleven v4 (cần ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID; đổi model bằng ELEVENLABS_MODEL)
 node tools/render.mjs aio-la-gi --stills  # chụp mỗi cảnh một ảnh để duyệt nhanh (out/)
+node tools/check.mjs aio-la-gi          # kiểm tra trước khi xuất: chữ bị cắt/chồng/dưới nút TikTok, đứng hình quá 4 giây, nhịp đọc
 node tools/render.mjs aio-la-gi 1 2     # xuất out/aio-la-gi-1.mp4 và caption out/aio-la-gi-1.txt
+node tools/render.mjs aio-la-gi --fps 60  # bản 60 hình/giây (mượt hơn, render lâu khoảng 2.5 lần, file nặng hơn khoảng 20%)
 npm run studio                           # xem và chỉnh trực tiếp trên trình duyệt
 node tools/shot.mjs <url> "<câu có con số>" <tên>  # chụp trang gốc, ghi vị trí câu cần tô sáng (public/shots/)
 ```
@@ -55,6 +57,14 @@ Cảnh `quiz` là câu đố 3 lựa chọn (`options`, `answer`, `tag`); dùng 
 Cảnh `shot` dùng ảnh chụp thật của bài báo hoặc báo cáo: khung trình duyệt, trang trượt tới câu có con số, bút dạ quang cam quét qua con số, phần còn lại tối đi. Chép `width`, `height`, `highlight`, `url` từ file `public/shots/<tên>.json` vào kịch bản, thêm `source` và `note` (ví dụ: `scripts/demo-anh-chup/1.json`). Chỉ chụp trang gốc của nguồn, không sửa ảnh, không dựng giả giao diện trang báo. Mạng của môi trường cloud phải cho phép tên miền của trang cần chụp.
 
 Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`. Trên máy cá nhân không cần, Remotion tự tải trình duyệt.
+
+## Chuyển động (học từ bộ animate, 10/2026)
+
+- **Giọng đọc là đồng hồ** (`src/cue.ts`, `useCue` trong `design/frame.tsx`): con số, thanh biểu đồ, hình người, con dấu "SAI", từng việc trong danh sách và dòng chi tiết hiện đúng lúc giọng đọc nhắc tới. Khớp con số (54 khớp "54%") hoặc 2 chữ liền nhau ("Không tặng quà" khớp "Đừng tặng quà"). Không khớp được thì dùng nhịp mặc định. Cảnh đầu vẫn hiện sẵn trạng thái cuối (khung hook), chỉ con dấu và việc nhấn lựa chọn đố mới đợi giọng.
+- **Lò xo** (`SPRING` trong `design/frame.tsx`): snappy, smooth, heavy, playful. Phần tử bật vào có độ nảy nhẹ rồi dừng tự nhiên.
+- **Lặng trước điểm nhấn**: cảnh lật đáp án đố số liệu bỏ tiếng chuyển cảnh, lặng khoảng 0.9 giây, rồi lật đáp án cùng tiếng "ding" to nhất video; giọng đọc "Đáp án là..." bắt đầu sau tiếng ding.
+- **Mốc thời gian theo 30 hình/giây** (`useFrame`, `springAt`): cùng một video xuất được 30 hoặc 60 hình/giây mà nhịp không đổi.
+- **Kiểm tra bằng máy** (`tools/check.mjs`, khoảng 45 giây mỗi video): đo vị trí thật của từng dòng chữ trên các khung mẫu (6 khung mỗi giây) và đếm điểm ảnh thay đổi giữa các khung. FAIL (chữ bị cắt, chữ chồng nhau) phải sửa trước khi xuất. WARN đứng hình: viết lại lời đọc để nhắc lần lượt từng con số, tách cảnh, hoặc thêm ý hiện sau. Ảnh khung mẫu ở `out/check/<id>/`.
 
 ## Đăng lên TikTok
 

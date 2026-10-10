@@ -1,7 +1,7 @@
 import React from "react";
-import { interpolate, useCurrentFrame } from "remotion";
+import { interpolate } from "remotion";
 import type { Tone } from "../types";
-import { SANS, clamp, ease } from "./frame";
+import { SANS, clamp, ease, useFrame } from "./frame";
 
 // Biểu đồ theo chuẩn trình bày của McKinsey, vẽ trên nền navy: màu phẳng, cột vuông, không lưới, không bóng,
 // số ghi thẳng trên dữ liệu, chú thích bằng đường kẻ mảnh và chữ đậm nhỏ, chỉ một điểm nhấn màu cam.
@@ -31,7 +31,7 @@ export const Exhibit: React.FC<{ metric: string; unit: string; source: string; a
   appear,
   children,
 }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   return (
     <div style={{ width: W, opacity: prog(f, appear, 12), color: INK.text, fontFamily: SANS }}>
       <div style={{ fontSize: 30, lineHeight: 1.3 }}>
@@ -45,7 +45,7 @@ export const Exhibit: React.FC<{ metric: string; unit: string; source: string; a
 
 // Đường kẻ mảnh vẽ dần, có thể có mũi tên ở cuối.
 const Line: React.FC<{ at: number; points: [number, number][]; arrow?: boolean }> = ({ at, points, arrow }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const draw = prog(f, at, 16);
   const len = points.slice(1).reduce((s, p, i) => s + Math.hypot(p[0] - points[i][0], p[1] - points[i][1]), 0);
   const end = points[points.length - 1];
@@ -58,7 +58,7 @@ const Line: React.FC<{ at: number; points: [number, number][]; arrow?: boolean }
 };
 
 const NoteText: React.FC<{ at: number; style: React.CSSProperties; children: React.ReactNode }> = ({ at, style, children }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   return <div style={{ position: "absolute", fontSize: 25, lineHeight: 1.3, fontWeight: 700, color: INK.text, opacity: prog(f, at + 10, 10), ...style }}>{children}</div>;
 };
 
@@ -69,7 +69,7 @@ export type TimedNote =
   | { kind: "callout"; at: number; target: number; text: string };
 
 export const ColumnChart: React.FC<{ cols: TimedCol[]; max: number; notes: TimedNote[] }> = ({ cols, max, notes }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const H = 300;
   const slot = W / cols.length;
   const BW = Math.min(150, slot * 0.5);
@@ -144,7 +144,7 @@ export const ColumnChart: React.FC<{ cols: TimedCol[]; max: number; notes: Timed
 export type TimedRow = TimedCol;
 
 export const BarChart: React.FC<{ rows: TimedRow[]; max: number; notes: TimedNote[] }> = ({ rows, max, notes }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const LABEL = 300;
   const BAR = W - LABEL - 24 - 120;
   const ROW = 116;
@@ -165,7 +165,8 @@ export const BarChart: React.FC<{ rows: TimedRow[]; max: number; notes: TimedNot
       })}
       <div style={{ position: "absolute", left: LABEL + 24 - 2, top: 12, height: rows.length * ROW - 24, width: 1.5, background: INK.rule }} />
       {notes.map((n, k) => (
-        <NoteText key={k} at={n.at} style={{ left: LABEL + 24, top: rows.length * ROW + 10, width: BAR + 120, borderLeft: `2px solid ${INK.text}`, paddingLeft: 16 }}>
+        // Rộng BAR + 40: chữ dừng trước cột nút bấm bên phải của TikTok (x 975).
+        <NoteText key={k} at={n.at} style={{ left: LABEL + 24, top: rows.length * ROW + 10, width: BAR + 40, borderLeft: `2px solid ${INK.text}`, paddingLeft: 16 }}>
           {n.text}
         </NoteText>
       ))}
@@ -175,7 +176,7 @@ export const BarChart: React.FC<{ rows: TimedRow[]; max: number; notes: TimedNot
 
 // ---------- Biểu đồ ô vuông 10x10 ----------
 export const Waffle: React.FC<{ at: number; lit: number; legend: [string, string] }> = ({ at, lit, legend }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const S = 38;
   const G = 6;
   const litP = prog(f, at + 34, 10);

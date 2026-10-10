@@ -1,7 +1,7 @@
 import React from "react";
-import { interpolate, useCurrentFrame } from "remotion";
+import { interpolate } from "remotion";
 import type { Visual } from "../types";
-import { clamp, ease } from "./frame";
+import { clamp, ease, useFrame } from "./frame";
 import { Phone } from "./serp";
 
 // Màn hình chatbot trên điện thoại (chế độ tối): hỏi một câu, nhận danh sách, hỏi lại đúng câu đó, danh sách khác đi.
@@ -19,7 +19,7 @@ const fade = (f: number, at: number) => interpolate(f, [at, at + 8], [0, 1], cla
 const fakeName = (seed: string) => "Lorem Ipsum Dolor Sitamet".slice(0, 9 + (seed.length % 9));
 
 const Bubble: React.FC<{ text: string; at: number }> = ({ text, at }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const p = fade(f, at);
   return (
     <div style={{ display: "flex", justifyContent: "flex-end", padding: "0 16px", opacity: p, transform: `translateY(${(1 - p) * 10}px)` }}>
@@ -30,7 +30,7 @@ const Bubble: React.FC<{ text: string; at: number }> = ({ text, at }) => {
 
 // Câu trả lời hiện dần từng dòng như đang được tạo.
 const Answer: React.FC<{ items: string[]; span: number[] }> = ({ items, span }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const lines = items.length + 1;
   const shown = interpolate(f, span, [0, lines], clamp);
   const o = (i: number) => interpolate(shown, [i, i + 1], [0, 1], clamp);
@@ -51,7 +51,7 @@ const Answer: React.FC<{ items: string[]; span: number[] }> = ({ items, span }) 
 };
 
 export const ChatScreen: React.FC<{ c: ChatContent; height: number }> = ({ c, height }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const scroll = interpolate(f, T.scroll, [0, 300], { ...clamp, easing: ease });
   return (
     <Phone height={height} bg={K.bg}>

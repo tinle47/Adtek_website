@@ -1,27 +1,53 @@
 import React from "react";
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { Background, C, L, Logo, SANS, SERIF, clamp, ease, useFonts } from "./frame";
+import { interpolate, useVideoConfig } from "remotion";
+import type { Word } from "../types";
+import { BASE_FPS, Background, C, L, Logo, SANS, SERIF, SPRING, clamp, cueTime, ease, numbersIn, springAt, useCue, useFonts, useFrame } from "./frame";
 
 const prog = (f: number, at: number, len: number) => interpolate(f - at, [0, len], [0, 1], { ...clamp, easing: ease });
-export const QUIZ_REVEAL_AT = 20; // khung lật đáp án, dùng chung cho âm thanh
-export const MYTH_STAMP_AT = 26; // khung đóng dấu
+// Cảnh lật đáp án: lặng khoảng 0.7 giây (chỉ còn các lựa chọn đang nhấp nháy), rồi lật đáp án kèm tiếng "ding" to nhất video,
+// sau đó giọng mới đọc "Đáp án là...". Khoảng lặng ngay trước điểm nhấn làm điểm nhấn mạnh hơn (quy tắc của bộ animate).
+export const QUIZ_REVEAL_AT = 21; // khung lật đáp án, dùng chung cho âm thanh
+export const QUIZ_VOICE_AT = QUIZ_REVEAL_AT + 6; // khung giọng bắt đầu đọc trong cảnh lật đáp án
+export const MYTH_STAMP_AT = 26; // khung đóng dấu khi lời đọc không nhắc tới chữ trên con dấu
+// Con dấu đóng đúng lúc giọng đọc chữ "Sai" (hoặc chữ trên con dấu). Dùng chung cho hình và tiếng "bật" trong Video.tsx.
+// words, offset: lời đọc của cảnh và khung lúc giọng bắt đầu (đơn vị 30 hình/giây).
+export const mythStampAt = (words: Word[], offset: number, verdict: string) => {
+  const t = cueTime(words, verdict);
+  return t === undefined ? MYTH_STAMP_AT : Math.max(0, offset + t * BASE_FPS - 2);
+};
 
 // ---------- Đố số liệu: hỏi ở đầu video, lật đáp án ở gần cuối ----------
 type Option = { label: string; text: string };
 export const Quiz: React.FC<{ options: Option[]; answer: number; reveal?: boolean; tag?: string; note?: string; source?: string }> = ({
   options, answer, reveal, tag, note, source,
 }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const { fps } = useVideoConfig();
-  const flip = reveal ? spring({ frame: f - QUIZ_REVEAL_AT, fps, config: { damping: 12 }, durationInFrames: 20 }) : 0;
+  const flip = reveal ? springAt(f, fps, QUIZ_REVEAL_AT, { damping: 12 }, 20) : 0;
+  const cue = useCue();
+  // Ghi chú sau khi lật đáp án: mỗi câu hiện khi giọng đọc tới con số đầu tiên của câu đó.
+  let noteAfter = QUIZ_REVEAL_AT + 12;
+  const notes = (note ?? "").split(/(?<=\.)\s+/).filter(Boolean).map((text, k) => {
+    const at = cue(numbersIn(text)[0], k ? noteAfter + 12 : QUIZ_REVEAL_AT + 12, { after: k ? noteAfter : undefined });
+    noteAfter = at;
+    return { text, at };
+  });
+  // Câu hỏi đầu video: lựa chọn nào đang được đọc ("A, 5 lượt") thì nhún lên và viền cam.
+  let prev = -1;
+  const said = options.map((o) => {
+    const at = reveal ? Infinity : cue(o.label, Infinity, { inHook: true, after: prev, floor: 0 });
+    if (Number.isFinite(at)) prev = at + 2;
+    return at;
+  });
   const pulse = 1 + 0.03 * Math.max(0, Math.sin(Math.max(0, f - 30) / 5));
   return (
     <div style={{ width: 900, fontFamily: SANS, color: C.white }}>
       <div style={{ display: "flex", gap: 24 }}>
         {options.map((o, i) => {
-          const enter = reveal ? 1 : prog(f, 4 + i * 8, 12);
+          const enter = reveal ? 1 : springAt(f, fps, 4 + i * 8, SPRING.snappy);
           const right = i === answer;
           const lit = right ? flip : 0;
+          const call = Number.isFinite(said[i]) ? springAt(f, fps, said[i], SPRING.playful) * (1 - prog(f, said[i] + 24, 10)) : 0;
           return (
             <div
               key={i}
@@ -29,15 +55,15 @@ export const Quiz: React.FC<{ options: Option[]; answer: number; reveal?: boolea
                 flex: 1,
                 height: 250,
                 borderRadius: 18,
-                border: `3px solid ${lit > 0.5 ? C.orange : "rgba(255,255,255,0.35)"}`,
+                border: `3px solid ${lit > 0.5 || call > 0.3 ? C.orange : "rgba(255,255,255,0.35)"}`,
                 background: lit > 0.5 ? C.orange : "rgba(255,255,255,0.06)",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
                 gap: 14,
-                opacity: enter * (reveal && !right ? 1 - 0.65 * flip : 1),
-                transform: `translateY(${(1 - enter) * 30}px) scale(${1 + 0.08 * lit})`,
+                opacity: Math.min(1, enter) * (reveal && !right ? 1 - 0.65 * flip : 1),
+                transform: `translateY(${(1 - enter) * 30 - 14 * call}px) scale(${1 + 0.08 * lit + 0.05 * call})`,
               }}
             >
               <div
@@ -67,7 +93,14 @@ export const Quiz: React.FC<{ options: Option[]; answer: number; reveal?: boolea
         </div>
       )}
       {reveal && note && (
-        <div style={{ marginTop: 38, fontSize: 34, fontWeight: 700, borderLeft: `3px solid ${C.orange}`, paddingLeft: 18, opacity: prog(f, QUIZ_REVEAL_AT + 12, 12) }}>{note}</div>
+        <div style={{ marginTop: 38, fontSize: 34, fontWeight: 700, borderLeft: `3px solid ${C.orange}`, paddingLeft: 18 }}>
+          {notes.map((n, k) => (
+            <span key={k} style={{ opacity: prog(f, n.at, 12) }}>
+              {n.text}
+              {k < notes.length - 1 ? " " : ""}
+            </span>
+          ))}
+        </div>
       )}
       {source && <div style={{ marginTop: 22, fontSize: 19, color: C.muted, opacity: prog(f, 10, 12) }}>{source}</div>}
     </div>
@@ -76,16 +109,20 @@ export const Quiz: React.FC<{ options: Option[]; answer: number; reveal?: boolea
 
 // ---------- Phá hiểu lầm: câu nhiều người tin, đóng dấu "SAI" ----------
 export const Myth: React.FC<{ claim: string; verdict: string; note?: string; source?: string }> = ({ claim, verdict, note, source }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const { fps } = useVideoConfig();
+  const cue = useCue();
   const card = prog(f, 0, 14);
-  const stamp = spring({ frame: f - MYTH_STAMP_AT, fps, config: { damping: 11, stiffness: 180 }, durationInFrames: 16 });
+  const stampAt = cue(verdict, MYTH_STAMP_AT, { inHook: true, floor: 0 }); // giống mythStampAt
+  const stamp = springAt(f, fps, stampAt, { damping: 11, stiffness: 180 }, 16);
+  const noteAt = cue(note, stampAt + 18, { inHook: true, after: stampAt });
   return (
     <div style={{ width: 900, fontFamily: SANS, color: C.white }}>
       <div style={{ position: "relative", padding: "46px 48px", borderRadius: 18, border: "2px solid rgba(255,255,255,0.3)", background: "rgba(255,255,255,0.05)", opacity: card }}>
-        <div style={{ fontFamily: SERIF, fontSize: 120, lineHeight: 0.6, color: C.orange, height: 50 }}>“</div>
+        <div data-audit="skip" style={{ fontFamily: SERIF, fontSize: 120, lineHeight: 0.6, color: C.orange, height: 50 }}>“</div>
         <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 52, lineHeight: 1.25, opacity: 1 - 0.45 * stamp }}>{claim}</div>
         <div
+          data-audit="skip"
           style={{
             position: "absolute",
             right: 40,
@@ -105,8 +142,8 @@ export const Myth: React.FC<{ claim: string; verdict: string; note?: string; sou
           {verdict}
         </div>
       </div>
-      {note && <div style={{ marginTop: 70, fontSize: 34, fontWeight: 700, borderLeft: `3px solid ${C.orange}`, paddingLeft: 18, opacity: prog(f, MYTH_STAMP_AT + 18, 12) }}>{note}</div>}
-      {source && <div style={{ marginTop: 22, fontSize: 19, color: C.muted, opacity: prog(f, MYTH_STAMP_AT + 18, 12) }}>{source}</div>}
+      {note && <div style={{ marginTop: 70, fontSize: 34, fontWeight: 700, borderLeft: `3px solid ${C.orange}`, paddingLeft: 18, opacity: prog(f, noteAt, 12) }}>{note}</div>}
+      {source && <div style={{ marginTop: 22, fontSize: 19, color: C.muted, opacity: prog(f, noteAt, 12) }}>{source}</div>}
     </div>
   );
 };

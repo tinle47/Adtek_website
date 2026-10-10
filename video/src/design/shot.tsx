@@ -1,6 +1,6 @@
 import React from "react";
-import { Img, interpolate, staticFile, useCurrentFrame } from "remotion";
-import { C, SANS, clamp, ease } from "./frame";
+import { Img, interpolate, staticFile } from "remotion";
+import { C, SANS, clamp, ease, useFrame } from "./frame";
 
 // Ảnh chụp thật bài báo hoặc báo cáo (tools/shot.mjs): khung trình duyệt, trang trượt dần tới câu có con số,
 // bút dạ quang cam quét qua đúng con số, phần còn lại tối đi. Không phóng to cắt chữ, không sửa nội dung ảnh.
@@ -14,7 +14,7 @@ const prog = (f: number, at: number, len: number) => interpolate(f - at, [0, len
 export const Shot: React.FC<{ image: string; width: number; height: number; highlight: Rect[]; url: string; source: string; note?: string }> = ({
   image, width, height, highlight, url, source, note,
 }) => {
-  const f = useCurrentFrame();
+  const f = useFrame();
   const enter = prog(f, 0, 14);
   const pan = prog(f, 6, 40);
   const spot = prog(f, 58, 14);

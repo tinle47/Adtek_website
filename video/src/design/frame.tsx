@@ -4,7 +4,7 @@ import "@fontsource/be-vietnam-pro/700.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/source-serif-4/600.css";
-import React, { useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import {
   AbsoluteFill,
   Easing,
@@ -18,6 +18,8 @@ import {
   useVideoConfig,
 } from "remotion";
 import type { Word } from "../types";
+import { cueTime } from "../cue";
+export { cueTime, numbersIn } from "../cue";
 
 // Khung video Adtek: nền navy phẳng, logo góc trái, tiêu đề font có chân căn trái, phụ đề giữa, không hiệu ứng phát sáng.
 export const C = {
@@ -36,6 +38,41 @@ export const L = { pad: 90, logo: 150, head: 300, stage: 660, caption: 1350, foo
 export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 export const ease = Easing.bezier(0.33, 0, 0.2, 1);
 
+// Mọi mốc thời gian trong phần thiết kế tính theo khung của video 30 hình/giây. Xuất 60 hình/giây thì
+// useFrame trả về số khung đã quy đổi (có thể lẻ, ví dụ 12.5), nên hiệu ứng giữ nguyên nhịp mà mượt gấp đôi.
+export const BASE_FPS = 30;
+export const useFrame = () => useCurrentFrame() * (BASE_FPS / useVideoConfig().fps);
+
+// Lò xo (thông số lấy từ bộ animate): snappy cho thẻ nhỏ, nút; smooth cho tiêu đề, khung; heavy cho số to;
+// playful nảy rõ, dùng cho con dấu, biểu tượng. Có độ nảy nhẹ và dừng tự nhiên thay vì trượt đều rồi khựng lại.
+export const SPRING = {
+  snappy: { stiffness: 320, damping: 30 },
+  smooth: { stiffness: 170, damping: 26 },
+  heavy: { stiffness: 90, damping: 19 },
+  playful: { stiffness: 260, damping: 14 },
+};
+// Lò xo bắt đầu ở khung `at` (đơn vị 30 hình/giây), f lấy từ useFrame, fps là fps thật của video.
+export const springAt = (f: number, fps: number, at: number, config: Partial<typeof SPRING.smooth>, durationInFrames?: number) =>
+  spring({ frame: (f - at) * (fps / BASE_FPS), fps, config, durationInFrames: durationInFrames && durationInFrames * (fps / BASE_FPS) });
+
+// ---------- Giọng đọc là đồng hồ (học từ bộ animate) ----------
+// Con số, ý trong danh sách, con dấu "SAI" hiện đúng lúc giọng đọc tới nó, thay vì hiện hết trong 2 giây đầu
+// rồi đứng yên suốt phần còn lại của cảnh (người xem lướt đi khi màn hình đứng yên quá 4 giây).
+// words: lời đọc của cảnh; offset: khung (30 hình/giây) lúc giọng bắt đầu, tính theo khung của phần hình;
+// hook: cảnh đầu đang hiện sẵn trạng thái cuối, chỉ những hiệu ứng cho phép (con dấu, nhấn lựa chọn) mới đợi giọng.
+type Cue = { words: Word[]; offset: number; hook: boolean };
+export const CueContext = createContext<Cue>({ words: [], offset: 0, hook: false });
+// cue(needle, fallback): khung hiện phần tử = muộn hơn giữa mốc mặc định và lúc giọng đọc tới (sớm 2 khung cho kịp mắt).
+export const useCue = () => {
+  const { words, offset, hook } = useContext(CueContext);
+  // floor: mốc sớm nhất được phép (mặc định là fallback).
+  return (needle: string | number | undefined, fallback: number, o: { after?: number; inHook?: boolean; floor?: number } = {}) => {
+    if (needle === undefined || (hook && !o.inHook)) return fallback;
+    const t = cueTime(words, needle, o.after === undefined ? -1 : (o.after - offset) / BASE_FPS);
+    return t === undefined ? fallback : Math.max(o.floor ?? fallback, offset + t * BASE_FPS - 2);
+  };
+};
+
 // Chờ đủ font (kể cả dấu tiếng Việt) rồi mới chụp khung hình.
 export const useFonts = () => {
   const [handle] = useState(() => delayRender("Tải font"));
@@ -51,9 +88,9 @@ export const useFonts = () => {
 
 // Hiện dần từ dưới lên. delay tính bằng frame.
 export const useEnter = (delay = 0) => {
-  const frame = useCurrentFrame();
+  const f = useFrame();
   const { fps } = useVideoConfig();
-  return spring({ frame: frame - delay, fps, config: { damping: 200 }, durationInFrames: 18 });
+  return springAt(f, fps, delay, SPRING.smooth);
 };
 
 export const Background: React.FC = () => (
@@ -65,7 +102,7 @@ export const Logo: React.FC = () => (
 );
 
 export const SiteFooter: React.FC = () => (
-  <div style={{ position: "absolute", right: L.pad, top: L.footer, fontFamily: SANS, fontSize: 22, fontWeight: 600, letterSpacing: 1, color: C.muted }}>
+  <div data-audit="skip" style={{ position: "absolute", right: L.pad, top: L.footer, fontFamily: SANS, fontSize: 22, fontWeight: 600, letterSpacing: 1, color: C.muted }}>
     adtek.agency
   </div>
 );
@@ -144,7 +181,9 @@ export const Caption: React.FC<{ words: Word[] }> = ({ words }) => {
 };
 
 // Mờ dần ở cuối cảnh để chuyển cảnh êm.
+// frames là số khung thật của cảnh.
 export const Fade: React.FC<{ frames: number; children: React.ReactNode }> = ({ frames, children }) => {
   const f = useCurrentFrame();
-  return <AbsoluteFill style={{ opacity: interpolate(f, [frames - 7, frames], [1, 0], clamp) }}>{children}</AbsoluteFill>;
+  const fade = 7 * (useVideoConfig().fps / BASE_FPS);
+  return <AbsoluteFill style={{ opacity: interpolate(f, [frames - fade, frames], [1, 0], clamp) }}>{children}</AbsoluteFill>;
 };

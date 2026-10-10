@@ -1,6 +1,7 @@
 // Xuất video MP4 từ kịch bản. Có giọng đọc (public/voice/<id>/manifest.json) thì dùng, chưa có thì xuất bản không tiếng.
 // Cách dùng: node tools/render.mjs <slug> [số video...]          ví dụ: node tools/render.mjs aio-la-gi
 //            node tools/render.mjs <slug> [số...] --stills        chỉ chụp 1 khung mỗi cảnh để duyệt nhanh
+//            node tools/render.mjs <slug> [số...] --fps 60        xuất 60 hình/giây (mượt hơn, render lâu gấp đôi)
 // Kết quả: out/<id>.mp4 và out/<id>.txt (caption + hashtag để đăng TikTok).
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from "node:fs";
@@ -15,7 +16,8 @@ const browserExecutable = process.env.REMOTION_BROWSER || null;
 
 const args = process.argv.slice(2);
 const stills = args.includes("--stills");
-const [slug, ...nums] = args.filter((a) => !a.startsWith("--"));
+const fps = args.includes("--fps") ? Number(args[args.indexOf("--fps") + 1]) : 30;
+const [slug, ...nums] = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--fps");
 const dir = path.join(ROOT, "scripts", slug);
 const files = nums.length ? nums.map((n) => `${n}.json`) : readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
 
@@ -51,7 +53,7 @@ for (const file of files) {
   if (voice && voice.scenes.length !== script.scenes.length) {
     throw new Error(`${script.id}: giọng đọc cũ không khớp số cảnh, chạy lại tools/voice.mjs`);
   }
-  const inputProps = { script, voice };
+  const inputProps = { script, voice, fps };
   const composition = await selectComposition({ serveUrl, id: "Infographic", inputProps, browserExecutable });
 
   if (stills) {
