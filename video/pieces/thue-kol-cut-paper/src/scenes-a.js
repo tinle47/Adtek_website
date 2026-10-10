@@ -67,8 +67,8 @@ function sStage(o = {}) {
   // the banner over the stage: the hook (frame 0, complete), and at the end the truth
   const COVER = !end && new URLSearchParams(location.search).has('cover');   // tools/cover.mjs: the hook, larger
   const lines = end ? ['Review thật,', 'bán hàng thật.'] : COVER ? ['Thuê KOL', 'nổi tiếng là', 'khách sẽ tin?'] : ['Thuê KOL nổi tiếng', 'là khách sẽ tin?'];
-  const size = end ? 70 : Math.min(...lines.map((l) => fitSize(l, 800, COVER ? 128 : 84, 800)));
-  ptag(lines.map((t) => ({ t, size, weight: 800 })), 470, end ? 372 : COVER ? 500 : 392, { key: 'banner' + end, rot: -0.02, padX: 36, padY: 26, gap: 2, tape: true, minW: 760 });
+  const size = end ? 70 : Math.min(...lines.map((l) => fitSize(l, 800, COVER ? 116 : 84, 800)));
+  ptag(lines.map((t) => ({ t, size, weight: 800 })), 470, end ? 372 : COVER ? 462 : 392, { key: 'banner' + end, rot: -0.02, padX: 36, padY: 26, gap: 2, tape: true, minW: 760 });
   // SAI: the stamp slams on "Sai." (scale from 2.4 to 1 over 3 frames), with ink dust
   if (after) {
     const u = clamp((TT - cu.sai) / 0.1), k = 1 + 1.4 * (1 - u) ** 2;

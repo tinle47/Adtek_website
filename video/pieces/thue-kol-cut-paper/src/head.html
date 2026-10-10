@@ -15,7 +15,7 @@
 <script>
 "use strict";
 // =====================================================================
-//  THUÊ KOL, KHÁCH CÓ TIN? (cut paper) — Adtek TikTok trial. 9:16, 30fps, voice-led (the voice is the clock).
+//  THUÊ KOL, KHÁCH CÓ TIN? (cut paper): Adtek TikTok trial. 9:16, 30fps, voice-led (the voice is the clock).
 //  The approved Vietnamese narration (6 takes) sets every cut: each scene starts 0.15s before its line,
 //  on the 8th grid of 112.5 BPM at 30fps (8 frames). Inside a scene the picture cues on the spoken numbers.
 //  Two paper characters carry it: the ordinary buyer (orange shirt) and the flashy KOL (purple sequins, shades).
@@ -43,7 +43,7 @@ function VW(id, word, n = 1) {
   throw new Error(`VW: no "${word}" #${n} in line ${id}`);
 }
 const G8 = (t) => Math.round(t / E8) * E8;                       // nearest 8th
-const CUT = (id) => +(Math.ceil((VL(id).t0 - 0.15) / E8 - 1e-6) * E8).toFixed(4);   // a scene's cut: on the grid, just before its line
+const CUT = (id) => +(Math.ceil((VL(id).t0 - 0.15) / E8 - 1e-2) * E8).toFixed(4);   // tools/make-voice.mjs put the line 0.15s after a grid point   // a scene's cut: on the grid, just before its line
 
 // the shots: [key, t0, scene]; every boundary is a hard cut on the grid (no morphs: the voice drives a beat-cut)
 const SHOT_LIST = [
@@ -58,7 +58,8 @@ const SHOT_LIST = [
   ['todo',    CUT('todo'),             () => sTodo()],
   ['finale',  CUT('follow'),           () => sStage({ end: true })],
 ];
-const ERA_LIST = SHOT_LIST.map(([, t0, f], i) => [+t0.toFixed(4), i + 1 < SHOT_LIST.length ? +SHOT_LIST[i + 1][1].toFixed(4) : DURATION, f]);
+const FR = (t) => Math.round(t * FPS) / FPS;   // shot times sit exactly on a frame
+const ERA_LIST = SHOT_LIST.map(([, t0, f], i) => [FR(t0), i + 1 < SHOT_LIST.length ? FR(SHOT_LIST[i + 1][1]) : DURATION, f]);
 const T_ = (k) => ERA_LIST[SHOT_LIST.findIndex((s) => s[0] === k)][0];
 const SHOT_TITLES = {
   stage: 'the myth on stage; SAI is stamped', survey: 'Q&Me survey: who was asked', versus: '54% vs 13%: the columns rise',
@@ -87,9 +88,10 @@ const TIMELINE = {
     { name: '3 SAI',     role: 'gift',       t0: CUES.sai - 0.05, t1: T_('survey') },
     { name: '4 Survey',  role: 'build',      t0: T_('survey'),  t1: T_('versus') },
     { name: '5 Proof',   role: 'build',      t0: T_('versus'),  t1: T_('bars') },
-    { name: '6 Trust',   role: 'peak',       t0: T_('bars'),    t1: T_('todo') },
-    { name: '7 Do now',  role: 'connection', t0: T_('todo'),    t1: T_('finale') },
-    { name: '8 Ask',     role: 'title',      t0: T_('finale'),  t1: DURATION },
+    { name: '6 Trust',   role: 'build',      t0: T_('bars'),    t1: T_('drop') },
+    { name: '7 Bin+50',  role: 'peak',       t0: T_('drop'),    t1: T_('todo') },
+    { name: '8 Do now',  role: 'connection', t0: T_('todo'),    t1: T_('finale') },
+    { name: '9 Ask',     role: 'title',      t0: T_('finale'),  t1: DURATION },
   ],
   board: [
     { t: 1.6, title: 'Hook: the KOL performs', sound: 'glossy pad, glitter 8ths', next: 'the score stops dead' },

@@ -1,5 +1,5 @@
   // =====================================================================
-  //  SCORE — quiet under the voice (piece.json voice.music = -15 dB); the owner adds TikTok music at ~15%.
+  //  SCORE: quiet under the voice (piece.json voice.music = -15 dB); the owner adds TikTok music at ~15%.
   //  D, 112.5 BPM (an 8th = 8 frames at 30fps). The KOL's show is glossy; it stops dead before "Sai."
   //  The stamp is the loudest hit (a D minor stab + sub), then everything after is warmer and quieter.
   //  The buyer's motif: a rising fifth (D4 -> A4). Each world voices itself: ticks, a bin thud, cards, a shutter.

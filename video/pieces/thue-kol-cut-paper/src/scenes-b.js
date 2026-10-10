@@ -47,7 +47,7 @@ function prodBox(x, y, s, rot0, key) {
 }
 function sDrop() {
   const cu = TIMELINE.cues;
-  wall('#c9b9da', pat.stripes('rgba(255,255,255,0.18)', 34, 90, 0.0), 'lavW');
+  wall('#9f8cc6', pat.stripes('rgba(255,255,255,0.18)', 34, 90, 0.0), 'lavW');
   clock(830, 360, 80, 3, 40, 'ckD');
   // the star meter: five big stars, a red cut line at 3.6 (true to scale); everything left of it is filled
   const CUTX = 150 + 3.6 * 130, mk = ev(cu.p36 - 0.1, 0.5);
