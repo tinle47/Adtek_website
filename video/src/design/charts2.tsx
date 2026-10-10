@@ -1,7 +1,7 @@
 import React from "react";
 import { interpolate, useVideoConfig } from "remotion";
 import type { Tone } from "../types";
-import { SANS, clamp, ease, numbersIn, springAt, useCue, useFrame } from "./frame";
+import { CuedText, SANS, clamp, ease, numbersIn, springAt, useCue, useCueList, useFrame } from "./frame";
 import { W, count } from "./charts";
 
 // Các biểu đồ chọn theo kiểu dữ liệu, mỗi loại một hiệu ứng riêng để video không lặp lại.
@@ -37,7 +37,6 @@ export const BigNumber: React.FC<{ value: number; display?: string; prefix?: str
   const at = cue(value, 4);
   const p = prog(f, at, 34);
   const pop = springAt(f, fps, at + 32, { damping: 12, stiffness: 160 }, 20);
-  const ctxAt = cue(context ? numbersIn(context)[0] : undefined, at + 36, { after: at + 10 });
   return (
     <Frame>
       <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginTop: 30, transform: `scale(${1 + 0.04 * pop * (1 - pop) * 4})`, transformOrigin: "left bottom" }}>
@@ -47,7 +46,7 @@ export const BigNumber: React.FC<{ value: number; display?: string; prefix?: str
       </div>
       <div style={{ marginTop: 18, height: 4, width: 520 * prog(f, at + 26, 16), background: TONE.accent }} />
       <div style={{ marginTop: 28, fontSize: 40, lineHeight: 1.3, fontWeight: 600, opacity: prog(f, at + 20, 12) }}>{label}</div>
-      {context && <div style={{ marginTop: 14, fontSize: 30, lineHeight: 1.35, color: INK.soft, opacity: prog(f, ctxAt, 12), transform: `translateY(${(1 - prog(f, ctxAt, 12)) * 12}px)` }}>{context}</div>}
+      {context && <CuedText text={context} from={at + 36} inHook style={{ marginTop: 14, fontSize: 30, lineHeight: 1.35, color: INK.soft }} />}
       <Source text={source} at={at + 40} />
     </Frame>
   );
@@ -105,7 +104,7 @@ export const Versus: React.FC<{ metric: string; unit?: string; source: string; i
         })}
       </div>
       {note && (
-        <div style={{ marginTop: 46, fontSize: 32, fontWeight: 700, color: INK.text, opacity: prog(f, Math.max(a0, a1) + 36, 12), borderLeft: `3px solid ${TONE.accent}`, paddingLeft: 18 }}>{note}</div>
+        <CuedText text={note} from={Math.max(a0, a1) + 36} inHook style={{ marginTop: 46, fontSize: 32, fontWeight: 700, color: INK.text, borderLeft: `3px solid ${TONE.accent}`, paddingLeft: 18 }} />
       )}
       <Source text={source} at={20} />
     </Frame>
@@ -118,6 +117,7 @@ export const Slope: React.FC<{ metric: string; unit?: string; source: string; fr
   metric, unit, source, from, to, series, min = 0,
 }) => {
   const f = useFrame();
+  const ats = useCueList()(series.map((s) => s.b), 12, 10);
   const H = 380;
   const X0 = 230;
   const X1 = 620;
@@ -148,7 +148,7 @@ export const Slope: React.FC<{ metric: string; unit?: string; source: string; fr
         ))}
         <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
           {series.map((s, i) => {
-            const at = 12 + i * 10;
+            const at = ats[i];
             const d = prog(f, at, 26);
             const x2 = X0 + (X1 - X0) * d;
             const y2 = y(s.a) + (y(s.b) - y(s.a)) * d;
@@ -163,7 +163,7 @@ export const Slope: React.FC<{ metric: string; unit?: string; source: string; fr
           })}
         </svg>
         {series.map((s, i) => {
-          const at = 12 + i * 10;
+          const at = ats[i];
           const accent = s.tone === "accent";
           const style = { position: "absolute" as const, fontSize: 34, fontWeight: accent ? 700 : 400, color: accent ? TONE.accent : INK.text };
           return (
@@ -190,11 +190,13 @@ export const Trend: React.FC<{ metric: string; unit?: string; source: string; po
   const hi = Math.max(...points.map((p) => p.value));
   const x = (i: number) => PADX + (i * (W - 2 * PADX)) / (points.length - 1);
   const y = (v: number) => H - ((v - min) / (hi - min)) * (H - 40);
-  const draw = prog(f, 10, 40);
+  const last = points.length - 1;
+  // Đường vẽ tới từng điểm đúng lúc giọng đọc tới giá trị của điểm đó.
+  const ts = useCueList()(points.map((p) => p.value), 10, 40 / last);
+  const draw = interpolate(f, ts, ts.map((_, i) => i / last), { ...clamp, easing: ease });
   const pts = points.map((p, i) => [x(i), y(p.value)] as const);
   const path = pts.map((p, i) => `${i ? "L" : "M"}${p[0]},${p[1]}`).join(" ");
   const total = pts.slice(1).reduce((s, p, i) => s + Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]), 0);
-  const last = points.length - 1;
   return (
     <Frame>
       <Metric metric={metric} unit={unit} />
@@ -210,15 +212,15 @@ export const Trend: React.FC<{ metric: string; unit?: string; source: string; po
             </clipPath>
           </defs>
           <line x1={0} x2={W} y1={H} y2={H} stroke={INK.rule} strokeWidth={1.5} />
-          <path d={`${path} L${pts[last][0]},${H} L${pts[0][0]},${H} Z`} fill="url(#trendFill)" clipPath="url(#trendClip)" opacity={prog(f, 20, 30)} />
+          <path d={`${path} L${pts[last][0]},${H} L${pts[0][0]},${H} Z`} fill="url(#trendFill)" clipPath="url(#trendClip)" opacity={prog(f, ts[0] + 10, 30)} />
           <path d={path} fill="none" stroke={TONE.accent} strokeWidth={6} strokeLinejoin="round" strokeLinecap="round" strokeDasharray={total} strokeDashoffset={total * (1 - draw)} />
           {pts.map((p, i) => {
-            const t = 10 + (40 * i) / last;
+            const t = ts[i];
             return <circle key={i} cx={p[0]} cy={p[1]} r={(i === last ? 14 : 9) * prog(f, t, 8)} fill={i === last ? TONE.accent : INK.text} />;
           })}
         </svg>
         {points.map((p, i) => {
-          const t = 10 + (40 * i) / last;
+          const t = ts[i];
           return (
             <React.Fragment key={i}>
               <div style={{ position: "absolute", left: x(i) - 110, width: 220, top: y(p.value) - 62, textAlign: "center", fontSize: i === last ? 40 : 30, fontWeight: i === last ? 700 : 400, color: i === last ? TONE.accent : INK.text, opacity: prog(f, t + 4, 10) }}>
@@ -229,7 +231,7 @@ export const Trend: React.FC<{ metric: string; unit?: string; source: string; po
           );
         })}
       </div>
-      {note && <div style={{ marginTop: 10, fontSize: 30, fontWeight: 700, opacity: prog(f, 54, 12), borderLeft: `3px solid ${TONE.accent}`, paddingLeft: 18 }}>{note}</div>}
+      {note && <CuedText text={note} from={54} inHook style={{ marginTop: 10, fontSize: 30, fontWeight: 700, borderLeft: `3px solid ${TONE.accent}`, paddingLeft: 18 }} />}
       <Source text={source} at={20} />
     </Frame>
   );
@@ -245,6 +247,7 @@ export const Donut: React.FC<{ metric: string; unit?: string; source: string; pa
   const SW = 64;
   const Cc = 2 * Math.PI * R;
   const total = parts.reduce((s, p) => s + p.value, 0);
+  const ats = useCueList()(parts.map((p) => p.value), 8, 14);
   let acc = 0;
   return (
     <Frame>
@@ -257,7 +260,7 @@ export const Donut: React.FC<{ metric: string; unit?: string; source: string; pa
               const len = (p.value / total) * Cc;
               const off = acc;
               acc += len;
-              const g = prog(f, 8 + i * 14, 22);
+              const g = prog(f, ats[i], 22);
               return (
                 <circle key={i} cx={R + SW / 2} cy={R + SW / 2} r={R} fill="none" stroke={TONE[p.tone]} strokeWidth={SW}
                   strokeDasharray={`${Math.max(0, len * g - 3)} ${Cc}`} strokeDashoffset={-off} />
@@ -275,11 +278,11 @@ export const Donut: React.FC<{ metric: string; unit?: string; source: string; pa
         </div>
         <div style={{ display: "grid", gap: 26 }}>
           {parts.map((p, i) => (
-            <div key={i} style={{ display: "flex", gap: 16, alignItems: "baseline", opacity: prog(f, 12 + i * 14, 10) }}>
+            <div key={i} style={{ display: "flex", gap: 16, alignItems: "baseline", opacity: prog(f, ats[i] + 4, 10) }}>
               <div style={{ width: 22, height: 22, flex: "none", background: TONE[p.tone], transform: "translateY(2px)" }} />
               <div>
                 <div style={{ fontSize: 40, fontWeight: 700, color: p.tone === "accent" ? TONE.accent : INK.text, lineHeight: 1.1 }}>
-                  {count(p.value, prog(f, 8 + i * 14, 22), p.display)}
+                  {count(p.value, prog(f, ats[i], 22), p.display)}
                 </div>
                 <div style={{ fontSize: 26, color: INK.soft, lineHeight: 1.3 }}>{p.label}</div>
               </div>
@@ -332,7 +335,7 @@ export const People: React.FC<{ metric: string; unit?: string; source: string; l
           <b style={{ color: TONE.accent, fontSize: 44 }}>{lit}/10</b>
           <span style={{ fontWeight: 600 }}>{legend[0]}</span>
         </div>
-        <div style={{ color: INK.soft, opacity: prog(f, l1At, 10), transform: `translateY(${(1 - prog(f, l1At, 10)) * 12}px)` }}>{legend[1]}</div>
+        <CuedText text={legend[1]} from={l1At} inHook style={{ color: INK.soft }} />
       </div>
       <Source text={source} at={20} />
     </Frame>
@@ -348,12 +351,13 @@ export const Funnel: React.FC<{ metric: string; unit?: string; source: string; s
   const LABEL = 270;
   const AREA = W - LABEL - 20;
   const last = stages.length - 1;
+  const ats = useCueList()(stages.map((s) => s.value), 6, 12);
   return (
     <Frame>
       <Metric metric={metric} unit={unit} />
       <div style={{ marginTop: 40, display: "grid", gap: 12 }}>
         {stages.map((s, i) => {
-          const at = 6 + i * 12;
+          const at = ats[i];
           const g = prog(f, at, 18);
           const w = Math.max(6, (s.value / top) * AREA); // đúng tỷ lệ, không làm tròn lên cho vừa chữ
           const inside = w >= 130;

@@ -18,7 +18,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import type { Word } from "../types";
-import { cueTime } from "../cue";
+import { cueTime, numbersIn } from "../cue";
 export { cueTime, numbersIn } from "../cue";
 
 // Khung video Adtek: nền navy phẳng, logo góc trái, tiêu đề font có chân căn trái, phụ đề giữa, không hiệu ứng phát sáng.
@@ -71,6 +71,49 @@ export const useCue = () => {
     const t = cueTime(words, needle, o.after === undefined ? -1 : (o.after - offset) / BASE_FPS);
     return t === undefined ? fallback : Math.max(o.floor ?? fallback, offset + t * BASE_FPS - 2);
   };
+};
+
+// Nhiều phần tử hiện lần lượt (điểm trên đường xu hướng, lát bánh, tầng phễu): mỗi phần tử hiện khi giọng đọc tới con số của nó,
+// không sớm hơn nhịp mặc định base + i * step và luôn sau phần tử trước ít nhất 8 khung.
+export const useCueList = () => {
+  const cue = useCue();
+  return (needles: (string | number | undefined)[], base: number, step: number) => {
+    let prev = -Infinity;
+    return needles.map((n, i) => {
+      const def = Math.max(base + i * step, prev + 8);
+      const at = Math.max(def, cue(n, def, { after: Number.isFinite(prev) ? prev : undefined }));
+      prev = at;
+      return at;
+    });
+  };
+};
+
+// Dòng chữ phụ (bối cảnh, chú thích, ghi chú) hiện từng câu: câu nào hiện khi giọng đọc tới con số hoặc 2 chữ liền nhau của câu đó.
+// inHook: ở cảnh đầu, con số chính vẫn hiện sẵn từ khung đầu, còn dòng phụ đợi giọng để cảnh đầu không đứng yên.
+export const CuedText: React.FC<{ text: string; from: number; inHook?: boolean; style?: React.CSSProperties }> = ({ text, from, inHook, style }) => {
+  const f = useFrame();
+  const cue = useCue();
+  let after = from - 1;
+  const parts = text.split(/(?<=[.;])\s+/).filter(Boolean).map((t, k) => {
+    const n = numbersIn(t)[0];
+    const byNum = n === undefined ? Infinity : cue(n, Infinity, { after, inHook, floor: from });
+    const byText = cue(t, Infinity, { after, inHook, floor: from });
+    let at = Math.min(byNum, byText);
+    if (!Number.isFinite(at)) at = k ? after + 10 : from;
+    after = at;
+    return { t, at };
+  });
+  const show = (at: number) => interpolate(f - at, [0, 12], [0, 1], clamp);
+  return (
+    <div style={{ ...style, opacity: show(parts[0]?.at ?? from) }}>
+      {parts.map((p, k) => (
+        <span key={k} style={{ opacity: k ? show(p.at) : 1 }}>
+          {p.t}
+          {k < parts.length - 1 ? " " : ""}
+        </span>
+      ))}
+    </div>
+  );
 };
 
 // Chờ đủ font (kể cả dấu tiếng Việt) rồi mới chụp khung hình.

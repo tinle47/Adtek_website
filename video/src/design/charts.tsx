@@ -1,7 +1,7 @@
 import React from "react";
 import { interpolate } from "remotion";
 import type { Tone } from "../types";
-import { SANS, clamp, ease, useFrame } from "./frame";
+import { SANS, clamp, ease, numbersIn, useCue, useFrame } from "./frame";
 
 // Biểu đồ theo chuẩn trình bày của McKinsey, vẽ trên nền navy: màu phẳng, cột vuông, không lưới, không bóng,
 // số ghi thẳng trên dữ liệu, chú thích bằng đường kẻ mảnh và chữ đậm nhỏ, chỉ một điểm nhấn màu cam.
@@ -179,7 +179,10 @@ export const Waffle: React.FC<{ at: number; lit: number; legend: [string, string
   const f = useFrame();
   const S = 38;
   const G = 6;
-  const litP = prog(f, at + 34, 10);
+  // Ô cam sáng lên lúc giọng đọc tới con số (ví dụ 58%); dòng chú thích thứ hai hiện theo con số của nó.
+  const cue = useCue();
+  const litAt = cue(lit, at + 34);
+  const litP = prog(f, litAt, 10);
   return (
     <div style={{ display: "flex", alignItems: "flex-start", gap: 44 }}>
       <div style={{ display: "grid", gridTemplateColumns: `repeat(10, ${S}px)`, gap: G }}>
@@ -201,7 +204,7 @@ export const Waffle: React.FC<{ at: number; lit: number; legend: [string, string
       <div style={{ paddingTop: 4, fontSize: 25, lineHeight: 1.35, color: INK.text, width: 410 }}>
         {[
           [TONE.accent, legend[0], litP, 700],
-          [INK.cell, legend[1], prog(f, at + 18, 10), 400],
+          [INK.cell, legend[1], prog(f, cue(numbersIn(legend[1])[0], litAt + 12, { after: litAt }), 10), 400],
         ].map(([color, text, o, weight], i) => (
           <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", marginBottom: 26, opacity: o as number }}>
             <div style={{ width: 22, height: 22, marginTop: 5, flex: "none", background: color as string }} />
