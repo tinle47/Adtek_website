@@ -7,6 +7,7 @@ import { BigNumber, Donut, Funnel, People, Slope, Trend, Versus } from "./design
 import { CHAT_NOTE_AT, ChatScreen } from "./design/chat";
 import { BASE_FPS, Background, C, Caption, CueContext, Fade, Headline, LAYOUTS, LayoutContext, Logo, SANS, SiteFooter, clamp, cueTime, numbersIn, useFonts, useFrame, useLayout } from "./design/frame";
 import { Shot } from "./design/shot";
+import { MASCOT, Mascot } from "./design/mascot";
 import { Countdown, Race, SeaMap, Words, countdownCues, mapCues, raceCues, wordsCues } from "./design/formats";
 import { Myth, QUIZ_REVEAL_AT, Quiz, mythStampAt } from "./design/hook";
 import { GoogleSerp, PhoneNote, SERP_NOTE_AT } from "./design/serp";
@@ -188,8 +189,12 @@ export const Video: React.FC<VideoProps> = (props) => {
   const scenes = props.script.scenes;
   // Đổi mốc 30 hình/giây sang khung thật của video (60 hình/giây thì nhân 2).
   const at = (x: number) => Math.round((x * fps) / BASE_FPS);
+  // Có mèo ở góc trái thì phụ đề dời sang phải cho khỏi đè (chỉ khổ 9:16).
+  const base = LAYOUTS[props.format ?? "9:16"];
+  const mascotOn = !!props.mascot && (props.format ?? "9:16") === "9:16" && !props.carousel;
+  const layout = mascotOn ? { ...base, caption: { ...base.caption, left: MASCOT.left + 230, width: 990 - MASCOT.left - 230 } } : base;
   return (
-    <LayoutContext.Provider value={LAYOUTS[props.format ?? "9:16"]}>
+    <LayoutContext.Provider value={layout}>
     <AbsoluteFill>
       <Background />
       <Logo />
@@ -255,6 +260,7 @@ export const Video: React.FC<VideoProps> = (props) => {
         );
       })}
       <SiteFooter />
+      {mascotOn && <Mascot tracks={sc.map((x, i) => ({ from: x.from, lead: at(x.lead), env: props.mascot![i] ?? [] }))} />}
       {props.audit && <Audit />}
     </AbsoluteFill>
     </LayoutContext.Provider>

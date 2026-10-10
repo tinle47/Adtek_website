@@ -4,6 +4,7 @@
 //            node tools/render.mjs <slug> [số...] --fps 60        xuất 60 hình/giây (mượt hơn, render lâu gấp đôi)
 //            node tools/render.mjs <slug> [số...] --format 1:1    khổ vuông 1080x1080 (hoặc 16:9: 1920x1080), file out/<id>-1x1.mp4
 //            node tools/render.mjs <slug> [số...] --carousel      bản ảnh lướt cho TikTok: mỗi cảnh 1 ảnh out/<id>-slide<n>.png
+//            node tools/render.mjs <slug> [số...] --mascot        thêm mèo Adtek ở góc trái, miệng mở theo độ to giọng đọc
 // Kết quả: out/<id>.mp4 và out/<id>.txt (caption + hashtag để đăng TikTok).
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from "node:fs";
@@ -22,7 +23,8 @@ const opt = (k) => (args.includes(k) ? args[args.indexOf(k) + 1] : undefined);
 const fps = Number(opt("--fps") ?? 30);
 const format = opt("--format") ?? "9:16";
 const carousel = args.includes("--carousel");
-const suffix = format === "9:16" ? "" : `-${format.replace(":", "x")}`;
+const mascot = args.includes("--mascot");
+const suffix = (format === "9:16" ? "" : `-${format.replace(":", "x")}`) + (args.includes("--mascot") ? "-meo" : "");
 const [slug, ...nums] = args.filter((a, i) => !a.startsWith("--") && !["--fps", "--format"].includes(args[i - 1]));
 const dir = path.join(ROOT, "scripts", slug);
 const files = nums.length ? nums.map((n) => `${n}.json`) : readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
@@ -49,6 +51,42 @@ function normalize(file) {
   return Number(m.input_i);
 }
 
+// Độ to giọng đọc 30 lần mỗi giây (cho mèo nói theo): giải mã mp3 thành PCM, tính RMS từng đoạn 1/30 giây, đổi ra dB
+// rồi quy về 0..1 theo cả video (95% độ to lớn nhất là 1, thấp hơn 28 dB là 0).
+function envelope(files) {
+  const SR = 9000, N = 300; // 9000 mẫu mỗi giây chia chẵn thành 30 đoạn 300 mẫu
+  const dbs = files.map((file) => {
+    if (!file) return [];
+    // ffmpeg của Remotion không có định dạng PCM thô, nên xuất WAV rồi bỏ phần đầu tới khối "data".
+    const r = spawnSync(path.join(ROOT, "node_modules", ".bin", "remotion"), ["ffmpeg", "-v", "error", "-i", path.join(ROOT, "public", file), "-ac", "1", "-ar", String(SR), "-c:a", "pcm_s16le", "-bitexact", "-f", "wav", "-"], { maxBuffer: 1 << 28 });
+    if (r.status !== 0) throw new Error(`không đọc được ${file}: ${String(r.stderr).slice(-300)}`);
+    const start = r.stdout.indexOf("data") + 8;
+    const body = Buffer.from(r.stdout.subarray(start, start + Math.floor((r.stdout.length - start) / 2) * 2));
+    const pcm = new Int16Array(body.buffer, body.byteOffset, body.length / 2);
+    const out = [];
+    for (let i = 0; i + N <= pcm.length; i += N) {
+      let s = 0;
+      for (let j = i; j < i + N; j++) s += pcm[j] * pcm[j];
+      out.push(10 * Math.log10(s / N / 32768 / 32768 + 1e-12));
+    }
+    return out;
+  });
+  const all = dbs.flat().sort((a, b) => a - b);
+  const peak = all[Math.floor(all.length * 0.95)] ?? -20;
+  const floor = peak - 22;
+  const clamp01 = (x) => Math.min(1, Math.max(0, x));
+  // Nhịp âm tiết: so với độ to thấp nhất, cao nhất trong khoảng 0.25 giây xung quanh, để miệng khép giữa các tiếng.
+  return dbs.map((d) => {
+    const g = d.map((v) => clamp01((v - floor) / (peak - floor)));
+    return g.map((v, i) => {
+      const win = g.slice(Math.max(0, i - 4), i + 5);
+      const lo = Math.min(...win), hi = Math.max(...win);
+      const local = hi - lo > 0.05 ? (v - lo) / (hi - lo) : 0.5;
+      return Math.round(v * (0.35 + 0.65 * local) * 100) / 100;
+    });
+  });
+}
+
 mkdirSync(OUT, { recursive: true });
 const serveUrl = await bundle({ entryPoint: path.join(ROOT, "src/index.ts") });
 
@@ -59,7 +97,7 @@ for (const file of files) {
   if (voice && voice.scenes.length !== script.scenes.length) {
     throw new Error(`${script.id}: giọng đọc cũ không khớp số cảnh, chạy lại tools/voice.mjs`);
   }
-  const inputProps = { script, voice, fps, format, carousel };
+  const inputProps = { script, voice, fps, format, carousel, mascot: mascot && voice ? envelope(voice.scenes.map((v) => v.file)) : undefined };
   const composition = await selectComposition({ serveUrl, id: "Infographic", inputProps, browserExecutable });
 
   if (stills) {

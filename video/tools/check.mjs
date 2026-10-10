@@ -24,6 +24,7 @@ const files = nums.length ? nums.map((n) => `${n}.json`) : readdirSync(dir).filt
 const W = 1080, H = 1920;
 const SAFE = { top: 260, bottom: 1500, railX: 975, railTop: 900 };
 const DEAD_MAX = 4; // giây
+const MEO = { x1: 24 + 200, y0: 1224 + 20, y1: 1502 }; // vùng mèo Adtek (design/mascot.tsx), bỏ phần tai trên cùng
 const MAX_WPS = 3.5;
 const CONTENT = { top: 260, bottom: 1340 }; // vùng tính "có gì mới": bỏ phụ đề và tên miền
 
@@ -37,7 +38,8 @@ for (const file of files) {
   const script = JSON.parse(readFileSync(path.join(dir, file), "utf8"));
   const manifest = path.join(ROOT, "public", "voice", script.id, "manifest.json");
   const voice = existsSync(manifest) ? JSON.parse(readFileSync(manifest, "utf8")) : null;
-  const inputProps = { script, voice, audit: true };
+  // --mascot: kiểm tra bố cục có mèo ở góc trái (phụ đề dời phải, chữ nào lọt vào vùng mèo thì báo).
+  const inputProps = { script, voice, audit: true, mascot: args.includes("--mascot") ? script.scenes.map(() => []) : undefined };
   const composition = await selectComposition({ serveUrl, id: "Infographic", inputProps, browserExecutable });
   const fps = composition.fps;
   const outDir = path.join(ROOT, "out", "check", script.id);
@@ -68,6 +70,7 @@ for (const file of files) {
   for (const [frame, boxes] of audits) {
     for (const b of boxes) {
       if (b.cut || b.x0 < -3 || b.y0 < -3 || b.x1 > W + 3 || b.y1 > H + 3) add("FAIL", "chữ bị cắt", b.s, frame);
+      else if (inputProps.mascot && b.x0 < MEO.x1 && b.y1 > MEO.y0 && b.y0 < MEO.y1) add("FAIL", "chữ bị mèo che", b.s, frame);
       else if (b.y1 > SAFE.bottom + 2 || b.y0 < SAFE.top - 2 || (b.x1 > SAFE.railX && b.y1 > SAFE.railTop)) add("WARN", "dưới giao diện TikTok", b.s, frame);
     }
     for (let i = 0; i < boxes.length; i++)
@@ -90,7 +93,9 @@ for (const file of files) {
     if (prev) {
       // Đếm điểm ảnh đổi rõ (lệch hơn 24 mức xám): một dòng chữ nhỏ hiện ra cũng được tính, nhiễu nén ảnh thì không.
       let n = 0;
-      for (let y = y0; y < y1; y++) for (let x = 0; x < sw; x++) if (Math.abs(g[y * sw + x] - prev[y * sw + x]) > 24) n++;
+      // Mèo nhúc nhích liên tục, không tính là "có gì mới".
+      const meoX = inputProps.mascot ? Math.ceil(MEO.x1 / 4) : 0, meoY = Math.floor((MEO.y0 - 20) / 4);
+      for (let y = y0; y < y1; y++) for (let x = y >= meoY ? meoX : 0; x < sw; x++) if (Math.abs(g[y * sw + x] - prev[y * sw + x]) > 24) n++;
       diffs.push(n);
     }
     prev = g;

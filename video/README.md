@@ -67,6 +67,12 @@ Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chrom
 - Ảnh lướt: `node tools/render.mjs <slug> --carousel` xuất mỗi cảnh 1 ảnh (ẩn phụ đề, có số trang).
 - Khổ khác: `--format 1:1` hoặc `--format 16:9`, bố cục xếp lại theo `LAYOUTS` trong `design/frame.tsx`.
 
+## Mèo Adtek nói theo giọng (mẫu 10/2026)
+
+- `node tools/render.mjs <slug> --mascot` thêm mèo ở góc trái (ngay trên vùng tên kênh của TikTok), phụ đề dời sang phải, file ra `out/<id>-meo.mp4`. Kiểm tra bố cục: `node tools/check.mjs <slug> --mascot` (báo chữ bị mèo che).
+- 5 hình trong `public/mascot` (m0 ngậm, m4 hé, m1 cười hé, m3 tròn chữ "o", m2 mở to) cùng một thân, chỉ khác miệng: lấy từ clip gốc của anh Tin, căn mặt bằng OpenCV, ghép riêng vùng miệng, tách nền bằng rembg.
+- Miệng chọn theo độ to giọng đọc 30 lần mỗi giây (render.mjs đo từ file mp3), có so với 0.25 giây xung quanh để miệng khép giữa các tiếng. Không khớp khẩu hình từng âm.
+
 ## Chuyển động (học từ bộ animate, 10/2026)
 
 - **Giọng đọc là đồng hồ** (`src/cue.ts`, `useCue` trong `design/frame.tsx`): con số, thanh biểu đồ, hình người, con dấu "SAI", từng việc trong danh sách và dòng chi tiết hiện đúng lúc giọng đọc nhắc tới. Khớp con số (54 khớp "54%") hoặc 2 chữ liền nhau ("Không tặng quà" khớp "Đừng tặng quà"). Không khớp được thì dùng nhịp mặc định. Cảnh đầu vẫn hiện sẵn trạng thái cuối (khung hook), chỉ con dấu và việc nhấn lựa chọn đố mới đợi giọng.
