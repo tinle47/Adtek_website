@@ -134,7 +134,7 @@
     "4204"
    ],
    "words": 2000,
-   "status": "draft",
+   "status": "scheduled",
    "wp_id": 6093,
    "published": null,
    "last_reviewed": null,
@@ -159,7 +159,7 @@
     "Số chỉ có một nguồn: phí xử lý giao dịch Shopee từ 4.91% lên 6%, chi phí sàn 23-24% doanh thu (VnBusiness), Shopee Live và Video Tết 2026 gần 16 tỷ lượt xem."
    ],
    "media_id": 6092,
-   "approval": "pending",
+   "approval": "auto",
    "approval_requested": "2026-10-09T09:03:59+07:00"
   },
   {
@@ -179,7 +179,7 @@
     "3086"
    ],
    "words": 2000,
-   "status": "draft",
+   "status": "scheduled",
    "wp_id": 6096,
    "published": null,
    "last_reviewed": null,
@@ -205,7 +205,7 @@
     "Bài pháp lý: nên nhờ luật sư đọc lướt trước khi đăng."
    ],
    "media_id": 6095,
-   "approval": "pending",
+   "approval": "auto",
    "approval_requested": "2026-10-09T09:03:59+07:00"
   },
   {
