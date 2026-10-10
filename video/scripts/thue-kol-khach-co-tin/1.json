@@ -1,0 +1,150 @@
+{
+  "id": "thue-kol-khach-co-tin",
+  "date": "2026-10-11",
+  "status": "Đã viết kịch bản",
+  "cover": {
+    "kicker": "Phá hiểu lầm",
+    "title": "Thuê KOL nổi tiếng",
+    "accent": "là khách sẽ tin?"
+  },
+  "caption": "Thuê KOL nổi tiếng là khách sẽ tin? 54% người mua tin review của người dùng thật hơn KOL. Bạn tin review của ai hơn? Comment cho Adtek.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#kol",
+    "#review",
+    "#banhangonline",
+    "#marketing"
+  ],
+  "scenes": [
+    {
+      "kicker": "Phá hiểu lầm · Q&Me",
+      "headline": "Thuê KOL nổi tiếng",
+      "accent": "là khách sẽ tin?",
+      "voice": "Cứ thuê KOL nổi tiếng là khách sẽ tin và chốt đơn? Sai. Khảo sát mới của Q&Me với người mua ở Hà Nội và Thành phố Hồ Chí Minh cho thấy điều ngược lại.",
+      "visual": {
+        "type": "myth",
+        "claim": "Cứ thuê KOL nổi tiếng là khách sẽ tin và chốt đơn.",
+        "verdict": "SAI",
+        "note": "Khảo sát 200 người 20 đến 49 tuổi, Hà Nội và TP.HCM",
+        "source": "Nguồn: Q&Me, How Vietnamese consumers trust online reviews, 09/2026"
+      }
+    },
+    {
+      "kicker": "Khách tin ai?",
+      "headline": "Khách tin người mua thật",
+      "accent": "hơn người nổi tiếng.",
+      "voice": "54% tin đánh giá của người mua bình thường hơn KOL. Chỉ 13% nghiêng về người nổi tiếng.",
+      "visual": {
+        "type": "versus",
+        "metric": "Khi đọc review, người mua tin ai hơn",
+        "unit": "%",
+        "source": "Nguồn: Q&Me, khảo sát 200 người 20 đến 49 tuổi tại Hà Nội và TP.HCM, 09/2026",
+        "items": [
+          {
+            "label": "Người mua bình thường",
+            "value": 54,
+            "suffix": "%"
+          },
+          {
+            "label": "KOL, người nổi tiếng",
+            "value": 13,
+            "suffix": "%"
+          }
+        ],
+        "winner": 0
+      }
+    },
+    {
+      "kicker": "Sức nặng của review",
+      "headline": "8/10 khách",
+      "accent": "chọn mua theo review.",
+      "voice": "Và review có sức nặng thật: 78% nói đánh giá online ảnh hưởng mạnh tới lựa chọn mua. Ở tuổi 20, con số là 87%.",
+      "visual": {
+        "type": "people",
+        "metric": "Người mua nói đánh giá online ảnh hưởng mạnh tới lựa chọn",
+        "source": "Nguồn: Q&Me, khảo sát 200 người 20 đến 49 tuổi tại Hà Nội và TP.HCM, 09/2026",
+        "lit": 8,
+        "legend": [
+          "chọn mua theo đánh giá online",
+          "Con số chính xác: 78%, ở tuổi 20 là 87%"
+        ]
+      }
+    },
+    {
+      "kicker": "Review nào đáng tin?",
+      "headline": "Ảnh thật, video thật",
+      "accent": "đáng tin hơn số sao.",
+      "voice": "Review nào đáng tin? Có ảnh hoặc video thật: 69%, viết chi tiết: 60%, hơn hẳn số sao: 51%. Sản phẩm dưới 3.6 sao bị loại, và 74% cần từ 50 đánh giá mới tin.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Điều làm một review đáng tin",
+        "unit": "%",
+        "source": "Nguồn: Q&Me, khảo sát 200 người 20 đến 49 tuổi tại Hà Nội và TP.HCM, 09/2026",
+        "max": 69,
+        "rows": [
+          {
+            "label": "Có ảnh hoặc video thật",
+            "value": 69,
+            "tone": "accent"
+          },
+          {
+            "label": "Nội dung chi tiết",
+            "value": 60,
+            "tone": "main"
+          },
+          {
+            "label": "Số sao",
+            "value": 51,
+            "tone": "main"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 0,
+            "text": "Dưới 3.6 sao bị loại; 74% cần từ 50 đánh giá"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Đầu tư vào review thật",
+      "accent": "trước khi thuê KOL.",
+      "voice": "Vậy làm gì ngay? Xin đánh giá bằng link hoặc mã QR trên gói hàng, nhắm tới 50 đánh giá đầu tiên. Xin khách kèm ảnh, video. Đừng tặng quà để đổi đánh giá. Và trả lời mọi đánh giá, kể cả lời chê.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Xin đánh giá bằng link hoặc mã QR",
+            "detail": "In trên gói hàng, hóa đơn; nhắm tới 50 đánh giá đầu tiên"
+          },
+          {
+            "text": "Xin khách kèm ảnh, video",
+            "detail": "69% tin review có ảnh, video hơn số sao"
+          },
+          {
+            "text": "Không tặng quà để đổi đánh giá",
+            "detail": "Google cấm và xem đó là đánh giá giả"
+          },
+          {
+            "text": "Trả lời mọi đánh giá, kể cả lời chê",
+            "detail": "Có khen có chê thường được tin hơn toàn khen"
+          }
+        ],
+        "source": "Nguồn: Google Business Profile Help; Q&Me, 09/2026"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Review thật,",
+      "accent": "bán hàng thật.",
+      "voice": "Bạn tin review của KOL hay của người mua thật? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Bạn tin review của KOL hay người mua thật? Comment cho Adtek"
+      }
+    }
+  ]
+}

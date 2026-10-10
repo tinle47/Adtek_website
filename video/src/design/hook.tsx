@@ -56,7 +56,7 @@ export const Quiz: React.FC<{ options: Option[]; answer: number; reveal?: boolea
               >
                 {lit > 0.5 ? "✓" : o.label}
               </div>
-              <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 62, color: lit > 0.5 ? C.navyDeep : C.white }}>{o.text}</div>
+              <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: o.text.length > 6 ? 46 : 62, color: lit > 0.5 ? C.navyDeep : C.white }}>{o.text}</div>
             </div>
           );
         })}
@@ -128,7 +128,7 @@ export const Cover: React.FC<{ title: string; accent: string; kicker?: string; o
             {options.map((o, i) => (
               <div key={i} style={{ flex: 1, height: 190, borderRadius: 18, border: "3px solid rgba(255,255,255,0.45)", background: "rgba(255,255,255,0.06)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10 }}>
                 <div style={{ fontFamily: SANS, fontSize: 34, fontWeight: 700, color: C.orange }}>{String.fromCharCode(65 + i)}</div>
-                <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 64, color: C.white }}>{o}</div>
+                <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: o.length > 6 ? 48 : 64, color: C.white }}>{o}</div>
               </div>
             ))}
           </div>

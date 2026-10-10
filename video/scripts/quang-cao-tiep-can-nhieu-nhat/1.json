@@ -1,0 +1,159 @@
+{
+  "id": "quang-cao-tiep-can-nhieu-nhat",
+  "date": "2026-10-13",
+  "status": "Đã viết kịch bản",
+  "cover": {
+    "kicker": "Đố số liệu",
+    "title": "Quảng cáo ở đâu",
+    "accent": "tiếp cận nhiều người Việt nhất?",
+    "options": [
+      "TikTok",
+      "Facebook",
+      "YouTube"
+    ]
+  },
+  "caption": "Đoán thử: quảng cáo trên nền tảng nào tiếp cận nhiều người Việt nhất? TikTok, Facebook hay YouTube? Comment A, B hay C trước khi xem đáp án.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#quangcaofacebook",
+    "#tiktokads",
+    "#youtubeads",
+    "#digitalmarketing"
+  ],
+  "scenes": [
+    {
+      "kicker": "Đố số liệu · DataReportal",
+      "headline": "Quảng cáo nền tảng nào",
+      "accent": "tiếp cận nhiều người Việt nhất?",
+      "voice": "Đoán thử: quảng cáo trên nền tảng nào tiếp cận được nhiều người Việt nhất? A, TikTok. B, Facebook. C, YouTube. Comment đáp án của bạn, kết quả ở cuối video.",
+      "visual": {
+        "type": "quiz",
+        "options": [
+          {
+            "label": "A",
+            "text": "TikTok"
+          },
+          {
+            "label": "B",
+            "text": "Facebook"
+          },
+          {
+            "label": "C",
+            "text": "YouTube"
+          }
+        ],
+        "answer": 1,
+        "tag": "Comment A, B hay C"
+      }
+    },
+    {
+      "kicker": "Gợi ý 1",
+      "headline": "Người Việt ở lại",
+      "accent": "TikTok lâu nhất.",
+      "voice": "Gợi ý thứ nhất: người Việt dùng TikTok lâu nhất, trung bình 1 giờ 56 phút mỗi ngày. YouTube 1 giờ 21 phút, Facebook 1 giờ 11 phút.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Thời gian dùng trung bình mỗi ngày, người dùng Android",
+        "unit": "phút",
+        "source": "Nguồn: DataReportal, Digital 2026 Vietnam (Similarweb, 08/2025)",
+        "max": 116,
+        "rows": [
+          {
+            "label": "TikTok",
+            "value": 116,
+            "tone": "accent"
+          },
+          {
+            "label": "YouTube",
+            "value": 81,
+            "tone": "main"
+          },
+          {
+            "label": "Facebook",
+            "value": 71,
+            "tone": "main"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Gợi ý 2",
+      "headline": "Khách tìm thương hiệu",
+      "accent": "trên mạng xã hội.",
+      "voice": "Gợi ý thứ hai: 84.9% người dùng internet tìm thông tin thương hiệu và sản phẩm trên mạng xã hội.",
+      "visual": {
+        "type": "waffle",
+        "metric": "Người dùng internet tìm thông tin thương hiệu trên mạng xã hội",
+        "unit": "trên 100 người",
+        "source": "Nguồn: DataReportal, Digital 2026 Vietnam (GWI, quý 2/2025)",
+        "lit": 85,
+        "legend": [
+          "tìm thông tin thương hiệu, sản phẩm trên mạng xã hội",
+          "Con số chính xác: 84.9%"
+        ]
+      }
+    },
+    {
+      "kicker": "Đáp án · DataReportal",
+      "headline": "Đáp án B:",
+      "accent": "Facebook, 79 triệu người.",
+      "voice": "Đáp án là B, Facebook. Quảng cáo Facebook tiếp cận 79 triệu người, TikTok 76.1 triệu người từ 18 tuổi, YouTube 62.1 triệu. TikTok giữ chân lâu nhất, nhưng Facebook vẫn phủ rộng nhất.",
+      "visual": {
+        "type": "quiz",
+        "reveal": true,
+        "options": [
+          {
+            "label": "A",
+            "text": "TikTok"
+          },
+          {
+            "label": "B",
+            "text": "Facebook"
+          },
+          {
+            "label": "C",
+            "text": "YouTube"
+          }
+        ],
+        "answer": 1,
+        "note": "Facebook 79.0 triệu, TikTok 76.1 triệu (từ 18 tuổi), YouTube 62.1 triệu",
+        "source": "Nguồn: DataReportal, Digital 2026 Vietnam. Số người quảng cáo có thể tiếp cận, cuối 2025, có thể trùng"
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Mỗi kênh",
+      "accent": "một cách chạy riêng.",
+      "voice": "Vậy chạy quảng cáo thế nào? Trên TikTok, dùng Spark Ads cho video đang có lượt xem tốt. Trên YouTube, chạy Demand Gen chỉ trên Shorts và bật Lookalike. Còn Zalo, gửi Business Message tới khách có số điện thoại, giá từ 200 đồng mỗi tin.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "TikTok: Spark Ads cho video đang lên",
+            "detail": "Lượt xem, follow từ quảng cáo cộng vào chính bài gốc"
+          },
+          {
+            "text": "YouTube: Demand Gen chỉ chạy Shorts",
+            "detail": "Bật Lookalike để tìm khách mới giống khách cũ"
+          },
+          {
+            "text": "Zalo: Business Message theo số điện thoại",
+            "detail": "Không cần khách theo dõi OA trước, từ 200 đồng mỗi tin"
+          }
+        ],
+        "source": "Nguồn: TikTok Ads Help; Google Ads Help; Zalo Business Message"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Mỗi ngày một số liệu,",
+      "accent": "bạn đoán đúng bao nhiêu?",
+      "voice": "Bạn đoán đúng không? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Bạn đoán A, B hay C? Comment cho Adtek biết nhé"
+      }
+    }
+  ]
+}

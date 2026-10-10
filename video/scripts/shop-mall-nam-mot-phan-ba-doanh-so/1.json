@@ -1,0 +1,165 @@
+{
+  "id": "shop-mall-nam-mot-phan-ba-doanh-so",
+  "date": "2026-10-12",
+  "status": "Đã viết kịch bản",
+  "cover": {
+    "kicker": "Thương mại điện tử",
+    "title": "3% gian hàng",
+    "accent": "nắm 1/3 doanh số sàn"
+  },
+  "caption": "Chưa tới 3% gian hàng là shop Mall nhưng nắm 34.2% doanh số trên Shopee, TikTok Shop, Lazada. Shop bạn đang bán trên sàn nào nhiều nhất? Comment tên sàn.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#shopee",
+    "#tiktokshop",
+    "#banhangonline",
+    "#thuongmaidientu"
+  ],
+  "scenes": [
+    {
+      "kicker": "Performance · Metric",
+      "headline": "Chưa tới 3% gian hàng",
+      "accent": "nắm 1/3 doanh số sàn.",
+      "voice": "Trên Shopee, TikTok Shop và Lazada, cứ 100 gian hàng thì chưa tới 3 là shop Mall. Họ đang nắm bao nhiêu doanh số? Theo Metric, 2.79% số gian hàng mang về 34.2% doanh số.",
+      "visual": {
+        "type": "versus",
+        "metric": "Shop Mall trên Shopee, Lazada, TikTok Shop",
+        "unit": "%",
+        "source": "Nguồn: Metric, 6 tháng đầu năm 2026, Shopee, Lazada, TikTok Shop",
+        "items": [
+          {
+            "label": "Số gian hàng",
+            "value": 2.79,
+            "suffix": "%"
+          },
+          {
+            "label": "Doanh số",
+            "value": 34.2,
+            "suffix": "%"
+          }
+        ],
+        "winner": 1
+      }
+    },
+    {
+      "kicker": "Shop Mall",
+      "headline": "Ít shop hơn,",
+      "accent": "mỗi shop bán nhiều hơn.",
+      "voice": "Số shop Mall còn giảm 6%, nhưng tổng doanh số của họ tăng 54%. Tính ra, mỗi shop Mall bán được nhiều hơn 63.8% so với cùng kỳ.",
+      "visual": {
+        "type": "bignumber",
+        "value": 63.8,
+        "prefix": "+",
+        "suffix": "%",
+        "label": "doanh số trung bình mỗi shop Mall so với cùng kỳ",
+        "context": "Số shop Mall giảm 6%, tổng doanh số shop Mall tăng 54%",
+        "source": "Nguồn: Metric, 6 tháng đầu năm 2026, Shopee, Lazada, TikTok Shop"
+      }
+    },
+    {
+      "kicker": "YouNet ECI",
+      "headline": "Gần 98% tiền",
+      "accent": "dồn về 2 sàn.",
+      "voice": "Tiền cũng dồn về 2 sàn. Shopee chiếm 54.5% tổng giá trị đơn hàng, TikTok Shop 43.4%, cộng lại gần 98%.",
+      "visual": {
+        "type": "donut",
+        "metric": "Thị phần giá trị đơn hàng (GMV), 6 tháng đầu năm 2026",
+        "unit": "%",
+        "source": "Nguồn: YouNet ECI, GMV 6 tháng đầu năm 2026",
+        "center": "98%",
+        "centerLabel": "thuộc về 2 sàn",
+        "parts": [
+          {
+            "label": "Shopee",
+            "value": 54.5,
+            "tone": "main"
+          },
+          {
+            "label": "TikTok Shop",
+            "value": 43.4,
+            "tone": "accent"
+          },
+          {
+            "label": "Lazada và Tiki",
+            "value": 2.1,
+            "tone": "base"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Mỗi ngành một sàn mạnh",
+      "headline": "Thời trang chọn TikTok,",
+      "accent": "điện máy chọn Shopee.",
+      "voice": "Nhưng mỗi ngành có sàn mạnh riêng. Điện máy, hàng tiêu dùng nhanh và mỹ phẩm, Shopee dẫn đầu. Riêng thời trang, ngành lớn nhất, TikTok Shop nắm 56.2%.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Thị phần của sàn dẫn đầu từng ngành",
+        "unit": "%",
+        "source": "Nguồn: YouNet ECI, GMV 6 tháng đầu năm 2026",
+        "max": 67.3,
+        "rows": [
+          {
+            "label": "Điện máy: Shopee",
+            "value": 67.3,
+            "tone": "main"
+          },
+          {
+            "label": "Tiêu dùng nhanh: Shopee",
+            "value": 57.5,
+            "tone": "main"
+          },
+          {
+            "label": "Thời trang: TikTok Shop",
+            "value": 56.2,
+            "tone": "accent"
+          },
+          {
+            "label": "Mỹ phẩm: Shopee",
+            "value": 52.6,
+            "tone": "main"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Trước mùa 11.11,",
+      "accent": "nhà bán nên làm gì?",
+      "voice": "Vậy nhà bán nên làm gì? Đăng ký TikTok Shop Mall nếu đủ điều kiện. Đăng ký chiến dịch 11.11 ngay trong Seller Center. Bật Cộng tác mở để nhà sáng tạo tự chọn bán hàng của bạn. Và dùng tiếp thị liên kết trả hoa hồng theo đơn của Shopee.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Đăng ký TikTok Shop Mall",
+            "detail": "Hiển thị nổi bật hơn, được vào chiến dịch dành riêng cho Mall"
+          },
+          {
+            "text": "Đăng ký chiến dịch 11.11 trong Seller Center",
+            "detail": "11.11 chạy từ 03 đến 12/11; 12.12 từ 03 đến 12/12"
+          },
+          {
+            "text": "Bật Cộng tác mở trên TikTok Shop",
+            "detail": "Nhà sáng tạo tự chọn sản phẩm của bạn để bán"
+          },
+          {
+            "text": "Dùng tiếp thị liên kết của Shopee",
+            "detail": "Trả hoa hồng theo đơn thành công"
+          }
+        ],
+        "source": "Nguồn: TikTok Shop Seller University; Shopee Help Center"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Bán đúng sàn,",
+      "accent": "đúng mùa.",
+      "voice": "Shop bạn đang bán trên sàn nào nhiều nhất? Comment tên sàn cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Shop bạn bán trên sàn nào nhiều nhất? Comment tên sàn"
+      }
+    }
+  ]
+}
