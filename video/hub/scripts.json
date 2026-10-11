@@ -385,13 +385,13 @@
    "#banhangonline",
    "#thuongmaidientu"
   ],
-  "words": 189,
-  "seconds": null,
+  "words": 177,
+  "seconds": 63,
   "scenes": [
    {
     "kicker": "Performance · Metric",
     "title": "Chưa tới 3% gian hàng nắm 1/3 doanh số sàn.",
-    "voice": "Trên Shopee, TikTok Shop và Lazada, cứ 100 gian hàng thì chưa tới 3 là shop Mall. Họ đang nắm bao nhiêu doanh số? Theo Metric, 2.79% số gian hàng mang về 34.2% doanh số.",
+    "voice": "Trên các sàn, cứ 100 gian hàng thì chưa tới 3 là shop Mall. Họ nắm bao nhiêu doanh số? Theo Metric, 2.79% gian hàng mang về 34.2% doanh số.",
     "visual": "Đối đầu",
     "source": "Nguồn: Metric, 6 tháng đầu năm 2026, Shopee, Lazada, TikTok Shop"
    },
@@ -419,7 +419,7 @@
    {
     "kicker": "Làm gì ngay?",
     "title": "Trước mùa 11.11, nhà bán nên làm gì?",
-    "voice": "Vậy nhà bán nên làm gì? Đăng ký TikTok Shop Mall nếu đủ điều kiện. Đăng ký chiến dịch 11.11 ngay trong Seller Center. Bật Cộng tác mở để nhà sáng tạo tự chọn bán hàng của bạn. Và dùng tiếp thị liên kết trả hoa hồng theo đơn của Shopee.",
+    "voice": "Nhà bán nên làm gì? Đăng ký TikTok Shop Mall nếu đủ điều kiện. Đăng ký chiến dịch 11.11 trong Seller Center. Bật Cộng tác mở để nhà sáng tạo tự chọn sản phẩm của bạn. Và dùng tiếp thị liên kết của Shopee.",
     "visual": "Danh sách",
     "source": "Nguồn: TikTok Shop Seller University; Shopee Help Center"
    },
@@ -447,13 +447,13 @@
    "#youtubeads",
    "#digitalmarketing"
   ],
-  "words": 177,
-  "seconds": null,
+  "words": 166,
+  "seconds": 63,
   "scenes": [
    {
     "kicker": "Đố số liệu · DataReportal",
     "title": "Quảng cáo nền tảng nào tiếp cận nhiều người Việt nhất?",
-    "voice": "Đoán thử: quảng cáo trên nền tảng nào tiếp cận được nhiều người Việt nhất? A, TikTok. B, Facebook. C, YouTube. Comment đáp án của bạn, kết quả ở cuối video.",
+    "voice": "Đoán thử: quảng cáo trên nền tảng nào tiếp cận nhiều người Việt nhất? A, TikTok. B, Facebook. C, YouTube. Comment đáp án, kết quả ở cuối video.",
     "visual": "Đố số liệu (3 lựa chọn)",
     "source": ""
    },
@@ -481,7 +481,7 @@
    {
     "kicker": "Làm gì ngay?",
     "title": "Mỗi kênh một cách chạy riêng.",
-    "voice": "Vậy chạy quảng cáo thế nào? Trên TikTok, dùng Spark Ads cho video đang có lượt xem tốt. Trên YouTube, chạy Demand Gen chỉ trên Shorts và bật Lookalike. Còn Zalo, gửi Business Message tới khách có số điện thoại, giá từ 200 đồng mỗi tin.",
+    "voice": "Chạy quảng cáo thế nào? Trên TikTok, dùng Spark Ads cho video đang lên. Trên YouTube, chạy Demand Gen chỉ trên Shorts, bật Lookalike. Với Zalo, gửi Business Message theo số điện thoại, từ 200 đồng mỗi tin.",
     "visual": "Danh sách",
     "source": "Nguồn: TikTok Ads Help; Google Ads Help; Zalo Business Message"
    },
@@ -510,7 +510,7 @@
    "#performancemarketing"
   ],
   "words": 188,
-  "seconds": null,
+  "seconds": 60,
   "scenes": [
    {
     "kicker": "Performance · Số liệu toàn cầu",
@@ -571,8 +571,8 @@
    "#banhangonline",
    "#thuongmaidientu"
   ],
-  "words": 187,
-  "seconds": null,
+  "words": 188,
+  "seconds": 65,
   "scenes": [
    {
     "kicker": "Performance · Q&Me",
@@ -598,14 +598,14 @@
    {
     "kicker": "Luật mới về livestream",
     "title": "Giới thiệu hàng chưa dùng, có thể bị phạt tới 100 triệu.",
-    "voice": "Luật cũng đã siết. Từ 01/07/2026, sàn phải xác thực danh tính người live, lưu buổi live ít nhất 1 năm. KOL, KOC giới thiệu hàng chưa dùng có thể bị phạt tới 100 triệu đồng.",
+    "voice": "Luật cũng đã siết. KOL, KOC giới thiệu hàng chưa dùng có thể bị phạt tới 100 triệu đồng, tổ chức tới 200 triệu. Từ 01/07/2026, sàn phải xác thực người live và lưu buổi live ít nhất 1 năm.",
     "visual": "Đối đầu",
     "source": "Nguồn: Nghị định 87/2026/NĐ-CP, Điều 6 và Điều 51; Luật Thương mại điện tử 122/2025/QH15, Điều 22"
    },
    {
     "kicker": "Làm gì ngay?",
     "title": "Muốn người xem live tin, làm ngay 4 việc này.",
-    "voice": "Shop nên làm gì? Live bằng tài khoản chính thức. Đăng video nhá hàng trước 1 ngày và 1 giờ. Khi demo, ghim sản phẩm, mở Flash Sale riêng cho live. Và gửi KOC dùng thử kèm giấy tờ chất lượng trước khi live.",
+    "voice": "Shop nên làm gì? Live bằng tài khoản chính thức. Đăng video nhá hàng trước 1 ngày và 1 giờ. Ghim sản phẩm đang demo, mở Flash Sale riêng cho live. Và gửi KOC dùng thử kèm giấy tờ chất lượng.",
     "visual": "Danh sách",
     "source": "Nguồn: Học viện TikTok Shop (seller-vn.tiktok.com/university); Luật Thương mại điện tử 122/2025/QH15; Nghị định 87/2026/NĐ-CP"
    },
@@ -633,41 +633,41 @@
    "#mobilemarketing",
    "#fintech"
   ],
-  "words": 188,
-  "seconds": null,
+  "words": 152,
+  "seconds": 63,
   "scenes": [
    {
     "kicker": "App Marketing · AppsFlyer",
     "title": "Thị trường app Việt Nam đã chạm đỉnh?",
-    "voice": "Thị trường app Việt Nam đã chạm đỉnh? Theo AppsFlyer, lượt cài app tăng 136% từ 2018, lên 2.17 tỷ lượt năm 2024, rồi giảm nhẹ.",
+    "voice": "Thị trường app Việt Nam đã chạm đỉnh? Lượt cài tăng 136% từ 2018, đạt 2.17 tỷ năm 2024, rồi giảm nhẹ.",
     "visual": "Đường xu hướng",
     "source": "Nguồn: AppsFlyer, State of App Marketing in Vietnam 2025, 11/2025"
    },
    {
     "kicker": "Người cài app đã đổi",
     "title": "iPhone đang lấy dần phần của Android.",
-    "voice": "Nhưng người cài đã đổi. Từ 2017 đến 2025, iOS tăng từ 22% lên 33% lượt cài, Android giảm từ 78% còn 66%. Đây là nhóm khách giá trị cao hơn.",
+    "voice": "Nhưng người cài đã đổi. Android giảm từ 78% còn 66%, iOS tăng từ 22% lên 33%.",
     "visual": "Đường dốc",
     "source": "Nguồn: AppsFlyer, State of App Marketing in Vietnam 2025, 11/2025"
    },
    {
     "kicker": "App tài chính",
     "title": "App tài chính: iOS đã chiếm hơn một nửa.",
-    "voice": "Rõ nhất là app tài chính. Nửa đầu 2025, lượt cài trên iOS tăng 27%, Android giảm 39%. Cả năm, iOS dự kiến chiếm hơn nửa lượt cài.",
+    "voice": "Rõ nhất là app tài chính. Nửa đầu năm ngoái, lượt cài iOS tăng 27%, Android giảm 39%. Cả năm, iOS dự kiến chiếm 54.5%.",
     "visual": "Vòng tròn",
     "source": "Nguồn: AppsFlyer, State of App Marketing in Vietnam 2025, 11/2025"
    },
    {
     "kicker": "Tiền quảng cáo 2026",
     "title": "Tiền không rút đi, mà đổi chỗ.",
-    "voice": "Vậy tiền quảng cáo đi đâu? Quý 2 năm nay, ngân sách kéo người dùng trên Android cho app tài chính tăng 153%, app giải trí tăng 194%, còn game giảm 46%.",
+    "voice": "Tiền quảng cáo đi đâu? Quý 2, ngân sách kéo người dùng Android cho app tài chính tăng 153%, game giảm 46%, app giải trí tăng 194%.",
     "visual": "Đối đầu",
     "source": "Nguồn: AppsFlyer, State of Marketing in APAC 2026, 09/2026"
    },
    {
     "kicker": "Làm gì ngay?",
     "title": "Lượt cài chững lại, tiền nên đổ vào 4 chỗ này.",
-    "voice": "Làm gì ngay? Làm trang App Store riêng cho từng nhóm khách, gắn vào Apple Ads. Làm trang Google Play riêng cho từng chiến dịch. Chạy quảng cáo kéo người đã cài quay lại. Và chia tiền theo tỷ lệ giữ chân, không chỉ giá mỗi lượt cài.",
+    "voice": "Làm gì ngay? Làm trang App Store riêng cho từng nhóm khách. Làm trang Google Play riêng cho từng chiến dịch. Chạy quảng cáo kéo người dùng quay lại. Và chia ngân sách theo tỷ lệ giữ chân.",
     "visual": "Danh sách",
     "source": "Nguồn: Apple Developer; Play Console Help; Google Ads Help; AppsFlyer Help Center"
    },
@@ -695,8 +695,8 @@
    "#adfraud",
    "#mobilemarketing"
   ],
-  "words": 188,
-  "seconds": null,
+  "words": 183,
+  "seconds": 64,
   "scenes": [
    {
     "kicker": "Đố số liệu · AppsFlyer",
@@ -729,7 +729,7 @@
    {
     "kicker": "Làm gì ngay?",
     "title": "Đừng trả tiền cho lượt cài giả.",
-    "voice": "Vậy làm gì ngay? Trong Protect360, soi cả nguồn tự nhiên. Đặt luật kiểm tra riêng cho từng đối tác affiliate. Trên Android, bật lọc click giả. Trên iOS, chỉ tính lượt cài có chữ ký của Apple.",
+    "voice": "Làm gì ngay? Trong Protect360, soi cả nguồn tự nhiên. Đặt luật riêng cho từng nguồn affiliate. Trên Android, bật lọc click giả. Trên iOS, chỉ tính lượt cài có chữ ký Apple.",
     "visual": "Danh sách",
     "source": "Nguồn: AppsFlyer Knowledge Base; Adjust Help Center; Apple Developer (AdAttributionKit)"
    },
@@ -758,7 +758,7 @@
    "#giuchankhachhang"
   ],
   "words": 192,
-  "seconds": null,
+  "seconds": 61,
   "scenes": [
    {
     "kicker": "App Marketing · Adjust",
