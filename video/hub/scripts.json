@@ -250,7 +250,7 @@
  {
   "id": "khach-so-gia-cho-sale",
   "date": "2026-10-10",
-  "status": "Đã có video",
+  "status": "Đã đăng",
   "title": "Bao nhiêu % người Việt so giá trước khi mua?",
   "caption": "Đoán thử: bao nhiêu % người Việt so giá ở nhiều nơi trước khi mua? Comment A, B hay C trước khi xem đáp án.",
   "hashtags": [
@@ -310,9 +310,71 @@
   "review": ""
  },
  {
+  "id": "giao-het-cho-advantage-plus",
+  "date": "2026-10-11",
+  "status": "Đã đăng",
+  "title": "Giá quảng cáo Meta +12%, có nên giao hết cho AI?",
+  "caption": "Giá mỗi quảng cáo trên Meta tăng 12% trong một năm, tiền chạy qua Advantage+ vượt 75 tỷ USD mỗi năm. Nhưng trong thử nghiệm của Haus, 58% thương hiệu thu về nhiều hơn khi tự cài chiến dịch. Shop bạn để Advantage+ chạy bao nhiêu % ngân sách? Comment con số.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#quangcaofacebook",
+   "#metaads",
+   "#advantageplus",
+   "#performancemarketing"
+  ],
+  "words": 188,
+  "seconds": 60,
+  "scenes": [
+   {
+    "kicker": "Performance · Số liệu toàn cầu",
+    "title": "Giá quảng cáo Meta +12%, có nên giao hết cho AI?",
+    "voice": "Quảng cáo Facebook đang đắt lên, có nên giao hết cho AI chạy? Quý 2 năm nay, giá trung bình mỗi quảng cáo của Meta tăng 12%. Số liệu toàn cầu.",
+    "visual": "Số lớn",
+    "source": "Nguồn: Meta, kết quả kinh doanh quý 2/2026, công bố 29/07/2026"
+   },
+   {
+    "kicker": "Tiền đang dồn vào AI",
+    "title": "Advantage+ vượt 75 tỷ USD mỗi năm.",
+    "voice": "Tiền đang dồn vào AI. Advantage+, công cụ quảng cáo tự động của Meta, đã vượt 75 tỷ USD mỗi năm, từ mức 60 tỷ hồi quý 3 năm ngoái.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: Meta, họp công bố kết quả quý 3/2025 và quý 2/2026"
+   },
+   {
+    "kicker": "Thử nghiệm độc lập · Haus",
+    "title": "Hơn nửa thương hiệu tự chạy lại hiệu quả hơn.",
+    "voice": "Nhưng AI có mang về nhiều đơn hơn? Haus, công ty đo hiệu quả quảng cáo, cho hai cách chạy đấu nhau: 58% thương hiệu thu về nhiều doanh thu thật hơn khi tự cài chiến dịch.",
+    "visual": "Ô vuông 100",
+    "source": "Nguồn: Haus, 640 thử nghiệm trên Meta, 07/2025. Số liệu quốc tế, phần lớn là thương hiệu lớn"
+   },
+   {
+    "kicker": "Sau khi tắt quảng cáo · Haus",
+    "title": "Tắt quảng cáo, Advantage+ hụt hơi nhanh hơn.",
+    "voice": "Không chỉ vậy. Sau khi tắt quảng cáo, chiến dịch tự cài vẫn giúp bán thêm 32%, còn Advantage+ chỉ còn 17%.",
+    "visual": "Biểu đồ cột",
+    "source": "Nguồn: Haus, 640 thử nghiệm trên Meta, 07/2025. Số liệu quốc tế"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Đừng giao hết, hãy cho AI thi với bạn.",
+    "voice": "Vậy làm gì ngay? Thử nghiệm A/B giữa Advantage+ và chiến dịch tự cài, cùng ngân sách. Khai báo nhóm khách cũ. Đặt mức chi tối đa cho khách cũ. Và thử tối ưu theo đơn do quảng cáo thật sự tạo ra.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Trung tâm trợ giúp Meta Business"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "AI hay tự chạy, bạn đang chọn bên nào?",
+    "voice": "Shop bạn để Advantage+ chạy bao nhiêu phần trăm ngân sách? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/08d24d1a4403c4a376479c6ba396c1bf"
+ },
+ {
   "id": "thue-kol-khach-co-tin",
   "date": "2026-10-11",
-  "status": "Đã có video",
+  "status": "Đã đăng",
   "title": "Thuê KOL nổi tiếng là khách sẽ tin?",
   "caption": "Thuê KOL nổi tiếng là khách sẽ tin? 54% người mua tin review của người dùng thật hơn KOL. Bạn tin review của ai hơn? Comment cho Adtek.",
   "hashtags": [
@@ -496,70 +558,8 @@
   "review": "/_blob/6d83048876ed4f9c38ce45bead54025e"
  },
  {
-  "id": "giao-het-cho-advantage-plus",
-  "date": "2026-10-14",
-  "status": "Đã có video",
-  "title": "Giá quảng cáo Meta +12%, có nên giao hết cho AI?",
-  "caption": "Giá mỗi quảng cáo trên Meta tăng 12% trong một năm, tiền chạy qua Advantage+ vượt 75 tỷ USD mỗi năm. Nhưng trong thử nghiệm của Haus, 58% thương hiệu thu về nhiều hơn khi tự cài chiến dịch. Shop bạn để Advantage+ chạy bao nhiêu % ngân sách? Comment con số.",
-  "hashtags": [
-   "#adtekagency",
-   "#growthmarketing",
-   "#quangcaofacebook",
-   "#metaads",
-   "#advantageplus",
-   "#performancemarketing"
-  ],
-  "words": 188,
-  "seconds": 60,
-  "scenes": [
-   {
-    "kicker": "Performance · Số liệu toàn cầu",
-    "title": "Giá quảng cáo Meta +12%, có nên giao hết cho AI?",
-    "voice": "Quảng cáo Facebook đang đắt lên, có nên giao hết cho AI chạy? Quý 2 năm nay, giá trung bình mỗi quảng cáo của Meta tăng 12%. Số liệu toàn cầu.",
-    "visual": "Số lớn",
-    "source": "Nguồn: Meta, kết quả kinh doanh quý 2/2026, công bố 29/07/2026"
-   },
-   {
-    "kicker": "Tiền đang dồn vào AI",
-    "title": "Advantage+ vượt 75 tỷ USD mỗi năm.",
-    "voice": "Tiền đang dồn vào AI. Advantage+, công cụ quảng cáo tự động của Meta, đã vượt 75 tỷ USD mỗi năm, từ mức 60 tỷ hồi quý 3 năm ngoái.",
-    "visual": "Đối đầu",
-    "source": "Nguồn: Meta, họp công bố kết quả quý 3/2025 và quý 2/2026"
-   },
-   {
-    "kicker": "Thử nghiệm độc lập · Haus",
-    "title": "Hơn nửa thương hiệu tự chạy lại hiệu quả hơn.",
-    "voice": "Nhưng AI có mang về nhiều đơn hơn? Haus, công ty đo hiệu quả quảng cáo, cho hai cách chạy đấu nhau: 58% thương hiệu thu về nhiều doanh thu thật hơn khi tự cài chiến dịch.",
-    "visual": "Ô vuông 100",
-    "source": "Nguồn: Haus, 640 thử nghiệm trên Meta, 07/2025. Số liệu quốc tế, phần lớn là thương hiệu lớn"
-   },
-   {
-    "kicker": "Sau khi tắt quảng cáo · Haus",
-    "title": "Tắt quảng cáo, Advantage+ hụt hơi nhanh hơn.",
-    "voice": "Không chỉ vậy. Sau khi tắt quảng cáo, chiến dịch tự cài vẫn giúp bán thêm 32%, còn Advantage+ chỉ còn 17%.",
-    "visual": "Biểu đồ cột",
-    "source": "Nguồn: Haus, 640 thử nghiệm trên Meta, 07/2025. Số liệu quốc tế"
-   },
-   {
-    "kicker": "Làm gì ngay?",
-    "title": "Đừng giao hết, hãy cho AI thi với bạn.",
-    "voice": "Vậy làm gì ngay? Thử nghiệm A/B giữa Advantage+ và chiến dịch tự cài, cùng ngân sách. Khai báo nhóm khách cũ. Đặt mức chi tối đa cho khách cũ. Và thử tối ưu theo đơn do quảng cáo thật sự tạo ra.",
-    "visual": "Danh sách",
-    "source": "Nguồn: Trung tâm trợ giúp Meta Business"
-   },
-   {
-    "kicker": "Follow Adtek",
-    "title": "AI hay tự chạy, bạn đang chọn bên nào?",
-    "voice": "Shop bạn để Advantage+ chạy bao nhiêu phần trăm ngân sách? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
-    "visual": "Thẻ Follow Adtek",
-    "source": ""
-   }
-  ],
-  "review": "/_blob/08d24d1a4403c4a376479c6ba396c1bf"
- },
- {
   "id": "livestream-nguoi-mua-tin-ai",
-  "date": "2026-10-15",
+  "date": "2026-10-14",
   "status": "Đã có video",
   "title": "Chỉ 13% mua ngẫu hứng khi xem livestream.",
   "caption": "Livestream sống nhờ khách mua ngẫu hứng? Chỉ 13% người mua qua live là mua ngẫu hứng, 47% đã cân nhắc từ trước. Shop bạn live bằng tài khoản chính thức hay thuê KOC? Comment cho Adtek biết.",
@@ -621,7 +621,7 @@
  },
  {
   "id": "thi-truong-app-cham-dinh",
-  "date": "2026-10-16",
+  "date": "2026-10-15",
   "status": "Đã có video",
   "title": "Thị trường app Việt Nam đã chạm đỉnh?",
   "caption": "Lượt cài app ở Việt Nam đã chững lại sau khi tăng 136% từ 2018. Nhưng tiền quảng cáo không rút đi mà đổi chỗ: quý 2/2026, ngân sách trên Android cho app tài chính tăng 153%, game giảm 46%. App bạn đang dồn tiền cho iOS hay Android? Comment cho Adtek biết.",
@@ -683,7 +683,7 @@
  },
  {
   "id": "cai-app-gian-lan",
-  "date": "2026-10-17",
+  "date": "2026-10-16",
   "status": "Đã có video",
   "title": "100 lượt cài app ở Việt Nam, bao nhiêu lượt là gian lận?",
   "caption": "Cứ 100 lượt cài app ở Việt Nam, bao nhiêu lượt là gian lận? Xem 2 gợi ý từ báo cáo của AppsFlyer rồi đoán thử. Bạn đoán A, B hay C? Comment đáp án cho Adtek nhé",
@@ -745,7 +745,7 @@
  },
  {
   "id": "nguoi-viet-song-trong-app",
-  "date": "2026-10-18",
+  "date": "2026-10-17",
   "status": "Đã có video",
   "title": "Người Việt dùng app bao nhiêu giờ một năm?",
   "caption": "Năm 2025, người Việt dành 127 tỷ giờ để dùng app. Nhưng cứ 100 người cài app giải trí, chỉ 8 người mở lại vào ngày hôm sau. Bạn dùng app nào nhiều nhất mỗi ngày? Comment tên app.",
@@ -807,7 +807,7 @@
  },
  {
   "id": "kinh-te-so-viet-nam-dung-thu-may",
-  "date": "2026-10-20",
+  "date": "2026-10-19",
   "status": "Đã có video",
   "title": "Kinh tế số Việt Nam tăng 17% nhanh hay chậm?",
   "caption": "Kinh tế số Việt Nam tăng 17% năm 2025, nhanh thứ 2 Đông Nam Á, chỉ sau Malaysia (19%). Quy mô ước đạt 39 tỷ USD, dự báo 2030 khoảng 85 đến 190 tỷ USD. Doanh thu online của bạn năm nay tăng bao nhiêu %? Comment con số nhé.",
@@ -862,7 +862,7 @@
  },
  {
   "id": "3-dieu-truoc-sale-11-11",
-  "date": "2026-10-21",
+  "date": "2026-10-20",
   "status": "Đã có video",
   "title": "",
   "caption": "Ngày 10.10 năm ngoái, 4 sàn bán 6,608 tỷ đồng chỉ trong 1 ngày, nhưng có tới 376,000 gian hàng cùng giành khách. Còn 3 tuần nữa là 11.11, chủ shop cần biết 3 điều: khách thêm vào giỏ sớm 3 đến 5 ngày, quảng cáo mới trên Meta cần khoảng 50 kết quả trong 1 tuần để học xong, và Google Ads có điều chỉnh thời vụ cho đợt sale 1 đến 7 ngày. Bạn lên quảng cáo 11.11 từ ngày nào? Comment ngày cho Adtek biết.",
@@ -959,7 +959,7 @@
  },
  {
   "id": "top5-tu-khoa-tang-manh-2025",
-  "date": "2026-10-22",
+  "date": "2026-10-21",
   "status": "Đã có video",
   "title": "Top 5 từ khóa tăng mạnh nhất 2025 Hạng 1 là gì?",
   "caption": "Top 5 từ khóa người Việt tìm trên Google tăng mạnh nhất năm 2025, theo Google Year in Search. Bạn đoán hạng 1 là gì? Từ khóa nào trong ngành của bạn đang tăng mạnh?",
@@ -1007,7 +1007,7 @@
  },
  {
   "id": "tiktok-shop-duoi-sat-shopee",
-  "date": "2026-10-28",
+  "date": "2026-10-27",
   "status": "Đã có video",
   "title": "Shopee còn giữ ngôi được bao lâu?",
   "caption": "9 tháng năm 2025, khoảng cách thị phần giữa Shopee và TikTok Shop từ 22 điểm còn 11 điểm (Metric). Năm 2026 bạn chia ngân sách cho Shopee và TikTok Shop theo tỷ lệ nào? Comment tỷ lệ.",
