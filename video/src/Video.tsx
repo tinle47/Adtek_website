@@ -65,7 +65,9 @@ const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc: real }) =
     if (idx === 0 || needle === undefined) return fallback;
     const start = sc[idx].from + sc[idx].lead;
     const t = cueTime(sc[idx].words, needle, (after - start) / BASE_FPS);
-    return t === undefined ? fallback : Math.max(fallback, start + t * BASE_FPS - 2);
+    // Giọng nhắc tới ở cuối cảnh thì cho hiện sớm hơn một chút, để thanh kịp mọc hết trước khi chuyển cảnh.
+    const latest = sc[g.last].from + sc[g.last].frames - 45;
+    return t === undefined ? fallback : Math.min(Math.max(fallback, start + t * BASE_FPS - 2), Math.max(fallback, latest));
   };
   const timed: TimedCol[] = items.map((it) => {
     const step = it.step ?? 0;
@@ -132,9 +134,9 @@ const SceneVisual: React.FC<{ v?: Visual; frames: number }> = ({ v, frames }) =>
         </div>
       );
     case "bignumber":
-      return <div style={stage}><BigNumber {...v} /></div>;
+      return <div style={stage}><BigNumber {...v} frames={frames} /></div>;
     case "versus":
-      return <div style={stage}><Versus {...v} /></div>;
+      return <div style={stage}><Versus {...v} frames={frames} /></div>;
     case "slope":
       return <div style={stage}><Slope {...v} /></div>;
     case "trend":

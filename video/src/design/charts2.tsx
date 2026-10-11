@@ -27,22 +27,22 @@ const Metric: React.FC<{ metric: string; unit?: string }> = ({ metric, unit }) =
 const Frame: React.FC<{ children: React.ReactNode }> = ({ children }) => <div style={{ width: W, color: INK.text, fontFamily: SANS }}>{children}</div>;
 
 // ---------- Số lớn: một con số gây sốc, đếm từ 0 ----------
-export const BigNumber: React.FC<{ value: number; display?: string; prefix?: string; suffix?: string; label: string; context?: string; source: string }> = ({
-  value, display, prefix, suffix, label, context, source,
+export const BigNumber: React.FC<{ value: number; display?: string; prefix?: string; suffix?: string; label: string; context?: string; source: string; frames?: number }> = ({
+  value, display, prefix, suffix, label, context, source, frames = 300,
 }) => {
   const f = useFrame();
   const { fps } = useVideoConfig();
   const cue = useCue();
   // Số đếm lên lúc giọng đọc tới nó; dòng bối cảnh hiện khi giọng đọc tới con số trong dòng đó.
-  const at = cue(value, 4);
+  const at = Math.min(cue(value, 4), Math.max(4, frames - 45)); // giọng nhắc sát cuối cảnh thì hiện sớm hơn để kịp đếm
   const p = prog(f, at, 34);
   const pop = springAt(f, fps, at + 32, { damping: 12, stiffness: 160 }, 20);
   return (
     <Frame>
       <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginTop: 30, transform: `scale(${1 + 0.04 * pop * (1 - pop) * 4})`, transformOrigin: "left bottom" }}>
-        {prefix && <span style={{ fontSize: 80, fontWeight: 700, color: TONE.accent }}>{prefix}</span>}
-        <span style={{ fontSize: 210, lineHeight: 0.95, fontWeight: 700, color: TONE.accent, fontVariantNumeric: "tabular-nums", letterSpacing: -4 }}>{count(value, p, display)}</span>
-        {suffix && <span style={{ fontSize: 76, fontWeight: 700, color: TONE.accent }}>{suffix}</span>}
+        {prefix && <span style={{ fontSize: 80, fontWeight: 700, color: TONE.accent, opacity: prog(f, at - 4, 6) }}>{prefix}</span>}
+        <span style={{ fontSize: 210, lineHeight: 0.95, fontWeight: 700, color: TONE.accent, fontVariantNumeric: "tabular-nums", letterSpacing: -4, opacity: prog(f, at - 4, 6) }}>{count(value, p, display)}</span>
+        {suffix && <span style={{ fontSize: 76, fontWeight: 700, color: TONE.accent, opacity: prog(f, at - 4, 6) }}>{suffix}</span>}
       </div>
       <div style={{ marginTop: 18, height: 4, width: 520 * prog(f, at + 26, 16), background: TONE.accent }} />
       <div style={{ marginTop: 28, fontSize: 40, lineHeight: 1.3, fontWeight: 600, opacity: prog(f, at + 20, 12) }}>{label}</div>
@@ -54,8 +54,8 @@ export const BigNumber: React.FC<{ value: number; display?: string; prefix?: str
 
 // ---------- Đối đầu: hai con số so sánh trực tiếp ----------
 type VsItem = { label: string; value: number; display?: string; suffix?: string };
-export const Versus: React.FC<{ metric: string; unit?: string; source: string; items: [VsItem, VsItem]; winner: 0 | 1; note?: string }> = ({
-  metric, unit, source, items, winner, note,
+export const Versus: React.FC<{ metric: string; unit?: string; source: string; items: [VsItem, VsItem]; winner: 0 | 1; note?: string; frames?: number }> = ({
+  metric, unit, source, items, winner, note, frames = 300,
 }) => {
   const f = useFrame();
   const { fps } = useVideoConfig();
@@ -66,9 +66,12 @@ export const Versus: React.FC<{ metric: string; unit?: string; source: string; i
   const said = (it: VsItem, floor: number, after?: number, inHook = false) =>
     Math.min(cue(it.value, Infinity, { after, floor, inHook }), cue(it.label, Infinity, { after, floor, inHook }));
   const s0 = said(items[0], 6);
-  const a0 = Number.isFinite(s0) ? s0 : 6;
-  const s1 = said(items[1], 12, a0, true);
-  const a1 = Number.isFinite(s1) ? s1 : 12;
+  const a0 = Math.min(Math.max(6, frames - 45), Number.isFinite(s0) ? s0 : 6);
+  // Mỗi bên hiện đúng lúc giọng nhắc (giọng có thể đọc bên thứ hai trước). Chỉ khi 2 số bằng nhau mới tìm lần nhắc sau.
+  const s1 = said(items[1], 12, items[1].value === items[0].value ? a0 : undefined, true);
+  // Bên nào giọng không nhắc tới thì hiện sau bên được nhắc, không hiện trước (giữ đúng thứ tự người xem nghe).
+  const late = Math.max(12, frames - 45); // muộn nhất 1.5 giây trước khi hết cảnh
+  const a1 = Math.min(late, Number.isFinite(s1) ? s1 : Number.isFinite(s0) ? a0 + 12 : 12);
   const ats = [a0, a1];
   const win = springAt(f, fps, Math.max(40, Math.max(a0, a1) + 26), { damping: 14 }, 22);
   return (
