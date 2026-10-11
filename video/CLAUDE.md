@@ -44,6 +44,7 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 - Mọi dạng vẫn giữ: câu đầu là câu hỏi, số liệu gốc đã kiểm tra, lời đọc 150 đến 190 chữ, cảnh cuối `follow` có `ask`, ảnh bìa (`cover`) không lộ đáp án hay hạng 1.
 - Ảnh lướt (TikTok photo mode): mỗi tuần xuất 1 bộ từ video nhiều số liệu nhất của tuần (`render.mjs <slug> --carousel`), đưa lên hub kèm video đó (trường `carousel` trong `hub/videos.json`). Đăng thêm lúc 20:00, cách ngày đăng video gốc ít nhất 3 ngày.
 - Khổ vuông 1:1 và khổ ngang 16:9 (`--format`): chỉ xuất khi anh Tin cần đăng Facebook, Instagram, YouTube.
+- Mèo Adtek nói theo giọng (`--mascot`): đã có mẫu nhưng chưa bật (anh Tin chốt 10/10/2026). Không thêm vào video nào cho tới khi anh Tin yêu cầu.
 - Mẫu từng dạng: `scripts/3-dieu-truoc-sale-11-11` (chữ động), `scripts/top5-tu-khoa-tang-manh-2025` (đếm ngược), `scripts/kinh-te-so-viet-nam-dung-thu-may` (bản đồ), `scripts/tiktok-shop-duoi-sat-shopee` (biểu đồ đua), `scripts/khach-so-gia-cho-sale` (đố số liệu), `scripts/thue-kol-khach-co-tin` (phá hiểu lầm).
 
 ## Chọn biểu đồ theo kiểu dữ liệu
