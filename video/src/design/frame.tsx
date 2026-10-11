@@ -250,11 +250,12 @@ const chunk = (words: Word[], size = 6) => {
   return out;
 };
 
-export const Caption: React.FC<{ words: Word[] }> = ({ words }) => {
+export const Caption: React.FC<{ words: Word[]; from?: number }> = ({ words, from = 0 }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = f / fps;
   const { caption } = useLayout();
+  if (t < from) return null;
   const groups = chunk(words);
   const g = groups.find((x) => t < x[x.length - 1].end) ?? groups[groups.length - 1];
   if (!g) return null;

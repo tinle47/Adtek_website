@@ -10,6 +10,7 @@ import { Shot } from "./design/shot";
 import { MASCOT, Mascot } from "./design/mascot";
 import { Countdown, Race, SeaMap, Words, countdownCues, mapCues, raceCues, wordsCues } from "./design/formats";
 import { Myth, QUIZ_REVEAL_AT, Quiz, mythStampAt } from "./design/hook";
+import { Opener, openerEnd } from "./design/opener";
 import { GoogleSerp, PhoneNote, SERP_NOTE_AT } from "./design/serp";
 import { timeline, type TimedScene } from "./timing";
 import type { Scene, VideoProps, Visual, Word } from "./types";
@@ -47,11 +48,12 @@ const chartGroups = (scenes: Scene[]): Group[] => {
 };
 
 // Mọi mốc trong ChartGroup tính theo 30 hình/giây (useFrame); k đổi sang khung thật cho Sequence.
-const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc: real }) => {
+const ChartGroup: React.FC<{ g: Group; sc: TimedScene[]; shift0: number }> = ({ g, sc: real, shift0 }) => {
   const f = useFrame();
   const k = useVideoConfig().fps / BASE_FPS;
   const sc = real.map((s) => ({ ...s, from: s.from / k, frames: s.frames / k }));
-  const shift = g.first === 0 ? HOOK : 0;
+  // Cảnh đầu: lùi HOOK khung (hiện sẵn trạng thái cuối) hoặc đợi thẻ hook rời đi (shift0 âm).
+  const shift = g.first === 0 ? shift0 : 0;
   const start = sc[g.first].from - shift;
   const end = sc[g.last].from + sc[g.last].frames;
   if (f < start || f > end) return null;
@@ -62,7 +64,7 @@ const ChartGroup: React.FC<{ g: Group; sc: TimedScene[] }> = ({ g, sc: real }) =
   // Thanh/cột hiện lúc giọng đọc tới giá trị của nó (cảnh đầu đang hiện sẵn trạng thái cuối thì giữ nhịp cũ).
   const voiceAt = (step: number, needle: number | undefined, fallback: number, after = -1) => {
     const idx = Math.min(g.first + step, g.last);
-    if (idx === 0 || needle === undefined) return fallback;
+    if ((idx === 0 && shift > 0) || needle === undefined) return fallback;
     const start = sc[idx].from + sc[idx].lead;
     const t = cueTime(sc[idx].words, needle, (after - start) / BASE_FPS);
     // Giọng nhắc tới ở cuối cảnh thì cho hiện sớm hơn một chút, để thanh kịp mọc hết trước khi chuyển cảnh.
@@ -191,6 +193,13 @@ export const Video: React.FC<VideoProps> = (props) => {
   const scenes = props.script.scenes;
   // Đổi mốc 30 hình/giây sang khung thật của video (60 hình/giây thì nhân 2).
   const at = (x: number) => Math.round((x * fps) / BASE_FPS);
+  // Có khung mở đầu chữ to: cảnh 1 bắt đầu sau khi thẻ hook rời đi (shift0 âm); không có thì cảnh 1 hiện sẵn trạng thái cuối.
+  const opener = props.script.hook;
+  const hookEnd = opener ? openerEnd(sc[0].words, sc[0].lead) : 0;
+  const shift0 = opener ? -hookEnd : HOOK;
+  // Hình của cảnh 1 chỉ bám lời đọc sau câu hook, để chữ trong câu hook (ví dụ "doanh số") không làm số hiện sớm.
+  const words = (i: number) => (i === 0 && opener ? sc[0].words.filter((w) => sc[0].lead + w.start * BASE_FPS >= hookEnd - 6) : sc[i].words);
+  const cueSc = sc.map((x, i) => ({ ...x, words: words(i) }));
   // Có mèo ở góc trái thì phụ đề dời sang phải cho khỏi đè (chỉ khổ 9:16).
   const base = LAYOUTS[props.format ?? "9:16"];
   const mascotOn = !!props.mascot && (props.format ?? "9:16") === "9:16" && !props.carousel;
@@ -201,45 +210,52 @@ export const Video: React.FC<VideoProps> = (props) => {
       <Background />
       <Logo />
       {chartGroups(scenes).map((g) => (
-        <ChartGroup key={g.first} g={g} sc={sc} />
+        <ChartGroup key={g.first} g={g} sc={cueSc} shift0={shift0} />
       ))}
       {scenes.map((s, i) => {
         const frames = sc[i].frames + (i === scenes.length - 1 ? at(10) : 0);
         const reveal = s.visual?.type === "quiz" && s.visual.reveal;
         // Khung con dấu "SAI" đóng xuống, tính từ đầu cảnh (cảnh đầu đã lùi HOOK khung); âm là đã đóng sẵn ở khung đầu.
-        const shift = i === 0 ? HOOK : 0;
-        const stamp = s.visual?.type === "myth" ? mythStampAt(sc[i].words, sc[i].lead + shift, s.visual.verdict) - shift : -1;
+        const shift = i === 0 ? shift0 : 0;
+        const enter = Math.max(0, -shift); // khung phần hình của cảnh bắt đầu (sau thẻ hook)
+        const f30 = (sc[i].frames * BASE_FPS) / fps;
+        const stamp = s.visual?.type === "myth" ? mythStampAt(words(i), sc[i].lead + shift, s.visual.verdict) - shift : -1;
         return (
           <Sequence key={i} from={sc[i].from} durationInFrames={frames}>
             <Fade frames={frames}>
-              <Sequence from={i === 0 ? -at(HOOK) : 0} layout="none">
+              <Sequence from={-at(shift)} layout="none">
                 {/* Cảnh lật đáp án: tiêu đề (thường chứa đáp án) chỉ hiện cùng lúc thẻ lật, không lộ trong khoảng lặng. */}
                 <Sequence from={reveal ? at(QUIZ_REVEAL_AT) : 0} layout="none">
                   <Headline kicker={s.kicker} headline={s.headline} accent={s.accent} big={!s.visual} />
                 </Sequence>
-                <CueContext.Provider value={{ words: sc[i].words, offset: sc[i].lead + (i === 0 ? HOOK : 0), hook: i === 0 }}>
+                <CueContext.Provider value={{ words: words(i), offset: sc[i].lead + shift, hook: shift > 0 }}>
                   <Stage>
-                    <SceneVisual v={s.visual} frames={(sc[i].frames * BASE_FPS) / fps} />
+                    <SceneVisual v={s.visual} frames={f30 + shift} />
                   </Stage>
                 </CueContext.Provider>
               </Sequence>
             </Fade>
             {/* Cảnh lật đáp án không có tiếng chuyển cảnh: giữ khoảng lặng trước tiếng "ding". */}
-            {i > 0 && !reveal && <Audio src={sfx("whoosh")} volume={0.28} />}
-            {i > 0 && s.visual && POP_AT[s.visual.type] !== undefined && (
-              <Sequence from={at(POP_AT[s.visual.type]!)} layout="none">
+            {shift <= 0 && !reveal && (i > 0 || opener) && (
+              <Sequence from={at(enter)} layout="none">
+                <Audio src={sfx("whoosh")} volume={0.28} />
+              </Sequence>
+            )}
+            {i === 0 && opener && <Audio src={sfx("pop")} volume={0.55} />}
+            {shift <= 0 && (i > 0 || opener) && s.visual && POP_AT[s.visual.type] !== undefined && (
+              <Sequence from={at(enter + POP_AT[s.visual.type]!)} layout="none">
                 <Audio src={sfx("pop")} volume={0.35} />
               </Sequence>
             )}
             {s.visual?.type === "list" &&
-              listDelays(s.visual.items, (sc[i].frames * BASE_FPS) / fps, i === 0 ? [] : sc[i].words, sc[i].lead).map((d, j) => (
-                <Sequence key={j} from={at(d + 2)} layout="none">
+              listDelays(s.visual.items, f30 + shift, shift > 0 ? [] : words(i), sc[i].lead + shift).map((d, j) => (
+                <Sequence key={j} from={at(d + 2 - shift)} layout="none">
                   <Audio src={sfx("pop")} volume={0.22} />
                 </Sequence>
               ))}
-            {i > 0 &&
-              formatPops(s.visual, sc[i].words, sc[i].lead, (sc[i].frames * BASE_FPS) / fps).map(([d, kind], j) => (
-                <Sequence key={`f${j}`} from={at(d + 2)} layout="none">
+            {shift <= 0 &&
+              formatPops(s.visual, words(i), sc[i].lead + shift, f30 + shift).map(([d, kind], j) => (
+                <Sequence key={`f${j}`} from={at(d + 2 - shift)} layout="none">
                   <Audio src={sfx(kind)} volume={kind === "ding" ? 0.7 : 0.25} />
                 </Sequence>
               ))}
@@ -254,13 +270,15 @@ export const Video: React.FC<VideoProps> = (props) => {
               </Sequence>
             )}
             <Sequence from={at(sc[i].lead)} layout="none">
-              {!props.carousel && <Caption words={sc[i].words} />}
+              {/* Lúc thẻ hook đang hiện thì ẩn phụ đề, tránh lặp chữ. */}
+              {!props.carousel && <Caption words={sc[i].words} from={i === 0 && opener ? (hookEnd - sc[i].lead) / BASE_FPS : 0} />}
               {sc[i].audio && <Audio src={staticFile(sc[i].audio!)} />}
             </Sequence>
             {props.carousel && <SlideBadge n={i + 1} total={scenes.length} />}
           </Sequence>
         );
       })}
+      {opener && !props.carousel && <Opener text={opener.text} accent={opener.accent} options={opener.options} end={hookEnd} />}
       <SiteFooter />
       {mascotOn && <Mascot tracks={sc.map((x, i) => ({ from: x.from, lead: at(x.lead), env: props.mascot![i] ?? [] }))} />}
       {props.audit && <Audit />}
