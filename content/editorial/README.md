@@ -16,6 +16,7 @@ Lịch đăng, cụm chủ đề và danh sách bài nằm trong `calendar.json`
    - Yêu cầu sửa: chạy `python3 tools/blog_post.py changes X`, sửa xong gửi email duyệt lại (hạn 24 giờ tính lại từ lần gửi mới).
    - "hủy bài X" (kể cả khi đã đặt lịch): chạy `python3 tools/blog_post.py unschedule X`.
    - Hạn duyệt D+1: email gửi bằng `tools/approval_email.py --mark` ghi thời điểm gửi. Đúng 24 giờ sau, lịch hẹn một lần (send_later) chạy `python3 tools/blog_post.py auto`: bài chưa có phản hồi được tự đặt lịch đăng theo kế hoạch (approval = auto), rồi báo anh Tin qua email và push notification. Bài đã duyệt hoặc đang chờ sửa thì bỏ qua.
+   - Bài đăng Facebook: mỗi bài blog có `fb_caption` (khoảng 150 đến 200 chữ, kể chuyện bằng một tình huống hoặc con số cụ thể trong bài, dẫn người đọc mở link ở bình luận) và `fb_comment` (tiêu đề ngắn + link bài). Không dùng emoji, không gạch dài, không đặt link trong nội dung chính. Duyệt cùng bài blog trong email.
 3. Cũng trong lần chạy thứ Sáu: làm liên kết ngược cho các bài đã lên sóng trong tuần.
 4. Ngày 1 hằng tháng (lịch tự động 8:47 sáng): rà soát và cập nhật nội dung, gửi báo cáo qua email, push notification và tin nhắn trong phiên.
 

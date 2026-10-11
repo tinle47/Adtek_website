@@ -44,3 +44,4 @@
 | 2026-10-09 | Tạo bản nháp bài 3 "TikTok Shop vs Shopee 2026" (trụ cột C1); sửa bài 1: bỏ con số 144,300 tỷ đồng của Shopee chưa xác minh được (bài vẫn giữ lịch 20:53 13/10) | Bài 6093, 6086 | Nháp, đã cập nhật |
 | 2026-10-09 | Tạo bản nháp bài 4 "Luật bảo vệ dữ liệu cá nhân 2026"; gửi email, push nhắc duyệt bài 3 và 4 (hạn 9:03 10/10), hẹn kiểm tra hạn D+1 | Bài 6093, 6096 | Chờ duyệt |
 | 2026-10-10 09:04 | Quá hạn duyệt D+1, tự đặt lịch bài 3 (20/10 12:21) và bài 4 (22/10 20:11); đã gửi email và push báo anh Tin | Bài 6093, 6096 | Đã lên lịch (tự động) |
+| 2026-10-11 | Viết bài đăng Facebook (kể chuyện, link ở bình luận đầu) cho bài 1 đến 4, lưu trong calendar.json (fb_caption, fb_comment); email duyệt hiển thị bài đăng Facebook; lịch thứ Sáu viết kèm bài Facebook | calendar.json, tools/approval_email.py, README | Đã áp dụng, chờ cách đăng tự động |

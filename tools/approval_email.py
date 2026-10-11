@@ -45,6 +45,16 @@ def links(post):
     return PREVIEWS[pid], f"https://adtek.agency/wp-admin/post.php?post={pid}&action=edit"
 
 
+def fb(post):
+    """Bài đăng Facebook đi kèm (nội dung và bình luận chứa link), để duyệt cùng bài blog."""
+    if not post.get("fb_caption"):
+        return ""
+    cap = html.escape(post["fb_caption"]).replace("\n", "<br>")
+    return (f'<p style="margin:0 0 4px;font-size:14px;font-weight:600;color:#333">Bài đăng Facebook:</p>'
+            f'<div style="margin:0 0 8px;padding:10px 12px;background-color:#F4F6FA;border-radius:6px;font-size:13px;line-height:1.55;color:#333">{cap}</div>'
+            f'<p style="margin:0 0 14px;font-size:13px;color:#555">Bình luận đầu tiên: {html.escape(post.get("fb_comment", ""))}</p>')
+
+
 def card(post):
     e = html.escape
     preview, edit = links(post)
@@ -58,6 +68,7 @@ def card(post):
     <h2 style="margin:6px 0 10px;font-size:19px;line-height:1.35;color:#002D72">{e(post['title'])}</h2>
     <p style="margin:0 0 12px;font-size:14px;line-height:1.6;color:#333">{e(post.get('summary', ''))}</p>
     {f'<p style="margin:0 0 4px;font-size:14px;font-weight:600;color:#333">Cần anh xác nhận:</p><ul style="margin:0 0 14px;padding-left:20px;font-size:14px;line-height:1.6;color:#333">{confirm}</ul>' if confirm else ''}
+    {fb(post)}
     <table role="presentation" cellspacing="0" cellpadding="0" border="0"><tr>
       <td bgcolor="#002D72" style="background-color:#002D72;border-radius:6px">
         <a href="{preview}" style="{BTN}color:#ffffff;background-color:#002D72;border:1px solid #002D72">Xem trước bài viết</a></td>
@@ -97,6 +108,7 @@ def build(nos, mark=False):
     text = "Chào anh Tin,\n\n" + "\n\n".join(
         f"Bài {p['no']}: {p['title']}\nĐăng: {when(p)}\nXem trước: {links(p)[0]}\nSửa (cần đăng nhập): {links(p)[1]}\n{p.get('summary', '')}"
         + ("\nCần anh xác nhận:\n" + "\n".join(f"- {c}" for c in p["confirm"]) if p.get("confirm") else "")
+        + (f"\n\nBài đăng Facebook:\n{p['fb_caption']}\nBình luận đầu tiên: {p.get('fb_comment', '')}" if p.get("fb_caption") else "")
         for p in posts) + "\n\n" + howto
     return {"to": [TO], "subject": subject, "body": text, "htmlBody": htmlbody, "deadline": deadline.isoformat(timespec="minutes")}
 
