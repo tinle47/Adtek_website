@@ -62,11 +62,12 @@ export const Versus: React.FC<{ metric: string; unit?: string; source: string; i
   const cue = useCue();
   // Mỗi bên hiện lúc giọng đọc tới con số của nó, bên thắng phóng to sau khi cả hai đã hiện.
   // Bên nào được nhắc trước (bằng tên hoặc con số) thì hiện trước.
-  const said = (it: VsItem, floor: number, after?: number) =>
-    Math.min(cue(it.value, Infinity, { after, floor }), cue(it.label, Infinity, { after, floor }));
+  // Cảnh đầu: số thứ nhất hiện sẵn ở khung đầu, số thứ hai đợi giọng đọc (câu hỏi rồi mới lộ con số).
+  const said = (it: VsItem, floor: number, after?: number, inHook = false) =>
+    Math.min(cue(it.value, Infinity, { after, floor, inHook }), cue(it.label, Infinity, { after, floor, inHook }));
   const s0 = said(items[0], 6);
   const a0 = Number.isFinite(s0) ? s0 : 6;
-  const s1 = said(items[1], 12, a0);
+  const s1 = said(items[1], 12, a0, true);
   const a1 = Number.isFinite(s1) ? s1 : 12;
   const ats = [a0, a1];
   const win = springAt(f, fps, Math.max(40, Math.max(a0, a1) + 26), { damping: 14 }, 22);
