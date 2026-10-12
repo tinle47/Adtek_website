@@ -1,0 +1,17 @@
+{
+  "_note": "Bản tiếng Anh của form 1307 (VI), dùng cho form 264 (trang chủ EN và trang Contact EN). CF7 REST trả thành công nhưng không lưu, nên cần dán tay trong wp-admin: Liên hệ > CONTACTFORM - HO CHI MINH OFFCIER.",
+  "form_id": 264,
+  "form": "<div class=\"f-r\">\n    <div class=\"f-c\">\n        [text* your_name placeholder \"Full name *\"]\n    </div>\n</div>\n\n<div class=\"f-r\">\n    <div class=\"f-c\">\n        [tel* your_tel placeholder \"Phone / Zalo number (for a fast quote) *\"]\n    </div>\n</div>\n\n<div class=\"f-r\">\n    <div class=\"f-c\">\n        [email* your_email placeholder \"Business email *\"]\n    </div>\n</div>\n\n<div class=\"f-r\">\n    <div class=\"f-c\">\n        [text your_website placeholder \"Current website/Fanpage (if any)\"]\n    </div>\n</div>\n\n<div class=\"f-r\">\n    <div class=\"f-c\">\n        <label class=\"bold-text\"><strong>Which solutions are you interested in? *</strong></label>\n        [checkbox* service use_label_element \"IMC strategy\" \"Integrated digital solutions\" \"Sustainable SEO growth\" \"E-commerce marketplace operations\" \"KOL/KOC & Livestream\" \"Other needs\"]\n    </div>\n</div>\n\n<div class=\"f-r\">\n    <div class=\"f-c\">\n        <label class=\"bold-text\"><strong>Estimated monthly budget</strong></label>\n        [select budget first_as_label \"Select a budget range\" \"Under VND 100M\" \"VND 100M - 300M\" \"VND 300M - 500M\" \"Over VND 500M\"]\n    </div>\n</div>\n\n<div class=\"f-r\">\n    <div class=\"f-c\">\n        <label class=\"bold-text\"><strong>Tell Adtek more about your needs</strong></label>\n        [textarea your_message 10x2 placeholder \"Briefly describe your needs and the goals you are aiming for\"]\n    </div>\n</div>\n\n<div class=\"f-r\">\n    <div class=\"f-c\">\n        <button type=\"submit\" class=\"btn\">Get my solution consultation</button>\n        [submit class:btn-hidden-submit]\n    </div>\n</div>",
+  "mail_subject": "[ADTEK LEAD][EN] - [service] - [your_name]",
+  "mail_sender": "[_site_title] <tin.le@adtek.agency>",
+  "mail_body": "<h3 style=\"color: #2c3e50;\">Bạn có một yêu cầu tư vấn mới từ Website (trang tiếng Anh)!</h3>\n\n<div style=\"background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 5px solid #2980b9;\">\n    <p><strong>1. THÔNG TIN KHÁCH HÀNG:</strong></p>\n    <ul>\n        <li><strong>Họ và tên:</strong> [your_name]</li>\n        <li><strong>Số điện thoại (Zalo):</strong> [your_tel]</li>\n        <li><strong>Email:</strong> [your_email]</li>\n        <li><strong>Website/Fanpage:</strong> [your_website]</li>\n    </ul>\n\n    <p><strong>2. NHU CẦU TƯ VẤN:</strong></p>\n    <ul>\n        <li><strong>Dịch vụ quan tâm:</strong> [service]</li>\n        <li><strong>Ngân sách dự kiến:</strong> [budget]</li>\n    </ul>\n\n    <p><strong>3. CHI TIẾT MỤC TIÊU:</strong></p>\n    <p style=\"background: #ffffff; padding: 10px; border: 1px solid #ddd;\">[your_message]</p>\n</div>\n\n<p style=\"font-size: 12px; color: #7f8c8d;\">--<br>Email này được gửi từ Form đăng ký tại Adtek Agency.</p>",
+  "mail_headers": "Reply-To: [your_email]",
+  "use_html": true,
+  "messages": {
+    "mail_sent_ok": "Thank you! Your request has been sent successfully.",
+    "mail_sent_ng": "There was an error trying to send your message. Please try again later.",
+    "validation_error": "One or more fields have an error. Please check and try again.",
+    "spam": "There was an error trying to send your message. Please try again later.",
+    "invalid_required": "Please fill out this field."
+  }
+}

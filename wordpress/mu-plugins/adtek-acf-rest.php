@@ -1,0 +1,83 @@
+<?php
+/**
+ * Plugin Name: Adtek ACF REST
+ * Description: Đọc và ghi trường ACF của trang/bài qua REST API, dùng để cập nhật nội dung trang chủ (vi + en) mà không cần vào wp-admin. Chỉ người có quyền sửa bài mới dùng được.
+ * Version:     1.0.0
+ * Author:      Adtek
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+/*
+ * REST: GET  /wp-json/adtek/v1/acf/<id> trả toàn bộ trường ACF của bài.
+ *       POST /wp-json/adtek/v1/acf/<id> với {"fields": {"tên_trường": giá_trị, ...}} ghi từng trường
+ *       (nhóm và repeater truyền dạng mảng theo tên trường con), trả lại dữ liệu sau khi ghi.
+ */
+add_action(
+	'rest_api_init',
+	static function () {
+		$can_edit = static function ( $request ) {
+			return current_user_can( 'edit_post', (int) $request['id'] );
+		};
+		register_rest_route(
+			'adtek/v1',
+			'/acf/(?P<id>\d+)',
+			array(
+				array(
+					'methods'             => 'GET',
+					'permission_callback' => $can_edit,
+					'callback'            => static function ( $request ) {
+						if ( ! function_exists( 'get_fields' ) ) {
+							return new WP_Error( 'no_acf', 'ACF chưa bật.', array( 'status' => 500 ) );
+						}
+						$id = (int) $request['id'];
+						if ( ! get_post( $id ) ) {
+							return new WP_Error( 'not_found', 'Không có bài này.', array( 'status' => 404 ) );
+						}
+						return array(
+							'id'      => $id,
+							'fields'  => get_fields( $id ) ?: new stdClass(),
+							'version' => '1.0.0',
+						);
+					},
+				),
+				array(
+					'methods'             => 'POST',
+					'permission_callback' => $can_edit,
+					'callback'            => static function ( $request ) {
+						if ( ! function_exists( 'update_field' ) ) {
+							return new WP_Error( 'no_acf', 'ACF chưa bật.', array( 'status' => 500 ) );
+						}
+						$id     = (int) $request['id'];
+						$fields = $request['fields'];
+						if ( ! get_post( $id ) ) {
+							return new WP_Error( 'not_found', 'Không có bài này.', array( 'status' => 404 ) );
+						}
+						if ( ! is_array( $fields ) || ! $fields ) {
+							return new WP_Error( 'bad_request', 'Thiếu fields.', array( 'status' => 400 ) );
+						}
+						$result = array();
+						foreach ( $fields as $name => $value ) {
+							// Chỉ ghi trường đã khai báo trong ACF, tránh tạo meta rác do gõ sai tên.
+							$field = get_field_object( $name, $id ) ?: acf_get_field( $name );
+							if ( ! $field ) {
+								$result[ $name ] = 'unknown_field';
+								continue;
+							}
+							// Ghi theo field key để ACF nhận đúng cấu trúc nhóm/repeater cả khi bài chưa từng lưu trường này.
+							$result[ $name ] = update_field( $field['key'], $value, $id ) ? 'ok' : 'unchanged';
+						}
+						clean_post_cache( $id );
+						do_action( 'litespeed_purge_post', $id );
+						return array(
+							'id'      => $id,
+							'result'  => $result,
+							'fields'  => get_fields( $id ) ?: new stdClass(),
+							'version' => '1.0.0',
+						);
+					},
+				),
+			)
+		);
+	}
+);

@@ -22,6 +22,16 @@ Tạo link xem trước bản nháp không cần đăng nhập, dùng trong emai
 
 Cài đặt: upload file vào `httpdocs/wp-content/mu-plugins/`. Khi chưa cài, email tự dùng link xem trước cần đăng nhập.
 
+## wordpress/mu-plugins/adtek-acf-rest.php
+
+Đọc và ghi trường ACF của trang/bài qua REST, dùng cho nội dung trang chủ (mẫu Home V2).
+
+- `GET /wp-json/adtek/v1/acf/<id>` trả toàn bộ trường ACF.
+- `POST /wp-json/adtek/v1/acf/<id>` với `{"fields": {"tên_trường": giá_trị}}` ghi từng trường (nhóm, repeater truyền dạng mảng), trả kết quả từng trường và dữ liệu sau khi ghi. Tên trường không có trong ACF bị bỏ qua (`unknown_field`).
+- Chỉ tài khoản có quyền sửa bài dùng được.
+
+Đồng bộ trang chủ EN theo bản VI: sửa chữ trong `content/pages/home.json`, chạy `python3 tools/sync_home.py` (chạy thử) rồi `--apply`.
+
 ## video/
 
 Hệ thống tạo video infographic TikTok từ bài blog (Remotion + giọng ElevenLabs). Xem `video/README.md`.

@@ -1,0 +1,82 @@
+{
+  "_note": "Trang chủ tiếng Việt (5132) là bản chuẩn. tools/sync_home.py sửa bản VI theo vi_fixes, rồi chép toàn bộ trường ACF sang bản EN (5240), dịch chữ theo en và đổi link theo en_links. So khớp chữ bỏ qua khác biệt khoảng trắng.",
+  "page_ids": {
+    "vi": 5132,
+    "en": 5240
+  },
+  "vi_fixes": [
+    {
+      "path": "mona_home_service.1.content",
+      "old": "Chúng tôi kết hợp Branding và Performance Marketing để tạo ra các chiến dịch thương mại hiệu quả, giúp thương hiệu vừa nâng cao nhận diện vừa thúc đẩy doanh số. Adtek tối ưu hóa toàn bộ hành trình mua hàng, từ nhận thức đến chuyển đổi, nhằm đảm bảo ROI tối ưu.",
+      "new": "Chúng tôi xây dựng hệ thống tạo khách hàng tiềm năng đa kênh, từ quảng cáo, nội dung đến trang đích, giúp doanh nghiệp có nguồn lead đều đặn, đúng chân dung khách hàng và tối ưu chi phí trên mỗi lead.",
+      "why": "Mô tả Lead generation đang chép y mô tả Brand Commerce"
+    },
+    {
+      "old": "Năm 2023, với cùng một tầm nhìn",
+      "new": "Năm 2022, với cùng một tầm nhìn",
+      "why": "FAQ ghi Adtek thành lập 5/5/2022"
+    },
+    {
+      "old": "Vingroup, Lazada và Shopee .",
+      "new": "Vingroup, Lazada và Shopee.",
+      "why": "Thừa dấu cách trước dấu chấm"
+    },
+    {
+      "old": "Các đối tác của adtek",
+      "new": "Các đối tác của Adtek",
+      "why": "Viết hoa tên thương hiệu"
+    }
+  ],
+  "en": {
+    "Growth Marketing Agency": "Growth Marketing Agency",
+    "Với hơn 100 khách hàng và 200 dự án thành công, đội ngũ chuyên gia của Adtek sở hữu bề dày kinh nghiệm, từng đảm nhiệm vai trò quan trọng tại các tập đoàn hàng đầu Việt Nam.": "With more than 100 clients and 200 successful projects, Adtek's team of experts brings deep experience from key roles at Vietnam's leading corporations.",
+    "Tư vấn ngay": "Get a consultation",
+    "Dịch vụ của chúng tôi": "Our Services",
+    "Chúng tôi kết hợp Branding và Performance Marketing để tạo ra các chiến dịch thương mại hiệu quả, giúp thương hiệu vừa nâng cao nhận diện vừa thúc đẩy doanh số. Adtek tối ưu hóa toàn bộ hành trình mua hàng, từ nhận thức đến chuyển đổi, nhằm đảm bảo ROI tối ưu.": "We combine Branding and Performance Marketing to create effective commercial campaigns that help brands increase awareness and drive sales. Adtek optimizes the entire purchase journey, from awareness to conversion, to ensure optimal ROI.",
+    "Xây dựng chiến lược thương hiệu số toàn diện.": "Build a comprehensive digital brand strategy.",
+    "Triển khai chiến dịch truyền thông đa kênh hiệu quả.": "Run effective multi-channel communication campaigns.",
+    "Tối ưu hóa trải nghiệm khách hàng xuyên suốt online và offline.": "Optimize the customer experience across online and offline.",
+    "Chúng tôi xây dựng hệ thống tạo khách hàng tiềm năng đa kênh, từ quảng cáo, nội dung đến trang đích, giúp doanh nghiệp có nguồn lead đều đặn, đúng chân dung khách hàng và tối ưu chi phí trên mỗi lead.": "We build multi-channel lead generation systems, from advertising and content to landing pages, giving businesses a steady flow of leads that match their ideal customer profile at an optimized cost per lead.",
+    "Quảng cáo tìm kiếm và hiển thị (Google Ads, Facebook Ads, LinkedIn Ads, Zalo Ads, Messenger, Chatbot).": "Search and display advertising (Google Ads, Facebook Ads, LinkedIn Ads, Zalo Ads, Messenger, Chatbot).",
+    "Chiến lược nội dung và tối ưu SEO để tạo nguồn khách hàng tiềm năng tự nhiên.": "Content strategy and SEO to generate organic leads.",
+    "Tối ưu trang đích và quy trình chăm sóc khách hàng tiềm năng.": "Optimize landing pages and lead nurturing processes.",
+    "Sáng tạo không chỉ dừng lại ở thiết kế đẹp mà còn phải tạo ra tác động thực sự. Chúng tôi kết hợp dữ liệu phân tích, hiểu sâu hành vi người dùng và nghệ thuật kể chuyện để tạo ra những nội dung thu hút, giúp thương hiệu chinh phục khách hàng.": "Creativity goes beyond beautiful design; it has to make a real impact. We combine data analytics, a deep understanding of user behavior and storytelling to create engaging content that helps brands win over customers.",
+    "Phát triển ý tưởng sáng tạo, hình ảnh chủ đạo và định hướng chiến dịch.": "Develop creative ideas, key visuals and campaign direction.",
+    "Sản xuất video quảng cáo, hình ảnh và nội dung marketing.": "Produce advertising videos, images and marketing content.",
+    "Xây dựng chiến lược nội dung đa nền tảng.": "Build a multi-platform content strategy.",
+    "SEO là chiến lược dài hạn nhằm nâng cao thứ hạng thương hiệu trên công cụ tìm kiếm, thu hút lượng truy cập chất lượng và tối ưu hóa chi phí marketing.": "SEO is a long-term strategy to improve your brand's search engine rankings, attract quality traffic and optimize marketing costs.",
+    "SEO kỹ thuật, tối ưu website và xây dựng liên kết.": "Technical SEO, website optimization and link building.",
+    "Xây dựng chiến lược SEO bền vững dựa trên ý định tìm kiếm.": "Build a sustainable SEO strategy based on search intent.",
+    "Phân tích, nghiên cứu từ khóa và tối ưu nội dung.": "Keyword research, analysis and content optimization.",
+    "Chúng tôi giúp ứng dụng của bạn tiếp cận đúng đối tượng người dùng, tăng lượt tải xuống, tối ưu hóa chi phí và cải thiện tỷ lệ giữ chân khách hàng.": "We help your app reach the right users, increase downloads, optimize costs and improve customer retention.",
+    "Chiến dịch quảng cáo thu hút người dùng mới (UA).": "User acquisition (UA) advertising campaigns.",
+    "Chiến dịch tiếp thị lại và tương tác người dùng.": "Remarketing and user engagement campaigns.",
+    "Tối ưu hóa cửa hàng ứng dụng (ASO).": "App Store Optimization (ASO).",
+    "Là cánh tay nối dài của bạn": "Your extended team",
+    "Đội ngũ chuyên gia Growth Marketing của Adtek với hơn 10 năm kinh nghiệm, sẵn sàng tư vấn và đồng hành cùng bạn để đạt được các mục tiêu tăng trưởng cụ thể. Với phương pháp tiếp cận toàn diện, chúng tôi không chỉ hỗ trợ xây dựng chiến lược mà còn trực tiếp triển khai như một cánh tay nối dài của đội ngũ bạn, đảm bảo hiệu quả tối đa trong từng giai đoạn phát triển.": "Adtek's Growth Marketing experts, with over 10 years of experience, are ready to advise and work alongside you to reach specific growth goals. With a comprehensive approach, we do not just help build the strategy; we execute it directly as an extension of your team, ensuring maximum effectiveness at every stage of growth.",
+    "Về chúng tôi": "About us",
+    "Adteker những con người đam mê tăng trưởng!": "Adtekers, people passionate about growth!",
+    "Chúng tôi là đội ngũ bước ra từ các tập đoàn công nghệ và bán lẻ hàng đầu Việt Nam như Vingroup, Lazada và Shopee. Năm 2022, với cùng một tầm nhìn, chúng tôi thành lập Adtek mang theo sứ mệnh đồng hành cùng doanh nghiệp Việt trong hành trình chuyển đổi số và kiến tạo những bước đột phá tăng trưởng bền vững.": "Our team comes from Vietnam's leading technology and retail companies, including Vingroup, Lazada and Shopee. In 2022, sharing the same vision, we founded Adtek with a mission to support Vietnamese businesses on their digital transformation journey and create breakthroughs in sustainable growth.",
+    "Các đối tác của Adtek": "Adtek Partners",
+    "Khác": "Others",
+    "Hỗ trợ khách hàng tăng trưởng vượt bậc thông qua chuyển đổi số và chiến lược dựa trên phân tích dữ liệu.": "Helping clients achieve breakthrough growth through digital transformation and data-driven strategy.",
+    "Liên hệ": "Contact",
+    "Liên Hệ": "Contact",
+    "Tuyển dụng": "Recruitment",
+    "Báo chí": "Press",
+    "123/30B Nguyễn Hoàng, phường Bình Trưng, TP. Hồ Chí Minh": "123/30B Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City, Vietnam"
+  },
+  "en_links": {
+    "https://adtek.agency/recruitments/": "https://adtek.agency/en/recruitments/",
+    "https://adtek.agency/faq/": "https://adtek.agency/en/faq/",
+    "https://adtek.agency/bao-chi/": "https://adtek.agency/en/press/",
+    "https://adtek.agency/contact/": "https://adtek.agency/en/contact/"
+  },
+  "en_form": {
+    "vi_ids": [
+      "1307",
+      "b4c4709"
+    ],
+    "shortcode": "[contact-form-7 id=\"1a1d42e\" title=\"CONTACTFORM - HO CHI MINH OFFCIER\"]"
+  }
+}
