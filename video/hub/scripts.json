@@ -447,13 +447,13 @@
    "#banhangonline",
    "#thuongmaidientu"
   ],
-  "words": 177,
-  "seconds": 63,
+  "words": 172,
+  "seconds": 62,
   "scenes": [
    {
     "kicker": "Performance · Metric",
     "title": "Chưa tới 3% gian hàng nắm 1/3 doanh số sàn.",
-    "voice": "Trên các sàn, cứ 100 gian hàng thì chưa tới 3 là shop Mall. Họ nắm bao nhiêu doanh số? Theo Metric, 2.79% gian hàng mang về 34.2% doanh số.",
+    "voice": "Chưa tới 3% shop nắm 1/3 doanh số sàn. Theo Metric, chỉ 2.79% gian hàng là shop Mall, nhưng họ mang về 34.2% doanh số.",
     "visual": "Đối đầu",
     "source": "Nguồn: Metric, 6 tháng đầu năm 2026, Shopee, Lazada, TikTok Shop"
    },
