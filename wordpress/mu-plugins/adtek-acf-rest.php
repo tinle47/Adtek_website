@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Adtek ACF REST
  * Description: Đọc và ghi trường ACF của trang/bài qua REST API, dùng để cập nhật nội dung trang chủ (vi + en) mà không cần vào wp-admin. Chỉ người có quyền sửa bài mới dùng được.
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      Adtek
  */
 
@@ -12,7 +12,25 @@ defined( 'ABSPATH' ) || exit;
  * REST: GET  /wp-json/adtek/v1/acf/<id> trả toàn bộ trường ACF của bài.
  *       POST /wp-json/adtek/v1/acf/<id> với {"fields": {"tên_trường": giá_trị, ...}} ghi từng trường
  *       (nhóm và repeater truyền dạng mảng theo tên trường con), trả lại dữ liệu sau khi ghi.
+ *       POST với {"purge": true} và không có fields: chỉ xóa cache trang.
  */
+
+/*
+ * Xóa cache trang theo đúng link của bài. WP-Optimize chỉ tự xóa trang chủ ngôn ngữ mặc định,
+ * trang chủ tiếng Anh (/en/) phải xóa theo URL.
+ */
+function adtek_acf_rest_purge( $id ) {
+	clean_post_cache( $id );
+	do_action( 'litespeed_purge_post', $id );
+	if ( class_exists( 'WPO_Page_Cache' ) ) {
+		if ( method_exists( 'WPO_Page_Cache', 'delete_single_post_cache' ) ) {
+			WPO_Page_Cache::delete_single_post_cache( $id );
+		}
+		if ( method_exists( 'WPO_Page_Cache', 'delete_cache_by_url' ) ) {
+			WPO_Page_Cache::delete_cache_by_url( get_permalink( $id ) );
+		}
+	}
+}
 add_action(
 	'rest_api_init',
 	static function () {
@@ -37,7 +55,7 @@ add_action(
 						return array(
 							'id'      => $id,
 							'fields'  => get_fields( $id ) ?: new stdClass(),
-							'version' => '1.0.0',
+							'version' => '1.1.0',
 						);
 					},
 				),
@@ -53,6 +71,14 @@ add_action(
 						if ( ! get_post( $id ) ) {
 							return new WP_Error( 'not_found', 'Không có bài này.', array( 'status' => 404 ) );
 						}
+						if ( ! $fields && $request['purge'] ) {
+							adtek_acf_rest_purge( $id );
+							return array(
+								'id'      => $id,
+								'purged'  => get_permalink( $id ),
+								'version' => '1.1.0',
+							);
+						}
 						if ( ! is_array( $fields ) || ! $fields ) {
 							return new WP_Error( 'bad_request', 'Thiếu fields.', array( 'status' => 400 ) );
 						}
@@ -67,13 +93,12 @@ add_action(
 							// Ghi theo field key để ACF nhận đúng cấu trúc nhóm/repeater cả khi bài chưa từng lưu trường này.
 							$result[ $name ] = update_field( $field['key'], $value, $id ) ? 'ok' : 'unchanged';
 						}
-						clean_post_cache( $id );
-						do_action( 'litespeed_purge_post', $id );
+						adtek_acf_rest_purge( $id );
 						return array(
 							'id'      => $id,
 							'result'  => $result,
 							'fields'  => get_fields( $id ) ?: new stdClass(),
-							'version' => '1.0.0',
+							'version' => '1.1.0',
 						);
 					},
 				),

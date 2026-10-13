@@ -45,3 +45,9 @@
 | 2026-10-09 | Tạo bản nháp bài 4 "Luật bảo vệ dữ liệu cá nhân 2026"; gửi email, push nhắc duyệt bài 3 và 4 (hạn 9:03 10/10), hẹn kiểm tra hạn D+1 | Bài 6093, 6096 | Chờ duyệt |
 | 2026-10-10 09:04 | Quá hạn duyệt D+1, tự đặt lịch bài 3 (20/10 12:21) và bài 4 (22/10 20:11); đã gửi email và push báo anh Tin | Bài 6093, 6096 | Đã lên lịch (tự động) |
 | 2026-10-11 | Viết bài đăng Facebook (kể chuyện, link ở bình luận đầu) cho bài 1 đến 4, lưu trong calendar.json (fb_caption, fb_comment); email duyệt hiển thị bài đăng Facebook; lịch thứ Sáu viết kèm bài Facebook | calendar.json, tools/approval_email.py, README | Đã áp dụng, chờ cách đăng tự động |
+| 2026-10-13 | Thêm mu-plugin adtek-acf-rest.php 1.0.0 (đọc/ghi trường ACF qua REST) và tools/sync_home.py (đồng bộ trang chủ EN theo bản VI) | mu-plugins, tools, content/pages/home.json | Đã upload, chạy đúng |
+| 2026-10-13 | Sửa trang chủ VI: viết mới mô tả Lead generation (đang chép y Brand Commerce), năm thành lập 2023 thành 2022 (khớp FAQ), viết hoa "Các đối tác của Adtek" | Trang 5132 | Đã áp dụng |
+| 2026-10-13 | Đồng bộ trang chủ EN theo bản VI: dịch lại toàn bộ chữ, 8 nút tư vấn mở popup form 264 (thay link chết adtek.monamedia.net), mục Về chúng tôi, 8 nhóm đối tác với 18 logo, footer (email, địa chỉ mới, chữ tiếng Anh); backup trong content/backups | Trang 5240 | Đã áp dụng |
+| 2026-10-13 | Đổi tiêu đề trang Báo chí EN thành "Press" và meta description sang tiếng Anh (footer EN hết hiện "Báo chí") | Trang 5242 | Đã áp dụng |
+| 2026-10-13 | Soạn form 264 tiếng Anh đủ trường như form VI 1307 (content/pages/contact-form-en.json); REST của CF7 trả thành công nhưng không lưu | Form 264 | Chờ dán tay trong wp-admin |
+| 2026-10-13 | adtek-acf-rest.php 1.1.0: xóa cache WP-Optimize theo link trang (trang chủ /en/ không tự xóa cache) | mu-plugins | Chờ upload |

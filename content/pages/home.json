@@ -17,11 +17,6 @@
       "why": "FAQ ghi Adtek thành lập 5/5/2022"
     },
     {
-      "old": "Vingroup, Lazada và Shopee .",
-      "new": "Vingroup, Lazada và Shopee.",
-      "why": "Thừa dấu cách trước dấu chấm"
-    },
-    {
       "old": "Các đối tác của adtek",
       "new": "Các đối tác của Adtek",
       "why": "Viết hoa tên thương hiệu"
@@ -53,10 +48,8 @@
     "Chiến dịch tiếp thị lại và tương tác người dùng.": "Remarketing and user engagement campaigns.",
     "Tối ưu hóa cửa hàng ứng dụng (ASO).": "App Store Optimization (ASO).",
     "Là cánh tay nối dài của bạn": "Your extended team",
-    "Đội ngũ chuyên gia Growth Marketing của Adtek với hơn 10 năm kinh nghiệm, sẵn sàng tư vấn và đồng hành cùng bạn để đạt được các mục tiêu tăng trưởng cụ thể. Với phương pháp tiếp cận toàn diện, chúng tôi không chỉ hỗ trợ xây dựng chiến lược mà còn trực tiếp triển khai như một cánh tay nối dài của đội ngũ bạn, đảm bảo hiệu quả tối đa trong từng giai đoạn phát triển.": "Adtek's Growth Marketing experts, with over 10 years of experience, are ready to advise and work alongside you to reach specific growth goals. With a comprehensive approach, we do not just help build the strategy; we execute it directly as an extension of your team, ensuring maximum effectiveness at every stage of growth.",
     "Về chúng tôi": "About us",
     "Adteker những con người đam mê tăng trưởng!": "Adtekers, people passionate about growth!",
-    "Chúng tôi là đội ngũ bước ra từ các tập đoàn công nghệ và bán lẻ hàng đầu Việt Nam như Vingroup, Lazada và Shopee. Năm 2022, với cùng một tầm nhìn, chúng tôi thành lập Adtek mang theo sứ mệnh đồng hành cùng doanh nghiệp Việt trong hành trình chuyển đổi số và kiến tạo những bước đột phá tăng trưởng bền vững.": "Our team comes from Vietnam's leading technology and retail companies, including Vingroup, Lazada and Shopee. In 2022, sharing the same vision, we founded Adtek with a mission to support Vietnamese businesses on their digital transformation journey and create breakthroughs in sustainable growth.",
     "Các đối tác của Adtek": "Adtek Partners",
     "Khác": "Others",
     "Hỗ trợ khách hàng tăng trưởng vượt bậc thông qua chuyển đổi số và chiến lược dựa trên phân tích dữ liệu.": "Helping clients achieve breakthrough growth through digital transformation and data-driven strategy.",
@@ -64,7 +57,9 @@
     "Liên Hệ": "Contact",
     "Tuyển dụng": "Recruitment",
     "Báo chí": "Press",
-    "123/30B Nguyễn Hoàng, phường Bình Trưng, TP. Hồ Chí Minh": "123/30B Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City, Vietnam"
+    "123/30B Nguyễn Hoàng, phường Bình Trưng, TP. Hồ Chí Minh": "123/30B Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City, Vietnam",
+    "<p>Đội ngũ chuyên gia <span class=\"pri\">Growth Marketing của Adtek</span> với hơn 10 năm kinh nghiệm, sẵn sàng tư vấn và đồng hành cùng bạn để đạt được các mục tiêu tăng trưởng cụ thể. Với phương pháp tiếp cận toàn diện, chúng tôi không chỉ hỗ trợ xây dựng chiến lược mà còn trực tiếp triển khai như một cánh tay nối dài của đội ngũ bạn, đảm bảo hiệu quả tối đa trong từng giai đoạn phát triển.</p>": "<p>Adtek's <span class=\"pri\">Growth Marketing experts</span>, with over 10 years of experience, are ready to advise and work alongside you to reach specific growth goals. With a comprehensive approach, we do not just help build the strategy; we execute it directly as an extension of your team, ensuring maximum effectiveness at every stage of growth.</p>\n",
+    "<p>Chúng tôi là đội ngũ bước ra từ các tập đoàn công nghệ và bán lẻ hàng đầu Việt Nam như <strong>Vingroup, Lazada và Shopee</strong>. Năm 2022, với cùng một tầm nhìn, chúng tôi thành lập Adtek mang theo sứ mệnh đồng hành cùng doanh nghiệp Việt trong hành trình chuyển đổi số và kiến tạo những bước đột phá tăng trưởng bền vững.</p>": "<p>Our team comes from Vietnam's leading technology and retail companies, including <strong>Vingroup, Lazada and Shopee</strong>. In 2022, sharing the same vision, we founded Adtek with a mission to support Vietnamese businesses on their digital transformation journey and create breakthroughs in sustainable growth.</p>\n"
   },
   "en_links": {
     "https://adtek.agency/recruitments/": "https://adtek.agency/en/recruitments/",
