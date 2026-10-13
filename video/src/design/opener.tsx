@@ -14,7 +14,7 @@ export const openerEnd = (words: Word[], lead: number) => {
   return Math.round(Math.min(90, Math.max(45, t)));
 };
 
-const OUT = 8; // số khung chữ bung ra và mờ đi
+const OUT = 2; // chữ bung ra và mờ đi trong 8 khung, gần hết trước khi hình của cảnh 1 hiện (end)
 
 const outline = (w: number): React.CSSProperties => ({
   WebkitTextStroke: `${w}px #000000`,
@@ -29,7 +29,7 @@ export const Opener: React.FC<{ text: string; accent?: string; options?: string[
   // Khung đầu đã đủ chữ (to hơn 12%), lò xo co về đúng cỡ; sau đó chữ phóng chậm để màn hình không đứng yên.
   const land = springAt(f, fps, 0, SPRING.snappy);
   const drift = interpolate(f, [0, end], [0, 0.04], clamp);
-  const exit = interpolate(f, [end - 2, end + OUT], [0, 1], clamp);
+  const exit = interpolate(f, [end - 6, end + OUT], [0, 1], clamp);
   const scale = 1.12 - 0.12 * land + drift + exit * 0.3;
   // Cỡ chữ theo số ký tự (chữ đậm rộng khoảng 0.56 cỡ chữ), chừa chỗ cho lúc chữ phóng to 12% ở khung đầu.
   // Câu dài thì xuống 2 hàng cân nhau: câu chính từ 15 ký tự (to nhất 150), ý cam từ 19 ký tự (to nhất 0.8 câu chính).
@@ -43,7 +43,7 @@ export const Opener: React.FC<{ text: string; accent?: string; options?: string[
         <div style={{ fontSize: size, color: C.white, textWrap: "balance", ...outline(14) }}>{text}</div>
         {accent && <div style={{ fontSize: accentSize, color: C.orange, marginTop: 18, textWrap: "balance", ...outline(12) }}>{accent}</div>}
         {options && (
-          <div style={{ display: "flex", gap: 22, marginTop: 56, justifyContent: "center" }}>
+          <div style={{ display: "flex", gap: 22, marginTop: 56, marginInline: 80, justifyContent: "center" }}>
             {options.map((o, i) => {
               const p = springAt(f, fps, 3 + i * 3, SPRING.playful);
               return (

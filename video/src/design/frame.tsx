@@ -117,11 +117,15 @@ export const useCue = () => {
 // không sớm hơn nhịp mặc định base + i * step và luôn sau phần tử trước ít nhất 8 khung.
 export const useCueList = () => {
   const cue = useCue();
-  return (needles: (string | number | undefined)[], base: number, step: number) => {
+  // Mỗi phần tử có thể có nhiều cách gọi (ví dụ chữ hiển thị "2.17 tỷ", giá trị, nhãn năm): lấy lần nhắc sớm nhất.
+  type N = string | number | undefined;
+  return (needles: (N | N[])[], base: number, step: number) => {
     let prev = -Infinity;
     return needles.map((n, i) => {
       const def = Math.max(base + i * step, prev + 8);
-      const at = Math.max(def, cue(n, def, { after: Number.isFinite(prev) ? prev : undefined }));
+      const after = Number.isFinite(prev) ? prev : undefined;
+      const said = Math.min(...(Array.isArray(n) ? n : [n]).map((c) => cue(c, Infinity, { after, floor: -Infinity })));
+      const at = Math.max(def, Number.isFinite(said) ? said : def);
       prev = at;
       return at;
     });

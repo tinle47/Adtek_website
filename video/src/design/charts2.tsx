@@ -196,7 +196,7 @@ export const Trend: React.FC<{ metric: string; unit?: string; source: string; po
   const y = (v: number) => H - ((v - min) / (hi - min)) * (H - 40);
   const last = points.length - 1;
   // Đường vẽ tới từng điểm đúng lúc giọng đọc tới giá trị của điểm đó.
-  const ts = useCueList()(points.map((p) => p.value), 10, 40 / last);
+  const ts = useCueList()(points.map((p) => [p.display || undefined, p.value, p.label]), 10, 40 / last);
   const draw = interpolate(f, ts, ts.map((_, i) => i / last), { ...clamp, easing: ease });
   const pts = points.map((p, i) => [x(i), y(p.value)] as const);
   const path = pts.map((p, i) => `${i ? "L" : "M"}${p[0]},${p[1]}`).join(" ");
