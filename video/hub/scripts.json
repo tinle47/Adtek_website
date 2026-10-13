@@ -186,68 +186,6 @@
   "review": ""
  },
  {
-  "id": "nhan-tin-truoc-khi-mua",
-  "date": "2026-10-09",
-  "status": "Đã có video",
-  "title": "8/10 khách muốn nhắn tin, shop bạn trả lời kịp không?",
-  "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Shop bạn đang trả lời tin nhắn trong bao lâu? Comment số phút.",
-  "hashtags": [
-   "#adtekagency",
-   "#growthmarketing",
-   "#banhangonline",
-   "#zalo",
-   "#quangcaofacebook",
-   "#chotdon"
-  ],
-  "words": 186,
-  "seconds": 59,
-  "scenes": [
-   {
-    "kicker": "Performance · Meta và Kantar",
-    "title": "8/10 khách muốn nhắn tin, shop bạn trả lời kịp không?",
-    "voice": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua? Khảo sát cho Meta cho thấy 82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp.",
-    "visual": "Hình người",
-    "source": "Nguồn: Meta, khảo sát do Kantar thực hiện, 11/2025"
-   },
-   {
-    "kicker": "Thói quen nhắn tin",
-    "title": "Nhắn tin với shop đã thành chuyện hằng ngày.",
-    "voice": "Và đây là thói quen hằng ngày. 61.2% nhắn tin với doanh nghiệp mỗi ngày. 85.6% thích nhận tin nhắn đúng nhu cầu của mình, hơn là tin gửi hàng loạt.",
-    "visual": "Thanh ngang",
-    "source": "Nguồn: Meta, khảo sát do Kantar thực hiện, 11/2025"
-   },
-   {
-    "kicker": "Kênh nhắn tin lớn nhất",
-    "title": "81 triệu người mở Zalo mỗi tháng.",
-    "voice": "Nhắn ở đâu? Zalo có 81.3 triệu người dùng mỗi tháng, hơn 2.2 tỷ tin nhắn mỗi ngày. Số tài khoản Zalo OA của doanh nghiệp tăng 24% trong một năm.",
-    "visual": "Đối đầu",
-    "source": "Nguồn: VNG, quý 2/2026; TikTok, 2025; số liệu doanh nghiệp tự công bố"
-   },
-   {
-    "kicker": "Mùa mua sắm cuối năm",
-    "title": "Mùa cao điểm kéo dài từ 12.12 đến Tết.",
-    "voice": "Mà mùa cao điểm sắp tới rồi. 85% người Việt mua sắm dịp Tết, 66% mua dịp Tết Dương lịch, và 44% săn sale 12.12.",
-    "visual": "Biểu đồ cột",
-    "source": "Nguồn: Meta, nghiên cứu mua sắm mùa lễ do Ipsos thực hiện"
-   },
-   {
-    "kicker": "Làm gì ngay?",
-    "title": "Trước mùa cao điểm, chuẩn bị 4 việc này.",
-    "voice": "Vậy trước mùa cao điểm, làm gì? Cài trả lời tức thì và tin nhắn vắng mặt. Cài sẵn câu trả lời về giá, phí ship, đổi trả. Gửi dữ liệu đơn hàng về Meta để quảng cáo tin nhắn tối ưu theo đơn. Và đăng ký mẫu tin Zalo sớm để báo đơn tự động.",
-    "visual": "Danh sách",
-    "source": "Nguồn: Trung tâm trợ giúp Meta; Meta for Developers; Zalo for Developers"
-   },
-   {
-    "kicker": "Follow Adtek",
-    "title": "Khách đang nhắn tin, shop bạn có đang trả lời?",
-    "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
-    "visual": "Thẻ Follow Adtek",
-    "source": ""
-   }
-  ],
-  "review": ""
- },
- {
   "id": "khach-so-gia-cho-sale",
   "date": "2026-10-10",
   "status": "Đã đăng",
@@ -571,13 +509,13 @@
    "#banhangonline",
    "#thuongmaidientu"
   ],
-  "words": 188,
-  "seconds": 65,
+  "words": 178,
+  "seconds": 62,
   "scenes": [
    {
     "kicker": "Performance · Q&Me",
     "title": "Chỉ 13% mua ngẫu hứng khi xem livestream.",
-    "voice": "Livestream sống nhờ khách mua ngẫu hứng? Không hẳn. Theo Q&Me, chỉ 13% người mua qua live là mua ngẫu hứng. 47% đã cân nhắc từ trước, 40% định mua sẵn.",
+    "voice": "Chỉ 13% khách mua ngẫu hứng khi xem live. Theo Q&Me, 47% đã cân nhắc từ trước, 40% định mua sẵn.",
     "visual": "Hình người",
     "source": "Nguồn: Q&Me, 04/2026, khảo sát 245 người mua qua livestream tại TP.HCM và Hà Nội (mẫu nhỏ)"
    },
@@ -618,6 +556,54 @@
    }
   ],
   "review": "/_blob/2d350f91554a03091aa4cfb35f008776"
+ },
+ {
+  "id": "livestream-nguoi-mua-tin-ai-ngan",
+  "date": "2026-10-14",
+  "status": "Đã có video",
+  "title": "Chỉ 13% mua ngẫu hứng khi xem livestream.",
+  "caption": "Chỉ 13% người mua qua live là mua ngẫu hứng, 47% đã cân nhắc từ trước. Shop bạn live bằng tài khoản chính thức hay thuê KOC? Comment cho Adtek biết.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#livestream",
+   "#tiktokshop",
+   "#banhangonline",
+   "#thuongmaidientu"
+  ],
+  "words": 94,
+  "seconds": 31,
+  "scenes": [
+   {
+    "kicker": "Performance · Q&Me",
+    "title": "Chỉ 13% mua ngẫu hứng khi xem livestream.",
+    "voice": "Chỉ 13% khách mua ngẫu hứng khi xem live. Theo Q&Me, 47% đã cân nhắc từ trước, 40% định mua sẵn.",
+    "visual": "Hình người",
+    "source": "Nguồn: Q&Me, 04/2026, khảo sát 245 người mua qua livestream tại TP.HCM và Hà Nội (mẫu nhỏ)"
+   },
+   {
+    "kicker": "Người mua chọn ai?",
+    "title": "Một nửa người mua chọn tài khoản chính hãng.",
+    "voice": "Vậy họ chọn ai? 5 trên 10 người chủ yếu mua từ tài khoản chính thức của thương hiệu, nhiều hơn mua qua KOL.",
+    "visual": "Ô vuông 100",
+    "source": "Nguồn: Q&Me, 04/2026, khảo sát 245 người mua qua livestream tại TP.HCM và Hà Nội (mẫu nhỏ)"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Muốn người xem live tin, làm ngay 2 việc này.",
+    "voice": "Shop nên làm gì? Live bằng tài khoản chính thức. Và đăng 2 video nhá hàng, trước buổi live 1 ngày và 1 giờ.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Học viện TikTok Shop (seller-vn.tiktok.com/university); Luật Thương mại điện tử 122/2025/QH15; Nghị định 87/2026/NĐ-CP"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Người mua tin thương hiệu, shop bạn đã live chưa?",
+    "voice": "Shop bạn live bằng tài khoản chính thức hay thuê KOC? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": ""
  },
  {
   "id": "thi-truong-app-cham-dinh",
@@ -680,6 +666,54 @@
    }
   ],
   "review": "/_blob/e117504c1b02b23fd0a030c301349594"
+ },
+ {
+  "id": "thi-truong-app-cham-dinh-ngan",
+  "date": "2026-10-15",
+  "status": "Đã có video",
+  "title": "Thị trường app Việt Nam đã chạm đỉnh?",
+  "caption": "Lượt cài app ở Việt Nam đã chững lại sau khi tăng 136% từ 2018. Nhưng tiền quảng cáo không rút đi mà đổi chỗ. App bạn đang dồn tiền cho iOS hay Android? Comment cho Adtek biết.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#appmarketing",
+   "#quangcaoapp",
+   "#mobilemarketing",
+   "#fintech"
+  ],
+  "words": 93,
+  "seconds": 35,
+  "scenes": [
+   {
+    "kicker": "App Marketing · AppsFlyer",
+    "title": "Thị trường app Việt Nam đã chạm đỉnh?",
+    "voice": "Thị trường app Việt Nam đã chạm đỉnh? Lượt cài tăng 136% từ 2018, đạt 2.17 tỷ năm 2024, rồi giảm nhẹ.",
+    "visual": "Đường xu hướng",
+    "source": "Nguồn: AppsFlyer, State of App Marketing in Vietnam 2025, 11/2025"
+   },
+   {
+    "kicker": "Tiền quảng cáo 2026",
+    "title": "Tiền không rút đi, mà đổi chỗ.",
+    "voice": "Nhưng tiền quảng cáo không rút đi, mà đổi chỗ. Quý 2, ngân sách kéo người dùng Android cho app tài chính tăng 153%, game giảm 46%.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: AppsFlyer, State of Marketing in APAC 2026, 09/2026"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Lượt cài chững lại, làm ngay 2 việc này.",
+    "voice": "Làm gì ngay? Làm trang App Store riêng cho từng nhóm khách. Và chia ngân sách theo tỷ lệ giữ chân.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Apple Developer; Play Console Help; Google Ads Help; AppsFlyer Help Center"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Lượt cài chững lại, app bạn đang dồn tiền vào đâu?",
+    "voice": "App bạn đang dồn tiền cho iOS hay Android? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": ""
  },
  {
   "id": "cai-app-gian-lan",
@@ -999,6 +1033,68 @@
     "kicker": "Follow Adtek",
     "title": "Bắt từ khóa sớm, đón khách trước.",
     "voice": "Từ khóa nào trong ngành của bạn đang tăng mạnh? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": ""
+ },
+ {
+  "id": "nhan-tin-truoc-khi-mua",
+  "date": "2026-10-22",
+  "status": "Đã có video",
+  "title": "8/10 khách muốn nhắn tin, shop bạn trả lời kịp không?",
+  "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Shop bạn đang trả lời tin nhắn trong bao lâu? Comment số phút.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#banhangonline",
+   "#zalo",
+   "#quangcaofacebook",
+   "#chotdon"
+  ],
+  "words": 186,
+  "seconds": 59,
+  "scenes": [
+   {
+    "kicker": "Performance · Meta và Kantar",
+    "title": "8/10 khách muốn nhắn tin, shop bạn trả lời kịp không?",
+    "voice": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua? Khảo sát cho Meta cho thấy 82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp.",
+    "visual": "Hình người",
+    "source": "Nguồn: Meta, nghiên cứu do Kantar thực hiện, công bố 25/09/2026"
+   },
+   {
+    "kicker": "Thói quen nhắn tin",
+    "title": "Nhắn tin với shop đã thành chuyện hằng ngày.",
+    "voice": "Và đây là thói quen hằng ngày. 61.2% nhắn tin với doanh nghiệp mỗi ngày. 85.6% thích nhận tin nhắn đúng nhu cầu của mình, hơn là tin gửi hàng loạt.",
+    "visual": "Thanh ngang",
+    "source": "Nguồn: Meta, nghiên cứu do Kantar thực hiện, công bố 25/09/2026"
+   },
+   {
+    "kicker": "Kênh nhắn tin lớn nhất",
+    "title": "81 triệu người mở Zalo mỗi tháng.",
+    "voice": "Nhắn ở đâu? Zalo có 81.3 triệu người dùng mỗi tháng, hơn 2.2 tỷ tin nhắn mỗi ngày. Số tài khoản Zalo OA của doanh nghiệp tăng 24% trong một năm.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: VNG, quý 2/2026; TikTok, 2025; số liệu doanh nghiệp tự công bố"
+   },
+   {
+    "kicker": "Mùa mua sắm cuối năm",
+    "title": "Mùa cao điểm kéo dài từ 12.12 đến Tết.",
+    "voice": "Mà mùa cao điểm sắp tới rồi. 85% người Việt mua sắm dịp Tết, 66% mua dịp Tết Dương lịch, và 44% săn sale 12.12.",
+    "visual": "Biểu đồ cột",
+    "source": "Nguồn: Meta, Holiday Shopping Study do Ipsos thực hiện, 11/2025, 14,473 người tại 18 thị trường"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Trước mùa cao điểm, chuẩn bị 4 việc này.",
+    "voice": "Vậy trước mùa cao điểm, làm gì? Cài trả lời tức thì và tin nhắn vắng mặt. Cài sẵn câu trả lời về giá, phí ship, đổi trả. Gửi dữ liệu đơn hàng về Meta để quảng cáo tin nhắn tối ưu theo đơn. Và đăng ký mẫu tin Zalo sớm để báo đơn tự động.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Trung tâm trợ giúp Meta; Meta for Developers; Zalo for Developers"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Khách đang nhắn tin, shop bạn có đang trả lời?",
+    "voice": "Follow Adtek để xem số liệu marketing mới mỗi ngày.",
     "visual": "Thẻ Follow Adtek",
     "source": ""
    }

@@ -1,6 +1,6 @@
 {
   "id": "nhan-tin-truoc-khi-mua",
-  "date": "2026-10-09",
+  "date": "2026-10-22",
   "status": "Đã có video",
   "caption": "82.8% người Việt chọn nhắn tin để liên lạc với doanh nghiệp, 61.2% nhắn mỗi ngày. Shop bạn đang trả lời tin nhắn trong bao lâu? Comment số phút.",
   "hashtags": [
@@ -20,7 +20,7 @@
       "visual": {
         "type": "people",
         "metric": "Người Việt chọn nhắn tin để liên lạc với doanh nghiệp",
-        "source": "Nguồn: Meta, khảo sát do Kantar thực hiện, 11/2025",
+        "source": "Nguồn: Meta, nghiên cứu do Kantar thực hiện, công bố 25/09/2026",
         "lit": 8,
         "legend": [
           "chọn nhắn tin để liên lạc với doanh nghiệp",
@@ -37,7 +37,7 @@
         "type": "hbars",
         "metric": "Thói quen nhắn tin với doanh nghiệp của người Việt",
         "unit": "%",
-        "source": "Nguồn: Meta, khảo sát do Kantar thực hiện, 11/2025",
+        "source": "Nguồn: Meta, nghiên cứu do Kantar thực hiện, công bố 25/09/2026",
         "max": 85.6,
         "rows": [
           {
@@ -91,7 +91,7 @@
         "type": "columns",
         "metric": "Người Việt mua sắm theo từng dịp",
         "unit": "%",
-        "source": "Nguồn: Meta, nghiên cứu mua sắm mùa lễ do Ipsos thực hiện",
+        "source": "Nguồn: Meta, Holiday Shopping Study do Ipsos thực hiện, 11/2025, 14,473 người tại 18 thị trường",
         "max": 85,
         "cols": [
           {
@@ -154,6 +154,10 @@
   "cover": {
     "kicker": "Performance",
     "title": "8/10 khách",
+    "accent": "muốn nhắn tin trước khi mua"
+  },
+  "hook": {
+    "text": "8/10 khách",
     "accent": "muốn nhắn tin trước khi mua"
   }
 }

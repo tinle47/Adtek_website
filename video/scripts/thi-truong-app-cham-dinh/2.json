@@ -1,0 +1,123 @@
+{
+  "id": "thi-truong-app-cham-dinh-ngan",
+  "date": "2026-10-15",
+  "status": "Đã có video",
+  "cover": {
+    "kicker": "App Marketing",
+    "title": "App Việt chạm đỉnh?",
+    "accent": "Tiền quảng cáo nên đổ vào đâu"
+  },
+  "hook": {
+    "text": "Thị trường app Việt Nam",
+    "accent": "đã chạm đỉnh?"
+  },
+  "caption": "Lượt cài app ở Việt Nam đã chững lại sau khi tăng 136% từ 2018. Nhưng tiền quảng cáo không rút đi mà đổi chỗ. App bạn đang dồn tiền cho iOS hay Android? Comment cho Adtek biết.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#appmarketing",
+    "#quangcaoapp",
+    "#mobilemarketing",
+    "#fintech"
+  ],
+  "scenes": [
+    {
+      "kicker": "App Marketing · AppsFlyer",
+      "headline": "Thị trường app Việt Nam",
+      "accent": "đã chạm đỉnh?",
+      "voice": "Thị trường app Việt Nam đã chạm đỉnh? Lượt cài tăng 136% từ 2018, đạt 2.17 tỷ năm 2024, rồi giảm nhẹ.",
+      "visual": {
+        "type": "trend",
+        "metric": "Lượt cài app tại Việt Nam mỗi năm",
+        "unit": "chỉ số quy đổi của AppsFlyer, không phải số lượt cài",
+        "source": "Nguồn: AppsFlyer, State of App Marketing in Vietnam 2025, 11/2025",
+        "points": [
+          {
+            "label": "2018",
+            "value": 6.8,
+            "display": ""
+          },
+          {
+            "label": "2021",
+            "value": 11.7,
+            "display": ""
+          },
+          {
+            "label": "2023",
+            "value": 16.9,
+            "display": ""
+          },
+          {
+            "label": "2024",
+            "value": 16.0,
+            "display": "2.17 tỷ"
+          },
+          {
+            "label": "2025 (dự báo)",
+            "value": 15.0,
+            "display": "Giảm nhẹ"
+          }
+        ],
+        "note": "Tăng 136% từ 2018, rồi chững lại"
+      }
+    },
+    {
+      "kicker": "Tiền quảng cáo 2026",
+      "headline": "Tiền không rút đi,",
+      "accent": "mà đổi chỗ.",
+      "voice": "Nhưng tiền quảng cáo không rút đi, mà đổi chỗ. Quý 2, ngân sách kéo người dùng Android cho app tài chính tăng 153%, game giảm 46%.",
+      "visual": {
+        "type": "versus",
+        "metric": "Ngân sách quảng cáo kéo người dùng tại Việt Nam, Android",
+        "unit": "quý 2/2026 so với quý 2/2025",
+        "source": "Nguồn: AppsFlyer, State of Marketing in APAC 2026, 09/2026",
+        "items": [
+          {
+            "label": "App tài chính",
+            "value": 153.1,
+            "display": "+153",
+            "suffix": "%"
+          },
+          {
+            "label": "Game",
+            "value": -45.7,
+            "display": "-46",
+            "suffix": "%"
+          }
+        ],
+        "winner": 0
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Lượt cài chững lại,",
+      "accent": "làm ngay 2 việc này.",
+      "voice": "Làm gì ngay? Làm trang App Store riêng cho từng nhóm khách. Và chia ngân sách theo tỷ lệ giữ chân.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Làm trang App Store riêng cho từng nhóm khách",
+            "detail": "Tối đa 70 trang tùy chỉnh, dùng cho Apple Ads"
+          },
+          {
+            "text": "Chia ngân sách theo tỷ lệ giữ chân",
+            "detail": "Báo cáo Cohort của AppsFlyer theo từng nguồn"
+          }
+        ],
+        "source": "Nguồn: Apple Developer; Play Console Help; Google Ads Help; AppsFlyer Help Center"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Lượt cài chững lại,",
+      "accent": "app bạn đang dồn tiền vào đâu?",
+      "voice": "App bạn đang dồn tiền cho iOS hay Android? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "App bạn đang dồn tiền cho iOS hay Android? Comment cho Adtek biết"
+      }
+    }
+  ],
+  "variant": "Bản ngắn 30 giây (thử nghiệm B)"
+}

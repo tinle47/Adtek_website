@@ -12,6 +12,15 @@
       "50 lượt"
     ]
   },
+  "hook": {
+    "text": "100 lượt cài app",
+    "accent": "bao nhiêu lượt gian lận?",
+    "options": [
+      "5 lượt",
+      "20 lượt",
+      "50 lượt"
+    ]
+  },
   "caption": "Cứ 100 lượt cài app ở Việt Nam, bao nhiêu lượt là gian lận? Xem 2 gợi ý từ báo cáo của AppsFlyer rồi đoán thử. Bạn đoán A, B hay C? Comment đáp án cho Adtek nhé",
   "hashtags": [
     "#adtekagency",

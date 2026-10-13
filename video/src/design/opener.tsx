@@ -31,10 +31,12 @@ export const Opener: React.FC<{ text: string; accent?: string; options?: string[
   const drift = interpolate(f, [0, end], [0, 0.04], clamp);
   const exit = interpolate(f, [end - 2, end + OUT], [0, 1], clamp);
   const scale = 1.12 - 0.12 * land + drift + exit * 0.3;
-  // Cỡ chữ theo số ký tự (chữ đậm rộng khoảng 0.56 cỡ chữ): câu chính tối đa 2 hàng cân nhau, to nhất 150; ý cam 1 hàng.
-  const fit = (chars: number, max: number) => Math.round(Math.min(max, 820 / (chars * 0.56))); // chừa chỗ cho lúc chữ phóng to 12% ở khung đầu
-  const size = fit(text.length > 11 ? Math.ceil(text.length / 2) + 1 : text.length, 150);
-  const accentSize = accent ? fit(accent.length, Math.round(size * 0.8)) : 0;
+  // Cỡ chữ theo số ký tự (chữ đậm rộng khoảng 0.56 cỡ chữ), chừa chỗ cho lúc chữ phóng to 12% ở khung đầu.
+  // Câu dài thì xuống 2 hàng cân nhau: câu chính từ 15 ký tự (to nhất 150), ý cam từ 19 ký tự (to nhất 0.8 câu chính).
+  const fit = (chars: number, max: number) => Math.round(Math.min(max, 820 / (chars * 0.56)));
+  const lines = (t: string, from: number) => (t.length >= from ? Math.ceil(t.length / 2) + 1 : t.length);
+  const size = fit(lines(text, 15), 150);
+  const accentSize = accent ? fit(lines(accent, 19), Math.round(size * 0.8)) : 0;
   return (
     <AbsoluteFill style={{ opacity: 1 - exit, alignItems: "center", justifyContent: "center", paddingBottom: 260 }}>
       <div style={{ width: 940, textAlign: "center", transform: `scale(${scale})`, fontFamily: SANS, fontWeight: 700, lineHeight: 1.12, letterSpacing: -1 }}>

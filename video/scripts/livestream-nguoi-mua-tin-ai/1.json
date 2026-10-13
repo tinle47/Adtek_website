@@ -7,6 +7,10 @@
     "title": "Chỉ 13% khách",
     "accent": "mua ngẫu hứng khi xem live"
   },
+  "hook": {
+    "text": "Chỉ 13% khách",
+    "accent": "mua ngẫu hứng khi xem live"
+  },
   "caption": "Livestream sống nhờ khách mua ngẫu hứng? Chỉ 13% người mua qua live là mua ngẫu hứng, 47% đã cân nhắc từ trước. Shop bạn live bằng tài khoản chính thức hay thuê KOC? Comment cho Adtek biết.",
   "hashtags": [
     "#adtekagency",
@@ -21,7 +25,7 @@
       "kicker": "Performance · Q&Me",
       "headline": "Chỉ 13% mua ngẫu hứng",
       "accent": "khi xem livestream.",
-      "voice": "Livestream sống nhờ khách mua ngẫu hứng? Không hẳn. Theo Q&Me, chỉ 13% người mua qua live là mua ngẫu hứng. 47% đã cân nhắc từ trước, 40% định mua sẵn.",
+      "voice": "Chỉ 13% khách mua ngẫu hứng khi xem live. Theo Q&Me, 47% đã cân nhắc từ trước, 40% định mua sẵn.",
       "visual": {
         "type": "people",
         "metric": "Người mua qua livestream mua ngẫu hứng ở lần mua gần nhất",
