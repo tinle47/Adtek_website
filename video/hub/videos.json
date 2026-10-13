@@ -146,7 +146,7 @@
   "topic": "Đếm ngược: top 5 từ khóa tăng mạnh nhất trên Google năm 2025",
   "hook": "Năm 2025, người Việt tìm gì trên Google tăng mạnh nhất? Đoán thử hạng 1 rồi comment trước nhé.",
   "duration": "64 giây",
-  "url": "/_blob/aac15751b33a90a969261b9a60c59d8d",
+  "url": "/_blob/f1609550666fb233d943c5dbd8174541",
   "caption": "Top 5 từ khóa người Việt tìm trên Google tăng mạnh nhất năm 2025, theo Google Year in Search. Bạn đoán hạng 1 là gì? Từ khóa nào trong ngành của bạn đang tăng mạnh?",
   "hashtags": [
    "#adtekagency",
@@ -156,7 +156,7 @@
    "#yearinsearch",
    "#xuhuongtimkiem"
   ],
-  "note": "",
+  "note": "Mở đầu mới: 2 giây đầu chỉ có câu hook chữ to giữa màn hình.",
   "cover": "/_blob/25b559b5ecf2dff1c2a3a15bc94b9057"
  },
  {
@@ -291,11 +291,11 @@
   "filename": "15-10 thi truong app cham dinh",
   "date": "2026-10-15",
   "service": "App Marketing",
-  "topic": "Thị trường app Việt Nam đã chạm đỉnh? (infographic)",
+  "topic": "Thị trường app Việt Nam đã chạm đỉnh? (infographic) (bản ngắn 30 giây)",
   "hook": "Thị trường app Việt Nam đã chạm đỉnh? Lượt cài tăng 136% từ 2018, đạt 2.17 tỷ năm 2024, rồi giảm nhẹ.",
-  "duration": "63 giây",
-  "url": "/_blob/97fd148df763cd38b533e43820778d06",
-  "caption": "Lượt cài app ở Việt Nam đã chững lại sau khi tăng 136% từ 2018. Nhưng tiền quảng cáo không rút đi mà đổi chỗ: quý 2/2026, ngân sách trên Android cho app tài chính tăng 153%, game giảm 46%. App bạn đang dồn tiền cho iOS hay Android? Comment cho Adtek biết.",
+  "duration": "35 giây",
+  "url": "/_blob/74dbd158fb5d2458e2668695acc9eed4",
+  "caption": "Lượt cài app ở Việt Nam đã chững lại sau khi tăng 136% từ 2018. Nhưng tiền quảng cáo không rút đi mà đổi chỗ. App bạn đang dồn tiền cho iOS hay Android? Comment cho Adtek biết.",
   "hashtags": [
    "#adtekagency",
    "#growthmarketing",
@@ -304,8 +304,15 @@
    "#mobilemarketing",
    "#fintech"
   ],
-  "note": "",
-  "cover": "/_blob/c6f8b938fa043a709c40c2f2ca0d6608"
+  "note": "Mở đầu mới: 2 giây đầu chỉ có câu hook chữ to giữa màn hình. Đây là bản ngắn thử nghiệm: nên đăng bản ngắn, rồi so tỷ lệ xem hết và tỷ lệ còn ở giây thứ 2 với các video dài. Bản đầy đủ ở nút phụ.",
+  "cover": "/_blob/c6f8b938fa043a709c40c2f2ca0d6608",
+  "alts": [
+   {
+    "label": "Tải bản đầy đủ 63 giây",
+    "url": "/_blob/0ad0a494853d923fc2566e8e13e4c9ef",
+    "suffix": "day du"
+   }
+  ]
  },
  {
   "slug": "cai-app-gian-lan",
@@ -315,7 +322,7 @@
   "topic": "Bao nhiêu lượt cài app là gian lận? (đố số liệu)",
   "hook": "Cứ 100 lượt cài app ở Việt Nam, bao nhiêu lượt là gian lận? A, 5 lượt. B, 20 lượt. C, 50 lượt. Comment đáp án, kết quả ở cuối video.",
   "duration": "65 giây",
-  "url": "/_blob/a2f4b60f99d4c28dc6e8451477b20001",
+  "url": "/_blob/a2cc00d2711945a9fc0b7afd59fd94a0",
   "caption": "Cứ 100 lượt cài app ở Việt Nam, bao nhiêu lượt là gian lận? Xem 2 gợi ý từ báo cáo của AppsFlyer rồi đoán thử. Bạn đoán A, B hay C? Comment đáp án cho Adtek nhé",
   "hashtags": [
    "#adtekagency",
@@ -325,7 +332,7 @@
    "#adfraud",
    "#mobilemarketing"
   ],
-  "note": "",
+  "note": "Mở đầu mới: 2 giây đầu chỉ có câu hook chữ to giữa màn hình. Khung đầu có câu hỏi và 3 lựa chọn, không lộ đáp án.",
   "cover": "/_blob/b00301188ea66f452e9648cb37c26ae2"
  },
  {
