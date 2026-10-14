@@ -53,3 +53,4 @@
 | 2026-10-13 | adtek-acf-rest.php 1.1.0: xóa cache WP-Optimize theo link trang (trang chủ /en/ không tự xóa cache) | mu-plugins | Chờ upload |
 | 2026-10-14 | Thêm tài liệu bàn giao sang tài khoản Claude mới (HANDOVER.md) và lưu nguyên văn prompt 2 lịch tự động (content/editorial/routines/) | content/editorial | Đã áp dụng |
 | 2026-10-14 18:10 | Tạo và đăng trang "Chính sách bảo mật" theo Luật 91/2025/QH15 và Nghị định 356/2025/NĐ-CP (17 mục, có mục riêng cho ứng dụng Adtek Blog Publisher để khai báo Privacy policy URL trên Meta); nguồn lưu tại content/pages/chinh-sach-bao-mat.html | Trang 6104, /chinh-sach-bao-mat/ | Đã đăng |
+| 2026-10-14 18:18 | Thêm tools/fb_post.py: đăng ảnh bìa + caption không link lên Page, Page tự bình luận link bài blog; chỉ đăng khi bài blog đã lên sóng, chống đăng trùng. Chưa chạy thật (chờ Page token cho graph.facebook.com) | tools, content/editorial/README.md | Chờ kết nối Graph API |

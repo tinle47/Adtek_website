@@ -1,0 +1,105 @@
+"""Đăng bài Facebook cho bài blog trong content/editorial/calendar.json.
+
+Mỗi bài đăng dạng ảnh (ảnh bìa content/posts/<slug>-cover.jpg) kèm fb_caption, không có link trong caption.
+Ngay sau đó Page tự bình luận fb_comment (tiêu đề ngắn + link bài blog) dưới bài.
+
+Page access token do proxy gắn vào header Authorization khi gọi graph.facebook.com (network secret của môi
+trường), script không đọc token. Bài đăng vào "me", tức là đúng Page sở hữu token.
+
+Cách dùng:
+  python3 tools/fb_post.py check                 kiểm tra kết nối (chỉ đọc): token thuộc Page nào
+  python3 tools/fb_post.py post <số bài>         đăng ảnh + caption, rồi bình luận link (chỉ khi bài blog đã lên sóng)
+  python3 tools/fb_post.py post <số bài> --dry-run   in nội dung sẽ gửi, không đăng
+
+Chạy lại "post" an toàn: bài đã có fb_post_id thì không đăng lại, chỉ bình luận bù nếu còn thiếu fb_comment_id.
+"""
+import json
+import subprocess
+import sys
+from datetime import datetime
+
+from blog_post import ROOT, VN, find, load, save
+from fix_alt import api
+
+GRAPH = "https://graph.facebook.com/v23.0"
+
+
+def graph(method, path, fields=None, form_strings=None, files=None):
+    url = f"{GRAPH}/{path}" + (f"?fields={fields}" if fields else "")
+    cmd = ["curl", "-sS", "--max-time", "120", "-X", method, url]
+    for k, v in (form_strings or {}).items():
+        cmd += ["--form-string", f"{k}={v}"]  # --form-string: không hiểu @ hay < trong caption là tên file
+    for k, v in (files or {}).items():
+        cmd += ["-F", f"{k}=@{v}"]
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    try:
+        return json.loads(r.stdout)
+    except json.JSONDecodeError:
+        return {"error": {"message": (r.stdout or r.stderr)[:300]}}
+
+
+def fail(what, r):
+    sys.exit(f"Lỗi {what}: {json.dumps(r.get('error', r), ensure_ascii=False)[:400]}")
+
+
+def check():
+    r = graph("GET", "me", fields="id,name")
+    if "id" not in r:
+        fail("kết nối Graph API", r)
+    print(json.dumps({"page_id": r["id"], "page_name": r["name"]}, ensure_ascii=False))
+
+
+def is_live(post):
+    """Bài blog đã đăng thật: WordPress báo publish và URL công khai trả về 200."""
+    if not post.get("wp_id"):
+        return False
+    wp = api("GET", f"posts/{post['wp_id']}?_fields=status,link")
+    if wp.get("status") != "publish":
+        return False
+    code = subprocess.run(["curl", "-sS", "-o", "/dev/null", "-w", "%{http_code}", "--max-time", "60", wp["link"]],
+                          capture_output=True, text=True).stdout
+    return code == "200"
+
+
+def post_fb(data, post, dry_run=False):
+    image = ROOT / f"content/posts/{post['slug']}-cover.jpg"
+    caption, comment = post.get("fb_caption"), post.get("fb_comment")
+    if not caption or not comment or not image.exists():
+        sys.exit(f"Bài {post['no']}: thiếu fb_caption, fb_comment hoặc ảnh bìa {image.name}")
+    if "http" in caption:
+        sys.exit(f"Bài {post['no']}: caption có link, cần bỏ link khỏi caption")
+    if dry_run:
+        print(json.dumps({"image": str(image.relative_to(ROOT)), "caption": caption, "comment": comment},
+                         ensure_ascii=False, indent=1))
+        return
+    if not post.get("fb_post_id"):
+        if not is_live(post):
+            sys.exit(f"Bài {post['no']}: bài blog chưa lên sóng, chưa đăng Facebook")
+        r = graph("POST", "me/photos", form_strings={"message": caption, "published": "true"},
+                  files={"source": image})
+        if "post_id" not in r:
+            fail("đăng ảnh", r)
+        post["fb_post_id"] = r["post_id"]
+        post["fb_posted"] = datetime.now(VN).isoformat(timespec="seconds")
+        post["fb_status"] = "posted"
+        save(data)  # lưu ngay để lần chạy lại không đăng trùng
+    if not post.get("fb_comment_id"):
+        r = graph("POST", f"{post['fb_post_id']}/comments", form_strings={"message": comment})
+        if "id" not in r:
+            post["fb_status"] = "comment_failed"
+            save(data)
+            fail("bình luận link (chạy lại lệnh post để bình luận bù)", r)
+        post["fb_comment_id"] = r["id"]
+        post["fb_status"] = "posted"
+        save(data)
+    print(json.dumps({"no": post["no"], "fb_post_id": post["fb_post_id"], "fb_comment_id": post["fb_comment_id"],
+                      "url": f"https://www.facebook.com/{post['fb_post_id']}"}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    cmd = sys.argv[1]
+    if cmd == "check":
+        check()
+        sys.exit()
+    data = load()
+    post_fb(data, find(data, int(sys.argv[2])), dry_run="--dry-run" in sys.argv)
