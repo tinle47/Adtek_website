@@ -51,3 +51,4 @@
 | 2026-10-13 | Đổi tiêu đề trang Báo chí EN thành "Press" và meta description sang tiếng Anh (footer EN hết hiện "Báo chí") | Trang 5242 | Đã áp dụng |
 | 2026-10-13 | Soạn form 264 tiếng Anh đủ trường như form VI 1307 (content/pages/contact-form-en.json); REST của CF7 trả thành công nhưng không lưu | Form 264 | Chờ dán tay trong wp-admin |
 | 2026-10-13 | adtek-acf-rest.php 1.1.0: xóa cache WP-Optimize theo link trang (trang chủ /en/ không tự xóa cache) | mu-plugins | Chờ upload |
+| 2026-10-14 | Thêm tài liệu bàn giao sang tài khoản Claude mới (HANDOVER.md) và lưu nguyên văn prompt 2 lịch tự động (content/editorial/routines/) | content/editorial | Đã áp dụng |
