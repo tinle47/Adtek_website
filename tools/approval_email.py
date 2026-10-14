@@ -12,6 +12,7 @@ from datetime import date, datetime
 
 from fix_alt import api
 from blog_post import APPROVAL_WINDOW, VN, find, load, save
+from fb_post import message
 
 TO = "hi@tinle.co"
 DAYS = ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"]
@@ -49,7 +50,7 @@ def fb(post):
     """Bài đăng Facebook đi kèm (nội dung và bình luận chứa link), để duyệt cùng bài blog."""
     if not post.get("fb_caption"):
         return ""
-    cap = html.escape(post["fb_caption"]).replace("\n", "<br>")
+    cap = html.escape(message(post)).replace("\n", "<br>")
     return (f'<p style="margin:0 0 4px;font-size:14px;font-weight:600;color:#333">Bài đăng Facebook:</p>'
             f'<div style="margin:0 0 8px;padding:10px 12px;background-color:#F4F6FA;border-radius:6px;font-size:13px;line-height:1.55;color:#333">{cap}</div>'
             f'<p style="margin:0 0 14px;font-size:13px;color:#555">Bình luận đầu tiên: {html.escape(post.get("fb_comment", ""))}</p>')
