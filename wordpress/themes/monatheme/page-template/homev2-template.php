@@ -264,6 +264,8 @@ while (have_posts()):
                 'ignore_sticky_posts' => true,
                 'no_found_rows'       => true,
             ]);
+            // Dấu để kiểm tra từ xa: file mới đã chạy chưa, lấy được mấy bài.
+            echo '<!-- adtek-home-news v1: ' . (int) $mona_home_news->post_count . ' -->';
             if ($mona_home_news->have_posts()) {
                 $is_en = apply_filters('wpml_current_language', null) === 'en';
                 $news_blog_id = (int) get_option('page_for_posts');
