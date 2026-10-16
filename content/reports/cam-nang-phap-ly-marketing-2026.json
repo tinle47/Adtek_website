@@ -346,9 +346,12 @@
   "year_reports": "2026"
  },
  "wp": {
-  "pdf_id": 6151,
-  "cover_id": 6152,
-  "id": 6153
+  "id": 6153,
+  "old_pdf_ids": [
+   6151
+  ],
+  "pdf_id": 6188,
+  "cover_id": 6189
  },
  "cover": {
   "title": "Cẩm nang *pháp lý* marketing 2026",
