@@ -38,6 +38,46 @@
     <link rel="stylesheet" href="<?php echo get_site_url() ?>/template/css/hu.css" />
     <script src="<?php echo get_site_url() ?>/template/js/libs/jquery/jquery.min.js"></script>
     <?php wp_head(); ?>
+    <style>
+        /* Nút theo chuẩn trang chủ (Home V2): nền cam #F27407, chữ trắng, bo tròn hai đầu;
+           rê chuột trên desktop: nền navy #030D42, viền trắng. "body" tăng độ ưu tiên để thắng CSS gốc của theme. */
+        body .btn,
+        body .btn.btn-red,
+        body .btn-second {
+            background: #F27407;
+            border: 0.1rem solid transparent;
+            border-radius: 100rem;
+            color: #fff;
+            transition: background-color 0.4s, border-color 0.4s;
+        }
+        body .btn .txt,
+        body .btn-second .txt {
+            color: #fff;
+        }
+        /* Nút phụ (viền): cùng màu cam và bo tròn, rê chuột thì tô cam. */
+        body .btn-four {
+            background: #fff;
+            border: 0.1rem solid #F27407;
+            border-radius: 100rem;
+        }
+        body .btn-four .txt {
+            color: #F27407;
+        }
+        @media (min-width: 1025px) {
+            body .btn:hover,
+            body .btn.btn-red:hover,
+            body .btn-second:hover {
+                background: #030D42;
+                border-color: #fff;
+            }
+            body .btn-four:hover {
+                background: #F27407;
+            }
+            body .btn-four:hover .txt {
+                color: #fff;
+            }
+        }
+    </style>
 </head>
 <?php
 if (wp_is_mobile()) {
