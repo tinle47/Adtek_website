@@ -84,6 +84,10 @@ ol.sum li:before{{content:counter(s,decimal-leading-zero);position:absolute;left
 ol.srcs{{font-size:8pt;line-height:1.45;padding-left:5mm}}
 ol.srcs li{{margin-bottom:1.8mm;break-inside:avoid}}
 ol.srcs .u{{color:{MUTED};word-break:break-all}}
+ol.srcs.two{{columns:2;column-gap:8mm;font-size:7.2pt}}
+figure.tbl{{break-inside:auto}}
+figure.tbl thead{{display:table-header-group}}
+figure.tbl tr{{break-inside:avoid}}
 .note{{font-size:8pt;color:{MUTED};margin-top:6mm;border-top:.3mm solid {LINE};padding-top:3mm}}
 .full{{width:210mm;height:297mm;position:relative;overflow:hidden;background:{NAVY};color:#fff}}
 /* Báo cáo chuyên sâu (khóa chapters): mục lục, trang mở chương, mục chảy liên tục */
@@ -94,6 +98,7 @@ ol.srcs .u{{color:{MUTED};word-break:break-all}}
 .opener ol{{list-style:none;margin-top:12mm;font-size:10pt;color:#374151}}
 .opener ol li{{padding:2mm 0}}
 .sec{{margin-bottom:9mm}}
+.sec.pg{{break-before:page;padding-top:.2mm}}
 .sec h2{{break-after:avoid}}
 .sec p.body{{margin-bottom:3mm;text-align:left}}
 .sec .visual{{break-inside:avoid}}
@@ -185,7 +190,7 @@ def cover_page(r):
 {logo_img(fg)}
 <div style="position:absolute;left:18mm;right:22mm;top:58mm">
  <div class="lab">Báo cáo Adtek &nbsp;·&nbsp; {esc(r["period"])}</div>
- <h1 style="font-size:46pt;line-height:1.04;margin:7mm 0 9mm">{hl(c.get("title") or r["title"])}</h1>
+ <h1 style="font-size:{40 if len(c.get("title") or r["title"]) > 30 else 46}pt;line-height:1.06;margin:7mm 0 9mm">{hl(c.get("title") or r["title"])}</h1>
  <div style="font-size:14pt;line-height:1.45;opacity:.85;max-width:160mm">{esc(r["subtitle"])}</div>
 </div>
 {block(r, 118, content)}
@@ -201,7 +206,7 @@ def timeline(c):
 def figures(c):
     """Hình mô tả dạng 2-3 con số lớn, cho phần không có chuỗi số để vẽ biểu đồ (văn bản luật, mốc thời gian)."""
     cells = "".join(f'<div class="fig"><div class="v">{esc(i["value"])}</div><div class="l">{esc(i["label"])}</div></div>' for i in c["items"])
-    return (f'<figure><figcaption>{esc(c["title"])}</figcaption><div class="figs" style="grid-template-columns:repeat({len(c["items"])},1fr)">{cells}</div>'
+    return (f'<figure><figcaption>{esc(c["title"])}</figcaption><div class="figs" style="grid-template-columns:repeat({len(c["items"]) if len(c["items"]) <= 4 else 3},1fr)">{cells}</div>'
             f'<div class="src">Nguồn: {esc(c["source"])}</div></figure>')
 
 
@@ -270,7 +275,8 @@ def unit_txt(unit):
 
 
 def fig_wrap(c, inner):
-    return (f'<figure class="visual"><figcaption>{esc(c.get("title", ""))}</figcaption>{inner}'
+    cls = "visual tbl" if c.get("type") == "table" else "visual"  # bảng dài được ngắt trang, lặp dòng tiêu đề
+    return (f'<figure class="{cls}"><figcaption>{esc(c.get("title", ""))}</figcaption>{inner}'
             f'<div class="src">Nguồn: {esc(c.get("source", ""))}</div></figure>')
 
 
@@ -353,8 +359,8 @@ def visual(c):
     return {"column": columns, "line": line, "stacked": stacked, "table": table}.get(t, chart)(c)
 
 
-def section_html(s, sub=False):
-    out = [f'<div class="sec"><h2 class="{"sub" if sub else ""}">{esc(s["heading"])}</h2>']
+def section_html(s, sub=False, page=False):
+    out = [f'<div class="sec{" pg" if page else ""}"><h2 class="{"sub" if sub else ""}">{esc(s["heading"])}</h2>']
     out.append(visual(s.get("visual") or s.get("chart")))
     out += [f'<p class="body">{esc(p)}</p>' for p in s.get("body", [])]
     if s.get("bullets"):
@@ -378,8 +384,7 @@ def deep_body(r):
         out.append(f'<div class="opener"><div class="eyebrow">Chương {n:02d}<span style="color:#fff;font-size:1pt">CH-{n:02d}</span></div>'
                    f'<div class="no">{n:02d}</div><h1>{esc(ch["title"])}</h1><p>{esc(ch.get("intro", ""))}</p>'
                    f'<ol>{"".join(f"<li>{esc(s["heading"])}</li>" for s in ch["sections"])}</ol></div>')
-        out.append('<div class="page"></div>')
-        out += [section_html(s) for s in ch["sections"]]
+        out += [section_html(s, page=True) for s in ch["sections"]]  # mỗi mục một trang mới: tiêu đề, hình, diễn giải, nhận định
     ap = r.get("appendix") or {}
     out.append('<div class="opener"><div class="eyebrow">Phụ lục<span style="color:#fff;font-size:1pt">CH-AP</span></div>'
                '<h1>Bảng số liệu, thuật ngữ và nguồn</h1></div><div class="page"></div>')
@@ -387,7 +392,7 @@ def deep_body(r):
     if ap.get("glossary"):
         out.append('<div class="sec"><h2 class="sub">Thuật ngữ</h2><dl class="gl">' +
                    "".join(f'<dt>{esc(g["term"])}</dt><dd>{esc(g["def"])}</dd>' for g in ap["glossary"]) + "</dl></div>")
-    out.append('<div class="page"></div><div class="sec"><h2 class="sub">Nguồn dữ liệu</h2><ol class="srcs">')
+    out.append('<div class="page"></div><div class="sec"><h2 class="sub">Nguồn dữ liệu</h2><ol class="srcs two">')
     out += [f'<li>{esc(s["publisher"])}, {esc(s["name"])}{", " + esc(s["date"]) if s.get("date") else ""}.'
             f'{"<br><span class=u>" + esc(s["url"]) + "</span>" if s.get("url") else ""}</li>' for s in r["sources"]]
     out.append(f'</ol><div class="note">Báo cáo do Adtek tổng hợp và phân tích từ các nguồn công khai nêu trên, số liệu cập nhật tới '
