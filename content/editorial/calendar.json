@@ -509,7 +509,7 @@
     ],
     "hero": "4%",
     "hero_text": "chi tiêu GMV Max để giảm 1% phí",
-    "style": "mark"
+    "style": "poster"
    },
    "summary": "Bài giải thích quảng cáo sàn thương mại điện tử tại Việt Nam năm 2026: các loại Dịch vụ Hiển thị Shopee, chế độ Tối đa Doanh thu (GMV Max), Product GMV Max và LIVE GMV Max của TikTok Shop, cách mỗi sàn ghi nhận doanh thu quảng cáo và việc phí giao dịch đang gắn với chi tiêu quảng cáo. Phần dùng ngay là bảng tính ROAS hòa vốn sau phí sàn (ví dụ giả định) và checklist thiết lập quảng cáo trên hai sàn trước 11.11.",
    "confirm": [
@@ -1779,9 +1779,45 @@
    "status": "planned",
    "caption": null,
    "hashtags": null,
-   "images": null,
+   "images": [
+    "content/facebook/fb-20261028/1.jpg",
+    "content/facebook/fb-20261028/2.jpg",
+    "content/facebook/fb-20261028/3.jpg",
+    "content/facebook/fb-20261028/4.jpg",
+    "content/facebook/fb-20261028/5.jpg",
+    "content/facebook/fb-20261028/6.jpg",
+    "content/facebook/fb-20261028/7.jpg"
+   ],
    "approval": null,
-   "fb_post_id": null
+   "fb_post_id": null,
+   "design": {
+    "title": "KPI phiên livestream",
+    "promise": "Chỉ số cần xem mỗi 15 phút khi đang live",
+    "steps": [
+     {
+      "title": "Lượt xem và người xem cùng lúc",
+      "body": "Xem trên bảng điều khiển live. Thấp thì kiểm tra quảng cáo, tung sản phẩm mồi."
+     },
+     {
+      "title": "Thời gian xem trung bình",
+      "body": "Tổng thời gian xem chia số người xem. Thấp thì đổi sang demo, minigame hoặc đếm ngược."
+     },
+     {
+      "title": "Tỷ lệ nhấp sản phẩm",
+      "body": "Lượt nhấp sản phẩm chia lượt xem. Thấp thì ghim lại sản phẩm và nói rõ giá."
+     },
+     {
+      "title": "Tỷ lệ chuyển đổi",
+      "body": "Số đơn chia lượt nhấp sản phẩm. Nhấp nhiều mà không mua thì xem lại giá và trang sản phẩm."
+     },
+     {
+      "title": "GMV mỗi giờ và ROAS quảng cáo live",
+      "body": "So GMV mỗi giờ với mức hòa vốn. ROAS dưới mức hòa vốn 2 khung liền thì giảm ngân sách."
+     }
+    ],
+    "end": "Doanh số thấp thì tìm *mắt xích hỏng*: vào xem, ở lại, nhấp sản phẩm, đặt đơn",
+    "source": "Bài blog Livestream bán hàng hiệu quả"
+   }
   },
   {
    "id": "fb-20261029",
@@ -1827,9 +1863,46 @@
    "status": "planned",
    "caption": null,
    "hashtags": null,
-   "images": null,
+   "images": [
+    "content/facebook/fb-20261030/1.jpg"
+   ],
    "approval": null,
-   "fb_post_id": null
+   "fb_post_id": null,
+   "design": {
+    "title": "Livestream bán hàng: một phiên 3 giờ *lãi hay lỗ*?",
+    "rows": [
+     [
+      "Doanh thu thuần (440 đơn giao thành công)",
+      "140,800,000"
+     ],
+     [
+      "Giá vốn 35%",
+      "-49,280,000"
+     ],
+     [
+      "Phí sàn và phí xử lý đơn",
+      "-26,664,000"
+     ],
+     [
+      "Voucher, vận chuyển, đóng gói, hàng hoàn, hoa hồng",
+      "-19,812,000"
+     ],
+     [
+      "Quảng cáo LIVE GMV Max",
+      "-25,000,000"
+     ],
+     [
+      "Host, trợ live, KOC, quà",
+      "-11,000,000"
+     ]
+    ],
+    "result": [
+     "Lợi nhuận đóng góp",
+     "9,044,000 đ"
+    ],
+    "note": "GMV 160 triệu đồng (500 đơn x 320,000), lãi 5.7%. Hủy, hoàn lên 20% thì lãi còn khoảng 3.5 triệu. Số liệu giả định để minh họa.",
+    "source": "Bài blog Livestream bán hàng hiệu quả"
+   }
   },
   {
    "id": "fb-20261031",

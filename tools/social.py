@@ -45,15 +45,15 @@ p{{line-height:1.42}}
 def frame(theme, label, source="", foot=None):
     """Khung chung: nhãn dạng bài và logo trên cùng, nguồn và tên miền ở chân ảnh.
     foot: màu nền vùng chân ảnh khi khác nền vùng trên (ví dụ ảnh hai khối màu)."""
-    fg, accent = {"cream": (NAVY, ORANGE), "navy": ("#fff", ORANGE), "orange": (NAVY, NAVY)}[theme]
-    ffg = {"cream": NAVY, "navy": "#fff", "orange": NAVY}[foot or theme]
+    fg = {"cream": NAVY, "navy": "#fff"}[theme]
+    ffg = {"cream": NAVY, "navy": "#fff"}[foot or theme]
     src = f'<div class="src" style="color:{ffg}">Nguồn: {esc(source)}</div>' if source else ""
-    return (f'<div class="lg" style="right:72px">{logo(fg, 70)}</div><div class="label" style="color:{accent}">{esc(label)}</div>'
+    return (f'<div class="lg" style="right:72px">{logo(fg, 70)}</div><div class="label" style="color:{fg}">{esc(label)}</div>'
             f'{src}<div class="site" style="color:{ffg}">adtek.agency</div>')
 
 
-BG = {"cream": CREAM, "navy": NAVY, "orange": ORANGE}
-FG = {"cream": NAVY, "navy": "#fff", "orange": NAVY}
+BG = {"cream": CREAM, "navy": NAVY}
+FG = {"cream": NAVY, "navy": "#fff"}
 
 
 # ---------------------------------------------------------------- dạng bài
@@ -61,13 +61,12 @@ FG = {"cream": NAVY, "navy": "#fff", "orange": NAVY}
 def stat(d, v):
     """Góc số liệu: số lớn đứng trên, cụm chữ đi kèm ngay dưới."""
     theme = ["cream", "navy"][v]
-    num_color = ORANGE if theme != "orange" else NAVY
     n = len(d["num"])
     size = 380 if n <= 3 else 300 if n <= 5 else 230
     css = BASE + f"""
 body{{background:{BG[theme]};color:{FG[theme]}}}
 .copy{{position:absolute;left:72px;right:72px;top:170px;bottom:150px;display:flex;flex-direction:column;justify-content:center}}
-.num{{font-size:{size}px;line-height:.8;color:{num_color};white-space:nowrap}}
+.num{{font-size:{size}px;line-height:.8;color:{ORANGE};white-space:nowrap}}
 h1{{font-size:76px;margin-top:-.08em;max-height:3.4em}}
 p{{font-size:36px;line-height:1.3;margin-top:26px;max-height:4.4em;opacity:.85}}"""
     body = f"""{frame(theme, "Góc số liệu", d.get("source", ""))}
@@ -82,10 +81,10 @@ def term(d, v):
 body{{background:{BG[theme]};color:{FG[theme]}}}
 .copy{{position:absolute;left:72px;right:72px;top:190px}}
 h1{{font-size:132px;line-height:1;color:{ORANGE if theme == 'navy' else NAVY};max-height:2.1em}}
-.kind{{font-family:NR,serif;font-style:italic;font-size:34px;margin:18px 0 34px;color:{ORANGE}}}
+.kind{{font-family:NR,serif;font-style:italic;font-size:34px;margin:18px 0 34px;opacity:.75}}
 .def{{font-size:42px;line-height:1.28;font-weight:400;max-height:5.5em}}
 .why{{position:absolute;left:72px;right:72px;bottom:130px;font-size:30px;line-height:1.42;max-height:4.4em}}
-.why b{{color:{ORANGE};font-weight:600}}"""
+.why b{{font-weight:600}}"""
     body = f"""{frame(theme, "Thuật ngữ 1 phút", d.get("source", ""))}
 <div class="copy"><h1 class="fit">{hl(d['term'])}</h1><div class="kind">{esc(d.get('kind', ''))}</div>
 <div class="def fit">{hl(d['definition'])}</div></div>
@@ -100,7 +99,7 @@ def myth(d, v):
 body{{background:{CREAM}}}
 .a{{position:absolute;left:0;right:0;top:0;height:470px;background:{CREAM};padding:150px 72px 0}}
 .b{{position:absolute;left:0;right:0;top:470px;bottom:0;background:{NAVY};color:#fff;padding:56px 72px 0}}
-.t{{font-weight:600;font-size:28px;color:{ORANGE};margin-bottom:14px}}
+.t{{font-weight:600;font-size:28px;opacity:.75;margin-bottom:14px}}
 .a h2{{font-size:76px;max-height:3.4em;color:{NAVY}}}
 .b p{{font-size:42px;line-height:1.28;max-height:6.2em}}
 """
@@ -109,13 +108,12 @@ body{{background:{CREAM}}}
         return [(css, body)]
     css = BASE + f"""
 body{{background:{NAVY}}}
-.a{{position:absolute;left:0;top:0;bottom:0;width:470px;background:{ORANGE};padding:190px 48px 0 72px;color:{NAVY}}}
+.a{{position:absolute;left:0;top:0;bottom:0;width:470px;background:{CREAM};padding:190px 48px 0 72px;color:{NAVY}}}
 .b{{position:absolute;left:470px;right:0;top:0;bottom:0;color:#fff;padding:190px 72px 0 52px}}
 .t{{font-weight:600;font-size:28px;margin-bottom:16px}}
-.a .t{{color:{NAVY}}}.b .t{{color:{ORANGE}}}
+
 .a h2{{font-size:56px;max-height:9em}}
-.b p{{font-size:36px;line-height:1.28;max-height:15em}}
-.a .hl{{color:inherit}}"""
+.b p{{font-size:36px;line-height:1.28;max-height:15em}}"""
     body = f"""<div class="a"><div class="t">Hiểu lầm</div><h2 class="fit bal">“{hl(d['myth'])}”</h2></div>
 <div class="b"><div class="t">Sự thật</div><p class="fit">{hl(d['fact'])}</p></div>
 <div class="lg" style="right:72px">{logo('#fff', 70)}</div><div class="label" style="color:{NAVY}">Hiểu lầm và sự thật</div>
@@ -125,8 +123,8 @@ body{{background:{NAVY}}}
 
 def question(d, v):
     """Câu hỏi mở: câu hỏi lớn, các lựa chọn đánh chữ A, B, C (không khung tròn), mời trả lời ở bình luận."""
-    theme = ["orange", "navy"][v]
-    letter = NAVY if theme == "orange" else ORANGE
+    theme = ["cream", "navy"][v]
+    letter = ORANGE
     opts = "".join(f'<li><span>{chr(65 + i)}</span>{esc(o)}</li>' for i, o in enumerate(d.get("options", [])))
     css = BASE + f"""
 body{{background:{BG[theme]};color:{FG[theme]}}}
@@ -137,7 +135,6 @@ ul{{list-style:none;margin-top:70px}}
 li{{display:flex;align-items:baseline;gap:26px;font-size:40px;font-weight:600;padding:12px 0}}
 li span{{font-family:NR,serif;font-size:56px;color:{letter};width:44px}}
 .cta{{position:absolute;left:72px;bottom:96px;font-size:24px;font-weight:600;opacity:.8}}
-{'.hl{color:inherit}' if theme == 'orange' else ''}
 .site{{display:none}}"""
     body = f"""{frame(theme, "Câu hỏi mở")}<div class="q"><div class="ctx fit">{esc(d.get('context', ''))}</div><h1 class="fit bal">{hl(d['question'])}</h1><ul>{opts}</ul></div><div class="cta">Trả lời ở phần bình luận</div>"""
     return [(css, body)]
@@ -174,9 +171,9 @@ table{{width:100%;border-collapse:collapse;font-size:{32 if len(d['rows']) <= 5 
 td{{padding:{14 if len(d['rows']) <= 5 else 11}px 20px}}
 td:last-child{{text-align:right;font-weight:600;white-space:nowrap}}
 tr:nth-child(odd) td{{background:{band}}}
-.res{{margin-top:22px;background:{ORANGE};color:{NAVY};display:flex;justify-content:space-between;align-items:baseline;padding:22px 20px}}
+.res{{margin-top:22px;background:{NAVY if theme == 'cream' else CREAM};color:{'#fff' if theme == 'cream' else NAVY};display:flex;justify-content:space-between;align-items:baseline;padding:22px 20px}}
 .res span{{font-size:30px;font-weight:600}}
-.res b{{font-family:NR,serif;font-weight:600;font-size:64px;line-height:1}}
+.res b{{font-family:NR,serif;font-weight:600;font-size:64px;line-height:1;color:{ORANGE}}}
 .note{{margin-top:16px;font-size:22px;line-height:1.4;opacity:.75}}"""
     body = f"""{frame(theme, "Phép tính nhanh", d.get("source", ""))}<h1 class="fit bal">{hl(d['title'])}</h1>
 <div class="calc"><table>{rows}</table><div class="res"><span>{esc(ra)}</span><b>{esc(rb)}</b></div><div class="note">{esc(d.get('note', ''))}</div></div>"""
@@ -200,7 +197,7 @@ def carousel(d, v):
 body{{background:{BG[t]};color:{FG[t]}}}
 .num{{position:absolute;left:72px;top:190px;font-size:360px;line-height:.8;color:{ORANGE}}}
 h1{{position:absolute;left:72px;right:72px;top:500px;font-size:84px;max-height:3.4em}}
-.go{{position:absolute;left:72px;bottom:110px;font-size:28px;font-weight:600;color:{ORANGE}}}"""
+.go{{position:absolute;left:72px;bottom:110px;font-size:28px;font-weight:600;opacity:.75}}"""
     body = f"""{frame(t, d['title'])}<div class="num">{len(steps)}</div><h1 class="fit bal phrase">{hl(d['promise'])}</h1>
 <div class="go">Lướt sang để xem từng bước</div>{pageno(1, t)}"""
     pages.append((css, body))
@@ -216,16 +213,13 @@ p{{font-size:40px;line-height:1.28;margin-top:24px;max-height:6.5em}}"""
         body = f"""{frame(t, d['title'])}<div class="copy"><div class="num">{i + 1}</div><h1 class="fit bal">{hl(s['title'])}</h1>
 <p class="fit">{esc(s['body'])}</p></div>{pageno(i + 2, t)}"""
         pages.append((css, body))
-    # trang kết
-    t = "orange"
+    # trang kết: cùng nền với trang bìa
+    t = themes[0]
     css = common + f"""
-body{{background:{ORANGE};color:{NAVY}}}
-.hl{{color:inherit}}
+body{{background:{BG[t]};color:{FG[t]}}}
 h1{{position:absolute;left:72px;right:72px;top:200px;font-size:78px;max-height:4.5em}}
-.go{{position:absolute;left:72px;bottom:150px;font-size:32px;font-weight:600}}"""
-    src = f'<div class="src">Nguồn: {esc(d["source"])}</div>' if d.get("source") else ""
-    body = f"""<div class="lg" style="right:72px">{logo(NAVY, 70)}</div><div class="label" style="color:{NAVY}">{esc(d['title'])}</div>
-<h1 class="fit bal">{hl(d['end'])}</h1><div class="go">Xem bài đầy đủ ở phần bình luận</div>{src}{pageno(total, t)}"""
+.go{{position:absolute;left:72px;bottom:150px;font-size:32px;font-weight:600;opacity:.75}}"""
+    body = f"""{frame(t, d['title'], d.get('source', ''))}<h1 class="fit bal">{hl(d['end'])}</h1><div class="go">Xem bài đầy đủ ở phần bình luận</div>{pageno(total, t)}"""
     pages.append((css, body))
     return pages
 
