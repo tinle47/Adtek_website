@@ -27,7 +27,8 @@ ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "tools/assets"
 SIZES = {"blog": (1200, 630), "fb": (1080, 1080)}
 # Khổ blog: trang danh sách bài của WordPress cắt giữa ảnh còn 370x250, mất khoảng 134px mỗi bên ảnh 1200x630.
-# Chữ và logo khổ ngang đặt cách mép trái phải ít nhất 140px; chỉ họa tiết được tràn ra ngoài vùng này.
+# Trang /blog/ cắt ảnh thành 870x362 (tỉ lệ 2.4:1), mất khoảng 65px ở mép trên và mép dưới.
+# Vùng an toàn cho chữ và logo khổ ngang: x 140 đến 1060, y 70 đến 560; chỉ họa tiết được tràn ra ngoài vùng này.
 NAVY, ORANGE, CREAM = "#002D72", "#FF9014", "#F4EEE3"
 esc = html.escape
 
@@ -167,14 +168,14 @@ h1{{line-height:1.12}}
 .sq h1{{font-size:104px;margin:-.12em 0 24px;max-height:3.4em}}
 .sq .sub{{font-size:34px;max-width:860px;max-height:3em}}
 .sq .foot{{left:72px;right:72px;bottom:64px;font-size:22px}}
-.ls .lg{{position:absolute;left:140px;top:44px}}.ls .meta{{right:140px;top:50px;font-size:15px}}
-.ls .copy{{left:140px;top:150px;width:520px}}
+.ls .lg{{position:absolute;left:140px;top:84px}}.ls .meta{{right:140px;top:88px;font-size:15px}}
+.ls .copy{{left:140px;top:178px;width:520px}}
 .ls .kicker{{font-size:22px}}
 .ls h1{{font-size:76px;margin:10px 0 16px;max-height:2.3em}}
 .ls .sub{{font-size:25px;max-height:4.4em}}
-.ls .unit{{left:740px;right:140px;top:150px}}
+.ls .unit{{left:740px;right:140px;top:178px}}
 .ls .cap{{font-size:28px}}
-.ls .foot{{left:140px;right:140px;bottom:42px;font-size:17px}}"""
+.ls .foot{{left:140px;right:140px;bottom:80px;font-size:17px}}"""
     body = f"""<div class="lg">{logo(NAVY, 78 if sq else 58)}</div><div class="meta"><b>Adtek Insights</b><br>Số {f['no']:02d}, {f['date']}</div>
 {main}<div class="foot"><div>{chips}</div><div>adtek.agency</div></div>"""
     return css, body
@@ -211,7 +212,7 @@ body{{background:{NAVY};color:#fff}}
 .num{{font-size:{hero}px;line-height:.8;color:{NAVY};white-space:nowrap}}
 .cap{{margin-top:16px;font-size:32px;line-height:1.12;color:{NAVY};max-height:3.4em}}
 .copy{{position:absolute;left:600px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
-.lg{{position:absolute;right:140px;top:44px}}
+.lg{{position:absolute;right:140px;top:84px}}
 .kicker{{color:{ORANGE};font-size:23px}}
 h1{{font-size:80px;line-height:1.1;margin:10px 0 16px;max-height:2.3em}}
 .sub{{font-size:25px;line-height:1.4;color:#C9D6EE;max-height:4.3em}}
@@ -244,7 +245,7 @@ h1{{font-weight:900;line-height:1.12;letter-spacing:-.01em}}
 .sq .sub{{font-size:32px;max-height:4.3em;max-width:600px}}
 .sq .site{{left:72px;bottom:64px;font-size:22px}}
 .ls .big{{height:760px;right:-240px;bottom:-230px}}
-.ls .lg{{left:140px;top:44px}}
+.ls .lg{{left:140px;top:84px}}
 .ls .copy{{position:absolute;left:140px;top:0;bottom:0;width:500px;display:flex;flex-direction:column;justify-content:center;padding-top:30px}}
 .ls .kicker{{font-size:23px}}
 .ls h1{{font-size:78px;margin:10px 0 16px;max-height:2.3em}}
@@ -280,7 +281,7 @@ h1{{flex:1;font-size:74px;line-height:1.12;max-height:4.5em}}
     css = f"""
 body{{background:{CREAM};color:{NAVY}}}
 .top{{position:absolute;left:0;top:0;bottom:0;width:740px;padding:0 60px 0 140px;background:{NAVY};color:#fff;display:flex;flex-direction:column;justify-content:center}}
-.lg{{position:absolute;left:140px;top:44px}}
+.lg{{position:absolute;left:140px;top:84px}}
 .kicker{{color:{ORANGE};font-size:23px}}
 h1{{font-size:80px;line-height:1.12;margin:10px 0 16px;max-height:2.3em}}
 .sub{{font-size:24px;line-height:1.42;color:#C9D6EE;max-height:4.3em}}
@@ -313,7 +314,7 @@ h1{{line-height:1.1}}
 .sq .sub{{font-size:32px;max-height:2.9em;margin-left:8px}}
 .ls{{--hero:{420 if n == 1 else 330 if n == 2 else 220}px}}
 .ls .corner{{width:380px;height:380px;right:-110px;top:-150px}}
-.ls .lg{{right:140px;top:46px}}
+.ls .lg{{right:140px;top:84px}}
 .ls .copy{{position:absolute;left:140px;right:140px;top:0;bottom:0;display:flex;align-items:center;gap:44px}}
 .ls .num{{flex:none}}
 .ls .text{{flex:1}}
@@ -350,11 +351,11 @@ display:flex;align-items:center;justify-content:center;font-weight:900;letter-sp
 .sq .nb{{right:72px;top:640px;width:420px;font-size:96px;max-height:2.3em}}
 .sq .vs{{width:170px;height:170px;font-size:70px;top:52%}}
 .sq .band{{left:0;right:0;bottom:0;padding:34px 72px 40px;font-size:36px;max-height:4.4em}}
-.ls .lg{{left:140px;top:44px}}.ls .kicker{{left:140px;top:140px;font-size:23px}}
-.ls .na{{left:140px;top:190px;width:360px;font-size:80px;max-height:2.3em}}
-.ls .nb{{right:140px;top:190px;width:360px;font-size:80px;max-height:2.3em}}
+.ls .lg{{left:140px;top:84px}}.ls .kicker{{left:140px;top:170px;font-size:23px}}
+.ls .na{{left:140px;top:210px;width:360px;font-size:80px;max-height:2.3em}}
+.ls .nb{{right:140px;top:210px;width:360px;font-size:80px;max-height:2.3em}}
 .ls .vs{{width:128px;height:128px;font-size:52px;top:46%}}
-.ls .band{{left:0;right:0;bottom:0;text-align:center;padding:22px 160px 26px;font-size:24px;max-height:3.8em}}"""
+.ls .band{{left:0;right:0;bottom:0;text-align:center;padding:22px 160px 84px;font-size:24px;max-height:5.6em}}"""
     cap = html.unescape(f["cap"])
     if cap[1:2].islower() and cap.split()[0] not in src:  # "Sàn, chia..." đọc liền sau số: "2 sàn, chia..."
         cap = cap[0].lower() + cap[1:]
@@ -384,7 +385,7 @@ h1{{font-weight:900;line-height:1.12}}
 .sq .kicker{{font-size:30px}}.sq h1{{font-size:86px;margin:12px 0 16px;max-height:2.3em}}.sq .sub{{font-size:30px;max-height:4.3em}}
 .sq .paper{{left:72px;right:72px;bottom:0;height:430px;padding:46px 56px}}
 .sq .paper h5{{font-size:26px;margin-bottom:10px}}.sq .paper li{{font-size:32px;gap:22px;padding:13px 0}}.sq .paper li b{{width:44px;height:44px;padding:7px}}
-.ls .lg{{position:absolute;left:140px;top:46px}}
+.ls .lg{{position:absolute;left:140px;top:84px}}
 .ls .copy{{position:absolute;left:140px;width:520px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;padding-top:40px}}
 .ls .kicker{{font-size:23px}}.ls h1{{font-size:72px;margin:10px 0 14px;max-height:2.3em}}.ls .sub{{font-size:24px;max-height:4.3em}}
 .ls .paper{{left:720px;right:0;top:0;bottom:0;padding:0 140px 0 46px;display:flex;flex-direction:column;justify-content:center}}
