@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Adtek ACF REST
  * Description: Đọc và ghi trường ACF của trang/bài qua REST API, dùng để cập nhật nội dung trang chủ (vi + en) mà không cần vào wp-admin. Chỉ người có quyền sửa bài mới dùng được.
- * Version:     1.2.0
+ * Version:     1.2.1
  * Author:      Adtek
  */
 
@@ -14,6 +14,30 @@ defined( 'ABSPATH' ) || exit;
  *       (nhóm và repeater truyền dạng mảng theo tên trường con), trả lại dữ liệu sau khi ghi.
  *       POST với {"purge": true} và không có fields: chỉ xóa cache trang.
  */
+
+/*
+ * Link trang chủ của một ngôn ngữ (/ hoặc /en/). Trong REST, wpml_permalink có thể trả nguyên link
+ * ngôn ngữ mặc định, nên thử thêm cách đổi ngôn ngữ hiện tại rồi cuối cùng ghép thư mục ngôn ngữ.
+ */
+function adtek_acf_rest_home_url( $lang ) {
+	$home    = trailingslashit( home_url( '/' ) );
+	$default = apply_filters( 'wpml_default_language', null );
+	if ( ! $lang || ! $default || $lang === $default ) {
+		return $home;
+	}
+	$url = trailingslashit( (string) apply_filters( 'wpml_permalink', $home, $lang ) );
+	if ( $url !== $home ) {
+		return $url;
+	}
+	$current = apply_filters( 'wpml_current_language', null );
+	do_action( 'wpml_switch_language', $lang );
+	$url = trailingslashit( home_url( '/' ) );
+	do_action( 'wpml_switch_language', $current );
+	if ( $url !== $home ) {
+		return $url;
+	}
+	return $home . $lang . '/';
+}
 
 /*
  * Các link cần xóa cache của bài. Trang chủ có link riêng (/en/homepage/) khác link khách thật sự mở (/en/),
@@ -28,7 +52,7 @@ function adtek_acf_rest_purge_urls( $id ) {
 		$front = (int) apply_filters( 'wpml_object_id', $front, 'page', false, $lang );
 	}
 	if ( $front && $front === $id ) {
-		$urls[] = $lang ? apply_filters( 'wpml_permalink', home_url( '/' ), $lang, true ) : home_url( '/' );
+		$urls[] = adtek_acf_rest_home_url( $lang );
 	}
 	return array_values( array_unique( array_filter( $urls ) ) );
 }
@@ -77,7 +101,7 @@ add_action(
 						return array(
 							'id'      => $id,
 							'fields'  => get_fields( $id ) ?: new stdClass(),
-							'version' => '1.2.0',
+							'version' => '1.2.1',
 						);
 					},
 				),
@@ -97,7 +121,7 @@ add_action(
 							return array(
 								'id'      => $id,
 								'purged'  => adtek_acf_rest_purge( $id ),
-								'version' => '1.2.0',
+								'version' => '1.2.1',
 							);
 						}
 						if ( ! is_array( $fields ) || ! $fields ) {
@@ -120,7 +144,7 @@ add_action(
 							'result'  => $result,
 							'purged'  => $purged,
 							'fields'  => get_fields( $id ) ?: new stdClass(),
-							'version' => '1.2.0',
+							'version' => '1.2.1',
 						);
 					},
 				),
