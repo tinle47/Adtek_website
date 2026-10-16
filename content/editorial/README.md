@@ -4,22 +4,25 @@ Lịch đăng, cụm chủ đề và danh sách bài nằm trong `calendar.json`
 
 ## Nhịp đăng
 
-- 2 bài/tuần, mỗi bài khoảng 2,000 chữ, đăng Thứ Ba và Thứ Năm. Giờ đăng không cố định: mỗi bài chọn ngẫu nhiên khung 12:00-12:59 hoặc 20:00-20:59 (trường `time` trong `calendar.json`, gán bằng `python3 tools/blog_post.py retime` cho bài chưa đăng).
-- Mỗi bài cần có một phần chỉ Adtek viết được: mini-case ẩn danh, số liệu từ dự án, khung hoặc checklist dùng ngay.
+- Lịch do phiên **Adtek - Marketing** (session_01XqVohyrjLRctpapS6FbMXD) lập mỗi tháng, 3 ngày trước ngày 1 tháng mới (`routines/monthly-planning.md`, kế hoạch và nghiên cứu trong `reports/`). Các phiên Blog post, Facebook post, Designer, SEO chỉ viết và đăng theo lịch, không tự đổi `date`, `time`, không chạy `retime` (anh Tin chọn 16/10/2026).
+- Blog: 4 bài/tuần từ tháng 11/2026, mỗi bài khoảng 2,000 chữ, đăng thứ Hai, Ba, Năm, Sáu, 08:05 đến 08:55. Bài `backlog` là bài chờ, chưa có lịch. Bài 1 đến 6 giữ giờ cũ.
+- Facebook: 1 bài mỗi ngày từ 2/11/2026, định dạng riêng cho Facebook, không đăng lại bài blog (danh sách `facebook` trong `calendar.json`). Bài 1 đến 6 vẫn có bài Facebook mở bài blog theo cách cũ.
+- TikTok: 3 video/tuần (danh sách `tiktok`), do phiên TikTok anh Tin sẽ tạo.
+- Mỗi bài cần có một phần dùng được ngay: khung, checklist hoặc bảng tính. Không viết mini-case hay số liệu dự án (anh Tin bỏ ngày 16/10/2026).
 - Tác giả Tin Le, có SEO title, meta description và ảnh bìa. Ảnh bìa blog (1200x630, `python3 tools/blog_post.py cover X`) và ảnh Facebook (1:1, `python3 tools/fb_post.py cover X`) dựng từ bộ mẫu `tools/covers.py`: 7 phong cách thiết kế phẳng, chỉ dùng màu navy, cam, kem của Adtek, không đường kẻ hay gạch chân, không hình tròn bao quanh logo hoặc chữ, không gradient, quầng sáng, kính mờ, bóng đổ (anh Tin yêu cầu 16/10/2026: không giống ảnh AI): tạp chí nền kem, khối cam navy cắt chéo, chữ A Adtek cỡ lớn, hai tầng màu có số cam lớn, áp phích nền cam; đối đầu A vs B cho bài so sánh, hồ sơ pháp lý cho bài luật. Mẫu tím neon 3D cũ chỉ dùng khi ghi tay `cover.style`. Chữ: tiêu đề và con số lớn dùng Newsreader 600 (chữ có chân kiểu báo chí, viết thường như câu), nhãn và mô tả dùng Be Vietnam Pro 400 đến 600; không dùng chữ in hoa giãn khoảng cho tiêu đề. Con số lớn (`cover.hero`) luôn đứng sát cụm chữ đi kèm (`cover.hero_text`) và đứng trước theo thứ tự đọc: bên trái hoặc phía trên cụm chữ, không đặt số một nơi, chữ một nẻo. Lần dựng đầu, hệ thống tự chọn phong cách theo nội dung (phương án A anh Tin chọn 16/10/2026): bài có "vs" trong `cover.title` dùng mẫu đối đầu, bài luật dùng mẫu hồ sơ (nếu 2 bài liền trước chưa dùng), còn lại xoay vòng 5 mẫu chung và tránh 3 bài liền trước; phong cách được ghi vào `cover.style` để dựng lại vẫn giữ nguyên, muốn đổi thì sửa tay trường này. Dữ liệu ảnh: `cover.kicker`, `title`, `subtitle`, `chips` (blog) và `hero`, `hero_text`, `fb_kicker` (Facebook, một số mẫu blog cũng dùng số `hero`). Chữ và logo trên ảnh blog nằm trong vùng x 140 đến 1060, y 70 đến 560 vì theme cắt ảnh: thẻ 370x250 mất hai bên, trang /blog/ 870x362 mất khoảng 65px trên và dưới. Xem thử mọi phong cách cho một bài: `python3 tools/covers.py sheet X`. Bài cũ (mục `existing`, có `slug`, `date`, `cover` kèm `style`): `python3 tools/covers.py existing <wp_id>`. Đổi ảnh bìa bài đã đưa lên WordPress: `python3 tools/blog_post.py recover X [--delete-old]`. Bài đăng trước lịch (không có trong `calendar.json`, ví dụ 6076, 6078): `python3 tools/blog_post.py feature <ID bài> <file ảnh> [--delete-old]`. Ảnh do phiên "Adtek - Designer" dựng và commit; phiên "Adtek - Blog post" chỉ tải lên (`recover` dùng đúng file có sẵn).
 
 ## Quy trình viết và duyệt
 
-1. Thứ Sáu hằng tuần (lịch tự động 8:52 sáng): viết 2 bài `planned` có ngày đăng sớm nhất, đưa lên WordPress ở dạng nháp bằng `python3 tools/blog_post.py draft <số bài>`, nhắc anh Tin duyệt qua email (hi@tinle.co), push notification và tin nhắn trong phiên Claude Code.
+1. Thứ Sáu hằng tuần (lịch tự động 8:52 sáng): viết tối đa 4 bài `planned` có ngày đăng sớm nhất trong 14 ngày tới, đưa lên WordPress ở dạng nháp bằng `python3 tools/blog_post.py draft <số bài>`, nhắc anh Tin duyệt qua email (hi@tinle.co), push notification và tin nhắn trong phiên Claude Code.
 2. Anh Tin duyệt từng bài:
    - "duyệt bài X": chạy `python3 tools/blog_post.py schedule X`, WordPress tự đăng đúng ngày giờ trong lịch.
    - Yêu cầu sửa: chạy `python3 tools/blog_post.py changes X`, sửa xong gửi email duyệt lại (hạn 24 giờ tính lại từ lần gửi mới).
    - "hủy bài X" (kể cả khi đã đặt lịch): chạy `python3 tools/blog_post.py unschedule X`.
    - Hạn duyệt D+1: email gửi bằng `tools/approval_email.py --mark` ghi thời điểm gửi. Đúng 24 giờ sau, lịch hẹn một lần (send_later) chạy `python3 tools/blog_post.py auto`: bài chưa có phản hồi được tự đặt lịch đăng theo kế hoạch (approval = auto), rồi báo anh Tin qua email và push notification. Bài đã duyệt hoặc đang chờ sửa thì bỏ qua.
-   - Bài đăng Facebook: mỗi bài blog có `fb_caption` (khoảng 150 đến 200 chữ, kể chuyện bằng một tình huống hoặc con số cụ thể trong bài, dẫn người đọc mở link ở bình luận) và `fb_comment` (tiêu đề ngắn + link bài). Không dùng emoji, không gạch dài, không đặt link trong nội dung chính. Caption không tự viết câu mời xem bài: `tools/fb_post.py` tự đặt câu CTA chung "Xem full bài viết ở bình luận bên dưới." lên đầu caption (email duyệt hiển thị đúng bản đăng thật). Duyệt cùng bài blog trong email.
+   - Bài 1 đến 6 (cách cũ, đến hết 1/11/2026). Bài đăng Facebook: mỗi bài blog có `fb_caption` (khoảng 150 đến 200 chữ, kể chuyện bằng một tình huống hoặc con số cụ thể trong bài, dẫn người đọc mở link ở bình luận) và `fb_comment` (tiêu đề ngắn + link bài). Không dùng emoji, không gạch dài, không đặt link trong nội dung chính. Caption không tự viết câu mời xem bài: `tools/fb_post.py` tự đặt câu CTA chung "Xem full bài viết ở bình luận bên dưới." lên đầu caption (email duyệt hiển thị đúng bản đăng thật). Duyệt cùng bài blog trong email.
    - Đăng Facebook qua Graph API (`tools/fb_post.py`; network secret của môi trường gắn header `Authorization: Bearer <Page access token>` cho `graph.facebook.com`; script tự dừng nếu token không thuộc Page 101888089257566): bài đăng lên Page Adtek Growth Agency dạng ảnh vuông 1:1 `content/posts/<slug>-fb.jpg` (do phiên **Adtek - Designer** làm và push lên nhánh `claude/brave-curie-2c6zbc`; phiên Facebook chỉ đăng ảnh có sẵn, thiếu ảnh thì dừng và báo anh Tin, dựng bằng `python3 tools/fb_post.py cover X` theo bộ mẫu `tools/covers.py`, cùng phong cách với ảnh bìa blog của bài; một con số lớn lấy từ nội dung bài (`cover.hero`) đọc liền với câu bên cạnh (`cover.hero_text`, ví dụ "30" + "Ngày chuẩn bị 11.11"), nhãn nhỏ `cover.fb_kicker`, mô tả `cover.subtitle`) + CTA + `fb_caption`, không có link; Page tự bình luận `fb_comment` ngay dưới bài. Khi bài blog được đặt lịch (duyệt hoặc tự duyệt D+1), hẹn send_later vào 5 phút sau giờ đăng blog để chạy `python3 tools/fb_post.py post X`. Script chỉ đăng khi bài blog đã lên sóng (hủy bài thì bài Facebook cũng không đăng) và không đăng trùng.
    - Caption Facebook theo template (tools/fb_post.py tự ghép): dòng 1 `fb_title` (câu hỏi gợi tò mò, viết in hoa), dòng 2 "Xem full bài viết ở bình luận bên dưới.", rồi `fb_caption`, rồi 5 hashtag (`#Adtek #GrowthMarketing` mặc định + 3 hashtag riêng trong `fb_hashtags`, không dấu, viết liền), cuối cùng "Website: adtek.agency" và "Email: contact@adtek.agency".
-3. Thứ Ba và thứ Năm 21:43 (lịch tự động của phiên **Adtek - SEO**): tối ưu SEO và làm liên kết ngược cho bài vừa lên sóng, xem mục "Tối ưu SEO sau khi đăng".
+3. Thứ Hai, Ba, Năm, Sáu 21:43 (lịch tự động của phiên **Adtek - SEO**): tối ưu SEO và làm liên kết ngược cho bài vừa lên sóng, xem mục "Tối ưu SEO sau khi đăng".
 4. Ngày 1 hằng tháng (lịch tự động 8:47 sáng): rà soát và cập nhật nội dung, gửi báo cáo qua email, push notification và tin nhắn trong phiên.
 
 ## Cụm chủ đề (topic cluster)
@@ -47,7 +50,7 @@ Mỗi bài mới khi đăng phải có:
 6. Ít nhất 3 nguồn bên ngoài uy tín (văn bản luật, cơ quan nhà nước, báo cáo nghiên cứu, tài liệu chính thức của nền tảng), ghi rõ tháng/năm của số liệu. Link ra ngoài luôn có `rel="nofollow noopener"` và mở tab mới (`tools/blog_post.py draft` tự gắn).
 7. 1 lời mời liên hệ (`/contact/`) hoặc tài nguyên miễn phí của Adtek.
 
-Ngay sau khi bài lên sóng (liên kết ngược, phiên Adtek - SEO làm trong lịch thứ Ba và thứ Năm):
+Ngay sau khi bài lên sóng (liên kết ngược, phiên Adtek - SEO làm trong lịch 21:43 các ngày đăng blog):
 
 - Thêm link từ bài trụ cột của cụm về bài mới.
 - Thêm link từ 2 đến 3 bài đã đăng có trong `links_to` của bài mới, hoặc có `links_to` trỏ tới bài mới.
@@ -55,7 +58,7 @@ Ngay sau khi bài lên sóng (liên kết ngược, phiên Adtek - SEO làm tron
 
 ## Tối ưu SEO sau khi đăng
 
-Phiên **Adtek - SEO** (session_013GwSn1yAegYgnHucCuLbNr) chạy lúc 21:43 thứ Ba và thứ Năm (prompt: `routines/seo-after-publish.md`), xử lý mọi bài đã lên sóng mà chưa có `seo_optimized` trong `calendar.json`, nên bài dời ngày hoặc bị sót được bắt ở lần chạy kế tiếp. Anh Tin cho phép tự sửa bài đang live rồi báo sau (16/10/2026); mọi lần sửa nội dung đều backup vào `content/backups`.
+Phiên **Adtek - SEO** (session_013GwSn1yAegYgnHucCuLbNr) chạy lúc 21:43 thứ Hai, Ba, Năm, Sáu (prompt: `routines/seo-after-publish.md`), xử lý mọi bài đã lên sóng mà chưa có `seo_optimized` trong `calendar.json`, nên bài dời ngày hoặc bị sót được bắt ở lần chạy kế tiếp. Anh Tin cho phép tự sửa bài đang live rồi báo sau (16/10/2026); mọi lần sửa nội dung đều backup vào `content/backups`.
 
 Công cụ `tools/seo_post.py`:
 

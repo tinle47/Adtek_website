@@ -1,12 +1,12 @@
 # Routine: Blog Adtek: tối ưu SEO sau khi đăng
 
-- Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 43 21 * * 2,4` (21:43 thứ Ba và thứ Năm, giờ Việt Nam), sau khung đăng bài muộn nhất 20:00-20:59.
+- Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 43 21 * * 1,2,4,5` (21:43 thứ Hai, Ba, Năm, Sáu, giờ Việt Nam). Từ 16/10/2026 blog đăng 4 bài/tuần (phiên Adtek - Marketing đổi lịch).
 - Gắn vào phiên **Adtek - SEO** (session_013GwSn1yAegYgnHucCuLbNr). Phiên này nhận luôn việc liên kết ngược (trước đây làm trong lịch thứ Sáu của phiên Adtek - Blog post).
 - Anh Tin chọn ngày 16/10/2026: lịch cố định thứ Ba và thứ Năm (bài dời ngày được bắt ở lần chạy kế tiếp), phiên SEO tự sửa mọi thứ rồi báo sau, báo qua push notification và tin nhắn trong phiên, chỉ gửi email khi có việc cần anh quyết định. Search Console: gửi lại sitemap và báo Google qua Indexing API (phương án B) ngay tối bài lên sóng, kiểm tra index từ ngày thứ 2 sau khi đăng, bài chưa index hoặc Indexing API từ chối thì gửi anh link bấm tay.
 
 ## Prompt
 
-[Lịch tự động thứ Ba, thứ Năm 21:43: tối ưu SEO bài blog vừa lên sóng]
+[Lịch tự động thứ Hai, Ba, Năm, Sáu 21:43: tối ưu SEO bài blog vừa lên sóng]
 Repo Adtek_website, branch claude/brave-curie-2c6zbc (pull bản mới nhất trước). Làm theo mục "Tối ưu SEO sau khi đăng" trong content/editorial/README.md.
 1. Chạy python3 tools/seo_post.py due (tự đổi bài đã lên sóng từ scheduled sang published), rồi python3 tools/gsc.py pending (bài đăng từ 2 ngày trước mà Google chưa index). Nếu cả hai đều rỗng: không gửi thông báo; nếu calendar.json có thay đổi thì commit và push, rồi dừng. Nếu gsc.py báo chưa có GSC_SERVICE_ACCOUNT (container của phiên này chạy từ trước khi biến được thêm): tạo phiên phụ bằng create_session (repo https://github.com/tinle47/Adtek_website, revision claude/brave-curie-2c6zbc) chỉ chạy trong thư mục tools các lệnh gsc.py cần dùng (pending, và submit, notify sau bước 2), không commit, không in khóa, trả về JSON nguyên văn; đọc kết quả bằng list_events rồi ghi index_status, index_checked, index_notified vào calendar.json ở phiên này. Nếu phiên phụ cũng lỗi: bỏ qua Search Console, ghi một dòng trong tin nhắn báo cáo.
 2. Với mỗi bài trong danh sách:

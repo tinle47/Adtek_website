@@ -450,12 +450,12 @@
   {
    "date": "2026-11-20",
    "time": "12:13",
-   "format": "Mini-case Adtek",
-   "title": "Một tháng 30 mẫu quảng cáo: quy trình của Adtek",
-   "brief": "Mini-case ẩn danh: số mẫu, thời gian sản xuất, kết quả thử nghiệm",
-   "source": "Cần anh Tin cung cấp số liệu dự án",
+   "format": "Phép tính nhanh",
+   "title": "Cần bao nhiêu ngân sách để biết một mẫu quảng cáo thắng hay thua?",
+   "brief": "Meta cần khoảng 50 sự kiện tối ưu trong 7 ngày để qua giai đoạn máy học; ví dụ CPA 100,000 đồng thì mỗi nhóm quảng cáo cần khoảng 5 triệu đồng mỗi tuần. 30 mẫu mỗi tháng nên gom vào ít nhóm, không chia mỏng",
+   "source": "Meta Business Help Center: giai đoạn máy học",
    "link_post": 13,
-   "note": "Cần anh Tin cung cấp số liệu trước 16/11",
+   "note": null,
    "weekday": "Thứ Sáu"
   },
   {
@@ -604,12 +604,12 @@
   {
    "date": "2026-12-04",
    "time": "12:13",
-   "format": "Mini-case Adtek",
-   "title": "Khách cũ mang lại bao nhiêu phần doanh thu?",
-   "brief": "Mini-case ẩn danh: tỷ trọng doanh thu từ khách mua lại của một khách hàng Adtek",
-   "source": "Cần anh Tin cung cấp số liệu dự án",
+   "format": "Phép tính nhanh",
+   "title": "Thêm 5% khách mua lại đáng bao nhiêu tiền?",
+   "brief": "Ví dụ: 10,000 khách, giá trị đơn trung bình 300,000 đồng; thêm 5% khách mua lại 1 đơn là 500 đơn, tương đương 150 triệu đồng doanh thu mà không tốn chi phí kéo khách mới",
+   "source": "Phép tính minh họa theo bài 26",
    "link_post": 26,
-   "note": "Cần anh Tin cung cấp số liệu trước 30/11",
+   "note": null,
    "weekday": "Thứ Sáu"
   },
   {
