@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Adtek Yoast Settings REST
  * Description: Đọc và sửa cấu hình Yoast SEO, cài đặt SEO của WPML và hồ sơ mạng xã hội của tác giả qua REST (chỉ quản trị viên); phục vụ /llms.txt tiếng Việt thay cho file của Yoast.
- * Version:     1.1.0
+ * Version:     1.1.1
  * Author:      Adtek
  */
 
@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
  * và để plugin này tạo nội dung tiếng Việt từ dữ liệu WordPress, lưu đệm 12 giờ, làm mới khi có bài đăng hoặc cập nhật.
  */
 
-const ADTEK_LLMS_CACHE = 'adtek_llms_txt';
+const ADTEK_LLMS_CACHE = 'adtek_llms_txt_v2';
 
 function adtek_llms_md( $text ) {
 	// Tiêu đề và mô tả nằm trong cú pháp link Markdown: bỏ ngoặc vuông, gộp khoảng trắng.
@@ -34,6 +34,9 @@ function adtek_llms_desc( $post ) {
 		$desc = has_excerpt( $post ) ? $post->post_excerpt : wp_trim_words( strip_shortcodes( $post->post_content ), 30, '' );
 	}
 	$desc = adtek_llms_md( $desc );
+	if ( mb_strlen( $desc ) > 220 ) {
+		$desc = rtrim( mb_substr( $desc, 0, 217 ), ' ,.;:' ) . '...';
+	}
 	return $desc ? ': ' . $desc : '';
 }
 
@@ -41,8 +44,23 @@ function adtek_llms_line( $post, $title = null ) {
 	return '- [' . adtek_llms_md( $title ? $title : get_the_title( $post ) ) . '](' . get_permalink( $post ) . ')' . adtek_llms_desc( $post );
 }
 
+function adtek_llms_page( $slug ) {
+	// get_page_by_path không qua bộ lọc WPML: bản EN có thể trùng slug, nên quy về bản tiếng Việt.
+	$page = get_page_by_path( $slug );
+	if ( ! $page ) {
+		return null;
+	}
+	$vi   = (int) apply_filters( 'wpml_object_id', $page->ID, 'page', true, 'vi' );
+	$page = $vi ? get_post( $vi ) : $page;
+	return ( $page && 'publish' === $page->post_status ) ? $page : null;
+}
+
 function adtek_llms_build() {
-	$home  = home_url( '/' );
+	// /llms.txt không thuộc thư mục ngôn ngữ nào nên WPML có thể chạy ở ngữ cảnh tiếng Anh: ép tiếng Việt khi lấy dữ liệu,
+	// dùng get_option( 'home' ) (không qua bộ lọc ngôn ngữ của WPML) để dựng link trang chủ và bản tiếng Anh.
+	do_action( 'wpml_switch_language', 'vi' );
+	$base  = trailingslashit( get_option( 'home' ) );
+	$home  = $base;
 	$lines = array(
 		'# Adtek',
 		'',
@@ -55,8 +73,8 @@ function adtek_llms_build() {
 	$intro = array( 'solutions', 'contact', 'bao-chi', 'faq', 'chinh-sach-bao-mat' );
 	$lines[] = '- [Trang chủ Adtek](' . $home . '): Growth marketing agency, Brand Commerce, Lead Generation, SEO.';
 	foreach ( $intro as $slug ) {
-		$page = get_page_by_path( $slug );
-		if ( $page && 'publish' === $page->post_status ) {
+		$page = adtek_llms_page( $slug );
+		if ( $page ) {
 			$lines[] = adtek_llms_line( $page );
 		}
 	}
@@ -101,20 +119,20 @@ function adtek_llms_build() {
 	$lines[] = '';
 	$lines[] = '## Tài nguyên';
 	foreach ( array( 'blog', 'resources-glossary', 'resources-report', 'vietnam-e-commerce-map' ) as $slug ) {
-		$page = get_page_by_path( $slug );
-		if ( $page && 'publish' === $page->post_status ) {
+		$page = adtek_llms_page( $slug );
+		if ( $page ) {
 			$lines[] = adtek_llms_line( $page );
 		}
 	}
 
 	$lines[] = '';
 	$lines[] = '## English';
-	$lines[] = '- [Adtek (English)](' . home_url( '/en/' ) . '): Growth marketing agency in Vietnam.';
-	$lines[] = '- [Blog (English)](' . home_url( '/en/blog/' ) . ')';
+	$lines[] = '- [Adtek (English)](' . $base . 'en/): Growth marketing agency in Vietnam.';
+	$lines[] = '- [Blog (English)](' . $base . 'en/blog/)';
 
 	$lines[] = '';
 	$lines[] = '## Optional';
-	$lines[] = '- [Sitemap](' . home_url( '/sitemap_index.xml' ) . ')';
+	$lines[] = '- [Sitemap](' . $base . 'sitemap_index.xml)';
 	return implode( "\n", $lines ) . "\n";
 }
 
@@ -228,7 +246,7 @@ add_action(
 							$users[] = array( 'id' => (int) $u->ID, 'name' => $u->display_name, 'meta' => $meta );
 						}
 						return array(
-							'version'  => '1.1.0',
+							'version'  => '1.1.1',
 							'yoast'    => defined( 'WPSEO_VERSION' ) ? WPSEO_VERSION : null,
 							'settings' => WPSEO_Options::get_all(),
 							'wpml_seo' => ( is_array( $wpml ) && isset( $wpml['seo'] ) ) ? $wpml['seo'] : null,
@@ -247,7 +265,7 @@ add_action(
 						if ( ! class_exists( 'WPSEO_Options' ) ) {
 							return new WP_Error( 'no_yoast', 'Yoast SEO chưa bật.', array( 'status' => 500 ) );
 						}
-						$out = array( 'version' => '1.1.0' );
+						$out = array( 'version' => '1.1.1' );
 
 						$settings = $request['settings'];
 						if ( is_array( $settings ) ) {
