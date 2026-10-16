@@ -39,6 +39,12 @@ body{width:${w}px;height:${h}px;overflow:hidden;position:relative;font-family:BV
 .logo{aspect-ratio:440/369;-webkit-mask:url($logo) center/contain no-repeat;mask:url($logo) center/contain no-repeat}
 .mark{-webkit-mask:url($mark) center/contain no-repeat;mask:url($mark) center/contain no-repeat}
 $css
+/* Chữ: tiêu đề và con số dùng Newsreader (chữ có chân kiểu báo chí), viết thường như câu; nhãn và mô tả dùng Be Vietnam Pro nhẹ.
+   Đặt sau CSS của từng phong cách để thống nhất kiểu chữ cho cả bộ. */
+h1,.num,.name,.cap,.disc span,.vs{font-family:NR,serif;font-weight:600;text-transform:none;letter-spacing:-.012em}
+.num,.disc span{letter-spacing:-.03em}
+.kicker{font-weight:600;letter-spacing:0}
+.sub,.band{font-weight:400}
 </style></head><body class="$shape" data-fit="1">$body
 <script>
 // Co chữ: giảm cỡ chữ của .fit tới khi không tràn khung (chữ tiếng Việt dài ngắn khác nhau từng bài)
@@ -53,11 +59,15 @@ VI = "U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+
 LATIN = "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
 
 
+FONTS = {"BVP": ("be-vietnam-pro", (400, 500, 600, 700, 800, 900)), "NR": ("newsreader", (500, 600))}
+
+
 def font_css():
-    """Be Vietnam Pro tách 2 file (tiếng Việt, Latin): mỗi file một @font-face kèm unicode-range."""
+    """Mỗi font tách 2 file (tiếng Việt, Latin): mỗi file một @font-face kèm unicode-range.
+    NR = Newsreader (tiêu đề, con số lớn), BVP = Be Vietnam Pro (nhãn, mô tả)."""
     d = (ASSETS / "fonts").as_uri()
-    return "\n".join(f"@font-face{{font-family:BVP;font-weight:{w};src:url({d}/be-vietnam-pro-{sub}-{w}-normal.woff2);unicode-range:{r}}}"
-                     for w in (600, 700, 800, 900) for sub, r in (("vietnamese", VI), ("latin", LATIN)))
+    return "\n".join(f"@font-face{{font-family:{fam};font-weight:{w};src:url({d}/{file}-{sub}-{w}-normal.woff2);unicode-range:{r}}}"
+                     for fam, (file, weights) in FONTS.items() for w in weights for sub, r in (("vietnamese", VI), ("latin", LATIN)))
 
 
 def logo(color, height, extra=""):
@@ -144,14 +154,14 @@ h1{{font-weight:900;line-height:1.12;letter-spacing:-.015em}}
 .sq .num{{right:56px;top:170px}}
 .sq .copy{{left:72px;right:72px;bottom:140px}}
 .sq .kicker{{font-size:30px}}
-.sq h1{{font-size:92px;margin:14px 0 22px;max-height:3.5em;max-width:640px}}
+.sq h1{{font-size:100px;margin:14px 0 22px;max-height:3.5em;max-width:640px}}
 .sq .sub{{font-size:34px;max-width:820px;max-height:4.4em}}
 .sq .foot{{left:72px;right:72px;bottom:64px;font-size:22px}}
 .ls .lg{{position:absolute;left:140px;top:44px}}.ls .meta{{right:140px;top:50px;font-size:15px}}
 .ls .num{{right:140px;top:140px}}
 .ls .copy{{left:140px;top:160px;width:{600 if n == 1 else 540}px}}
 .ls .kicker{{font-size:22px}}
-.ls h1{{font-size:66px;margin:10px 0 16px;max-height:2.3em}}
+.ls h1{{font-size:76px;margin:10px 0 16px;max-height:2.3em}}
 .ls .sub{{font-size:25px;max-height:4.4em}}
 .ls .foot{{left:140px;right:140px;bottom:42px;font-size:17px}}"""
     body = f"""<div class="lg">{logo(NAVY, 78 if sq else 58)}</div><div class="meta"><b>Adtek Insights</b><br>Số {f['no']:02d}, {f['date']}</div>
@@ -176,7 +186,7 @@ body{{background:{NAVY};color:#fff}}
 .lg{{position:absolute;right:72px;top:64px}}
 .copy{{position:absolute;left:72px;right:72px;bottom:72px}}
 .kicker{{color:{ORANGE};font-weight:800;font-size:30px}}
-h1{{font-weight:900;font-size:68px;line-height:1.14;margin:12px 0 20px;max-height:3.5em}}
+h1{{font-weight:900;font-size:76px;line-height:1.14;margin:12px 0 20px;max-height:3.5em}}
 .sub{{font-weight:600;font-size:32px;line-height:1.4;color:#C9D6EE;max-height:4.4em}}
 .chips{{font-weight:700;font-size:24px;color:{ORANGE}}}"""
         body = f"""<div class="panel"></div><div class="num">{f['num']}</div><div class="lg">{logo(NAVY, 92)}</div>
@@ -193,7 +203,7 @@ body{{background:{NAVY};color:#fff}}
 .copy{{position:absolute;left:590px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
 .lg{{position:absolute;right:140px;top:44px}}
 .kicker{{color:{ORANGE};font-weight:800;font-size:24px}}
-h1{{font-weight:900;font-size:76px;line-height:1.1;margin:10px 0 16px;max-height:2.3em}}
+h1{{font-weight:900;font-size:84px;line-height:1.1;margin:10px 0 16px;max-height:2.3em}}
 .sub{{font-weight:600;font-size:25px;line-height:1.4;color:#C9D6EE;max-height:4.3em}}
 .chips{{margin-top:22px;font-weight:700;font-size:19px;color:{ORANGE}}}"""
     body = f"""<div class="panel"></div><div class="num">{f['num']}</div><div class="cap fit bal">{f['cap']}</div>
@@ -220,14 +230,14 @@ h1{{font-weight:900;line-height:1.12;letter-spacing:-.01em}}
 .sq .copy{{position:absolute;left:72px;top:210px;width:{720 if fb else 640}px}}
 .sq .kicker{{font-size:30px}}
 .sq .num{{font-size:{300 if n <= 2 else 200}px;margin:18px 0 6px}}
-.sq h1{{font-size:{76 if fb else 88}px;margin:{'0 0 26px' if fb else '18px 0 26px'};max-height:3.4em}}
+.sq h1{{font-size:{84 if fb else 96}px;margin:{'0 0 26px' if fb else '18px 0 26px'};max-height:3.4em}}
 .sq .sub{{font-size:32px;max-height:4.3em;max-width:600px}}
 .sq .site{{left:72px;bottom:64px;font-size:22px}}
-.ls .big{{height:760px;right:-150px;bottom:-230px}}
+.ls .big{{height:760px;right:-240px;bottom:-230px}}
 .ls .lg{{left:140px;top:44px}}
-.ls .copy{{position:absolute;left:140px;top:0;bottom:0;width:560px;display:flex;flex-direction:column;justify-content:center;padding-top:30px}}
+.ls .copy{{position:absolute;left:140px;top:0;bottom:0;width:500px;display:flex;flex-direction:column;justify-content:center;padding-top:30px}}
 .ls .kicker{{font-size:23px}}
-.ls h1{{font-size:70px;margin:10px 0 16px;max-height:2.3em}}
+.ls h1{{font-size:78px;margin:10px 0 16px;max-height:2.3em}}
 .ls .sub{{font-size:25px;max-height:4.3em}}
 .ls .site{{display:none}}"""
     num = f'<div class="num">{f["num"]}</div>' if sq and fb else ""
@@ -252,14 +262,14 @@ h1{{font-weight:900;line-height:1.12;letter-spacing:-.01em}}
 .sq .top{{left:0;right:0;top:0;height:640px;padding:200px 72px 0}}
 .sq .lg{{left:72px;top:64px}}
 .sq .kicker{{font-size:30px}}
-.sq h1{{font-size:86px;margin-top:14px;max-height:3.4em;max-width:900px}}
+.sq h1{{font-size:96px;margin-top:14px;max-height:3.4em;max-width:900px}}
 .sq .sub{{left:72px;bottom:72px;width:520px;font-size:32px;max-height:5.8em}}
 .sq .disc{{width:400px;height:400px;right:72px;top:520px}}
 .sq .disc span{{font-size:{230 if n == 1 else 190 if n == 2 else 120}px}}
 .ls .top{{left:0;top:0;bottom:0;width:740px;padding:0 60px 0 140px;display:flex;flex-direction:column;justify-content:center}}
 .ls .lg{{left:140px;top:44px}}
 .ls .kicker{{font-size:23px}}
-.ls h1{{font-size:70px;margin:10px 0 0;max-height:3.4em}}
+.ls h1{{font-size:80px;margin:10px 0 0;max-height:3.4em}}
 .ls .sub{{left:780px;right:140px;bottom:56px;font-size:20px;max-height:4.3em}}
 .ls .disc{{width:280px;height:280px;left:785px;top:60px}}
 .ls .disc span{{font-size:{170 if n == 1 else 130 if n == 2 else 84}px}}"""
@@ -285,14 +295,14 @@ h1{{font-weight:900;line-height:1.1;text-transform:uppercase;letter-spacing:-.01
 .sq .lg{{right:64px;top:60px}}
 .sq .copy{{position:absolute;left:72px;right:72px;bottom:72px}}
 .sq .kicker{{font-size:30px}}
-.sq h1{{font-size:88px;margin:14px 0 20px;max-height:3.4em}}
+.sq h1{{font-size:96px;margin:14px 0 20px;max-height:3.4em}}
 .sq .sub{{font-size:32px;max-height:4.2em}}
 .ls .num{{left:110px;bottom:-40px}}
 .ls .corner{{width:380px;height:380px;right:-110px;top:-150px}}
 .ls .lg{{right:140px;top:46px}}
 .ls .copy{{position:absolute;left:{'570' if n == 1 else '660'}px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}}
 .ls .kicker{{font-size:22px}}
-.ls h1{{font-size:64px;margin:10px 0 16px;max-height:3.4em}}
+.ls h1{{font-size:74px;margin:10px 0 16px;max-height:3.4em}}
 .ls .sub{{font-size:24px;max-height:4.2em}}"""
     body = f"""<div class="corner"></div><div class="num">{f['num']}</div><div class="lg">{logo('#fff', 80 if sq else 58)}</div>
 <div class="copy"><div class="kicker">{f['kicker']}</div><h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>"""
@@ -350,12 +360,12 @@ h1{{font-weight:900;line-height:1.12}}
 .paper li b{{flex:none;background:{ORANGE};display:flex}}
 .sq .lg{{position:absolute;left:72px;top:64px}}
 .sq .copy{{position:absolute;left:72px;right:72px;top:190px}}
-.sq .kicker{{font-size:30px}}.sq h1{{font-size:78px;margin:12px 0 16px;max-height:2.3em}}.sq .sub{{font-size:30px;max-height:4.3em}}
+.sq .kicker{{font-size:30px}}.sq h1{{font-size:86px;margin:12px 0 16px;max-height:2.3em}}.sq .sub{{font-size:30px;max-height:4.3em}}
 .sq .paper{{left:72px;right:72px;bottom:0;height:430px;padding:46px 56px}}
 .sq .paper h5{{font-size:26px;margin-bottom:10px}}.sq .paper li{{font-size:32px;gap:22px;padding:13px 0}}.sq .paper li b{{width:44px;height:44px;padding:7px}}
 .ls .lg{{position:absolute;left:140px;top:46px}}
 .ls .copy{{position:absolute;left:140px;width:520px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;padding-top:40px}}
-.ls .kicker{{font-size:23px}}.ls h1{{font-size:64px;margin:10px 0 14px;max-height:2.3em}}.ls .sub{{font-size:24px;max-height:4.3em}}
+.ls .kicker{{font-size:23px}}.ls h1{{font-size:72px;margin:10px 0 14px;max-height:2.3em}}.ls .sub{{font-size:24px;max-height:4.3em}}
 .ls .paper{{left:720px;right:0;top:0;bottom:0;padding:0 140px 0 46px;display:flex;flex-direction:column;justify-content:center}}
 .ls .paper h5{{font-size:19px;margin-bottom:8px}}.ls .paper li{{font-size:22px;gap:14px;padding:10px 0}}.ls .paper li b{{width:32px;height:32px;padding:5px}}"""
     body = f"""<div class="lg">{logo('#fff', 74 if sq else 56)}</div>
