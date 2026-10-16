@@ -72,3 +72,24 @@ Cả 3 routine bắn vào phiên session_01WxJyQayTE17duXYsRamVW7 (tạo 16/10/2
 - `check.mjs` hay báo WARN "dưới giao diện TikTok" cho dòng nguồn nhỏ và WARN đứng hình 4 đến 9 giây ở vài cảnh cũ: không chặn xuất, nhưng ghi lý do trong email tuần.
 - ffmpeg đi kèm Remotion không có muxer s16le: muốn đọc âm thanh thô thì giải mã ra WAV.
 - Mạng: WebFetch đôi khi lỗi DNS, dùng `curl -sSL` qua proxy thay thế. Tải PDF lớn có thể bị ngắt, thử lại vài lần.
+
+## Chuyển sang tài khoản Claude khác (anh Tin yêu cầu 16/10/2026)
+
+Những thứ nằm trong repo đi theo tự động: code, kịch bản, giọng đã tạo, lịch xlsx, dữ liệu và trang hub (`video/hub/`), quy tắc (`CLAUDE.md`), file này. Những thứ gắn với tài khoản cũ phải làm lại ở tài khoản mới:
+
+| Việc | Ai làm | Cách làm |
+|---|---|---|
+| Nối GitHub | Anh Tin | https://claude.ai/connect-github, chọn repo `tinle47/Adtek_website` (cài Claude GitHub App nếu được hỏi) |
+| Nối Gmail (gửi email hi@tinle.co) | Anh Tin | https://claude.ai/customize/connectors, bật Gmail |
+| Môi trường cloud | Anh Tin | Khi mở phiên Claude Code trên web: tạo environment, mục Network access cho phép ít nhất `api.elevenlabs.io`, các trang nguồn số liệu (nên chọn mức mở rộng để tra cứu), `cms-investor-cdn.vng.com.vn` |
+| Khóa ElevenLabs | Anh Tin | Trong settings của environment, thêm biến `ELEVENLABS_API_KEY` và `ELEVENLABS_VOICE_ID` (lấy trên elevenlabs.io, không dán vào chat) |
+| Tùy chọn cách trả lời | Anh Tin | Chép phần "personal preferences" (xưng em/anh, không "—", US number format...) sang Settings của tài khoản mới |
+| Trang hub | Anh Tin + Claude | Cách 1 (giữ link cũ): ở tài khoản cũ mở hub, Share, mời email tài khoản mới với quyền chỉnh sửa. Cách 2: tài khoản mới tạo hub mới từ `video/hub/index.html` và các file json, rồi tải lại video và ảnh bìa (asset cũ nằm ở hub cũ) |
+| 3 lịch tự động | Claude ở tài khoản mới | Tạo lại 3 routine theo bảng trên (giờ Việt Nam, nội dung lấy từ phiên cũ: `get_trigger` không dùng được giữa 2 tài khoản, nên dựa vào mục "Quy trình hằng tuần" trong `CLAUDE.md` và mục Lịch tự động ở trên) |
+| Tắt lịch ở tài khoản cũ | Anh Tin | Sau khi tài khoản mới đã gửi được email nhắc đầu tiên, vào https://claude.ai/code/routines của tài khoản cũ và tắt 3 routine `trig_015moonCQ7qxhn7oX9AAw6Qd`, `trig_01RniaH3JPJRrWA2SBv1K6iJ`, `trig_01XR5BNQVfwxuhe6Ak7BBTci` (tránh email trùng) |
+
+Công cụ cần trong container: node 22, python3 + openpyxl, ffmpeg, ffprobe, soffice (LibreOffice Calc), pdftotext, Chromium của Playwright ở `/opt/pw-browsers`. Môi trường cloud mặc định thường đã có; thiếu cái nào thì cài bằng setup script (ví dụ `apt-get install -y libreoffice-calc poppler-utils ffmpeg && pip install openpyxl`) và chạy `cd video && npm install`.
+
+Câu mở đầu để dán vào phiên Claude Code đầu tiên ở tài khoản mới (chọn repo `tinle47/Adtek_website`, nhánh `claude/confident-ramanujan-t3jbi6`):
+
+> Em nhận lại dự án video TikTok của Adtek từ tài khoản Claude cũ của anh. Checkout nhánh claude/confident-ramanujan-t3jbi6, đọc video/HANDOFF.md, video/CLAUDE.md, video/README.md. Sau đó: (1) kiểm tra có biến ELEVENLABS_API_KEY và ELEVENLABS_VOICE_ID (không in giá trị), có Gmail, có soffice, ffmpeg, Chromium; (2) chạy thử `node tools/check.mjs nguoi-viet-song-trong-app` để chắc máy xuất video được; (3) hỏi anh dùng lại hub cũ (anh đã share quyền chỉnh sửa) hay tạo hub mới; (4) tạo lại 3 lịch tự động (nhắc đăng 07:47 mỗi ngày, viết kịch bản 08:47 thứ Bảy, sản xuất 08:52 Chủ nhật, giờ Việt Nam) trỏ vào phiên này; (5) báo anh những gì còn thiếu. Chưa gửi email nào trong lúc kiểm tra.
