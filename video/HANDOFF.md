@@ -46,11 +46,11 @@ python3 tools/hub_export.py                        # sau mỗi lần đổi lị
 
 | Routine | Giờ | ID |
 |---|---|---|
-| Nhắc đăng video hôm nay (email kèm caption, cấu hình nhạc) | Mỗi ngày 07:47 | trig_01CQnosVhYjPGFhPaiztwZZ8 |
-| Viết kịch bản tuần tới, email chờ duyệt | Thứ Bảy 08:47 | trig_01NTBXYMDspRxo8qvc2T6nRe |
-| Sản xuất video theo kịch bản đã duyệt, đưa lên hub, email | Chủ nhật 08:52 | trig_019hnqJBnVkP1i1DYK3Yh8Ch |
+| Nhắc đăng video hôm nay (email kèm caption, cấu hình nhạc) | Mỗi ngày 07:47 | trig_015moonCQ7qxhn7oX9AAw6Qd |
+| Viết kịch bản tuần tới, email chờ duyệt | Thứ Bảy 08:47 | trig_01RniaH3JPJRrWA2SBv1K6iJ |
+| Sản xuất video theo kịch bản đã duyệt, đưa lên hub, email | Chủ nhật 08:52 | trig_01XR5BNQVfwxuhe6Ak7BBTci |
 
-Cả 3 routine hiện bắn vào phiên cũ (session_01Dpu4oyZ8FYSVLE8FrdnGTC). Khi chuyển phiên, phải trỏ lại về phiên mới hoặc đổi sang "mỗi lần chạy tạo phiên mới" (xem mục cuối). Nội dung từng routine xem bằng `get_trigger`.
+Cả 3 routine bắn vào phiên session_01WxJyQayTE17duXYsRamVW7 (tạo 16/10/2026). 3 routine cũ của phiên trước (trig_01CQnosVhYjPGFhPaiztwZZ8, trig_01NTBXYMDspRxo8qvc2T6nRe, trig_019hnqJBnVkP1i1DYK3Yh8Ch) đã tắt, không xóa. Lần sau chuyển phiên: tạo routine mới trỏ vào phiên mới (create_trigger với persistent_session_id) rồi tắt routine cũ. Nội dung từng routine xem bằng `get_trigger`.
 
 ## Tình trạng hiện tại (16/10/2026)
 
