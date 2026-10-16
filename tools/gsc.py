@@ -98,20 +98,23 @@ def property_url(tok):
 
 
 def manual_link(prop, url):
-    return f"https://search.google.com/search-console/inspect?resource_id={quote(prop, safe='')}&id={quote(url, safe='')}"
+    """Dự phòng khi API không trả inspectionResultLink: trang tổng quan của property, anh Tin dán URL vào ô kiểm tra."""
+    return f"https://search.google.com/search-console?resource_id={quote(prop, safe='')} (dán {url} vào ô Kiểm tra URL)"
 
 
 def inspect(data, post, tok, prop):
     url = f"{SITE_URL}/{post['slug']}/"
     r = call("POST", INSPECT, {"inspectionUrl": url, "siteUrl": prop, "languageCode": "vi"}, bearer=tok)
-    res = r.get("inspectionResult", {}).get("indexStatusResult")
+    result = r.get("inspectionResult", {})
+    res = result.get("indexStatusResult")
     if not res:
         sys.exit(f"Lỗi kiểm tra {url}: {str(r)[:300]}")
     post["index_status"] = res.get("verdict")  # PASS = đã index
     post["index_checked"] = datetime.now(VN).strftime("%Y-%m-%d %H:%M")
     return {"no": post["no"], "url": url, "verdict": res.get("verdict"), "coverage": res.get("coverageState"),
             "last_crawl": res.get("lastCrawlTime"), "google_canonical": res.get("googleCanonical"),
-            **({} if res.get("verdict") == "PASS" else {"request_indexing": manual_link(prop, url)})}
+            **({} if res.get("verdict") == "PASS" else
+               {"request_indexing": result.get("inspectionResultLink") or manual_link(prop, url)})}
 
 
 if __name__ == "__main__":
