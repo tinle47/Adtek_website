@@ -56,7 +56,25 @@
     "Chuyển dữ liệu ra nước ngoài: Điều 20 của Luật coi cả việc dùng nền tảng đặt ngoài Việt Nam để xử lý dữ liệu thu thập tại Việt Nam là chuyển dữ liệu xuyên biên giới; bên chuyển phải lập hồ sơ đánh giá tác động và nộp bản chính trong 60 ngày kể từ lần chuyển đầu tiên. Cơ quan chuyên trách bảo vệ dữ liệu cá nhân thuộc Bộ Công an trả kết quả hồ sơ đạt hoặc không đạt yêu cầu trong 15 ngày (khoản 5 Điều 18 Nghị định 356).",
     "Miễn trừ (khoản 2, 3 Điều 38 Luật; Điều 41 Nghị định 356): hộ kinh doanh, doanh nghiệp siêu nhỏ không phải lập hồ sơ đánh giá tác động xử lý dữ liệu cá nhân và chỉ định bộ phận, nhân sự bảo vệ dữ liệu; doanh nghiệp nhỏ, khởi nghiệp được tự chọn trong 5 năm từ 1/1/2026. Miễn trừ không áp dụng khi kinh doanh dịch vụ xử lý dữ liệu, trực tiếp xử lý dữ liệu nhạy cảm hoặc đã xử lý dữ liệu của từ 100.000 chủ thể trở lên, và không bao gồm hồ sơ đánh giá tác động chuyển dữ liệu xuyên biên giới theo Điều 20."
    ],
-   "chart": null,
+   "chart": {
+    "type": "figures",
+    "title": "Mức phạt tiền tối đa với tổ chức theo Luật Bảo vệ dữ liệu cá nhân",
+    "items": [
+     {
+      "value": "10 lần",
+      "label": "khoản thu có được từ hành vi mua, bán dữ liệu cá nhân"
+     },
+     {
+      "value": "5%",
+      "label": "doanh thu năm trước liền kề khi vi phạm quy định chuyển dữ liệu xuyên biên giới"
+     },
+     {
+      "value": "3 tỷ đồng",
+      "label": "với các vi phạm khác; cá nhân chịu tối đa một nửa"
+     }
+    ],
+    "source": "Điều 8 Luật 91/2025/QH15"
+   },
    "callout": "Miễn trừ cho doanh nghiệp nhỏ chỉ bỏ bớt thủ tục hồ sơ, không miễn nghĩa vụ xin đồng ý; form lead không có ô đồng ý riêng vẫn là điểm rủi ro số một mà Adtek gặp khi rà soát tài khoản."
   },
   {
@@ -70,7 +88,25 @@
     "Nền tảng phải gỡ thông tin hàng hóa, dịch vụ xâm phạm quyền sở hữu trí tuệ hoặc liên quan đến hành vi kinh doanh vi phạm pháp luật trong 24 giờ kể từ khi nhận yêu cầu của cơ quan có thẩm quyền (điểm c khoản 1 Điều 17 Nghị định 248).",
     "Nền tảng phải lưu trữ và bảo đảm khả năng truy cập dữ liệu hình ảnh, âm thanh của phiên livestream bán hàng ít nhất 1 năm từ thời điểm bắt đầu phát (khoản 7 Điều 22 Luật)."
    ],
-   "chart": null,
+   "chart": {
+    "type": "figures",
+    "title": "Ba mốc nền tảng thương mại điện tử cần đáp ứng",
+    "items": [
+     {
+      "value": "1/1/2027",
+      "label": "nền tảng phải xác thực điện tử danh tính người bán và người livestream"
+     },
+     {
+      "value": "24 giờ",
+      "label": "thời hạn gỡ hàng vi phạm kể từ khi có yêu cầu của cơ quan có thẩm quyền"
+     },
+     {
+      "value": "1 năm",
+      "label": "thời gian tối thiểu lưu dữ liệu hình ảnh, âm thanh phiên livestream"
+     }
+    ],
+    "source": "Khoản 2 Điều 52, điểm c khoản 1 Điều 17 Nghị định 248/2026/NĐ-CP; khoản 7 Điều 22 Luật 122/2025/QH15"
+   },
    "callout": "Với nhãn hàng, rủi ro lớn nhất không nằm ở sàn mà ở hợp đồng với KOC: hợp đồng cần điều khoản xác thực danh tính, lưu bản ghi phiên live và gỡ link khi sản phẩm bị cảnh báo."
   },
   {
@@ -85,7 +121,25 @@
     "Luật Trí tuệ nhân tạo 134/2025/QH15 thông qua ngày 10/12/2025, hiệu lực từ 1/3/2026, gồm 8 chương, 35 điều; theo VnEconomy, đây là luật đầu tiên của Việt Nam quy định riêng về AI. Điều 11 về trách nhiệm minh bạch buộc bên triển khai thông báo khi đưa ra công chúng nội dung do AI tạo hoặc chỉnh sửa có thể gây nhầm lẫn, và gắn nhãn âm thanh, hình ảnh, video mô phỏng người thật hoặc tái hiện sự kiện thực tế.",
     "Nghị định 142/2026/NĐ-CP ký ngày 30/4/2026, hiệu lực từ 1/5/2026, hướng dẫn Luật Trí tuệ nhân tạo. Điều 18 yêu cầu thông báo khi đưa ra công chúng nội dung do AI tạo hoặc chỉnh sửa có thể gây nhầm lẫn về sự kiện, nhân vật hoặc nguồn gốc, và gắn nhãn dễ nhận biết với âm thanh, hình ảnh, video mô phỏng ngoại hình, giọng nói người thật hoặc tái hiện sự kiện thực tế. Không phải gắn nhãn hiển thị khi chỉ chỉnh kỹ thuật chất lượng không đổi bản chất nội dung, khi dùng AI sửa lỗi, tóm tắt, diễn giải, dịch văn bản không làm sai lệch nội dung, hoặc khi nội dung chỉ dùng nội bộ. Luật giao Chính phủ quy định xử phạt (khoản 5 Điều 29); theo Luật Long Phan PMT, chưa có mức phạt riêng cho hành vi không gắn nhãn."
    ],
-   "chart": null,
+   "chart": {
+    "type": "figures",
+    "title": "Các ngưỡng thời gian mới trong quảng cáo",
+    "items": [
+     {
+      "value": "24 giờ",
+      "label": "thời hạn ngăn chặn, gỡ quảng cáo vi phạm trên mạng sau khi có yêu cầu"
+     },
+     {
+      "value": "5 giây",
+      "label": "thời gian tối đa trước khi người xem tắt được quảng cáo video, ảnh động"
+     },
+     {
+      "value": "10 ngày",
+      "label": "làm việc để UBND cấp tỉnh xác nhận nội dung quảng cáo thực phẩm bảo vệ sức khỏe"
+     }
+    ],
+    "source": "Luật 75/2025/QH15; Nghị định 342/2025/NĐ-CP; Nghị quyết 21/2026/NQ-CP"
+   },
    "callout": "Từ 2026, câu hỏi KOL đặt ra cho nhãn hàng sẽ là bộ hồ sơ sản phẩm chứ không chỉ là brief; nhãn hàng chuẩn bị sẵn bộ hồ sơ này sẽ chốt hợp tác nhanh hơn."
   },
   {

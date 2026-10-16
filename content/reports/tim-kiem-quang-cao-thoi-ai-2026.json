@@ -128,7 +128,21 @@
     "Toàn cầu: ChatGPT Ads đạt doanh thu năm hóa 1 tỷ USD ngày 31/8/2026 (OpenAI), chưa đầy 200 ngày sau khi ra mắt (theo Channel Insider).",
     "Việt Nam: ChatGPT Ads triển khai từ 23/9/2026 trong đợt mở rộng sang Đông Nam Á và Đài Loan, nâng tổng số lên hơn 60 quốc gia (OpenAI). Quảng cáo chỉ hiển thị cho người dùng gói Free và Go; doanh nghiệp mua qua Ads Manager tự phục vụ, đội Ads Solutions của OpenAI hoặc agency đối tác (theo Bloomberg Businessweek Việt Nam, Channel Insider)."
    ],
-   "chart": null,
+   "chart": {
+    "title": "Doanh thu năm hóa của bộ quảng cáo Advantage+ (toàn cầu)",
+    "unit": "tỷ USD",
+    "items": [
+     {
+      "label": "Quý III/2025",
+      "value": 60
+     },
+     {
+      "label": "Quý II/2026",
+      "value": 75
+     }
+    ],
+    "source": "Meta, báo cáo kết quả kinh doanh quý III/2025 và quý II/2026"
+   },
    "callout": "Khi AI quyết định nhắm chọn, lợi thế cạnh tranh nằm ở chất lượng sáng tạo và tín hiệu chuyển đổi mà doanh nghiệp đưa vào hệ thống."
   },
   {
