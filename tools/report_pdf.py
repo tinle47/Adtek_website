@@ -1,6 +1,9 @@
 """Dựng báo cáo PDF cho Trung Tâm Tài Nguyên (https://adtek.agency/resources-report/) từ file JSON nội dung.
 
-Nội dung: content/reports/<slug>.json (cấu trúc: title, subtitle, period, key_stats, summary, sections, implications, sources).
+Nội dung: content/reports/<slug>.json. Hai dạng:
+  báo cáo nhanh: title, subtitle, period, key_stats, summary, sections, implications, sources
+  báo cáo chuyên sâu: thêm executive {findings, dashboard}, chapters [{number, title, intro, sections}], appendix {tables, glossary};
+  mỗi mục: heading, visual (bar, column, line, stacked, table, figures, timeline), body [đoạn], bullets, callout
 Kết quả (cùng thư mục):
   <slug>.pdf         báo cáo A4: bìa, tóm tắt, các phần, khuyến nghị, nguồn, trang Về Adtek
   <slug>-cover.jpg   ảnh đại diện trên WordPress 1245x825 (trang danh sách cắt giữa còn tỉ lệ 370x250)
@@ -83,6 +86,41 @@ ol.srcs li{{margin-bottom:1.8mm;break-inside:avoid}}
 ol.srcs .u{{color:{MUTED};word-break:break-all}}
 .note{{font-size:8pt;color:{MUTED};margin-top:6mm;border-top:.3mm solid {LINE};padding-top:3mm}}
 .full{{width:210mm;height:297mm;position:relative;overflow:hidden;background:{NAVY};color:#fff}}
+/* Báo cáo chuyên sâu (khóa chapters): mục lục, trang mở chương, mục chảy liên tục */
+.opener{{break-before:page;padding-top:60mm}}
+.opener .no{{font-family:NR,serif;font-weight:600;font-size:64pt;color:{ORANGE};line-height:1}}
+.opener h1{{font-family:IT,sans-serif;font-weight:600;font-size:30pt;line-height:1.12;color:{NAVY};margin:6mm 0 8mm;letter-spacing:-.015em;text-wrap:balance}}
+.opener p{{font-size:12pt;line-height:1.6;color:#374151;max-width:150mm}}
+.opener ol{{list-style:none;margin-top:12mm;font-size:10pt;color:#374151}}
+.opener ol li{{padding:2mm 0}}
+.sec{{margin-bottom:9mm}}
+.sec h2{{break-after:avoid}}
+.sec p.body{{margin-bottom:3mm;text-align:left}}
+.sec .visual{{break-inside:avoid}}
+h2.sub{{font-size:17pt}}
+.toc{{list-style:none;margin-top:4mm}}
+.toc li{{display:grid;grid-template-columns:14mm 1fr 14mm;padding:3.2mm 0;border-bottom:.3mm solid {LINE};font-size:11pt;align-items:baseline}}
+.toc .n{{font-family:NR,serif;font-weight:600;color:{ORANGE};font-size:13pt}}
+.toc .p{{text-align:right;color:{MUTED};font-variant-numeric:tabular-nums}}
+.cols{{display:flex;align-items:flex-end;gap:2.5mm;height:52mm;padding-top:6mm}}
+.cols .c{{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}}
+.cols .c .f{{width:100%;background:{NAVY}}}
+.cols .c.top .f{{background:{ORANGE}}}
+.cols .c .v{{font-size:7.6pt;font-weight:700;color:{NAVY};margin-bottom:1mm;white-space:nowrap}}
+.cols-l{{display:flex;gap:2.5mm;font-size:7.4pt;color:#374151;margin-top:1.5mm}}
+.cols-l div{{flex:1;text-align:center;line-height:1.25}}
+.stk{{display:grid;grid-template-columns:24mm 1fr;gap:3mm;align-items:center;margin-bottom:2mm;font-size:8.6pt}}
+.stk .t{{display:flex;height:6mm}}
+.stk .t div{{height:100%;color:#fff;font-size:7.2pt;font-weight:700;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap}}
+.legend{{display:flex;flex-wrap:wrap;gap:2mm 6mm;font-size:8pt;color:#374151;margin:2mm 0 1mm}}
+.legend i{{display:inline-block;width:3mm;height:3mm;margin-right:1.5mm;vertical-align:-.3mm}}
+table.t{{width:100%;border-collapse:collapse;font-size:8.4pt;line-height:1.35}}
+table.t th{{text-align:left;background:{NAVY};color:#fff;font-weight:600;padding:2mm 2.2mm}}
+table.t td{{padding:1.8mm 2.2mm;border-bottom:.3mm solid {LINE};vertical-align:top}}
+table.t tr:nth-child(even) td{{background:#FAF7F1}}
+table.t td.n,table.t th.n{{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}}
+dl.gl{{display:grid;grid-template-columns:32mm 1fr;gap:2.4mm 5mm;font-size:9pt}}
+dl.gl dt{{font-weight:700;color:{NAVY}}}
 """
 
 
@@ -216,6 +254,166 @@ def body_page(r):
     return "".join(out)
 
 
+PALETTE = [NAVY, ORANGE, "#5B7DB1", "#E8B36B", "#9CA3AF", "#2F4F7F"]
+
+
+def fmt(v):
+    """Số kiểu Việt Nam: 411.800; 9,95."""
+    if isinstance(v, str):
+        return v
+    s = f"{v:,.2f}".rstrip("0").rstrip(".")
+    return s.replace(",", "_").replace(".", ",").replace("_", ".")
+
+
+def unit_txt(unit):
+    return "" if not unit else (unit if unit == "%" else " " + unit)
+
+
+def fig_wrap(c, inner):
+    return (f'<figure class="visual"><figcaption>{esc(c.get("title", ""))}</figcaption>{inner}'
+            f'<div class="src">Nguồn: {esc(c.get("source", ""))}</div></figure>')
+
+
+def columns(c):
+    items = c["items"]
+    top = max(abs(i["value"]) for i in items) or 1
+    best = max(range(len(items)), key=lambda k: items[k]["value"])
+    cols = "".join(f'<div class="c {"top" if k == best else ""}"><div class="v">{fmt(i["value"])}{unit_txt(c.get("unit")) if c.get("unit") == "%" else ""}</div>'
+                   f'<div class="f" style="height:{max(abs(i["value"]) / top * 100, 1):.1f}%"></div></div>' for k, i in enumerate(items))
+    labels = "".join(f"<div>{esc(str(i['label']))}</div>" for i in items)
+    u = c.get("unit")
+    note = f'<div class="src" style="margin-top:0">Đơn vị: {esc(u)}</div>' if u and u != "%" else ""
+    return fig_wrap(c, f'<div class="cols">{cols}</div><div class="cols-l">{labels}</div>{note}')
+
+
+def legend(series):
+    return '<div class="legend">' + "".join(f'<span><i style="background:{PALETTE[k % len(PALETTE)]}"></i>{esc(s["name"])}</span>'
+                                            for k, s in enumerate(series)) + "</div>"
+
+
+def line(c):
+    labels, series = c["labels"], c["series"][:4]
+    vals = [v for s in series for v in s["values"] if isinstance(v, (int, float))]
+    lo, hi = min(0, min(vals)), max(vals) * 1.12 or 1
+    W, H, L, B, T = 640, 250, 46, 30, 12
+    n = max(len(labels) - 1, 1)
+    x = lambda k: L + (W - L - 12) * k / n
+    y = lambda v: T + (H - T - B) * (1 - (v - lo) / (hi - lo))
+    grid = ""
+    for g in range(5):
+        gv = lo + (hi - lo) * g / 4
+        grid += (f'<line x1="{L}" x2="{W - 12}" y1="{y(gv):.1f}" y2="{y(gv):.1f}" stroke="#E5E7EB" stroke-width="1"/>'
+                 f'<text x="{L - 6}" y="{y(gv) + 3:.1f}" text-anchor="end" font-size="10" fill="#6B7280">{fmt(round(gv, 1))}</text>')
+    step = max(1, len(labels) // 10)
+    xl = "".join(f'<text x="{x(k):.1f}" y="{H - 10}" text-anchor="middle" font-size="9.5" fill="#374151">{esc(str(l))}</text>'
+                 for k, l in enumerate(labels) if k % step == 0 or k == len(labels) - 1)
+    paths = ""
+    for si, s in enumerate(series):
+        col = PALETTE[si % len(PALETTE)]
+        pts = [(x(k), y(v)) for k, v in enumerate(s["values"]) if isinstance(v, (int, float))]
+        if not pts:
+            continue
+        paths += f'<polyline fill="none" stroke="{col}" stroke-width="2.6" points="{" ".join(f"{a:.1f},{b:.1f}" for a, b in pts)}"/>'
+        paths += "".join(f'<circle cx="{a:.1f}" cy="{b:.1f}" r="2.6" fill="{col}"/>' for a, b in pts)
+        lastk = max(k for k, v in enumerate(s["values"]) if isinstance(v, (int, float)))
+        paths += (f'<text x="{x(lastk) - 4:.1f}" y="{y(s["values"][lastk]) - 7:.1f}" text-anchor="end" font-size="10" font-weight="700" '
+                  f'fill="{col}">{fmt(s["values"][lastk])}</text>')
+    svg = (f'<svg viewBox="0 0 {W} {H}" width="100%" style="font-family:BVP,sans-serif">{grid}{xl}{paths}</svg>')
+    u = c.get("unit")
+    return fig_wrap(c, (legend(series) if len(series) > 1 else "") + svg + (f'<div class="src" style="margin-top:0">Đơn vị: {esc(u)}</div>' if u else ""))
+
+
+def stacked(c):
+    labels, series = c["labels"], c["series"]
+    rows = ""
+    for k, lab in enumerate(labels):
+        vals = [s["values"][k] if k < len(s["values"]) and isinstance(s["values"][k], (int, float)) else 0 for s in series]
+        tot = sum(vals) or 1
+        segs = "".join(f'<div style="width:{v / tot * 100:.2f}%;background:{PALETTE[si % len(PALETTE)]}">{fmt(round(v, 1)) if v / tot > .07 else ""}</div>'
+                       for si, v in enumerate(vals))
+        rows += f'<div class="stk"><div>{esc(str(lab))}</div><div class="t">{segs}</div></div>'
+    return fig_wrap(c, legend(series) + rows)
+
+
+def table(c):
+    cols = c["columns"]
+    num = [all(isinstance(r[j], (int, float)) or (isinstance(r[j], str) and r[j].replace(".", "").replace(",", "").replace("%", "").replace("+", "").replace("-", "").strip().isdigit())
+               for r in c["rows"] if j < len(r)) for j in range(len(cols))]
+    th = "".join(f'<th class="{"n" if num[j] and j else ""}">{esc(str(h))}</th>' for j, h in enumerate(cols))
+    trs = "".join("<tr>" + "".join(f'<td class="{"n" if num[j] and j else ""}">{esc(fmt(v) if isinstance(v, (int, float)) else str(v))}</td>'
+                                   for j, v in enumerate(r)) + "</tr>" for r in c["rows"])
+    return fig_wrap(c, f'<table class="t"><thead><tr>{th}</tr></thead><tbody>{trs}</tbody></table>')
+
+
+def visual(c):
+    if not c:
+        return ""
+    t = c.get("type", "bar")
+    return {"column": columns, "line": line, "stacked": stacked, "table": table}.get(t, chart)(c)
+
+
+def section_html(s, sub=False):
+    out = [f'<div class="sec"><h2 class="{"sub" if sub else ""}">{esc(s["heading"])}</h2>']
+    out.append(visual(s.get("visual") or s.get("chart")))
+    out += [f'<p class="body">{esc(p)}</p>' for p in s.get("body", [])]
+    if s.get("bullets"):
+        out.append('<ul class="b">' + "".join(f"<li>{esc(b)}</li>" for b in s["bullets"]) + "</ul>")
+    if s.get("callout"):
+        out.append(f'<div class="callout"><small>Nhận định của Adtek</small>{esc(s["callout"])}</div>')
+    out.append("</div>")
+    return "".join(out)
+
+
+def deep_body(r):
+    """Thân báo cáo chuyên sâu: tóm tắt điều hành, các chương (trang mở chương + mục), phụ lục, nguồn.
+    Mỗi trang mở chương có dấu CH-<số> ẩn để tìm số trang dựng mục lục."""
+    out = [head(r["title"]), '<div class="wrap">']
+    ex = r["executive"]
+    out.append('<div class="eyebrow">Tóm tắt điều hành</div><h2>Mười phát hiện chính</h2><div class="rule"></div>')
+    out.append(visual(ex.get("dashboard")))
+    out.append('<ol class="sum">' + "".join(f"<li>{esc(x)}</li>" for x in ex["findings"]) + "</ol>")
+    for ch in r["chapters"]:
+        n = ch["number"]
+        out.append(f'<div class="opener"><div class="eyebrow">Chương {n:02d}<span style="color:#fff;font-size:1pt">CH-{n:02d}</span></div>'
+                   f'<div class="no">{n:02d}</div><h1>{esc(ch["title"])}</h1><p>{esc(ch.get("intro", ""))}</p>'
+                   f'<ol>{"".join(f"<li>{esc(s["heading"])}</li>" for s in ch["sections"])}</ol></div>')
+        out.append('<div class="page"></div>')
+        out += [section_html(s) for s in ch["sections"]]
+    ap = r.get("appendix") or {}
+    out.append('<div class="opener"><div class="eyebrow">Phụ lục<span style="color:#fff;font-size:1pt">CH-AP</span></div>'
+               '<h1>Bảng số liệu, thuật ngữ và nguồn</h1></div><div class="page"></div>')
+    out += [visual(t) for t in ap.get("tables", [])]
+    if ap.get("glossary"):
+        out.append('<div class="sec"><h2 class="sub">Thuật ngữ</h2><dl class="gl">' +
+                   "".join(f'<dt>{esc(g["term"])}</dt><dd>{esc(g["def"])}</dd>' for g in ap["glossary"]) + "</dl></div>")
+    out.append('<div class="page"></div><div class="sec"><h2 class="sub">Nguồn dữ liệu</h2><ol class="srcs">')
+    out += [f'<li>{esc(s["publisher"])}, {esc(s["name"])}{", " + esc(s["date"]) if s.get("date") else ""}.'
+            f'{"<br><span class=u>" + esc(s["url"]) + "</span>" if s.get("url") else ""}</li>' for s in r["sources"]]
+    out.append(f'</ol><div class="note">Báo cáo do Adtek tổng hợp và phân tích từ các nguồn công khai nêu trên, số liệu cập nhật tới '
+               f'{esc(r["period"].replace("Cập nhật ", ""))}. Số liệu thuộc về đơn vị công bố; các đơn vị dùng phương pháp đo khác nhau nên con số có thể chênh lệch. '
+               "Dự báo và mô hình là ước tính của Adtek dựa trên giả định nêu trong báo cáo. Tài liệu dùng để tham khảo, không thay thế tư vấn chuyên môn hoặc pháp lý.</div></div>")
+    out.append("</div></body></html>")
+    return "".join(out)
+
+
+def toc_page(r, pages):
+    """Mục lục; pages: {"01": số trang, ..., "AP": số trang} (đánh số theo chân trang phần thân)."""
+    rows = [("", "Tóm tắt điều hành", 1)] + [(f'{c["number"]:02d}', c["title"], pages.get(f'{c["number"]:02d}', "")) for c in r["chapters"]]
+    rows.append(("", "Phụ lục: bảng số liệu, thuật ngữ và nguồn", pages.get("AP", "")))
+    li = "".join(f'<li><span class="n">{n}</span><span>{esc(t)}</span><span class="p">{p}</span></li>' for n, t, p in rows)
+    return f'{head(r["title"])}<div class="wrap" style="padding-top:16mm"><div class="eyebrow">Mục lục</div><h2>Nội dung báo cáo</h2><div class="rule"></div><ol class="toc">{li}</ol></div></body></html>'
+
+
+def chapter_pages(pdf_path):
+    from pypdf import PdfReader
+    import re
+    found = {}
+    for i, pg in enumerate(PdfReader(str(pdf_path)).pages, 1):
+        for m in re.findall(r"CH-(\d\d|AP)", pg.extract_text() or ""):
+            found.setdefault(m, i)
+    return found
+
+
 def back_page(r):
     bg, fg, panel, card, pfg, numc = theme(r)
     rows = "".join(f'<div style="display:grid;grid-template-columns:30mm 1fr;padding:1.6mm 0"><b style="font-weight:600">{k}</b><span>{v}</span></div>'
@@ -242,7 +440,8 @@ def build(slug):
     r = json.loads((DIR / f"{slug}.json").read_text(encoding="utf-8"))
     tmp = ROOT / "previews/_report"
     tmp.mkdir(parents=True, exist_ok=True)
-    parts = {"cover": cover_page(r), "body": body_page(r), "back": back_page(r)}
+    deep = "chapters" in r  # báo cáo chuyên sâu: có mục lục và trang mở chương
+    parts = {"cover": cover_page(r), "body": deep_body(r) if deep else body_page(r), "back": back_page(r)}
     for k, v in parts.items():
         (tmp / f"{k}.html").write_text(v, encoding="utf-8")
     foot = f"Adtek  |  {r.get('short_title') or r['title']}"
@@ -251,9 +450,15 @@ def build(slug):
             {"input": str(tmp / "back.html"), "output": str(tmp / "back.pdf")}]
     (tmp / "jobs.json").write_text(json.dumps(jobs), encoding="utf-8")
     subprocess.run(["node", str(ROOT / "tools/render_pdf.js"), str(tmp / "jobs.json")], check=True)
+    order = ["cover", "body", "back"]
+    if deep:  # mục lục dựng sau, khi đã biết số trang từng chương trong phần thân
+        (tmp / "toc.html").write_text(toc_page(r, chapter_pages(tmp / "body.pdf")), encoding="utf-8")
+        (tmp / "jobs.json").write_text(json.dumps([{"input": str(tmp / "toc.html"), "output": str(tmp / "toc.pdf"), "margin": "16mm"}]), encoding="utf-8")
+        subprocess.run(["node", str(ROOT / "tools/render_pdf.js"), str(tmp / "jobs.json")], check=True)
+        order = ["cover", "toc", "body", "back"]
     shoot([(thumb(r), DIR / f"{slug}-cover.jpg", *REPORT_SIZE)])  # ảnh đại diện: cùng bộ dựng với ảnh bìa blog (co chữ, logo)
     w = PdfWriter()
-    for k in ("cover", "body", "back"):
+    for k in order:
         w.append(str(tmp / f"{k}.pdf"))
     w.add_metadata({"/Title": r["title"], "/Author": "Adtek", "/Subject": r["subtitle"]})
     out = DIR / f"{slug}.pdf"
