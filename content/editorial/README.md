@@ -68,6 +68,7 @@ Công cụ `tools/seo_post.py`:
 | `meta X` | Ghi `seo_title`, `meta_desc` trong `calendar.json` lên Yoast |
 | `get ID file`, `put ID file "lý do"` | Tải nội dung gốc để sửa, ghi lại kèm backup (bài trong lịch thì đồng bộ luôn `content/posts/<slug>.html`) |
 | `done X` | Ghi `seo_optimized` |
+| `gsc.py submit`, `gsc.py notify X`, `gsc.py pending` | Gửi lại sitemap, báo Google bài X qua Indexing API, kiểm tra bài chưa index |
 
 Các mục `check`:
 
@@ -79,7 +80,7 @@ Các mục `check`:
 - Liên kết vào: trụ cột đã trỏ về, ít nhất 3 bài trỏ về (2 nếu cụm không có trụ cột).
 - Độ dài từ 1,500 chữ.
 
-Google Search Console (`tools/gsc.py`, anh Tin chọn ngày 16/10/2026): sau mỗi lần tối ưu, gửi lại `sitemap_index.xml` (`submit`); mỗi lần chạy kiểm tra các bài đăng từ 2 đến 30 ngày trước mà chưa được index (`pending`, ghi `index_status`, `index_checked` vào `calendar.json`). Google không có API cho nút "Yêu cầu lập chỉ mục" nên bài chưa index được gửi anh Tin kèm link để bấm tay. Không dùng Indexing API (Google chỉ cho phép với trang tuyển dụng và livestream). Đăng nhập bằng service account: khóa JSON đặt trong biến môi trường `GSC_SERVICE_ACCOUNT` (nguyên văn hoặc base64), email service account được thêm vào property https://adtek.agency/ (loại URL-prefix) với quyền Full. Đã kết nối và kiểm tra ngày 16/10/2026. Biến môi trường chỉ có trong container khởi động sau khi thêm biến; phiên chạy từ trước thì dùng phiên phụ (xem `routines/seo-after-publish.md`).
+Google Search Console (`tools/gsc.py`, anh Tin chọn ngày 16/10/2026): sau mỗi lần tối ưu, gửi lại `sitemap_index.xml` (`submit`); mỗi lần chạy kiểm tra các bài đăng từ 2 đến 30 ngày trước mà chưa được index (`pending`, ghi `index_status`, `index_checked` vào `calendar.json`). Google không có API cho nút "Yêu cầu lập chỉ mục". Anh Tin chọn phương án B (16/10/2026): báo Google mỗi bài mới qua Indexing API (`notify`), dù Google chỉ chính thức hỗ trợ API này cho trang tuyển dụng và livestream nên có thể bị lờ đi hoặc thu hồi quyền; service account là Owner của property, project bật Web Search Indexing API, hạn mức 200 URL/ngày. API từ chối hoặc bài vẫn chưa index sau 2 ngày thì gửi anh Tin link để bấm tay. Đăng nhập bằng service account: khóa JSON đặt trong biến môi trường `GSC_SERVICE_ACCOUNT` (nguyên văn hoặc base64), email service account được thêm vào property https://adtek.agency/ (loại URL-prefix) với quyền Owner (cần cho Indexing API). Đã kết nối và kiểm tra ngày 16/10/2026. Biến môi trường chỉ có trong container khởi động sau khi thêm biến; phiên chạy từ trước thì dùng phiên phụ (xem `routines/seo-after-publish.md`).
 
 Giới hạn: mạng của môi trường chặn site bên ngoài nên không kiểm tra được link ngoài còn sống (lịch rà soát ngày 1 hằng tháng xử lý). Xóa cache thủ công cần plugin `adtek-acf-rest.php` 1.1.0 (đang chờ upload); WordPress vẫn tự xóa cache của bài khi lưu.
 
