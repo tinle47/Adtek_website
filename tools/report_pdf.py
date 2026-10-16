@@ -102,13 +102,13 @@ h2.sub{{font-size:17pt}}
 .toc li{{display:grid;grid-template-columns:14mm 1fr 14mm;padding:3.2mm 0;border-bottom:.3mm solid {LINE};font-size:11pt;align-items:baseline}}
 .toc .n{{font-family:NR,serif;font-weight:600;color:{ORANGE};font-size:13pt}}
 .toc .p{{text-align:right;color:{MUTED};font-variant-numeric:tabular-nums}}
-.cols{{display:flex;align-items:flex-end;gap:2.5mm;height:52mm;padding-top:6mm}}
-.cols .c{{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}}
+.cols{{display:grid;align-items:end;gap:2mm;height:52mm;padding-top:6mm}}
+.cols .c{{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}}
 .cols .c .f{{width:100%;background:{NAVY}}}
 .cols .c.top .f{{background:{ORANGE}}}
 .cols .c .v{{font-size:7.6pt;font-weight:700;color:{NAVY};margin-bottom:1mm;white-space:nowrap}}
-.cols-l{{display:flex;gap:2.5mm;font-size:7.4pt;color:#374151;margin-top:1.5mm}}
-.cols-l div{{flex:1;text-align:center;line-height:1.25}}
+.cols-l{{display:grid;gap:2mm;font-size:6.8pt;color:#374151;margin-top:1.5mm}}
+.cols-l div{{min-width:0;text-align:center;line-height:1.2}}
 .stk{{display:grid;grid-template-columns:24mm 1fr;gap:3mm;align-items:center;margin-bottom:2mm;font-size:8.6pt}}
 .stk .t{{display:flex;height:6mm}}
 .stk .t div{{height:100%;color:#fff;font-size:7.2pt;font-weight:700;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap}}
@@ -280,10 +280,11 @@ def columns(c):
     best = max(range(len(items)), key=lambda k: items[k]["value"])
     cols = "".join(f'<div class="c {"top" if k == best else ""}"><div class="v">{fmt(i["value"])}{unit_txt(c.get("unit")) if c.get("unit") == "%" else ""}</div>'
                    f'<div class="f" style="height:{max(abs(i["value"]) / top * 100, 1):.1f}%"></div></div>' for k, i in enumerate(items))
-    labels = "".join(f"<div>{esc(str(i['label']))}</div>" for i in items)
+    labels = "".join(f"<div>{esc(str(i['label'])).replace('/', '/<wbr>')}</div>" for i in items)  # nhãn dài xuống dòng sau dấu /
     u = c.get("unit")
     note = f'<div class="src" style="margin-top:0">Đơn vị: {esc(u)}</div>' if u and u != "%" else ""
-    return fig_wrap(c, f'<div class="cols">{cols}</div><div class="cols-l">{labels}</div>{note}')
+    g = f'style="grid-template-columns:repeat({len(items)},minmax(0,1fr))"'  # cột và nhãn cùng lưới để thẳng hàng
+    return fig_wrap(c, f'<div class="cols" {g}>{cols}</div><div class="cols-l" {g}>{labels}</div>{note}')
 
 
 def legend(series):
@@ -409,7 +410,7 @@ def chapter_pages(pdf_path):
     import re
     found = {}
     for i, pg in enumerate(PdfReader(str(pdf_path)).pages, 1):
-        for m in re.findall(r"CH-(\d\d|AP)", pg.extract_text() or ""):
+        for m in re.findall(r"CH-(\d\d|AP)", re.sub(r"\s+", "", pg.extract_text() or "")):  # pypdf tách chữ cách quãng
             found.setdefault(m, i)
     return found
 
