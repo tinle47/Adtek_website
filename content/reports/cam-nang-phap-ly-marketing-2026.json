@@ -5,11 +5,11 @@
  "period": "Cập nhật 10/2026",
  "excerpt": "Năm 2026 có sáu nhóm quy định mới tác động trực tiếp tới marketing: dữ liệu cá nhân, thương mại điện tử, quảng cáo qua KOL, nội dung do AI tạo ra, thuế hộ kinh doanh và địa giới 34 tỉnh. Cẩm nang tóm tắt mốc hiệu lực, mức phạt và checklist tuân thủ cho đội marketing.",
  "meta_desc": "Cẩm nang pháp lý marketing 2026: Luật Bảo vệ dữ liệu cá nhân, Luật TMĐT, Luật Quảng cáo, gắn nhãn nội dung AI, 34 tỉnh và checklist tuân thủ.",
- "web_intro": "Từ 1/1/2026 đến giữa năm, hàng loạt luật và nghị định mới thay đổi cách doanh nghiệp thu thập lead, chạy remarketing, hợp tác KOL, dùng nội dung AI và bán hàng qua livestream. Cẩm nang của Adtek tổng hợp những điểm đội marketing cần nắm, kèm số hiệu văn bản, ngày hiệu lực, mức phạt và một checklist tuân thủ có thể dùng ngay.",
+ "web_intro": "Từ 1/1/2026 đến tháng 8/2026, hàng loạt luật và nghị định mới thay đổi cách doanh nghiệp thu thập lead, chạy remarketing, hợp tác KOL, dùng nội dung AI và bán hàng qua livestream. Cẩm nang của Adtek tổng hợp những điểm đội marketing cần nắm, kèm số hiệu văn bản, ngày hiệu lực, mức phạt và một checklist tuân thủ có thể dùng ngay. Các điều khoản đã được đối chiếu với toàn văn đăng trên Công báo và Cổng thông tin điện tử Chính phủ.",
  "web_bullets": [
   "Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 và Nghị định 356/2025: mức phạt, sự đồng ý, remarketing và chuyển dữ liệu ra nước ngoài",
   "Ưu đãi miễn trừ cho hộ kinh doanh, doanh nghiệp siêu nhỏ, nhỏ và khởi nghiệp, cùng các ngoại lệ cần lưu ý",
-  "Luật Thương mại điện tử 122/2025/QH15 và Nghị định 248/2026: xác thực người livestream, người làm tiếp thị liên kết",
+  "Luật Thương mại điện tử 122/2025/QH15 và Nghị định 248/2026: xác thực người livestream, người làm tiếp thị liên kết và lộ trình đến 1/1/2027",
   "Luật Quảng cáo sửa đổi 75/2025/QH15 và Luật Trí tuệ nhân tạo: trách nhiệm của KOL, KOC, quảng cáo thực phẩm bảo vệ sức khỏe và gắn nhãn nội dung AI",
   "Bỏ thuế khoán, ngưỡng doanh thu 1 tỷ đồng và hóa đơn điện tử với nhà bán online; cập nhật dữ liệu địa lý sau sáp nhập 34 tỉnh",
   "Checklist tuân thủ 13 đầu việc cho đội marketing và agency"
@@ -17,58 +17,58 @@
  "key_stats": [
   {
    "value": "5% doanh thu",
-   "label": "Mức phạt tối đa khi vi phạm quy định chuyển dữ liệu cá nhân xuyên biên giới",
-   "source": "Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15"
+   "label": "Mức phạt tiền tối đa với tổ chức vi phạm quy định chuyển dữ liệu cá nhân xuyên biên giới, tính trên doanh thu năm trước liền kề",
+   "source": "Khoản 4 Điều 8 Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15"
   },
   {
    "value": "3 tỷ đồng",
-   "label": "Mức phạt tiền tối đa với các vi phạm khác về bảo vệ dữ liệu cá nhân",
-   "source": "Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15"
+   "label": "Mức phạt tiền tối đa với tổ chức cho các vi phạm khác về bảo vệ dữ liệu cá nhân; cá nhân chịu tối đa một nửa",
+   "source": "Khoản 5, 6 Điều 8 Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15"
   },
   {
    "value": "1/7/2026",
-   "label": "Luật Thương mại điện tử có hiệu lực, bắt buộc xác thực người livestream và tiếp thị liên kết",
-   "source": "Luật Thương mại điện tử 122/2025/QH15"
+   "label": "Luật Thương mại điện tử có hiệu lực; nền tảng phải xác thực điện tử danh tính người livestream từ 1/1/2027",
+   "source": "Luật 122/2025/QH15; khoản 2 Điều 52 Nghị định 248/2026/NĐ-CP"
   },
   {
    "value": "1 tỷ đồng",
-   "label": "Ngưỡng doanh thu năm hộ kinh doanh không phải nộp thuế GTGT và TNCN",
-   "source": "Nghị định 141/2026/NĐ-CP"
+   "label": "Hộ kinh doanh có doanh thu năm từ mức này trở xuống không chịu thuế GTGT và không phải nộp thuế TNCN",
+   "source": "Nghị định 141/2026/NĐ-CP sửa Nghị định 68/2026/NĐ-CP"
   }
  ],
  "summary": [
-  "Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 và Nghị định 356/2025/NĐ-CP có hiệu lực từ 1/1/2026, thay Nghị định 13/2023. Mức phạt tối đa là 10 lần khoản thu với mua bán dữ liệu, 5% doanh thu năm trước với vi phạm chuyển dữ liệu xuyên biên giới và 3 tỷ đồng với vi phạm khác.",
-  "Nghị định 330/2026/NĐ-CP (19/8/2026) cụ thể hóa xử phạt; coi sự im lặng là đồng ý bị phạt 50 đến 70 triệu đồng.",
-  "Luật Thương mại điện tử 122/2025/QH15 và Nghị định 248/2026/NĐ-CP có hiệu lực từ 1/7/2026. Người livestream bán hàng và người làm tiếp thị liên kết phải được nền tảng xác thực danh tính điện tử.",
-  "Luật Quảng cáo sửa đổi 75/2025/QH15 có hiệu lực từ 1/1/2026, lần đầu định danh người chuyển tải sản phẩm quảng cáo (KOL, KOC, streamer, reviewer) và đặt nghĩa vụ kiểm chứng sản phẩm, công khai tính chất quảng cáo.",
-  "Từ 1/7/2026, Chủ tịch UBND cấp tỉnh cấp giấy xác nhận nội dung quảng cáo thực phẩm bảo vệ sức khỏe thay cho Cục An toàn thực phẩm, theo Nghị quyết 21/2026/NQ-CP.",
-  "Thuế khoán bị bỏ từ 1/1/2026; hộ kinh doanh có doanh thu từ 1 tỷ đồng phải dùng hóa đơn điện tử. Cả nước còn 34 đơn vị hành chính cấp tỉnh, nên dữ liệu địa lý trong quảng cáo và hồ sơ doanh nghiệp cần rà soát lại."
+  "Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 và Nghị định 356/2025/NĐ-CP có hiệu lực từ 1/1/2026, Nghị định 13/2023 hết hiệu lực. Mức phạt tiền tối đa với tổ chức là 10 lần khoản thu với mua bán dữ liệu, 5% doanh thu năm trước liền kề với vi phạm chuyển dữ liệu xuyên biên giới và 3 tỷ đồng với vi phạm khác; cá nhân chịu tối đa một nửa.",
+  "Nghị định 330/2026/NĐ-CP (ký và có hiệu lực ngày 19/8/2026) cụ thể hóa xử phạt: với tổ chức, thiết lập mặc định đồng ý bị phạt 30 đến 50 triệu đồng, coi sự im lặng là đồng ý bị phạt 50 đến 70 triệu đồng.",
+  "Luật Thương mại điện tử 122/2025/QH15 và Nghị định 248/2026/NĐ-CP có hiệu lực từ 1/7/2026. Người livestream và người làm tiếp thị liên kết phải được xác thực danh tính điện tử; riêng nghĩa vụ xác thực người bán và người livestream của chủ quản nền tảng áp dụng từ 1/1/2027.",
+  "Luật Quảng cáo sửa đổi 75/2025/QH15 có hiệu lực từ 1/1/2026, đưa vào khái niệm người chuyển tải sản phẩm quảng cáo (như KOL, KOC, streamer, reviewer); người có ảnh hưởng phải kiểm tra tài liệu sản phẩm và thông báo về việc quảng cáo.",
+  "Từ 1/7/2026, Chủ tịch UBND cấp tỉnh cấp giấy xác nhận nội dung quảng cáo thực phẩm bảo vệ sức khỏe thay cho Cục An toàn thực phẩm, theo Nghị quyết 21/2026/NQ-CP ngày 29/4/2026.",
+  "Thuế khoán bị bỏ từ 1/1/2026; hộ kinh doanh có doanh thu năm trên 1 tỷ đồng phải dùng hóa đơn điện tử. Cả nước còn 34 đơn vị hành chính cấp tỉnh, nên dữ liệu địa lý trong quảng cáo và hồ sơ doanh nghiệp cần rà soát lại."
  ],
  "sections": [
   {
    "heading": "1. Dữ liệu cá nhân: Luật 91/2025/QH15 và Nghị định 356/2025",
    "lead": "Đây là thay đổi lớn nhất với thu thập lead và remarketing. Quy định được nâng lên cấp luật, kèm mức phạt tính theo doanh thu. Từ tháng 8/2026 đã có nghị định xử phạt.",
    "bullets": [
-    "Luật 91/2025/QH15 và Nghị định 356/2025/NĐ-CP (ký 31/12/2025) cùng có hiệu lực từ 1/1/2026, thay thế Nghị định 13/2023/NĐ-CP (EY, LuatVietnam).",
-    "Điều 8 của Luật: mua bán dữ liệu cá nhân phạt tối đa 10 lần khoản thu có được; vi phạm chuyển dữ liệu xuyên biên giới phạt tối đa 5% doanh thu năm trước liền kề; các vi phạm khác phạt tối đa 3 tỷ đồng (Báo Đầu tư, LSVN).",
-    "Nghị định 330/2026/NĐ-CP ban hành ngày 19/8/2026, hiệu lực từ ngày ký, gồm 4 chương, 82 điều về xử phạt an ninh mạng và dữ liệu cá nhân. Hành vi coi sự im lặng là đồng ý bị phạt 50 đến 70 triệu đồng (LSVN, Mekong ASEAN).",
-    "Thu thập lead và remarketing là xử lý dữ liệu cá nhân, vẫn được làm nếu có căn cứ hợp pháp; căn cứ lợi ích hợp pháp có phạm vi hẹp, dữ liệu nhận từ đối tác phải chứng minh được sự đồng ý ban đầu (VOH).",
-    "Chuyển dữ liệu ra nước ngoài cần hồ sơ đánh giá tác động chuyển dữ liệu xuyên biên giới; Bộ Công an thẩm định và trả kết quả đạt hay không đạt, đây là điểm mới so với Nghị định 13 (PwC Việt Nam).",
-    "Miễn trừ: hộ kinh doanh, doanh nghiệp siêu nhỏ không phải lập hồ sơ đánh giá tác động và bố trí nhân sự bảo vệ dữ liệu; doanh nghiệp nhỏ, khởi nghiệp được tự chọn trong 5 năm từ 1/1/2026. Không áp dụng khi kinh doanh dịch vụ xử lý dữ liệu, xử lý dữ liệu nhạy cảm hoặc, với doanh nghiệp nhỏ, xử lý dữ liệu của số lượng lớn chủ thể (Báo Đầu tư)."
+    "Luật 91/2025/QH15 (Quốc hội thông qua ngày 26/6/2025) và Nghị định 356/2025/NĐ-CP (ký ngày 31/12/2025) cùng có hiệu lực từ 1/1/2026; Nghị định 13/2023/NĐ-CP hết hiệu lực từ cùng ngày (Điều 38 Luật, Điều 42 Nghị định 356). Sự đồng ý đã xin hợp lệ theo Nghị định 13 tiếp tục được dùng, không phải xin lại (Điều 39 Luật).",
+    "Điều 8 của Luật: mức phạt tiền tối đa với hành vi mua, bán dữ liệu cá nhân là 10 lần khoản thu có được; với tổ chức vi phạm quy định chuyển dữ liệu cá nhân xuyên biên giới là 5% doanh thu năm trước liền kề; với các vi phạm khác là 3 tỷ đồng. Khi không có khoản thu, doanh thu hoặc mức tính ra thấp hơn thì áp dụng mức 3 tỷ đồng. Các mức trên áp dụng cho tổ chức; cá nhân vi phạm cùng hành vi chịu tối đa một nửa.",
+    "Nghị định 330/2026/NĐ-CP ký và có hiệu lực ngày 19/8/2026, gồm 4 chương, 82 điều về xử phạt trong lĩnh vực an ninh mạng và bảo vệ dữ liệu cá nhân; mức phạt về dữ liệu cá nhân quy định cho tổ chức, cá nhân bằng một nửa (Điều 7). Theo Điều 43, xử lý dữ liệu khi chưa có đồng ý, thiết lập mặc định đồng ý hoặc không lưu nhật ký sự đồng ý bị phạt 30 đến 50 triệu đồng; coi sự im lặng là đồng ý hoặc cố ý tiếp tục xử lý sau khi chủ thể yêu cầu ngừng bị phạt 50 đến 70 triệu đồng.",
+    "Remarketing: Điều 28 của Luật yêu cầu có sự đồng ý của khách hàng khi xử lý dữ liệu để quảng cáo và phải cho khách hàng cách từ chối; quảng cáo theo hành vi, nhắm mục tiêu hoặc cá nhân hóa chỉ được thu thập dữ liệu qua theo dõi website, ứng dụng khi có đồng ý. Điều 63 Nghị định 330 phạt 30 đến 50 triệu đồng nếu dùng dữ liệu cá nhân cơ bản để phân phối quảng cáo mà không có đồng ý, 50 đến 70 triệu đồng nếu theo dõi website, ứng dụng để quảng cáo theo hành vi mà không có đồng ý.",
+    "Chuyển dữ liệu ra nước ngoài: Điều 20 của Luật coi cả việc dùng nền tảng đặt ngoài Việt Nam để xử lý dữ liệu thu thập tại Việt Nam là chuyển dữ liệu xuyên biên giới; bên chuyển phải lập hồ sơ đánh giá tác động và nộp bản chính trong 60 ngày kể từ lần chuyển đầu tiên. Cơ quan chuyên trách bảo vệ dữ liệu cá nhân thuộc Bộ Công an trả kết quả hồ sơ đạt hoặc không đạt yêu cầu trong 15 ngày (khoản 5 Điều 18 Nghị định 356).",
+    "Miễn trừ (khoản 2, 3 Điều 38 Luật; Điều 41 Nghị định 356): hộ kinh doanh, doanh nghiệp siêu nhỏ không phải lập hồ sơ đánh giá tác động xử lý dữ liệu cá nhân và chỉ định bộ phận, nhân sự bảo vệ dữ liệu; doanh nghiệp nhỏ, khởi nghiệp được tự chọn trong 5 năm từ 1/1/2026. Miễn trừ không áp dụng khi kinh doanh dịch vụ xử lý dữ liệu, trực tiếp xử lý dữ liệu nhạy cảm hoặc đã xử lý dữ liệu của từ 100.000 chủ thể trở lên, và không bao gồm hồ sơ đánh giá tác động chuyển dữ liệu xuyên biên giới theo Điều 20."
    ],
    "chart": null,
    "callout": "Miễn trừ cho doanh nghiệp nhỏ chỉ bỏ bớt thủ tục hồ sơ, không miễn nghĩa vụ xin đồng ý; form lead không có ô đồng ý riêng vẫn là điểm rủi ro số một mà Adtek gặp khi rà soát tài khoản."
   },
   {
    "heading": "2. Thương mại điện tử: Luật 122/2025/QH15 và Nghị định 248/2026",
-   "lead": "Livestream bán hàng và tiếp thị liên kết lần đầu được quy định ở cấp luật. Thời kỳ bán hàng ẩn danh trên sàn và mạng xã hội kết thúc từ 1/7/2026. Nhãn hàng thuê KOC, streamer hoặc chạy chương trình affiliate cần điều chỉnh hợp đồng và quy trình.",
+   "lead": "Livestream bán hàng và tiếp thị liên kết lần đầu được quy định ở cấp luật, có hiệu lực từ 1/7/2026; nghĩa vụ xác thực điện tử người livestream của chủ quản nền tảng áp dụng từ 1/1/2027. Nhãn hàng thuê KOC, streamer hoặc chạy chương trình affiliate cần điều chỉnh hợp đồng và quy trình ngay từ bây giờ.",
    "bullets": [
-    "Luật Thương mại điện tử 122/2025/QH15 được Quốc hội thông qua ngày 10/12/2025, hiệu lực từ 1/7/2026 (Thư viện Pháp luật).",
-    "Nghị định 248/2026/NĐ-CP ký ngày 30/6/2026, hiệu lực cùng ngày với Luật, quy định chi tiết một số điều (Thư viện Pháp luật, LSVN).",
-    "Người livestream phải cung cấp thông tin để chủ quản nền tảng xác thực danh tính, tuân thủ quy chế livestream công khai trên nền tảng và từ chối hợp tác khi người bán thiếu thông tin (Điều 24 Luật; Brands Vietnam).",
-    "Nền tảng livestream phải công khai quy chế, gồm quy trình định danh điện tử; nền tảng affiliate phải xác thực danh tính KOC, KOL trước khi cho tham gia (Điều 25, 26 Luật; LSVN, Hệ thống Pháp luật).",
-    "Nền tảng phải gỡ thông tin hàng hóa vi phạm trong 24 giờ kể từ khi có yêu cầu của cơ quan có thẩm quyền (Điều 17 Nghị định 248; Doanh nhân và Pháp luật).",
-    "Theo Tạp chí Công Thương, nền tảng phải lưu dữ liệu phiên livestream tối thiểu 1 năm."
+    "Luật Thương mại điện tử 122/2025/QH15 được Quốc hội thông qua ngày 10/12/2025, hiệu lực từ 1/7/2026 (Điều 40 Luật).",
+    "Nghị định 248/2026/NĐ-CP ký ngày 30/6/2026, hiệu lực từ 1/7/2026, quy định chi tiết một số điều của Luật. Riêng trách nhiệm của chủ quản nền tảng thực hiện xác thực điện tử danh tính người bán và người livestream bán hàng áp dụng từ 1/1/2027 (khoản 2 Điều 52 Nghị định 248).",
+    "Người livestream phải cung cấp thông tin để chủ quản nền tảng xác thực danh tính, tuân thủ quy chế livestream công khai trên nền tảng và từ chối hợp tác khi người bán không cung cấp đủ giấy tờ chứng minh điều kiện kinh doanh, chất lượng hàng hóa và văn bản xác nhận nội dung quảng cáo nếu thuộc diện phải có (Điều 23, 24 Luật).",
+    "Nền tảng có livestream phải công khai quy chế, gồm quy trình định danh xác thực điện tử người livestream, và yêu cầu người bán nộp văn bản xác nhận nội dung quảng cáo trước khi cho livestream hàng hóa thuộc diện phải xác nhận (Điều 22 Luật, Điều 12 Nghị định 248). Đơn vị cung cấp dịch vụ affiliate phải xác thực điện tử danh tính người tiếp thị liên kết trước khi cấp đường dẫn, mã giới thiệu (Điều 25, 26 Luật).",
+    "Nền tảng phải gỡ thông tin hàng hóa, dịch vụ xâm phạm quyền sở hữu trí tuệ hoặc liên quan đến hành vi kinh doanh vi phạm pháp luật trong 24 giờ kể từ khi nhận yêu cầu của cơ quan có thẩm quyền (điểm c khoản 1 Điều 17 Nghị định 248).",
+    "Nền tảng phải lưu trữ và bảo đảm khả năng truy cập dữ liệu hình ảnh, âm thanh của phiên livestream bán hàng ít nhất 1 năm từ thời điểm bắt đầu phát (khoản 7 Điều 22 Luật)."
    ],
    "chart": null,
    "callout": "Với nhãn hàng, rủi ro lớn nhất không nằm ở sàn mà ở hợp đồng với KOC: hợp đồng cần điều khoản xác thực danh tính, lưu bản ghi phiên live và gỡ link khi sản phẩm bị cảnh báo."
@@ -77,13 +77,13 @@
    "heading": "3. Quảng cáo: trách nhiệm KOL, thực phẩm bảo vệ sức khỏe và nội dung AI",
    "lead": "Luật Quảng cáo sửa đổi chuyển một phần trách nhiệm từ nhãn hàng sang người trực tiếp nói về sản phẩm. Nghị định hướng dẫn siết quảng cáo trên mạng, còn thủ tục xác nhận quảng cáo thực phẩm bảo vệ sức khỏe chuyển về cấp tỉnh.",
    "bullets": [
-    "Luật 75/2025/QH15 sửa đổi Luật Quảng cáo, thông qua ngày 16/6/2025, hiệu lực từ 1/1/2026 (Thư viện Pháp luật, LuatVietnam).",
-    "Luật bổ sung khái niệm người chuyển tải sản phẩm quảng cáo (khoản 8 Điều 2), gồm KOL, KOC, streamer, reviewer. Điều 15a buộc họ kiểm tra tài liệu sản phẩm, không quảng cáo khi chưa hiểu rõ, thông báo rõ đây là quảng cáo và chịu trách nhiệm nếu sai sự thật (LSVN, Advertising Vietnam).",
-    "Nghị định 342/2025/NĐ-CP ký ngày 26/12/2025, hiệu lực từ 15/2/2026. Quảng cáo vi phạm trên mạng phải gỡ chậm nhất 24 giờ sau yêu cầu; quảng cáo video phải cho tắt sau tối đa 5 giây (Thư viện Pháp luật, Báo Lào Cai).",
-    "Từ 1/7/2026, theo Nghị quyết 21/2026/NQ-CP, Chủ tịch UBND cấp tỉnh cấp giấy xác nhận nội dung quảng cáo thực phẩm bảo vệ sức khỏe thay Cục An toàn thực phẩm, Bộ Y tế (Hà Tĩnh, VietnamPlus).",
-    "Hồ sơ nộp trực tiếp hoặc qua dịch vụ công trực tuyến cấp tỉnh; thời hạn xử lý 10 ngày làm việc từ khi nhận đủ hồ sơ hợp lệ (Báo Lào Cai).",
-    "Luật Trí tuệ nhân tạo 134/2025/QH15 thông qua ngày 10/12/2025, hiệu lực từ 1/3/2026, gồm 8 chương, 35 điều. Đây là luật đầu tiên của Việt Nam quy định riêng về phát triển, cung cấp và sử dụng hệ thống AI (VnEconomy, Apolat Legal).",
-    "Nghị định 142/2026/NĐ-CP hướng dẫn Luật Trí tuệ nhân tạo, hiệu lực từ 1/5/2026. Điều 18 yêu cầu thông báo, gắn nhãn khi đưa ra công chúng nội dung do AI tạo hoặc chỉnh sửa có thể gây nhầm lẫn về sự kiện, nhân vật hoặc nguồn gốc, ví dụ giọng nói, hình ảnh mô phỏng người thật. Không phải gắn nhãn khi chỉ dùng AI để sửa lỗi, dịch, tóm tắt hoặc chỉnh kỹ thuật không đổi bản chất nội dung (LSVN, VCI Legal). Mức phạt riêng cho hành vi không gắn nhãn chưa được quy định (Luật Long Phan PMT)."
+    "Luật 75/2025/QH15 sửa đổi Luật Quảng cáo, Quốc hội thông qua ngày 16/6/2025, hiệu lực từ 1/1/2026 (Điều 3 Luật 75).",
+    "Luật sửa khái niệm người chuyển tải sản phẩm quảng cáo (khoản 8 Điều 2) là người trực tiếp quảng cáo, khuyến nghị, xác nhận sản phẩm trên mạng hoặc bằng hình thức khác, bao trùm KOL, KOC, streamer, reviewer. Điều 15a buộc người chuyển tải chịu trách nhiệm khi nội dung quảng cáo không bảo đảm yêu cầu của Điều 19; người có ảnh hưởng còn phải xác minh độ tin cậy của người quảng cáo, kiểm tra tài liệu sản phẩm, không giới thiệu khi chưa sử dụng hoặc chưa hiểu rõ sản phẩm và thông báo về việc quảng cáo ngay trước và trong khi quảng cáo. Người dùng mạng xã hội khi quảng cáo phải có dấu hiệu phân biệt nội dung quảng cáo hoặc được tài trợ (Điều 23).",
+    "Nghị định 342/2025/NĐ-CP ký ngày 26/12/2025, hiệu lực từ 15/2/2026. Quảng cáo vi phạm trên mạng phải được ngăn chặn, gỡ bỏ chậm nhất 24 giờ sau yêu cầu (khoản 7 Điều 23 Luật, khoản 2 Điều 18 Nghị định). Quảng cáo không ở vùng cố định phải tắt được bằng một lần tương tác; ảnh tĩnh không có thời gian chờ tắt, video hoặc ảnh động chờ tắt tối đa 5 giây (Điều 17 Nghị định).",
+    "Nghị quyết 21/2026/NQ-CP ký ngày 29/4/2026 chuyển việc cấp giấy xác nhận nội dung quảng cáo thực phẩm bảo vệ sức khỏe sang thẩm quyền của Chủ tịch UBND cấp tỉnh từ 1/7/2026 (Điều 2, khoản 2 Điều 6), thay cho Cục An toàn thực phẩm, Bộ Y tế (Cổng Thông tin điện tử Chính phủ).",
+    "Hồ sơ nộp trực tiếp hoặc qua hệ thống dịch vụ công trực tuyến của UBND cấp tỉnh; thời hạn xử lý 10 ngày làm việc từ khi nhận đủ hồ sơ hợp lệ, cơ quan tiếp nhận chỉ được yêu cầu sửa đổi, bổ sung một lần (Phụ lục I Nghị quyết 21). Nghị quyết có hiệu lực đến 1/1/2028.",
+    "Luật Trí tuệ nhân tạo 134/2025/QH15 thông qua ngày 10/12/2025, hiệu lực từ 1/3/2026, gồm 8 chương, 35 điều; theo VnEconomy, đây là luật đầu tiên của Việt Nam quy định riêng về AI. Điều 11 về trách nhiệm minh bạch buộc bên triển khai thông báo khi đưa ra công chúng nội dung do AI tạo hoặc chỉnh sửa có thể gây nhầm lẫn, và gắn nhãn âm thanh, hình ảnh, video mô phỏng người thật hoặc tái hiện sự kiện thực tế.",
+    "Nghị định 142/2026/NĐ-CP ký ngày 30/4/2026, hiệu lực từ 1/5/2026, hướng dẫn Luật Trí tuệ nhân tạo. Điều 18 yêu cầu thông báo khi đưa ra công chúng nội dung do AI tạo hoặc chỉnh sửa có thể gây nhầm lẫn về sự kiện, nhân vật hoặc nguồn gốc, và gắn nhãn dễ nhận biết với âm thanh, hình ảnh, video mô phỏng ngoại hình, giọng nói người thật hoặc tái hiện sự kiện thực tế. Không phải gắn nhãn hiển thị khi chỉ chỉnh kỹ thuật chất lượng không đổi bản chất nội dung, khi dùng AI sửa lỗi, tóm tắt, diễn giải, dịch văn bản không làm sai lệch nội dung, hoặc khi nội dung chỉ dùng nội bộ. Luật giao Chính phủ quy định xử phạt (khoản 5 Điều 29); theo Luật Long Phan PMT, chưa có mức phạt riêng cho hành vi không gắn nhãn."
    ],
    "chart": null,
    "callout": "Từ 2026, câu hỏi KOL đặt ra cho nhãn hàng sẽ là bộ hồ sơ sản phẩm chứ không chỉ là brief; nhãn hàng chuẩn bị sẵn bộ hồ sơ này sẽ chốt hợp tác nhanh hơn."
@@ -92,12 +92,12 @@
    "heading": "4. Thuế hộ kinh doanh và bản đồ 34 tỉnh",
    "lead": "Hai thay đổi này tác động trực tiếp đến nhà bán online và chiến dịch địa phương. Chi phí tuân thủ thuế tăng, còn địa danh cũ trong tài khoản quảng cáo làm lệch nhắm mục tiêu.",
    "bullets": [
-    "Thuế khoán bị bãi bỏ từ 1/1/2026 theo Nghị quyết 198/2025/QH15; hộ, cá nhân kinh doanh chuyển sang tự kê khai, tự tính, tự nộp thuế (VOH, Doanh nhân và Pháp luật).",
-    "Hộ kinh doanh có doanh thu năm từ 1 tỷ đồng trở lên phải dùng hóa đơn điện tử có mã của cơ quan thuế, gồm hóa đơn khởi tạo từ máy tính tiền (VOH).",
-    "Nghị định 68/2026/NĐ-CP (5/3/2026) quy định thuế hộ kinh doanh với ngưỡng 500 triệu đồng; Nghị định 141/2026/NĐ-CP (29/4/2026) nâng ngưỡng không phải nộp thuế GTGT và TNCN lên 1 tỷ đồng/năm (SGGP, Thời báo Tài chính Việt Nam).",
-    "Nghị quyết 202/2025/QH15 thông qua ngày 12/6/2025; chính quyền 34 tỉnh, thành mới hoạt động từ 1/7/2025. Cả nước có 28 tỉnh và 6 thành phố; 23 đơn vị hình thành qua hợp nhất, 11 đơn vị giữ nguyên (Thư viện Pháp luật, LuatVietnam).",
-    "Ví dụ: Hà Giang và Tuyên Quang hợp thành tỉnh Tuyên Quang; TP.HCM mới gồm TP.HCM, Bình Dương và Bà Rịa - Vũng Tàu cũ; Hà Nội, Huế giữ nguyên (Thư viện Pháp luật).",
-    "Theo nhận định của Adtek: địa chỉ trên Google Business Profile, landing page, form lead, feed và từ khóa địa phương cần cập nhật theo tên tỉnh mới; Google Ads cho phép nhắm theo bán kính quanh một điểm khi địa danh chưa khớp (Google Ads API)."
+    "Thuế khoán bị bãi bỏ từ 1/1/2026 theo khoản 6 Điều 10 Nghị quyết 198/2025/QH15 (thông qua ngày 17/5/2025); hộ, cá nhân kinh doanh nộp thuế theo pháp luật quản lý thuế, tức tự kê khai, tự tính, tự nộp.",
+    "Hộ kinh doanh có doanh thu năm trên 1 tỷ đồng phải dùng hóa đơn điện tử có mã của cơ quan thuế hoặc hóa đơn điện tử khởi tạo từ máy tính tiền kết nối với cơ quan thuế; hộ từ 1 tỷ đồng trở xuống được đăng ký dùng nếu có nhu cầu (khoản 5 Điều 8 Nghị định 68/2026, sửa bởi Nghị định 141/2026).",
+    "Nghị định 68/2026/NĐ-CP (ký và có hiệu lực ngày 5/3/2026) quy định chính sách thuế và quản lý thuế đối với hộ kinh doanh với ngưỡng 500 triệu đồng; Nghị định 141/2026/NĐ-CP (ký ngày 29/4/2026, hiệu lực từ 1/1/2026) nâng ngưỡng không chịu thuế GTGT và không phải nộp thuế TNCN lên doanh thu năm từ 1 tỷ đồng trở xuống.",
+    "Nghị quyết 202/2025/QH15 thông qua và có hiệu lực ngày 12/6/2025; chính quyền các tỉnh, thành mới hoạt động từ 1/7/2025. Cả nước có 34 đơn vị hành chính cấp tỉnh gồm 28 tỉnh và 6 thành phố; 23 đơn vị (19 tỉnh, 4 thành phố) hình thành sau sắp xếp, 11 đơn vị giữ nguyên (khoản 24 Điều 1, Điều 2).",
+    "Ví dụ: Hà Giang và Tuyên Quang hợp thành tỉnh Tuyên Quang; TP.HCM mới gồm TP.HCM, Bà Rịa - Vũng Tàu và Bình Dương cũ; Hà Nội, Huế giữ nguyên (khoản 1, 16, 24 Điều 1 Nghị quyết 202).",
+    "Theo nhận định của Adtek: địa chỉ trên Google Business Profile, landing page, form lead, feed và từ khóa địa phương cần cập nhật theo tên tỉnh mới; Google Ads cho phép nhắm theo vùng lân cận quanh một điểm khi địa danh chưa khớp (Google Ads API)."
    ],
    "chart": {
     "title": "Đơn vị hành chính cấp tỉnh trước và sau sắp xếp",
@@ -120,7 +120,7 @@
       "value": 11
      }
     ],
-    "source": "Nghị quyết 202/2025/QH15 qua Thư viện Pháp luật"
+    "source": "Nghị quyết 202/2025/QH15 (Công báo số 773 + 774 ngày 23/6/2025)"
    },
    "callout": "Nhà bán online có doanh thu quanh mốc 1 tỷ đồng nên tính lại biên lợi nhuận sau thuế trước khi tăng ngân sách quảng cáo cho mùa cao điểm cuối năm."
   },
@@ -129,26 +129,26 @@
    "lead": "Danh sách gom các nghĩa vụ trên thành 13 đầu việc. Doanh nghiệp nên rà theo quý, ưu tiên mục có mức phạt tính theo doanh thu.",
    "bullets": [
     "Dữ liệu cá nhân: (1) form lead có ô đồng ý riêng, không tích sẵn, ghi rõ mục đích quảng cáo, chăm sóc, remarketing; (2) lưu bằng chứng đồng ý gồm thời điểm, nguồn, phiên bản chính sách; (3) có quy trình rút lại đồng ý và xóa dữ liệu; (4) kiểm tra nguồn gốc mọi danh sách khách hàng mua hoặc nhận từ đối tác, không mua data.",
-    "Chuyển dữ liệu: (5) lập danh mục công cụ gửi dữ liệu khách hàng ra nước ngoài (CRM, nền tảng quảng cáo, email, lưu trữ đám mây); (6) xác định có thuộc diện lập hồ sơ đánh giá tác động chuyển dữ liệu xuyên biên giới hay được miễn theo quy mô doanh nghiệp.",
+    "Chuyển dữ liệu: (5) lập danh mục công cụ gửi hoặc xử lý dữ liệu khách hàng ở nước ngoài (CRM, nền tảng quảng cáo, email, lưu trữ đám mây); (6) lập hồ sơ đánh giá tác động chuyển dữ liệu xuyên biên giới và nộp trong 60 ngày kể từ lần chuyển đầu tiên; nghĩa vụ này không được miễn theo quy mô doanh nghiệp.",
     "Thương mại điện tử: (7) hợp đồng với KOC, streamer, publisher affiliate có điều khoản xác thực danh tính, lưu bản ghi phiên live và gỡ link khi sản phẩm bị cảnh báo; (8) rà quy chế livestream của từng sàn đang dùng.",
     "Quảng cáo: (9) gắn nhãn quảng cáo hoặc tài trợ trên mọi nội dung KOL; (10) gửi KOL bộ hồ sơ sản phẩm và giấy tờ chứng minh công dụng trước khi quay; (11) nộp hồ sơ xác nhận nội dung quảng cáo thực phẩm bảo vệ sức khỏe tại UBND cấp tỉnh trước khi chạy; (12) gắn nhãn AI cho quảng cáo dùng hình ảnh, giọng nói mô phỏng người thật hoặc tái hiện sự kiện.",
     "Vận hành: (13) cập nhật tên tỉnh mới trên Google Business Profile, website, feed, vùng nhắm mục tiêu; với hộ kinh doanh, rà mốc doanh thu 1 tỷ đồng và hóa đơn điện tử."
    ],
    "chart": {
     "type": "timeline",
-    "title": "Mốc hiệu lực các văn bản chính năm 2026",
+    "title": "Mốc hiệu lực các văn bản chính 2026 và đầu 2027",
     "items": [
      {
       "date": "1/1",
-      "label": "Luật Bảo vệ dữ liệu cá nhân 91/2025, Nghị định 356/2025, Luật Quảng cáo 75/2025, bỏ thuế khoán hộ kinh doanh"
-     },
-     {
-      "date": "1/3",
-      "label": "Luật Trí tuệ nhân tạo 134/2025"
+      "label": "Luật Bảo vệ dữ liệu cá nhân 91/2025, Nghị định 356/2025, Luật Quảng cáo 75/2025, bỏ thuế khoán hộ kinh doanh; ngưỡng 1 tỷ đồng của Nghị định 141/2026 áp dụng từ ngày này"
      },
      {
       "date": "15/2",
       "label": "Nghị định 342/2025 hướng dẫn Luật Quảng cáo"
+     },
+     {
+      "date": "1/3",
+      "label": "Luật Trí tuệ nhân tạo 134/2025"
      },
      {
       "date": "5/3",
@@ -156,7 +156,7 @@
      },
      {
       "date": "1/5",
-      "label": "Nghị định 142/2026: gắn nhãn nội dung do AI tạo ra"
+      "label": "Nghị định 142/2026: thông báo, gắn nhãn nội dung do AI tạo ra"
      },
      {
       "date": "1/7",
@@ -164,7 +164,11 @@
      },
      {
       "date": "19/8",
-      "label": "Nghị định 330/2026 xử phạt vi phạm về dữ liệu cá nhân"
+      "label": "Nghị định 330/2026 xử phạt vi phạm về an ninh mạng và dữ liệu cá nhân"
+     },
+     {
+      "date": "1/1/2027",
+      "label": "Chủ quản nền tảng thương mại điện tử xác thực điện tử danh tính người bán, người livestream (Nghị định 248/2026)"
      }
     ],
     "source": "Tổng hợp của Adtek từ các văn bản đã nêu"
@@ -180,7 +184,7 @@
   },
   {
    "title": "Kiểm kê dòng dữ liệu ra nước ngoài",
-   "text": "Liệt kê công cụ nhận dữ liệu khách hàng như Customer Match, Conversions API, CRM đặt máy chủ ngoài Việt Nam. Theo nhận định của Adtek, việc tải danh sách khách hàng lên nền tảng nước ngoài cần được xem xét trong hồ sơ chuyển dữ liệu xuyên biên giới.",
+   "text": "Liệt kê công cụ nhận dữ liệu khách hàng như Customer Match, Conversions API, CRM đặt máy chủ ngoài Việt Nam. Điều 20 Luật Bảo vệ dữ liệu cá nhân coi việc dùng nền tảng ở ngoài Việt Nam để xử lý dữ liệu thu thập tại Việt Nam là chuyển dữ liệu xuyên biên giới, nên theo nhận định của Adtek, việc tải danh sách khách hàng lên nền tảng quảng cáo nước ngoài cần nằm trong hồ sơ đánh giá tác động chuyển dữ liệu.",
    "example": "Một chuỗi bán lẻ mỹ phẩm upload 200.000 số điện thoại lên Google Ads nên được bộ phận pháp chế xác nhận đã có hồ sơ đánh giá tác động trước khi chạy chiến dịch."
   },
   {
@@ -190,8 +194,8 @@
   },
   {
    "title": "Lên lịch xin xác nhận quảng cáo theo cấp tỉnh",
-   "text": "Doanh nghiệp thực phẩm bảo vệ sức khỏe nên tính thời gian xử lý 10 ngày làm việc vào kế hoạch chiến dịch và chuẩn bị đủ hồ sơ để không bị yêu cầu bổ sung.",
-   "example": "Một nhãn hàng TPBVSK ra mắt sản phẩm dịp 11/11 nộp hồ sơ tại UBND tỉnh nơi đặt trụ sở từ giữa tháng 10, sau đó mới duyệt kịch bản livestream."
+   "text": "Doanh nghiệp thực phẩm bảo vệ sức khỏe nên tính thời gian xử lý 10 ngày làm việc vào kế hoạch chiến dịch và chuẩn bị đủ hồ sơ ngay từ đầu, vì cơ quan tiếp nhận chỉ yêu cầu bổ sung một lần và sau đó có thêm 10 ngày làm việc để thẩm định lại.",
+   "example": "Một nhãn hàng TPBVSK ra mắt sản phẩm dịp 11/11 nộp hồ sơ qua cổng dịch vụ công của UBND cấp tỉnh từ giữa tháng 10, có giấy xác nhận rồi mới duyệt kịch bản livestream và gửi văn bản xác nhận cho sàn, cho người livestream."
   },
   {
    "title": "Rà dữ liệu địa lý sau sáp nhập",
@@ -201,214 +205,82 @@
  ],
  "sources": [
   {
-   "name": "Luật Bảo vệ dữ liệu cá nhân 2025 (toàn văn)",
-   "publisher": "LuatVietnam",
-   "date": "2025",
-   "url": "https://luatvietnam.vn/dan-su/tai-toan-van-luat-bao-ve-du-lieu-ca-nhan-2025-pdf-word-568-103646-article.html"
+   "name": "Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15 (Công báo số 971 + 972)",
+   "publisher": "Công báo Chính phủ",
+   "date": "26/6/2025",
+   "url": "https://congbao.chinhphu.vn/van-ban/luat-so-91-2025-qh15-45578.htm"
   },
   {
-   "name": "Tổ chức vi phạm quy định chuyển dữ liệu cá nhân xuyên biên giới bị phạt 5% doanh thu",
-   "publisher": "Báo Đầu tư",
-   "date": "2025",
-   "url": "https://baodautu.vn/to-chuc-vi-pham-quy-dinh-chuyen-du-lieu-ca-nhan-xuyen-bien-gioi-bi-phat-5-doanh-thu-d314379.html"
+   "name": "Nghị định số 356/2025/NĐ-CP quy định chi tiết một số điều và biện pháp thi hành Luật Bảo vệ dữ liệu cá nhân",
+   "publisher": "Công báo Chính phủ",
+   "date": "31/12/2025",
+   "url": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-356-2025-nd-cp-468371.htm"
   },
   {
-   "name": "Mua bán dữ liệu cá nhân trái phép có thể bị phạt tới 10 lần doanh thu",
-   "publisher": "LSVN (Tạp chí Luật sư Việt Nam)",
-   "date": "2025",
-   "url": "https://lsvn.vn/mua-ban-du-lieu-ca-nhan-trai-phep-co-the-bi-phat-toi-10-lan-doanh-thu-a160473.html"
+   "name": "Nghị định số 330/2026/NĐ-CP quy định xử phạt vi phạm hành chính trong lĩnh vực an ninh mạng và bảo vệ dữ liệu cá nhân",
+   "publisher": "Công báo Chính phủ",
+   "date": "19/8/2026",
+   "url": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-330-2026-nd-cp-470339/67933.htm"
   },
   {
-   "name": "Quốc hội thông qua Luật Bảo vệ dữ liệu cá nhân",
-   "publisher": "Thương hiệu và Công luận",
-   "date": "2025",
-   "url": "https://thuonghieucongluan.com.vn/quoc-hoi-thong-qua-luat-bao-ve-du-lieu-ca-nhan-a268150.html"
+   "name": "Nghị định số 330/2026/NĐ-CP (thuộc tính văn bản)",
+   "publisher": "Cổng Thông tin điện tử Chính phủ",
+   "date": "19/8/2026",
+   "url": "https://vanban.chinhphu.vn/?pageid=27160&docid=219266"
   },
   {
-   "name": "Nghị định 356/2025/NĐ-CP quy định chi tiết Luật Bảo vệ dữ liệu cá nhân",
-   "publisher": "EY Việt Nam",
-   "date": "2026",
-   "url": "https://www.ey.com/vi_vn/technical/tax/tax-and-law-updates/nghi-dinh-so-356-2025-nd-cp-quy-dinh-chi-tiet-mot-so-dieu-va-bien-phap-thi-hanh-luat-bao-ve-du-lieu-ca-nhan"
-  },
-  {
-   "name": "New rules on personal data protection",
-   "publisher": "PwC Việt Nam",
-   "date": "28/01/2026",
-   "url": "https://www.pwc.com/vn/vn/publications/2026/20260128-new-rules-personal-data-protection.pdf"
-  },
-  {
-   "name": "Phạt đến 70 triệu đồng với các vi phạm về xử lý dữ liệu cá nhân",
-   "publisher": "LSVN",
-   "date": "2026",
-   "url": "https://lsvn.vn/phat-den-70-trieu-dong-voi-cac-vi-pham-ve-xu-ly-du-lieu-ca-nhan-a178276.html"
-  },
-  {
-   "name": "Phạt đến 100.000.000 đồng với hành vi cung cấp, chia sẻ dữ liệu cá nhân của bệnh nhân cho bên thứ ba khi chưa có sự đồng ý",
-   "publisher": "LSVN",
-   "date": "2026",
-   "url": "https://lsvn.vn/phat-den-100-000-000-dong-voi-hanh-vi-cung-cap-chia-se-du-lieu-ca-nhan-cua-benh-nhan-cho-ben-thu-ba-khi-chua-co-su-dong-y-a178123.html"
-  },
-  {
-   "name": "Phạt tới 70 triệu đồng nếu tự ý thu thập, xử lý dữ liệu cá nhân",
-   "publisher": "Mekong ASEAN",
-   "date": "2026",
-   "url": "https://mekongasean.vn/phat-toi-70-trieu-dong-neu-tu-y-thu-thap-xu-ly-du-lieu-ca-nhan-58797.html"
-  },
-  {
-   "name": "Quy định xử phạt vi phạm hành chính trong lĩnh vực an ninh mạng và bảo vệ dữ liệu cá nhân",
-   "publisher": "Thị trường Tài chính Tiền tệ",
-   "date": "2026",
-   "url": "https://thitruongtaichinhtiente.vn/quy-dinh-xu-phat-vi-pham-hanh-chinh-trong-linh-vuc-an-ninh-mang-va-bao-ve-du-lieu-ca-nhan-85098.html"
-  },
-  {
-   "name": "Có được sử dụng dữ liệu khách hàng để quảng cáo, tiếp thị lại không?",
-   "publisher": "VOH",
-   "date": "2026",
-   "url": "https://voh.com.vn/phap-luat/co-duoc-su-dung-du-lieu-khach-hang-de-quang-cao-tiep-thi-lai-khong-645977.html"
-  },
-  {
-   "name": "Luật Thương mại điện tử 2025 số 122/2025/QH15",
-   "publisher": "Thư viện Pháp luật",
+   "name": "Luật Thương mại điện tử số 122/2025/QH15",
+   "publisher": "Công báo Chính phủ",
    "date": "10/12/2025",
-   "url": "https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Thuong-mai-dien-tu-2025-so-122-2025-QH15-662035.aspx"
+   "url": "https://congbao.chinhphu.vn/van-ban/luat-so-122-2025-qh15-468683/61714.htm"
   },
   {
-   "name": "Từ ngày 01/7/2026 người livestream bán hàng cần chuẩn bị gì để làm nghề đúng luật",
-   "publisher": "Brands Vietnam (ACCESSTRADE Vietnam)",
-   "date": "2026",
-   "url": "https://www.brandsvietnam.com/congdong/topic/tu-ngay-01-7-2026-nguoi-livestream-ban-hang-can-chuan-bi-gi-de-lam-nghe-dung-luat"
+   "name": "Nghị định số 248/2026/NĐ-CP quy định chi tiết một số điều của Luật Thương mại điện tử",
+   "publisher": "Công báo Chính phủ",
+   "date": "30/6/2026",
+   "url": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-248-2026-nd-cp-469983/66872.htm"
   },
   {
-   "name": "Phải công khai quy chế livestream bán hàng trên nền tảng thương mại điện tử",
-   "publisher": "LSVN",
-   "date": "2026",
-   "url": "https://lsvn.vn/phai-cong-khai-quy-che-livestream-ban-hang-tren-nen-tang-thuong-mai-dien-tu-a175437.html"
-  },
-  {
-   "name": "Chấm dứt thời kỳ ẩn danh: livestream bán hàng và làm affiliate bắt buộc phải xác thực danh tính từ 01/7/2026",
-   "publisher": "Hệ thống Pháp luật",
-   "date": "2026",
-   "url": "https://hethongphapluat.com/phap-luat/chinh-sach-phap-luat-tin-tuc/cham-dut-thoi-ky-danh-livestream-ban-hang-va-lam-affiliate-bat-buoc-phai-xac-thuc-danh-tinh-tu-0172026.html"
-  },
-  {
-   "name": "Tham gia livestream bán hàng, tiếp thị liên kết phải xác thực danh tính",
-   "publisher": "Mekong ASEAN",
-   "date": "2026",
-   "url": "https://mekongasean.vn/tham-gia-livestream-ban-hang-tiep-thi-lien-ket-phai-xac-thuc-danh-tinh-57439.html"
-  },
-  {
-   "name": "Nền tảng thương mại điện tử phải gỡ bỏ thông tin vi phạm trong vòng 24 giờ",
-   "publisher": "Doanh nhân và Pháp luật",
-   "date": "2026",
-   "url": "https://doanhnhan.baophapluat.vn/nen-tang-thuong-mai-dien-tu-phai-go-bo-thong-tin-vi-pham-trong-vong-24-gio-dc31f1ea.html"
-  },
-  {
-   "name": "Siết chặt khung pháp lý đối với hoạt động livestream bán thuốc và thực phẩm chức năng",
-   "publisher": "Tạp chí Công Thương",
-   "date": "2026",
-   "url": "https://tapchicongthuong.vn/siet-chat-khung-phap-ly-doi-voi-hoat-dong-livestream-ban-thuoc-va-thuc-pham-chuc-nang-556248.htm"
-  },
-  {
-   "name": "Luật Quảng cáo sửa đổi 2025 số 75/2025/QH15",
-   "publisher": "Thư viện Pháp luật",
+   "name": "Luật số 75/2025/QH15 sửa đổi, bổ sung một số điều của Luật Quảng cáo",
+   "publisher": "Công báo Chính phủ",
    "date": "16/6/2025",
-   "url": "https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Quang-cao-sua-doi-2025-so-75-2025-QH15-555035.aspx"
+   "url": "https://congbao.chinhphu.vn/van-ban/luat-so-75-2025-qh15-45566/57708.htm"
   },
   {
-   "name": "7 điểm mới của Luật Quảng cáo sửa đổi 2025",
-   "publisher": "LuatVietnam",
-   "date": "2025",
-   "url": "https://luatvietnam.vn/linh-vuc-khac/diem-moi-cua-luat-quang-cao-sua-doi-2025-883-102813-article.html"
-  },
-  {
-   "name": "Từ 2026, người có ảnh hưởng không được quảng cáo khi chưa hiểu rõ sản phẩm",
-   "publisher": "LSVN",
-   "date": "2025",
-   "url": "https://lsvn.vn/tu-2026-nguoi-co-anh-huong-khong-duoc-quang-cao-khi-chua-hieu-ro-san-pham-a159875.html"
-  },
-  {
-   "name": "Luật Quảng cáo áp dụng từ 2026 đối với influencer marketing",
-   "publisher": "Advertising Vietnam",
-   "date": "2025",
-   "url": "https://advertisingvietnam.com/article/luat-quang-cao-ap-dung-tu-2026-doi-voi-influencer-marketing-p27549"
-  },
-  {
-   "name": "Nghị định 342/2025/NĐ-CP hướng dẫn Luật Quảng cáo",
-   "publisher": "Thư viện Pháp luật",
+   "name": "Nghị định số 342/2025/NĐ-CP quy định chi tiết một số điều của Luật Quảng cáo",
+   "publisher": "Công báo Chính phủ",
    "date": "26/12/2025",
-   "url": "https://thuvienphapluat.vn/van-ban/Thuong-mai/Nghi-dinh-342-2025-ND-CP-huong-dan-Luat-Quang-cao-687658.aspx"
+   "url": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-342-2025-nd-cp-468584.htm"
   },
   {
-   "name": "Quy định mới siết chặt hoạt động quảng cáo trên mạng",
-   "publisher": "Báo Lào Cai",
-   "date": "2026",
-   "url": "https://baolaocai.vn/quy-dinh-moi-siet-chat-hoat-dong-quang-cao-tren-mang-post890667.html"
+   "name": "Nghị quyết số 21/2026/NQ-CP cắt giảm, đơn giản hóa điều kiện kinh doanh, thủ tục hành chính và phân cấp trong lĩnh vực y tế",
+   "publisher": "Cổng Thông tin điện tử Chính phủ",
+   "date": "29/4/2026",
+   "url": "https://vanban.chinhphu.vn/?pageid=27160&docid=217977"
+  },
+  {
+   "name": "Toàn văn Nghị quyết 21/2026/NQ-CP (bản ký số)",
+   "publisher": "Cổng Thông tin điện tử Chính phủ",
+   "date": "5/5/2026",
+   "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-21-2026-nq-cp-ve-cat-giam-don-gian-hoa-thu-tuc-hanh-chinh-linh-vuc-y-te-119260505155118043.htm"
   },
   {
    "name": "Từ 1/7, UBND các tỉnh, thành phố sẽ cấp phép quảng cáo thực phẩm bảo vệ sức khỏe",
-   "publisher": "Cổng thông tin điện tử tỉnh Hà Tĩnh",
-   "date": "2026",
-   "url": "https://hatinh.gov.vn/vi/bai-viet/tu-17-ubnd-cac-tinh-thanh-pho-se-cap-phep-quang-cao-thuc-pham-bao-ve-suc-khoe"
+   "publisher": "Báo Điện tử Chính phủ",
+   "date": "5/5/2026",
+   "url": "https://baochinhphu.vn/tu-1-7-ubnd-cac-tinh-thanh-pho-se-cap-phep-quang-cao-thuc-pham-bao-ve-suc-khoe-102260505155745458.htm"
   },
   {
-   "name": "Quảng cáo thực phẩm bảo vệ sức khỏe sẽ do các tỉnh, thành cấp phép từ 1/7",
-   "publisher": "VietnamPlus",
-   "date": "2026",
-   "url": "https://www.vietnamplus.vn/quang-cao-thuc-pham-bao-ve-suc-khoe-se-do-cac-tinh-thanh-cap-phep-tu-17-post1115912.vnp"
+   "name": "Luật Trí tuệ nhân tạo số 134/2025/QH15",
+   "publisher": "Công báo Chính phủ",
+   "date": "10/12/2025",
+   "url": "https://congbao.chinhphu.vn/van-ban/luat-so-134-2025-qh15-468694.htm"
   },
   {
-   "name": "Thủ tục cấp phép quảng cáo thực phẩm bảo vệ sức khỏe từ 1/7/2026 tại UBND tỉnh, thành",
-   "publisher": "Báo Lào Cai",
-   "date": "2026",
-   "url": "https://baolaocai.vn/thu-tuc-cap-phep-quang-cao-thuc-pham-bao-ve-suc-khoe-tu-172026-tai-ubnd-tinh-thanh-post899076.html"
-  },
-  {
-   "name": "Từ 1/1/2026, chính thức bỏ thuế khoán, chuyển sang kê khai thuế",
-   "publisher": "VOH",
-   "date": "2025",
-   "url": "https://voh.com.vn/kinh-te/tu-112026-chinh-thuc-bo-thue-khoan-chuyen-sang-ke-khai-thue-642709.html"
-  },
-  {
-   "name": "Chính thức bỏ thuế khoán từ 1/1/2026: hộ kinh doanh cần chuẩn bị gì",
-   "publisher": "Doanh nhân và Pháp luật",
-   "date": "2025",
-   "url": "https://doanhnhan.baophapluat.vn/chinh-thuc-bo-thue-khoan-tu-112026-ho-kinh-doanh-can-chuan-bi-gi-de-chuyen-sang-tu-ke-khai-89247.html"
-  },
-  {
-   "name": "Toàn văn Nghị định 68/2026/NĐ-CP quy định chính sách thuế, quản lý thuế với hộ kinh doanh",
-   "publisher": "Trung tâm Phục vụ hành chính công tỉnh Nghệ An",
-   "date": "05/3/2026",
-   "url": "https://hcc.nghean.gov.vn/tin-tong-hop/toan-van-nghi-dinh-68-2026-nd-cp-quy-dinh-chinh-sach-thue-quan-ly-thue-voi-ho-kinh-doanh-2660.html"
-  },
-  {
-   "name": "Nâng ngưỡng chịu thuế với hộ kinh doanh lên 1 tỷ đồng/năm",
-   "publisher": "SGGP",
-   "date": "2026",
-   "url": "https://www.sggp.org.vn/nang-nguong-chiu-thue-voi-ho-kinh-doanh-len-1-ty-dongnam-post850439.html"
-  },
-  {
-   "name": "Nâng ngưỡng doanh thu không phải nộp thuế lên 1 tỷ đồng",
-   "publisher": "Thời báo Tài chính Việt Nam",
-   "date": "2026",
-   "url": "https://thoibaotaichinhvietnam.vn/nang-nguong-doanh-thu-khong-phai-nop-thue-len-1-ty-dong-dieu-ho-kinh-doanh-mong-cho-da-thanh-hien-thuc-196524.html"
-  },
-  {
-   "name": "Nghị quyết 202/2025/QH15 về sắp xếp đơn vị hành chính cấp tỉnh",
-   "publisher": "LuatVietnam",
-   "date": "12/6/2025",
-   "url": "https://luatvietnam.vn/hanh-chinh/nghi-quyet-202-2025-qh15-cua-quoc-hoi-ve-viec-sap-xep-don-vi-hanh-chinh-cap-tinh-402728-d1.html"
-  },
-  {
-   "name": "Danh sách 34 tỉnh thành sau sáp nhập theo vùng miền",
-   "publisher": "Thư viện Pháp luật",
-   "date": "2026",
-   "url": "https://thuvienphapluat.vn/phap-luat-nha-dat/danh-sach-34-tinh-thanh-sau-sap-nhap-theo-vung-mien-cap-nhat-moi-nhat-2026-15983.html"
-  },
-  {
-   "name": "Nhắm mục tiêu theo vị trí",
-   "publisher": "Google Ads API",
-   "date": "2026",
-   "url": "https://developers.google.com/google-ads/api/docs/targeting/location-targeting?hl=vi"
+   "name": "Nghị định số 142/2026/NĐ-CP quy định chi tiết một số điều và biện pháp thi hành Luật Trí tuệ nhân tạo",
+   "publisher": "Công báo Chính phủ",
+   "date": "30/4/2026",
+   "url": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-142-2026-nd-cp-469480.htm"
   },
   {
    "name": "Luật Trí tuệ nhân tạo sẽ có hiệu lực từ ngày 1/3/2026",
@@ -417,48 +289,55 @@
    "url": "https://vneconomy.vn/luat-tri-tue-nhan-tao-se-co-hieu-luc-tu-ngay-132026.htm"
   },
   {
-   "name": "Luật Trí tuệ nhân tạo 2025 số 134/2025/QH15",
-   "publisher": "Apolat Legal",
-   "date": "2026",
-   "url": "https://apolatlegal.com/vi/laws/luat-tri-tue-nhan-tao-2025-so-134-2025-qh15/"
-  },
-  {
-   "name": "Thông báo và gắn nhãn nhận biết nội dung do AI tạo ra thế nào",
-   "publisher": "LSVN",
-   "date": "2026",
-   "url": "https://lsvn.vn/thong-bao-va-gan-nhan-nhan-biet-noi-dung-do-ai-tao-ra-the-nao-a172678.html"
-  },
-  {
-   "name": "Vietnam's new AI Decree 142: what businesses should know",
-   "publisher": "VCI Legal",
-   "date": "2026",
-   "url": "https://vci-legal.com/news/vietnams-new-ai-decree-142-what-businesses-should-know"
-  },
-  {
    "name": "Gắn nhãn nội dung AI: ai bắt buộc và hậu quả nếu vi phạm",
    "publisher": "Luật Long Phan PMT",
    "date": "2026",
    "url": "https://luatlongphan.vn/?p=90894"
+  },
+  {
+   "name": "Toàn văn Nghị quyết số 198/2025/QH15 về một số cơ chế, chính sách đặc biệt phát triển kinh tế tư nhân",
+   "publisher": "Cổng Thông tin điện tử Chính phủ",
+   "date": "17/5/2025",
+   "url": "https://xaydungchinhsach.chinhphu.vn/nghi-quyet-198-2025-qh15-ve-mot-so-co-che-chinh-sach-dac-biet-phat-trien-kinh-te-tu-nhan-119250517191622422.htm"
+  },
+  {
+   "name": "Toàn văn Nghị định 68/2026/NĐ-CP quy định chính sách thuế, quản lý thuế đối với hộ kinh doanh, cá nhân kinh doanh",
+   "publisher": "Cổng Thông tin điện tử Chính phủ",
+   "date": "5/3/2026",
+   "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-68-2026-nd-cp-quy-dinh-ve-chinh-sach-thue-quan-ly-thue-voi-ho-kinh-doanh-119260306102906789.htm"
+  },
+  {
+   "name": "Toàn văn Nghị định số 141/2026/NĐ-CP nâng ngưỡng doanh thu không phải chịu thuế lên 1 tỷ đồng",
+   "publisher": "Cổng Thông tin điện tử Chính phủ",
+   "date": "29/4/2026",
+   "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-so-141-2026-nd-cp-nang-nguong-doanh-thu-khong-phai-chiu-thue-len-1-ty-dong-119260504154326455.htm"
+  },
+  {
+   "name": "Nghị quyết số 202/2025/QH15 về việc sắp xếp đơn vị hành chính cấp tỉnh (Công báo số 773 + 774)",
+   "publisher": "Công báo Chính phủ",
+   "date": "12/6/2025",
+   "url": "https://congbaocdn.chinhphu.vn/CongBaoCP/VanBan/2025/6/45050/56708-1-2025773-774202-2025-qh15.pdf"
+  },
+  {
+   "name": "Nhắm mục tiêu theo vị trí",
+   "publisher": "Google Ads API",
+   "date": "2026",
+   "url": "https://developers.google.com/google-ads/api/docs/targeting/location-targeting?hl=vi"
   }
  ],
  "verification_notes": [
-  "Câu miễn trừ bắt buộc: Tài liệu này chỉ mang tính tham khảo, tổng hợp từ văn bản và báo chí đến tháng 10/2026, không thay thế tư vấn pháp lý; doanh nghiệp cần đối chiếu toàn văn văn bản và hỏi ý kiến luật sư trước khi áp dụng. Đã đặt ở callout section 5.",
-  "Đã kiểm chứng bằng WebSearch (mode standard) các số hiệu và ngày: Luật 91/2025/QH15 (hiệu lực 1/1/2026), NĐ 356/2025/NĐ-CP (ký 31/12/2025, hiệu lực 1/1/2026, thay NĐ 13/2023), NĐ 330/2026/NĐ-CP (19/8/2026, 82 điều), Luật 122/2025/QH15 (thông qua 10/12/2025, hiệu lực 1/7/2026), NĐ 248/2026/NĐ-CP (30/6/2026), Luật 75/2025/QH15 (16/6/2025, hiệu lực 1/1/2026), NĐ 342/2025/NĐ-CP (26/12/2025, hiệu lực 15/2/2026), NQ 21/2026/NQ-CP (cấp tỉnh từ 1/7/2026), NQ 198/2025/QH15 (bỏ thuế khoán 1/1/2026), NĐ 68/2026/NĐ-CP (5/3/2026), NĐ 141/2026/NĐ-CP (29/4/2026), NQ 202/2025/QH15 (12/6/2025; 34 đơn vị, 23 hợp nhất, 11 giữ nguyên). WebFetch thử một lần (gvlawyers.com.vn) bị lỗi DNS, nên chỉ dựa vào WebSearch.",
-  "Mức phạt Luật 91 (10 lần khoản thu, 5% doanh thu năm trước, 3 tỷ đồng) xác nhận qua Báo Đầu tư, LSVN và tóm tắt Điều 8. Không xác nhận được quy tắc mức phạt cá nhân bằng một nửa tổ chức, nên không đưa vào.",
-  "Đã loại cụm '1-5% doanh thu' trong dữ liệu đầu vào: nguồn chỉ xác nhận mức tối đa 5% cho chuyển dữ liệu xuyên biên giới, không thấy khung 1%.",
-  "NĐ 330/2026: mức 50-70 triệu đồng cho hành vi coi im lặng là đồng ý có hai nguồn (LSVN, Mekong ASEAN). Mức 100 triệu đồng cho chia sẻ dữ liệu bệnh nhân chỉ thấy ở tiêu đề bài LSVN; đoạn trích Điều 62 lại nêu 50-70 triệu cho một hành vi khác. Chart ghi rõ 'theo LSVN'. Biên tập có thể bỏ mục này nếu muốn chắc chắn tuyệt đối.",
-  "Có nguồn nhắc Nghị định 363/2026/NĐ-CP (19/9/2026) về xử phạt trong lĩnh vực dữ liệu; chưa rõ quan hệ với NĐ 330, nên không đưa vào báo cáo.",
-  "Lưu dữ liệu livestream tối thiểu 1 năm: chỉ một nguồn báo chí, chưa đối chiếu toàn văn NĐ 248; đã ghi 'theo báo chí'. Nguồn được gán là Tạp chí Công Thương theo kết quả tìm kiếm, cần kiểm lại khi biên tập.",
-  "Miễn trừ doanh nghiệp nhỏ: hộ kinh doanh và doanh nghiệp siêu nhỏ không phải thực hiện các nghĩa vụ đánh giá tác động và nhân sự bảo vệ dữ liệu (Điều 21, 22, khoản 2 Điều 33 Luật 91 theo Báo Đầu tư); doanh nghiệp nhỏ, khởi nghiệp được lựa chọn trong 5 năm. Nguồn tóm tắt không ghi rõ thời hạn cho nhóm hộ kinh doanh, siêu nhỏ, nên báo cáo không nêu thời hạn cho nhóm này.",
-  "Không tìm được nguồn liệt kê trường hợp miễn lập hồ sơ chuyển dữ liệu xuyên biên giới (ví dụ lưu trữ đám mây). Nhận định rằng upload danh sách khách hàng lên nền tảng nước ngoài cần xem xét trong hồ sơ là suy luận của Adtek, đã ghi rõ trong phần khuyến nghị.",
-  "NQ 21/2026/NQ-CP: nguồn mâu thuẫn ngày ban hành (19/4/2026 hoặc 29/4/2026), nên báo cáo không nêu ngày ban hành, chỉ nêu mốc áp dụng 1/7/2026.",
-  "Thuế hộ kinh doanh: ngưỡng 500 triệu (Luật Thuế TNCN sửa đổi, NĐ 68/2026) đã được NĐ 141/2026 nâng lên 1 tỷ đồng (SGGP, Thời báo Tài chính). Ngày hiệu lực của NĐ 141 có nguồn ghi áp dụng từ 1/1/2026, nguồn khác ghi các quy định ngưỡng có hiệu lực từ 1/7/2026, nên báo cáo không nêu ngày hiệu lực của ngưỡng 1 tỷ. Ngưỡng 200 triệu của Luật Thuế GTGT 2024 không đưa vào để tránh gây nhầm.",
-  "Không có mức phạt hành chính cụ thể cho KOL theo khung mới trong nguồn đã kiểm chứng; không đưa con số. Không nêu tên cá nhân bị truy tố năm 2025.",
-  "TP.HCM mới gồm TP.HCM, Bình Dương, Bà Rịa - Vũng Tàu cũ: thông tin chung theo NQ 202/2025, kết quả tìm kiếm có nhắc việc sáp nhập Bà Rịa - Vũng Tàu với Bình Dương nhưng không có trích dẫn đầy đủ trong phiên này; biên tập nên đối chiếu danh sách Thư viện Pháp luật.",
-  "Chart mốc hiệu lực dùng số ngày thứ tự trong năm 2026 (1/1 = 1, 15/2 = 46, 5/3 = 64, 1/7 = 182, 19/8 = 231) để quy đổi mốc thời gian thành số.",
-  "Ví dụ trong implications là tình huống minh họa của Adtek, không phải khách hàng thật.",
-  "Cẩm nang không dùng số liệu của Metric hoặc YouNet ECI.",
-  "Luật 134/2025 và NĐ 142/2026 do phiên Adtek - Marketing gợi ý, kiểm qua WebSearch 16/10/2026 (VnEconomy, Apolat, LSVN, VCI Legal). Phạm vi bắt buộc gắn nhãn diễn giải khác nhau giữa các nguồn; mức phạt chưa có."
+  "Câu miễn trừ bắt buộc giữ nguyên ở callout section 5.",
+  "Kiểm chứng lại ngày 16/10/2026 trên toàn văn Công báo và Cổng Thông tin điện tử Chính phủ (PDF lưu tại scratchpad dl/cam-nang-phap-ly-marketing-2026); bảng chi tiết ở scratchpad verify/cam-nang-phap-ly-marketing-2026.md.",
+  "Luật 91: Điều 8 khớp 10 lần, 5%, 3 tỷ; đã bổ sung mức áp dụng cho tổ chức, cá nhân bằng một nửa (khoản 6). Miễn trừ quy mô: ngưỡng số lượng lớn là 100.000 chủ thể (Điều 41 NĐ 356), áp dụng cho cả hai nhóm, không gồm hồ sơ chuyển dữ liệu xuyên biên giới (Điều 20): đã sửa bullet và checklist mục 6.",
+  "NĐ 330: Điều 43 khoản 2 điểm b xác nhận 50 đến 70 triệu đồng cho coi im lặng là đồng ý (mức với tổ chức); mặc định đồng ý là 30 đến 50 triệu (khoản 1). 4 chương, 82 điều, hiệu lực 19/8/2026 khớp.",
+  "Luật 122/NĐ 248: lưu dữ liệu livestream tối thiểu 1 năm nằm ở khoản 7 Điều 22 Luật (trước đây chỉ dẫn theo báo). Khoản 2 Điều 52 NĐ 248 lùi nghĩa vụ nền tảng xác thực điện tử người bán, người livestream đến 1/1/2027: đã sửa key_stats, summary, lead và thêm mốc vào timeline. Điều dẫn cho nền tảng livestream là Điều 22 (không phải 25, 26).",
+  "Luật 75/NĐ 342: 24 giờ có ở khoản 7 Điều 23 Luật và khoản 2 Điều 18 NĐ; 5 giây chỉ áp dụng quảng cáo không ở vùng cố định dạng video, ảnh động (Điều 17 NĐ). Nghĩa vụ kiểm tra tài liệu, không quảng cáo khi chưa hiểu rõ, thông báo quảng cáo thuộc khoản 3 Điều 15a, áp dụng cho người có ảnh hưởng.",
+  "NQ 21/2026: ngày ký 29/4/2026 (Cổng Chính phủ), Điều 2 hiệu lực 1/7/2026, Phụ lục I: 10 ngày làm việc, yêu cầu bổ sung một lần. Nghị quyết không nêu tỉnh nào tiếp nhận nên đã bỏ cụm 'nơi đặt trụ sở' trong ví dụ.",
+  "Thuế: NĐ 141 ký 29/4/2026, hiệu lực 1/1/2026; ngưỡng là doanh thu từ 1 tỷ đồng trở xuống. Hóa đơn điện tử bắt buộc khi doanh thu trên 1 tỷ đồng (khoản 5 Điều 8 NĐ 68 sửa bởi NĐ 141), đã sửa từ 'từ 1 tỷ trở lên'. NĐ 68 ký và có hiệu lực 5/3/2026. NQ 198: khoản 6 Điều 10.",
+  "NQ 202: khoản 24 Điều 1 xác nhận 34 đơn vị, 28 tỉnh, 6 thành phố, 23 hình thành sau sắp xếp (19 tỉnh, 4 thành phố), 11 giữ nguyên; 63 đơn vị trước sắp xếp suy ra từ 52 đơn vị sáp nhập cộng 11 giữ nguyên.",
+  "Luật 134 (8 chương, 35 điều, hiệu lực 1/3/2026, Điều 11) và NĐ 142 (ký 30/4/2026, hiệu lực 1/5/2026, Điều 18) khớp. Mức phạt riêng cho không gắn nhãn AI: NĐ 330 không có; chỉ dựa theo Luật Long Phan PMT.",
+  "Đã bỏ: cụm 'căn cứ lợi ích hợp pháp có phạm vi hẹp' (không có trong Luật 91, thay bằng Điều 28 Luật và Điều 63 NĐ 330); nhận định 'điểm mới so với Nghị định 13' của PwC (trang PwC chặn truy cập, không đối chiếu được). Đã sửa thứ tự timeline (15/2 trước 1/3).",
+  "Ví dụ trong implications là tình huống minh họa của Adtek, không phải khách hàng thật. Cẩm nang không dùng số liệu của Metric hoặc YouNet ECI."
  ],
  "short_title": "Cẩm nang pháp lý marketing 2026",
  "filters": {
