@@ -489,8 +489,8 @@
     25
    ],
    "words": 2000,
-   "status": "planned",
-   "wp_id": null,
+   "status": "draft",
+   "wp_id": 6156,
    "published": null,
    "last_reviewed": null,
    "month": "2026-10",
@@ -526,7 +526,10 @@
     "Phí logistics TikTok Shop cho kiện trên 10 kg (cao nhất 65,000 đồng, từ 12/10/2026) lấy từ tiêu đề Dân trí 09/2026 và trích đoạn VnExpress.",
     "Bảng ROAS hòa vốn dùng số giả định (phí sàn 24%, hoàn hủy 8%, 30% đơn tự nhiên trong GMV Max), đã ghi rõ là ví dụ.",
     "Link trụ cột /tiktok-shop-vs-shopee/ chưa đặt vì bài đó đăng 20/10, sau bài này một ngày; phiên SEO nên thêm link lên trụ cột sau 20/10. Bài chưa có link sang /4-chien-luoc-d2c-doanh-nghiep-co-the-ap-dung-de-dan-dau-trong-nganh/ (không cần cho nội dung)."
-   ]
+   ],
+   "media_id": 6155,
+   "approval": "pending",
+   "approval_requested": "2026-10-16T22:32:34+07:00"
   },
   {
    "no": 11,
@@ -657,8 +660,8 @@
     5
    ],
    "words": 2000,
-   "status": "planned",
-   "wp_id": null,
+   "status": "draft",
+   "wp_id": 6158,
    "published": null,
    "last_reviewed": null,
    "month": "2026-10",
@@ -689,7 +692,10 @@
     "Toàn bộ số trong Ví dụ là giả định: 500 đơn, AOV 320,000 đồng, hủy/hoàn 12%, giá vốn 35%, phí cố định 12%, voucher 20,000 đồng/đơn, hỗ trợ vận chuyển 10,000 đồng/đơn, chi phí hoàn 25,000 đồng/đơn, đóng gói 6,000 đồng/đơn, 15% doanh thu qua link affiliate với hoa hồng 10%, quảng cáo 25 triệu, nhân sự 4.5 triệu, KOC 5 triệu, quà 1.5 triệu. Phí % tính trên doanh thu thuần để đơn giản. Kết quả: lãi 9,044,000 đồng, biên đóng góp 28.15%, GMV hòa vốn khoảng 128 triệu (khoảng 400 đơn), ROAS hòa vốn khoảng 4.7; kịch bản hủy/hoàn 20% còn lãi khoảng 3.5 triệu.",
     "Nhịp vòng lặp kịch bản (15 phút TikTok Shop, 25 phút Shopee Live), mô hình 5 vai và đặc điểm người xem Shopee Live là khuyến nghị vận hành của Adtek, không có nguồn số liệu.",
     "Môi trường làm việc chặn WebFetch và curl (proxy trả 403), nên mọi số liệu được kiểm tra qua WebSearch (tóm tắt nội dung trang) hoặc lấy lại từ nguồn đã dùng trong bài Kế hoạch 11.11 và TikTok Shop vs Shopee; anh Tin nên mở các link trong Nguồn tham khảo một lượt trước khi đăng."
-   ]
+   ],
+   "media_id": 6157,
+   "approval": "pending",
+   "approval_requested": "2026-10-16T22:32:34+07:00"
   },
   {
    "no": 17,
