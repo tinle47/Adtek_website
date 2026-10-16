@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>SOP vận hành nội dung Adtek</title>
+<style>
+@font-face { font-family: "BVP"; font-weight: 400; src: url("../tools/assets/fonts/be-vietnam-pro-vietnamese-400-normal.woff2") format("woff2"); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+@font-face { font-family: "BVP"; font-weight: 400; src: url("../tools/assets/fonts/be-vietnam-pro-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "BVP"; font-weight: 600; src: url("../tools/assets/fonts/be-vietnam-pro-vietnamese-600-normal.woff2") format("woff2"); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+@font-face { font-family: "BVP"; font-weight: 600; src: url("../tools/assets/fonts/be-vietnam-pro-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "BVP"; font-weight: 700; src: url("../tools/assets/fonts/be-vietnam-pro-vietnamese-700-normal.woff2") format("woff2"); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+@font-face { font-family: "BVP"; font-weight: 700; src: url("../tools/assets/fonts/be-vietnam-pro-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "NR"; font-weight: 600; src: url("../tools/assets/fonts/newsreader-vietnamese-600-normal.woff2") format("woff2"); unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+@font-face { font-family: "NR"; font-weight: 600; src: url("../tools/assets/fonts/newsreader-latin-600-normal.woff2") format("woff2"); }
+@page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+:root { --navy:#002D72; --orange:#FF9014; --oink:#B05A00; --cream:#FBF6EE; --line:#D9DFEA; --fg:#16223A; --muted:#56647D; --chip:#E8EEF8; }
+* { box-sizing: border-box; }
+body { margin:0; font-family:"BVP", sans-serif; font-size:9.6pt; line-height:1.5; color:var(--fg); background:#fff; }
+h1 { font-family:"NR", serif; font-weight:600; font-size:28pt; line-height:1.1; color:var(--navy); margin:0; }
+h2 { font-family:"NR", serif; font-weight:600; font-size:17pt; color:var(--navy); margin:0 0 6pt; break-after: avoid; }
+h3 { font-size:10.5pt; font-weight:700; margin:10pt 0 4pt; color:var(--navy); break-after: avoid; }
+p { margin:0 0 5pt; }
+ul, ol { margin:0 0 6pt; padding-left:15pt; }
+li { margin:0 0 2pt; }
+section { break-before: page; }
+section.first, section.cont { break-before: auto; }
+.eyebrow { font-size:8pt; letter-spacing:.08em; text-transform:uppercase; color:var(--oink); font-weight:700; }
+.meta { color:var(--muted); font-size:8.6pt; margin-top:6pt; }
+table { width:100%; border-collapse:collapse; margin:4pt 0 8pt; font-size:8.6pt; break-inside:auto; }
+tr { break-inside: avoid; }
+th { background:var(--navy); color:#fff; text-align:left; font-weight:600; padding:5pt 6pt; font-size:8pt; }
+td { border-bottom:0.6pt solid var(--line); padding:5pt 6pt; vertical-align:top; }
+td b { color:var(--navy); }
+code { font-family: "BVP", sans-serif; font-size:8.2pt; background:var(--chip); padding:0 3pt; border-radius:2pt; color:var(--navy); }
+.box { background:var(--cream); padding:8pt 10pt; border-radius:4pt; margin:6pt 0 8pt; break-inside: avoid; }
+.box b { color:var(--navy); }
+.two { display:grid; grid-template-columns:1fr 1fr; gap:10pt; }
+.flow { display:flex; flex-wrap:wrap; align-items:stretch; gap:0; margin:6pt 0 10pt; break-inside: avoid; }
+.step { flex:1 1 0; min-width:0; background:var(--chip); border-radius:4pt; padding:6pt 6pt; font-size:8pt; line-height:1.35; }
+.step .w { display:block; font-weight:700; color:var(--navy); font-size:7.6pt; text-transform:uppercase; letter-spacing:.04em; margin-bottom:2pt; }
+.step.me { background:var(--cream); }
+.step.ext { background:#FFF2E2; }
+.arr { flex:0 0 12pt; display:flex; align-items:center; justify-content:center; color:var(--orange); font-weight:700; font-size:11pt; }
+.legend { font-size:7.8pt; color:var(--muted); margin-top:-4pt; }
+.wk td, .wk th { text-align:center; font-size:7.8pt; padding:4pt 3pt; }
+.wk td:first-child, .wk th:first-child { text-align:left; width:19%; }
+.chip { white-space:nowrap; font-size:7.2pt; display:inline-block; background:var(--chip); color:var(--navy); border-radius:3pt; padding:1pt 4pt; margin:1pt 0; font-weight:600; }
+.chip.o { background:#FFE6C7; color:var(--oink); }
+.chip.g { background:#EEF0F3; color:var(--muted); font-weight:400; }
+footer.note { margin-top:10pt; font-size:7.8pt; color:var(--muted); }
+svg text { font-family:"BVP", sans-serif; }
+</style>
+</head>
+<body>
+
+<section class="first">
+  <div class="eyebrow">Adtek Growth Agency · Phòng Marketing</div>
+  <h1>SOP vận hành nội dung<br>Blog, Facebook, TikTok</h1>
+  <div class="meta">Phiên bản 1.0 · Hiệu lực từ 17/10/2026 · Người phê duyệt: Tin Le · Nguồn quy trình: repo tinle47/adtek_website, nhánh claude/brave-curie-2c6zbc</div>
+
+  <h3>Mục đích</h3>
+  <p>Mô tả cách các phiên Claude Code phối hợp để nghiên cứu thị trường, lập lịch, sản xuất và đăng nội dung trên blog adtek.agency, Page Facebook Adtek Growth Agency và kênh TikTok, kèm điểm duyệt của lãnh đạo.</p>
+
+  <h3>Nguyên tắc vận hành</h3>
+  <ol>
+    <li><b>Một nơi lập lịch.</b> Phiên Adtek - Marketing lập lịch hằng tháng cho mọi kênh. Các phiên khác chỉ viết và đăng theo lịch, không tự đổi ngày giờ.</li>
+    <li><b>Một nguồn dữ liệu chung.</b> Lịch, bài viết, ảnh và báo cáo nằm trên nhánh <code>claude/brave-curie-2c6zbc</code>. File trung tâm là <code>content/editorial/calendar.json</code>. Mọi phiên pull trước khi làm và push sau khi xong, đồng bộ sang <code>claude/determined-faraday-hhy1ol</code>.</li>
+    <li><b>Lãnh đạo duyệt, hệ thống không chờ vô hạn.</b> Mỗi nội dung gửi duyệt qua email, push notification và tin nhắn. Quá hạn D+1 thì tự duyệt và đăng theo lịch, trừ khi có lệnh hủy.</li>
+    <li><b>Mỗi kênh một định dạng riêng.</b> Facebook không đăng lại bài blog. Bài liên quan tới bài blog đã lên sóng thì Page bình luận link.</li>
+    <li><b>Quy tắc chữ chung.</b> Tiếng Việt có dấu, số theo định dạng US, không emoji, không ký tự gạch dài, không mini-case hay số liệu dự án, con số ví dụ ghi rõ là ví dụ, số liệu thị trường có nguồn và tháng/năm.</li>
+  </ol>
+
+  <h3>Sơ đồ tổng thể</h3>
+  <svg viewBox="0 0 760 470" width="100%" role="img" aria-label="Sơ đồ phối hợp các phiên">
+    <defs>
+      <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#FF9014"/></marker>
+      <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#002D72"/></marker>
+    </defs>
+    <!-- Anh Tin -->
+    <rect x="250" y="8" width="260" height="50" rx="6" fill="#FBF6EE"/>
+    <text x="380" y="29" text-anchor="middle" font-size="13" font-weight="700" fill="#002D72">Anh Tin Le</text>
+    <text x="380" y="46" text-anchor="middle" font-size="10" fill="#56647D">Duyệt qua email, push notification, tin nhắn</text>
+    <!-- Marketing -->
+    <rect x="230" y="96" width="300" height="56" rx="6" fill="#002D72"/>
+    <text x="380" y="119" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">Adtek - Marketing</text>
+    <text x="380" y="138" text-anchor="middle" font-size="10" fill="#C9D6EE">Nghiên cứu thị trường, lập lịch tháng mọi kênh</text>
+    <line x1="380" y1="94" x2="380" y2="62" stroke="#002D72" stroke-width="1.4" marker-end="url(#b)"/>
+    <text x="388" y="82" font-size="9.5" fill="#56647D">báo cáo tháng</text>
+    <!-- Hub -->
+    <rect x="150" y="190" width="460" height="56" rx="6" fill="#FF9014"/>
+    <text x="380" y="213" text-anchor="middle" font-size="13" font-weight="700" fill="#002D72">Nhánh chung claude/brave-curie-2c6zbc</text>
+    <text x="380" y="232" text-anchor="middle" font-size="10" fill="#002D72">calendar.json · content/posts · content/facebook · reports</text>
+    <line x1="380" y1="154" x2="380" y2="186" stroke="#FF9014" stroke-width="1.6" marker-end="url(#a)"/>
+    <text x="388" y="174" font-size="9.5" fill="#56647D">ghi lịch</text>
+    <!-- Sessions row -->
+    <g font-size="11.5" font-weight="700">
+      <rect x="16" y="290" width="136" height="58" rx="6" fill="#E8EEF8"/>
+      <text x="84" y="313" text-anchor="middle" fill="#002D72">Designer</text>
+      <text x="84" y="331" text-anchor="middle" font-size="9.5" font-weight="400" fill="#56647D">ảnh bìa, ảnh Facebook</text>
+      <rect x="164" y="290" width="136" height="58" rx="6" fill="#E8EEF8"/>
+      <text x="232" y="313" text-anchor="middle" fill="#002D72">Blog post</text>
+      <text x="232" y="331" text-anchor="middle" font-size="9.5" font-weight="400" fill="#56647D">4 bài/tuần</text>
+      <rect x="312" y="290" width="136" height="58" rx="6" fill="#E8EEF8"/>
+      <text x="380" y="313" text-anchor="middle" fill="#002D72">SEO</text>
+      <text x="380" y="331" text-anchor="middle" font-size="9.5" font-weight="400" fill="#56647D">tối ưu sau khi đăng</text>
+      <rect x="460" y="290" width="136" height="58" rx="6" fill="#E8EEF8"/>
+      <text x="528" y="313" text-anchor="middle" fill="#002D72">Facebook post</text>
+      <text x="528" y="331" text-anchor="middle" font-size="9.5" font-weight="400" fill="#56647D">1 bài mỗi ngày</text>
+      <rect x="608" y="290" width="136" height="58" rx="6" fill="#FFFFFF" stroke="#56647D" stroke-dasharray="4 3"/>
+      <text x="676" y="313" text-anchor="middle" fill="#56647D">TikTok</text>
+      <text x="676" y="331" text-anchor="middle" font-size="9.5" font-weight="400" fill="#56647D">sắp tạo, 3 video/tuần</text>
+    </g>
+    <!-- hub to sessions (two-way) -->
+    <g stroke="#002D72" stroke-width="1.2" fill="none">
+      <line x1="200" y1="248" x2="100" y2="286" marker-end="url(#b)" marker-start="url(#b)"/>
+      <line x1="270" y1="248" x2="240" y2="286" marker-end="url(#b)" marker-start="url(#b)"/>
+      <line x1="380" y1="248" x2="380" y2="286" marker-end="url(#b)" marker-start="url(#b)"/>
+      <line x1="490" y1="248" x2="520" y2="286" marker-end="url(#b)" marker-start="url(#b)"/>
+      <line x1="560" y1="248" x2="660" y2="286" marker-end="url(#b)" marker-start="url(#b)" stroke-dasharray="4 3"/>
+    </g>
+    <text x="18" y="264" font-size="9.5" fill="#56647D">đọc lịch, ghi bài và ảnh</text>
+    <!-- Outputs -->
+    <g font-size="10.5" font-weight="600" fill="#002D72">
+      <rect x="164" y="400" width="136" height="44" rx="6" fill="#FBF6EE"/>
+      <text x="232" y="426" text-anchor="middle">WordPress adtek.agency</text>
+      <rect x="312" y="400" width="136" height="44" rx="6" fill="#FBF6EE"/>
+      <text x="380" y="426" text-anchor="middle">Google Search Console</text>
+      <rect x="460" y="400" width="136" height="44" rx="6" fill="#FBF6EE"/>
+      <text x="528" y="426" text-anchor="middle">Page Facebook Adtek</text>
+      <rect x="608" y="400" width="136" height="44" rx="6" fill="#FFFFFF" stroke="#56647D" stroke-dasharray="4 3"/>
+      <text x="676" y="426" text-anchor="middle" fill="#56647D">Kênh TikTok Adtek</text>
+    </g>
+    <g stroke="#FF9014" stroke-width="1.4" fill="none">
+      <line x1="232" y1="350" x2="232" y2="396" marker-end="url(#a)"/>
+      <line x1="380" y1="350" x2="380" y2="396" marker-end="url(#a)"/>
+      <line x1="360" y1="350" x2="262" y2="396" marker-end="url(#a)"/>
+      <line x1="528" y1="350" x2="528" y2="396" marker-end="url(#a)"/>
+      <line x1="676" y1="350" x2="676" y2="396" marker-end="url(#a)" stroke-dasharray="4 3"/>
+    </g>
+    <text x="16" y="374" font-size="9.5" fill="#56647D">Mũi tên cam: đăng hoặc gửi ra</text>
+    <text x="16" y="390" font-size="9.5" fill="#56647D">ngoài. Mũi tên navy: đọc, ghi</text>
+    <text x="16" y="406" font-size="9.5" fill="#56647D">trên nhánh chung.</text>
+  </svg>
+</section>
+
+<section>
+  <h2>1. Vai trò từng phiên</h2>
+  <table>
+    <thead><tr><th style="width:19%">Phiên</th><th style="width:37%">Trách nhiệm</th><th style="width:20%">Đầu vào</th><th style="width:24%">Đầu ra</th></tr></thead>
+    <tbody>
+      <tr><td><b>Adtek - Marketing</b><br><span style="font-size:6.8pt;color:#56647D">session_01XqVohyrjLRctpapS6FbMXD</span></td><td>Nghiên cứu thị trường và xu hướng công nghệ mỗi tháng. Lập lịch tháng cho Blog, Facebook, TikTok: ngày giờ, tiêu đề, từ khóa, định dạng, brief số liệu. Gửi lịch cho các phiên, xếp lại lịch khi có bài hủy hoặc dời.</td><td>Nguồn thị trường, kết quả tháng trước, yêu cầu của anh Tin</td><td><code>calendar.json</code>, <code>reports/chien-luoc-noi-dung.html</code>, <code>reports/lich-dang-&lt;tháng&gt;.json</code>, trang chiến lược</td></tr>
+      <tr><td><b>Adtek - Blog post</b><br><span style="font-size:6.8pt;color:#56647D">session_01AvYySKMdJYRoHxp3DYBUqB</span></td><td>Thứ Sáu viết tối đa 4 bài cho 14 ngày tới theo lịch, đưa nháp lên WordPress, gửi duyệt, đặt lịch đăng. Ngày 1 hằng tháng rà soát và cập nhật bài cũ.</td><td>Bài <code>planned</code> và <code>brief</code> trong lịch, ảnh bìa của Designer</td><td>Bài nháp và bài hẹn giờ trên WordPress, <code>content/posts/&lt;slug&gt;.html</code>, email duyệt</td></tr>
+      <tr><td><b>Adtek - Designer</b><br><span style="font-size:6.8pt;color:#56647D">session_01Wp8F7EosGPrY7v6XwBpRSM</span></td><td>Dựng ảnh bìa blog 1200x630 và ảnh Facebook 1080x1080 (ảnh đơn, carousel) theo bộ nhận diện Adtek, bằng <code>tools/covers.py</code> và <code>tools/social.py</code>.</td><td>Trường <code>cover</code> của bài blog, <code>brief</code> và caption bài Facebook</td><td><code>content/posts/&lt;slug&gt;-cover.jpg</code>, <code>content/facebook/&lt;id&gt;/1.jpg</code>..., trường <code>images</code></td></tr>
+      <tr><td><b>Adtek - Facebook post</b><br><span style="font-size:6.8pt;color:#56647D">session_0196UuuQJu6Edu8fi8VXJDzh</span></td><td>Thứ Tư viết caption cho 7 bài tuần kế tiếp theo brief, gửi duyệt. Báo trước bài sắp đăng, đăng đúng giờ, bình luận link blog khi bài liên quan đã lên sóng.</td><td>Danh sách <code>facebook</code> trong lịch, ảnh của Designer</td><td>Bài trên Page Adtek Growth Agency, <code>fb_post_id</code>, email duyệt</td></tr>
+      <tr><td><b>Adtek - SEO</b><br><span style="font-size:6.8pt;color:#56647D">session_013GwSn1yAegYgnHucCuLbNr</span></td><td>Sau mỗi ngày đăng blog: tối ưu SEO 29 mục, làm liên kết ngược, gửi sitemap và báo Google, theo dõi index.</td><td>Bài vừa lên sóng</td><td>Bài đã tối ưu (<code>seo_optimized</code>), trạng thái index</td></tr>
+      <tr><td><b>TikTok</b> (anh Tin sẽ tạo)</td><td>Dựng và đăng 3 video mỗi tuần từ bài blog bằng công cụ trong <code>video/</code>.</td><td>Danh sách <code>tiktok</code> trong lịch</td><td>Video trên TikTok, dùng lại làm Reels Chủ nhật trên Facebook</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="break-before:page">2. Lịch làm việc trong tuần</h2>
+  <table class="wk">
+    <thead><tr><th>Phiên</th><th>Thứ Hai</th><th>Thứ Ba</th><th>Thứ Tư</th><th>Thứ Năm</th><th>Thứ Sáu</th><th>Thứ Bảy</th><th>Chủ nhật</th></tr></thead>
+    <tbody>
+      <tr><td><b>Blog lên sóng</b></td><td><span class="chip o">08:05-08:55</span></td><td><span class="chip o">08:05-08:55</span></td><td></td><td><span class="chip o">08:05-08:55</span></td><td><span class="chip o">08:05-08:55</span></td><td></td><td></td></tr>
+      <tr><td><b>Blog post</b></td><td></td><td></td><td></td><td></td><td><span class="chip">8:52 viết 4 bài</span></td><td><span class="chip g">hạn duyệt D+1</span></td><td></td></tr>
+      <tr><td><b>SEO</b></td><td><span class="chip">21:43</span></td><td><span class="chip">21:43</span></td><td></td><td><span class="chip">21:43</span></td><td><span class="chip">21:43</span></td><td></td><td></td></tr>
+      <tr><td><b>Facebook: báo trước</b></td><td><span class="chip">8:43 · 16:43</span></td><td><span class="chip">8:43 · 16:43</span></td><td><span class="chip">8:43 · 16:43</span></td><td><span class="chip">8:43 · 16:43</span></td><td><span class="chip">8:43 · 16:43</span></td><td><span class="chip">8:43 · 16:43</span></td><td><span class="chip">8:43 · 16:43</span></td></tr>
+      <tr><td><b>Facebook: đăng bài</b></td><td><span class="chip o">12:13</span></td><td><span class="chip o">12:13</span></td><td><span class="chip o">12:13</span></td><td><span class="chip o">12:13</span></td><td><span class="chip o">12:13</span></td><td><span class="chip o">20:13</span></td><td><span class="chip o">20:13</span></td></tr>
+      <tr><td><b>Facebook: viết caption</b></td><td></td><td></td><td><span class="chip">9:07 tuần tới</span></td><td><span class="chip g">hạn duyệt D+1</span></td><td></td><td></td><td></td></tr>
+      <tr><td><b>Designer</b></td><td></td><td></td><td><span class="chip g">nhận brief</span></td><td><span class="chip">dựng ảnh</span></td><td><span class="chip">xong ảnh tuần sau</span></td><td></td><td></td></tr>
+      <tr><td><b>TikTok</b> (sắp có)</td><td></td><td><span class="chip g">19:13</span></td><td></td><td><span class="chip g">19:13</span></td><td></td><td><span class="chip g">19:13</span></td><td></td></tr>
+    </tbody>
+  </table>
+  <p class="legend">Chữ cam: nội dung lên sóng. Chữ navy: lịch tự động làm việc. Chữ xám: mốc phụ thuộc hoặc kênh chưa chạy. Giờ Việt Nam.</p>
+
+  <h3>Lịch hằng tháng</h3>
+  <table>
+    <thead><tr><th style="width:28%">Thời điểm</th><th style="width:20%">Phiên</th><th>Việc</th></tr></thead>
+    <tbody>
+      <tr><td>6:47, ngày cuối tháng trừ 2 (29/10, 28/11, 29/12...)</td><td>Marketing</td><td>Nghiên cứu thị trường, lập lịch tháng kế tiếp cho mọi kênh, gửi lịch cho các phiên, báo cáo anh Tin</td></tr>
+      <tr><td>8:47, ngày 1 hằng tháng</td><td>Blog post</td><td>Rà soát bài đến hạn theo hạng A, B, C, S, sửa nhỏ trực tiếp, sửa lớn chờ duyệt</td></tr>
+    </tbody>
+  </table>
+  <p class="legend">Một tháng kế hoạch gồm các tuần có thứ Hai nằm trong tháng, để phiên Blog post luôn có lịch trước thứ Sáu viết bài cho tuần đầu tháng.</p>
+</section>
+
+<section>
+  <h2>3. Quy trình từng luồng</h2>
+
+  <h3>3.1 Lập kế hoạch tháng (Adtek - Marketing)</h3>
+  <div class="flow">
+    <div class="step me"><span class="w">Bước 1</span>Kiểm tra đúng ngày cuối tháng trừ 2</div><div class="arr">›</div>
+    <div class="step me"><span class="w">Bước 2</span>Nghiên cứu ngành và công nghệ, ghi nhật ký thay đổi</div><div class="arr">›</div>
+    <div class="step me"><span class="w">Bước 3</span>Chọn chủ đề tháng, lập lịch Blog, Facebook, TikTok</div><div class="arr">›</div>
+    <div class="step me"><span class="w">Bước 4</span>Ghi calendar.json, cập nhật trang chiến lược</div><div class="arr">›</div>
+    <div class="step ext"><span class="w">Bước 5</span>Nhắn các phiên, báo anh Tin qua email, push, tin nhắn</div>
+  </div>
+  <ul>
+    <li>Không đổi bài đã viết (status khác <code>planned</code>). Bài không chọn trong tháng chuyển sang <code>backlog</code>.</li>
+    <li>Mỗi bài blog có ngày, giờ, tiêu đề, cụm, từ khóa, <code>links_to</code>. Mỗi bài Facebook có định dạng, tiêu đề câu hỏi, brief, nguồn, bài blog để bình luận link.</li>
+  </ul>
+
+  <h3>3.2 Blog (Blog post, Designer, SEO)</h3>
+  <div class="flow">
+    <div class="step"><span class="w">Thứ Sáu 8:52</span>Chọn tối đa 4 bài planned trong 14 ngày tới, viết khoảng 2,000 chữ</div><div class="arr">›</div>
+    <div class="step"><span class="w">Designer</span>Dựng ảnh bìa theo trường cover</div><div class="arr">›</div>
+    <div class="step"><span class="w">Blog post</span>Đưa nháp lên WordPress, gửi email duyệt</div><div class="arr">›</div>
+    <div class="step ext"><span class="w">Anh Tin</span>Duyệt, yêu cầu sửa hoặc hủy trong 24 giờ</div><div class="arr">›</div>
+    <div class="step"><span class="w">D+1</span>Quá hạn tự đặt lịch đăng</div><div class="arr">›</div>
+    <div class="step"><span class="w">SEO 21:43</span>Tối ưu, liên kết ngược, báo Google</div>
+  </div>
+  <ul>
+    <li>Mỗi bài: ít nhất 3 nguồn uy tín có tháng/năm, 1 link lên trụ cột, ít nhất 2 link cùng cụm, link thuật ngữ, CTA <code>/contact/</code>, một phần dùng được ngay (khung, checklist hoặc bảng tính).</li>
+    <li>Link ra ngoài có <code>rel="nofollow noopener"</code>. Không đổi slug bài đã đăng.</li>
+    <li>Bài con lên sóng trước trụ cột: phiên SEO tự nối link hai chiều khi trụ cột lên sóng.</li>
+  </ul>
+
+  <h3>3.3 Facebook (Facebook post, Designer)</h3>
+  <div class="flow">
+    <div class="step me"><span class="w">Marketing</span>Lịch 1 bài mỗi ngày, brief và nguồn</div><div class="arr">›</div>
+    <div class="step"><span class="w">Thứ Tư 9:07</span>Viết caption 7 bài tuần tới</div><div class="arr">›</div>
+    <div class="step"><span class="w">Designer</span>Dựng ảnh, xong trước thứ Sáu</div><div class="arr">›</div>
+    <div class="step ext"><span class="w">Anh Tin</span>Duyệt qua email, hạn D+1</div><div class="arr">›</div>
+    <div class="step"><span class="w">8:43 · 16:43</span>Báo trước bài trong 12 giờ tới</div><div class="arr">›</div>
+    <div class="step"><span class="w">12:13 · 20:13</span>Đăng bài, bình luận link blog nếu đã lên sóng</div>
+  </div>
+  <table>
+    <thead><tr><th style="width:14%">Ngày</th><th style="width:22%">Định dạng</th><th>Cách làm</th></tr></thead>
+    <tbody>
+      <tr><td>Thứ Hai</td><td>Góc số liệu</td><td>Một con số thị trường hoặc ngành, ba câu giải thích ý nghĩa cho doanh nghiệp</td></tr>
+      <tr><td>Thứ Ba</td><td>Thuật ngữ 1 phút</td><td>Định nghĩa, một ví dụ Việt Nam, một lỗi hay gặp</td></tr>
+      <tr><td>Thứ Tư</td><td>Carousel hướng dẫn</td><td>5 đến 7 trang, mỗi trang một bước</td></tr>
+      <tr><td>Thứ Năm</td><td>Tin nóng</td><td>Thay đổi nền tảng hoặc luật. Có tin lớn trong tuần thì thay brief dự phòng</td></tr>
+      <tr><td>Thứ Sáu</td><td>Phép tính nhanh</td><td>Một phép tính bằng ví dụ, ghi rõ con số nào là ví dụ</td></tr>
+      <tr><td>Thứ Bảy</td><td>Hiểu lầm và sự thật hoặc câu hỏi mở</td><td>Một hiểu lầm kèm sự thật có số liệu, hoặc một câu hỏi mời bình luận</td></tr>
+      <tr><td>Chủ nhật</td><td>Video ngắn (Reels)</td><td>Dùng lại video TikTok của tuần. Chưa có video thì đăng câu hỏi mở</td></tr>
+    </tbody>
+  </table>
+  <p class="legend">Caption: tiêu đề câu hỏi in hoa, 120 đến 200 chữ, 5 hashtag (#Adtek #GrowthMarketing và 3 hashtag riêng), dòng Website và Email. Không link trong caption. Tuần 17/10 đến 25/10 chưa đủ thời gian duyệt D+1: bài được báo trước ít nhất 3 giờ, không có lệnh hủy thì đăng đúng giờ.</p>
+
+  <h3>3.4 TikTok (phiên sắp tạo)</h3>
+  <p>Mỗi tuần chọn 1 bài blog đã lên sóng, tách thành 3 video theo 3 góc, đăng 19:13 thứ Ba, Năm, Bảy. Video đầu tuần được đăng lại lên Facebook dạng Reels vào Chủ nhật.</p>
+</section>
+
+<section class="cont">
+  <h2 style="margin-top:12pt">4. Điểm duyệt và lệnh của anh Tin</h2>
+  <table>
+    <thead><tr><th style="width:16%">Kênh</th><th style="width:24%">Gửi duyệt</th><th style="width:14%">Hạn</th><th>Lệnh, nhắn trong phiên tương ứng</th></tr></thead>
+    <tbody>
+      <tr><td><b>Blog</b></td><td>Thứ Sáu, email có link xem trước không cần đăng nhập và nút sửa trên WordPress</td><td>24 giờ, quá hạn tự đặt lịch</td><td>Phiên Blog post: "duyệt bài X", nêu yêu cầu sửa, "hủy bài X" (kể cả khi đã đặt lịch)</td></tr>
+      <tr><td><b>Facebook</b></td><td>Thứ Tư, email 7 bài kèm ảnh. Báo trước lần nữa 8:43 và 16:43</td><td>24 giờ, quá hạn tự duyệt</td><td>Phiên Facebook post: "duyệt &lt;id&gt;", "hủy &lt;id&gt;", nêu yêu cầu sửa caption. Gỡ bài đã đăng: yêu cầu gỡ &lt;id&gt;</td></tr>
+      <tr><td><b>Ảnh</b></td><td>Phiên Designer gửi ảnh xem trước</td><td>Trước giờ gửi duyệt bài</td><td>Phiên Designer: nêu chỗ cần sửa</td></tr>
+      <tr><td><b>Kế hoạch tháng</b></td><td>Email "[Adtek Marketing] Kế hoạch nội dung tháng ..." kèm link trang chiến lược</td><td>Trước ngày 1</td><td>Phiên Marketing: đổi chủ đề, thêm hoặc bỏ bài, dời ngày</td></tr>
+      <tr><td><b>SEO</b></td><td>Chỉ email khi cần quyết định (sửa theme, plugin)</td><td>Không có</td><td>Phiên SEO. Bài chưa index: bấm link "Yêu cầu lập chỉ mục" được gửi kèm</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:12pt">5. Xử lý sự cố</h2>
+  <table>
+    <thead><tr><th style="width:30%">Tình huống</th><th style="width:22%">Phiên xử lý</th><th>Cách làm</th></tr></thead>
+    <tbody>
+      <tr><td>Bài Facebook đến giờ mà thiếu ảnh hoặc caption</td><td>Facebook post</td><td>Không đăng, báo anh Tin, nhắn Designer. Bài được đăng ở khung giờ kế tiếp khi đủ</td></tr>
+      <tr><td>Lỗi đăng Facebook hoặc bình luận link bị chặn</td><td>Facebook post</td><td>Báo anh Tin nguyên văn lỗi, không thử cách khác. Kiểm tra token đúng Page 101888089257566</td></tr>
+      <tr><td>Bài blog bị hủy hoặc cần dời ngày</td><td>Blog post, rồi Marketing</td><td>Blog post chạy unschedule và báo phiên Marketing. Phiên Marketing xếp lại lịch blog và các bài Facebook, TikTok liên quan</td></tr>
+      <tr><td>Bài blog đến hạn mà chưa viết</td><td>Marketing, Blog post</td><td>Phiên Marketing nhắc phiên Blog post viết ngay. Không kịp thì dời bài và báo anh Tin</td></tr>
+      <tr><td>Luật mới hoặc nền tảng đổi tính năng lớn</td><td>Marketing, Blog post</td><td>Marketing thêm tin nóng vào lịch Facebook. Blog post cập nhật bài liên quan ngay, không chờ kỳ rà soát</td></tr>
+      <tr><td>Số liệu lệch giữa các nguồn</td><td>Phiên viết bài</td><td>Không trộn hai nguồn trong một bài. Ghi rõ nguồn và tháng/năm, nêu trong mục cần anh xác nhận</td></tr>
+      <tr><td>Hai phiên cùng sửa calendar.json</td><td>Phiên push sau</td><td>Pull lại, gộp thay đổi, không ghi đè trường của phiên khác</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:12pt">6. Lịch tự động đang chạy</h2>
+  <table>
+    <thead><tr><th style="width:33%">Lịch</th><th style="width:30%">Thời gian</th><th style="width:16%">Phiên</th><th>Mã</th></tr></thead>
+    <tbody>
+      <tr><td>Nghiên cứu thị trường và kế hoạch tháng</td><td>6:47, ngày cuối tháng trừ 2</td><td>Marketing</td><td>trig_01J49h9HgUQyCgdzQLvNZNXY</td></tr>
+      <tr><td>Viết bài blog</td><td>8:52 thứ Sáu</td><td>Blog post</td><td>trig_01XgkdFsn3zc6h2RdZ7bxWkP</td></tr>
+      <tr><td>Rà soát nội dung blog</td><td>8:47 ngày 1</td><td>Blog post</td><td>trig_01UhxzYtNYLAdgyDkqSqa3eT</td></tr>
+      <tr><td>Tối ưu SEO sau khi đăng</td><td>21:43 thứ Hai, Ba, Năm, Sáu</td><td>SEO</td><td>trig_0119Qtx4fh69NfYuf5uvTdtw</td></tr>
+      <tr><td>Facebook: báo trước bài sắp đăng</td><td>8:43 và 16:43 mỗi ngày</td><td>Facebook post</td><td>trig_011G6TDdHPbm7yqo6ZqqGrgA</td></tr>
+      <tr><td>Facebook: đăng bài đến giờ</td><td>12:13 và 20:13 mỗi ngày</td><td>Facebook post</td><td>trig_01BM7F7Xa9Aumx4BjSNK3vH1</td></tr>
+      <tr><td>Facebook: viết caption tuần tới</td><td>9:07 thứ Tư</td><td>Facebook post</td><td>trig_01Q9TrdfsUDXYTE9vAGoosNe</td></tr>
+    </tbody>
+  </table>
+  <p class="legend">Ngoài ra mỗi phiên tự hẹn lịch một lần cho hạn duyệt D+1 và các lần kiểm tra. Prompt từng lịch nằm trong <code>content/editorial/routines/</code>.</p>
+
+  <h3>Tài liệu tham chiếu</h3>
+  <ul>
+    <li><code>content/editorial/README.md</code>: quy trình chi tiết, quy tắc liên kết, ảnh, cập nhật nội dung.</li>
+    <li><code>content/editorial/routines/</code>: monthly-planning.md, weekly-friday.md, facebook-daily.md, seo-after-publish.md, monthly-review.md.</li>
+    <li>Trang chiến lược nội dung: https://claude.ai/artifact/BHoYZVz5Nk9Wc3zfg2AHgL</li>
+  </ul>
+  <footer class="note">Adtek Growth Agency · adtek.agency · Tài liệu nội bộ. Cập nhật SOP khi đổi nhịp đăng, thêm kênh hoặc đổi phân vai.</footer>
+</section>
+
+</body>
+</html>
