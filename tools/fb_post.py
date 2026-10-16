@@ -12,6 +12,9 @@ Cách dùng:
   python3 tools/fb_post.py cover <số bài>        dựng ảnh 4:5 content/posts/<slug>-fb.jpg (làm cùng lúc đưa nháp blog)
   python3 tools/fb_post.py post <số bài>         đăng ảnh + caption, rồi bình luận link (chỉ khi bài blog đã lên sóng)
   python3 tools/fb_post.py post <số bài> --dry-run   in nội dung sẽ gửi, không đăng
+  python3 tools/fb_post.py post <số bài> --sample    đăng bài mẫu để duyệt, không ghi vào calendar.json
+  python3 tools/fb_post.py delete <số bài>       gỡ bài Facebook đã đăng (bình luận đi kèm bị gỡ theo), xóa fb_post_id
+  python3 tools/fb_post.py delete --id <post_id> gỡ một bài theo ID, ví dụ bài mẫu
 
 Chạy lại "post" an toàn: bài đã có fb_post_id thì không đăng lại, chỉ bình luận bù nếu còn thiếu fb_comment_id.
 """
@@ -104,7 +107,7 @@ def is_live(post):
     return code == "200"
 
 
-def post_fb(data, post, dry_run=False):
+def post_fb(data, post, dry_run=False, sample=False):
     image = ROOT / f"content/posts/{post['slug']}-fb.jpg"
     if not post.get("fb_caption") or not post.get("fb_comment"):
         sys.exit(f"Bài {post['no']}: thiếu fb_caption hoặc fb_comment")
@@ -116,6 +119,18 @@ def post_fb(data, post, dry_run=False):
     if dry_run:
         print(json.dumps({"image": str(image.relative_to(ROOT)), "caption": caption, "comment": comment},
                          ensure_ascii=False, indent=1))
+        return
+    if sample:
+        if not is_live(post):
+            sys.exit(f"Bài {post['no']}: bài blog chưa lên sóng, chưa đăng Facebook")
+        check()
+        r = graph("POST", "me/photos", form_strings={"message": caption, "published": "true"}, files={"source": image})
+        if "post_id" not in r:
+            fail("đăng ảnh", r)
+        c = graph("POST", f"{r['post_id']}/comments", form_strings={"message": comment})
+        print(json.dumps({"sample": True, "no": post["no"], "fb_post_id": r["post_id"], "fb_comment_id": c.get("id"),
+                          "comment_error": c.get("error"), "url": f"https://www.facebook.com/{r['post_id']}"},
+                         ensure_ascii=False))
         return
     if not post.get("fb_post_id"):
         if not is_live(post):
@@ -142,14 +157,34 @@ def post_fb(data, post, dry_run=False):
                       "url": f"https://www.facebook.com/{post['fb_post_id']}"}, ensure_ascii=False))
 
 
+def delete(post_id, data=None, post=None):
+    """Gỡ bài trên Page. Bình luận của bài bị gỡ theo."""
+    r = graph("DELETE", post_id)
+    if r.get("success") is not True:
+        fail("gỡ bài", r)
+    if post is not None:
+        for k in ("fb_post_id", "fb_comment_id", "fb_posted"):
+            post.pop(k, None)
+        post["fb_status"] = "ready"
+        save(data)
+    print(json.dumps({"deleted": post_id}, ensure_ascii=False))
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1]
     if cmd == "check":
         check()
         sys.exit()
     data = load()
+    if cmd == "delete" and sys.argv[2] == "--id":
+        delete(sys.argv[3])
+        sys.exit()
     post = find(data, int(sys.argv[2]))
-    if cmd == "cover":
+    if cmd == "delete":
+        if not post.get("fb_post_id"):
+            sys.exit(f"Bài {post['no']}: chưa có bài Facebook để gỡ")
+        delete(post["fb_post_id"], data, post)
+    elif cmd == "cover":
         cover(post)
     else:
-        post_fb(data, post, dry_run="--dry-run" in sys.argv)
+        post_fb(data, post, dry_run="--dry-run" in sys.argv, sample="--sample" in sys.argv)
