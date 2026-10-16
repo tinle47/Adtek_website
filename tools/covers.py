@@ -557,6 +557,7 @@ FB_COVER_SIZE = (1640, 624)  # khổ tải lên Facebook khuyến nghị (hiển
 # Máy tính: ảnh đại diện đè góc dưới bên trái. Mẫu "columns": logo, tiêu đề giữa phía trên; dịch vụ hai cột hai bên hình tròn.
 SERVICES = ["User acquisition strategy", "CRM management", "Integrated marketing communication", "Growth consultancy", "SEO services"]
 FB_COVER_VARIANTS = ("columns", "minimal", "center", "split", "cream")  # anh Tin chọn bố cục giữa, chỉnh lại thành columns cho điện thoại
+FB_COVER_BOLD = ("bars", "cream", "pattern")
 FB_MOBILE = {"view": (315, 1325), "top": 80, "icons": [(330, 155, 400, 210), (1020, 155, 1290, 210)],
              "circle": (818, 573, 200), "note": (670, 305, 965, 400), "bottom": 595}
 
@@ -617,10 +618,42 @@ li{{display:flex;align-items:baseline;gap:18px}}
     return document(css, body, *FB_COVER_SIZE)
 
 
+def fb_cover_bold(variant):
+    """Bản gọn nhiều hình hơn (anh Tin 16/10/2026: bản gọn chưa đủ ấn tượng). Tiêu đề giữa phía trên, hình nằm ngoài vùng chữ.
+    bars: biểu đồ cột tăng dần từ trái sang phải trên nền navy; ba cột cuối chuyển cam (giai đoạn tăng trưởng).
+    cream: cùng biểu đồ trên nền kem, cột navy đặc, ba cột cuối cam.
+    pattern: lưới dấu A chìm trên nền navy, một dấu A cam lớn nổi bật ở cột phải (thấy cả trên điện thoại)."""
+    cream = variant == "cream"
+    bg, fg = (CREAM, NAVY) if cream else (NAVY, "#fff")
+    css = f"""
+body{{background:{bg};color:{fg}}}
+.lg{{position:absolute;left:0;right:0;top:92px;display:flex;justify-content:center}}
+h1{{position:absolute;left:315px;right:315px;top:224px;text-align:center;font-size:80px;line-height:1}}
+.bar{{position:absolute;bottom:0;width:150px;background:{NAVY if cream else 'rgba(244,238,227,.10)'}}}
+.bar.o{{background:{ORANGE}}}
+.pa{{position:absolute;aspect-ratio:285/253;background:rgba(244,238,227,.07)}}
+.pa.o{{background:{ORANGE}}}"""
+    if variant in ("bars", "cream"):
+        hs = [36, 50, 68, 92, 124, 168, 232, 316]  # tăng nhanh dần như đường cong tăng trưởng
+        art = "".join(f'<div class="bar{" o" if i >= 5 else ""}" style="left:{40 + 200 * i}px;height:{h}px"></div>' for i, h in enumerate(hs))
+    else:
+        cells = []
+        for r, y in enumerate(range(-30, 640, 120)):
+            for x in range(-60 + (70 if r % 2 else 0), 1700, 140):
+                if 280 < x < 1300 and 40 < y < 330:  # chừa chỗ cho logo và tiêu đề
+                    continue
+                if 1080 < x < 1300 and 330 <= y < 560:  # chỗ của dấu A cam
+                    continue
+                cells.append(f'<div class="pa mark" style="left:{x}px;top:{y}px;height:72px"></div>')
+        art = "".join(cells) + '<div class="pa mark o" style="left:1080px;top:362px;height:190px"></div>'
+    body = f"""{art}<div class="lg">{logo(fg, 64)}</div><h1>{hl("*Growth* marketing agency")}</h1>"""
+    return document(css, body, *FB_COVER_SIZE)
+
 def fb_cover_render(variant="columns", out=None):
     """Ghi content/brand/fb-cover.jpg (1640x624); out: thư mục khác để xem thử."""
     d = Path(out) if out else ROOT / "content/brand"
-    return shoot([(fb_cover(variant), d / ("fb-cover.jpg" if not out else f"fb-cover-{variant}.jpg"), *FB_COVER_SIZE, 1)])
+    html_text = fb_cover_bold(variant) if variant in FB_COVER_BOLD else fb_cover(variant)
+    return shoot([(html_text, d / ("fb-cover.jpg" if not out else f"fb-cover-{variant}.jpg"), *FB_COVER_SIZE, 1)])
 
 
 if __name__ == "__main__":
