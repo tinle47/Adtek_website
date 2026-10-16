@@ -290,8 +290,12 @@ while (have_posts()):
                         .homever2-news-body { padding: 1.6rem; }
                         .homever2-news-tt { font-size: 1.6rem; }
                     }
+                    /* Mobile: carousel vuốt ngang, thẻ rộng 85% để thẻ kế tiếp ló ra; scroll-snap giữ thẻ đứng ngay ngắn sau khi thả tay. */
                     @media screen and (max-width: 768px) {
-                        .homever2-news-list { grid-template-columns: 1fr; }
+                        .homever2-news .container { padding-right: 0; }
+                        .homever2-news-list { display: flex; gap: 1.6rem; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-right: 1.6rem; }
+                        .homever2-news-list::-webkit-scrollbar { display: none; }
+                        .homever2-news-it { flex: 0 0 85%; scroll-snap-align: start; }
                     }
                 </style>
                 <section class="sec-homever2-news section fp-auto-height" id="section-news">
