@@ -81,14 +81,14 @@ def is_live(post):
 
 
 def post_fb(data, post, dry_run=False, sample=False, image=None):
+    if not post.get("slug") or not post.get("fb_caption") or not post.get("fb_comment"):
+        sys.exit(f"Bài {post['no']}: thiếu slug, fb_caption hoặc fb_comment")
     image = Path(image) if image else ROOT / f"content/posts/{post['slug']}-fb.jpg"
-    if not post.get("fb_caption") or not post.get("fb_comment"):
-        sys.exit(f"Bài {post['no']}: thiếu fb_caption hoặc fb_comment")
     caption, comment = message(post), post["fb_comment"]
     if "http" in caption or "adtek.agency" in caption:
         sys.exit(f"Bài {post['no']}: caption có link, cần bỏ link khỏi caption")
-    if not image.exists():
-        image = cover(post)
+    if not image.exists():  # ảnh do phiên "Adtek - Designer" làm và đưa lên nhánh, script không tự dựng
+        sys.exit(f"Bài {post['no']}: chưa có ảnh {image.relative_to(ROOT)} từ phiên Adtek - Designer, chưa đăng")
     if dry_run:
         print(json.dumps({"image": str(image), "caption": caption, "comment": comment},
                          ensure_ascii=False, indent=1))
