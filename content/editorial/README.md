@@ -6,7 +6,7 @@ Lịch đăng, cụm chủ đề và danh sách bài nằm trong `calendar.json`
 
 - 2 bài/tuần, mỗi bài khoảng 2,000 chữ, đăng Thứ Ba và Thứ Năm. Giờ đăng không cố định: mỗi bài chọn ngẫu nhiên khung 12:00-12:59 hoặc 20:00-20:59 (trường `time` trong `calendar.json`, gán bằng `python3 tools/blog_post.py retime` cho bài chưa đăng).
 - Mỗi bài cần có một phần chỉ Adtek viết được: mini-case ẩn danh, số liệu từ dự án, khung hoặc checklist dùng ngay.
-- Tác giả Tin Le, có SEO title, meta description và ảnh bìa.
+- Tác giả Tin Le, có SEO title, meta description và ảnh bìa. Ảnh bìa blog (1200x630, `python3 tools/blog_post.py cover X`) và ảnh Facebook (1:1, `python3 tools/fb_post.py cover X`) dựng từ bộ mẫu `tools/covers.py`: 7 phong cách thiết kế phẳng, chỉ dùng màu navy, cam, kem của Adtek, không đường kẻ hay gạch chân, không hình tròn bao quanh logo hoặc chữ, không gradient, quầng sáng, kính mờ, bóng đổ (anh Tin yêu cầu 16/10/2026: không giống ảnh AI): tạp chí nền kem, khối cam navy cắt chéo, chữ A Adtek cỡ lớn, hai tầng màu có số cam lớn, áp phích nền cam; đối đầu A vs B cho bài so sánh, hồ sơ pháp lý cho bài luật. Mẫu tím neon 3D cũ chỉ dùng khi ghi tay `cover.style`. Chữ: tiêu đề và con số lớn dùng Newsreader 600 (chữ có chân kiểu báo chí, viết thường như câu), nhãn và mô tả dùng Be Vietnam Pro 400 đến 600; không dùng chữ in hoa giãn khoảng cho tiêu đề. Con số lớn (`cover.hero`) luôn đứng sát cụm chữ đi kèm (`cover.hero_text`) và đứng trước theo thứ tự đọc: bên trái hoặc phía trên cụm chữ, không đặt số một nơi, chữ một nẻo. Lần dựng đầu, hệ thống tự chọn phong cách theo nội dung (phương án A anh Tin chọn 16/10/2026): bài có "vs" trong `cover.title` dùng mẫu đối đầu, bài luật dùng mẫu hồ sơ (nếu 2 bài liền trước chưa dùng), còn lại xoay vòng 5 mẫu chung và tránh 3 bài liền trước; phong cách được ghi vào `cover.style` để dựng lại vẫn giữ nguyên, muốn đổi thì sửa tay trường này. Dữ liệu ảnh: `cover.kicker`, `title`, `subtitle`, `chips` (blog) và `hero`, `hero_text`, `fb_kicker` (Facebook, một số mẫu blog cũng dùng số `hero`). Chữ và logo trên ảnh blog nằm trong vùng x 140 đến 1060, y 70 đến 560 vì theme cắt ảnh: thẻ 370x250 mất hai bên, trang /blog/ 870x362 mất khoảng 65px trên và dưới. Xem thử mọi phong cách cho một bài: `python3 tools/covers.py sheet X`. Bài cũ (mục `existing`, có `slug`, `date`, `cover` kèm `style`): `python3 tools/covers.py existing <wp_id>`. Đổi ảnh bìa bài đã đưa lên WordPress: `python3 tools/blog_post.py recover X [--delete-old]`. Bài đăng trước lịch (không có trong `calendar.json`, ví dụ 6076, 6078): `python3 tools/blog_post.py feature <ID bài> <file ảnh> [--delete-old]`. Ảnh do phiên "Adtek - Designer" dựng và commit; phiên "Adtek - Blog post" chỉ tải lên (`recover` dùng đúng file có sẵn).
 
 ## Quy trình viết và duyệt
 
@@ -17,8 +17,8 @@ Lịch đăng, cụm chủ đề và danh sách bài nằm trong `calendar.json`
    - "hủy bài X" (kể cả khi đã đặt lịch): chạy `python3 tools/blog_post.py unschedule X`.
    - Hạn duyệt D+1: email gửi bằng `tools/approval_email.py --mark` ghi thời điểm gửi. Đúng 24 giờ sau, lịch hẹn một lần (send_later) chạy `python3 tools/blog_post.py auto`: bài chưa có phản hồi được tự đặt lịch đăng theo kế hoạch (approval = auto), rồi báo anh Tin qua email và push notification. Bài đã duyệt hoặc đang chờ sửa thì bỏ qua.
    - Bài đăng Facebook: mỗi bài blog có `fb_caption` (khoảng 150 đến 200 chữ, kể chuyện bằng một tình huống hoặc con số cụ thể trong bài, dẫn người đọc mở link ở bình luận) và `fb_comment` (tiêu đề ngắn + link bài). Không dùng emoji, không gạch dài, không đặt link trong nội dung chính. Caption không tự viết câu mời xem bài: `tools/fb_post.py` tự đặt câu CTA chung "Xem full bài viết ở bình luận bên dưới." lên đầu caption (email duyệt hiển thị đúng bản đăng thật). Duyệt cùng bài blog trong email.
-   - Đăng Facebook qua Graph API (`tools/fb_post.py`; network secret của môi trường gắn header `Authorization: Bearer <Page access token>` cho `graph.facebook.com`; script tự dừng nếu token không thuộc Page 101888089257566): bài đăng lên Page Adtek Growth Agency dạng ảnh vuông 1:1 `content/posts/<slug>-fb.jpg` (dựng bằng `python3 tools/fb_post.py cover X` ngay khi đưa nháp blog; nền tím xanh, logo Adtek trắng, một con số lớn dạng 3D lấy từ nội dung bài (`cover.hero`) đọc liền với câu bên cạnh (`cover.hero_text`, ví dụ "30" + "Ngày chuẩn bị 11.11"), nhãn nhỏ `cover.fb_kicker`, mô tả `cover.subtitle` trong khung bo góc) + CTA + `fb_caption`, không có link; Page tự bình luận `fb_comment` ngay dưới bài. Khi bài blog được đặt lịch (duyệt hoặc tự duyệt D+1), hẹn send_later vào 5 phút sau giờ đăng blog để chạy `python3 tools/fb_post.py post X`. Script chỉ đăng khi bài blog đã lên sóng (hủy bài thì bài Facebook cũng không đăng) và không đăng trùng.
-3. Cũng trong lần chạy thứ Sáu: làm liên kết ngược cho các bài đã lên sóng trong tuần.
+   - Đăng Facebook qua Graph API (`tools/fb_post.py`; network secret của môi trường gắn header `Authorization: Bearer <Page access token>` cho `graph.facebook.com`; script tự dừng nếu token không thuộc Page 101888089257566): bài đăng lên Page Adtek Growth Agency dạng ảnh vuông 1:1 `content/posts/<slug>-fb.jpg` (do phiên **Adtek - Designer** làm và push lên nhánh `claude/brave-curie-2c6zbc`; phiên Facebook chỉ đăng ảnh có sẵn, thiếu ảnh thì dừng và báo anh Tin, dựng bằng `python3 tools/fb_post.py cover X` theo bộ mẫu `tools/covers.py`, cùng phong cách với ảnh bìa blog của bài; một con số lớn lấy từ nội dung bài (`cover.hero`) đọc liền với câu bên cạnh (`cover.hero_text`, ví dụ "30" + "Ngày chuẩn bị 11.11"), nhãn nhỏ `cover.fb_kicker`, mô tả `cover.subtitle`) + CTA + `fb_caption`, không có link; Page tự bình luận `fb_comment` ngay dưới bài. Khi bài blog được đặt lịch (duyệt hoặc tự duyệt D+1), hẹn send_later vào 5 phút sau giờ đăng blog để chạy `python3 tools/fb_post.py post X`. Script chỉ đăng khi bài blog đã lên sóng (hủy bài thì bài Facebook cũng không đăng) và không đăng trùng.
+3. Thứ Ba và thứ Năm 21:43 (lịch tự động của phiên **Adtek - SEO**): tối ưu SEO và làm liên kết ngược cho bài vừa lên sóng, xem mục "Tối ưu SEO sau khi đăng".
 4. Ngày 1 hằng tháng (lịch tự động 8:47 sáng): rà soát và cập nhật nội dung, gửi báo cáo qua email, push notification và tin nhắn trong phiên.
 
 ## Cụm chủ đề (topic cluster)
@@ -46,11 +46,39 @@ Mỗi bài mới khi đăng phải có:
 6. Ít nhất 3 nguồn bên ngoài uy tín (văn bản luật, cơ quan nhà nước, báo cáo nghiên cứu, tài liệu chính thức của nền tảng), ghi rõ tháng/năm của số liệu. Link ra ngoài luôn có `rel="nofollow noopener"` và mở tab mới (`tools/blog_post.py draft` tự gắn).
 7. 1 lời mời liên hệ (`/contact/`) hoặc tài nguyên miễn phí của Adtek.
 
-Ngay sau khi bài lên sóng (liên kết ngược):
+Ngay sau khi bài lên sóng (liên kết ngược, phiên Adtek - SEO làm trong lịch thứ Ba và thứ Năm):
 
 - Thêm link từ bài trụ cột của cụm về bài mới.
 - Thêm link từ 2 đến 3 bài đã đăng có trong `links_to` của bài mới, hoặc có `links_to` trỏ tới bài mới.
 - Không bài nào được ở trạng thái "mồ côi" (không có link nội bộ nào trỏ vào).
+
+## Tối ưu SEO sau khi đăng
+
+Phiên **Adtek - SEO** (session_013GwSn1yAegYgnHucCuLbNr) chạy lúc 21:43 thứ Ba và thứ Năm (prompt: `routines/seo-after-publish.md`), xử lý mọi bài đã lên sóng mà chưa có `seo_optimized` trong `calendar.json`, nên bài dời ngày hoặc bị sót được bắt ở lần chạy kế tiếp. Anh Tin cho phép tự sửa bài đang live rồi báo sau (16/10/2026); mọi lần sửa nội dung đều backup vào `content/backups`.
+
+Công cụ `tools/seo_post.py`:
+
+| Lệnh | Việc |
+|---|---|
+| `due` | Bài đã lên sóng chưa tối ưu SEO, tự đổi `scheduled` thành `published` |
+| `fix X` | Focus keyphrase Yoast = `keyword`, alt ảnh đại diện và ảnh trong bài, nofollow link ngoài |
+| `links X` | Bài nên trỏ link về bài X (trụ cột, `links_to`, bài có `links_to` chứa X) và bài nào đã có link |
+| `check X` | 29 mục kiểm tra trên bản live, in mục lỗi kèm cách sửa |
+| `meta X` | Ghi `seo_title`, `meta_desc` trong `calendar.json` lên Yoast |
+| `get ID file`, `put ID file "lý do"` | Tải nội dung gốc để sửa, ghi lại kèm backup (bài trong lịch thì đồng bộ luôn `content/posts/<slug>.html`) |
+| `done X` | Ghi `seo_optimized` |
+
+Các mục `check`:
+
+- Kỹ thuật: HTTP 200 đúng URL, không noindex, canonical trỏ về chính nó, có trong post-sitemap.xml, schema Article, og:image, đúng 1 H1.
+- SEO title 30 đến 60 ký tự, có từ khóa và từ khóa nằm ở đầu; meta description 120 đến 156 ký tự, có từ khóa; slug chứa từ khóa (chỉ ghi nhận, không đổi slug bài đã đăng).
+- Từ khóa: focus keyphrase Yoast, trong 120 chữ đầu, trong ít nhất 1 H2, đúng cụm xuất hiện từ 3 lần (tối đa khoảng 1 lần mỗi 150 chữ).
+- Ảnh: alt ảnh đại diện, alt mọi ảnh trong bài.
+- Liên kết ra: link ngoài có nofollow noopener và mở tab mới, ít nhất 3 nguồn ngoài, ít nhất 3 link nội bộ, có link lên trụ cột và tới các bài trong `links_to` đã đăng, không anchor kiểu "xem thêm", "tại đây", không link nội bộ hỏng.
+- Liên kết vào: trụ cột đã trỏ về, ít nhất 3 bài trỏ về (2 nếu cụm không có trụ cột).
+- Độ dài từ 1,500 chữ.
+
+Giới hạn: mạng của môi trường chặn site bên ngoài nên không kiểm tra được link ngoài còn sống (lịch rà soát ngày 1 hằng tháng xử lý); không có quyền Google Search Console nên chưa gửi yêu cầu lập chỉ mục. Xóa cache thủ công cần plugin `adtek-acf-rest.php` 1.1.0 (đang chờ upload); WordPress vẫn tự xóa cache của bài khi lưu.
 
 ## Quy trình cập nhật nội dung
 

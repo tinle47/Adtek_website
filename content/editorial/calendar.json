@@ -69,9 +69,10 @@
     ],
     "hero": "30",
     "hero_text": "Ngày chuẩn bị 11.11",
-    "fb_kicker": "Mega sale 2026"
+    "fb_kicker": "Mega sale 2026",
+    "style": "split"
    },
-   "media_id": 6085,
+   "media_id": 6128,
    "summary": "Checklist theo từng tuần từ D-30 đến D+7 cho mùa 11.11 và 12.12: phí sàn 2026, bảng tính mức giảm giá hòa vốn, quảng cáo GMV Max, KOC và livestream, vận hành và giữ chân khách sau sale.",
    "confirm": [],
    "approval": "approved",
@@ -79,7 +80,8 @@
    "fb_comment": "Checklist 30 ngày chuẩn bị 11.11 và 12.12, kèm bảng tính giá hòa vốn: https://adtek.agency/ke-hoach-11-11/",
    "fb_status": "scheduled",
    "fb_scheduled": "2026-10-16 20:15",
-   "fb_trigger": "trig_01MKSBryPzydKMzKufq61sKd"
+   "fb_trigger": "trig_01MKSBryPzydKMzKufq61sKd",
+   "seo_optimized": "2026-10-16 19:45"
   },
   {
    "no": 2,
@@ -119,9 +121,10 @@
     ],
     "hero": "8",
     "hero_text": "Điểm rà tài khoản Meta Ads 2026",
-    "fb_kicker": "Quảng cáo Meta"
+    "fb_kicker": "Quảng cáo Meta",
+    "style": "mark"
    },
-   "media_id": 6087,
+   "media_id": 6129,
    "summary": "Bài trụ cột cụm Quảng cáo: Meta Andromeda là gì, Advantage+ thay đổi những gì, cách tính chuyển đổi mới từ 3/2026, cấu trúc tài khoản, đa dạng hóa creative, đo lường và ngân sách, kèm ví dụ tái cấu trúc tài khoản mỹ phẩm.",
    "confirm": [],
    "approval": "approved",
@@ -129,7 +132,8 @@
    "fb_comment": "Quảng cáo Meta 2026: Andromeda, Advantage+ và chiến lược creative: https://adtek.agency/meta-andromeda/",
    "fb_status": "scheduled",
    "fb_scheduled": "2026-10-18 12:15",
-   "fb_trigger": "trig_016ubU28txMfPQ5E89k2Z8wb"
+   "fb_trigger": "trig_016ubU28txMfPQ5E89k2Z8wb",
+   "seo_optimized": "2026-10-16 19:45"
   },
   {
    "no": 3,
@@ -169,7 +173,8 @@
     ],
     "hero": "2",
     "hero_text": "Sàn, chia ngân sách thế nào?",
-    "fb_kicker": "TikTok Shop vs Shopee"
+    "fb_kicker": "TikTok Shop vs Shopee",
+    "style": "versus"
    },
    "summary": "Bài trụ cột cụm Thương mại điện tử: thị trường hai sàn theo ngành hàng (Metric, Q&Me, YouNet ECI), phí sàn 2026, Shopee Ads và GMV Max, vai trò affiliate, KOC, livestream. Phần chính là khung chia vai trò và ngân sách theo giai đoạn thương hiệu, kèm ví dụ giả định thương hiệu skincare chi 1 tỷ đồng mỗi tháng.",
    "confirm": [
@@ -177,7 +182,7 @@
     "Thị phần theo ngành của YouNet ECI 2025 (làm đẹp Shopee 54.4%, thời trang TikTok Shop 53.1%, FMCG Shopee 57%, điện tử Shopee 73%) chỉ lấy được qua bài báo tóm tắt.",
     "Số chỉ có một nguồn: phí xử lý giao dịch Shopee từ 4.91% lên 6%, chi phí sàn 23-24% doanh thu (VnBusiness), Shopee Live và Video Tết 2026 gần 16 tỷ lượt xem."
    ],
-   "media_id": 6092,
+   "media_id": 6130,
    "approval": "auto",
    "approval_requested": "2026-10-09T09:03:59+07:00",
    "fb_caption": "6 tuần trước Tết 2026, người Việt chi 67,700 tỷ đồng trên Shopee và TikTok Shop. Lần đầu tiên, TikTok Shop chiếm phần lớn hơn với 51%.\n\nNhiều thương hiệu đọc tin đó và dồn gần hết ngân sách sang TikTok Shop. Vài tuần sau, doanh số từ khóa thương hiệu trên Shopee bắt đầu đi xuống.\n\nCả năm 2025, Shopee vẫn giữ 56% doanh số bốn sàn và 73% ngành điện tử, điện gia dụng. Thời trang nghiêng về TikTok Shop. Làm đẹp gần cân bằng. FMCG nghiêng về Shopee.\n\nHai sàn làm hai việc khác nhau. TikTok Shop tạo nhu cầu bằng video, KOC và livestream. Shopee thu nhu cầu đã có từ ô tìm kiếm, khách mua lại và các ngày mega sale. Cắt một bên thường làm bên kia yếu theo.\n\nBài viết mới của Adtek đưa ra khung chia vai trò và ngân sách giữa hai sàn theo giai đoạn thương hiệu và ngành hàng, kèm ví dụ một thương hiệu skincare chi 1 tỷ đồng mỗi tháng.",
@@ -222,7 +227,8 @@
     ],
     "hero": "3",
     "hero_text": "Ô đồng ý bắt buộc trên form lead",
-    "fb_kicker": "Luật dữ liệu 2026"
+    "fb_kicker": "Luật dữ liệu 2026",
+    "style": "dossier"
    },
    "summary": "Luật 91/2025/QH15, Nghị định 356/2025 và Nghị định 330/2026 (xử phạt) tác động thế nào tới form lead, mua bán và chia sẻ danh sách, telesales và ZNS, pixel, CAPI, custom audience, dữ liệu nhạy cảm. Có bảng mức phạt, thời hạn xử lý yêu cầu, mẫu nội dung xin đồng ý 3 ô, ví dụ giả định chủ đầu tư bất động sản và checklist.",
    "confirm": [
@@ -231,7 +237,7 @@
     "Miễn trừ cho doanh nghiệp siêu nhỏ, nhỏ và ngưỡng 100,000 người; quy định cấm agency thuê lại toàn bộ dịch vụ quảng cáo có dùng dữ liệu cá nhân: chưa đối chiếu văn bản gốc.",
     "Bài pháp lý: nên nhờ luật sư đọc lướt trước khi đăng."
    ],
-   "media_id": 6095,
+   "media_id": 6131,
    "approval": "auto",
    "approval_requested": "2026-10-09T09:03:59+07:00",
    "fb_caption": "Một ô \"Tôi đồng ý nhận ưu đãi\" được tích sẵn trên form báo giá. Một file 20,000 số điện thoại mua từ nhóm \"data khách đầu tư\". Một lần tải toàn bộ CRM lên Facebook để chạy remarketing.\n\nNhiều đội marketing vẫn làm cả ba việc này hằng tuần.\n\nTừ 19/8/2026, Nghị định 330 về xử phạt vi phạm bảo vệ dữ liệu cá nhân có hiệu lực, và mỗi việc trên đã có khung phạt riêng. Với hành vi mua bán dữ liệu cá nhân, Luật cho phép phạt tới 10 lần khoản thu có được hoặc 3 tỷ đồng.\n\nRemarketing vẫn hợp pháp. Form lead vẫn chạy được. Cái phải đổi là cách xin đồng ý, cách chia lead cho đại lý và cách tải danh sách khách lên nền tảng quảng cáo.\n\nAdtek tổng hợp những gì marketer cần sửa ngay, kèm mẫu nội dung xin đồng ý 3 ô cho form lead và checklist cho cả đội.",
@@ -278,7 +284,8 @@
     ],
     "hero": "3",
     "hero_text": "Chỉ số đọc đúng khi ROAS giảm",
-    "fb_kicker": "MER, CAC, LTV"
+    "fb_kicker": "MER, CAC, LTV",
+    "style": "editorial"
    },
    "summary": "Bài trụ cột cụm Dữ liệu và đo lường: vì sao ROAS nền tảng sai lệch (ATT, Meta bỏ cửa sổ sau xem trên API từ 12/1/2026, chuyển đổi mô hình hóa, đếm trùng giữa các nền tảng), công thức MER, aMER, CAC khách mới, LTV theo lợi nhuận và CM1 đến CM3. Có ví dụ một thương hiệu chăm sóc da tính cả phí sàn, bảng chẩn đoán 5 tình huống khi ROAS giảm, nhịp đo lường ngày, tuần, tháng, quý và cách kiểm chứng bằng thử nghiệm, MMM.",
    "confirm": [
@@ -291,7 +298,7 @@
    "fb_caption": "Một thương hiệu chăm sóc da (ví dụ giả định trong bài) mở báo cáo tháng: Meta báo ROAS 4.1, Google 5.0, TikTok 4.0, quảng cáo sàn 5.0.\n\nCộng doanh thu bốn nền tảng tự ghi nhận lại được 1.99 tỷ đồng. Doanh thu thật của cả tháng là 2 tỷ.\n\nTheo báo cáo quảng cáo, gần như không có đơn nào đến từ khách quen, tìm kiếm tự nhiên hay giới thiệu. Con số đó gần như chắc chắn bị đếm trùng.\n\nTừ 12/1/2026, Meta còn bỏ dữ liệu cửa sổ 7 ngày và 28 ngày sau xem trên API. Nhiều dashboard thấy chuyển đổi tụt, đội marketing cắt ngân sách, trong khi số đơn trong kho không đổi.\n\nTrước khi cắt, hãy xem ba con số không phụ thuộc vào cách nền tảng tự đếm: MER (tổng doanh thu chia tổng chi marketing), CAC khách mới, và lợi nhuận còn lại sau phí sàn và quảng cáo.\n\nAdtek viết lại cách đọc MER, CAC, LTV cho thương hiệu bán trên website, Shopee và TikTok Shop, kèm bảng chẩn đoán 5 tình huống khi ROAS giảm.",
    "fb_comment": "MER, CAC, LTV: cách đọc đúng khi ROAS giảm https://adtek.agency/chi-so-growth-marketing/",
    "fb_status": "ready",
-   "media_id": 6111,
+   "media_id": 6132,
    "approval": "pending",
    "approval_requested": "2026-10-16T09:13:31+07:00"
   },
@@ -330,7 +337,8 @@
     ],
     "hero": "6",
     "hero_text": "Phần hồ sơ gửi KOC trước phiên live",
-    "fb_kicker": "Luật TMĐT 2026"
+    "fb_kicker": "Luật TMĐT 2026",
+    "style": "split"
    },
    "summary": "Tổng hợp Luật Thương mại điện tử 122/2025 (hiệu lực 1/7/2026), Nghị định 248/2026 và Luật Quảng cáo sửa đổi: trách nhiệm của nền tảng, người bán, người livestream và người làm affiliate, mốc xác thực điện tử 1/1/2027, lưu bản ghi 1 năm, mức phạt KOL 40 đến 100 triệu đồng. Có bộ hồ sơ 6 phần gửi KOC, ví dụ một phiên live serum trước và sau luật mới, checklist cho nhãn hàng.",
    "confirm": [
@@ -344,7 +352,7 @@
    "fb_caption": "Ngày 19/11/2025, ba người có ảnh hưởng nổi tiếng nhận mỗi người 2 năm tù vì quảng cáo kẹo rau Kera, sản phẩm không có 10 loại bột rau củ như ghi trên nhãn.\n\nTừ 1/7/2026, Luật Thương mại điện tử mới chia trách nhiệm trong mỗi phiên livestream cho ba bên. Nhãn hàng phải đưa giấy tờ sản phẩm cho người livestream trước khi lên sóng. KOC phải từ chối hợp tác nếu thiếu giấy tờ. Sàn lưu bản ghi phiên live ít nhất 1 năm, nên mỗi câu nói về giá hay công dụng đều có thể được mở lại khi khách khiếu nại.\n\nLuật Quảng cáo sửa đổi còn cấm người có ảnh hưởng giới thiệu sản phẩm mình chưa dùng. Mức phạt cho lỗi này lên tới 100 triệu đồng.\n\nVới nhãn hàng, lịch booking KOC sẽ đổi: gửi sản phẩm sớm 2 đến 3 tuần, gửi bộ hồ sơ trước 7 ngày, viết sẵn câu thông báo quảng cáo cho KOC đọc.\n\nAdtek tổng hợp các văn bản đang áp dụng, bảng trách nhiệm từng bên, bộ hồ sơ 6 phần gửi KOC và checklist cần xong trước 1/1/2027.",
    "fb_comment": "Luật Thương mại điện tử 2026: livestream, KOL/KOC và affiliate cần chuẩn bị gì? https://adtek.agency/luat-thuong-mai-dien-tu-livestream/",
    "fb_status": "ready",
-   "media_id": 6113,
+   "media_id": 6133,
    "approval": "pending",
    "approval_requested": "2026-10-16T09:13:31+07:00"
   },
@@ -905,13 +913,43 @@
    "wp_id": "6078",
    "cluster": "C6",
    "refresh": "B",
-   "action": "giữ"
+   "action": "giữ",
+   "slug": "digital-marketing-bat-dong-san-khu-cong-nghiep",
+   "date": "2026-10-06",
+   "cover": {
+    "kicker": "Playbook ngành",
+    "title": "Marketing khu công nghiệp",
+    "subtitle": "Thu hút nhà đầu tư FDI trên kênh số: website dữ liệu, SEO đa ngôn ngữ, LinkedIn ABM, CRM",
+    "chips": [
+     "SEO đa ngôn ngữ",
+     "LinkedIn ABM",
+     "CRM"
+    ],
+    "hero": "90",
+    "hero_text": "Ngày đầu tiên tìm nhà đầu tư FDI",
+    "style": "stack"
+   }
   },
   {
    "wp_id": "6076",
    "cluster": "C4",
    "refresh": "A",
-   "action": "pillar C4, giữ"
+   "action": "pillar C4, giữ",
+   "slug": "aio-la-gi",
+   "date": "2026-10-06",
+   "cover": {
+    "kicker": "SEO và AI Search",
+    "title": "AIO là gì?",
+    "subtitle": "Tối ưu nội dung và thương hiệu để AI Overviews, ChatGPT, Gemini trích dẫn bạn",
+    "chips": [
+     "AI Overviews",
+     "Trích dẫn",
+     "Đo lường"
+    ],
+    "hero": "7",
+    "hero_text": "Bước để nội dung được AI trích dẫn",
+    "style": "poster"
+   }
   },
   {
    "wp_id": "5899",

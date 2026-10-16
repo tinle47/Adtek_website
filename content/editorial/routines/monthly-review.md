@@ -1,7 +1,7 @@
 # Routine: Blog Adtek: rà soát nội dung hằng tháng
 
 - Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 47 8 1 * *` (8:47 sáng ngày 1 hằng tháng, giờ Việt Nam)
-- Chạy trong cùng phiên với routine thứ Sáu.
+- Chạy trong cùng phiên với routine thứ Sáu: phiên **Adtek - Blog post** (session_01AvYySKMdJYRoHxp3DYBUqB).
 
 ## Prompt
 
