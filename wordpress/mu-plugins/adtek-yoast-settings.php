@@ -154,8 +154,43 @@ add_action(
 
 function adtek_yoast_user_keys() {
 	// Trường hồ sơ tác giả Yoast dùng cho schema Person (sameAs) và trang tác giả.
-	return array( 'facebook', 'instagram', 'linkedin', 'myspace', 'pinterest', 'soundcloud', 'tumblr', 'twitter', 'youtube', 'wikipedia', 'adtek_job_title' );
+	return array( 'facebook', 'instagram', 'linkedin', 'myspace', 'pinterest', 'soundcloud', 'tumblr', 'twitter', 'youtube', 'wikipedia', 'adtek_job_title', 'adtek_avatar_id' );
 }
+
+/*
+ * Ảnh đại diện tác giả từ Thư viện (user meta adtek_avatar_id = ID ảnh) thay cho Gravatar.
+ * Dùng cho trang tác giả và schema Person của Yoast (cả hai lấy qua get_avatar).
+ */
+add_filter(
+	'pre_get_avatar_data',
+	static function ( $args, $id_or_email ) {
+		$user_id = 0;
+		if ( is_numeric( $id_or_email ) ) {
+			$user_id = (int) $id_or_email;
+		} elseif ( $id_or_email instanceof WP_User ) {
+			$user_id = $id_or_email->ID;
+		} elseif ( $id_or_email instanceof WP_Post ) {
+			$user_id = (int) $id_or_email->post_author;
+		} elseif ( $id_or_email instanceof WP_Comment ) {
+			$user_id = (int) $id_or_email->user_id;
+		} elseif ( is_string( $id_or_email ) && is_email( $id_or_email ) ) {
+			$u       = get_user_by( 'email', $id_or_email );
+			$user_id = $u ? $u->ID : 0;
+		}
+		$media = $user_id ? (int) get_user_meta( $user_id, 'adtek_avatar_id', true ) : 0;
+		if ( $media ) {
+			$size = isset( $args['size'] ) ? (int) $args['size'] : 96;
+			$src  = wp_get_attachment_image_src( $media, array( $size, $size ) );
+			if ( $src ) {
+				$args['url']          = $src[0];
+				$args['found_avatar'] = true;
+			}
+		}
+		return $args;
+	},
+	10,
+	2
+);
 
 function adtek_yoast_purge_all() {
 	do_action( 'litespeed_purge_all' );
@@ -250,7 +285,13 @@ add_action(
 									wp_update_user( array( 'ID' => $id, 'description' => wp_kses_post( $value ) ) );
 								} elseif ( in_array( $key, adtek_yoast_user_keys(), true ) ) {
 									$old   = get_user_meta( $id, $key, true );
-									$value = 'adtek_job_title' === $key ? sanitize_text_field( $value ) : esc_url_raw( $value );
+									if ( 'adtek_job_title' === $key ) {
+										$value = sanitize_text_field( $value );
+									} elseif ( 'adtek_avatar_id' === $key ) {
+										$value = absint( $value );
+									} else {
+										$value = esc_url_raw( $value );
+									}
 									update_user_meta( $id, $key, $value );
 								} else {
 									$out['user'][ $key ] = 'unknown_key';
