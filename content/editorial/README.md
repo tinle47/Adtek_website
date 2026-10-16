@@ -78,7 +78,9 @@ Các mục `check`:
 - Liên kết vào: trụ cột đã trỏ về, ít nhất 3 bài trỏ về (2 nếu cụm không có trụ cột).
 - Độ dài từ 1,500 chữ.
 
-Giới hạn: mạng của môi trường chặn site bên ngoài nên không kiểm tra được link ngoài còn sống (lịch rà soát ngày 1 hằng tháng xử lý); không có quyền Google Search Console nên chưa gửi yêu cầu lập chỉ mục. Xóa cache thủ công cần plugin `adtek-acf-rest.php` 1.1.0 (đang chờ upload); WordPress vẫn tự xóa cache của bài khi lưu.
+Google Search Console (`tools/gsc.py`, anh Tin chọn ngày 16/10/2026): sau mỗi lần tối ưu, gửi lại `sitemap_index.xml` (`submit`); mỗi lần chạy kiểm tra các bài đăng từ 2 đến 30 ngày trước mà chưa được index (`pending`, ghi `index_status`, `index_checked` vào `calendar.json`). Google không có API cho nút "Yêu cầu lập chỉ mục" nên bài chưa index được gửi anh Tin kèm link để bấm tay. Không dùng Indexing API (Google chỉ cho phép với trang tuyển dụng và livestream). Đăng nhập bằng service account: khóa JSON đặt trong biến môi trường `GSC_SERVICE_ACCOUNT` (nguyên văn hoặc base64), email service account được thêm vào property adtek.agency với quyền Full.
+
+Giới hạn: mạng của môi trường chặn site bên ngoài nên không kiểm tra được link ngoài còn sống (lịch rà soát ngày 1 hằng tháng xử lý). Xóa cache thủ công cần plugin `adtek-acf-rest.php` 1.1.0 (đang chờ upload); WordPress vẫn tự xóa cache của bài khi lưu.
 
 ## Quy trình cập nhật nội dung
 
