@@ -15,7 +15,7 @@ Cập nhật: 14/10/2026. Đây là tài liệu để tài khoản Claude mới 
 Việc đang dở:
 
 - Liên kết ngược cho bài 1 (đã đăng 13/10) và bài 2: làm trong lần chạy thứ Sáu kế tiếp.
-- Đăng Facebook: đã chọn Graph API (16/10/2026). Page Adtek Growth Agency (ID 101888089257566), công cụ `tools/fb_post.py`: đăng ảnh 4:5 + câu CTA chung + `fb_caption`, Page tự bình luận `fb_comment` chứa link. Network secret cho `graph.facebook.com` phải là **Page access token** (kiểm tra: `curl -sS "https://graph.facebook.com/me?fields=id,name"` trả về Page, không phải System User). Bài 1 đến 4 chưa đăng Facebook, chờ anh Tin duyệt lịch.
+- Đăng Facebook: đã chọn Graph API (16/10/2026). Page Adtek Growth Agency (ID 101888089257566), công cụ `tools/fb_post.py`: đăng ảnh 4:5 + câu CTA chung + `fb_caption`, Page tự bình luận `fb_comment` chứa link. Network secret cho `graph.facebook.com` phải là **Page access token** (kiểm tra: `curl -sS "https://graph.facebook.com/me?fields=id,name"` trả về Page, không phải System User). Lịch đăng Facebook bài 1 đến 4 (send_later trong phiên session_0196UuuQJu6Edu8fi8VXJDzh, trường `fb_scheduled` trong calendar.json): bài 1 16/10 20:15, bài 2 18/10 12:15, bài 3 20/10 12:26, bài 4 22/10 20:16. Từ bài 5, đặt lịch Facebook 5 phút sau giờ đăng blog khi bài được duyệt hoặc tự duyệt D+1.
 
 ## 2. Những gì nằm trong repo (đi theo dự án)
 
