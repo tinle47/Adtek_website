@@ -1,0 +1,550 @@
+[
+ {
+  "folder_date": "20230218",
+  "drive_doc": "1QD5d4p7LM1HCb0g0cKtTFRp8aTkVcxgDk0IvC_WNYP8",
+  "wp_id": 6231,
+  "date": "2023-02-18T09:00:00",
+  "link": "https://adtek.agency/tan-dung-chatgpt-vao-digital-marketing/",
+  "title": "Làm thế nào để tận dụng ChatGPT vào Digital Marketing thành công?",
+  "categories": [
+   185
+  ],
+  "source": {
+   "publisher": "Tổng hợp nhiều nguồn (FutureLearn, InvGate, Help Scout, Emeritus, Search Engine Journal, Towards AI, Dataslayer, WebFX, ChatGPT School, Markettailor, Medium)",
+   "title": "How to apply ChatGPT into Digital Marketing (outline nội bộ, không có bài gốc tiếng Anh duy nhất)",
+   "url": null,
+   "how_found": "in doc"
+  },
+  "notes": "Doc không chứa bài tiếng Anh, chỉ có outline tiếng Anh + danh sách link tham khảo; bài tiếng Việt là bài tổng hợp nhiều nguồn, nên dòng ghi nguồn cuối bài liệt kê các link tham khảo trong doc thay cho một nguồn duy nhất. Đã bỏ số La Mã ở heading (bản gốc nhảy từ IV sang VI). Sửa một số đoạn dịch sai kỹ thuật: 'tích hợp quá mức' -> quá khớp (overfitting), 'thêm thông số lỗi khi có giá trị missing' -> thành phần phạt của regularization, 'từ ký tự đại diện' -> đại từ, 'phần nổi của tảng băng chìm' (dùng sai nghĩa) đã bỏ; nên kiểm tra lại đoạn Bước 4 phần chatbot. Danh sách nguồn gốc ghi 'Search Engine Land' nhưng link là Search Engine Journal, đã sửa theo link."
+ },
+ {
+  "folder_date": "20230128",
+  "drive_doc": "1CjSiDRfgln6rxvXDnLNBSCGisNjSznbSuggi-rt42wM",
+  "wp_id": 6253,
+  "date": "2023-01-28T09:00:00",
+  "link": "https://adtek.agency/tuong-lai-cookieless-vi-sao-cookie-bien-mat/",
+  "title": "Tương lai của Cookieless: Vì sao Cookies lại biến mất?",
+  "categories": [
+   185
+  ],
+  "source": {
+   "publisher": "G2 Learn Hub",
+   "title": "The Cookieless Future: Why Are Cookies Going Away?",
+   "url": "https://learn.g2.com/cookieless-future",
+   "how_found": "web search"
+  },
+  "notes": "Không lấy được ngày đăng của bài gốc G2 (trang không truy cập được từ môi trường này), nên dòng nguồn chưa có MM/YYYY. Hai biểu đồ image1, image2 (Zeotap) có nhãn tiếng Anh nhưng giữ vì có số liệu. Đã bỏ phần lớn link nội bộ G2 glossary, giữ các link nguồn số liệu (Google blog, Chromium blog, KPMG, BBC, 4A's/ANA, HubSpot, Zeotap). Đã sửa nhiều chỗ dịch sai so với bản tiếng Anh (vd 'bức tranh digital toàn cảnh', 'cấp cao hơn của cookies', 'kho chứa dữ liệu' -> data silo, 'Áp dụng cohort marketing' không phải heading)."
+ },
+ {
+  "folder_date": "20220722",
+  "drive_doc": "1RoyN-nUDJjyM6Qiw6yqufe0qO3niL9ECnP7_9Je4tVg",
+  "wp_id": 6275,
+  "date": "2022-07-22T09:00:00",
+  "link": "https://adtek.agency/case-study-shopee-ung-dung-crm/",
+  "title": "Case Study: Shopee ứng dụng CRM thành công để tăng trưởng toàn diện",
+  "categories": [
+   184,
+   197
+  ],
+  "source": {
+   "publisher": "Bài tổng hợp tiếng Việt (tài liệu cho người bán của Shopee, Doopage)",
+   "title": null,
+   "url": null,
+   "how_found": "in doc"
+  },
+  "notes": "Doc không có bản tiếng Anh: đây là bài viết tiếng Việt tổng hợp từ tài liệu Shopee Seller và Doopage (link có trong doc), không phải bài dịch; dòng nguồn cuối bài ghi 'Bài viết tổng hợp' kèm các link đó. Link tới 2 file PDF của Shopee chưa kiểm tra còn sống. Tiêu đề 'Shopee ứng dụng CRM thành công...' không khớp hẳn nội dung (bài hướng dẫn shop bán trên Shopee làm CS/CRM, không phải case study CRM nội bộ của Shopee); chủ site có thể cân nhắc. Sửa lỗi logic '4 sao trở xuống' thành 'dưới 4 sao'; câu 'Shopee sẽ sử dụng dữ liệu CRM...' sửa thành 'shop' cho đúng ngữ cảnh. Bài có đoạn giới thiệu dịch vụ CRM của Adtek ở cuối, đã giữ. Doc có link crmside.com/apple-crm-case-study nhưng nội dung không dùng, nên không đưa vào nguồn."
+ },
+ {
+  "folder_date": "20220615",
+  "drive_doc": "19hia8tCszeDhJhfF1narjlm8Z_anHkwRBPZGP-K7E2M",
+  "title": "Flywheel Marketing: Mô hình tăng trưởng doanh thu mới dành cho doanh nghiệp",
+  "status": "skipped",
+  "reason": "trùng bài 4095 (Funnel-to-Flywheel)"
+ },
+ {
+  "folder_date": "20220615",
+  "drive_doc": "1HnG3FtyP-pXDx2vNiNcJfdjuq7Joh2GDQWBI86OWLsk",
+  "wp_id": 6301,
+  "date": "2022-06-15T09:00:00",
+  "link": "https://adtek.agency/8-ung-dung-cua-nft-trong-marketing/",
+  "title": "8 ứng dụng của NFT trong marketing",
+  "categories": [
+   185,
+   190
+  ],
+  "source": {
+   "publisher": "Analytics Steps",
+   "title": "8 Uses of NFT in Marketing",
+   "url": "https://www.analyticssteps.com/blogs/8-uses-nft-marketing",
+   "how_found": "in doc"
+  },
+  "notes": "Chưa rõ tháng đăng bài gốc Analytics Steps. Ảnh image3 (logo Marriott Bonvoy) và image4 (poster Spider-Man/AMC) là hình thương hiệu bên thứ ba, giữ vì minh họa đúng case; image2 là ảnh chụp giao diện KnownOrigin tiếng Anh nhưng cho thấy nền tảng nên giữ. Đã sửa các chỗ dịch sai: 'cơn sốt hàng năm' (millennial craze), 'các thương hiệu kế thừa đều bắt chước' (bị làm nhái), 'thay đổi thiết kế bằng ví Enjin' (trao đổi NFT), 'Thẻ Xe đạp' -> Bicycle Cards (bài lá). Một số số liệu trong bài gốc (1 triệu đơn đặt trước sách Gary Vaynerchuk, giá CryptoCrisp) giữ nguyên theo nguồn, chưa kiểm chứng."
+ },
+ {
+  "folder_date": "20220608",
+  "drive_doc": "1PE8QJ3LxYyVEz9FnN5XH5kdrkfJVlAHbnXB2zGZntDI",
+  "wp_id": 6316,
+  "date": "2022-06-08T09:00:00",
+  "link": "https://adtek.agency/nft-trong-nganh-cong-nghiep-giai-tri/",
+  "title": "NFTs trong ngành công nghiệp giải trí",
+  "categories": [
+   185
+  ],
+  "source": {
+   "publisher": "Tổng hợp: VentureBeat, Invoke, Icon Collective, VietNamNet",
+   "title": "How NFTs create new opportunities in the entertainment industry (VentureBeat, 08/03/2022) + các bài khác",
+   "url": "https://venturebeat.com/2022/03/08/how-nfts-create-new-opportunities-in-the-entertainment-industry/",
+   "how_found": "in doc"
+  },
+  "notes": "Bài tổng hợp từ 4 nguồn có link trong doc (VentureBeat cho phần phim, Invoke cho Stoner Cats/NBA Top Shot/Pulp Fiction/Zero Contact/tiềm năng, Icon Collective cho phần nghệ sĩ, VietNamNet cho Binz), không phải dịch một bài duy nhất; dòng nguồn cuối bài liệt kê cả 4. Bản dịch cũ ghi 'Năm 2022, thương hiệu Value' cho Zero Contact: sai, bản gốc là 'This year, [Vuele]' (bài Invoke viết năm 2021), đã sửa thành Vuele và bỏ năm. Câu 'Warner Bros không phải đơn vị duy nhất' trong bản gốc thiếu ngữ cảnh (bài Invoke nhắc WB ở đoạn trước), đã diễn đạt lại nhẹ. Sửa chính tả tên riêng: Justin Bieber, Snoop Dogg, BigONE. Ảnh poster phim/Snoop Dogg là hình thương hiệu bên thứ ba."
+ },
+ {
+  "folder_date": "20220318",
+  "drive_doc": "19eoIDr5Z0KbjjT2R40oG_-vnbkl8wxgN3xygweqxeJU",
+  "wp_id": 6233,
+  "date": "2022-03-18T09:00:00",
+  "link": "https://adtek.agency/4-tru-cot-chuyen-doi-so-thanh-cong/",
+  "title": "4 trụ cột của hoạt động chuyển đổi số thành công",
+  "categories": [
+   185
+  ],
+  "source": {
+   "publisher": "Harvard Business Review",
+   "title": "The 4 Pillars of Successful Digital Transformations",
+   "url": "https://hbr.org/2022/01/the-4-pillars-of-successful-digital-transformations",
+   "how_found": "web search"
+  },
+  "notes": "Source: HBR, 28/01/2022, by Nathan Furr, Andrew Shipilov, Didier Rouillard, Antoine Hemon-Laurens. Article confirmed via web search (store.hbr.org/product/.../H06T56); the hbr.org URL follows HBR's standard slug pattern but could not be fetched directly, please click-check. Featured image media/image3.png is an English HBR table (tall 1200x1324, not wide); image2.png (digital marketing banner) is a wide alternative. Translator's term 'Nâng cao ứng dụng CNTT' was unified to 'nâng cấp CNTT (IT uplift)' since the original used three different terms."
+ },
+ {
+  "folder_date": "20211205",
+  "drive_doc": "1GAOwzeJU2ZwSgrWPIKjLCJxZ9o-EBY2aceeM7VVOYQM",
+  "wp_id": 6280,
+  "date": "2021-12-05T09:00:00",
+  "link": "https://adtek.agency/multi-touch-attribution-mo-hinh-phan-bo-da-diem-cham/",
+  "title": "Multi-touch attribution (Mô hình phân bổ đa điểm chạm): Khi thành công là một hành trình",
+  "categories": [
+   185
+  ],
+  "source": {
+   "publisher": "AppsFlyer",
+   "title": "Multi-touch attribution: When success is a journey",
+   "url": "https://www.appsflyer.com/blog/measurement-analytics/multi-touch-attribution/",
+   "how_found": "web search"
+  },
+  "notes": "AppsFlyer blog post on multi-touch attribution; search snippets match the section structure (Industry standard vs. gold standard, single vs multi-touch). The page could not be fetched, so the exact English headline and publish month are unconfirmed (English title inferred from the Vietnamese title; content refers to 2021). All 13 images are AppsFlyer charts/illustrations from the original; image2 (US attribution chart) moved next to the 65% adoption paragraph it illustrates, image7 (5 steps) moved to the intro of the 5-step section. Translation had several meaning errors that were fixed against the English (e.g. 'có đến 9%' -> 'chỉ khoảng 9%', 'trang web mới' -> 'trang tin tức', 'kênh' for funnel -> 'phễu', 'sự tín nhiệm' for credit -> 'ghi nhận đóng góp')."
+ },
+ {
+  "folder_date": "20211205",
+  "drive_doc": "1_ScCmZCJ6OyTgrr_8mjpTW1hfy1xHqlWKa-nYJDaHIo",
+  "wp_id": 6317,
+  "date": "2021-12-05T09:00:00",
+  "link": "https://adtek.agency/black-friday-chien-luoc-quang-cao-dip-quan-trong/",
+  "title": "Black Friday chỉ là điểm khởi đầu: nâng cấp chiến lược quảng cáo của bạn vào thời điểm quan trọng",
+  "categories": [
+   190,
+   185
+  ],
+  "source": {
+   "publisher": "AppsFlyer",
+   "title": "Black Friday is just the beginning: level up your ad strategy for key dates",
+   "url": "https://www.appsflyer.com/blog/tips-strategy/ad-strategy-key-dates/",
+   "how_found": "web search"
+  },
+  "notes": "AppsFlyer guest post by Melisa Fernández, 01/11/2021 (per search results; page itself could not be fetched). All 9 images are ad examples from the original and sit only in the Vietnamese part; they show third-party brands (Amazon, Etsy, Klarna, Nike, Gopuff, Afterpay, Panda Pop) as creative examples. The Vietnamese keyword list was missing 'hurry up' and 'last one in stock'; added from the English. Several mistranslations fixed (CPM paragraph meaning was reversed, 'khoảng không quảng cáo' for inventory -> 'kho hàng', first-purchase discount target)."
+ },
+ {
+  "folder_date": "20211205",
+  "drive_doc": "1oRcWO6hCJYa83z3dCW8FAP10XzX1AIcNV-uhNShV80M",
+  "wp_id": 6331,
+  "date": "2021-12-05T09:00:00",
+  "link": "https://adtek.agency/6-meo-quang-cao-high-impact-tren-tiktok/",
+  "title": "6 mẹo thực hiện quảng cáo high impact trên TikTok",
+  "categories": [
+   190,
+   185
+  ],
+  "source": {
+   "publisher": "AppsFlyer",
+   "title": "6 tips for creating high impact TikTok ads",
+   "url": "https://www.appsflyer.com/blog/6-tiktok-advertising-tips/",
+   "how_found": "web search"
+  },
+  "notes": "Source URL found by searching the article's section phrases (AppsFlyer guest post, 'Don't make ads. Make TikToks'); page could not be fetched, so the exact English headline, author and publish month are unconfirmed (title here is inferred from the Vietnamese title and URL). Article likely early/mid 2021. Images exist only in the Vietnamese part; image1 is a Sensor Tower chart running to Q2/2021, probably added by the translator. English heading for tip 2 was truncated in the doc ('or an'); the Vietnamese 'hoặc một câu chuyện hấp dẫn' was kept."
+ },
+ {
+  "folder_date": "20211105",
+  "drive_doc": "1_jEfPsHepqQuUJFzOzWAkX2WLqLm9bWVIWLyq-cTvc8",
+  "wp_id": 6339,
+  "date": "2021-11-05T09:00:00",
+  "link": "https://adtek.agency/kiem-thu-tang-tien-incrementality-testing/",
+  "title": "Những điều marketers cần biết về kiểm thử tăng tiến",
+  "categories": [
+   185,
+   143
+  ],
+  "source": {
+   "publisher": "AppsFlyer",
+   "title": "Everything marketers need to know about incrementality testing",
+   "url": "https://www.appsflyer.com/blog/tips-strategy/incrementality-testing-for-marketers/",
+   "how_found": "in doc / web search"
+  },
+  "notes": "AppsFlyer blog by Michal Wagner (per search results); doc contains several appsflyer.com links, kept on the matching Vietnamese phrases. Publish month unknown, so no date in the credit line. The definitions table (a list in the translation) was restored as a <table>; two rows were wrong in the translation (statistical significance definition cut off, 'incremental lift' mislabelled as 'kiểm thử tăng tiến') and were fixed from the English. Terminology unified: nhóm kiểm thử / nhóm kiểm soát, mức độ tăng tiến (incremental lift), traffic tự nhiên (organic)."
+ },
+ {
+  "folder_date": "20211105",
+  "drive_doc": "1sCyMWexH3WV0mFL4CYtlqI1iEeBDMvJpUCTvMiJW_yA",
+  "wp_id": 6343,
+  "date": "2021-11-05T09:00:00",
+  "link": "https://adtek.agency/app-ux-nguyen-tac-co-ban-2021/",
+  "title": "App UX: Một số nguyên tắc cơ bản bạn nên biết trong năm 2021",
+  "categories": [
+   185,
+   143
+  ],
+  "source": {
+   "publisher": "AppsFlyer",
+   "title": "App UX: The fundamentals you need to know in 2021",
+   "url": "https://www.appsflyer.com/blog/tips-strategy/mobile-app-ux/",
+   "how_found": "in doc / web search"
+  },
+  "notes": "Doc has appsflyer.com links (uninstall benchmarks, deep linking guide, glossary); search found the Spanish version at appsflyer.com/es/blog/tips-strategy/mobile-app-ux with the matching title, so the English URL is the same path without /es/ (not fetched directly, please click-check). Publish month unknown. image1 (multi-device screen) moved from after the IDF quote to the desktop vs mobile section. Fixed notable mistranslations: 'Điền thông tin' (filling time) -> 'Giết thời gian', mobile overtaking desktop since 2014 sentence, adaptive/hybrid paragraph ('Related', 'nên khác biệt' -> 'không được khác biệt'), 'Các hạn chế sẽ luôn gặp phải' -> 'Giới hạn là bạn đồng hành'. TechCrunch link stripped of tracking parameters."
+ },
+ {
+  "folder_date": "20211105",
+  "drive_doc": "1roqJ8xG6umGkIWKJcnFRb_S9QZXKSStmF6WeFrkEv3E",
+  "wp_id": 6242,
+  "date": "2021-11-05T09:00:00",
+  "link": "https://adtek.agency/nhung-dieu-marketers-can-biet-ve-playable-ads-2021/",
+  "title": "Những điều marketers cần biết về playable ads trong năm 2021",
+  "categories": [
+   185,
+   190
+  ],
+  "source": {
+   "publisher": "AppsFlyer",
+   "title": "It’s time to play – What marketers need to know about playable ads in 2021",
+   "url": "https://www.appsflyer.com/blog/tips-strategy/playable-ads/",
+   "how_found": "web search (English title in doc; AppsFlyer links in doc); URL verified live, page now retitled to the 2023 version"
+  },
+  "notes": "Both images only appeared in the Vietnamese part (added by translator), kept in place. AppsFlyer has since updated the article to a 2023 edition under the same URL, so the live page differs from this 2021 translation. Exact original publish month unknown. Light edits fixed several mistranslations (e.g. 'ticketing' was 'vé may mắn', New Balance trampolines were 'khăn trải giường', the opt-in sentence about conversion/retention was garbled). Matching links from the English text were added."
+ },
+ {
+  "folder_date": "20211102",
+  "drive_doc": "1YMS1sXr_Qj0234Uq_51X8i8zdfF3B3j2EdZa8KcHRbM",
+  "wp_id": 6258,
+  "date": "2021-11-02T09:00:00",
+  "link": "https://adtek.agency/nhung-dieu-can-biet-ve-app-marketing-kpis/",
+  "title": "Toàn bộ những điều bạn cần biết về app marketing KPIs",
+  "categories": [
+   143,
+   185
+  ],
+  "source": {
+   "publisher": "AppsFlyer",
+   "title": "Welcome to the metrics – Everything you need to know about app marketing KPIs",
+   "url": "https://www.appsflyer.com/blog/measurement-analytics/mobile-app-metrics/",
+   "how_found": "web search (English title in doc); slug found via AppsFlyer's Spanish/Portuguese/German versions, English URL verified live and page text contains 'Welcome to the metrics'"
+  },
+  "notes": "Intro says '19 chỉ số' but the article lists 20 numbered metrics; this mirrors the English original, left unchanged. The ROAS definition ('spend divided by revenue') is inverted in the English original too; kept as is (light edit only), owner may want to fix. Translation consistently rendered 'non-organic' as 'không phải trả tiền' (opposite meaning); corrected to 'non-organic'. Other fixes: CAC 'chi phí sở hữu' to 'chi phí thu hút khách hàng', OCR closing rate ('tỷ lệ rời bỏ' to 'tỷ lệ chốt'), 'APRU' typo. A Vietnamese copy of this translation is live on brandsvietnam.com (topic 332191, same title); check whether that was Adtek's own repost. AppsFlyer has since updated the article (now titled 'Mobile app metrics: What you need to know in 2023'), so the live page differs."
+ },
+ {
+  "folder_date": "20210903",
+  "drive_doc": "1yzMN1xu717GGc5DWJhFjqIvYjxTY7tvbzayTya2UMO8",
+  "wp_id": 6282,
+  "date": "2021-09-03T09:00:00",
+  "link": "https://adtek.agency/tai-sao-chuyen-doi-tiep-theo-nen-tat-tay/",
+  "title": "Tại sao chuyển đổi tiếp theo của bạn nên “tất tay”",
+  "categories": [
+   143
+  ],
+  "source": {
+   "publisher": "McKinsey & Company (McKinsey Quarterly 2019 Number 4)",
+   "title": "Why your next transformation should be 'all in'",
+   "url": "https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/why-your-next-transformation-should-be-all-in",
+   "how_found": "web search (English title in doc); same URL is also linked from the a16 McKinsey article. mckinsey.com blocks direct fetch, URL taken from search index (old business-functions path, McKinsey redirects it)"
+  },
+  "notes": "Not a marketing topic (corporate strategy/transformation); owner may decide whether it fits the blog. Images are McKinsey exhibits with English labels; kept since they carry the data the text refers to (Hình 1-4). The Vietnamese translation had many meaning errors, so the edit is heavier than usual while keeping structure and content: 'power curve' was rendered as 'đường cong hiệu suất', 'portfolio' as 'danh mục đầu tư' (now 'danh mục kinh doanh'), resource reallocation as 'phân bổ lại lực lượng lao động', cannibalization as 'thâu tóm', 'irrational side' as 'khía cạnh hợp lý', Philips target year 2003 (should be 2030). Cross-reference article titles are kept in English with links. The article mentions 'The numbers behind successful transformations' as forthcoming (archive wording kept). Related Adtek post: a16 'Chuyển đổi số: Cách cải thiện tỷ lệ thành công cho doanh nghiệp' references this article; consider internal links between them."
+ },
+ {
+  "folder_date": "20210828",
+  "drive_doc": "1l3uGyrK4FHYGjgkOc7SKT4riQWXV8F92MfFQ-X1NpxA",
+  "wp_id": 6340,
+  "date": "2021-08-28T09:00:00",
+  "link": "https://adtek.agency/chuyen-doi-so-cach-cai-thien-ty-le-thanh-cong/",
+  "title": "Chuyển đổi số: Cách cải thiện tỷ lệ thành công cho doanh nghiệp",
+  "categories": [
+   143
+  ],
+  "source": {
+   "publisher": "McKinsey & Company (McKinsey Quarterly)",
+   "title": "Digital transformation: Improving the odds of success",
+   "url": "https://www.mckinsey.com/capabilities/operations/our-insights/digital-transformation-improving-the-odds-of-success",
+   "how_found": "web search (English title in doc); mckinsey.com blocks direct fetch, URL taken from search index (also indexed under capabilities/tech-and-ai and the older mckinsey-digital path)"
+  },
+  "notes": "Corporate strategy topic rather than marketing; owner may decide whether it fits the blog. Authors: Jacques Bughin, Jonathan Deakin, Barbara O'Beirne; published around Oct 2019 (month not verified). Several mistranslations fixed: 'best-performing decile' (was 'những công ty thực hiện chuyển đổi số tốt nhất'), the 1.7x/1.3x comparisons, 'top economic performers' (was 'các nhà kinh tế hàng đầu'), 'all successful companies have a CDO', the agile result (was 'vượt gấp đôi kỳ vọng'), last paragraph subject. The translator's bold heading 'Kết quả chuyển đổi số không phải là kết quả duy nhất' was turned back into a normal paragraph as in the original. The in-text pull quote is kept as a blockquote. The article links to 'Why your next transformation should be all in', which is Adtek post a15 ('Tại sao chuyển đổi tiếp theo của bạn nên “tất tay”'); consider swapping that link to the Adtek URL once both are live."
+ },
+ {
+  "folder_date": "20210808",
+  "drive_doc": "1BlK2cByvp-cSyf4fyMSw3k5yIo8Ur2B6aX9guAr_-Lw",
+  "wp_id": 6318,
+  "date": "2021-08-08T09:00:00",
+  "link": "https://adtek.agency/ket-hop-phan-tich-marketing-va-phan-tich-san-pham/",
+  "title": "Marketing và phân tích sản phẩm: Vì sao chỉ thực hiện 1 trong khi bạn có thể kết hợp cả hai",
+  "categories": [
+   143,
+   185
+  ],
+  "source": {
+   "publisher": "AppsFlyer",
+   "title": "Marketing and product analytics: Why use a flashlight when you can turn on the lights?",
+   "url": null,
+   "how_found": "not found (English title in doc; AppsFlyer product links in doc; a content aggregator (thejuicehq.com) lists it by Yael Shany, 4 Aug 2021, but the AppsFlyer URL could not be located; guessed slugs return 404)"
+  },
+  "notes": "Source URL missing: please locate the original AppsFlyer blog post (author Yael Shany, 08/2021) and update the footer to the standard 'Bài dịch từ ...' line. The 5 images are AppsFlyer product UI illustrations (Protect360, User Acquisition Overview, Uninstalls, OneLink, Predict) with English labels; kept because each matches its section, but they are vendor promo visuals. Mistranslations fixed: the flashlight/turn-on-the-lights metaphor (lost in the translation, though the title depends on it), siloed data sentence, attribution list item 3, 'optimizing for fake users' (translation said 'người có thật', opposite meaning), garbled OneLink sentence with a stray backslash."
+ },
+ {
+  "folder_date": "20210719",
+  "drive_doc": "1XXbq8VwvZ0aIPhzZTIfQzU-uvhLp80T-juSvWihTuPs",
+  "wp_id": 6330,
+  "date": "2021-07-19T09:00:00",
+  "link": "https://adtek.agency/cach-goi-y-nguoi-dung-cho-phep-theo-doi-ios-14-5/",
+  "title": "Cách gợi ý người dùng cho phép theo dõi trên iOS 14.5",
+  "categories": [
+   185
+  ],
+  "source": {
+   "publisher": "AdColony",
+   "title": "Getting to Yes: iOS 14.5 Opt-In Suggestions",
+   "url": "https://www.adcolony.com/blog/2021/03/22/getting-to-yes-ios-14-5-opt-in-suggestions/",
+   "how_found": "web search (English title in doc; AdColony link in doc). Published 22/03/2021"
+  },
+  "notes": "AdColony was acquired by Digital Turbine; the source URL now redirects to the adcolony.com homepage (checked), so the link may look broken to readers. Consider a Wayback Machine link instead. Fixes against the English: second paragraph was garbled (lost the reference to AdColony's earlier guide), translator had added 'doanh nghiệp nhỏ' to the Facebook paragraph (not in original, removed), rewarded-video flow was mistranslated (user tapping OK sees an IDFA-less ad and gets the reward, not 'misses the reward'), 'The Control' was labelled 'A/B testing'. The Settings section's last sentence (must use a branded soft modal) was missing and has been restored. Images: AdColony flow mockups and Facebook prompt screenshots, all match their sections."
+ },
+ {
+  "folder_date": "20210719",
+  "drive_doc": "1YmjoShrODa78Ja40afm8zhAwZ6XJc_8l2ktWXxsTZ3I",
+  "wp_id": 6208,
+  "date": "2021-07-19T09:00:00",
+  "link": "https://adtek.agency/4-thach-thuc-4-co-hoi-facebook-ads-ios-14-5-att/",
+  "title": "4 thách thức và 4 cơ hội của Facebook Ads khi iOS 14.5/ATT ra mắt",
+  "categories": [
+   185,
+   190
+  ],
+  "source": {
+   "publisher": "Không xác định (có thể là RocketShip HQ / Mobile User Acquisition Show, chưa xác nhận)",
+   "title": "The state of Facebook Ads post iOS 14.5/ATT: 4 challenges & 4 opportunities",
+   "url": null,
+   "how_found": "not found"
+  },
+  "notes": "Không tìm được URL bài gốc (đã search tiêu đề chính xác nhiều lần). Văn phong bài gốc là một tập podcast ('In today's episode'), giọng rất giống Shamanth Rao (RocketShip HQ, Mobile User Acquisition Show) nhưng chưa xác nhận nên dòng nguồn chỉ ghi tên bài tiếng Anh. Ảnh duy nhất là sơ đồ luồng SKAdNetwork của Apple (tiếng Anh), đặt sau mục 2 như bản dịch gốc. Đã sửa các chỗ dịch sai: 'lao động phổ thông' (blue collar, bản cũ ghi 'văn phòng'), 'đang đầu tư nhiều hơn' (leaning into, bản cũ ghi 'đang tìm hiểu'), câu về tỷ lệ áp dụng ATT; bỏ câu kết 'hy vọng...'. Bài cùng chủ đề iOS 14.5 với a20, a21, a22 (cùng ngày 19/07/2021), nên cân nhắc liên kết nội bộ."
+ },
+ {
+  "folder_date": "20210719",
+  "drive_doc": "1Y2xdXeXQaeKdkMfE9y-L8TTlMvgGEJRM-J2URqvL3aE",
+  "wp_id": 6210,
+  "date": "2021-07-19T09:00:00",
+  "link": "https://adtek.agency/3-cach-creative-quang-cao-thay-doi-tren-ios-14-5/",
+  "title": "3 cách creative quảng cáo đang thay đổi trên iOS 14.5",
+  "categories": [
+   185,
+   143
+  ],
+  "source": {
+   "publisher": "Liftoff",
+   "title": "3 ways ad creatives are changing on iOS 14.5",
+   "url": "https://liftoff.io/?p=22210",
+   "how_found": "web search"
+  },
+  "notes": "Nguồn tìm qua web search (tiêu đề khớp chính xác, Liftoff). URL là shortlink liftoff.io/?p=22210; khi kiểm tra bằng curl, liftoff.io hiện chuyển hướng sang liftoff.ai và trả 404, nên link có thể đã chết. Cân nhắc bỏ link hoặc thay bằng bản lưu archive.org. Ảnh là hai hộp thoại xin phép ATT (6/2020 và 3/2021), giao diện tiếng Anh nhưng có giá trị minh họa nên giữ. Đã sửa câu dịch sai 'hầu hết người dùng sẽ không cài đặt app' thành 'phần lớn người thấy quảng cáo sẽ chưa cài app'."
+ },
+ {
+  "folder_date": "20210719",
+  "drive_doc": "1UBzSagyIMwUAAl-d4RsEQ-oJEPaFKca7ckcQStUhxGQ",
+  "wp_id": 6212,
+  "date": "2021-07-19T09:00:00",
+  "link": "https://adtek.agency/app-marketing-thay-doi-nhu-the-nao-tren-ios-14-5/",
+  "title": "App Marketing thay đổi như thế nào trên iOS 14.5",
+  "categories": [
+   185,
+   143
+  ],
+  "source": {
+   "publisher": "Liftoff",
+   "title": "How App Marketing is changing on iOS 14.5",
+   "url": "https://liftoff.io/?p=22037",
+   "how_found": "web search (bài có link liftoff.io và noidfanoproblem.com trong doc)"
+  },
+  "notes": "Nguồn tìm qua web search (tiêu đề khớp, Liftoff; bài gốc cũng nhắc 'At Liftoff' và link liftoff.io). Shortlink liftoff.io/?p=22037 hiện chuyển sang liftoff.ai và trả 404; các link trong bài (noidfanoproblem.com, liftoff.io/blog/...case-study) cũng có thể đã chết, nên kiểm tra trước khi đăng. Ảnh là sơ đồ trạng thái LAT/ATT (tiếng Anh, có giá trị minh họa). Thuật ngữ re-engagement đã thống nhất là 'tương tác lại (re-engagement)'."
+ },
+ {
+  "folder_date": "20210719",
+  "drive_doc": "19nuRJBlmqS6pMqD5dv2XFB_MB1M5OW_QfR6a_yLVXhU",
+  "wp_id": 6214,
+  "date": "2021-07-19T09:00:00",
+  "link": "https://adtek.agency/thiet-lap-do-luong-va-phan-bo-cho-ios-14/",
+  "title": "Làm thế nào để thiết lập tính năng đo lường và phân bổ cho iOS 14",
+  "categories": [
+   185,
+   143
+  ],
+  "source": {
+   "publisher": "InMobi (suy ra từ nội dung doc)",
+   "title": "How to Set Up Measurement and Attribution for iOS 14",
+   "url": null,
+   "how_found": "not found"
+  },
+  "notes": "Không tìm được URL bài gốc. Publisher nhiều khả năng là InMobi (bài nhắc 'InMobi also created a test app' và link support.inmobi.com) nhưng chưa xác nhận được trang gốc, nên dòng nguồn chỉ ghi InMobi và tên bài tiếng Anh. Đã sửa các lỗi dịch làm sai nghĩa: 'có thể không sử dụng' thành 'không được sử dụng'; 'SSP của Apple' thành 'SSP của mình'; câu điểm mấu chốt (traffic không có sự đồng ý, không phải 'không cần sự đồng ý')."
+ },
+ {
+  "folder_date": "20210717",
+  "drive_doc": "173_b01ST1IFXDJ6SM6wMo_tOFMxk9pLZNDJFyrWZCIw",
+  "wp_id": 6229,
+  "date": "2021-07-17T09:00:00",
+  "link": "https://adtek.agency/giai-ma-su-thanh-cong-cua-chuyen-doi-so/",
+  "title": "Giải mã sự thành công của chuyển đổi số (digital transformations)",
+  "categories": [
+   185,
+   197
+  ],
+  "source": {
+   "publisher": "McKinsey & Company",
+   "title": "Unlocking success in digital transformations",
+   "url": "https://www.mckinsey.com/capabilities/operations/our-insights/unlocking-success-in-digital-transformations",
+   "how_found": "in doc (McKinsey Global Survey) + web search"
+  },
+  "notes": "Khảo sát McKinsey Global Survey công bố 10/2018 (ngày theo hiểu biết, chưa mở trang để xác nhận). Cả 5 ảnh là biểu đồ (exhibit) tiếng Anh có logo McKinsey; giữ vì có số liệu, nhưng lưu ý bản quyền hình ảnh của McKinsey. Đã sửa nhiều lỗi dịch sai nghĩa: tỷ lệ 27% tuyển dụng theo kỹ năng, câu mở phần 'Nhìn về phía trước' (bản cũ dịch ngược nghĩa), 'khó hơn nhiều lần' thành 'còn khó hơn'; chuẩn hóa số thập phân kiểu Việt (2,7; 1,6) và 50.000. Mục 'Tổng kết' đổi thành 'Nhìn về phía trước' theo bản gốc. Category 197 (Case study) là gợi ý vì bài là báo cáo khảo sát; có thể chỉ giữ 185."
+ },
+ {
+  "folder_date": "20210711",
+  "drive_doc": "1IUwZtRTpCeXpQ9KVdtUT-dE12ySo7ktrW2rlGIXhgHg",
+  "wp_id": 6244,
+  "date": "2021-07-11T09:00:00",
+  "link": "https://adtek.agency/xac-dinh-va-tiep-can-nguoi-dung-muc-tieu-cho-mobile-app/",
+  "title": "Làm thế nào để xác định và tiếp cận người dùng mục tiêu cho mobile app",
+  "categories": [
+   185,
+   143
+  ],
+  "source": {
+   "publisher": "Adjust",
+   "title": "How to define and reach your mobile app target audience",
+   "url": "https://www.adjust.com/blog/how-to-define-and-reach-the-target-audience-for-your-app/",
+   "how_found": "web search (doc nhắc Adjust Audience Builder)"
+  },
+  "notes": "Nguồn tìm qua web search (adjust.com, slug hơi khác tiêu đề nhưng cùng bài). Adjust có bản tiếng Việt chính thức của bài này (adjust.com/vi/blog/...), nên kiểm tra trùng lặp nội dung trước khi đăng. Tháng xuất bản bài gốc không rõ nên không ghi. Ảnh image1 (sơ đồ hệ sinh thái quảng cáo ATD/DSP/SSP) chỉ có trong phần tiếng Việt và hơi lệch nội dung (bài không nói về DSP/SSP); giữ ở vị trí cũ sau mục ad network, có thể bỏ nếu muốn gọn. Bản dịch cũ có 'Tính năng của sản phẩm là gì?' đã sửa thành 'Sản phẩm của tôi làm được gì?'; câu giới tính và câu 'Giá trị' dịch sai nghĩa đã sửa theo bản gốc."
+ },
+ {
+  "folder_date": "20210702",
+  "drive_doc": "1YNT3JuBmhExHeBECnmfhcXGrRJkjQ_FiN5vZ6jz0Mag",
+  "wp_id": 6261,
+  "date": "2021-07-02T09:00:00",
+  "link": "https://adtek.agency/cau-truc-mobile-ad-dinh-dang-ad-copy-mau-sac/",
+  "title": "Tìm hiểu cấu trúc của mobile ad: định dạng, nội dung quảng cáo và màu sắc",
+  "categories": [
+   185,
+   190
+  ],
+  "source": {
+   "publisher": "AppsFlyer",
+   "title": "The anatomy of a mobile ad: Formats, copy, and colors",
+   "url": "https://www.appsflyer.com/blog/mobile-marketing/mobile-ads-anatomy/",
+   "how_found": "web search"
+  },
+  "notes": "Title kept as in docs.tsv, but 'bản sao quảng cáo' is a literal mistranslation of 'ad copy' (copy = nội dung chữ, not 'bản sao'); body now uses 'nội dung quảng cáo (ad copy)'. Owner may want to change title to '... định dạng, ad copy và màu sắc'. Several mistranslations fixed against English (CTA background advice was reversed, grocery-delivery example, 'nanoseconds', 'snapshot', interstitial = full-screen). Publish month of source not confirmed; byline is guest author Juan Echavarria Coll."
+ },
+ {
+  "folder_date": "20210702",
+  "drive_doc": "1MDfD6gu5f0S2MKg-fipG7QHGk875NzV6kaRkBbyhY-U",
+  "wp_id": 6278,
+  "date": "2021-07-02T09:00:00",
+  "link": "https://adtek.agency/chuan-bi-gi-khi-ios-14-phat-hanh-chinh-sach-quyen-rieng-tu/",
+  "title": "Nên chuẩn bị gì khi iOS 14 phát hành và sự thay đổi của chính sách quyền riêng tư",
+  "categories": [
+   185
+  ],
+  "source": {
+   "publisher": "Adjust",
+   "title": "Getting your company ready for iOS 14",
+   "url": "https://www.adjust.com/blog/getting-your-company-ready-for-ios-14/",
+   "how_found": "in doc (Adjust named in text) + web search"
+  },
+  "notes": "Archive post written before the iOS 14 launch (Sept 2020); the opening sentence and advice are pre-launch and Adjust now shows a 'newer info available' banner on the source. Left as is per archive rule. Fixed several mistranslations against English: one-shot Apple pop-up, 'near-normal pre-iOS 14 activity', internal prompt flow, S2S join key, SKAdNetwork limitations, 'no retargeting networks in waterfall', automation pause reason. Converted blockquote-wrapped list items to plain lists and <p><strong> headings to h3. Adjust self-references ('we') rewritten as 'Adjust'. Exact publish month of source not confirmed (2020)."
+ },
+ {
+  "folder_date": "20210702",
+  "drive_doc": "1JmcSlSQM6Hkj06uPUWANb6q_2GlUFnyzPD4MJqn-cyk",
+  "wp_id": 6287,
+  "date": "2021-07-02T09:00:00",
+  "link": "https://adtek.agency/remarketing-fraud-cach-ngan-chan-gian-lan/",
+  "title": "Tìm hiểu về Remarketing Fraud và cách ngăn chặn tình trạng gian lận",
+  "categories": [
+   185,
+   190
+  ],
+  "source": {
+   "publisher": "AppsFlyer",
+   "title": "Setting sights on remarketing fraud",
+   "url": "https://www.appsflyer.com/blog/mobile-fraud/remarketing-fraud/",
+   "how_found": "web search (doc links point to appsflyer.com fraud glossary; Protect360 is AppsFlyer's product)"
+  },
+  "notes": "The original Vietnamese translation had many meaning errors, so this one needed more than a light touch: 'credit' was rendered as 'tín dụng' throughout (now 'công ghi nhận'), several headings reversed the meaning ('Thực hiện phân tích, thống kê để phát hiện gian lận' for 'Better statistics'; 'Đầu tư vào hoạt động chống gian lận' for 'Greater investments lead to greater impact'), and the CPA section had a duplicated paragraph (removed). Headings were plain <p> in the doc and are now h2/h3. Featured image is a generic stock 'fraud prevention' photo; the GIF chart (image1.gif) is the only content image but is a GIF and may not suit as featured. Closing paragraph promotes AppsFlyer Protect360 as in the source; owner may want to soften it. Source publish date not confirmed (authors Michel Hayet, Ohad Sela)."
+ },
+ {
+  "folder_date": "20210702",
+  "drive_doc": "1BDXCwmqKztMwacHPC8czJHd5JgsyRxK-DydYJPLujWU",
+  "wp_id": 6300,
+  "date": "2021-07-02T09:00:00",
+  "link": "https://adtek.agency/chien-luoc-app-marketing-9-phuong-phap/",
+  "title": "Chiến lược app marketing: 9 phương pháp marketer nên biết",
+  "categories": [
+   185,
+   143
+  ],
+  "source": {
+   "publisher": "Adjust",
+   "title": "App marketing strategy: Nine methods every marketer must know",
+   "url": "https://www.adjust.com/blog/your-guide-to-app-marketing-strategies/",
+   "how_found": "web search (text matches Adjust page; 'our study' retention figures and Mobile Spree are Adjust's)"
+  },
+  "notes": "The Adjust URL has since been rewritten and retitled ('9 app marketing strategies you must know'), so the live page no longer matches the 2021 text word for word; the match is based on the slug, the identical landing page/ASO passages and the retention figures. Owner may want to check the link. Brands Vietnam has threads titled 'Chiến Lược App Marketing: 9 Phương Pháp Mọi Marketer Phải Biết' (brandsvietnam.com/congdong/topic/27532 and 27125), possibly an earlier repost of this same translation; check for duplicate content. English references to Adjust ebooks/guides without URLs in the doc were left unlinked. Fixed mistranslations: 'mua lại người dùng' -> 'thu hút người dùng' for user acquisition, intro sentence about verticals, retention/LTV logic, PR advice (newsworthy), duplicated landing page sentence."
+ },
+ {
+  "folder_date": "20210702",
+  "drive_doc": "1zvwYm40KhNeaTMLFsL7UHDhKbCLsQHjezTx_4tLD6BY",
+  "wp_id": 6315,
+  "date": "2021-07-02T09:00:00",
+  "link": "https://adtek.agency/khoi-chay-thanh-cong-ung-dung-tren-app-store/",
+  "title": "Làm thế nào để khởi chạy thành công ứng dụng trên App Stores",
+  "categories": [
+   185,
+   143
+  ],
+  "source": {
+   "publisher": "Adjust (guest post by App Radar)",
+   "title": "How to successfully launch your new app in the app stores",
+   "url": "https://www.adjust.com/blog/app-radar-how-to-successfully-launch-in-app-stores/",
+   "how_found": "web search (exact title; doc links to adjust.com and appradar.com)"
+  },
+  "notes": "Archive statement 'Apple đã thông báo sẽ bổ sung tính năng này trong năm 2021' kept as is. Fixed mistranslations: 'store listing' was 'danh sách App Store' (now 'trang thông tin ứng dụng'), opening strategy paragraph (ASO is one channel among others, not the goal of them), 'app store presence' (was 'tần suất xuất hiện'), placeholder/false screenshots, duplicated sentences in two paragraphs. Beta/soft-launch subheads turned into h3. Source publish month not confirmed."
+ },
+ {
+  "folder_date": "20210702",
+  "drive_doc": "1Uts4FJXQZ56Szc0pCQLqPV26ux4bUnv-RxTntc-_Zaw",
+  "wp_id": 6334,
+  "date": "2021-07-02T09:00:00",
+  "link": "https://adtek.agency/machine-learning-va-digital-marketing-2021/",
+  "title": "Những điều cần biết về Machine Learning và Digital Marketing trong năm 2021",
+  "categories": [
+   185
+  ],
+  "source": {
+   "publisher": "Adjust",
+   "title": "Everything you need to know about machine learning and digital marketing in 2021",
+   "url": "https://www.adjust.com/blog/your-guide-to-machine-learning-and-digital-marketing/",
+   "how_found": "web search (doc links to adjust.com products Automate, Audience Builder, Unbotify)"
+  },
+  "notes": "Fixed number errors in the Vietnamese draft: AI market '1.91,60 tỷ USD' -> 191,60 tỷ USD; '¾ (hơn 75%)' -> 71% as in source. Fixed reversed meanings (Jason Hall quote, chatbots answering complex questions, voice-search 72% stat). The Vietnamese draft had stripped the Adjust product names; I restored 'Adjust Automate' and 'Audience Builder' with their links because the paragraphs describe those tools specifically. Owner may prefer to remove these vendor mentions. Source page now carries a 'newer info available' banner. Images 1-4 are stock illustrations; all relevant to their sections."
+ }
+]
