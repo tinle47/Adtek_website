@@ -54,6 +54,7 @@ Bài mẫu có giọng tốt nhưng nhiều chữ thừa. Khi viết:
 - Bỏ từ đệm và từ nhấn: "rất", "cực kỳ", "kha khá", "thật sự", "có thể nói", "như vậy là", "đó là".
 - Không lặp lại cụm danh từ dài trong cùng đoạn ("sản phẩm của bạn", "khách hàng") khi đã rõ chủ ngữ.
 - Một ý chỉ nói một lần. Đã có bảng hoặc danh sách thì đoạn văn bên cạnh không kể lại nội dung bảng.
+- Gọn là gọn từng câu, không phải cắt độ dài bài. Bài khoảng 2,000 đến 2,300 chữ (tính cả bảng) là ổn khi phần thêm vào là tên tiếng Anh, phép tính nhỏ, ví dụ từng bước, danh sách "Không nên" (anh Tin đồng ý 17/10/2026 với bài 10, 16 bản viết lại).
 
 Ví dụ (mở bài 10, bản gọn anh Tin đã xem):
 
