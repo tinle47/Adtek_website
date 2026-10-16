@@ -50,7 +50,7 @@ h1,h2,.name{font-family:IT,sans-serif;font-weight:600;text-transform:none;letter
 :where(.hl){color:#FF9014}  /* độ ưu tiên 0: mẫu nền cam ghi đè .hl{color:inherit} được */
 .num{letter-spacing:-.03em;font-variant-numeric:lining-nums}
 .kicker+.num{margin-top:.1em}  /* phần trên của chữ số cao hơn khung dòng, chừa chỗ để không chạm nhãn */
-.kicker{font-weight:600;letter-spacing:0}
+.kicker,.chips,.paper h5{color:inherit;opacity:.75;font-weight:600;letter-spacing:0}  /* nhãn nhỏ không dùng màu cam (anh Tin 17/10/2026): cam chỉ cho số và từ khóa */
 .sub,.band,p{font-weight:400}
 </style></head><body class="$shape" data-fit="1">$body
 <script>
@@ -168,7 +168,7 @@ def editorial(f, sq):
     css = f"""
 body{{background:{CREAM};color:{NAVY}}}
 .meta{{position:absolute;text-align:right;font-weight:700;line-height:1.45;color:{NAVY}}}
-.meta b{{font-weight:800;color:{ORANGE}}}
+.meta b{{font-weight:700}}
 .num{{font-size:{hero}px;line-height:.8;color:{ORANGE};white-space:nowrap}}
 .copy,.unit{{position:absolute}}
 .kicker{{color:{ORANGE}}}
@@ -196,18 +196,17 @@ h1{{line-height:1.12}}
 
 
 def split(f, sq):
-    """Khối tương phản: mảng cam cắt chéo chứa số navy và cụm chữ đi kèm ngay bên phải hoặc ngay bên dưới số."""
+    """Khối tương phản: mảng kem cắt chéo chứa số cam và cụm chữ đi kèm ngay bên phải hoặc ngay bên dưới số; phần còn lại navy."""
     n = len(f["num"])
     chips = " &nbsp;·&nbsp; ".join(f["chips"][:3])
     if sq:
         hero = 400 if n == 1 else 330 if n == 2 else 220
         css = f"""
 body{{background:{NAVY};color:#fff}}
-.panel{{position:absolute;left:0;top:0;right:0;height:580px;background:{ORANGE};clip-path:polygon(0 0,100% 0,100% 72%,0 100%)}}
+.panel{{position:absolute;left:0;top:0;right:0;height:580px;background:{CREAM};clip-path:polygon(0 0,100% 0,100% 72%,0 100%)}}
 .unit{{position:absolute;left:64px;right:72px;top:150px;display:flex;align-items:flex-end;gap:30px}}
-.num{{flex:none;font-size:{hero}px;line-height:.8;color:{NAVY};white-space:nowrap}}
+.num{{flex:none;font-size:{hero}px;line-height:.8;color:{ORANGE};white-space:nowrap}}
 .cap{{flex:1;font-size:56px;line-height:1.1;color:{NAVY};max-height:3.4em;padding-bottom:6px}}
-.cap .hl{{color:inherit}}
 .lg{{position:absolute;right:72px;top:56px}}
 .copy{{position:absolute;left:72px;right:72px;bottom:72px}}
 .kicker{{color:{ORANGE};font-size:30px}}
@@ -222,11 +221,10 @@ h1{{font-size:68px;line-height:1.14;margin:12px 0 20px;max-height:3.5em}}
     hero = 300 if n == 1 else 220 if n == 2 else 150
     css = f"""
 body{{background:{NAVY};color:#fff}}
-.panel{{position:absolute;left:0;top:0;bottom:0;width:580px;background:{ORANGE};clip-path:polygon(0 0,100% 0,80% 100%,0 100%)}}
+.panel{{position:absolute;left:0;top:0;bottom:0;width:580px;background:{CREAM};clip-path:polygon(0 0,100% 0,80% 100%,0 100%)}}
 .unit{{position:absolute;left:140px;width:300px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
-.num{{font-size:{hero}px;line-height:.8;color:{NAVY};white-space:nowrap}}
+.num{{font-size:{hero}px;line-height:.8;color:{ORANGE};white-space:nowrap}}
 .cap{{margin-top:16px;font-size:32px;line-height:1.12;color:{NAVY};max-height:3.4em}}
-.cap .hl{{color:inherit}}
 .copy{{position:absolute;left:600px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
 .lg{{position:absolute;right:140px;top:84px}}
 .kicker{{color:{ORANGE};font-size:23px}}
@@ -310,13 +308,12 @@ h1{{font-size:80px;line-height:1.12;margin:10px 0 16px;max-height:2.3em}}
 
 
 def poster(f, sq):
-    """Áp phích: nền cam phẳng, logo navy, số navy rất lớn đứng ngay trước cụm chữ đi kèm (trên chữ ở khổ vuông, trái chữ ở khổ ngang)."""
+    """Áp phích: nền navy phẳng, số cam rất lớn đứng ngay trước cụm chữ đi kèm (trên chữ ở khổ vuông, trái chữ ở khổ ngang)."""
     n = len(f["num"])
     css = f"""
-body{{background:{ORANGE};color:{NAVY}}}
-.hl{{color:inherit}}
+body{{background:{NAVY};color:#fff}}
 .lg{{position:absolute}}
-.num{{font-size:var(--hero);line-height:.78;color:{NAVY};white-space:nowrap}}
+.num{{font-size:var(--hero);line-height:.78;color:{ORANGE};white-space:nowrap}}
 h1{{line-height:1.1}}
 .sub{{line-height:1.4}}
 .sq{{--hero:{560 if n == 1 else 470 if n == 2 else 320}px}}
@@ -339,17 +336,17 @@ h1{{line-height:1.1}}
     else:  # khổ ngang: số bên trái, cụm chữ của số làm tiêu đề ngay bên phải, tên bài làm nhãn
         inner = f"""<div class="num">{f['num']}</div><div class="text"><div class="kicker">{f['title']}</div>
 <h1 class="fit bal{' phrase' if f['cap'] else ''}">{f['cap'] or f['head']}</h1><div class="sub fit">{f['sub']}</div></div>"""
-    body = f"""<div class="lg">{logo(NAVY, 80 if sq else 58)}</div><div class="copy">{inner}</div>"""
+    body = f"""<div class="lg">{logo('#fff', 80 if sq else 58)}</div><div class="copy">{inner}</div>"""
     return css, body
 
 
 def versus(f, sq):
-    """Đối đầu: dành cho bài so sánh "A vs B", hai nửa navy và cam cắt chéo, chữ "vs" nghiêng màu cam trên nửa navy cạnh đường cắt."""
+    """Đối đầu: dành cho bài so sánh "A vs B", hai nửa navy và kem cắt chéo, chữ "vs" nghiêng màu cam trên nửa navy cạnh đường cắt."""
     src = html.unescape(f["title"])
     a, b = (re.split(r"\s+vs\.?\s+", src, flags=re.I) + ["", ""])[:2]
     a, b = esc(a.strip()), esc(re.sub(r"\s*(19|20)\d\d$", "", b.strip()))
     css = f"""
-body{{background:{ORANGE};color:#fff}}
+body{{background:{CREAM};color:#fff}}
 .l{{position:absolute;inset:0;background:{NAVY};clip-path:polygon(0 0,58% 0,42% 100%,0 100%)}}
 .name{{position:absolute;font-weight:900;line-height:1.08;text-transform:uppercase;letter-spacing:-.01em}}
 .na{{color:#fff}}.nb{{color:{NAVY};text-align:right}}
