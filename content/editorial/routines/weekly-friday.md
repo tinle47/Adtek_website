@@ -1,7 +1,7 @@
 # Routine: Blog Adtek: viết 2 bài tuần tới
 
 - Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 52 8 * * 5` (8:52 sáng thứ Sáu, giờ Việt Nam)
-- Chạy trong cùng một phiên (persistent session) để anh Tin duyệt bài ngay trong phiên đó.
+- Gắn vào phiên **Adtek - Blog post** (session_01AvYySKMdJYRoHxp3DYBUqB) để anh Tin duyệt bài ngay trong phiên đó. Ảnh do phiên **Adtek - Designer** làm; đăng Facebook chạy ở phiên **Adtek - Facebook post** (session_0196UuuQJu6Edu8fi8VXJDzh).
 
 ## Prompt
 
@@ -22,10 +22,12 @@ Khi anh Tin trả lời:
 
 ## Hẹn đăng Facebook
 
-Dùng khi một bài blog vừa được đặt lịch (anh Tin duyệt hoặc tự duyệt D+1). Gọi send_later với:
+Dùng khi một bài blog vừa được đặt lịch (anh Tin duyệt hoặc tự duyệt D+1). Việc đăng Facebook chạy ở phiên Adtek - Facebook post, nên gọi create_trigger (không dùng send_later) với:
 
-- at: ngày giờ đăng blog của bài (date và time trong calendar.json, giờ Việt Nam +07:00) cộng 5 phút, dạng RFC3339.
+- persistent_session_id: "session_0196UuuQJu6Edu8fi8VXJDzh" (phiên Adtek - Facebook post)
+- run_once_at: ngày giờ đăng blog của bài (date và time trong calendar.json, giờ Việt Nam +07:00) cộng 5 phút, dạng RFC3339.
 - name: "Đăng Facebook bài X"
-- message: "[Đăng Facebook bài X] Pull branch claude/brave-curie-2c6zbc, chạy python3 tools/fb_post.py post X (script tự kiểm tra blog đã lên sóng, token đúng Page và đã có ảnh content/posts/<slug>-fb.jpg từ phiên Adtek - Designer; nếu bài đã bị hủy thì script dừng, chỉ báo lại). Thành công: gửi anh Tin link bài Facebook qua push notification và tin nhắn trong phiên, ghi changelog, commit, push lên claude/brave-curie-2c6zbc và đồng bộ sang claude/determined-faraday-hhy1ol. Lỗi: báo anh Tin nguyên văn lỗi, không thử cách khác; nếu bình luận link bị chặn thì tạm hoãn các lịch đăng Facebook còn lại cho tới khi anh trả lời."
+- initiation: "human_schedule"
+- prompt: "[Đăng Facebook bài X] Pull branch claude/brave-curie-2c6zbc, chạy python3 tools/fb_post.py post X (script tự kiểm tra blog đã lên sóng, token đúng Page và đã có ảnh content/posts/<slug>-fb.jpg từ phiên Adtek - Designer; nếu bài đã bị hủy thì script dừng, chỉ báo lại). Thành công: gửi anh Tin link bài Facebook qua push notification và tin nhắn trong phiên, ghi changelog, commit, push lên claude/brave-curie-2c6zbc và đồng bộ sang claude/determined-faraday-hhy1ol. Lỗi: báo anh Tin nguyên văn lỗi, không thử cách khác; nếu bình luận link bị chặn thì tạm hoãn các lịch đăng Facebook còn lại cho tới khi anh trả lời."
 
-Sau đó ghi fb_scheduled (ngày giờ đăng Facebook) và fb_trigger (trigger_id trả về) vào calendar.json, fb_status = "scheduled".
+Sau đó ghi fb_scheduled (ngày giờ đăng Facebook) và fb_trigger (trigger_id trả về) vào calendar.json, fb_status = "scheduled". Khi hủy bài, xóa lịch bằng delete_trigger với fb_trigger (cùng tài khoản nên phiên nào cũng xóa được).
