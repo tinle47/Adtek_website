@@ -16,6 +16,7 @@ Cách dùng:
 
 Trạng thái duyệt (trường approval): pending (đã gửi email, ghi approval_requested), approved, auto, changes_requested.
 """
+import copy
 import json
 import random
 import re
@@ -32,12 +33,56 @@ AUTHOR = 4  # Tin Le
 CATEGORIES = {"C3": [185, 184], "C4": [185], "C6": [185]}  # còn lại: Digital Marketing + Growth Marketing
 
 
+_SNAP = {}  # id(data) -> bản sao lúc đọc, để save() chỉ ghi phần đã đổi
+_NONE = object()
+
+
 def load():
-    return json.loads(CAL.read_text(encoding="utf-8"))
+    data = json.loads(CAL.read_text(encoding="utf-8"))
+    _SNAP[id(data)] = copy.deepcopy(data)
+    return data
+
+
+def _key(item):
+    return (item.get("no"), item.get("id")) if isinstance(item, dict) else None
+
+
+def _merge(disk, base, mine):
+    """Áp phần mine khác base lên disk. Danh sách các mục có 'no' hoặc 'id' (posts, facebook, tiktok...) gộp theo từng mục,
+    mỗi mục gộp theo từng trường; giá trị khác thì thay nguyên giá trị."""
+    if isinstance(mine, dict) and isinstance(base, dict) and isinstance(disk, dict):
+        for k in set(mine) | set(base):
+            m, b = mine.get(k, _NONE), base.get(k, _NONE)
+            if m == b:
+                continue
+            if m is _NONE:
+                disk.pop(k, None)
+            elif k in disk and b is not _NONE:
+                disk[k] = _merge(disk[k], b, m)
+            else:
+                disk[k] = copy.deepcopy(m)
+        return disk
+    keyed = lambda xs: isinstance(xs, list) and xs and all(_key(x) not in (None, (None, None)) for x in xs)
+    if keyed(mine) and keyed(disk) and isinstance(base, list):
+        bmap = {_key(x): x for x in base}
+        dmap = {_key(x): x for x in disk}
+        for x in mine:
+            k = _key(x)
+            if k in dmap:
+                _merge(dmap[k], bmap.get(k, {}), x)
+            elif k not in bmap:
+                disk.append(copy.deepcopy(x))  # mục mới do mình thêm
+        return disk
+    return copy.deepcopy(mine)
 
 
 def save(data):
-    CAL.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    """Đọc lại calendar.json ngay lúc ghi và chỉ áp các trường mình đã đổi, để không đè thay đổi của phiên khác
+    (Marketing, Designer, SEO, Facebook post) đã push trong lúc script đang chạy."""
+    base = _SNAP.get(id(data))
+    out = data if base is None else _merge(json.loads(CAL.read_text(encoding="utf-8")), base, data)
+    CAL.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    _SNAP[id(data)] = copy.deepcopy(data)
 
 
 def find(data, no):
