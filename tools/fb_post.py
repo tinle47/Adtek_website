@@ -45,7 +45,8 @@ linear-gradient(180deg,#A9ABF6 0%,#8384DA 34%,#4A4CA3 66%,#1E2056 100%)}
 .horizon{position:absolute;left:8%;right:8%;bottom:38%;height:2px;background:linear-gradient(90deg,transparent,rgba(170,215,255,.9),transparent);filter:blur(1px)}
 .wrap{position:absolute;inset:{pad}px 80px {padb}px;display:flex;flex-direction:column;align-items:center}
 .logo{height:{logo}px}
-.main{flex:1;width:100%;display:flex;align-items:center;justify-content:center;gap:44px}
+.body{flex:1;width:100%;display:flex;flex-direction:column;justify-content:center;gap:{gapbox}px;padding-bottom:{bodyb}px}
+.main{width:100%;display:flex;align-items:center;justify-content:center;gap:44px}
 .stack .main{flex-direction:column;gap:16px}
 .side .text{text-align:left}.stack .text{text-align:center}
 .kicker{color:#D3E7FF;font-weight:800;font-size:{kick}px;letter-spacing:3px;text-transform:uppercase}
@@ -62,9 +63,9 @@ font-weight:700;font-size:{sub}px;line-height:1.38;text-align:left;text-shadow:0
 <path d="M120 380 h160 a18 18 0 0 0 18 -18 v-40 h120 M880 420 h-150 a18 18 0 0 1 -18 -18 v-30 h-110 M60 470 h300 M640 470 h300" stroke-opacity=".7"/>
 <rect x="330" y="400" width="340" height="70" rx="16" stroke-opacity=".5"/>
 </svg><div class="horizon"></div>
-<div class="wrap {layout}"><img class="logo" src="LOGO"><div class="main"><div class="hero">{herotext}</div>
+<div class="wrap {layout}"><img class="logo" src="LOGO"><div class="body"><div class="main"><div class="hero">{herotext}</div>
 <div class="text"><div class="kicker">{kicker}</div><div class="title">{title}</div></div></div>
-<div class="box">{subtitle}</div></div></body></html>"""
+<div class="box">{subtitle}</div></div></div></body></html>"""
 
 
 
@@ -118,7 +119,7 @@ def cover(post, size=(1080, 1350)):
     vals = {"w": w, "h": h, "pad": 64 if square else 80, "padb": 64 if square else 90, "logo": 52 if square else 60,
             "kick": round(34 * k), "sub": round(38 * k),
             "tsize": round((84 if len(c["title"]) <= 16 else 70) * k * (0.9 if side else 1)),
-            "hero": round((380 if side else 250 if len(hero) <= 4 else 190) * k), "layout": "side" if side else "stack"}
+            "gapbox": 56, "bodyb": 40 if square else 60, "hero": round((380 if side else 250 if len(hero) <= 4 else 190) * k), "layout": "side" if side else "stack"}
     page = COVER.replace("FONTS", (ASSETS / "fonts").as_uri()).replace("LOGO", (ASSETS / "adtek-logo-white.png").as_uri())
     for k, v in vals.items():
         page = page.replace("{" + k + "}", f"{v:g}" if isinstance(v, float) else str(v))
