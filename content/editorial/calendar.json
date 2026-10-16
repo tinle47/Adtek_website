@@ -1439,7 +1439,22 @@
     "myth": "Bật Advantage+ là không cần làm *creative* nữa",
     "fact": "Andromeda chọn quảng cáo dựa vào chính nội dung creative. Meta báo chuyển đổi tăng 15.7% với GEM, nhưng nghiên cứu của Confect trên 3,014 nhà quảng cáo thấy ROAS trung bình giảm 7%. Creative đa dạng vẫn là việc của người làm marketing.",
     "source": "Search Engine Land; Meta Q2/2026"
-   }
+   },
+   "li_hashtags": [
+    "#MetaAds",
+    "#AdvantagePlus",
+    "#CreativeStrategy"
+   ],
+   "li_title": "Turn on Advantage+ and stop making creative?",
+   "li_design": {
+    "myth": "Turn on Advantage+ and you can stop making *creative*",
+    "fact": "Andromeda picks ads based on the creative itself. Meta reports conversions up 15.7% with GEM, but a Confect study of 3,014 advertisers found average ROAS down 7%. Creative variety is still the marketer's job.",
+    "source": "Search Engine Land; Meta Q2/2026"
+   },
+   "li_caption": "Myth: once Advantage+ is on, Meta handles everything and the team can stop producing creative.\n\nFact: Meta's Andromeda system picks which ad to show based on the creative itself. Images, copy and video pacing are all signals it uses to decide who sees what. When your ads look alike, the system has fewer options to choose from.\n\nMeta reports a 15.7% lift in conversions from its GEM model. Over the same period, a Confect study of 3,014 advertisers found average ROAS down 7%.\n\nThe two numbers measure different things. Automation gets ads in front of the right people more often. Profit still depends on how many genuinely different ideas you give the system: a different angle, a different person on camera, a different opening line.\n\nTwenty ads built on one image with only the headline changed may be treated as one.",
+   "li_images": [
+    "content/linkedin/fb-20261017/1.jpg"
+   ]
   },
   {
    "id": "fb-20261018",
@@ -1579,7 +1594,51 @@
     ],
     "end": "Chốt *trần giảm giá* và ROAS tối thiểu cho từng SKU trước khi hứa với sàn hay KOC",
     "source": "Bài blog Kế hoạch 11.11 (số liệu giả định để minh họa)"
-   }
+   },
+   "li_hashtags": [
+    "#Ecommerce",
+    "#MarketplaceSelling",
+    "#PricingStrategy"
+   ],
+   "li_title": "Your 11.11 break-even price in 5 steps",
+   "li_design": {
+    "title": "11.11 break-even price",
+    "promise": "How to find your break-even price before an 11.11 discount",
+    "steps": [
+     {
+      "title": "Add up unit cost and per-order costs",
+      "body": "Example: a serum listed at VND 400,000. Cost of goods, platform services, packaging and fulfilment come to VND 131,000 per order."
+     },
+     {
+      "title": "Add marketplace fees as a %",
+      "body": "Example: 14% fixed fee, 6% transaction fee and 4% Voucher Xtra fee, all charged on the discounted price."
+     },
+     {
+      "title": "Convert ad spend into a %",
+      "body": "Ad cost = 1/ROAS. A ROAS of 8 means 12.5% of revenue goes to ads; a ROAS of 5 means 20%."
+     },
+     {
+      "title": "Work out profit per order after the discount",
+      "body": "At 30% off and ROAS 8, you keep VND 46,800 per order versus VND 123,000 on a normal day. At ROAS 5, it falls to VND 25,800."
+     },
+     {
+      "title": "Work out how many extra orders you need",
+      "body": "Profit per order falls by about 62%, so you need at least 2.6x the orders just to keep total profit flat."
+     }
+    ],
+    "end": "Set a *discount ceiling* and minimum ROAS for each SKU before you commit to the marketplace or KOCs",
+    "source": "Adtek 11.11 planning article (illustrative figures)"
+   },
+   "li_caption": "A 30% discount on 11.11 can wipe out most of the profit on each order.\n\nTake a serum listed at VND 400,000. Cost of goods plus fulfilment is VND 131,000 per order. Marketplace fees take 24% of the selling price, and at a ROAS of 8, ads take another 12.5%.\n\nOn a normal day that order earns VND 123,000. At 30% off it earns VND 46,800. If ROAS slips to 5 during the sale, it drops to VND 25,800.\n\nSo you need about 2.6 times your usual order volume just to keep total profit flat. The document below walks through the five steps to find your own number for each SKU.\n\nThe figures are an illustrative example, not data from a real shop.",
+   "li_images": [
+    "content/linkedin/fb-20261021/1.jpg",
+    "content/linkedin/fb-20261021/2.jpg",
+    "content/linkedin/fb-20261021/3.jpg",
+    "content/linkedin/fb-20261021/4.jpg",
+    "content/linkedin/fb-20261021/5.jpg",
+    "content/linkedin/fb-20261021/6.jpg",
+    "content/linkedin/fb-20261021/7.jpg"
+   ]
   },
   {
    "id": "fb-20261022",

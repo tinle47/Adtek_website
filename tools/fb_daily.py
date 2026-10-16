@@ -130,6 +130,18 @@ def show(data, x):
     print("Ảnh:", [str(p.relative_to(ROOT)) for p in media(x)])
 
 
+def li_part(data, x):
+    """Bản LinkedIn tiếng Anh trong email (caption đăng thật, bình luận, ảnh, vấn đề), None khi đã hủy LinkedIn.
+    Duyệt một lần áp dụng cho cả Facebook và LinkedIn."""
+    import li_post  # nhập trong hàm vì li_post dùng lại các hàm của file này
+    if x.get("li_status") == "cancelled":
+        return None
+    files = li_post.media(x)
+    c = li_post.comment(data, x, live_check=False)
+    cap = li_post.message(x, with_cta=bool(c)) if x.get("li_title") and x.get("li_caption") else None
+    return cap, c, files, li_post.problems(x, files)
+
+
 def notify(data, xs, mark=False, pending=False):
     """Email báo trước: caption đăng thật, bình luận, ảnh đính kèm. Không nhắn hủy thì đăng đúng giờ."""
     e = html.escape
@@ -139,9 +151,13 @@ def notify(data, xs, mark=False, pending=False):
         link = blog_link(data, x, live_check=False)
         cap = message(x, with_cta=bool(link))
         issues = problems(x, files)
+        li = li_part(data, x)
         texts.append(f"{x['id']} · {label(x)} · {x['format']}\n\n{cap}\n\nBình luận đầu tiên: "
                      f"{link[0] if link else '(không bình luận)'}\nẢnh: {', '.join(p.name for p in files) or 'chưa có'}"
-                     + (f"\nCẦN XỬ LÝ: {'; '.join(issues)}" if issues else ""))
+                     + (f"\nCẦN XỬ LÝ: {'; '.join(issues)}" if issues else "")
+                     + (f"\n\nLinkedIn (tiếng Anh):\n\n{li[0] or '(chưa có bản tiếng Anh)'}\n\nBình luận đầu tiên: "
+                        f"{li[1] or '(không bình luận)'}\nẢnh: {', '.join(p.name for p in li[2]) or 'chưa có'}"
+                        + (f"\nLINKEDIN CẦN XỬ LÝ: {'; '.join(li[3])}" if li[3] else "") if li else ""))
         blocks.append(
             f'<div style="border:1px solid #E3E8F0;border-radius:10px;padding:16px 18px;margin:0 0 20px">'
             f'<div style="color:#FF9014;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase">'
@@ -151,11 +167,24 @@ def notify(data, xs, mark=False, pending=False):
             f'<p style="margin:0 0 6px;font-size:13px;color:#555">Bình luận đầu tiên: {e(link[0]) if link else "(không bình luận)"}</p>'
             f'<p style="margin:0;font-size:13px;color:#555">Ảnh đính kèm: {e(", ".join(p.name for p in files)) or "chưa có"}</p>'
             + (f'<p style="margin:6px 0 0;font-size:13px;color:#B42318">Cần xử lý: {e("; ".join(issues))}</p>' if issues else "")
+            + (f'<div style="margin:16px 0 0;color:#002D72;font-weight:700;font-size:12px;letter-spacing:1px;'
+               f'text-transform:uppercase">LinkedIn (tiếng Anh)</div>'
+               f'<div style="margin:10px 0;padding:10px 12px;background-color:#F4F6FA;border-radius:6px;font-size:13px;'
+               f'line-height:1.55;color:#333">{e(li[0]).replace(chr(10), "<br>") if li[0] else "(chưa có bản tiếng Anh)"}</div>'
+               f'<p style="margin:0 0 6px;font-size:13px;color:#555">Bình luận đầu tiên: {e(li[1]) if li[1] else "(không bình luận)"}</p>'
+               f'<p style="margin:0;font-size:13px;color:#555">Ảnh: {e(", ".join(p.name for p in li[2])) or "chưa có"}'
+               f'{" (đính kèm ảnh đầu)" if li[2] else ""}</p>'
+               + (f'<p style="margin:6px 0 0;font-size:13px;color:#B42318">LinkedIn cần xử lý: {e("; ".join(li[3]))}</p>'
+                  if li[3] else "") if li else "")
             + "</div>")
         for i, p in enumerate(files):
             if p.exists() and p.suffix.lower() in (".jpg", ".jpeg", ".png"):
                 attachments.append({"filename": f"{x['id']}-{i + 1}{p.suffix}", "mimeType": mimetypes.guess_type(p.name)[0],
                                     "content": base64.b64encode(p.read_bytes()).decode()})
+        if li and li[2] and li[2][0].exists() and li[2][0].suffix.lower() in (".jpg", ".jpeg", ".png"):
+            p = li[2][0]  # chỉ đính kèm ảnh đầu bản tiếng Anh để email không quá nặng
+            attachments.append({"filename": f"{x['id']}-linkedin-1{p.suffix}", "mimeType": mimetypes.guess_type(p.name)[0],
+                                "content": base64.b64encode(p.read_bytes()).decode()})
         if mark or pending:
             x["approval"] = "auto" if mark else "pending"
             x["notified_at"] = datetime.now(VN).isoformat(timespec="seconds")
@@ -166,10 +195,12 @@ def notify(data, xs, mark=False, pending=False):
     first = xs[0]
     subject = f"[Adtek Facebook] {label(first)}: {first['title']}" if len(xs) == 1 else \
         f"[Adtek Facebook] {len(xs)} bài từ {label(first)}"
+    both = " Duyệt hoặc hủy áp dụng cho cả bản Facebook và LinkedIn." if any(li_part(data, x) for x in xs) else ""
     note = (f'Hạn duyệt: {deadline}. Nhắn trong phiên Claude Code "Adtek - Facebook post": "duyệt &lt;id&gt;", '
             '"hủy &lt;id&gt;" hoặc ghi chỗ cần sửa. Quá hạn chưa phản hồi, bài tự được duyệt và đăng đúng giờ.') if pending else \
            ('Bài sẽ tự đăng đúng giờ. Muốn hủy hoặc sửa, nhắn trong phiên Claude Code "Adtek - Facebook post": '
             '"hủy &lt;id&gt;" hoặc ghi chỗ cần sửa, trước giờ đăng.')
+    note += both
     body = "Chào anh Tin,\n\n" + "\n\n----------\n\n".join(texts) + "\n\n" + html.unescape(note)
     html_body = ('<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#333">'
                  '<p style="font-size:15px;line-height:1.6">Chào anh Tin,</p>' + "".join(blocks) +

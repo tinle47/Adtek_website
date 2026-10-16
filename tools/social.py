@@ -16,10 +16,13 @@ design theo dạng bài (format):
   Hiểu lầm và sự thật  {"myth", "fact", "source"}
   Câu hỏi mở           {"question", "options": [...], "context"}
 
+Bản tiếng Anh cho LinkedIn (--lang en): đọc li_design (cùng cấu trúc với design, chữ tiếng Anh), lưu ảnh ở
+content/linkedin/<id>/ và ghi li_images. Nhãn cố định trên ảnh (dạng bài, Nguồn, Hiểu lầm...) lấy từ bảng TEXT.
+
 Cách dùng:
-  python3 tools/social.py render <id> [--out thư-mục]   dựng ảnh một bài, ghi images vào calendar.json (khi không có --out)
-  python3 tools/social.py week <ngày đầu> <ngày cuối>    dựng mọi bài có design trong khoảng ngày (YYYY-MM-DD)
-  python3 tools/social.py missing                       liệt kê bài sắp đăng chưa có design hoặc chưa có ảnh
+  python3 tools/social.py render <id> [--out thư-mục] [--lang en]   dựng ảnh một bài, ghi images (hoặc li_images) vào calendar.json (khi không có --out)
+  python3 tools/social.py week <ngày đầu> <ngày cuối> [--lang en]    dựng mọi bài có design (hoặc li_design) trong khoảng ngày (YYYY-MM-DD)
+  python3 tools/social.py missing [--lang en]                       liệt kê bài sắp đăng chưa có design hoặc chưa có ảnh
 """
 import html
 import sys
@@ -47,10 +50,26 @@ def frame(theme, label, source="", foot=None):
     foot: màu nền vùng chân ảnh khi khác nền vùng trên (ví dụ ảnh hai khối màu)."""
     fg = {"cream": NAVY, "navy": "#fff"}[theme]
     ffg = {"cream": NAVY, "navy": "#fff"}[foot or theme]
-    src = f'<div class="src" style="color:{ffg}">Nguồn: {esc(source)}</div>' if source else ""
+    src = f'<div class="src" style="color:{ffg}">{L["source"]}: {esc(source)}</div>' if source else ""
     return (f'<div class="lg" style="right:72px">{logo(fg, 70)}</div><div class="label" style="color:{fg}">{esc(label)}</div>'
             f'{src}<div class="site" style="color:{ffg}">adtek.agency</div>')
 
+
+TEXT = {
+    "vi": {"source": "Nguồn", "why": "Vì sao quan trọng", "myth": "Hiểu lầm", "fact": "Sự thật",
+           "reply": "Trả lời ở phần bình luận", "swipe": "Lướt sang để xem từng bước",
+           "full": "Xem bài đầy đủ ở phần bình luận"},
+    "en": {"source": "Source", "why": "Why it matters", "myth": "Myth", "fact": "Fact",
+           "reply": "Share your answer in the comments", "swipe": "Swipe to see each step",
+           "full": "Full article in the comments",
+           "Góc số liệu": "By the numbers", "Thuật ngữ 1 phút": "One-minute glossary",
+           "Carousel hướng dẫn": "How-to guide", "Tin nóng": "Breaking news", "Phép tính nhanh": "Quick math",
+           "Hiểu lầm và sự thật": "Myth vs fact", "Câu hỏi mở": "Open question"},
+}
+for k in ("Góc số liệu", "Thuật ngữ 1 phút", "Carousel hướng dẫn", "Tin nóng", "Phép tính nhanh", "Hiểu lầm và sự thật",
+          "Câu hỏi mở"):
+    TEXT["vi"][k] = k
+L = TEXT["vi"]  # bảng chữ đang dùng, render() đổi theo lang
 
 BG = {"cream": CREAM, "navy": NAVY}
 FG = {"cream": NAVY, "navy": "#fff"}
@@ -69,7 +88,7 @@ body{{background:{BG[theme]};color:{FG[theme]}}}
 .num{{font-size:{size}px;line-height:.8;color:{ORANGE};white-space:nowrap}}
 h1{{font-size:76px;margin-top:-.08em;max-height:3.4em}}
 p{{font-size:36px;line-height:1.3;margin-top:26px;max-height:4.4em;opacity:.85}}"""
-    body = f"""{frame(theme, "Góc số liệu", d.get("source", ""))}
+    body = f"""{frame(theme, L["Góc số liệu"], d.get("source", ""))}
 <div class="copy"><div class="num">{esc(d['num'])}</div><h1 class="fit bal phrase">{hl(d['phrase'])}</h1><p class="fit">{esc(d.get('context', ''))}</p></div>"""
     return [(css, body)]
 
@@ -85,10 +104,10 @@ h1{{font-size:132px;line-height:1;color:{ORANGE if theme == 'navy' else NAVY};ma
 .def{{font-size:42px;line-height:1.28;font-weight:400;max-height:5.5em}}
 .why{{position:absolute;left:72px;right:72px;bottom:130px;font-size:30px;line-height:1.42;max-height:4.4em}}
 .why b{{font-weight:600}}"""
-    body = f"""{frame(theme, "Thuật ngữ 1 phút", d.get("source", ""))}
+    body = f"""{frame(theme, L["Thuật ngữ 1 phút"], d.get("source", ""))}
 <div class="copy"><h1 class="fit">{hl(d['term'])}</h1><div class="kind">{esc(d.get('kind', ''))}</div>
 <div class="def fit">{hl(d['definition'])}</div></div>
-<div class="why fit"><b>Vì sao quan trọng: </b>{esc(d.get('why', ''))}</div>"""
+<div class="why fit"><b>{L["why"]}: </b>{esc(d.get('why', ''))}</div>"""
     return [(css, body)]
 
 
@@ -103,8 +122,8 @@ body{{background:{CREAM}}}
 .a h2{{font-size:76px;max-height:3.4em;color:{NAVY}}}
 .b p{{font-size:42px;line-height:1.28;max-height:6.2em}}
 """
-        body = f"""<div class="a"><div class="t">Hiểu lầm</div><h2 class="fit bal">“{hl(d['myth'])}”</h2></div>
-<div class="b"><div class="t">Sự thật</div><p class="fit">{hl(d['fact'])}</p></div>{frame("cream", "Hiểu lầm và sự thật", d.get("source", ""), foot="navy")}"""
+        body = f"""<div class="a"><div class="t">{L["myth"]}</div><h2 class="fit bal">“{hl(d['myth'])}”</h2></div>
+<div class="b"><div class="t">{L["fact"]}</div><p class="fit">{hl(d['fact'])}</p></div>{frame("cream", L["Hiểu lầm và sự thật"], d.get("source", ""), foot="navy")}"""
         return [(css, body)]
     css = BASE + f"""
 body{{background:{NAVY}}}
@@ -114,10 +133,10 @@ body{{background:{NAVY}}}
 
 .a h2{{font-size:56px;max-height:9em}}
 .b p{{font-size:36px;line-height:1.28;max-height:15em}}"""
-    body = f"""<div class="a"><div class="t">Hiểu lầm</div><h2 class="fit bal">“{hl(d['myth'])}”</h2></div>
-<div class="b"><div class="t">Sự thật</div><p class="fit">{hl(d['fact'])}</p></div>
-<div class="lg" style="right:72px">{logo('#fff', 70)}</div><div class="label" style="color:{NAVY}">Hiểu lầm và sự thật</div>
-<div class="src" style="left:542px;color:#fff">Nguồn: {esc(d.get('source', ''))}</div>"""
+    body = f"""<div class="a"><div class="t">{L["myth"]}</div><h2 class="fit bal">“{hl(d['myth'])}”</h2></div>
+<div class="b"><div class="t">{L["fact"]}</div><p class="fit">{hl(d['fact'])}</p></div>
+<div class="lg" style="right:72px">{logo('#fff', 70)}</div><div class="label" style="color:{NAVY}">{L["Hiểu lầm và sự thật"]}</div>
+<div class="src" style="left:542px;color:#fff">{L["source"]}: {esc(d.get('source', ''))}</div>"""
     return [(css, body)]
 
 
@@ -136,7 +155,7 @@ li{{display:flex;align-items:baseline;gap:26px;font-size:40px;font-weight:600;pa
 li span{{font-family:NR,serif;font-size:56px;color:{letter};width:44px}}
 .cta{{position:absolute;left:72px;bottom:96px;font-size:24px;font-weight:600;opacity:.8}}
 .site{{display:none}}"""
-    body = f"""{frame(theme, "Câu hỏi mở")}<div class="q"><div class="ctx fit">{esc(d.get('context', ''))}</div><h1 class="fit bal">{hl(d['question'])}</h1><ul>{opts}</ul></div><div class="cta">Trả lời ở phần bình luận</div>"""
+    body = f"""{frame(theme, L["Câu hỏi mở"])}<div class="q"><div class="ctx fit">{esc(d.get('context', ''))}</div><h1 class="fit bal">{hl(d['question'])}</h1><ul>{opts}</ul></div><div class="cta">{L["reply"]}</div>"""
     return [(css, body)]
 
 
@@ -152,7 +171,7 @@ h1{{font-size:68px;margin-top:10px;max-height:3.4em}}
 ul{{list-style:none;margin-top:70px}}
 li{{display:flex;gap:24px;font-size:34px;line-height:1.38;padding:12px 0}}
 li span{{font-family:NR,serif;font-weight:600;font-size:40px;line-height:1;color:{ORANGE};flex:none;width:30px}}"""
-    body = f"""{frame(theme, "Tin nóng", d.get("source", ""))}
+    body = f"""{frame(theme, L["Tin nóng"], d.get("source", ""))}
 <div class="copy"><div class="when">{esc(d.get('when', ''))}</div><h1 class="fit bal">{hl(d['headline'])}</h1><ul>{pts}</ul></div>"""
     return [(css, body)]
 
@@ -175,7 +194,7 @@ tr:nth-child(odd) td{{background:{band}}}
 .res span{{font-size:30px;font-weight:600}}
 .res b{{font-family:NR,serif;font-weight:600;font-size:64px;line-height:1;color:{ORANGE}}}
 .note{{margin-top:16px;font-size:22px;line-height:1.4;opacity:.75}}"""
-    body = f"""{frame(theme, "Phép tính nhanh", d.get("source", ""))}<h1 class="fit bal">{hl(d['title'])}</h1>
+    body = f"""{frame(theme, L["Phép tính nhanh"], d.get("source", ""))}<h1 class="fit bal">{hl(d['title'])}</h1>
 <div class="calc"><table>{rows}</table><div class="res"><span>{esc(ra)}</span><b>{esc(rb)}</b></div><div class="note">{esc(d.get('note', ''))}</div></div>"""
     return [(css, body)]
 
@@ -199,7 +218,7 @@ body{{background:{BG[t]};color:{FG[t]}}}
 h1{{position:absolute;left:72px;right:72px;top:500px;font-size:84px;max-height:3.4em}}
 .go{{position:absolute;left:72px;bottom:110px;font-size:28px;font-weight:600;opacity:.75}}"""
     body = f"""{frame(t, d['title'])}<div class="num">{len(steps)}</div><h1 class="fit bal phrase">{hl(d['promise'])}</h1>
-<div class="go">Lướt sang để xem từng bước</div>{pageno(1, t)}"""
+<div class="go">{L["swipe"]}</div>{pageno(1, t)}"""
     pages.append((css, body))
     # các bước, xen kẽ hai nền
     for i, s in enumerate(steps):
@@ -219,7 +238,7 @@ p{{font-size:40px;line-height:1.28;margin-top:24px;max-height:6.5em}}"""
 body{{background:{BG[t]};color:{FG[t]}}}
 h1{{position:absolute;left:72px;right:72px;top:200px;font-size:78px;max-height:4.5em}}
 .go{{position:absolute;left:72px;bottom:150px;font-size:32px;font-weight:600;opacity:.75}}"""
-    body = f"""{frame(t, d['title'], d.get('source', ''))}<h1 class="fit bal">{hl(d['end'])}</h1><div class="go">Xem bài đầy đủ ở phần bình luận</div>{pageno(total, t)}"""
+    body = f"""{frame(t, d['title'], d.get('source', ''))}<h1 class="fit bal">{hl(d['end'])}</h1><div class="go">{L["full"]}</div>{pageno(total, t)}"""
     pages.append((css, body))
     return pages
 
@@ -229,22 +248,29 @@ FORMATS = {"Góc số liệu": stat, "Thuật ngữ 1 phút": term, "Carousel h�
 
 
 def variant(items, item):
-    """Biến thể theo số lần dạng bài này đã xuất hiện trước đó: tuần này nền kem thì tuần sau nền navy."""
+    """Biến thể theo số lần dạng bài này đã xuất hiện trước đó: tuần này nền kem thì tuần sau nền navy.
+    Bản LinkedIn dùng cùng biến thể với bản Facebook."""
     before = [x for x in items if x["format"] == item["format"] and x["date"] < item["date"]]
     return item.get("design", {}).get("variant", len(before) % 2)
 
 
-def render(data, item, out=None):
+KEYS = {"vi": ("design", "images", "content/facebook"), "en": ("li_design", "li_images", "content/linkedin")}
+
+
+def render(data, item, out=None, lang="vi"):
+    global L
+    L = TEXT[lang]
+    design, images, base = KEYS[lang]
     fn = FORMATS[item["format"]]
-    pages = fn(item["design"], variant(data["facebook"], item))
-    folder = Path(out) if out else ROOT / "content/facebook" / item["id"]
+    pages = fn(item[design], variant(data["facebook"], item))
+    folder = Path(out) if out else ROOT / base / item["id"]
     jobs = [(document(css, body, SIZE, SIZE), folder / f"{i + 1}.jpg", SIZE, SIZE) for i, (css, body) in enumerate(pages)]
     files = shoot(jobs)
     if not out:
         for old in folder.glob("*.jpg"):  # carousel bớt trang thì xóa ảnh thừa
             if str(old) not in files:
                 old.unlink()
-        item["images"] = [str(Path(f).relative_to(ROOT)) for f in files]
+        item[images] = [str(Path(f).relative_to(ROOT)) for f in files]
     return files
 
 
@@ -255,17 +281,19 @@ if __name__ == "__main__":
     data = load()
     items = data["facebook"]
     out = args[args.index("--out") + 1] if "--out" in args else None
+    lang = args[args.index("--lang") + 1] if "--lang" in args else "vi"
+    design, images, _ = KEYS[lang]
     if args[0] == "render":
         item = next(x for x in items if x["id"] == args[1])
-        print("\n".join(render(data, item, out)))
+        print("\n".join(render(data, item, out, lang)))
     elif args[0] == "week":
         for item in items:
-            if args[1] <= item["date"] <= args[2] and item.get("design") and item["format"] in FORMATS:
-                print("\n".join(render(data, item, out)))
+            if args[1] <= item["date"] <= args[2] and item.get(design) and item["format"] in FORMATS:
+                print("\n".join(render(data, item, out, lang)))
     elif args[0] == "missing":
         today = date.today().isoformat()
         for item in items:
-            if item["date"] >= today and item["format"] in FORMATS and (not item.get("design") or not item.get("images")):
-                print(item["id"], item["format"], "thiếu design" if not item.get("design") else "thiếu ảnh", item["title"])
+            if item["date"] >= today and item["format"] in FORMATS and (not item.get(design) or not item.get(images)):
+                print(item["id"], item["format"], f"thiếu {design}" if not item.get(design) else "thiếu ảnh", item["title"])
     if not out and args[0] in ("render", "week"):
         save(data)

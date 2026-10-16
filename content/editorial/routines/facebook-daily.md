@@ -44,3 +44,16 @@ Khi anh Tin trả lời trong phiên: "duyệt <id>" thì chạy `python3 tools/
 3. Chạy python3 tools/fb_daily.py notify <7 id> --pending, gửi email nguyên văn bằng Gmail (to, subject, body, htmlBody, attachments); push notification "7 bài Facebook tuần tới chờ duyệt trước <hạn>. Quá hạn sẽ tự duyệt."; tin nhắn trong phiên với caption từng bài.
 4. Gọi send_later với at = deadline trong JSON (RFC3339), name "Hạn duyệt Facebook tuần <ngày thứ Hai>", message: "[Hạn duyệt Facebook D+1] Pull branch claude/brave-curie-2c6zbc, chạy python3 tools/fb_daily.py auto. Nếu auto_approved không rỗng: push notification và tin nhắn liệt kê bài tự duyệt; ghi changelog, commit, push lên claude/brave-curie-2c6zbc và đồng bộ sang claude/determined-faraday-hhy1ol."
 5. Ghi logs/changelog.md, commit, push lên claude/brave-curie-2c6zbc và đồng bộ sang claude/determined-faraday-hhy1ol.
+
+## LinkedIn (tiếng Anh, cùng lịch với Facebook)
+
+Anh Tin chọn ngày 16/10/2026: đăng mọi bài hằng ngày lên LinkedIn Page Adtek qua LinkedIn API chính thức, caption và chữ trên ảnh bằng tiếng Anh, template riêng (tiêu đề viết thường, không footer Website/Email, 3 hashtag). Công cụ: `tools/li_post.py` (đăng), `tools/social.py ... --lang en` (ảnh). Một lần duyệt (`approval`) áp dụng cho cả hai kênh; "hủy <id>" hủy cả hai, "hủy LinkedIn <id>" thì chạy `python3 tools/li_post.py cancel <id>`.
+
+Quy tắc nội dung tiếng Anh: viết lại từ caption và design tiếng Việt (không dịch từng chữ), giữ nguyên số liệu, không thêm số liệu mới, 120 đến 200 từ, dùng skill anti-ai-writing, không emoji, không ký tự gạch dài, không link, số theo định dạng US, tiền ghi "VND 400,000". Các trường: `li_title`, `li_caption`, `li_hashtags` (3 hashtag tiếng Anh), `li_design` (cùng cấu trúc `design`). Dựng ảnh: `python3 tools/social.py render <id> --lang en` (ảnh lưu ở `content/linkedin/<id>/`, ghi `li_images`). Bài video cần bản tiếng Anh `content/linkedin/<id>/video.mp4`. Carousel được ghép thành PDF và đăng dạng tài liệu lướt trang.
+
+Trạng thái kết nối: chưa có token. Cần (1) app LinkedIn Developer được duyệt Community Management API, (2) token của tài khoản admin Page có quyền `w_organization_social` và `r_organization_admin`, gắn làm network secret cho `api.linkedin.com` và `www.linkedin.com`, (3) điền `ORG_ID` trong `tools/li_post.py` theo kết quả `python3 tools/li_post.py check`. Token hết hạn sau 60 ngày.
+
+Khi `check` chạy được, bổ sung vào prompt các routine (cập nhật trigger):
+- Routine 3 (thứ Tư): sau bước 1, viết `li_title`, `li_caption`, `li_hashtags`, `li_design` cho 7 bài, chạy `python3 tools/social.py week <thứ Hai> <Chủ Nhật> --lang en`. Email `notify` tự kèm bản LinkedIn.
+- Routine 1 (báo trước): bài thiếu bản tiếng Anh thì viết và dựng ảnh như trên trước khi notify.
+- Routine 2 (đăng bài): sau khi đăng Facebook, chạy `python3 tools/li_post.py due` rồi `python3 tools/li_post.py publish <id>` cho từng bài có problems rỗng và approval approved hoặc auto. Thành công: push notification "Đã đăng LinkedIn <giờ>: <tiêu đề> <url>". Lỗi 401: báo anh Tin cấp token mới.
