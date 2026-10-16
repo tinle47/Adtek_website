@@ -1,6 +1,6 @@
 # Văn phong bài blog Adtek (theo cách viết của anh Tin)
 
-Rút ra từ bài mẫu "Cách bán hàng trên Shopee" anh Tin viết (gửi 17/10/2026). Mọi bài blog từ nay viết theo file này, cùng các quy tắc trong `README.md`. Mục tiêu: đọc như một người làm nghề đang chỉ việc cho người khác, không như máy viết.
+Rút ra từ bài mẫu "Cách bán hàng trên Shopee" anh Tin viết (gửi 17/10/2026). Mọi bài blog từ nay viết theo file này, cùng các quy tắc trong `README.md`. Mục tiêu: đọc như một người làm nghề đang chỉ việc cho người khác, không như máy viết. Giữ giọng và cách giải thích của bài mẫu nhưng viết gọn hơn bài mẫu (anh Tin nhận xét văn phong gốc hơi dài dòng, 17/10/2026): xem mục "Ngắn gọn".
 
 ## Giọng
 
@@ -20,7 +20,7 @@ Rút ra từ bài mẫu "Cách bán hàng trên Shopee" anh Tin viết (gửi 17
 - Khái niệm nào cũng đi kèm tên tiếng Anh và chữ viết tắt trong ngoặc ngay lần đầu, rồi một phép tính nhỏ. Ví dụ: "Tỷ lệ chuyển đổi (conversion rate) = Đơn hàng / lượt truy cập. 100 người vào xem sản phẩm có 2 người mua thì tỷ lệ chuyển đổi là 2%."
 - Dùng so sánh đời thường cho dễ hình dung. Ví dụ hai sạp rau ngoài chợ: cùng giá, sạp gọn gàng rau tươi thì khách chọn, "và bán hàng online cũng như vậy."
 - Đặt mình vào vị trí khách: liệt kê đúng những câu khách sẽ tự hỏi ("Áo này có vừa không? Chất vải có tốt không?").
-- Dùng câu hỏi để chuyển đoạn thay cho từ nối: "Vậy tối ưu hình ảnh sản phẩm như thế nào để tăng được tỷ lệ chuyển đổi?"
+- Thỉnh thoảng dùng câu hỏi để chuyển sang phần chính, tối đa 1 đến 2 lần mỗi bài: "Vậy tối ưu hình ảnh sản phẩm như thế nào để tăng được tỷ lệ chuyển đổi?"
 
 ## Ví dụ và hướng dẫn làm theo
 
@@ -42,9 +42,28 @@ Rút ra từ bài mẫu "Cách bán hàng trên Shopee" anh Tin viết (gửi 17
 - Chỉ đặt tiêu đề dạng câu hỏi khi đó đúng là câu người đọc hay tìm trên Google (giữ được phần SEO), không đặt mọi H2 thành câu hỏi.
 - Không chia đều các phần. Dành phần lớn bài cho việc chính (ở bài mẫu là tối ưu hình ảnh và nội dung sản phẩm).
 
+## Ngắn gọn
+
+Bài mẫu có giọng tốt nhưng nhiều chữ thừa. Khi viết:
+
+- Mỗi câu một ý. Phần lớn câu dưới 25 chữ; câu dài chỉ khi đang liệt kê hoặc giải thích một phép tính.
+- Đoạn văn tối đa 3 đến 4 câu.
+- Bỏ câu nói về chính bài viết ("Trong bài viết này tôi sẽ hướng dẫn cho bạn những cách có thể..."). Phần mở bài chỉ cần một câu nói bài làm gì, một câu nói bài không làm gì.
+- Bỏ câu hỏi dẫn dắt khi câu sau đã tự nói lên lý do ("Tại sao phải hiểu kỹ chuyện này?").
+- Nguồn đặt gọn trong ngoặc cuối câu: "Doanh thu quảng cáo Shopee tăng hơn 70% trong quý 2/2026 (Sea Limited)."
+- Bỏ từ đệm và từ nhấn: "rất", "cực kỳ", "kha khá", "thật sự", "có thể nói", "như vậy là", "đó là".
+- Không lặp lại cụm danh từ dài trong cùng đoạn ("sản phẩm của bạn", "khách hàng") khi đã rõ chủ ngữ.
+- Một ý chỉ nói một lần. Đã có bảng hoặc danh sách thì đoạn văn bên cạnh không kể lại nội dung bảng.
+
+Ví dụ (mở bài 10, bản gọn anh Tin đã xem):
+
+> Bài này không hướng dẫn tạo chiến dịch từng bước, phần đó Shopee và TikTok đã có hướng dẫn chính chủ. Tôi chỉ giải thích hai sàn tính tiền quảng cáo thế nào và cách tính ROAS hòa vốn trước 11.11.
+>
+> Quý 2/2026, doanh thu quảng cáo Shopee tăng hơn 70%, GMV chỉ tăng 28.4% (Sea Limited). Sàn thu tiền quảng cáo nhanh gấp đôi tốc độ đơn hàng tăng. Không tính được ROAS hòa vốn, bạn dễ ra nhiều đơn mà vẫn lỗ.
+
 ## Câu chữ
 
-- Câu dài ngắn xen nhau, nối bằng "và", "do đó", "cho nên", "như vậy" khi thật sự cần. Có câu rất ngắn để chốt: "Và bán hàng online cũng như vậy."
+- Câu dài ngắn xen nhau, có câu rất ngắn để chốt: "Bán hàng online cũng vậy." Từ nối "do đó", "cho nên" chỉ dùng khi quan hệ nhân quả chưa rõ.
 - Hạn chế "Bên cạnh đó", "Đồng thời", "Hơn nữa", "Ngoài ra", "Tuy nhiên" (tối đa khoảng 1 lần mỗi 150 chữ).
 - Không dùng: đóng vai trò quan trọng, không chỉ... mà còn, minh chứng cho, góp phần nâng cao, bức tranh toàn cảnh, chìa khóa thành công, hành trình, kỷ nguyên, bứt phá, đa dạng và phong phú, giải pháp toàn diện, khẳng định vị thế, trong bối cảnh hiện nay, nhìn chung, tóm lại, hy vọng thông tin trên hữu ích.
 - Không dùng ký tự gạch dài. Không in đậm tràn lan; in đậm cho nhãn đầu mục (như "**1. Lượt truy cập (traffic)** = ...") là được.
