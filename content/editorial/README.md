@@ -121,3 +121,5 @@ Rà soát định kỳ, ngày 1 hằng tháng:
 5. Sau khi sửa: giữ nguyên URL, thêm dòng "Cập nhật ngày ..." đầu bài kèm tóm tắt thay đổi, cập nhật `last_reviewed`, ghi `logs/changelog.md`.
 
 Rà soát theo sự kiện: khi có luật mới, nền tảng đổi tính năng lớn hoặc số liệu thị trường mới công bố, cập nhật ngay các bài liên quan, không chờ đến kỳ.
+
+- Ảnh chia sẻ mặc định của website (og:image cho trang chủ VI, EN và trang không có ảnh đại diện): `content/brand/og-default.jpg` (1200x630) và `og-default@2x.jpg` (2400x1260), dựng bằng `python3 tools/covers.py og [navy|cream|panel]`. Chữ và logo trong vùng x 100 đến 1100, y 60 đến 570. Nội dung chỉ gồm logo, "Growth marketing agency", "Brand Commerce, Lead Generation, SEO", adtek.agency; không thêm số liệu hay khẩu hiệu. Phiên Designer dựng, phiên SEO tải lên và gắn vào Yoast.

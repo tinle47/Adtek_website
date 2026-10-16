@@ -14,6 +14,7 @@ Cách dùng:
   python3 tools/covers.py render <số bài> [--style X] [--kind blog|fb|all] [--out thư-mục]   dựng thử, không ghi cover.style
   python3 tools/covers.py sheet <số bài> [--out thư-mục]   dựng mọi phong cách cho một bài để so sánh
   python3 tools/covers.py existing <wp_id>           dựng ảnh bìa blog cho bài cũ trong mục existing (vd 6076, 6078)
+  python3 tools/covers.py og [navy|cream|panel] [--out thư-mục]   ảnh chia sẻ mặc định của website (content/brand/og-default.jpg và @2x)
 """
 import base64
 import html
@@ -449,7 +450,7 @@ def document(css, body, w, h):
     """Trang HTML hoàn chỉnh theo nhận diện chung (font, logo, co chữ) từ CSS và thân trang của một mẫu."""
     # mask-image không đọc được file:// (chặn CORS) nên nhúng logo dạng data URI
     uri = lambda name: "data:image/png;base64," + base64.b64encode((ASSETS / name).read_bytes()).decode()  # noqa: E731
-    return HEAD.substitute(fontcss=font_css(), logo=uri("adtek-logo-white.png"), mark=uri("adtek-mark-white.png"),
+    return HEAD.substitute(fontcss=font_css(), logo=uri("adtek-logo-white.png"), mark=uri("adtek-mark-white-hd.png"),
                            w=w, h=h, css=css, body=body, shape="sq" if w == h else "ls")
 
 
@@ -504,6 +505,48 @@ def make(post, kind, out=None):
     return out
 
 
+# ---------------------------------------------------------------- ảnh chia sẻ mặc định của website
+
+OG_SIZE = (1200, 630)  # og:image mặc định (trang chủ VI, EN và trang không có ảnh đại diện), xuất thêm bản @2x
+OG_TEXT = {"head": "*Growth* marketing agency", "sub": "Brand Commerce, Lead Generation, SEO", "site": "adtek.agency"}
+OG_VARIANTS = ("navy", "cream", "panel")
+
+
+def og_default(variant="navy"):
+    """Ảnh chia sẻ mặc định cho adtek.agency. Vùng an toàn cho chữ và logo: x 100 đến 1100, y 60 đến 570
+    (Facebook, Zalo, LinkedIn cắt mép khác nhau); chỉ dấu A cam (không chữ) được tràn ra ngoài.
+    navy: nền navy, chữ trắng, dấu A cam. cream: nền kem, chữ navy, dấu A cam. panel: chữ trên nền navy, logo navy trên khối kem bên phải."""
+    bg, fg, sub = (CREAM, NAVY, NAVY) if variant == "cream" else (NAVY, "#fff", "#C9D6EE")
+    css = f"""
+body{{background:{bg};color:{fg}}}
+.big{{position:absolute;aspect-ratio:285/253;background:{ORANGE};height:760px;right:-230px;bottom:-250px}}
+.lg{{position:absolute;left:100px;top:72px}}
+.copy{{position:absolute;left:100px;top:196px;width:640px}}
+h1{{font-size:88px;line-height:1.05;max-height:2.2em}}
+.sub{{font-size:30px;line-height:1.35;margin-top:26px;color:{sub};{'opacity:.85;' if variant == 'cream' else ''}}}
+.site{{position:absolute;left:100px;top:510px;font-size:24px;font-weight:600;opacity:.75}}
+.panel{{position:absolute;left:780px;top:0;right:0;bottom:0;background:{CREAM};display:flex;align-items:center;justify-content:center}}
+.panel .logo{{background:{NAVY}}}"""
+    if variant == "panel":
+        art = f'<div class="panel">{logo(NAVY, 168)}</div>'
+        css += ".copy{width:620px}"
+    else:
+        art = '<div class="big mark"></div>'
+    top = "" if variant == "panel" else f'<div class="lg">{logo(fg, 76)}</div>'
+    body = f"""{art}{top}
+<div class="copy"><h1 class="fit bal">{hl(OG_TEXT['head'])}</h1><div class="sub">{esc(OG_TEXT['sub'])}</div></div>
+<div class="site">{OG_TEXT['site']}</div>"""
+    return document(css, body, *OG_SIZE)
+
+
+def og_render(variant="navy", out=None):
+    """Ghi content/brand/og-default.jpg (1200x630) và og-default@2x.jpg (2400x1260); out: thư mục khác để xem thử."""
+    d = Path(out) if out else ROOT / "content/brand"
+    name = "og-default" if not out else f"og-{variant}"
+    page_html = og_default(variant)
+    return shoot([(page_html, d / f"{name}.jpg", *OG_SIZE, 1), (page_html, d / f"{name}@2x.jpg", *OG_SIZE, 2)])
+
+
 if __name__ == "__main__":
     sys.path.insert(0, str(ROOT / "tools"))
     from blog_post import find, load
@@ -530,6 +573,9 @@ if __name__ == "__main__":
         e = next(x for x in data["existing"] if str(x.get("wp_id")) == args[1])
         post = {"no": 0, **e}
         print("\n".join(render([(post, "blog", e["cover"]["style"], output_path(post, "blog"))])))
+    elif cmd == "og":  # ảnh chia sẻ mặc định của website: og [navy|cream|panel] [--out thư-mục để xem thử]
+        v = args[1] if len(args) > 1 and not args[1].startswith("--") else "navy"
+        print("\n".join(og_render(v, opt("--out"))))
     elif cmd == "sheet":
         post = find(data, int(args[1]))
         out = Path(opt("--out", ROOT / "previews/covers"))
