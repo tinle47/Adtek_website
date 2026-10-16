@@ -39,7 +39,7 @@
  "summary": [
   "GDP quý III/2026 tăng 9,95%, 9 tháng tăng 9,01%. Bán lẻ tăng 13,4%, xuất khẩu tăng 24,5%, FDI đăng ký tăng 76,4%.",
   "Dự báo 2027 chênh nhau lớn: World Bank 7,3%, ADB 7,6%, Standard Chartered 11%.",
-  "GMV 4 sàn quý III tăng 27% (YouNet ECI). Làm đẹp vẫn là ngành lớn nhất trên sàn; sữa và thực phẩm cho bé tăng 48% trong H1/2026 (Metric).",
+  "GMV 4 sàn quý III tăng 27% (YouNet ECI). Theo Metric, làm đẹp dẫn đầu doanh số trên sàn trong H1/2026; sữa và thực phẩm cho bé tăng 48%.",
   "Chính sách dẫn nhu cầu xe điện và điện mặt trời mái nhà: xe máy điện 7 tháng tăng 97,2%, trần bán điện dư nâng lên 50%.",
   "Du lịch, bảo hiểm sức khỏe và chuỗi nhà thuốc tăng hai con số; bảo hiểm nhân thọ giảm 4% sau 8 tháng.",
   "Nhà ở hạ nhiệt vì lãi vay và tồn kho; bất động sản công nghiệp phía Nam giữ tỷ lệ lấp đầy cao nhờ FDI."
@@ -53,7 +53,7 @@
     "Tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng 9 tháng đạt 5.925,7 nghìn tỷ đồng, tăng 13,4%; loại trừ giá tăng 7,8%. Riêng quý III tăng 14,5% (Cục Thống kê).",
     "FDI đăng ký 9 tháng đạt 50,36 tỷ USD, tăng 76,4%. Vốn thực hiện đạt 21,07 tỷ USD, tăng 12,1%, cao nhất 5 năm; chế biến chế tạo chiếm 82,6% (Cục Thống kê).",
     "Xuất khẩu hàng hóa 9 tháng đạt 434,3 tỷ USD, tăng 24,5%, khu vực FDI chiếm 80,7%. Nhập siêu 9 tháng 19,42 tỷ USD (Cục Thống kê).",
-    "Khách quốc tế 9 tháng đạt khoảng 17,7 triệu lượt, tăng 14,5%, bằng gần 71% mục tiêu 25 triệu lượt cả năm (Cục Du lịch Quốc gia Việt Nam).",
+    "Khách quốc tế 9 tháng đạt 17,7 triệu lượt, tăng 14,5%, bằng khoảng 71% mục tiêu 25 triệu lượt cả năm (Cục Thống kê).",
     "Dự báo 2027: ADB 7,6% (tháng 9/2026), World Bank 7,3% (6/10/2026), Standard Chartered 11% (tháng 7/2026)."
    ],
    "chart": {
@@ -85,7 +85,7 @@
       "value": 76.4
      }
     ],
-    "source": "Cục Thống kê (Bộ Tài chính); Cục Du lịch Quốc gia Việt Nam, 10/2026"
+    "source": "Cục Thống kê (Bộ Tài chính), báo cáo kinh tế - xã hội quý III và 9 tháng năm 2026, công bố 3/10/2026"
    },
    "callout": "Nhận định của Adtek: dự báo 2027 chênh tới 3,7 điểm phần trăm giữa các tổ chức, nên ngân sách marketing 2027 cần lập theo kịch bản thay vì bám một con số."
   },
@@ -93,11 +93,11 @@
    "heading": "Nhóm tiêu dùng: làm đẹp, FMCG và mẹ bé",
    "lead": "GMV 4 sàn 9 tháng đạt 411.800 tỷ đồng, tăng 22%, riêng quý III tăng 27%; Shopee chiếm 53%, TikTok Shop 45% (YouNet ECI). Làm đẹp và nhóm hàng thiết yếu, mẹ bé hưởng lợi rõ nhất.",
    "bullets": [
-    "Làm đẹp là ngành lớn nhất trên sàn: H1/2026 đạt gần 49.500 tỷ đồng, tăng 38,44%, sản lượng tăng 11,40% (Metric). Theo YouNet ECI, ngành sắc đẹp tăng 17% trong 9 tháng và chiếm 13% GMV. Hai nguồn khác phạm vi đo.",
+    "Theo Metric, làm đẹp là ngành hàng có doanh số lớn nhất trên 4 sàn trong H1/2026: gần 50.000 tỷ đồng, tăng 38,44%, sản lượng tăng 11,40% (Znews dẫn báo cáo của Metric). Theo YouNet ECI, ngành sắc đẹp tăng 17% trong 9 tháng và chiếm 13% GMV, sau thời trang và phụ kiện (28%). Hai nguồn khác cách phân ngành và phạm vi đo.",
     "Động lực: social commerce và gian hàng chính hãng. Ngành dưỡng ẩm 7 tháng đạt 4.873 tỷ đồng, tăng 34%, TikTok Shop vượt Shopee về thị phần (Metric).",
     "Rủi ro: Luật Quảng cáo sửa đổi (từ 1/1/2026) buộc KOL, KOC chịu trách nhiệm về nội dung; Luật Thương mại điện tử (từ 1/7/2026) yêu cầu xác thực danh tính người livestream. Kênh theo Adtek: TikTok Shop (GMV Max, affiliate, livestream), Shopee Ads, Meta.",
-    "FMCG là điểm sáng của TMĐT 9 tháng 2026 (YouNet ECI). Sữa công thức và thực phẩm cho bé trên 4 sàn đạt 4,09 nghìn tỷ đồng trong H1/2026, tăng 48%, sản lượng 9,8 triệu sản phẩm, tăng 24% (Metric).",
-    "Rủi ro: biên lợi nhuận mỏng, sàn sàng lọc người bán; số shop nhỏ giảm khoảng 27% trong H1/2026 (Metric). Sản phẩm thay thế sữa mẹ cho trẻ dưới 24 tháng tuổi bị cấm quảng cáo (Luật Quảng cáo 2012, Nghị định 100/2014/NĐ-CP).",
+    "FMCG là điểm sáng của TMĐT: tăng 26% trong 9 tháng và 36% riêng quý III, cao nhất trong các nhóm ngành YouNet ECI theo dõi. Sữa công thức và thực phẩm cho bé trên 4 sàn đạt 4,09 nghìn tỷ đồng trong H1/2026, tăng 48%, sản lượng 9,8 triệu sản phẩm, tăng 24% (Metric).",
+    "Rủi ro: biên lợi nhuận mỏng, doanh số dồn về gian hàng chính hãng; Shop Mall chỉ chiếm 2,79% số gian hàng nhưng đóng góp 34,2% doanh số trên Shopee, Lazada và TikTok Shop trong H1/2026 (Metric). Sữa thay thế sữa mẹ cho trẻ dưới 24 tháng tuổi vẫn bị cấm quảng cáo (Điều 7 Luật Quảng cáo 2012, không thay đổi khi sửa đổi bằng Luật 75/2025/QH15; Nghị định 100/2014/NĐ-CP).",
     "Kênh theo Adtek: brand commerce đa sàn, Shopee và TikTok Ads cho đơn đầu, Zalo OA và ZNS cho mua lặp lại. Zalo có 81,3 triệu người dùng hàng tháng (VNG, quý II/2026)."
    ],
    "chart": {
@@ -121,7 +121,7 @@
       "value": 56.34
      }
     ],
-    "source": "Metric, dữ liệu Shopee, TikTok Shop, Lazada, Tiki, 6 tháng đầu năm 2026"
+    "source": "Metric, dữ liệu Shopee, TikTok Shop, Lazada, Tiki, 6 tháng đầu năm 2026 (số ngành làm đẹp theo Znews dẫn báo cáo của Metric)"
    },
    "callout": "Nhận định của Adtek: YouNet ECI dự báo sức mua TMĐT quý IV tăng trên 20%, nên chuẩn bị hồ sơ pháp lý cho KOL, KOC trước khi tăng ngân sách cuối năm."
   },
@@ -130,11 +130,11 @@
    "lead": "Chính sách dẫn nhu cầu ở cả hai ngành. Hybrid và xe điện tăng nhanh hơn thị trường chung.",
    "bullets": [
     "Ô tô: VAMA ghi nhận 282.029 xe trong 9 tháng, tăng 12%; hybrid tăng 64% (VAMA, không gồm VinFast và một số hãng).",
-    "Xe điện: VinFast công bố bàn giao 177.697 ô tô điện trong 9 tháng, vượt tổng 175.099 xe của cả năm 2025. Xe máy điện 7 tháng đạt 513.742 xe, tăng 97,2%, chiếm gần 28% doanh số xe hai bánh (MotorcyclesData, qua VnEconomy và VOV).",
-    "Động lực: Hà Nội thí điểm vùng phát thải thấp tại 9 phường trong Vành đai 1 từ 1/7/2026. Rủi ro: phụ thuộc chính sách và lãi vay. Kênh theo Adtek: Google Search, Meta Lead Ads, Zalo cho đại lý; SEO local; TikTok cho xe máy điện.",
+    "Xe điện: VinFast công bố bàn giao 177.697 ô tô điện trong 9 tháng, vượt tổng 175.099 xe của cả năm 2025. Xe máy điện 7 tháng đạt 513.742 xe, tăng 97,2%, chiếm gần 28% doanh số xe hai bánh (MotorcyclesData, qua Doanh nhân và Pháp luật, VOV).",
+    "Động lực: Hà Nội triển khai vùng phát thải thấp trong Vành đai 1 (9 phường) theo lộ trình; giai đoạn 1 từ 1/7 đến 31/12/2026 thí điểm tại khu phố cổ và quanh hồ Hoàn Kiếm (phường Hoàn Kiếm), giai đoạn 2 mở rộng từ năm 2027. Rủi ro: phụ thuộc chính sách và lãi vay. Kênh theo Adtek: Google Search, Meta Lead Ads, Zalo cho đại lý; SEO local; TikTok cho xe máy điện.",
     "Điện mặt trời mái nhà: Nghị định 243/2026/NĐ-CP (26/6/2026) nâng trần bán điện dư lên 50% sản lượng, từ 20% trước đây. Chỉ thị 10/CT-TTg (30/3/2026) đặt mục tiêu mỗi năm khoảng 10% công sở và 10% hộ gia đình lắp đặt.",
     "Đến 30/6/2026, EVNNPC có 10.099 khách hàng tự sản xuất, tự tiêu thụ, 718,3 MW; riêng 6 tháng đầu năm thêm 8.500 khách hàng (EVNNPC, qua Cafeland).",
-    "Rủi ro: giá mua điện dư chưa rõ; mới 2/34 tỉnh ban hành chính sách hỗ trợ hộ gia đình (VnEconomy). Kênh theo Adtek: Google Search theo từ khóa chi phí, hoàn vốn; Meta Lead Ads; Zalo hẹn khảo sát."
+    "Rủi ro: giá mua điện dư bằng giá điện năng thị trường điện bình quân năm trước nên thay đổi theo từng năm, khó tính trước thời gian hoàn vốn; mới 2/34 tỉnh ban hành chính sách hỗ trợ hộ gia đình (VnEconomy). Kênh theo Adtek: Google Search theo từ khóa chi phí, hoàn vốn; Meta Lead Ads; Zalo hẹn khảo sát."
    ],
    "chart": {
     "title": "Doanh số ô tô 9 tháng 2026 theo nhóm, tăng so với cùng kỳ",
@@ -157,19 +157,19 @@
       "value": 64.0
      }
     ],
-    "source": "VAMA, số liệu công bố 9/10/2026, không gồm VinFast"
+    "source": "VAMA, số liệu công bố 9/10/2026 (qua VietnamPlus, Tạp chí Kinh tế Tài chính), không gồm VinFast và Hyundai"
    },
-   "callout": "Nhận định của Adtek: nhu cầu đổi xe tập trung theo địa bàn chính sách, nên đại lý xe máy điện cần nhắm theo bán kính quanh các phường thí điểm."
+   "callout": "Nhận định của Adtek: nhu cầu đổi xe tập trung theo địa bàn chính sách, nên đại lý xe máy điện cần nhắm theo bán kính quanh khu vực thí điểm vùng phát thải thấp và các phường sắp áp dụng."
   },
   {
    "heading": "Dịch vụ, tài chính và y tế: giáo dục, du lịch, tài chính số, y tế tư nhân",
    "lead": "Bốn ngành có chung đặc điểm: quyết định mua cần nhiều điểm chạm và niềm tin. Giáo dục và y tế chịu tác động lớn từ chính sách.",
    "bullets": [
-    "Giáo dục: Hà Nội dự kiến thí điểm đưa tiếng Anh thành ngôn ngữ thứ hai tại 20 cơ sở giáo dục từ năm học 2026-2027 (Kế hoạch 259/KH-UBND). Sinh viên Việt Nam tại Mỹ năm học 2024-2025 đạt 25.584, tăng 15,9% (IIE Open Doors 2025). Rủi ro: CPL tăng mùa tuyển sinh, visa biến động. Kênh theo Adtek: Meta, Google lead gen, Zalo chăm sóc phụ huynh.",
-    "Du lịch: Trung Quốc hơn 3,9 triệu và Hàn Quốc khoảng 3 triệu lượt khách trong 9 tháng (Cục Du lịch Quốc gia). Doanh thu lưu trú, ăn uống tại Đà Nẵng đạt 52.945 tỷ đồng, tăng 26,2% (VietnamPlus). Kênh theo Adtek: Google Hotel Ads, SEO tiếng Hàn, tiếng Trung, Meta, TikTok.",
-    "Tài chính số: quý I/2026, giao dịch không tiền mặt tăng 37,98% về số lượng; thanh toán QR tăng 52,4% về giá trị (Ngân hàng Nhà nước). Rủi ro: Luật Bảo vệ dữ liệu cá nhân (từ 1/1/2026). Kênh theo Adtek: App UA trên Google, TikTok, Meta.",
+    "Giáo dục: Hà Nội thí điểm đưa tiếng Anh thành ngôn ngữ thứ hai tại 20 cơ sở giáo dục từ năm học 2026-2027 (Kế hoạch 259/KH-UBND). Sinh viên Việt Nam tại Mỹ năm học 2024-2025 đạt 25.584, tăng 15,9% (IIE Open Doors 2025). Rủi ro: CPL tăng mùa tuyển sinh, visa biến động. Kênh theo Adtek: Meta, Google lead gen, Zalo chăm sóc phụ huynh.",
+    "Du lịch: trong 9 tháng, Trung Quốc có hơn 3,95 triệu lượt khách, tăng 1,5%; Hàn Quốc hơn 3,05 triệu lượt, giảm 5,5% (Cục Thống kê). Doanh thu lưu trú, ăn uống 9 tháng của Đà Nẵng tăng 21,7%, cao nhất trong các địa phương Cục Thống kê nêu. Kênh theo Adtek: Google Hotel Ads, SEO tiếng Hàn, tiếng Trung, Meta, TikTok.",
+    "Tài chính số: quý I/2026, giao dịch không tiền mặt tăng 37,98% về số lượng; thanh toán QR tăng 52,4% về giá trị (Ngân hàng Nhà nước, qua Báo Đấu thầu). Rủi ro: Luật Bảo vệ dữ liệu cá nhân (từ 1/1/2026). Kênh theo Adtek: App UA trên Google, TikTok, Meta.",
     "Bảo hiểm: phi nhân thọ 8 tháng tăng 16,6%, nhân thọ giảm 4% (Hiệp hội Bảo hiểm Việt Nam). H1/2026, bảo hiểm sức khỏe đạt 17.742 tỷ đồng, tăng 17,3%. Kênh theo Adtek: lead gen và nội dung so sánh quyền lợi.",
-    "Y tế tư nhân: Long Châu đạt doanh thu 21.448 tỷ đồng trong H1/2026, tăng 33%, với 2.639 nhà thuốc (FPT Retail). Rủi ro: quảng cáo y tế phải xin xác nhận nội dung. Kênh theo Adtek: Google Search, SEO y khoa, Zalo đặt lịch."
+    "Y tế tư nhân: Long Châu đạt doanh thu 21.448 tỷ đồng trong H1/2026, tăng 33%, với 2.639 nhà thuốc (FPT Retail, qua Thị trường Tài chính Tiền tệ). Rủi ro: quảng cáo y tế phải xin xác nhận nội dung. Kênh theo Adtek: Google Search, SEO y khoa, Zalo đặt lịch."
    ],
    "chart": {
     "title": "Tăng trưởng doanh thu bảo hiểm phi nhân thọ H1/2026 theo nghiệp vụ",
@@ -201,17 +201,17 @@
    "lead": "Hai phân khúc đi ngược chiều. Nhà ở hạ nhiệt vì lãi vay và tồn kho. Bất động sản công nghiệp hưởng lợi từ FDI.",
    "bullets": [
     "Nhà ở: quý II/2026 có khoảng 100.005 giao dịch, bằng 63,7% cùng kỳ. Tồn kho nhà riêng lẻ tăng 46,4% so với quý I (Bộ Xây dựng, 25/34 địa phương báo cáo).",
-    "Hà Nội mở bán khoảng 16.600 căn hộ trong H1/2026, cao nhất từ 2020; giá thứ cấp quý II giảm khoảng 2,5% so với quý trước (CBRE).",
-    "Rủi ro: lãi cố định 12-24 tháng phổ biến 10,9%/năm trong tháng 8/2026 (DKRA). Kênh theo Adtek: Meta, Google lead gen có bước lọc, Zalo, video và 3D.",
-    "Bất động sản công nghiệp: phía Nam có tỷ lệ lấp đầy 76,3% với đất khu công nghiệp, 92% với nhà xưởng và 91,7% với kho xây sẵn (Cushman & Wakefield, 8/2026). Phía Bắc quý II lấp đầy 64%.",
+    "Hà Nội mở bán khoảng 16.600 căn hộ trong H1/2026, cao nhất cho nửa đầu năm kể từ 2020; giá thứ cấp quý II giảm gần 3% so với quý trước, lần đầu giảm kể từ cuối 2022 (CBRE).",
+    "Rủi ro: lãi vay cố định 12-24 tháng bình quân 10,9%/năm tại 11 ngân hàng trong tháng 8/2026 (DKRA). Kênh theo Adtek: Meta, Google lead gen có bước lọc, Zalo, video và 3D.",
+    "Bất động sản công nghiệp: quý II/2026, phía Nam có tỷ lệ lấp đầy 76,3% với đất khu công nghiệp, 92% với nhà xưởng và 91,7% với kho xây sẵn; đất khu công nghiệp phía Bắc lấp đầy 64% (Cushman & Wakefield).",
     "Động lực: FDI thực hiện vào chế biến chế tạo đạt 17,40 tỷ USD trong 9 tháng (Cục Thống kê). Rủi ro: chu kỳ quyết định dài. Kênh theo Adtek: SEO tiếng Anh, Hàn, Trung; Google Search quốc tế."
    ],
    "chart": {
-    "title": "Tỷ lệ lấp đầy bất động sản công nghiệp năm 2026",
+    "title": "Tỷ lệ lấp đầy bất động sản công nghiệp quý II/2026",
     "unit": "%",
     "items": [
      {
-      "label": "Đất KCN phía Bắc (quý II)",
+      "label": "Đất KCN phía Bắc",
       "value": 64.0
      },
      {
@@ -227,7 +227,7 @@
       "value": 92.0
      }
     ],
-    "source": "Cushman & Wakefield Việt Nam, báo cáo quý II/2026 (phía Bắc) và 8/2026 (phía Nam)"
+    "source": "Cushman & Wakefield Việt Nam, MarketBeat quý II/2026 (phía Nam công bố 17/8/2026)"
    },
    "callout": "Nhận định của Adtek: chủ đầu tư có tồn kho nên đo hiệu quả bằng tỷ lệ lead đi xem nhà thay vì giá mỗi lead."
   }
@@ -251,7 +251,7 @@
   {
    "title": "Nhắm theo địa bàn có chính sách hỗ trợ",
    "text": "Xe điện và điện mặt trời mái nhà tăng mạnh ở nơi có chính sách cụ thể. Target quảng cáo cũng cần cập nhật địa danh theo 34 tỉnh, thành mới.",
-   "example": "Một đại lý xe máy điện ở Hà Nội chạy Meta và Google theo bán kính 3 km quanh các phường thí điểm vùng phát thải thấp, kèm chương trình thu xe xăng cũ."
+   "example": "Một đại lý xe máy điện ở Hà Nội chạy Meta và Google theo bán kính 3 km quanh khu vực thí điểm vùng phát thải thấp ở phường Hoàn Kiếm và các phường Vành đai 1 sắp áp dụng, kèm chương trình thu xe xăng cũ."
   },
   {
    "title": "Tiếp cận khách quốc tế bằng nội dung bản ngữ",
@@ -266,58 +266,40 @@
  ],
  "sources": [
   {
-   "name": "GDP quý III/2026 của Việt Nam tăng 9,95%",
-   "publisher": "Mekong ASEAN, dẫn Cục Thống kê",
-   "date": "10/2026",
-   "url": "https://mekongasean.vn/gdp-quy-iii2026-cua-viet-nam-tang-995-60268.html"
+   "name": "Báo cáo tình hình kinh tế - xã hội quý III và 9 tháng năm 2026",
+   "publisher": "Cục Thống kê (Bộ Tài chính)",
+   "date": "3/10/2026",
+   "url": "https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2026/10/bao-cao-tinh-hinh-kinh-te-xa-hoi-quy-iii-va-9-thang-nam-2026/"
   },
   {
-   "name": "GDP quý III tăng 9,95%",
-   "publisher": "VnExpress, dẫn Cục Thống kê",
-   "date": "10/2026",
-   "url": "https://vnexpress.net/gdp-quy-iii-tang-9-95-5127865.html"
+   "name": "Một số nét chính tình hình kinh tế - xã hội quý III và 9 tháng năm 2026",
+   "publisher": "Cục Thống kê (Bộ Tài chính)",
+   "date": "3/10/2026",
+   "url": "https://www.nso.gov.vn/bai-top/2026/10/mot-so-net-chinh-tinh-hinh-kinh-te-xa-hoi-quy-iii-va-9-thang-nam-2026/"
   },
   {
-   "name": "Người tiêu dùng Việt mạnh tay chi tiêu hơn 5.925 nghìn tỷ đồng trong 9 tháng",
-   "publisher": "VietnamPlus, dẫn Cục Thống kê",
-   "date": "10/2026",
-   "url": "https://www.vietnamplus.vn/nguoi-tieu-dung-viet-manh-tay-chi-tieu-hon-5925-nghin-ty-dong-trong-9-thang-post1139808.vnp"
+   "name": "Biểu số liệu tháng 9/2026 (khách quốc tế theo thị trường)",
+   "publisher": "Cục Thống kê (Bộ Tài chính)",
+   "date": "3/10/2026",
+   "url": "https://www.nso.gov.vn/wp-content/uploads/2026/10/02.-Bieu-thang-9.2026.xlsx"
   },
   {
-   "name": "Tổng mức bán lẻ hàng hóa và doanh thu dịch vụ tiêu dùng 9 tháng tăng 13,4%",
-   "publisher": "Tạp chí Kinh tế Tài chính",
-   "date": "10/2026",
-   "url": "https://tapchikinhtetaichinh.vn/tong-muc-ban-le-hang-hoa-va-doanh-thu-dich-vu-tieu-dung-9-thang-tang-13-4-168577.html"
-  },
-  {
-   "name": "Vốn FDI thực hiện 9 tháng đạt hơn 21 tỷ USD, cao nhất 5 năm",
-   "publisher": "Báo Đấu thầu, dẫn Cục Thống kê",
-   "date": "10/2026",
-   "url": "https://baodauthau.vn/von-fdi-thuc-hien-9-thang-dat-hon-21-ty-usd-cao-nhat-5-nam-post208924.html"
-  },
-  {
-   "name": "Xuất khẩu vượt mốc 434 tỷ USD",
-   "publisher": "Thuế Hải quan (Tạp chí Kinh tế Tài chính)",
-   "date": "4/10/2026",
-   "url": "https://thuehaiquan.tapchikinhtetaichinh.vn/xuat-khau-vuot-moc-434-ty-usd-168586.html"
-  },
-  {
-   "name": "Khách quốc tế đến Việt Nam 9 tháng 2026 tăng 14,5%",
-   "publisher": "Báo Văn hóa, dẫn Cục Du lịch Quốc gia Việt Nam",
-   "date": "10/2026",
-   "url": "https://baovanhoa.vn/du-lich/khach-quoc-te-den-viet-nam-9-thang-2026-tang-145-271196.html"
-  },
-  {
-   "name": "ADB nâng dự báo tăng trưởng Việt Nam lên 7,8% năm 2026",
-   "publisher": "Mekong ASEAN, dẫn ADB",
+   "name": "Viet Nam: Economy (Asian Development Outlook September 2026)",
+   "publisher": "Asian Development Bank",
    "date": "9/2026",
-   "url": "https://mekongasean.vn/adb-nang-du-bao-tang-truong-viet-nam-len-78-nam-2026-59910.html"
+   "url": "https://www.adb.org/countries/viet-nam/economy"
   },
   {
-   "name": "World Bank nâng dự báo tăng trưởng Việt Nam lên 7,4%",
-   "publisher": "Mekong ASEAN, dẫn World Bank",
-   "date": "10/2026",
-   "url": "https://mekongasean.vn/world-bank-nang-du-bao-tang-truong-viet-nam-len-74-60355.html"
+   "name": "East Asia and Pacific Economic Update October 2026: Riding the AI Wave",
+   "publisher": "World Bank",
+   "date": "6/10/2026",
+   "url": "https://openknowledge.worldbank.org/server/api/core/bitstreams/8ebed249-9e9e-4707-89e4-a53dc5d99227/content"
+  },
+  {
+   "name": "Standard Chartered nâng mạnh dự báo tăng trưởng Việt Nam, kỳ vọng GDP đạt 11% năm 2027",
+   "publisher": "Tạp chí Kinh tế Tài chính, dẫn Standard Chartered",
+   "date": "20/7/2026",
+   "url": "https://tapchikinhtetaichinh.vn/standard-chartered-nang-manh-du-bao-tang-truong-viet-nam-ky-vong-gdp-dat-11-nam-2027-162251.html"
   },
   {
    "name": "Standard Chartered nâng dự báo tăng trưởng GDP Việt Nam lên 9,5%",
@@ -326,64 +308,52 @@
    "url": "https://www.vietnamplus.vn/standard-chartered-nang-du-bao-tang-truong-gdp-viet-nam-len-95-post1125183.vnp"
   },
   {
-   "name": "Standard Chartered nâng mạnh dự báo tăng trưởng Việt Nam, kỳ vọng GDP đạt 11% năm 2027",
-   "publisher": "Tạp chí Kinh tế Tài chính",
+   "name": "Báo cáo TMĐT Việt Nam Q3/2026: Người tiêu dùng trực tuyến tích cực hơn hẳn về khả năng chi tiêu mua sắm online",
+   "publisher": "YouNet ECI",
+   "date": "14/10/2026",
+   "url": "https://youneteci.com/vi/bao-cao-toan-canh-tmdt-viet-nam-q3-2026/"
+  },
+  {
+   "name": "Báo cáo toàn cảnh TMĐT Việt Nam nửa đầu năm 2026",
+   "publisher": "YouNet ECI",
+   "date": "10/8/2026",
+   "url": "https://youneteci.com/vi/bao-cao-toan-canh-tmdt-viet-nam-nua-dau-nam-2026/"
+  },
+  {
+   "name": "Báo cáo Thương mại điện tử Việt Nam 6 tháng đầu năm 2026",
+   "publisher": "Metric",
+   "date": "29/7/2026",
+   "url": "https://metric.vn/insights/metric-bao-cao-thuong-mai-dien-tu-viet-nam-6-thang-dau-nam-2026/"
+  },
+  {
+   "name": "Người Việt 'đổ' gần 50.000 tỷ đồng mua mỹ phẩm online",
+   "publisher": "Znews, dẫn Metric",
+   "date": "28/7/2026",
+   "url": "https://lifestyle.znews.vn/nguoi-viet-do-gan-50000-ty-dong-mua-my-pham-online-post1672538.html"
+  },
+  {
+   "name": "TikTok Shop soán ngôi Shopee trong cuộc đua thị phần ngành Dưỡng ẩm 7 tháng đầu năm 2026",
+   "publisher": "Metric",
+   "date": "28/8/2026",
+   "url": "https://metric.vn/insights/tiktok-shop-soan-ngoi-shopee-trong-cuoc-dua-thi-phan-nganh-duong-am-7-thang-dau-nam-2026/"
+  },
+  {
+   "name": "Toàn cảnh thị trường và Top 5 thương hiệu ngành Sữa công thức cho bé trên TMĐT H1/2026",
+   "publisher": "Metric",
+   "date": "28/8/2026",
+   "url": "https://metric.vn/insights/toan-canh-thi-truong-top-5-thuong-hieu-nganh-sua-cong-thuc-cho-be-tren-tmdt-h1-2026/"
+  },
+  {
+   "name": "VNG Snapshot Q2/2026 (Zalo 81,3 triệu MAU)",
+   "publisher": "VNG",
    "date": "7/2026",
-   "url": "https://tapchikinhtetaichinh.vn/standard-chartered-nang-manh-du-bao-tang-truong-viet-nam-ky-vong-gdp-dat-11-nam-2027-162251.html"
+   "url": "https://cms-investor-cdn.vng.com.vn/VNG_Snapshot_Q2_2026_VIE_a8037478fc.pdf"
   },
   {
-   "name": "Chợ mạng tăng trưởng 27% trong quý 3, Gen Z và Gen Y tăng chi tiêu",
-   "publisher": "Tuổi Trẻ, dẫn YouNet ECI",
-   "date": "15/10/2026",
-   "url": "https://tuoitre.vn/cho-mang-tang-truong-27-trong-quy-3-gen-z-va-gen-y-tang-chi-tieu-100261015202516071.htm"
-  },
-  {
-   "name": "Báo cáo TMĐT Việt Nam Q3/2026",
-   "publisher": "YouNet ECI, đăng trên Brands Vietnam",
-   "date": "13/10/2026",
-   "url": "https://www.brandsvietnam.com/congdong/topic/bao-cao-tmdt-viet-nam-q3-2026-nguoi-tieu-dung-truc-tuyen-chi-tieu-mua-sam-online-tich-cuc-hon-han"
-  },
-  {
-   "name": "Nửa năm người Việt chi hơn 290 nghìn tỷ đồng mua hàng qua mạng",
-   "publisher": "Stockbiz (đăng lại VTC News), dẫn Metric",
-   "date": "7/2026",
-   "url": "https://stockbiz.vn/tin-tuc/nua-nam-nguoi-viet-chi-hon-290-nghin-ty-dong-mua-hang-qua-mang/41095174"
-  },
-  {
-   "name": "Người Việt đổ gần 50.000 tỷ đồng mua mỹ phẩm online",
-   "publisher": "Báo Mới, dẫn Metric",
-   "date": "2026",
-   "url": "https://baomoi.com/nghich-ly-tren-san-tmDt-o-viet-nam-c55711591.epi"
-  },
-  {
-   "name": "Metric: TikTok Shop soán ngôi Shopee trong cuộc đua thị phần ngành Dưỡng ẩm 7 tháng đầu năm 2026",
-   "publisher": "Metric, đăng trên Brands Vietnam",
-   "date": "2026",
-   "url": "https://www.brandsvietnam.com/congdong/topic/metric-tiktok-shop-soan-ngoi-shopee-trong-cuoc-dua-thi-phan-nganh-duong-am-7-thang-dau-nam-2026"
-  },
-  {
-   "name": "Metric: Toàn cảnh thị trường và Top 5 thương hiệu ngành Sữa công thức và Thực phẩm cho bé H1/2026",
-   "publisher": "Metric, đăng trên Brands Vietnam",
-   "date": "2026",
-   "url": "https://www.brandsvietnam.com/congdong/topic/metric-toan-canh-thi-truong-top-5-thuong-hieu-nganh-sua-cong-thuc-thuc-pham-cho-be-h1-2026"
-  },
-  {
-   "name": "Ngành hàng ô tô, xe máy tăng trưởng mạnh trên các sàn thương mại điện tử",
-   "publisher": "Tạp chí Kinh tế Tài chính, dẫn Metric",
-   "date": "2026",
-   "url": "https://tapchikinhtetaichinh.vn/nganh-hang-o-to-xe-may-tang-truong-manh-tren-cac-san-thuong-mai-dien-tu-163975.html"
-  },
-  {
-   "name": "Thương mại điện tử Việt Nam đổi nhịp: người mua chi nhiều hơn, shop nhỏ dần rời cuộc chơi",
-   "publisher": "Doanh nhân và Pháp luật, dẫn Metric",
-   "date": "2026",
-   "url": "https://doanhnhan.baophapluat.vn/thuong-mai-dien-tu-viet-nam-doi-nhip-nguoi-mua-chi-nhieu-hon-shop-nho-dan-roi-cuoc-choi.html"
-  },
-  {
-   "name": "Zalo có 81,3 triệu người dùng hàng tháng",
-   "publisher": "VietnamPlus, dẫn VNG",
-   "date": "8/2026",
-   "url": "https://www.vietnamplus.vn/zalo-co-813-trieu-nguoi-dung-hang-thang-post1127226.vnp"
+   "name": "Luật số 75/2025/QH15 sửa đổi, bổ sung một số điều của Luật Quảng cáo",
+   "publisher": "Quốc hội (bản đăng trên cổng thông tin TP. Hà Nội)",
+   "date": "16/6/2025",
+   "url": "https://storage-vnportal.vnpt.vn/gov-hni/7218/VanBan/2025/7/30/LU%E1%BA%ACT%20S%E1%BB%ACA%20%C4%90%E1%BB%94I%20B%E1%BB%94%20SUNG%20LU%E1%BA%ACT%20QU%E1%BA%A2NG%20C%C3%81O.pdf"
   },
   {
    "name": "Luật Quảng cáo mới sẽ định hình lại hành vi KOL, KOC trên nền tảng số",
@@ -392,21 +362,21 @@
    "url": "https://vneconomy.vn/luat-quang-cao-moi-se-dinh-hinh-lai-hanh-vi-kol-koc-tren-nen-tang-so.htm"
   },
   {
-   "name": "Luật Thương mại điện tử 2025 số 122/2025/QH15",
-   "publisher": "Thư viện Pháp luật",
-   "date": "12/2025",
-   "url": "https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Thuong-mai-dien-tu-2025-so-122-2025-QH15-662035.aspx"
+   "name": "Trách nhiệm người livestream bán hàng phải tuân thủ (Luật Thương mại điện tử 122/2025/QH15)",
+   "publisher": "Luật sư Việt Nam (LSVN)",
+   "date": "2026",
+   "url": "https://lsvn.vn/trach-nhiem-nguoi-livestream-ban-hang-phai-tuan-thu-a168346.html"
   },
   {
    "name": "Tham gia livestream bán hàng, tiếp thị liên kết phải xác thực danh tính",
    "publisher": "Mekong ASEAN",
-   "date": "2026",
+   "date": "7/2026",
    "url": "https://mekongasean.vn/tham-gia-livestream-ban-hang-tiep-thi-lien-ket-phai-xac-thuc-danh-tinh-57439.html"
   },
   {
    "name": "Mua bán dữ liệu cá nhân có thể bị phạt tới 10 lần khoản thu, tối đa 3 tỷ đồng",
    "publisher": "Doanh nghiệp Hội nhập",
-   "date": "7/2026",
+   "date": "7/2025",
    "url": "https://doanhnghiephoinhap.vn/mua-ban-du-lieu-ca-nhan-co-the-bi-phat-toi-10-lan-khoan-thu-toi-da-3-ty-dong-109998.html"
   },
   {
@@ -440,10 +410,10 @@
    "url": "https://vnreview.vn/threads/vinfast-vuot-doanh-so-ca-nam-ngoai-chi-sau-9-thang-vf-3-tiep-tuc-la-xe-ban-chay-nhat.92961/"
   },
   {
-   "name": "Thị trường xe máy Việt thay đổi về chất năm 2026",
-   "publisher": "VnEconomy, dẫn MotorcyclesData",
+   "name": "Doanh số tăng vọt gần 100%, thị trường xe máy điện Việt Nam chứng kiến cuộc đua thị phần khốc liệt",
+   "publisher": "Doanh nhân và Pháp luật, dẫn MotorcyclesData",
    "date": "8/2026",
-   "url": "https://vneconomy.vn/automotive/thi-truong-xe-may-viet-thay-doi-ve-chat-nam-2026.htm"
+   "url": "https://doanhnhan.baophapluat.vn/doanh-so-tang-vot-gan-100-thi-truong-xe-may-dien-viet-nam-chung-kien-cuoc-dua-thi-phan-khoc-liet.html"
   },
   {
    "name": "Xe máy điện chiếm gần 28% doanh số: Thị trường Việt phân chia lại thị phần?",
@@ -452,37 +422,25 @@
    "url": "https://vov.vn/o-to-xe-may/xe-may-dien-chiem-gan-28-doanh-so-thi-truong-viet-phan-chia-lai-thi-phan-post1327209.vov"
   },
   {
-   "name": "Lộ trình cấm xe máy (chuyên trang)",
-   "publisher": "Tuổi Trẻ",
-   "date": "2026",
-   "url": "https://tuoitre.vn/lo-trinh-cam-xe-may-e388.htm"
+   "name": "Hà Nội bắt đầu triển khai vùng phát thải thấp từ 1/7",
+   "publisher": "VnEconomy",
+   "date": "15/6/2026",
+   "url": "https://vneconomy.vn/ha-noi-bat-dau-trien-khai-vung-phat-thai-thap-tu-17.htm"
   },
   {
-   "name": "Hà Nội chưa cấm hoàn toàn xe máy xăng vào Vành đai 1",
-   "publisher": "Nông nghiệp và Môi trường",
-   "date": "2026",
-   "url": "https://nongnghiepmoitruong.vn/ha-noi-chua-cam-hoan-toan-xe-may-xang-vao-vanh-dai-1-d805084.html"
+   "name": "Điện mặt trời mái nhà: Nâng tỷ lệ sản lượng điện dư được phép bán lên tới 50% (Nghị định 243/2026/NĐ-CP)",
+   "publisher": "Báo Điện tử Chính phủ",
+   "date": "27/6/2026",
+   "url": "https://baochinhphu.vn/dien-mat-troi-mai-nha-nang-ty-le-san-luong-dien-du-duoc-phep-ban-len-toi-50-102260627163140525.htm"
   },
   {
-   "name": "Người dân được bán tối đa 50% điện mặt trời mái nhà lên lưới điện quốc gia",
-   "publisher": "Luật sư Việt Nam (LSVN)",
-   "date": "6/2026",
-   "url": "https://lsvn.vn/nguoi-dan-duoc-ban-toi-da-50-dien-mat-troi-mai-nha-len-luoi-dien-quoc-gia-a175034.html"
-  },
-  {
-   "name": "Nới quy định bán điện dư từ điện mặt trời mái nhà lên 50%",
-   "publisher": "VOV",
-   "date": "6/2026",
-   "url": "https://vov.vn/kinh-te/noi-quy-dinh-ban-dien-du-tu-dien-mat-troi-mai-nha-len-50-post1310254.vov"
-  },
-  {
-   "name": "Chỉ thị 10/CT-TTg: cú hích kép cho tiết kiệm điện và điện mặt trời mái nhà",
+   "name": "Chỉ thị 10/CT-TTg về việc tăng cường thực thi tiết kiệm điện và phát triển điện mặt trời mái nhà",
    "publisher": "Bộ Công Thương",
-   "date": "2026",
-   "url": "https://moit.gov.vn/tin-tuc/su-dung-nang-luong-tiet-kiem-va-hieu-qua/chi-thi-10-ct-ttg-cu-hich-kep-cho-tiet-kiem-dien-va-dien-mat-troi-mai-nha.html"
+   "date": "3/2026",
+   "url": "https://moit.gov.vn/tin-tuc/chi-thi-10-ct-ttg-ve-viec-tang-cuong-thuc-thi-tiet-kiem-dien-va-phat-trien-dien-mat-troi-mai-nha.html"
   },
   {
-   "name": "Tăng tốc phát triển điện mặt trời mái nhà",
+   "name": "Chỉ 2/34 tỉnh hoàn thành lắp điện mặt trời mái nhà công sở",
    "publisher": "VnEconomy",
    "date": "2026",
    "url": "https://vneconomy.vn/tang-toc-phat-trien-dien-mat-troi-mai-nha.htm"
@@ -500,22 +458,10 @@
    "url": "https://www.vietnamplus.vn/danh-sach-20-truong-o-ha-noi-thi-diem-dua-tieng-anh-thanh-ngon-ngu-thu-hai-post1122872.vnp"
   },
   {
-   "name": "Number of Vietnamese students in the US reaches all-time high",
-   "publisher": "Báo Chính phủ (bản tiếng Anh), dẫn IIE Open Doors 2025",
+   "name": "Open Doors: Vietnam Fact Sheet 2025",
+   "publisher": "Institute of International Education (IIE)",
    "date": "11/2025",
-   "url": "https://en.baochinhphu.vn/number-of-vietnamese-students-in-the-us-reaches-all-time-high-111251118160036211.htm"
-  },
-  {
-   "name": "Vietnamese student number in US reaches all-time high",
-   "publisher": "Báo Bắc Ninh (bản tiếng Anh), dẫn IIE",
-   "date": "11/2025",
-   "url": "https://en.baobacninhtv.vn/vietnamese-student-number-in-us-reaches-all-time-high-postid431691.bbg"
-  },
-  {
-   "name": "Đà Nẵng đón gần 16 triệu lượt khách lưu trú trong 9 tháng năm 2026",
-   "publisher": "VietnamPlus",
-   "date": "10/2026",
-   "url": "https://www.vietnamplus.vn/da-nang-don-gan-16-trieu-luot-khach-luu-tru-trong-9-thang-nam-2026-post1140183.vnp"
+   "url": "https://opendoorsdata.org/wp-content/uploads/2026/01/OD_Vietnam_Fact-Sheet-2025.pdf"
   },
   {
    "name": "3 tháng đầu năm, thanh toán qua QR Code tăng 52,4% giá trị",
@@ -530,6 +476,12 @@
    "url": "https://vietnamfinance.vn/nua-dau-nam-2026-bao-hiem-phi-nhan-tho-tang-truong-tren-14-d147938.html"
   },
   {
+   "name": "Tổng quan thị trường bảo hiểm nhân thọ 8 tháng năm 2026",
+   "publisher": "Hiệp hội Bảo hiểm Việt Nam (IAV)",
+   "date": "10/2026",
+   "url": "https://iav.vn/tin-hoat-dong-khoi-nhan-tho/345339-345339-tong-quan-thi-truong-bao-hiem-nhan-tho-8-thang-nam-2026"
+  },
+  {
    "name": "Thị trường bảo hiểm 8 tháng: hơn 1 triệu hợp đồng nhân thọ, doanh thu phí phi nhân thọ tăng 16,6%",
    "publisher": "Thị trường Tài chính Tiền tệ, dẫn Hiệp hội Bảo hiểm Việt Nam",
    "date": "10/2026",
@@ -542,10 +494,10 @@
    "url": "https://thitruongtaichinhtiente.vn/chuoi-long-chau-cua-fpt-retail-so-huu-hon-2-600-nha-thuoc-doanh-thu-tang-truong-33-84590.html"
   },
   {
-   "name": "Bất động sản quý II/2026: Giao dịch đất nền giảm hơn 40%, tồn kho 46,4%",
-   "publisher": "VOV, dẫn Bộ Xây dựng",
-   "date": "2026",
-   "url": "https://vov.vn/kinh-te/bat-dong-san-quy-ii2026-giao-dich-dat-nen-giam-hon-40-ton-kho-464-post1326015.vov"
+   "name": "Bộ Xây dựng: Giá bán căn hộ chung cư có xu hướng giảm",
+   "publisher": "Thời báo Tài chính Việt Nam, dẫn Bộ Xây dựng",
+   "date": "8/2026",
+   "url": "https://thoibaotaichinhvietnam.vn/bo-xay-dung-gia-ban-can-ho-chung-cu-co-xu-huong-giam-202686.html"
   },
   {
    "name": "Tồn kho bất động sản tăng, nhà ở riêng lẻ tăng hơn 46%",
@@ -566,9 +518,9 @@
    "url": "https://nhadautu.vn/lai-suat-vay-mua-nha-binh-quan-da-vuot-10-nam-d107287.html"
   },
   {
-   "name": "Southern Vietnam industrial real estate maintains stable fundamentals",
+   "name": "Bất động sản công nghiệp phía Nam duy trì nền tảng ổn định (MarketBeat Q2 2026)",
    "publisher": "Cushman & Wakefield Việt Nam",
-   "date": "8/2026",
+   "date": "17/8/2026",
    "url": "https://www.cushmanwakefield.com/vi-vn/vietnam/news/2026/08/southern-vietnam-industrial-real-estate-maintains-stable-fundamentals"
   },
   {
@@ -579,22 +531,14 @@
   }
  ],
  "verification_notes": [
-  "Toàn bộ số liệu kiểm chứng bằng WebSearch (tóm tắt kết quả); WebFetch bị chặn (ENOTFOUND vtcnews.vn), chưa đọc được bài gốc hay báo cáo gốc của Cục Thống kê, Metric, YouNet ECI.",
-  "Đã kiểm chứng và giữ: GDP quý I-III và 9 tháng, theo khu vực, CPI; bán lẻ 9 tháng, quý III, bán lẻ hàng hóa 12,8%; FDI đăng ký, thực hiện, chế biến chế tạo, Singapore, Hàn Quốc; xuất nhập khẩu 9 tháng; khách quốc tế 9 tháng, thị trường nguồn, đường hàng không; ADB, World Bank (6/10/2026), Standard Chartered; YouNet ECI 9 tháng (411.800 tỷ, +22%, quý III +27%, Shopee 53%, TikTok Shop 45%, quý IV >20%); Metric H1 (291,6 nghìn tỷ +44,11%, làm đẹp ~49.500 tỷ +38,44%, sữa và thực phẩm cho bé 4,09 nghìn tỷ +48%, ô tô xe máy trên sàn 7,34 nghìn tỷ +56,34%, dưỡng ẩm 7 tháng 4.873 tỷ +34%); VAMA; VinFast; xe máy điện 7 tháng; Hà Nội vùng phát thải thấp; Nghị định 243/2026; Chỉ thị 10/CT-TTg; EVNNPC; Hà Nội 20 cơ sở tiếng Anh; Open Doors; Đà Nẵng; thanh toán không tiền mặt quý I; bảo hiểm H1 và 8 tháng; Long Châu; Bộ Xây dựng quý II; CBRE H1 và quý II; DKRA 10,9%; Cushman & Wakefield; Zalo; Luật Quảng cáo, Luật TMĐT, Luật BVDLCN.",
-  "Ngành làm đẹp: Metric ghi +38,44% (H1/2026, doanh số 4 sàn) còn YouNet ECI ghi +17% (9 tháng, GMV) và +12% (H1, theo file đầu vào, không kiểm chứng được). Báo cáo trình bày riêng từng nguồn, không đưa vào cùng biểu đồ. Con số YouNet 17% và tỷ trọng 13% chỉ thấy trong một tóm tắt tìm kiếm về bài Brands Vietnam, một lượt tìm khác không thấy; đã ghi 'theo YouNet ECI'.",
-  "Quy mô TMĐT H1/2026 lệch giữa Metric (291,6 nghìn tỷ, +44,11%) và YouNet ECI (264,8 nghìn tỷ, +19%). Báo cáo chỉ dùng YouNet cho số 9 tháng và Metric cho số ngành hàng H1; biểu đồ phần tiêu dùng chỉ dùng Metric.",
-  "Đã loại vì không kiểm chứng được: FMCG +26% trong 9 tháng và +36% quý III (YouNet); bách hóa và thực phẩm +151% (Metric); TikTok Shop 49% thị phần mỹ phẩm 4 tháng; khoảng cách 4.300 tỷ giữa hai sàn quý III; CBRE quý III/2026 Hà Nội 6.200 căn, -40%, giá 86 triệu/m² (chưa thấy báo cáo quý III; thay bằng số CBRE H1 và quý II); điện mặt trời mái nhà 103.000 hệ thống, 9.500 MW; nhà ở xã hội 10.200 căn; Úc -42% nhập học; edtech 5 tỷ USD; Tâm Anh, Thu Cúc, Tâm Đức; nha khoa IMARC; container +15% (MBS); lưu trú ăn uống 8 tháng toàn quốc 670,3 nghìn tỷ (không tìm lại được, chưa có số 9 tháng toàn quốc); thẩm quyền cấp tỉnh xác nhận quảng cáo TPCN theo Nghị quyết 21/2026/NQ-CP; Cushman giá thuê 186,6 USD/m² quý I.",
-  "VAMA tháng 9: tiêu đề báo ghi 'tăng 38%' là so với tháng 8; so với cùng kỳ chỉ tăng 14%. Báo cáo dùng 14%. Số 282.029 xe là phạm vi thống kê rộng của VAMA, không gồm VinFast, Hyundai; hybrid 16.057 chỉ tính thành viên VAMA. Một bài VietnamPlus khác nêu 495.000 xe 9 tháng (+20,2%) theo phạm vi khác; không dùng.",
-  "VinFast 177.697 xe là số hãng tự công bố. Xe máy điện 97,2% là số 7 tháng của MotorcyclesData; số 5 tháng (+84,5%) và H1 (~209.000 xe, +99,2%) khác phạm vi, không dùng.",
-  "Hà Nội: Chỉ thị 20/CT-TTg yêu cầu không còn xe máy xăng trong Vành đai 1 từ 1/7/2026, nhưng thực tế thành phố thí điểm vùng phát thải thấp tại 9 phường theo khu vực và khung giờ. Báo cáo viết theo thực tế triển khai; con số 450.000 xe bị ảnh hưởng đã bỏ.",
-  "Luật BVDLCN: nguồn không thống nhất mức phạt 5% doanh thu (chỉ chuyển dữ liệu xuyên biên giới, hay khung 1-5% cho nhiều vi phạm). Báo cáo chỉ dùng mức phạt mua bán dữ liệu tới 10 lần khoản thu (hoặc 3 tỷ đồng), không dùng 5%.",
-  "Bảo hiểm: phi nhân thọ 8 tháng có hai số 66.191 tỷ (+16,6%) và 66.258 tỷ (+16,68%); dùng 66.191 tỷ, +16,6%. Con số toàn thị trường 6 tháng 118 nghìn tỷ, +2,24% chưa kiểm chứng, đã bỏ.",
-  "Lãi suất: DKRA 10,9%/năm (lãi cố định 12-24 tháng, 11 ngân hàng, 8/2026) và DXS-FERI 12-14%, thả nổi 15-16% đo khác cơ sở; ghi riêng từng nguồn. Bản cuối chỉ in số DKRA; số DXS-FERI đã bỏ khỏi nội dung vì URL gốc (VNBusiness) chưa thấy trực tiếp trong kết quả tìm kiếm.",
-  "Cushman & Wakefield: số phía Nam 76,3%/92%/91,7% từ trang tin tháng 8/2026 của Cushman; số phía Bắc 64% là quý II/2026. Hai kỳ đo khác nhau, đã ghi rõ trong nhãn biểu đồ.",
-  "Singapore 9,26 tỷ USD: một nguồn ghi chiếm 31,7% vốn đăng ký cấp mới; báo cáo chỉ ghi 'dẫn đầu nguồn vốn đăng ký', không nêu tỷ trọng.",
-  "Quy định cấm quảng cáo sản phẩm thay thế sữa mẹ cho trẻ dưới 24 tháng tuổi: kết quả tìm kiếm chủ yếu là bài 2014-2015 về Luật Quảng cáo 2012 và Nghị định 100/2014; chưa xác nhận có văn bản sửa đổi sau đó. Nên rà lại trước khi in.",
-  "Callout, kênh marketing 'theo Adtek' và các ví dụ trong implications là nhận định, kịch bản minh họa của Adtek, không phải số liệu có nguồn và không phải kết quả thực tế của doanh nghiệp nào. Không in phần chấm điểm độ phù hợp với Adtek.",
-  "Sáp nhập còn 34 tỉnh, thành: không tìm riêng, nhưng nhiều nguồn trong phiên (Bộ Xây dựng 25/34 địa phương, VnEconomy 2/34 tỉnh) dùng mốc 34."
+  "Kiểm chứng lại ngày 16/10/2026 trên nguồn gốc (curl, pdftotext; dùng WebSearch khi trang gốc chặn truy cập tự động).",
+  "Đã đối chiếu nguồn gốc và khớp: toàn bộ số vĩ mô với báo cáo và biểu số liệu của Cục Thống kê (3/10/2026); ADB 7,6% (trang ADO 9/2026); World Bank 7,3% (bảng dự báo trong EAP Update 10/2026); YouNet ECI Q3 (411,8 nghìn tỷ, +22%, quý III +27%, Shopee 53%, TikTok Shop 45%, sắc đẹp +17% và 13%, FMCG +26% và +36%, quý IV >20%); Metric H1 (291,6 nghìn tỷ +44,11%, ô tô xe máy +56,34%, Shop Mall 2,79% gian hàng và 34,2% doanh số), sữa cho bé 4,09 nghìn tỷ +48%, dưỡng ẩm 7 tháng 4.873 tỷ +34%; Zalo 81,3 triệu MAU (VNG Snapshot Q2/2026); Nghị định 243/2026 (Báo Chính phủ); Chỉ thị 10/CT-TTg (Bộ Công Thương); Open Doors 25.584; IAV nhân thọ 8 tháng -4%; Cushman & Wakefield phía Nam; Luật Quảng cáo sửa đổi 75/2025/QH15.",
+  "Đã sửa: làm đẹp H1 'gần 49.500 tỷ' thành 'gần 50.000 tỷ' theo Znews dẫn Metric, và nói rõ chỉ theo phân ngành của Metric (YouNet xếp thời trang và phụ kiện lớn nhất, 28%); Hà Nội vùng phát thải thấp: giai đoạn 1 từ 1/7/2026 chỉ thí điểm tại phường Hoàn Kiếm, 9 phường là phạm vi cả đề án; CBRE giá thứ cấp quý II 'khoảng 2,5%' thành 'gần 3%'; DKRA 10,9% là bình quân 11 ngân hàng; Cushman phía Nam là số quý II/2026 (công bố 8/2026), cùng kỳ với phía Bắc; Đà Nẵng: thay 52.945 tỷ, +26,2% (số địa phương qua VietnamPlus) bằng +21,7% theo Cục Thống kê; khách Trung Quốc, Hàn Quốc ghi theo biểu của Cục Thống kê (Hàn Quốc giảm 5,5%); rủi ro giá mua điện dư viết lại theo Nghị định 243 (giá thị trường điện bình quân năm trước); ngày bài Doanh nghiệp Hội nhập về Luật BVDLCN là 7/2025.",
+  "Đã bỏ: số shop nhỏ giảm khoảng 27% (bài báo không nêu tên đơn vị, mâu thuẫn với Metric ghi số shop có đơn tăng 14,11%); thay bằng số Shop Mall của Metric. Đã khôi phục FMCG +26% và +36% vì nay đọc được trên youneteci.com.",
+  "Chỉ báo chí (nguồn gốc không truy cập được hoặc không công khai): Standard Chartered 11% (báo cáo cho khách hàng); VAMA (vama.org.vn không kết nối được), số lấy từ VietnamPlus, Tạp chí Kinh tế Tài chính; VinFast (trang hãng chặn bot); xe máy điện MotorcyclesData; NHNN quý I; IAV phi nhân thọ H1 và 8 tháng; Long Châu (frt.vn chặn); Bộ Xây dựng quý II; CBRE; DKRA; Cushman phía Bắc; EVNNPC; Kế hoạch 259/KH-UBND; 2/34 tỉnh.",
+  "Quy định cấm quảng cáo sữa thay thế sữa mẹ cho trẻ dưới 24 tháng: Luật 75/2025/QH15 (hiệu lực 1/1/2026) không sửa Điều 7 Luật Quảng cáo 2012, nên điều cấm vẫn hiệu lực. Không tìm thấy văn bản thay thế Nghị định 100/2014/NĐ-CP; các cơ sở dữ liệu pháp luật vẫn ghi còn hiệu lực. vbpl.vn chặn truy cập tự động nên chưa xem được trang thuộc tính.",
+  "Callout, kênh marketing 'theo Adtek' và các ví dụ trong implications là nhận định, kịch bản minh họa của Adtek, không phải số liệu có nguồn và không phải kết quả thực tế của doanh nghiệp nào.",
+  "Mốc 34 tỉnh, thành: Cục Thống kê dùng 34 địa phương trong báo cáo 9 tháng 2026."
  ],
  "short_title": "10 ngành tăng trưởng tại Việt Nam 2026",
  "filters": {
