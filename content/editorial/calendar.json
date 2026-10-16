@@ -489,7 +489,7 @@
     25
    ],
    "words": 2000,
-   "status": "scheduled",
+   "status": "draft",
    "wp_id": 6156,
    "published": null,
    "last_reviewed": null,
@@ -528,7 +528,7 @@
     "Link trụ cột /tiktok-shop-vs-shopee/ chưa đặt vì bài đó đăng 20/10, sau bài này một ngày; phiên SEO nên thêm link lên trụ cột sau 20/10. Bài chưa có link sang /4-chien-luoc-d2c-doanh-nghiep-co-the-ap-dung-de-dan-dau-trong-nganh/ (không cần cho nội dung)."
    ],
    "media_id": 6184,
-   "approval": "approved",
+   "approval": "changes_requested",
    "approval_requested": "2026-10-16T22:32:34+07:00"
   },
   {
@@ -660,7 +660,7 @@
     5
    ],
    "words": 2000,
-   "status": "scheduled",
+   "status": "draft",
    "wp_id": 6158,
    "published": null,
    "last_reviewed": null,
@@ -694,7 +694,7 @@
     "Môi trường làm việc chặn WebFetch và curl (proxy trả 403), nên mọi số liệu được kiểm tra qua WebSearch (tóm tắt nội dung trang) hoặc lấy lại từ nguồn đã dùng trong bài Kế hoạch 11.11 và TikTok Shop vs Shopee; anh Tin nên mở các link trong Nguồn tham khảo một lượt trước khi đăng."
    ],
    "media_id": 6185,
-   "approval": "approved",
+   "approval": "changes_requested",
    "approval_requested": "2026-10-16T22:32:34+07:00"
   },
   {
