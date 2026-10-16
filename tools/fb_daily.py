@@ -24,12 +24,15 @@ Cách dùng:
   python3 tools/fb_daily.py auto                   bài pending quá 24 giờ chưa phản hồi: approval = auto (JSON)
   python3 tools/fb_daily.py publish <id> [--dry-run]  đăng (cần approval approved hoặc auto, đủ ảnh)
   python3 tools/fb_daily.py cancel <id>            anh Tin nhắn "hủy": không đăng bài này
+  python3 tools/fb_daily.py retime                 bài chưa đăng, chưa hẹn giờ: giờ đăng ngẫu nhiên 19:00 đến 20:00 (anh Tin chọn 17/10/2026)
+  python3 tools/fb_daily.py scheduled <id> <trig_id>  ghi lịch send_later đã hẹn đăng đúng phút (publish_trigger)
   python3 tools/fb_daily.py delete <id>            gỡ bài đã đăng, approval = held (không tự đăng lại cho tới khi approve)
 """
 import base64
 import html
 import json
 import mimetypes
+import random
 import sys
 from datetime import datetime
 
@@ -108,6 +111,26 @@ def summary(data, x, live_check=False):
     return {"id": x["id"], "when": label(x), "format": x["format"], "title": x["title"], "status": x.get("status"),
             "approval": x.get("approval"), "media": [str(p.relative_to(ROOT)) for p in files],
             "comment": link[0] if link else None, "problems": problems(x, files)}
+
+
+POST_WINDOW = (19 * 60, 20 * 60)  # giờ đăng ngẫu nhiên từ 19:00 đến 20:00, tính bằng phút trong ngày
+
+
+def retime(data):
+    """Gán giờ ngẫu nhiên trong POST_WINDOW cho bài chưa đăng, chưa qua giờ, chưa hẹn send_later.
+    Bài đã có giờ trong khung thì giữ nguyên, nên chạy lại nhiều lần không đổi giờ đã báo anh Tin."""
+    now, changed = datetime.now(VN), []
+    for x in data["facebook"]:
+        if x.get("status") in ("posted", "cancelled") or x.get("publish_trigger") or when(x) <= now:
+            continue
+        h, m = map(int, x["time"].split(":"))
+        if POST_WINDOW[0] <= h * 60 + m <= POST_WINDOW[1]:
+            continue
+        t = random.randint(*POST_WINDOW)
+        x["time"] = f"{t // 60:02d}:{t % 60:02d}"
+        changed.append({"id": x["id"], "time": x["time"]})
+    save(data)
+    print(json.dumps({"retimed": changed}, ensure_ascii=False))
 
 
 def due(data):
@@ -267,6 +290,12 @@ if __name__ == "__main__":
         x["status"] = "cancelled"
         save(data)
         print(json.dumps({"cancelled": x["id"]}))
+    elif cmd == "retime":
+        retime(data)
+    elif cmd == "scheduled":
+        item(data, args[0])["publish_trigger"] = args[1]
+        save(data)
+        print(json.dumps({"scheduled": args[0], "trigger": args[1]}))
     elif cmd == "delete":
         x = item(data, args[0])
         if not x.get("fb_post_id"):

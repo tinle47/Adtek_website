@@ -1,6 +1,6 @@
 # Routine: Facebook Adtek hằng ngày
 
-Chạy trong phiên **Adtek - Facebook post** (session_0196UuuQJu6Edu8fi8VXJDzh). Lịch bài do phiên **Adtek - Marketing** lập trong danh sách `facebook` của `calendar.json`; phiên Facebook post không tự đổi `date`, `time`. Ảnh do phiên **Adtek - Designer** (session_01Wp8F7EosGPrY7v6XwBpRSM) làm, đặt ở `content/facebook/<id>/` (ảnh đơn hoặc carousel `1.jpg`, `2.jpg`...; video `video.mp4`) hoặc ghi danh sách file vào trường `images`. Công cụ: `tools/fb_daily.py`.
+Chạy trong phiên **Adtek - Facebook post** (session_0196UuuQJu6Edu8fi8VXJDzh). Lịch bài do phiên **Adtek - Marketing** lập trong danh sách `facebook` của `calendar.json`; phiên Facebook post không tự đổi `date`. Giờ đăng ngẫu nhiên từ 19:00 đến 20:00 mỗi ngày (anh Tin chọn 17/10/2026): `fb_daily.py retime` gán giờ trong khung cho bài chưa đăng, bài đã có giờ trong khung thì giữ nguyên; lượt báo trước hẹn send_later đăng đúng phút, lượt 20:13 là lưới an toàn. Ảnh do phiên **Adtek - Designer** (session_01Wp8F7EosGPrY7v6XwBpRSM) làm, đặt ở `content/facebook/<id>/` (ảnh đơn hoặc carousel `1.jpg`, `2.jpg`...; video `video.mp4`) hoặc ghi danh sách file vào trường `images`. Công cụ: `tools/fb_daily.py`.
 
 Quy tắc caption: viết theo `brief` và `source`, chỉ dùng số liệu có trong brief (không thêm số liệu chưa kiểm chứng), đúng định dạng ở `format`, 120 đến 200 chữ, dùng skill anti-ai-writing, giữ giọng riêng của Page Adtek (không áp dụng `content/editorial/van-phong.md`, anh Tin chọn ngày 17/10/2026), không emoji, không ký tự gạch dài, không link, số theo định dạng US, ví dụ giả định phải ghi rõ là ví dụ. `hashtags` là 3 hashtag riêng, không dấu, viết liền. Script tự ghép template: tiêu đề in hoa, câu "Xem full bài viết ở bình luận bên dưới." (chỉ khi bài blog `link_post` đã lên sóng, Page sẽ bình luận link), caption, 5 hashtag, Website, Email. Bình luận link: mọi bài có `link_post` mà bài blog đã lên sóng đều bình luận link, không giới hạn số bài mỗi tuần (anh Tin chọn phương án A ngày 16/10/2026).
 
@@ -13,16 +13,18 @@ Khi anh Tin trả lời trong phiên: "duyệt <id>" thì chạy `python3 tools/
 ### Prompt
 
 [Facebook: báo trước bài sắp đăng] Pull branch claude/brave-curie-2c6zbc, làm theo content/editorial/routines/facebook-daily.md (quy tắc caption ở đầu file).
-1. Chạy python3 tools/fb_daily.py week <ngày hôm nay theo giờ Việt Nam>, lấy các bài có giờ đăng trong 12 giờ tới mà status khác posted, cancelled.
+1. Chạy python3 tools/fb_daily.py retime, rồi python3 tools/fb_daily.py week <ngày hôm nay theo giờ Việt Nam>, lấy các bài có giờ đăng trong 12 giờ tới mà status khác posted, cancelled.
 2. Bài chưa có caption hoặc hashtags: viết theo quy tắc caption, ghi vào calendar.json.
 3. Bài chưa có ảnh: nhắn phiên Adtek - Designer (session_01Wp8F7EosGPrY7v6XwBpRSM) bằng send_message, kèm id, giờ đăng, format, title, brief và quy ước content/facebook/<id>/.
 4. Bài có approval rỗng: chạy python3 tools/fb_daily.py notify <id...> --mark, gửi to, subject, body, htmlBody, attachments nguyên văn bằng công cụ gửi Gmail; push notification (dưới 200 ký tự) "Bài Facebook <giờ>: <tiêu đề>. Không nhắn hủy thì đăng đúng giờ." (thêm "đang chờ ảnh" nếu thiếu ảnh); tin nhắn trong phiên với caption đăng thật. Bài đã báo với notified_media = 0 mà nay đã có ảnh: gửi lại email bằng notify <id> (không kèm cờ).
 5. Bài có approval pending: chạy python3 tools/fb_daily.py auto.
+5b. Bài chưa có publish_trigger: gọi send_later với at = date và time của bài (giờ Việt Nam, đổi sang RFC3339 +07:00), name "Đăng Facebook <id>", message "[Facebook: đăng đúng giờ <id>] Pull branch claude/brave-curie-2c6zbc, làm theo mục 2 trong content/editorial/routines/facebook-daily.md cho riêng bài <id>."; rồi chạy python3 tools/fb_daily.py scheduled <id> <trigger_id>.
 6. Ghi logs/changelog.md, commit, push lên claude/brave-curie-2c6zbc và đồng bộ sang claude/determined-faraday-hhy1ol. Không có bài nào trong 12 giờ tới thì không gửi gì.
 
 ## 2. Đăng bài đến giờ
 
-- Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 13 12,20 * * *` (12:13 và 20:13 mỗi ngày), trig_01BM7F7Xa9Aumx4BjSNK3vH1
+- Đăng đúng phút: send_later do lượt báo trước hẹn cho từng bài (giờ ngẫu nhiên 19:00 đến 20:00).
+- Lưới an toàn: `CRON_TZ=Asia/Ho_Chi_Minh 13 20 * * *` (20:13 mỗi ngày), trig_01BM7F7Xa9Aumx4BjSNK3vH1, đăng bài nào đã qua giờ mà chưa đăng.
 
 ### Prompt
 

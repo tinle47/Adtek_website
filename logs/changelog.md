@@ -157,3 +157,4 @@
 | 2026-10-17 01:35 | monthly-planning.md: tiêu đề và brief bài blog trong kế hoạch tháng theo content/editorial/van-phong.md | content/editorial/routines | Đã áp dụng |
 | 2026-10-17 01:45 | Anh Tin chọn phương án A: Facebook giữ giọng riêng của Page, van-phong.md chỉ áp dụng cho blog. Ghi vào routines/monthly-planning.md, báo phiên Facebook post | content/editorial/routines | Đã áp dụng |
 | 2026-10-17 01:35 | routines/facebook-daily.md: caption Facebook giữ giọng Page Adtek, không áp dụng van-phong.md (phương án A, phiên Marketing báo) | content/editorial/routines | Đã áp dụng |
+| 2026-10-17 01:45 | Giờ đăng Facebook ngẫu nhiên 19:00 đến 20:00 (anh Tin yêu cầu): fb_daily.py thêm retime, scheduled; 51 bài fb-20261017 đến fb-20261206 đổi giờ; lượt báo trước hẹn send_later đăng đúng phút; lượt đăng cố định chỉ còn 20:13 làm lưới an toàn (bỏ 12:13) | tools/fb_daily.py, calendar.json, lịch tự động | Đã áp dụng |
