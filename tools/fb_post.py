@@ -1,6 +1,6 @@
 """Đăng bài Facebook cho bài blog trong content/editorial/calendar.json.
 
-Mỗi bài đăng dạng ảnh dọc 4:5 (content/posts/<slug>-fb.jpg, dựng từ dữ liệu cover của bài) kèm caption không có link.
+Mỗi bài đăng dạng ảnh vuông 1:1 (content/posts/<slug>-fb.jpg, dựng từ cover.hero, cover.hero_text, cover.fb_kicker, cover.subtitle) kèm caption không có link.
 Caption = câu CTA chung (CTA) + fb_caption; fb_caption không tự viết câu mời xem bài ở cuối.
 Ngay sau đó Page tự bình luận fb_comment (tiêu đề ngắn + link bài blog) dưới bài.
 
@@ -108,7 +108,7 @@ def grid_lines():
     return "".join(lines)
 
 
-def cover(post, size=(1080, 1350)):
+def cover(post, size=(1080, 1080)):
     """Ảnh Facebook theo nhận diện bài đăng của Adtek: nền tím xanh, lưới công nghệ, chữ 3D lớn, khung mô tả bo góc."""
     c, esc = post["cover"], html.escape
     w, h = size
@@ -125,7 +125,7 @@ def cover(post, size=(1080, 1350)):
     page = COVER.replace("FONTS", (ASSETS / "fonts").as_uri()).replace("LOGO", (ASSETS / "adtek-logo-white.png").as_uri())
     for k, v in vals.items():
         page = page.replace("{" + k + "}", f"{v:g}" if isinstance(v, float) else str(v))
-    page = (page.replace("{gridlines}", grid_lines()).replace("{kicker}", esc(c["kicker"]))
+    page = (page.replace("{gridlines}", grid_lines()).replace("{kicker}", esc(c.get("fb_kicker") or c["kicker"]))
             .replace("{herotext}", esc(hero)).replace("{title}", esc(title)).replace("{subtitle}", esc(c["subtitle"])))
     src = ROOT / f"previews/fb-{post['slug']}.html"
     out = ROOT / f"content/posts/{post['slug']}-fb.jpg"
