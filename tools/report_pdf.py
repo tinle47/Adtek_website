@@ -91,8 +91,10 @@ def head(title):
 
 
 def theme(r):
-    """Phối màu của báo cáo, cùng bộ với ảnh đại diện (covers.REPORT_THEMES): nền, chữ, khối dưới, thẻ trong khối, chữ thẻ, màu số."""
-    return REPORT_THEMES[(r.get("cover") or {}).get("theme", 0) % len(REPORT_THEMES)]
+    """Phối màu bìa và trang cuối PDF: nền, chữ, khối dưới, thẻ trong khối, chữ thẻ, màu số.
+    Anh Tin chốt (16/10/2026): mọi báo cáo dùng chung mẫu navy trên, khối kem dưới (REPORT_THEMES[0]);
+    cover.theme chỉ còn đổi màu ảnh đại diện trên web."""
+    return REPORT_THEMES[0]
 
 
 # Trang bìa và trang cuối theo series "Báo cáo Adtek" (giống ảnh đại diện): phẳng, không đường kẻ, không hình tròn,
