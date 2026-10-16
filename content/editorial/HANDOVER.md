@@ -40,7 +40,7 @@ Repo `tinle47/adtek_website`, nhánh `claude/brave-curie-2c6zbc`.
 | Thông báo đẩy | Đăng nhập ứng dụng Claude trên điện thoại bằng tài khoản mới |
 | Lịch tự động | Tạo lại 2 routine theo `content/editorial/routines/` (cùng lịch, cùng prompt), gắn vào một phiên cố định |
 | Trang "Lịch blog Adtek" | Trang cũ thuộc tài khoản cũ. Dựng lại bằng `python3 tools/build_blog_page.py <file.html>` rồi publish artifact mới, hoặc chia sẻ trang cũ cho tài khoản mới |
-| Facebook (Graph API) | Thêm `graph.facebook.com` vào network access; network secret header `Authorization: Bearer <Page access token>` (lấy từ System User `claude-blog` trong Business Manager, token không hết hạn, đổi sang Page token bằng `GET /101888089257566?fields=access_token`). Chạy `python3 tools/fb_post.py check` phải ra Page 101888089257566 |
+| Facebook (Graph API) | Thêm `graph.facebook.com` vào network access; network secret header `Authorization: Bearer <Page access token>` (lấy từ System User `claude-blog` trong Business Manager, token không hết hạn, đổi sang Page token bằng `GET /101888089257566?fields=access_token`). Token System User cần đủ 5 quyền: `pages_show_list`, `pages_read_engagement`, `pages_manage_posts`, `pages_manage_engagement`, `pages_read_user_content` (thiếu quyền cuối thì không bình luận được). Chạy `python3 tools/fb_post.py check` phải ra Page 101888089257566 |
 
 ## 4. Thứ tự chuyển giao để không chạy trùng
 
