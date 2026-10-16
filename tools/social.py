@@ -170,8 +170,8 @@ def calc(d, v):
 body{{background:{BG[theme]};color:{FG[theme]}}}
 h1{{position:absolute;left:72px;right:72px;top:150px;font-size:58px;max-height:2.3em}}
 .calc{{position:absolute;left:72px;right:72px;top:340px}}
-table{{width:100%;border-collapse:collapse;font-size:32px}}
-td{{padding:14px 20px}}
+table{{width:100%;border-collapse:collapse;font-size:{32 if len(d['rows']) <= 5 else 27}px}}
+td{{padding:{14 if len(d['rows']) <= 5 else 11}px 20px}}
 td:last-child{{text-align:right;font-weight:600;white-space:nowrap}}
 tr:nth-child(odd) td{{background:{band}}}
 .res{{margin-top:22px;background:{ORANGE};color:{NAVY};display:flex;justify-content:space-between;align-items:baseline;padding:22px 20px}}
