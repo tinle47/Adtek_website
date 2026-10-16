@@ -1,5 +1,5 @@
 {
- "_note": "Lịch blog: 2 bài sâu/tuần, khoảng 2,000 chữ. Quy tắc liên kết và cập nhật xem content/editorial/README.md. links_to: số = bài trong lịch, chuỗi = ID bài đã đăng.",
+ "_note": "Lịch do phiên Adtek - Marketing lập mỗi tháng (content/editorial/routines/monthly-planning.md). Các phiên khác không tự đổi date, time; chỉ viết và đăng theo lịch. posts: blog 4 bài/tuần, status backlog là bài chờ, chưa có lịch. facebook: 1 bài mỗi ngày, định dạng riêng, không đăng lại bài blog. tiktok: 3 video/tuần. links_to: số = bài trong lịch, chuỗi = ID bài đã đăng.",
  "refresh_tiers": {
   "A": "3 tháng (luật, tính năng nền tảng, số liệu thị trường)",
   "B": "6 tháng (hướng dẫn, quy trình)",
@@ -59,7 +59,7 @@
    "meta_desc": "Kế hoạch 11.11 theo từng tuần từ D-30: tính mức giảm giá hòa vốn sau phí sàn 2026, quảng cáo GMV Max, KOC, livestream, vận hành và cách nối sang 12.12.",
    "cover": {
     "kicker": "Mega sale 2026",
-    "title": "Kế hoạch 11.11",
+    "title": "Kế hoạch *11.11*",
     "subtitle": "Checklist 30 ngày: từ giá hòa vốn sau phí sàn đến giữ khách cho 12.12",
     "chips": [
      "Giá hòa vốn",
@@ -72,7 +72,7 @@
     "fb_kicker": "Mega sale 2026",
     "style": "split"
    },
-   "media_id": 6128,
+   "media_id": 6159,
    "summary": "Checklist theo từng tuần từ D-30 đến D+7 cho mùa 11.11 và 12.12: phí sàn 2026, bảng tính mức giảm giá hòa vốn, quảng cáo GMV Max, KOC và livestream, vận hành và giữ chân khách sau sale.",
    "confirm": [],
    "approval": "approved",
@@ -123,7 +123,7 @@
    "meta_desc": "Meta Andromeda thay đổi cách chạy quảng cáo Facebook 2026: Advantage+, nhắm chọn rộng, đa dạng hóa creative, CAPI và cấu trúc tài khoản mới.",
    "cover": {
     "kicker": "Performance Ads",
-    "title": "Meta Andromeda",
+    "title": "Meta *Andromeda*",
     "subtitle": "Advantage+, creative đa dạng và cấu trúc tài khoản mới cho 2026",
     "chips": [
      "Advantage+",
@@ -136,15 +136,13 @@
     "fb_kicker": "Quảng cáo Meta",
     "style": "mark"
    },
-   "media_id": 6129,
+   "media_id": 6161,
    "summary": "Bài trụ cột cụm Quảng cáo: Meta Andromeda là gì, Advantage+ thay đổi những gì, cách tính chuyển đổi mới từ 3/2026, cấu trúc tài khoản, đa dạng hóa creative, đo lường và ngân sách, kèm ví dụ tái cấu trúc tài khoản mỹ phẩm.",
    "confirm": [],
    "approval": "approved",
    "fb_caption": "Một thương hiệu skincare chi 300 triệu đồng mỗi tháng cho quảng cáo Facebook, chia đều cho 12 nhóm quảng cáo theo sở thích. Nhìn rất bài bản.\n\nNhưng mỗi nhóm chỉ nhận khoảng 833,000 đồng một ngày, tức chừng 23 đơn mỗi tuần. Meta cần khoảng 50 sự kiện trong 7 ngày để một nhóm thoát giai đoạn học.\n\n12 nhóm quảng cáo, không nhóm nào học xong.\n\nTừ khi Meta đưa hệ thống Andromeda vào vận hành, cách chia nhỏ tài khoản từng hiệu quả giờ làm tiền bị phân tán. Hệ thống tự tìm người xem. Thứ nhà quảng cáo còn điều khiển được là creative, dữ liệu chuyển đổi gửi về Meta và cấu trúc tài khoản. 20 quảng cáo chung một ảnh, chỉ khác tiêu đề, có thể bị tính như một.\n\nAdtek tổng hợp những gì đã thay đổi trong quảng cáo Meta 2026, cách cấu trúc lại tài khoản, cách đa dạng hóa creative và checklist 8 điểm để rà tài khoản của bạn ngay hôm nay.",
    "fb_comment": "Quảng cáo Meta 2026: Andromeda, Advantage+ và chiến lược creative: https://adtek.agency/meta-andromeda/",
-   "fb_status": "scheduled",
-   "fb_scheduled": "2026-10-18 12:15",
-   "fb_trigger": "trig_016ubU28txMfPQ5E89k2Z8wb",
+   "fb_status": "cancelled",
    "seo_optimized": "2026-10-16 19:45",
    "index_status": "NEUTRAL",
    "index_checked": "2026-10-16 20:12",
@@ -154,7 +152,8 @@
     "#FacebookAds",
     "#QuangCaoFacebook"
    ],
-   "index_notified": "2026-10-16 20:33"
+   "index_notified": "2026-10-16 20:33",
+   "fb_note": "Thay bằng lịch Facebook hằng ngày từ 17/10/2026 (anh Tin chọn), không đăng bài mở bài blog"
   },
   {
    "no": 3,
@@ -203,20 +202,20 @@
     "Thị phần theo ngành của YouNet ECI 2025 (làm đẹp Shopee 54.4%, thời trang TikTok Shop 53.1%, FMCG Shopee 57%, điện tử Shopee 73%) chỉ lấy được qua bài báo tóm tắt.",
     "Số chỉ có một nguồn: phí xử lý giao dịch Shopee từ 4.91% lên 6%, chi phí sàn 23-24% doanh thu (VnBusiness), Shopee Live và Video Tết 2026 gần 16 tỷ lượt xem."
    ],
-   "media_id": 6142,
+   "media_id": 6162,
    "approval": "auto",
    "approval_requested": "2026-10-09T09:03:59+07:00",
    "fb_caption": "6 tuần trước Tết 2026, người Việt chi 67,700 tỷ đồng trên Shopee và TikTok Shop. Lần đầu tiên, TikTok Shop chiếm phần lớn hơn với 51%.\n\nNhiều thương hiệu đọc tin đó và dồn gần hết ngân sách sang TikTok Shop. Vài tuần sau, doanh số từ khóa thương hiệu trên Shopee bắt đầu đi xuống.\n\nCả năm 2025, Shopee vẫn giữ 56% doanh số bốn sàn và 73% ngành điện tử, điện gia dụng. Thời trang nghiêng về TikTok Shop. Làm đẹp gần cân bằng. FMCG nghiêng về Shopee.\n\nHai sàn làm hai việc khác nhau. TikTok Shop tạo nhu cầu bằng video, KOC và livestream. Shopee thu nhu cầu đã có từ ô tìm kiếm, khách mua lại và các ngày mega sale. Cắt một bên thường làm bên kia yếu theo.\n\nBài viết mới của Adtek đưa ra khung chia vai trò và ngân sách giữa hai sàn theo giai đoạn thương hiệu và ngành hàng, kèm ví dụ một thương hiệu skincare chi 1 tỷ đồng mỗi tháng.",
    "fb_comment": "TikTok Shop vs Shopee 2026: chiến lược kênh và phân bổ ngân sách: https://adtek.agency/tiktok-shop-vs-shopee/",
-   "fb_status": "scheduled",
-   "fb_scheduled": "2026-10-20 12:26",
-   "fb_trigger": "trig_01QSg34M35T5RZH9saFqSDJL",
+   "fb_status": "cancelled",
    "fb_title": "TikTok Shop hay Shopee: nên dồn ngân sách vào đâu?",
    "fb_hashtags": [
     "#TikTokShop",
     "#Shopee",
     "#ThuongMaiDienTu"
-   ]
+   ],
+   "fb_note": "Thay bằng lịch Facebook hằng ngày từ 17/10/2026 (anh Tin chọn), không đăng bài mở bài blog",
+   "month": "2026-10"
   },
   {
    "no": 4,
@@ -244,7 +243,7 @@
    "meta_desc": "Luật bảo vệ dữ liệu cá nhân 91/2025 và Nghị định 356 buộc marketer đổi cách xin đồng ý, chia sẻ lead, chạy remarketing. Mức phạt mới và checklist.",
    "cover": {
     "kicker": "Dữ liệu & CRM",
-    "title": "Luật dữ liệu 2026",
+    "title": "Luật *dữ liệu* 2026",
     "subtitle": "Thu lead và remarketing đúng Luật 91/2025, Nghị định 356 và 330",
     "chips": [
      "Form đồng ý",
@@ -264,25 +263,25 @@
     "Miễn trừ cho doanh nghiệp siêu nhỏ, nhỏ và ngưỡng 100,000 người; quy định cấm agency thuê lại toàn bộ dịch vụ quảng cáo có dùng dữ liệu cá nhân: chưa đối chiếu văn bản gốc.",
     "Bài pháp lý: nên nhờ luật sư đọc lướt trước khi đăng."
    ],
-   "media_id": 6131,
+   "media_id": 6163,
    "approval": "auto",
    "approval_requested": "2026-10-09T09:03:59+07:00",
    "fb_caption": "Một ô \"Tôi đồng ý nhận ưu đãi\" được tích sẵn trên form báo giá. Một file 20,000 số điện thoại mua từ nhóm \"data khách đầu tư\". Một lần tải toàn bộ CRM lên Facebook để chạy remarketing.\n\nNhiều đội marketing vẫn làm cả ba việc này hằng tuần.\n\nTừ 19/8/2026, Nghị định 330 về xử phạt vi phạm bảo vệ dữ liệu cá nhân có hiệu lực, và mỗi việc trên đã có khung phạt riêng. Với hành vi mua bán dữ liệu cá nhân, Luật cho phép phạt tới 10 lần khoản thu có được hoặc 3 tỷ đồng.\n\nRemarketing vẫn hợp pháp. Form lead vẫn chạy được. Cái phải đổi là cách xin đồng ý, cách chia lead cho đại lý và cách tải danh sách khách lên nền tảng quảng cáo.\n\nAdtek tổng hợp những gì marketer cần sửa ngay, kèm mẫu nội dung xin đồng ý 3 ô cho form lead và checklist cho cả đội.",
    "fb_comment": "Luật bảo vệ dữ liệu cá nhân 2026: thu lead và remarketing cần đổi gì? https://adtek.agency/luat-bao-ve-du-lieu-ca-nhan-marketing/",
-   "fb_status": "scheduled",
-   "fb_scheduled": "2026-10-22 20:16",
-   "fb_trigger": "trig_01KdbnVUrC8na53E82hSuR4m",
+   "fb_status": "cancelled",
    "fb_title": "Form thu lead của bạn đã đúng luật dữ liệu 2026 chưa?",
    "fb_hashtags": [
     "#DuLieuCaNhan",
     "#LeadGeneration",
     "#Remarketing"
-   ]
+   ],
+   "fb_note": "Thay bằng lịch Facebook hằng ngày từ 17/10/2026 (anh Tin chọn), không đăng bài mở bài blog",
+   "month": "2026-10"
   },
   {
    "no": 5,
    "date": "2026-10-27",
-   "time": "12:48",
+   "time": "08:40",
    "title": "Đo lường tăng trưởng khi ROAS giảm: MER, CAC, LTV và cách đọc đúng",
    "keyword": "chỉ số growth marketing",
    "cluster": "C3",
@@ -307,7 +306,7 @@
    "meta_desc": "ROAS trên Meta, Google giảm chưa chắc quảng cáo kém. Cách đọc MER, CAC khách mới, LTV và lợi nhuận sau phí sàn, kèm bảng chẩn đoán và ví dụ có số liệu.",
    "cover": {
     "kicker": "Dữ liệu & đo lường",
-    "title": "MER, CAC, LTV",
+    "title": "*MER*, CAC, LTV",
     "subtitle": "Đọc đúng tăng trưởng khi ROAS trên nền tảng giảm",
     "chips": [
      "MER",
@@ -330,8 +329,8 @@
    ],
    "fb_caption": "Một thương hiệu chăm sóc da (ví dụ giả định trong bài) mở báo cáo tháng: Meta báo ROAS 4.1, Google 5.0, TikTok 4.0, quảng cáo sàn 5.0.\n\nCộng doanh thu bốn nền tảng tự ghi nhận lại được 1.99 tỷ đồng. Doanh thu thật của cả tháng là 2 tỷ.\n\nTheo báo cáo quảng cáo, gần như không có đơn nào đến từ khách quen, tìm kiếm tự nhiên hay giới thiệu. Con số đó gần như chắc chắn bị đếm trùng.\n\nTừ 12/1/2026, Meta còn bỏ dữ liệu cửa sổ 7 ngày và 28 ngày sau xem trên API. Nhiều dashboard thấy chuyển đổi tụt, đội marketing cắt ngân sách, trong khi số đơn trong kho không đổi.\n\nTrước khi cắt, hãy xem ba con số không phụ thuộc vào cách nền tảng tự đếm: MER (tổng doanh thu chia tổng chi marketing), CAC khách mới, và lợi nhuận còn lại sau phí sàn và quảng cáo.\n\nAdtek viết lại cách đọc MER, CAC, LTV cho thương hiệu bán trên website, Shopee và TikTok Shop, kèm bảng chẩn đoán 5 tình huống khi ROAS giảm.",
    "fb_comment": "MER, CAC, LTV: cách đọc đúng khi ROAS giảm https://adtek.agency/chi-so-growth-marketing/",
-   "fb_status": "ready",
-   "media_id": 6132,
+   "fb_status": "cancelled",
+   "media_id": 6164,
    "approval": "pending",
    "approval_requested": "2026-10-16T09:13:31+07:00",
    "fb_title": "ROAS giảm, có nên cắt ngân sách quảng cáo ngay?",
@@ -339,12 +338,14 @@
     "#ROAS",
     "#MarketingMetrics",
     "#DataDrivenMarketing"
-   ]
+   ],
+   "fb_note": "Thay bằng lịch Facebook hằng ngày từ 17/10/2026 (anh Tin chọn), không đăng bài mở bài blog",
+   "month": "2026-10"
   },
   {
    "no": 6,
    "date": "2026-10-29",
-   "time": "12:56",
+   "time": "08:24",
    "title": "Luật Thương mại điện tử 2026: quy định mới về livestream, KOL/KOC và affiliate",
    "keyword": "luật thương mại điện tử livestream",
    "cluster": "C1",
@@ -366,7 +367,7 @@
    "meta_desc": "Luật Thương mại điện tử 122/2025 và Nghị định 248/2026 quy định gì với livestream, KOL/KOC và affiliate? Trách nhiệm từng bên, mức phạt, checklist hồ sơ.",
    "cover": {
     "kicker": "Social Commerce",
-    "title": "Luật TMĐT 2026",
+    "title": "Luật *TMĐT* 2026",
     "subtitle": "Livestream, KOL/KOC và affiliate theo Luật 122/2025 và Nghị định 248",
     "chips": [
      "Hồ sơ sản phẩm",
@@ -390,8 +391,8 @@
    ],
    "fb_caption": "Ngày 19/11/2025, ba người có ảnh hưởng nổi tiếng nhận mỗi người 2 năm tù vì quảng cáo kẹo rau Kera, sản phẩm không có 10 loại bột rau củ như ghi trên nhãn.\n\nTừ 1/7/2026, Luật Thương mại điện tử mới chia trách nhiệm trong mỗi phiên livestream cho ba bên. Nhãn hàng phải đưa giấy tờ sản phẩm cho người livestream trước khi lên sóng. KOC phải từ chối hợp tác nếu thiếu giấy tờ. Sàn lưu bản ghi phiên live ít nhất 1 năm, nên mỗi câu nói về giá hay công dụng đều có thể được mở lại khi khách khiếu nại.\n\nLuật Quảng cáo sửa đổi còn cấm người có ảnh hưởng giới thiệu sản phẩm mình chưa dùng. Mức phạt cho lỗi này lên tới 100 triệu đồng.\n\nVới nhãn hàng, lịch booking KOC sẽ đổi: gửi sản phẩm sớm 2 đến 3 tuần, gửi bộ hồ sơ trước 7 ngày, viết sẵn câu thông báo quảng cáo cho KOC đọc.\n\nAdtek tổng hợp các văn bản đang áp dụng, bảng trách nhiệm từng bên, bộ hồ sơ 6 phần gửi KOC và checklist cần xong trước 1/1/2027.",
    "fb_comment": "Luật Thương mại điện tử 2026: livestream, KOL/KOC và affiliate cần chuẩn bị gì? https://adtek.agency/luat-thuong-mai-dien-tu-livestream/",
-   "fb_status": "ready",
-   "media_id": 6133,
+   "fb_status": "cancelled",
+   "media_id": 6165,
    "approval": "pending",
    "approval_requested": "2026-10-16T09:13:31+07:00",
    "fb_title": "Nhãn hàng cần gửi KOC giấy tờ gì trước phiên livestream?",
@@ -399,12 +400,14 @@
     "#Livestream",
     "#KOC",
     "#AffiliateMarketing"
-   ]
+   ],
+   "fb_note": "Thay bằng lịch Facebook hằng ngày từ 17/10/2026 (anh Tin chọn), không đăng bài mở bài blog",
+   "month": "2026-10"
   },
   {
    "no": 7,
    "date": "2026-11-03",
-   "time": "12:33",
+   "time": "08:31",
    "title": "Kế hoạch marketing Tết 2027: timeline từ tháng 11 đến tháng 2",
    "keyword": "kế hoạch marketing Tết",
    "cluster": "C5",
@@ -421,12 +424,13 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11"
   },
   {
    "no": 8,
-   "date": "2026-11-05",
-   "time": "12:48",
+   "date": "2026-10-30",
+   "time": "08:05",
    "title": "Google AI Max for Search: có nên bật và cách kiểm soát",
    "keyword": "AI Max for Search",
    "cluster": "C2",
@@ -442,12 +446,14 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-10",
+   "brief": "Dời lên 30/10"
   },
   {
    "no": 9,
    "date": "2026-11-10",
-   "time": "20:09",
+   "time": "08:43",
    "title": "Lead generation bất động sản 2026: từ quảng cáo đến CRM",
    "keyword": "lead bất động sản",
    "cluster": "C6",
@@ -464,12 +470,13 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11"
   },
   {
    "no": 10,
-   "date": "2026-11-12",
-   "time": "12:22",
+   "date": "2026-10-19",
+   "time": "08:21",
    "title": "Retail media tại Việt Nam: Shopee Ads, TikTok GMV Max hoạt động thế nào",
    "keyword": "quảng cáo sàn thương mại điện tử",
    "cluster": "C1",
@@ -482,15 +489,52 @@
     25
    ],
    "words": 2000,
-   "status": "planned",
-   "wp_id": null,
+   "status": "draft",
+   "wp_id": 6156,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-10",
+   "brief": "Dời lên 19/10 để kịp trước 11.11",
+   "slug": "quang-cao-san-thuong-mai-dien-tu",
+   "seo_title": "Quảng cáo sàn thương mại điện tử: Shopee Ads, GMV Max",
+   "meta_desc": "Quảng cáo sàn thương mại điện tử 2026: cách Shopee Ads và TikTok GMV Max đặt giá thầu, đo ROAS, gắn với phí sàn, kèm bảng tính ROAS hòa vốn trước 11.11.",
+   "cover": {
+    "kicker": "Retail media 2026",
+    "title": "Quảng cáo *trên sàn*",
+    "subtitle": "Shopee Ads, TikTok GMV Max: giá thầu, ROAS và phí sàn trước 11.11",
+    "chips": [
+     "GMV Max",
+     "ROAS hòa vốn",
+     "Phí sàn 2026"
+    ],
+    "hero": "4%",
+    "hero_text": "chi tiêu GMV Max để giảm 1% phí",
+    "style": "mark"
+   },
+   "summary": "Bài giải thích quảng cáo sàn thương mại điện tử tại Việt Nam năm 2026: các loại Dịch vụ Hiển thị Shopee, chế độ Tối đa Doanh thu (GMV Max), Product GMV Max và LIVE GMV Max của TikTok Shop, cách mỗi sàn ghi nhận doanh thu quảng cáo và việc phí giao dịch đang gắn với chi tiêu quảng cáo. Phần dùng ngay là bảng tính ROAS hòa vốn sau phí sàn (ví dụ giả định) và checklist thiết lập quảng cáo trên hai sàn trước 11.11.",
+   "confirm": [
+    "WebFetch không mở được trang nào trong phiên này (lỗi DNS), nên mọi số liệu và tính năng được kiểm chứng qua kết quả tìm kiếm có trích đoạn từ đúng trang nguồn (chủ yếu ads.shopee.vn, banhang.shopee.vn, ads.tiktok.com, seller-vn.tiktok.com), chưa đọc toàn văn. Nên mở nhanh các link nguồn trước khi duyệt.",
+    "Sea Limited Q2/2026: doanh thu quảng cáo Shopee tăng hơn 70%, GMV tăng 28.4% là số toàn khu vực (lấy từ slide kết quả và Inside Retail Asia), không riêng Việt Nam; bài đã ghi rõ điều này.",
+    "YouNet ECI 9 tháng 2026 (411,800 tỷ đồng, tăng 22%) chỉ có qua bài Znews/Baomoi tháng 10/2026, chưa thấy báo cáo gốc.",
+    "Shopee: trang hỏi đáp về nâng cấp giá thầu thủ công sang Tối đa Doanh thu không ghi ngày áp dụng chung; bài chỉ nói 'đang nâng cấp dần'. Một số nguồn bên thứ ba nói Shopee đổi từ 07/2025, chưa có thông báo chính thức để dẫn.",
+    "Shopee: Tối ưu Giá thầu Ngày Sale (hạ ROAS mục tiêu tối đa 30%, tăng ngân sách 20% tối đa 5 lần) lấy từ trang tin ads.shopee.vn/news/557 nêu các đợt sale tháng 7/2026; chưa xác nhận có áp dụng cho 11.11/2026.",
+    "Shopee: chương trình ưu đãi phí xử lý giao dịch (người bán được mời, tự nạp tiền quảng cáo, bật Shop GMV Max) không công bố ngưỡng và mức giảm; ngày đăng trang không rõ, suy ra là 2026 vì dùng tên 'Phí Xử Lý Giao Dịch' (đổi tên từ 24/04/2026).",
+    "Shopee: phí xử lý giao dịch 6% từ 01/5/2026, Shopee Mall từ 08/5/2026 theo đa số nguồn (Viettimes, Dinos, Easypos); BigSeller ghi cả hai nhóm từ 01/5. Shop+ thay Dịch vụ Hiển thị Shop từ 13/08/2026 theo trang ads.shopee.vn.",
+    "Shopee: chương trình 'Duy trì hiển thị' (trích 1% doanh thu vào tài khoản quảng cáo) đã hoãn từ 27/5/2026; không tìm thấy tin chương trình được áp dụng lại tính đến 16/10/2026.",
+    "TikTok: ưu đãi giảm 1% phí giao dịch khi chi GMV Max từ 4% GMV trong 30 ngày (từ 19/5/2026) lấy từ trang Phí Giao Dịch của Seller University; nên kiểm tra còn hiệu lực trong Seller Center.",
+    "TikTok: Bảo vệ ROI (từ 25/02/2026, ROI dưới 90% mục tiêu, hơn 20 đơn/ngày) theo bản trợ giúp mới; bản cũ có công thức khác. Cửa sổ ghi nhận GMV Max (đơn trong lúc chiến dịch chạy, kể cả đơn tự nhiên) theo trang About attribution và trang báo cáo Product GMV Max.",
+    "Phí logistics TikTok Shop cho kiện trên 10 kg (cao nhất 65,000 đồng, từ 12/10/2026) lấy từ tiêu đề Dân trí 09/2026 và trích đoạn VnExpress.",
+    "Bảng ROAS hòa vốn dùng số giả định (phí sàn 24%, hoàn hủy 8%, 30% đơn tự nhiên trong GMV Max), đã ghi rõ là ví dụ.",
+    "Link trụ cột /tiktok-shop-vs-shopee/ chưa đặt vì bài đó đăng 20/10, sau bài này một ngày; phiên SEO nên thêm link lên trụ cột sau 20/10. Bài chưa có link sang /4-chien-luoc-d2c-doanh-nghiep-co-the-ap-dung-de-dan-dau-trong-nganh/ (không cần cho nội dung)."
+   ],
+   "media_id": 6155,
+   "approval": "pending",
+   "approval_requested": "2026-10-16T22:32:34+07:00"
   },
   {
    "no": 11,
-   "date": "2026-11-17",
-   "time": "20:16",
+   "date": "2026-11-13",
+   "time": "08:10",
    "title": "Lập ngân sách marketing 2027 theo giai đoạn tăng trưởng doanh nghiệp",
    "keyword": "ngân sách marketing",
    "cluster": "C5",
@@ -507,12 +551,13 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11"
   },
   {
    "no": 12,
-   "date": "2026-11-19",
-   "time": "20:23",
+   "date": "2026-11-16",
+   "time": "08:08",
    "title": "Đo lượng truy cập từ ChatGPT, Gemini, Perplexity trong GA4",
    "keyword": "traffic từ AI GA4",
    "cluster": "C4",
@@ -528,12 +573,14 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11",
+   "brief": "Thêm cách đo lượt truy cập từ ChatGPT Ads"
   },
   {
    "no": 13,
-   "date": "2026-11-24",
-   "time": "12:44",
+   "date": "2026-11-19",
+   "time": "08:34",
    "title": "Sản xuất 30 mẫu quảng cáo mỗi tháng với AI mà vẫn giữ bản sắc thương hiệu",
    "keyword": "creative strategy",
    "cluster": "C2",
@@ -549,12 +596,14 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11",
+   "brief": "Thêm phần quy trình gắn nhãn AI, dẫn sang bài 35"
   },
   {
    "no": 14,
-   "date": "2026-11-26",
-   "time": "20:06",
+   "date": "2026-11-23",
+   "time": "08:51",
    "title": "Xây mạng lưới KOC và affiliate trên TikTok Shop cho ngành mỹ phẩm",
    "keyword": "KOC TikTok Shop",
    "cluster": "C1",
@@ -570,12 +619,13 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11"
   },
   {
    "no": 15,
-   "date": "2026-12-01",
-   "time": "12:31",
+   "date": "2026-11-24",
+   "time": "08:53",
    "title": "Zalo OA và ZNS: kênh CRM hiệu quả nhất tại Việt Nam",
    "keyword": "Zalo ZNS marketing",
    "cluster": "C3",
@@ -591,12 +641,13 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11"
   },
   {
    "no": 16,
-   "date": "2026-12-03",
-   "time": "20:30",
+   "date": "2026-10-23",
+   "time": "08:07",
    "title": "Livestream bán hàng: kịch bản, KPI và cách tính lãi lỗ một phiên",
    "keyword": "livestream bán hàng hiệu quả",
    "cluster": "C1",
@@ -609,15 +660,47 @@
     5
    ],
    "words": 2000,
-   "status": "planned",
-   "wp_id": null,
+   "status": "draft",
+   "wp_id": 6158,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-10",
+   "brief": "Dời lên 23/10 để kịp trước 11.11",
+   "slug": "livestream-ban-hang-hieu-qua",
+   "seo_title": "Livestream bán hàng hiệu quả: kịch bản, KPI, tính lãi lỗ",
+   "meta_desc": "Livestream bán hàng hiệu quả trên TikTok Shop, Shopee Live: kịch bản 120 phút, phân vai, KPI cần theo dõi và cách tính GMV hòa vốn cho một phiên live.",
+   "cover": {
+    "kicker": "Vận hành livestream",
+    "title": "Lãi lỗ một *phiên live*",
+    "subtitle": "Kịch bản 120 phút, KPI theo khung 15 phút và công thức GMV hòa vốn",
+    "chips": [
+     "TikTok Shop",
+     "Shopee Live",
+     "LIVE GMV Max"
+    ],
+    "hero": "67%",
+    "hero_text": "chi tiêu online qua livestream",
+    "style": "stack"
+   },
+   "summary": "Hướng dẫn vận hành một phiên livestream trên TikTok Shop và Shopee Live: mẫu kịch bản 120 phút theo khung giờ, phân vai 5 người và các KPI cần xem trong lúc live và sau phiên. Phần chính là bảng lãi lỗ một phiên với ví dụ giả định, công thức GMV hòa vốn và ROAS tối thiểu cho LIVE GMV Max, dùng được ngay trước 11.11.",
+   "confirm": [
+    "Phí Voucher Xtra TikTok Shop: Báo Công Thương (05/2026) ghi 4% từ 9/5/2026; BigSeller ghi tăng tiếp lên 5% từ 03/7/2026. Chưa tìm được thông báo chính thức của TikTok xác nhận mức 5%, cần kiểm tra trong Seller Center.",
+    "Phí xử lý đơn TikTok Shop 3,000 đồng/đơn giao thành công từ 27/10/2025: chỉ có nguồn BigSeller và blog bán hàng (VnBusiness ghi ngày 7/10/2025); cần đối chiếu Seller Center.",
+    "Các mức phí Shopee (6% phí xử lý giao dịch từ 01/5/2026, phí hạ tầng 3,000 đồng/đơn) lấy theo nguồn đã dùng trong bài Kế hoạch 11.11; chưa kiểm tra biểu phí tháng 10/2026.",
+    "Số liệu Q&Me 04/2026 (67% chi tiêu online qua livestream, 13% mua bốc đồng, 47% còn cân nhắc, khoảng một nửa mua qua tài khoản chính thức của thương hiệu, 82% và 59%) lấy qua bài VnEconomy; chưa đọc được báo cáo gốc của Q&Me. Ngày đăng bài VnEconomy chưa xác định (ghi 2026).",
+    "Thông tin LIVE GMV Max (có tại Việt Nam, tạo trong Seller Center mục Shop Ads, phải tắt quảng cáo LIVE Shopping hoặc GMV Max khác trước, mỗi shop một tài khoản quảng cáo cho GMV Max, chỉ số thời lượng xem LIVE trung bình và lượt xem LIVE 10 giây) lấy từ trung tâm trợ giúp TikTok qua kết quả tìm kiếm, các trang cập nhật 09/2026, 06/2026 và 03/2026.",
+    "Toàn bộ số trong Ví dụ là giả định: 500 đơn, AOV 320,000 đồng, hủy/hoàn 12%, giá vốn 35%, phí cố định 12%, voucher 20,000 đồng/đơn, hỗ trợ vận chuyển 10,000 đồng/đơn, chi phí hoàn 25,000 đồng/đơn, đóng gói 6,000 đồng/đơn, 15% doanh thu qua link affiliate với hoa hồng 10%, quảng cáo 25 triệu, nhân sự 4.5 triệu, KOC 5 triệu, quà 1.5 triệu. Phí % tính trên doanh thu thuần để đơn giản. Kết quả: lãi 9,044,000 đồng, biên đóng góp 28.15%, GMV hòa vốn khoảng 128 triệu (khoảng 400 đơn), ROAS hòa vốn khoảng 4.7; kịch bản hủy/hoàn 20% còn lãi khoảng 3.5 triệu.",
+    "Nhịp vòng lặp kịch bản (15 phút TikTok Shop, 25 phút Shopee Live), mô hình 5 vai và đặc điểm người xem Shopee Live là khuyến nghị vận hành của Adtek, không có nguồn số liệu.",
+    "Môi trường làm việc chặn WebFetch và curl (proxy trả 403), nên mọi số liệu được kiểm tra qua WebSearch (tóm tắt nội dung trang) hoặc lấy lại từ nguồn đã dùng trong bài Kế hoạch 11.11 và TikTok Shop vs Shopee; anh Tin nên mở các link trong Nguồn tham khảo một lượt trước khi đăng."
+   ],
+   "media_id": 6157,
+   "approval": "pending",
+   "approval_requested": "2026-10-16T22:32:34+07:00"
   },
   {
    "no": 17,
-   "date": "2026-12-08",
-   "time": "20:27",
+   "date": "2026-11-27",
+   "time": "08:20",
    "title": "Conversions API và server-side tracking: vì sao dữ liệu quảng cáo bị thiếu",
    "keyword": "Conversions API",
    "cluster": "C3",
@@ -633,12 +716,13 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11"
   },
   {
    "no": 18,
-   "date": "2026-12-10",
-   "time": "12:25",
+   "date": "2026-12-01",
+   "time": "08:36",
    "title": "Brand Commerce: cân bằng giữa đầu tư thương hiệu và performance",
    "keyword": "brand commerce",
    "cluster": "C5",
@@ -654,12 +738,13 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11"
   },
   {
    "no": 19,
-   "date": "2026-12-15",
-   "time": "20:50",
+   "date": "2026-11-09",
+   "time": "08:42",
    "title": "Tuyển sinh online 2027: digital marketing cho ngành giáo dục",
    "keyword": "marketing giáo dục",
    "cluster": "C6",
@@ -675,12 +760,13 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11"
   },
   {
    "no": 20,
-   "date": "2026-12-17",
-   "time": "20:02",
+   "date": "2026-11-06",
+   "time": "08:39",
    "title": "SEO cho website B2B: nội dung chuyên môn (E-E-A-T) để tạo lead",
    "keyword": "SEO B2B",
    "cluster": "C4",
@@ -697,7 +783,8 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11"
   },
   {
    "no": 21,
@@ -717,7 +804,7 @@
     29
    ],
    "words": 2000,
-   "status": "planned",
+   "status": "backlog",
    "wp_id": null,
    "published": null,
    "last_reviewed": null
@@ -737,15 +824,15 @@
     11
    ],
    "words": 2000,
-   "status": "planned",
+   "status": "backlog",
    "wp_id": null,
    "published": null,
    "last_reviewed": null
   },
   {
    "no": 23,
-   "date": "2026-12-29",
-   "time": "20:29",
+   "date": "2026-11-26",
+   "time": "08:41",
    "title": "Quảng cáo mùa Tết: CPM tăng cao, khi nào tăng hoặc giảm ngân sách",
    "keyword": "quảng cáo Tết",
    "cluster": "C2",
@@ -761,7 +848,9 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11",
+   "brief": "Đổi từ 29/12 lên 26/11 để doanh nghiệp kịp lập ngân sách Tết"
   },
   {
    "no": 24,
@@ -780,7 +869,7 @@
     "2215"
    ],
    "words": 2000,
-   "status": "planned",
+   "status": "backlog",
    "wp_id": null,
    "published": null,
    "last_reviewed": null
@@ -801,15 +890,15 @@
     16
    ],
    "words": 2000,
-   "status": "planned",
+   "status": "backlog",
    "wp_id": null,
    "published": null,
    "last_reviewed": null
   },
   {
    "no": 26,
-   "date": "2027-01-07",
-   "time": "12:23",
+   "date": "2026-12-03",
+   "time": "08:23",
    "title": "Retention marketing: tăng doanh thu từ khách hàng cũ",
    "keyword": "retention marketing",
    "cluster": "C3",
@@ -825,12 +914,13 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11"
   },
   {
    "no": 27,
-   "date": "2027-01-12",
-   "time": "20:51",
+   "date": "2026-11-05",
+   "time": "08:07",
    "title": "App User Acquisition 2026: tăng người dùng ứng dụng với chi phí hợp lý",
    "keyword": "app user acquisition",
    "cluster": "C2",
@@ -846,7 +936,9 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11",
+   "brief": "Thêm ví dụ ví điện tử và bảo hiểm sức khỏe: thanh toán qua Internet quý I/2026 +65.7%, bảo hiểm sức khỏe H1/2026 +17.3%"
   },
   {
    "no": 28,
@@ -864,15 +956,15 @@
     14
    ],
    "words": 2000,
-   "status": "planned",
+   "status": "backlog",
    "wp_id": null,
    "published": null,
    "last_reviewed": null
   },
   {
    "no": 29,
-   "date": "2027-01-19",
-   "time": "20:19",
+   "date": "2026-12-04",
+   "time": "08:50",
    "title": "AI agent trong marketing: 5 quy trình doanh nghiệp có thể tự động hóa ngay",
    "keyword": "AI agent marketing",
    "cluster": "C5",
@@ -888,12 +980,14 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11",
+   "brief": "Thêm Meta Business Agent (ra mắt 3/6/2026) và chatbot Zalo"
   },
   {
    "no": 30,
-   "date": "2027-01-21",
-   "time": "20:36",
+   "date": "2026-11-20",
+   "time": "08:33",
    "title": "Công thức hook 3 giây cho video ngắn bán hàng",
    "keyword": "hook video TikTok",
    "cluster": "C2",
@@ -908,7 +1002,8 @@
    "status": "planned",
    "wp_id": null,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "month": "2026-11"
   },
   {
    "no": 31,
@@ -926,7 +1021,7 @@
     5
    ],
    "words": 2000,
-   "status": "planned",
+   "status": "backlog",
    "wp_id": null,
    "published": null,
    "last_reviewed": null
@@ -947,10 +1042,122 @@
     18
    ],
    "words": 2000,
-   "status": "planned",
+   "status": "backlog",
    "wp_id": null,
    "published": null,
    "last_reviewed": null
+  },
+  {
+   "no": 33,
+   "date": "2026-10-26",
+   "time": "08:10",
+   "title": "ChatGPT Ads tại Việt Nam: ngành nào nên chạy thử, ngành nào nên chờ",
+   "keyword": "ChatGPT Ads",
+   "cluster": "C2",
+   "role": "cluster",
+   "refresh": "A",
+   "links_to": [
+    2,
+    8,
+    12,
+    "6076"
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null,
+   "month": "2026-10",
+   "brief": "Dời lên 26/10 vì ChatGPT Ads đã mở từ 23/9/2026"
+  },
+  {
+   "no": 34,
+   "date": "2026-11-12",
+   "time": "08:36",
+   "title": "FMCG trên Shopee và TikTok Shop 2026: bán hàng thiết yếu và giữ khách mua lại",
+   "keyword": "FMCG thương mại điện tử",
+   "cluster": "C1",
+   "role": "cluster",
+   "refresh": "A",
+   "links_to": [
+    3,
+    1,
+    10,
+    15
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null,
+   "month": "2026-11"
+  },
+  {
+   "no": 35,
+   "date": "2026-11-17",
+   "time": "08:45",
+   "title": "Gắn nhãn nội dung AI trong quảng cáo: Nghị định 142/2026 áp dụng thế nào",
+   "keyword": "gắn nhãn nội dung AI",
+   "cluster": "C2",
+   "role": "cluster",
+   "refresh": "A",
+   "links_to": [
+    13,
+    2,
+    6,
+    4
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null,
+   "month": "2026-11"
+  },
+  {
+   "no": 36,
+   "date": "2026-11-30",
+   "time": "08:34",
+   "title": "Digital marketing ngành ô tô và xe máy điện 2027: lead cho đại lý",
+   "keyword": "marketing ô tô",
+   "cluster": "C6",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    9,
+    5,
+    15,
+    17
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null,
+   "month": "2026-11"
+  },
+  {
+   "no": 37,
+   "title": "Marketing du lịch 2027: đón khách Hàn, Trung bằng SEO đa ngôn ngữ và Google",
+   "keyword": "marketing du lịch",
+   "cluster": "C6",
+   "role": "cluster",
+   "refresh": "B",
+   "links_to": [
+    9,
+    5,
+    "6076",
+    33
+   ],
+   "words": 2000,
+   "status": "planned",
+   "wp_id": null,
+   "published": null,
+   "last_reviewed": null,
+   "date": "2026-11-02",
+   "time": "08:26",
+   "month": "2026-11",
+   "brief": "Khách quốc tế 9 tháng 2026 17.7 triệu (+14.5%), Hàn Quốc khoảng 3 triệu, Trung Quốc hơn 3.9 triệu (Cục Du lịch Quốc gia 10/2026)"
   }
  ],
  "existing": [
@@ -963,7 +1170,7 @@
    "date": "2026-10-06",
    "cover": {
     "kicker": "Playbook ngành",
-    "title": "Marketing khu công nghiệp",
+    "title": "Marketing *khu công nghiệp*",
     "subtitle": "Thu hút nhà đầu tư FDI trên kênh số: website dữ liệu, SEO đa ngôn ngữ, LinkedIn ABM, CRM",
     "chips": [
      "SEO đa ngôn ngữ",
@@ -1179,6 +1386,1346 @@
    "cluster": "C1",
    "refresh": "C",
    "action": "giữ, thêm ghi chú bối cảnh"
+  }
+ ],
+ "month_plans": {
+  "2026-11": {
+   "theme": "Mùa sale có lãi khi AI chạy quảng cáo",
+   "period": [
+    "2026-11-02",
+    "2026-12-06"
+   ],
+   "plan_file": "reports/lich-dang-2026-11.json",
+   "planned_by": "Adtek - Marketing",
+   "planned_at": "2026-10-16"
+  },
+  "2026-10": {
+   "theme": "Chuẩn bị 11.11 có lãi khi AI chạy quảng cáo",
+   "period": [
+    "2026-10-17",
+    "2026-11-01"
+   ],
+   "plan_file": "reports/lich-dang-2026-10.json",
+   "planned_by": "Adtek - Marketing",
+   "planned_at": "2026-10-16",
+   "note": "Anh Tin chọn triển khai từ 17/10/2026"
+  }
+ },
+ "facebook": [
+  {
+   "id": "fb-20261017",
+   "date": "2026-10-17",
+   "time": "20:13",
+   "month": "2026-10",
+   "format": "Hiểu lầm và sự thật",
+   "title": "Bật Advantage+ là không cần làm creative nữa?",
+   "brief": "Andromeda chọn quảng cáo theo nội dung creative; Meta báo chuyển đổi +15.7% với GEM nhưng nghiên cứu Confect trên 3,014 nhà quảng cáo thấy ROAS trung bình giảm 7%: creative đa dạng vẫn là việc của người làm marketing",
+   "source": "Search Engine Land; Meta Q2/2026",
+   "link_post": 2,
+   "note": null,
+   "status": "planned",
+   "caption": "Hiểu lầm: bật Advantage+ là Meta lo hết, đội marketing không cần làm creative nữa.\n\nSự thật: hệ thống Andromeda của Meta chọn quảng cáo dựa vào chính nội dung creative. Hình ảnh, câu chữ, nhịp video đều là tín hiệu để hệ thống quyết định ai thấy quảng cáo nào. Creative càng giống nhau, hệ thống càng ít lựa chọn.\n\nMeta báo cáo số chuyển đổi tăng 15.7% nhờ mô hình GEM. Cùng lúc đó, nghiên cứu của Confect trên 3,014 nhà quảng cáo lại thấy ROAS trung bình giảm 7%.\n\nHai con số này đo hai thứ khác nhau. Tự động hóa giúp quảng cáo đến đúng người hơn. Còn lợi nhuận vẫn phụ thuộc vào việc bạn đưa cho hệ thống bao nhiêu ý tưởng thật sự khác nhau: góc nhìn khác, người trong video khác, câu mở đầu khác.\n\n20 quảng cáo dùng chung một ảnh, chỉ đổi tiêu đề, có thể bị tính như một.",
+   "hashtags": [
+    "#MetaAds",
+    "#AdvantagePlus",
+    "#CreativeStrategy"
+   ],
+   "images": [
+    "content/facebook/fb-20261017/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "myth": "Bật Advantage+ là không cần làm *creative* nữa",
+    "fact": "Andromeda chọn quảng cáo dựa vào chính nội dung creative. Meta báo chuyển đổi tăng 15.7% với GEM, nhưng nghiên cứu của Confect trên 3,014 nhà quảng cáo thấy ROAS trung bình giảm 7%. Creative đa dạng vẫn là việc của người làm marketing.",
+    "source": "Search Engine Land; Meta Q2/2026"
+   }
+  },
+  {
+   "id": "fb-20261018",
+   "date": "2026-10-18",
+   "time": "20:13",
+   "month": "2026-10",
+   "format": "Câu hỏi mở",
+   "title": "11.11 năm nay bạn dồn ngân sách vào sàn nào?",
+   "brief": "Shopee 53%, TikTok Shop 45% GMV 9 tháng; mời bình luận Shopee, TikTok Shop hay chia đôi",
+   "source": "YouNet ECI quý III/2026",
+   "link_post": 1,
+   "note": "Chủ nhật chưa có video TikTok nên đăng câu hỏi mở",
+   "status": "planned",
+   "caption": "9 tháng đầu năm 2026, Shopee giữ khoảng 53% GMV, TikTok Shop theo sát với 45%, theo YouNet ECI. Khoảng cách giữa hai sàn chỉ còn 8 điểm phần trăm.\n\nVì vậy câu hỏi ngân sách cho 11.11 năm nay khó hơn mọi năm. Shopee mạnh ở tìm kiếm, khách quen và các ngày sale lớn. TikTok Shop tạo nhu cầu mới qua video, KOC và livestream.\n\nChúng tôi muốn nghe từ chính người đang bán hàng: năm nay bạn dồn ngân sách vào đâu?\n\nTrả lời bằng một chữ cái ở bình luận:\nA. Shopee\nB. TikTok Shop\nC. Chia đôi hai sàn\n\nNếu chọn chia đôi, bạn chia theo tỷ lệ nào, và dựa vào số liệu gì để chốt?",
+   "hashtags": [
+    "#Shopee",
+    "#TikTokShop",
+    "#Sale1111"
+   ],
+   "images": [
+    "content/facebook/fb-20261018/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "question": "11.11 năm nay bạn dồn ngân sách vào *sàn nào*?",
+    "options": [
+     "Shopee",
+     "TikTok Shop",
+     "Chia đôi hai sàn"
+    ],
+    "context": "9 tháng 2026: Shopee 53%, TikTok Shop 45% GMV (YouNet ECI)"
+   }
+  },
+  {
+   "id": "fb-20261019",
+   "date": "2026-10-19",
+   "time": "12:13",
+   "month": "2026-10",
+   "format": "Góc số liệu",
+   "title": "GDP tăng 9.95%, người tiêu dùng đang chi nhiều hơn?",
+   "brief": "Bán lẻ hàng hóa và dịch vụ 9 tháng 2026 +13.4%, loại trừ giá vẫn +7.8%; quý III +14.5%",
+   "source": "Cục Thống kê 10/2026",
+   "link_post": null,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261019/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "num": "13.4%",
+    "phrase": "Bán lẻ hàng hóa và dịch vụ 9 tháng 2026 tăng so với cùng kỳ",
+    "context": "Loại trừ yếu tố giá vẫn tăng 7.8%. Riêng quý III tăng 14.5%, trong bối cảnh GDP 9 tháng tăng 9.95%.",
+    "source": "Cục Thống kê, 10/2026"
+   }
+  },
+  {
+   "id": "fb-20261020",
+   "date": "2026-10-20",
+   "time": "12:13",
+   "month": "2026-10",
+   "format": "Thuật ngữ 1 phút",
+   "title": "Andromeda là gì?",
+   "brief": "Hệ thống chọn quảng cáo mới của Meta: creative thành tín hiệu nhắm chọn chính, nên mỗi tuần cần nhiều concept khác nhau",
+   "source": "Meta Engineering; bài blog 2",
+   "link_post": 2,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261020/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "term": "Andromeda",
+    "kind": "danh từ, quảng cáo Meta",
+    "definition": "Hệ thống chọn quảng cáo mới của Meta. Creative trở thành tín hiệu nhắm chọn chính: hệ thống đọc nội dung từng quảng cáo để quyết định hiển thị cho ai.",
+    "why": "Mỗi tuần cần nhiều concept thật sự khác nhau. Các quảng cáo gần giống nhau có thể bị gộp làm một.",
+    "source": "Meta Engineering; bài blog Adtek"
+   }
+  },
+  {
+   "id": "fb-20261021",
+   "date": "2026-10-21",
+   "time": "12:13",
+   "month": "2026-10",
+   "format": "Carousel hướng dẫn",
+   "title": "Giá hòa vốn 11.11 trong 5 bước",
+   "brief": "Giá vốn, phí sàn (phí xử lý giao dịch 6%), chi phí quảng cáo theo ROAS, mức giảm giá, số đơn cần bán thêm; theo bài 1",
+   "source": "Bài blog 1",
+   "link_post": 1,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261021/1.jpg",
+    "content/facebook/fb-20261021/2.jpg",
+    "content/facebook/fb-20261021/3.jpg",
+    "content/facebook/fb-20261021/4.jpg",
+    "content/facebook/fb-20261021/5.jpg",
+    "content/facebook/fb-20261021/6.jpg",
+    "content/facebook/fb-20261021/7.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "title": "Giá hòa vốn 11.11",
+    "promise": "Bước tính giá hòa vốn trước khi giảm giá 11.11",
+    "steps": [
+     {
+      "title": "Cộng giá vốn và chi phí mỗi đơn",
+      "body": "Ví dụ serum giá niêm yết 400,000 đồng: giá vốn, phí hạ tầng, đóng gói và vận hành là 131,000 đồng mỗi đơn."
+     },
+     {
+      "title": "Cộng các khoản phí sàn theo %",
+      "body": "Ví dụ phí cố định 14%, phí xử lý giao dịch 6%, phí Voucher Xtra 4%, tính trên giá bán sau giảm."
+     },
+     {
+      "title": "Quy chi phí quảng cáo ra %",
+      "body": "Chi phí quảng cáo = 1/ROAS. ROAS 8 nghĩa là chi 12.5% doanh thu cho quảng cáo; ROAS 5 là 20%."
+     },
+     {
+      "title": "Tính lợi nhuận mỗi đơn sau giảm giá",
+      "body": "Giảm 30% với ROAS 8: còn 46,800 đồng mỗi đơn, so với 123,000 đồng ngày thường. ROAS tụt về 5: còn 25,800 đồng."
+     },
+     {
+      "title": "Tính số đơn cần bán thêm",
+      "body": "Lợi nhuận mỗi đơn mất khoảng 62%, nên phải bán gấp ít nhất 2.6 lần chỉ để giữ nguyên tổng lợi nhuận."
+     }
+    ],
+    "end": "Chốt *trần giảm giá* và ROAS tối thiểu cho từng SKU trước khi hứa với sàn hay KOC",
+    "source": "Bài blog Kế hoạch 11.11 (số liệu giả định để minh họa)"
+   }
+  },
+  {
+   "id": "fb-20261022",
+   "date": "2026-10-22",
+   "time": "12:13",
+   "month": "2026-10",
+   "format": "Tin nóng",
+   "title": "TikTok Shop thu thêm phí logistics từ 12/10: người bán cần tính lại gì?",
+   "brief": "Phí xử lý giao dịch trên Shopee và TikTok Shop lên 6% từ tháng 5; TikTok Shop thu thêm phí logistics từ 12/10; tính lại giá hòa vốn trước 11.11",
+   "source": "Nguồn trong bài blog 1 và 3",
+   "link_post": 3,
+   "note": "Khung tin nóng: có tin lớn trong tuần thì thay",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261022/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "when": "Từ 12/10",
+    "headline": "TikTok Shop thu thêm *phí logistics*: người bán cần tính lại gì?",
+    "points": [
+     "Phí xử lý giao dịch trên Shopee và TikTok Shop đã lên 6% từ tháng 5",
+     "TikTok Shop thu thêm phí logistics từ 12/10",
+     "Tính lại giá hòa vốn từng SKU trước 11.11"
+    ],
+    "source": "Nguồn trong bài blog Adtek"
+   }
+  },
+  {
+   "id": "fb-20261023",
+   "date": "2026-10-23",
+   "time": "12:13",
+   "month": "2026-10",
+   "format": "Phép tính nhanh",
+   "title": "ROAS 8 ngày thường, ROAS 5 ngày sale: mỗi đơn còn lãi bao nhiêu?",
+   "brief": "Ví dụ serum 400,000 đồng trong bài 1: giảm 30% với ROAS 8 lãi 46,800 đồng mỗi đơn, ROAS 5 còn 25,800 đồng; muốn giữ lợi nhuận phải bán gấp 2.6 lần",
+   "source": "Bài blog 1",
+   "link_post": 1,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261023/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "title": "ROAS 8 ngày thường, ROAS 5 ngày sale: mỗi đơn còn *lãi bao nhiêu*?",
+    "rows": [
+     [
+      "Giá bán sau giảm 30%",
+      "280,000"
+     ],
+     [
+      "Phí sàn 24%",
+      "-67,200"
+     ],
+     [
+      "Giá vốn, hạ tầng, đóng gói",
+      "-131,000"
+     ],
+     [
+      "Quảng cáo với ROAS 5 (20%)",
+      "-56,000"
+     ]
+    ],
+    "result": [
+     "Lãi mỗi đơn với ROAS 5",
+     "25,800 đ"
+    ],
+    "note": "Cùng phép tính với ROAS 8 (quảng cáo 35,000 đồng): lãi 46,800 đồng. Ví dụ serum niêm yết 400,000 đồng, số liệu giả định.",
+    "source": "Bài blog Kế hoạch 11.11"
+   }
+  },
+  {
+   "id": "fb-20261024",
+   "date": "2026-10-24",
+   "time": "20:13",
+   "month": "2026-10",
+   "format": "Hiểu lầm và sự thật",
+   "title": "Có số điện thoại là được gửi tin quảng cáo?",
+   "brief": "Luật Bảo vệ dữ liệu cá nhân hiệu lực 1/1/2026: cần sự đồng ý rõ ràng, cấm mua bán dữ liệu cá nhân, một số vi phạm phạt tới 5% doanh thu",
+   "source": "Luật 91/2025/QH15; bài blog 4",
+   "link_post": 4,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261024/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "myth": "Có số điện thoại là được *gửi tin quảng cáo*",
+    "fact": "Luật Bảo vệ dữ liệu cá nhân có hiệu lực từ 1/1/2026: cần sự đồng ý rõ ràng của khách, cấm mua bán dữ liệu cá nhân, một số vi phạm bị phạt tới 5% doanh thu.",
+    "source": "Luật 91/2025/QH15"
+   }
+  },
+  {
+   "id": "fb-20261025",
+   "date": "2026-10-25",
+   "time": "20:13",
+   "month": "2026-10",
+   "format": "Câu hỏi mở",
+   "title": "Bạn đo quảng cáo bằng ROAS hay bằng lợi nhuận?",
+   "brief": "Mời bình luận; dẫn sang cách đọc MER, CAC, LTV (bài 5 đăng 27/10)",
+   "source": "Bài blog 5",
+   "link_post": null,
+   "note": "Chủ nhật chưa có video TikTok nên đăng câu hỏi mở",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261025/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "question": "Bạn đo quảng cáo bằng *ROAS* hay bằng *lợi nhuận*?",
+    "options": [
+     "ROAS từng kênh",
+     "MER toàn doanh nghiệp",
+     "Lợi nhuận sau quảng cáo"
+    ],
+    "context": "Mùa sale, ROAS từng kênh dễ đếm trùng"
+   }
+  },
+  {
+   "id": "fb-20261026",
+   "date": "2026-10-26",
+   "time": "12:13",
+   "month": "2026-10",
+   "format": "Góc số liệu",
+   "title": "TikTok Shop còn cách Shopee bao xa?",
+   "brief": "GMV 9 tháng 411,800 tỷ đồng (+22%), Shopee 53%, TikTok Shop 45%, khoảng cách quý III khoảng 4,300 tỷ đồng",
+   "source": "YouNet ECI quý III/2026",
+   "link_post": 10,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261026/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "num": "45%",
+    "phrase": "GMV 9 tháng 2026 thuộc về TikTok Shop, Shopee giữ 53%",
+    "context": "Tổng GMV 9 tháng đạt 411,800 tỷ đồng, tăng 22%. Khoảng cách giữa hai sàn trong quý III còn khoảng 4,300 tỷ đồng.",
+    "source": "YouNet ECI quý III/2026"
+   }
+  },
+  {
+   "id": "fb-20261027",
+   "date": "2026-10-27",
+   "time": "12:13",
+   "month": "2026-10",
+   "format": "Thuật ngữ 1 phút",
+   "title": "MER là gì, vì sao mùa sale nên nhìn MER thay vì ROAS?",
+   "brief": "MER = tổng doanh thu chia tổng chi phí marketing; ROAS từng kênh dễ đếm trùng ngày sale",
+   "source": "Bài blog 5",
+   "link_post": 5,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261027/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "term": "MER",
+    "kind": "Marketing Efficiency Ratio",
+    "definition": "Tổng doanh thu chia tổng chi phí marketing của cả doanh nghiệp, không tách theo kênh.",
+    "why": "Ngày sale, ROAS từng kênh dễ đếm trùng cùng một đơn hàng. MER cho biết toàn bộ tiền marketing đang mang về bao nhiêu.",
+    "source": "Bài blog Adtek về MER, CAC, LTV"
+   }
+  },
+  {
+   "id": "fb-20261028",
+   "date": "2026-10-28",
+   "time": "12:13",
+   "month": "2026-10",
+   "format": "Carousel hướng dẫn",
+   "title": "KPI theo giờ của một phiên livestream",
+   "brief": "Các chỉ số theo dõi trong phiên: người xem, thời gian xem, tỷ lệ chuyển đổi, giá trị đơn, chi phí; theo bài 16",
+   "source": "Bài blog 16",
+   "link_post": 16,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261029",
+   "date": "2026-10-29",
+   "time": "12:13",
+   "month": "2026-10",
+   "format": "Tin nóng",
+   "title": "Quảng cáo trên ChatGPT đã chạy ở Việt Nam, bạn có nên thử?",
+   "brief": "Mở từ 23/9/2026, chỉ hiện với gói Free và Go; 81% người dùng AI tại Việt Nam dùng ChatGPT",
+   "source": "OpenAI 9/2026; Decision Lab 8/2025",
+   "link_post": 33,
+   "note": "Khung tin nóng",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261029/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "when": "Từ 23/9",
+    "headline": "Quảng cáo trên *ChatGPT* đã chạy ở Việt Nam, có nên thử?",
+    "points": [
+     "Quảng cáo chỉ hiện với người dùng gói Free và Go",
+     "81% người dùng AI tại Việt Nam dùng ChatGPT (Decision Lab, 8/2025)",
+     "Thử với ngân sách nhỏ, đo bằng chuyển đổi thật"
+    ],
+    "source": "OpenAI 9/2026; Decision Lab 8/2025"
+   }
+  },
+  {
+   "id": "fb-20261030",
+   "date": "2026-10-30",
+   "time": "12:13",
+   "month": "2026-10",
+   "format": "Phép tính nhanh",
+   "title": "Livestream bán hàng: một phiên 3 giờ lãi hay lỗ?",
+   "brief": "Cách tính theo bài 16: doanh thu, giá vốn, phí sàn, chi phí người live, quảng cáo; con số ví dụ ghi rõ là ví dụ",
+   "source": "Bài blog 16",
+   "link_post": 16,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261031",
+   "date": "2026-10-31",
+   "time": "20:13",
+   "month": "2026-10",
+   "format": "Hiểu lầm và sự thật",
+   "title": "Cookie bên thứ ba đã bị khai tử?",
+   "brief": "Chrome giữ cookie bên thứ ba (Google, 4/2025) nhưng iOS 26 xóa gclid, fbclid khi mở link ở chế độ riêng tư; dữ liệu vẫn đang thiếu",
+   "source": "Google 4/2025; PPC Land 9/2025",
+   "link_post": null,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261031/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "myth": "Cookie bên thứ ba đã bị *khai tử*",
+    "fact": "Chrome vẫn giữ cookie bên thứ ba (Google, 4/2025). Nhưng iOS 26 xóa gclid, fbclid khi mở link ở chế độ riêng tư, nên dữ liệu đo lường vẫn đang thiếu dần.",
+    "source": "Google 4/2025; PPC Land 9/2025"
+   }
+  },
+  {
+   "id": "fb-20261101",
+   "date": "2026-11-01",
+   "time": "20:13",
+   "month": "2026-10",
+   "format": "Câu hỏi mở",
+   "title": "Còn 10 ngày tới 11.11, bạn đã chuẩn bị đến đâu?",
+   "brief": "Mời bình luận: giá, voucher, KOC, livestream, tồn kho",
+   "source": "Bài blog 1",
+   "link_post": 1,
+   "note": "Chủ nhật chưa có video TikTok nên đăng câu hỏi mở",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": [
+    "content/facebook/fb-20261101/1.jpg"
+   ],
+   "approval": null,
+   "fb_post_id": null,
+   "design": {
+    "question": "Còn *10 ngày* tới 11.11, bạn đã chuẩn bị đến đâu?",
+    "options": [
+     "Đã chốt giá và voucher",
+     "Đang chờ KOC, livestream",
+     "Chưa bắt đầu"
+    ],
+    "context": "Giá, voucher, KOC, livestream, tồn kho"
+   }
+  },
+  {
+   "id": "fb-20261102",
+   "date": "2026-11-02",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Góc số liệu",
+   "title": "17.7 triệu khách quốc tế: khách sạn của bạn có xuất hiện khi khách Hàn tìm kiếm?",
+   "brief": "9 tháng 2026 đón 17.7 triệu lượt (+14.5%), Hàn Quốc khoảng 3 triệu, Trung Quốc hơn 3.9 triệu",
+   "source": "Cục Du lịch Quốc gia 10/2026",
+   "link_post": 37,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261103",
+   "date": "2026-11-03",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Thuật ngữ 1 phút",
+   "title": "GMV Max là gì?",
+   "brief": "Loại chiến dịch duy nhất cho TikTok Shop Ads từ 7/2025, AI tối ưu theo GMV; người làm marketing còn kiểm soát creative, ngân sách, sản phẩm",
+   "source": "TikTok Ads Help Center",
+   "link_post": 3,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261104",
+   "date": "2026-11-04",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Carousel hướng dẫn",
+   "title": "Lịch marketing Tết 2027 trong 7 trang",
+   "brief": "Mốc từ tháng 11 đến tháng 2 lấy từ bài blog 7",
+   "source": "Bài blog 7",
+   "link_post": 7,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261105",
+   "date": "2026-11-05",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Tin nóng",
+   "title": "Google đã tự bật AI Max cho chiến dịch của bạn?",
+   "brief": "Từ 1/9/2026, chiến dịch Search dùng broad match cấp chiến dịch hoặc tài sản tự tạo được chuyển sang AI Max (nguồn agency, cần xác minh trước khi đăng); 6 cài đặt cần kiểm tra",
+   "source": "Google Ads; Common Thread 2026",
+   "link_post": 8,
+   "note": "Khung tin nóng",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261106",
+   "date": "2026-11-06",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Phép tính nhanh",
+   "title": "Một lượt cài app nên trả tối đa bao nhiêu?",
+   "brief": "Tính ngược từ LTV: giá trị một người dùng trong 12 tháng nhân tỷ lệ giữ chân, trừ biên lợi nhuận mong muốn; con số ví dụ ghi rõ là ví dụ",
+   "source": "Bài blog 27",
+   "link_post": 27,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261107",
+   "date": "2026-11-07",
+   "time": "20:13",
+   "month": "2026-11",
+   "format": "Hiểu lầm và sự thật",
+   "title": "Lead càng rẻ càng tốt?",
+   "brief": "Lead rẻ thường đi kèm tỷ lệ chốt thấp; nhìn chi phí trên mỗi khách chốt được thay vì chi phí mỗi lead",
+   "source": "Bài blog 9 (đăng 10/11)",
+   "link_post": null,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261108",
+   "date": "2026-11-08",
+   "time": "20:13",
+   "month": "2026-11",
+   "format": "Video ngắn (Reels)",
+   "title": "Video 1 về ChatGPT Ads",
+   "brief": "Đăng lại video TikTok tuần này",
+   "source": "Kênh TikTok",
+   "link_post": 33,
+   "note": "Chưa có video thì đổi sang Câu hỏi mở: 11.11 năm nay bạn dồn ngân sách vào sàn nào?",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261109",
+   "date": "2026-11-09",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Góc số liệu",
+   "title": "FMCG tăng 36% trên sàn chỉ trong quý III",
+   "brief": "Hàng thiết yếu mua lặp lại; FMCG +26% sau 9 tháng; mùa cuối năm dự báo tăng trên 20%",
+   "source": "YouNet ECI quý III/2026",
+   "link_post": null,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261110",
+   "date": "2026-11-10",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Thuật ngữ 1 phút",
+   "title": "LTV là gì, vì sao quyết định ngân sách kéo khách?",
+   "brief": "LTV là tổng lợi nhuận một khách mang lại trong vòng đời; CAC phải thấp hơn LTV mới có lãi",
+   "source": "Bài blog 5",
+   "link_post": 5,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261111",
+   "date": "2026-11-11",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Carousel hướng dẫn",
+   "title": "7 chỉ số cần nhìn trong ngày 11.11",
+   "brief": "Theo dõi theo giờ: GMV, ROAS, tồn kho, tỷ lệ chuyển đổi, chi phí, đơn hủy, tin nhắn chờ",
+   "source": "Bài blog 1",
+   "link_post": 1,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261112",
+   "date": "2026-11-12",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Tin nóng",
+   "title": "Livestream bán hàng phải xác thực danh tính, bạn đã chuẩn bị chưa?",
+   "brief": "Luật Thương mại điện tử 122/2025/QH15 hiệu lực 1/7/2026: nền tảng xác thực người livestream và người làm affiliate, lưu dữ liệu phiên live",
+   "source": "Luật 122/2025/QH15",
+   "link_post": 6,
+   "note": "Khung tin nóng",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261113",
+   "date": "2026-11-13",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Phép tính nhanh",
+   "title": "Một phiên livestream 3 giờ lãi hay lỗ?",
+   "brief": "Cách tính lãi lỗ một phiên theo bài 16: doanh thu, giá vốn, phí sàn, chi phí người live, quảng cáo",
+   "source": "Bài blog 16",
+   "link_post": 16,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261114",
+   "date": "2026-11-14",
+   "time": "20:13",
+   "month": "2026-11",
+   "format": "Câu hỏi mở",
+   "title": "Ngân sách marketing 2027 của bạn tăng hay giảm?",
+   "brief": "Mời bình luận; dẫn sang bài 11 về lập ngân sách theo giai đoạn tăng trưởng",
+   "source": "Bài blog 11",
+   "link_post": 11,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261115",
+   "date": "2026-11-15",
+   "time": "20:13",
+   "month": "2026-11",
+   "format": "Video ngắn (Reels)",
+   "title": "Video 1 về livestream bán hàng",
+   "brief": "Đăng lại video TikTok tuần này",
+   "source": "Kênh TikTok",
+   "link_post": 16,
+   "note": "Chưa có video thì đổi sang Câu hỏi mở",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261116",
+   "date": "2026-11-16",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Góc số liệu",
+   "title": "78% người Việt online đã dùng AI trong 3 tháng",
+   "brief": "33% dùng hằng ngày; ChatGPT 81%, Gemini 51%, Meta AI 36%",
+   "source": "Decision Lab 8/2025",
+   "link_post": 12,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261117",
+   "date": "2026-11-17",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Thuật ngữ 1 phút",
+   "title": "GEO là gì?",
+   "brief": "Tối ưu để được AI trích dẫn; thương hiệu được AI Overview trích dẫn có thêm 35% click tự nhiên",
+   "source": "Seer Interactive 9/2025",
+   "link_post": "6076",
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261118",
+   "date": "2026-11-18",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Carousel hướng dẫn",
+   "title": "Quảng cáo dùng AI: 5 trường hợp phải gắn nhãn",
+   "brief": "Nghị định 142/2026 (hiệu lực 1/5/2026), Điều 18: mô phỏng ngoại hình, giọng nói người thật, tái hiện sự kiện thật",
+   "source": "Nghị định 142/2026/NĐ-CP",
+   "link_post": 35,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261119",
+   "date": "2026-11-19",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Tin nóng",
+   "title": "Sora đã đóng, công cụ video AI nào thay thế?",
+   "brief": "OpenAI đóng app Sora 26/4/2026, API 24/9/2026; Veo có trong Google Ads, Seedance 2.0 trong TikTok Symphony",
+   "source": "TechCrunch 3/2026; Search Engine Land; PPC Land 5/2026",
+   "link_post": 13,
+   "note": "Khung tin nóng",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261120",
+   "date": "2026-11-20",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Phép tính nhanh",
+   "title": "Cần bao nhiêu ngân sách để biết một mẫu quảng cáo thắng hay thua?",
+   "brief": "Meta cần khoảng 50 sự kiện tối ưu trong 7 ngày để qua giai đoạn máy học; ví dụ CPA 100,000 đồng thì mỗi nhóm quảng cáo cần khoảng 5 triệu đồng mỗi tuần. 30 mẫu mỗi tháng nên gom vào ít nhóm, không chia mỏng",
+   "source": "Meta Business Help Center: giai đoạn máy học",
+   "link_post": 13,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261121",
+   "date": "2026-11-21",
+   "time": "20:13",
+   "month": "2026-11",
+   "format": "Hiểu lầm và sự thật",
+   "title": "Video càng dài càng thuyết phục?",
+   "brief": "3 giây đầu quyết định người xem ở lại; dẫn sang bài 30 về công thức hook",
+   "source": "Bài blog 30",
+   "link_post": 30,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261122",
+   "date": "2026-11-22",
+   "time": "20:13",
+   "month": "2026-11",
+   "format": "Video ngắn (Reels)",
+   "title": "Video 1 về FMCG trên sàn",
+   "brief": "Đăng lại video TikTok tuần này",
+   "source": "Kênh TikTok",
+   "link_post": 34,
+   "note": "Chưa có video thì đổi sang Câu hỏi mở: bạn đã dùng AI tạo quảng cáo chưa?",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261123",
+   "date": "2026-11-23",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Góc số liệu",
+   "title": "Mỹ phẩm: TikTok Shop sắp vượt Shopee?",
+   "brief": "Thị phần TikTok Shop ngành mỹ phẩm từ 42% lên 49% trong 4 tháng đầu 2026; làm đẹp 49,508 tỷ đồng H1/2026",
+   "source": "Metric 2026",
+   "link_post": 14,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261124",
+   "date": "2026-11-24",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Thuật ngữ 1 phút",
+   "title": "ZNS là gì?",
+   "brief": "Tin nhắn chăm sóc khách qua Zalo; Zalo có 81.3 triệu người dùng hằng tháng, khoảng 30,000 OA",
+   "source": "VNG quý II/2026",
+   "link_post": 15,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261125",
+   "date": "2026-11-25",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Carousel hướng dẫn",
+   "title": "Hợp đồng KOC 2026: 6 điều khoản phải có",
+   "brief": "Luật Quảng cáo sửa đổi hiệu lực 1/1/2026: KOL, KOC kiểm chứng sản phẩm, công khai quảng cáo, chịu trách nhiệm khi sai",
+   "source": "Luật 75/2025/QH15",
+   "link_post": 14,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261126",
+   "date": "2026-11-26",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Tin nóng",
+   "title": "Quảng cáo trên Threads đã mở, có nên bật?",
+   "brief": "Threads hiển thị quảng cáo cho mọi người dùng toàn cầu từ cuối 1/2026; kiểm tra lựa chọn vị trí hiển thị",
+   "source": "TechCrunch 1/2026",
+   "link_post": 2,
+   "note": "Khung tin nóng",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261127",
+   "date": "2026-11-27",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Phép tính nhanh",
+   "title": "CPM mùa Tết tăng, khi nào nên giảm ngân sách?",
+   "brief": "Phép tính minh họa ngưỡng CPM hòa vốn theo bài 23; ghi rõ là ví dụ",
+   "source": "Bài blog 23",
+   "link_post": 23,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261128",
+   "date": "2026-11-28",
+   "time": "20:13",
+   "month": "2026-11",
+   "format": "Câu hỏi mở",
+   "title": "Sau mùa sale, bạn chăm sóc khách cũ bằng kênh nào?",
+   "brief": "Mời bình luận: Zalo, email, SMS, remarketing",
+   "source": "Bài blog 15",
+   "link_post": 15,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261129",
+   "date": "2026-11-29",
+   "time": "20:13",
+   "month": "2026-11",
+   "format": "Video ngắn (Reels)",
+   "title": "Video 1 về sản xuất quảng cáo bằng AI",
+   "brief": "Đăng lại video TikTok tuần này",
+   "source": "Kênh TikTok",
+   "link_post": 13,
+   "note": "Chưa có video thì đổi sang Hiểu lầm và sự thật: cookie bên thứ ba đã bị khai tử?",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261130",
+   "date": "2026-11-30",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Góc số liệu",
+   "title": "Xe máy điện tăng gần gấp đôi",
+   "brief": "Xe máy điện 7 tháng 2026 +97.2%; ô tô 9 tháng +12% (VAMA), hybrid +64%",
+   "source": "MotorcyclesData qua VnEconomy; VAMA qua VietnamPlus 10/2026",
+   "link_post": 36,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261201",
+   "date": "2026-12-01",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Thuật ngữ 1 phút",
+   "title": "Brand Commerce là gì?",
+   "brief": "Kết hợp đầu tư thương hiệu và bán hàng trên cùng một hành trình",
+   "source": "Bài blog 18",
+   "link_post": 18,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261202",
+   "date": "2026-12-02",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Carousel hướng dẫn",
+   "title": "5 tin nhắn ZNS sau mua hàng giúp khách quay lại",
+   "brief": "Xác nhận đơn, giao hàng, hướng dẫn dùng, xin đánh giá, nhắc mua lại; xin đồng ý theo Luật Bảo vệ dữ liệu cá nhân",
+   "source": "Bài blog 15",
+   "link_post": 15,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261203",
+   "date": "2026-12-03",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Tin nóng",
+   "title": "Meta Business Agent: nhân viên tư vấn AI trên Messenger",
+   "brief": "Ra mắt toàn cầu 3/6/2026, hơn 1 triệu doanh nghiệp dùng",
+   "source": "Meta 6/2026",
+   "link_post": null,
+   "note": "Khung tin nóng",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261204",
+   "date": "2026-12-04",
+   "time": "12:13",
+   "month": "2026-11",
+   "format": "Phép tính nhanh",
+   "title": "Thêm 5% khách mua lại đáng bao nhiêu tiền?",
+   "brief": "Ví dụ: 10,000 khách, giá trị đơn trung bình 300,000 đồng; thêm 5% khách mua lại 1 đơn là 500 đơn, tương đương 150 triệu đồng doanh thu mà không tốn chi phí kéo khách mới",
+   "source": "Phép tính minh họa theo bài 26",
+   "link_post": 26,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261205",
+   "date": "2026-12-05",
+   "time": "20:13",
+   "month": "2026-11",
+   "format": "Hiểu lầm và sự thật",
+   "title": "Chatbot AI sẽ thay nhân viên sale?",
+   "brief": "Chatbot xử lý câu hỏi lặp lại, chuyển ca khó cho người thật",
+   "source": "Bài blog 29",
+   "link_post": 29,
+   "note": null,
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  },
+  {
+   "id": "fb-20261206",
+   "date": "2026-12-06",
+   "time": "20:13",
+   "month": "2026-11",
+   "format": "Video ngắn (Reels)",
+   "title": "Video 1 về marketing ô tô và xe điện",
+   "brief": "Đăng lại video TikTok tuần này",
+   "source": "Kênh TikTok",
+   "link_post": 36,
+   "note": "Chưa có video thì đổi sang Câu hỏi mở",
+   "status": "planned",
+   "caption": null,
+   "hashtags": null,
+   "images": null,
+   "approval": null,
+   "fb_post_id": null
+  }
+ ],
+ "tiktok": [
+  {
+   "id": "tt-20261020",
+   "date": "2026-10-20",
+   "time": "19:13",
+   "month": "2026-10",
+   "post": 1,
+   "part": 1,
+   "angle": "Giảm giá 30% ngày 11.11, mỗi đơn còn lãi bao nhiêu",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261022",
+   "date": "2026-10-22",
+   "time": "19:13",
+   "month": "2026-10",
+   "post": 1,
+   "part": 2,
+   "angle": "Phí sàn 2026 và giá hòa vốn",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261024",
+   "date": "2026-10-24",
+   "time": "19:13",
+   "month": "2026-10",
+   "post": 1,
+   "part": 3,
+   "angle": "7 ngày giữ khách để nối sang 12.12",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261027",
+   "date": "2026-10-27",
+   "time": "19:13",
+   "month": "2026-10",
+   "post": 10,
+   "part": 1,
+   "angle": "GMV Max hoạt động thế nào",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261029",
+   "date": "2026-10-29",
+   "time": "19:13",
+   "month": "2026-10",
+   "post": 10,
+   "part": 2,
+   "angle": "Shopee Ads và GMV Max: chia ngân sách trước 11.11",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261031",
+   "date": "2026-10-31",
+   "time": "19:13",
+   "month": "2026-10",
+   "post": 10,
+   "part": 3,
+   "angle": "Đo ROAS theo từng sản phẩm",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261103",
+   "date": "2026-11-03",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 33,
+   "part": 1,
+   "angle": "ChatGPT Ads là gì, hiện ở đâu",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261105",
+   "date": "2026-11-05",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 33,
+   "part": 2,
+   "angle": "Ngành nào nên chạy thử",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261107",
+   "date": "2026-11-07",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 33,
+   "part": 3,
+   "angle": "3 việc chuẩn bị trước khi chạy",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261110",
+   "date": "2026-11-10",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 16,
+   "part": 1,
+   "angle": "Tính lãi lỗ một phiên live",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261112",
+   "date": "2026-11-12",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 16,
+   "part": 2,
+   "angle": "KPI theo giờ của phiên live",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261114",
+   "date": "2026-11-14",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 16,
+   "part": 3,
+   "angle": "Luật mới: xác thực người livestream",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261117",
+   "date": "2026-11-17",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 34,
+   "part": 1,
+   "angle": "FMCG tăng 36% trên sàn",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261119",
+   "date": "2026-11-19",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 34,
+   "part": 2,
+   "angle": "Vì sao khách mua lần hai quan trọng",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261121",
+   "date": "2026-11-21",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 34,
+   "part": 3,
+   "angle": "Shopee hay TikTok Shop cho hàng thiết yếu",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261124",
+   "date": "2026-11-24",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 13,
+   "part": 1,
+   "angle": "30 mẫu quảng cáo một tháng với AI",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261126",
+   "date": "2026-11-26",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 13,
+   "part": 2,
+   "angle": "Khi nào phải gắn nhãn AI",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261128",
+   "date": "2026-11-28",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 13,
+   "part": 3,
+   "angle": "Giữ bản sắc thương hiệu khi dùng AI",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261201",
+   "date": "2026-12-01",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 36,
+   "part": 1,
+   "angle": "Xe máy điện tăng gần gấp đôi",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261203",
+   "date": "2026-12-03",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 36,
+   "part": 2,
+   "angle": "Đại lý nên chạy kênh nào để có lead",
+   "status": "planned"
+  },
+  {
+   "id": "tt-20261205",
+   "date": "2026-12-05",
+   "time": "19:13",
+   "month": "2026-11",
+   "post": 36,
+   "part": 3,
+   "angle": "Hà Nội hạn chế xe xăng: cơ hội nội dung",
+   "status": "planned"
   }
  ]
 }

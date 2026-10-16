@@ -91,7 +91,9 @@ def build(nos, mark=False):
         for p in posts:
             p["approval"], p["approval_requested"] = "pending", now.isoformat(timespec="seconds")
         save(data)
-    subject = ("[Adtek Blog] Cần duyệt bài " + " và ".join(str(p["no"]) for p in posts)
+    nos_txt = [str(p["no"]) for p in posts]
+    nos_txt = ", ".join(nos_txt[:-1]) + " và " + nos_txt[-1] if len(nos_txt) > 1 else nos_txt[0]
+    subject = ("[Adtek Blog] Cần duyệt bài " + nos_txt
                + ": đăng " + ", ".join(f"{date.fromisoformat(p['date']).day}/{date.fromisoformat(p['date']).month}" for p in posts))
     howto = ("Cách duyệt: trả lời trong phiên Claude Code \"duyệt bài X\", hoặc ghi chỗ cần sửa. "
              f"Nếu anh chưa phản hồi trước {due}, bài sẽ tự đặt lịch đăng theo kế hoạch; "

@@ -4,7 +4,8 @@ Cách dùng:
   python3 tools/seo_post.py due                 bài đã lên sóng mà chưa tối ưu SEO (tự đổi scheduled thành published)
   python3 tools/seo_post.py check <số bài>      kiểm tra bài đang live, in kết quả từng mục (JSON)
   python3 tools/seo_post.py fix <số bài>        tự sửa phần kỹ thuật: focus keyphrase, alt ảnh, nofollow link ngoài, xóa cache
-  python3 tools/seo_post.py links <số bài>      các bài nên trỏ link về bài này, bài nào đã có link
+  python3 tools/seo_post.py links <số bài>      các bài nên trỏ link về bài này, bài nào đã có link; bài trụ cột thì liệt kê
+                                                thêm bài con cùng cụm đã đăng trước nó và link hai chiều còn thiếu
   python3 tools/seo_post.py meta <số bài>       ghi seo_title, meta_desc trong calendar.json lên Yoast
   python3 tools/seo_post.py get <ID WP> <file>  tải nội dung gốc của bài về file để sửa
   python3 tools/seo_post.py put <ID WP> <file> <lý do>  backup bản đang có vào content/backups, ghi nội dung mới, xóa cache
@@ -278,8 +279,22 @@ def links(data, post):
             continue
         seen.add(wp_id)
         out.append({"ref": ref, "why": why, "wp_id": wp_id, "url": url, "already_links": wp_id in inb})
+    # Bài trụ cột lên sóng sau các bài con cùng cụm (nhịp 4 bài/tuần): bài con đã tối ưu xong trước khi có trụ cột,
+    # nên phải nối hai chiều ở lần chạy của trụ cột. pillar_links_child: trụ cột đã trỏ xuống bài con chưa.
+    children = []
+    if pillar == post["no"]:
+        own = wp_post(post["wp_id"])["content"]["raw"]
+        up = re.compile(rf'href="(https?://(www\.)?adtek\.agency)?/{re.escape(post["slug"])}/?["#?]')
+        for c in data["posts"]:
+            if c["cluster"] != post["cluster"] or c["no"] == post["no"] or c["status"] != "published" or not c.get("wp_id"):
+                continue
+            down = re.compile(rf'href="(https?://(www\.)?adtek\.agency)?/{re.escape(c["slug"])}/?["#?]')
+            children.append({"no": c["no"], "wp_id": c["wp_id"], "url": f"{SITE}/{c['slug']}/", "keyword": c["keyword"],
+                             "pillar_links_child": bool(down.search(own)),
+                             "child_links_pillar": bool(up.search(wp_post(c["wp_id"])["content"]["raw"]))})
     print(json.dumps({"no": post["no"], "url": f"{SITE}/{post['slug']}/", "anchor_keyword": post["keyword"],
-                      "inbound_now": inb, "candidates": out}, ensure_ascii=False, indent=1))
+                      "inbound_now": inb, "candidates": out, **({"pillar_children": children} if children else {})},
+                     ensure_ascii=False, indent=1))
 
 
 if __name__ == "__main__":
