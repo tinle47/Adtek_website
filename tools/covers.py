@@ -13,6 +13,7 @@ Cách dùng:
   python3 tools/covers.py pick                       xem phong cách tự chọn cho từng bài đã có cover
   python3 tools/covers.py render <số bài> [--style X] [--kind blog|fb|all] [--out thư-mục]   dựng thử, không ghi cover.style
   python3 tools/covers.py sheet <số bài> [--out thư-mục]   dựng mọi phong cách cho một bài để so sánh
+  python3 tools/covers.py existing <wp_id>           dựng ảnh bìa blog cho bài cũ trong mục existing (vd 6076, 6078)
 """
 import base64
 import html
@@ -42,8 +43,8 @@ body{width:${w}px;height:${h}px;overflow:hidden;position:relative;font-family:BV
 $css
 /* Chữ: tiêu đề và con số dùng Newsreader (chữ có chân kiểu báo chí), viết thường như câu; nhãn và mô tả dùng Be Vietnam Pro nhẹ.
    Đặt sau CSS của từng phong cách để thống nhất kiểu chữ cho cả bộ. */
-h1,.num,.name,.cap,.disc span,.vs{font-family:NR,serif;font-weight:600;text-transform:none;letter-spacing:-.012em}
-.num,.disc span{letter-spacing:-.03em;font-variant-numeric:lining-nums}
+h1,.num,.name,.cap,.vs{font-family:NR,serif;font-weight:600;text-transform:none;letter-spacing:-.012em}
+.num{letter-spacing:-.03em;font-variant-numeric:lining-nums}
 .kicker+.num{margin-top:.1em}  /* phần trên của chữ số cao hơn khung dòng, chừa chỗ để không chạm nhãn */
 .kicker{font-weight:600;letter-spacing:0}
 .sub,.band{font-weight:400}
@@ -259,7 +260,7 @@ h1{{font-weight:900;line-height:1.12;letter-spacing:-.01em}}
 
 
 def stack(f, sq):
-    """Hai tầng màu: khối navy và nền kem; đĩa cam chứa con số, cụm chữ đi kèm nằm ngay bên phải hoặc ngay dưới đĩa."""
+    """Hai tầng màu: khối navy và nền kem; con số cam lớn, cụm chữ đi kèm nằm ngay bên phải hoặc ngay dưới số."""
     n = len(f["num"])
     if sq:
         css = f"""
@@ -268,13 +269,12 @@ body{{background:{CREAM};color:{NAVY}}}
 .lg{{position:absolute;left:72px;top:64px}}
 .kicker{{color:{ORANGE};font-size:30px;margin-bottom:30px}}
 .row{{display:flex;align-items:center;gap:36px}}
-.disc{{flex:none;width:280px;height:280px;border-radius:50%;background:{ORANGE};display:flex;align-items:center;justify-content:center}}
-.disc span{{font-size:{170 if n == 1 else 140 if n == 2 else 90}px;line-height:1;color:{NAVY};white-space:nowrap}}
+.num{{flex:none;font-size:{280 if n == 1 else 230 if n == 2 else 150}px;line-height:.8;color:{ORANGE};white-space:nowrap}}
 h1{{flex:1;font-size:74px;line-height:1.12;max-height:4.5em}}
 .sub{{position:absolute;left:72px;right:72px;top:730px;font-size:40px;line-height:1.38;max-height:4.2em}}
 .chips{{position:absolute;left:72px;bottom:64px;font-weight:600;font-size:24px;color:{ORANGE}}}"""
         head = f["head"] if f["paired"] else f["cap"] or f["head"]
-        body = f"""<div class="top"><div class="kicker">{f['kicker']}</div><div class="row"><div class="disc"><span>{f['num']}</span></div>
+        body = f"""<div class="top"><div class="kicker">{f['kicker']}</div><div class="row"><div class="num">{f['num']}</div>
 <h1 class="fit bal">{head}</h1></div></div><div class="lg">{logo('#fff', 74)}</div><div class="sub fit">{f['sub']}</div>
 <div class="chips">{' &nbsp;·&nbsp; '.join(f['chips'][:3])}</div>"""
         return css, body
@@ -286,34 +286,30 @@ body{{background:{CREAM};color:{NAVY}}}
 h1{{font-size:80px;line-height:1.12;margin:10px 0 16px;max-height:2.3em}}
 .sub{{font-size:24px;line-height:1.42;color:#C9D6EE;max-height:4.3em}}
 .unit{{position:absolute;left:780px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
-.disc{{width:220px;height:220px;border-radius:50%;background:{ORANGE};display:flex;align-items:center;justify-content:center}}
-.disc span{{font-size:{140 if n == 1 else 110 if n == 2 else 70}px;line-height:1;color:{NAVY};white-space:nowrap}}
+.num{{font-size:{230 if n == 1 else 170 if n == 2 else 110}px;line-height:.8;color:{ORANGE};white-space:nowrap}}
 .cap{{margin-top:18px;font-size:30px;line-height:1.15;max-height:3.5em}}"""
-    unit = f'<div class="unit"><div class="disc"><span>{f["num"]}</span></div><div class="cap fit bal">{f["cap"]}</div></div>' if f["cap"] else ""
+    unit = f'<div class="unit"><div class="num">{f["num"]}</div><div class="cap fit bal">{f["cap"]}</div></div>' if f["cap"] else ""
     body = f"""<div class="top"><div class="kicker">{f['kicker']}</div><h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>
 <div class="lg">{logo('#fff', 56)}</div>{unit}"""
     return css, body
 
 
 def poster(f, sq):
-    """Áp phích: nền cam phẳng, số navy rất lớn đứng ngay trước cụm chữ đi kèm (trên chữ ở khổ vuông, trái chữ ở khổ ngang)."""
+    """Áp phích: nền cam phẳng, logo navy, số navy rất lớn đứng ngay trước cụm chữ đi kèm (trên chữ ở khổ vuông, trái chữ ở khổ ngang)."""
     n = len(f["num"])
     css = f"""
 body{{background:{ORANGE};color:{NAVY}}}
-.corner{{position:absolute;border-radius:50%;background:{NAVY}}}
 .lg{{position:absolute}}
 .num{{font-size:var(--hero);line-height:.78;color:{NAVY};white-space:nowrap}}
 h1{{line-height:1.1}}
 .sub{{line-height:1.4}}
 .sq{{--hero:{560 if n == 1 else 470 if n == 2 else 320}px}}
-.sq .corner{{width:440px;height:440px;right:-170px;top:-170px}}
 .sq .lg{{right:64px;top:60px}}
 .sq .copy{{position:absolute;left:64px;right:72px;top:64px}}
 .sq .kicker{{font-size:30px;margin:0 0 20px 8px}}
 .sq h1{{font-size:92px;margin:10px 0 18px 8px;max-height:3.4em}}
 .sq .sub{{font-size:32px;max-height:2.9em;margin-left:8px}}
 .ls{{--hero:{420 if n == 1 else 330 if n == 2 else 220}px}}
-.ls .corner{{width:380px;height:380px;right:-110px;top:-150px}}
 .ls .lg{{right:140px;top:84px}}
 .ls .copy{{position:absolute;left:140px;right:140px;top:0;bottom:0;display:flex;align-items:center;gap:44px}}
 .ls .num{{flex:none}}
@@ -327,12 +323,12 @@ h1{{line-height:1.1}}
     else:  # khổ ngang: số bên trái, cụm chữ của số làm tiêu đề ngay bên phải, tên bài làm nhãn
         inner = f"""<div class="num">{f['num']}</div><div class="text"><div class="kicker">{f['title']}</div>
 <h1 class="fit bal">{f['cap'] or f['head']}</h1><div class="sub fit">{f['sub']}</div></div>"""
-    body = f"""<div class="corner"></div><div class="lg">{logo('#fff', 80 if sq else 58)}</div><div class="copy">{inner}</div>"""
+    body = f"""<div class="lg">{logo(NAVY, 80 if sq else 58)}</div><div class="copy">{inner}</div>"""
     return css, body
 
 
 def versus(f, sq):
-    """Đối đầu: dành cho bài so sánh "A vs B", hai nửa navy và cam cắt chéo, đĩa VS trắng ở giữa."""
+    """Đối đầu: dành cho bài so sánh "A vs B", hai nửa navy và cam cắt chéo, chữ "vs" nghiêng màu cam trên nửa navy cạnh đường cắt."""
     src = html.unescape(f["title"])
     a, b = (re.split(r"\s+vs\.?\s+", src, flags=re.I) + ["", ""])[:2]
     a, b = esc(a.strip()), esc(re.sub(r"\s*(19|20)\d\d$", "", b.strip()))
@@ -341,20 +337,19 @@ body{{background:{ORANGE};color:#fff}}
 .l{{position:absolute;inset:0;background:{NAVY};clip-path:polygon(0 0,58% 0,42% 100%,0 100%)}}
 .name{{position:absolute;font-weight:900;line-height:1.08;text-transform:uppercase;letter-spacing:-.01em}}
 .na{{color:#fff}}.nb{{color:{NAVY};text-align:right}}
-.vs{{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:#fff;color:{NAVY};
-display:flex;align-items:center;justify-content:center;font-weight:900;letter-spacing:-.04em}}
+.vs{{position:absolute;transform:translate(-50%,-50%);color:{ORANGE};font-style:italic;line-height:1}}
 .kicker{{position:absolute;font-weight:800;color:{ORANGE}}}
 .band{{position:absolute;background:{NAVY};color:#fff;font-weight:800;line-height:1.35}}
 .lg{{position:absolute}}
 .sq .lg{{left:72px;top:64px}}.sq .kicker{{left:72px;top:190px;font-size:30px}}
 .sq .na{{left:72px;top:270px;width:420px;font-size:96px;max-height:2.3em}}
 .sq .nb{{right:72px;top:640px;width:420px;font-size:96px;max-height:2.3em}}
-.sq .vs{{width:170px;height:170px;font-size:70px;top:52%}}
+.sq .vs{{left:41%;top:52%;font-size:120px}}
 .sq .band{{left:0;right:0;bottom:0;padding:34px 72px 40px;font-size:36px;max-height:4.4em}}
 .ls .lg{{left:140px;top:84px}}.ls .kicker{{left:140px;top:170px;font-size:23px}}
 .ls .na{{left:140px;top:210px;width:360px;font-size:80px;max-height:2.3em}}
 .ls .nb{{right:140px;top:210px;width:360px;font-size:80px;max-height:2.3em}}
-.ls .vs{{width:128px;height:128px;font-size:52px;top:46%}}
+.ls .vs{{left:42%;top:46%;font-size:96px}}
 .ls .band{{left:0;right:0;bottom:0;text-align:center;padding:22px 160px 84px;font-size:24px;max-height:5.6em}}"""
     cap = html.unescape(f["cap"])
     if cap[1:2].islower() and cap.split()[0] not in src:  # "Sàn, chia..." đọc liền sau số: "2 sàn, chia..."
@@ -362,7 +357,7 @@ display:flex;align-items:center;justify-content:center;font-weight:900;letter-sp
     band = f"{f['num']} {esc(cap)}" if sq and cap else f["sub"]
     body = f"""<div class="l"></div><div class="lg">{logo('#fff', 80 if sq else 58)}</div>
 <div class="kicker">{f['kicker']}</div><div class="name na fit bal">{a}</div><div class="name nb fit bal">{b}</div>
-<div class="vs">VS</div><div class="band fit bal">{band}</div>"""
+<div class="vs">vs</div><div class="band fit bal">{band}</div>"""
     return css, body
 
 
@@ -509,6 +504,10 @@ if __name__ == "__main__":
         out = opt("--out")
         jobs = [(post, k, style, Path(out) / f"{post['slug']}-{k}-{style}.jpg" if out else output_path(post, k)) for k in kinds]
         print("\n".join(render(jobs)))
+    elif cmd == "existing":  # bài cũ trong mục existing của calendar.json (có slug, date, cover kèm style)
+        e = next(x for x in data["existing"] if str(x.get("wp_id")) == args[1])
+        post = {"no": 0, **e}
+        print("\n".join(render([(post, "blog", e["cover"]["style"], output_path(post, "blog"))])))
     elif cmd == "sheet":
         post = find(data, int(args[1]))
         out = Path(opt("--out", ROOT / "previews/covers"))

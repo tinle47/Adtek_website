@@ -911,13 +911,43 @@
    "wp_id": "6078",
    "cluster": "C6",
    "refresh": "B",
-   "action": "giữ"
+   "action": "giữ",
+   "slug": "digital-marketing-bat-dong-san-khu-cong-nghiep",
+   "date": "2026-10-06",
+   "cover": {
+    "kicker": "Playbook ngành",
+    "title": "Marketing khu công nghiệp",
+    "subtitle": "Thu hút nhà đầu tư FDI trên kênh số: website dữ liệu, SEO đa ngôn ngữ, LinkedIn ABM, CRM",
+    "chips": [
+     "SEO đa ngôn ngữ",
+     "LinkedIn ABM",
+     "CRM"
+    ],
+    "hero": "90",
+    "hero_text": "Ngày đầu tiên tìm nhà đầu tư FDI",
+    "style": "stack"
+   }
   },
   {
    "wp_id": "6076",
    "cluster": "C4",
    "refresh": "A",
-   "action": "pillar C4, giữ"
+   "action": "pillar C4, giữ",
+   "slug": "aio-la-gi",
+   "date": "2026-10-06",
+   "cover": {
+    "kicker": "SEO và AI Search",
+    "title": "AIO là gì?",
+    "subtitle": "Tối ưu nội dung và thương hiệu để AI Overviews, ChatGPT, Gemini trích dẫn bạn",
+    "chips": [
+     "AI Overviews",
+     "Trích dẫn",
+     "Đo lường"
+    ],
+    "hero": "7",
+    "hero_text": "Bước để nội dung được AI trích dẫn",
+    "style": "poster"
+   }
   },
   {
    "wp_id": "5899",
