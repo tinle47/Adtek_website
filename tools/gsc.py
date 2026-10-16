@@ -11,6 +11,7 @@ Cách dùng:
   python3 tools/gsc.py submit             gửi lại sitemap_index.xml
   python3 tools/gsc.py inspect <số bài>   tình trạng index của bài, ghi index_status, index_checked vào calendar.json
   python3 tools/gsc.py notify <số bài>    báo Google bài mới hoặc vừa cập nhật qua Indexing API (thay cho bấm tay "Yêu cầu lập chỉ mục")
+  python3 tools/gsc.py notify-urls <url>...   báo Google các URL bất kỳ qua Indexing API (trang dịch vụ, chuyên mục...)
   python3 tools/gsc.py audit <file.json>  kiểm tra tình trạng index mọi URL trong sitemap, ghi kết quả ra file, in tổng hợp theo trạng thái
   python3 tools/gsc.py pending [số ngày]  kiểm tra bài đăng từ <số ngày> ngày trước (mặc định 2, tối đa 30 ngày) mà chưa index, in link bấm tay
 """
@@ -134,6 +135,14 @@ if __name__ == "__main__":
         info = call("GET", f"{WEBMASTERS}/sites/{quote(prop, safe='')}/sitemaps/{quote(SITEMAP, safe='')}", bearer=tok)
         print(json.dumps({"property": prop, "sitemap": SITEMAP, "lastSubmitted": info.get("lastSubmitted"),
                           "errors": info.get("errors"), "warnings": info.get("warnings")}, ensure_ascii=False, indent=1))
+        sys.exit()
+    if cmd == "notify-urls":
+        out = []
+        for u in sys.argv[2:]:
+            r = call("POST", PUBLISH, {"url": u, "type": "URL_UPDATED"}, bearer=tok)
+            out.append({"url": u, "notified": bool(r.get("urlNotificationMetadata")), **({} if r.get("urlNotificationMetadata") else {"error": r.get("error", r)})})
+            time.sleep(0.5)
+        print(json.dumps(out, ensure_ascii=False, indent=1))
         sys.exit()
     if cmd == "audit":
         import re
