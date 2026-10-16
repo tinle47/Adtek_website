@@ -18,7 +18,7 @@ Kế hoạch tháng M gồm các tuần có thứ Hai nằm trong tháng M (ví 
 | Facebook | 1 bài mỗi ngày, định dạng riêng cho Facebook, không đăng lại bài blog | 12:13 ngày thường, 20:13 thứ Bảy và Chủ nhật |
 | TikTok | 3 video/tuần từ 1 bài blog (công cụ trong `video/`) | 19:13 thứ Ba, Năm, Bảy |
 
-Định dạng Facebook xoay theo ngày: thứ Hai góc số liệu, thứ Ba thuật ngữ 1 phút, thứ Tư carousel hướng dẫn, thứ Năm tin nóng (có tin lớn thì thay), thứ Sáu phép tính nhanh (con số ví dụ ghi rõ là ví dụ), thứ Bảy hiểu lầm và sự thật hoặc câu hỏi mở, Chủ nhật video ngắn (Reels, dùng lại video TikTok; chưa có video thì đổi sang câu hỏi mở). Bài liên quan tới một bài blog đã lên sóng thì Page bình luận link bài đó.
+Định dạng Facebook xoay theo ngày: thứ Hai góc số liệu, thứ Ba thuật ngữ 1 phút, thứ Tư carousel hướng dẫn, thứ Năm tin nóng (có tin lớn thì thay), thứ Sáu phép tính nhanh (con số ví dụ ghi rõ là ví dụ), thứ Bảy hiểu lầm và sự thật hoặc câu hỏi mở, Chủ nhật video ngắn (Reels, dùng lại video TikTok; chưa có video thì đổi sang câu hỏi mở). Bài liên quan tới một bài blog đã lên sóng thì Page bình luận link bài đó, không giới hạn số bài có link mỗi tuần (anh Tin chọn phương án A ngày 16/10/2026).
 
 ## Các bước
 
