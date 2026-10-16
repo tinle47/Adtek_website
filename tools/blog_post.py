@@ -100,6 +100,8 @@ def recover(data, post, delete_old=False):
     old = post.get("media_id")
     new = upload(cover(post), post["title"])
     r = api("POST", f"posts/{post['wp_id']}?_fields=id,status,featured_media", {"featured_media": new})
+    if r.get("featured_media") != new:  # cập nhật bài đã đăng có thể chạy xong nhưng proxy cắt phản hồi: đọc lại
+        r = api("GET", f"posts/{post['wp_id']}?context=edit&_fields=id,status,featured_media")
     if r.get("featured_media") != new:
         sys.exit(f"Lỗi: {str(r)[:300]}")
     post["media_id"] = new
