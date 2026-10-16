@@ -27,6 +27,7 @@ Kế hoạch tháng M gồm các tuần có thứ Hai nằm trong tháng M (ví 
 3. Cập nhật phần nghiên cứu trong `reports/chien-luoc-noi-dung.html` (bức tranh thị trường, bảng ngành, bảng công nghệ), thêm một dòng vào nhật ký nghiên cứu.
 4. Lập kế hoạch tháng mới cho cả 3 kênh:
    - Chủ đề tháng nối với thông điệp xuyên suốt.
+   - Tiêu đề và brief bài blog viết theo `content/editorial/van-phong.md` (văn phong anh Tin, 17/10/2026): hứa một kết quả cụ thể, vào thẳng việc, ưu tiên bài có ví dụ làm từng bước.
    - Blog: chọn bài từ `calendar.json` (status planned hoặc backlog) và bài mới từ nghiên cứu, ưu tiên tin có tính thời sự và ngành tăng trưởng; mỗi bài có số bài, tiêu đề, cụm, từ khóa, ngày giờ.
    - Facebook: 1 bài mỗi ngày theo định dạng xoay vòng, mỗi bài có tiêu đề câu hỏi, brief, số liệu kèm nguồn, bài blog để bình luận link (chỉ khi bài đó đã lên sóng trước ngày đăng). Không lên bài mini-case hay số liệu dự án (anh Tin bỏ ngày 16/10/2026).
    - TikTok: 3 video/tuần từ 1 bài blog đã lên sóng trước ngày đăng video, mỗi video một góc.

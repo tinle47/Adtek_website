@@ -154,3 +154,4 @@
 | 2026-10-17 01:40 | Gỡ và đăng lại bài Facebook của blog bài 1 với ảnh 1:1 mới của Designer (commit 251f34f), caption giữ nguyên. Bài mới 101888089257566_1090735023715442, Page đã bình luận link | Facebook Page | Đã áp dụng |
 | 2026-10-16 18:27 | Ảnh bìa Fanpage chính: bản dựng lại theo mẫu cũ, không ô dịch vụ (anh Tin chọn); bản biểu đồ mũi tên đổi tên thành fb-cover-arrow.jpg | content/brand/fb-cover.jpg, tools/covers.py | Anh Tin tự thay trên Facebook |
 | 2026-10-17 | Anh Tin duyệt bản viết lại bài 10 và 16: đặt lịch WordPress bài 10 (6156) 08:21 19/10, bài 16 (6158) 08:07 23/10; hủy lịch D+1 trig_01Stw1k3rr9V6SRdriFQAbZu | Bài 6156, 6158 | Đã đặt lịch |
+| 2026-10-17 01:35 | monthly-planning.md: tiêu đề và brief bài blog trong kế hoạch tháng theo content/editorial/van-phong.md | content/editorial/routines | Đã áp dụng |
