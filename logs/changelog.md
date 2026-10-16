@@ -156,3 +156,4 @@
 | 2026-10-17 | Anh Tin duyệt bản viết lại bài 10 và 16: đặt lịch WordPress bài 10 (6156) 08:21 19/10, bài 16 (6158) 08:07 23/10; hủy lịch D+1 trig_01Stw1k3rr9V6SRdriFQAbZu | Bài 6156, 6158 | Đã đặt lịch |
 | 2026-10-17 01:35 | monthly-planning.md: tiêu đề và brief bài blog trong kế hoạch tháng theo content/editorial/van-phong.md | content/editorial/routines | Đã áp dụng |
 | 2026-10-17 01:45 | Anh Tin chọn phương án A: Facebook giữ giọng riêng của Page, van-phong.md chỉ áp dụng cho blog. Ghi vào routines/monthly-planning.md, báo phiên Facebook post | content/editorial/routines | Đã áp dụng |
+| 2026-10-17 01:35 | routines/facebook-daily.md: caption Facebook giữ giọng Page Adtek, không áp dụng van-phong.md (phương án A, phiên Marketing báo) | content/editorial/routines | Đã áp dụng |
