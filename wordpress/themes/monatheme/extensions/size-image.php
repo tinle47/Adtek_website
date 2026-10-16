@@ -15,6 +15,8 @@ function mona_image_size()
     add_image_size('474x474', 474, 474, true);
     add_image_size('270x295', 270, 295, true);
     add_image_size('370x250', 370, 250, true);
+    // Bản gấp đôi của 370x250 (danh sách báo cáo, bài liên quan) để màn Retina không bị phóng mờ.
+    add_image_size('740x500', 740, 500, true);
     add_image_size('80x70', 80, 70, true);
     add_image_size('100x100', 100, 100, true);
     add_image_size('870x362', 870, 362, true);

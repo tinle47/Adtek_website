@@ -37,6 +37,17 @@ Cài đặt: upload file vào `httpdocs/wp-content/mu-plugins/`. Khi chưa cài,
 
 Lưu nội dung một trang bản dịch (POST `/wp/v2/pages/<id>` với `content`) có thể làm WPML đặt lại slug theo bản tiếng Việt, ví dụ trang 5242 từ `press` thành `bao-chi` khiến `/en/press/` trả 404. Sau mỗi lần ghi trang EN, đọc lại `link` và nếu slug đổi thì gửi lại `{"slug": "<slug cũ>"}`. Ghi riêng `meta` không gặp lỗi này.
 
+## wordpress/mu-plugins/adtek-yoast-settings.php
+
+Đọc và sửa cấu hình Yoast SEO qua REST (Yoast không có API cấu hình), dùng cho phiên Adtek - SEO. Chỉ quản trị viên dùng được.
+
+- `GET /wp-json/adtek/v1/yoast-settings` trả toàn bộ cấu hình Yoast (`WPSEO_Options::get_all`), cài đặt SEO của WPML (`icl_sitepress_settings['seo']`, gồm hreflang) và hồ sơ tác giả (tiểu sử, `adtek_job_title`, LinkedIn và các mạng xã hội Yoast dùng cho schema Person).
+- `POST` với `{"settings": {...}, "wpml_seo": {...}, "user": {"id": 4, "meta": {...}}, "purge": true}`: chỉ ghi khóa đã tồn tại (gõ sai trả `unknown_key`), trả giá trị cũ và mới của từng khóa để lưu backup; `purge` xóa toàn bộ cache LiteSpeed và WP-Optimize.
+
+- Từ 1.1.0 phục vụ `/llms.txt` tiếng Việt (Giới thiệu và liên hệ, Dịch vụ, Bài trụ cột, Bài mới, Báo cáo, Tài nguyên, English) thay cho file của Yoast (bị ghi 2 lần nối nhau khi chạy cùng WPML). Lưu đệm 12 giờ, làm mới khi có bài đăng hoặc cập nhật. `POST` thêm `{"llms": {"pillars": [ID]}}` (danh sách bài trụ cột) và `{"llms_cleanup": true}` (xóa file llms.txt cũ của Yoast sau khi tắt `enable_llms_txt`).
+
+Cài đặt: upload file vào `httpdocs/wp-content/mu-plugins/`. Đi kèm `wordpress/themes/monatheme/author.php` (trang tác giả, upload vào `httpdocs/wp-content/themes/monatheme/`).
+
 ## video/
 
 Hệ thống tạo video infographic TikTok từ bài blog (Remotion + giọng ElevenLabs). Xem `video/README.md`.
