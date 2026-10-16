@@ -1,0 +1,129 @@
+<p>Từ ngày 12/1/2026, Ads Insights API của Meta ngừng trả dữ liệu cho hai cửa sổ phân bổ 7 ngày sau xem và 28 ngày sau xem. Các dashboard kéo số qua API thấy chuyển đổi tụt xuống, trong khi số đơn trong kho không đổi. Nhiều đội marketing đọc con số đó là quảng cáo kém đi, rồi cắt ngân sách. Trước khi cắt, cần một bộ chỉ số không phụ thuộc vào cách từng nền tảng tự đếm.</p>
+
+<p><strong>Khi ROAS trên nền tảng giảm, hãy kiểm tra ba chỉ số trước khi đổi ngân sách: MER (tổng doanh thu chia tổng chi marketing), CAC khách mới (tổng chi marketing chia số khách mới) và lợi nhuận đóng góp sau phí sàn và chi phí marketing (CM3). ROAS cho biết nền tảng ghi nhận được bao nhiêu đơn. MER, CAC và CM3 cho biết doanh nghiệp thực sự thu về bao nhiêu. LTV tính trên lợi nhuận gộp, theo từng nhóm khách, cho biết mức CAC nào còn chịu được.</strong></p>
+
+<h2>Vì sao ROAS trên nền tảng không còn đáng tin như trước?</h2>
+
+<p><a href="/glossary/return-on-ad-spend-roas/">ROAS</a> trên Meta, Google hay TikTok là doanh thu mà chính nền tảng đó gán cho quảng cáo của mình, theo cửa sổ và luật đếm của nó. Từ 2021 đến 2026, cả ba thứ đó đều thay đổi:</p>
+
+<ul>
+<li>Tháng 4/2021, Apple bật <a href="/glossary/app-tracking-transparency-att-tinh-minh-bach-theo-doi-ung-dung/">App Tracking Transparency</a> trên iOS 14.5. Meta đổi <a href="/glossary/attribution-window/">cửa sổ phân bổ</a> mặc định thành 7 ngày sau nhấp và 1 ngày sau xem, Ads Manager bỏ các cửa sổ 28 ngày. Với người dùng iOS từ chối theo dõi, Meta chỉ nhận một sự kiện ưu tiên cao nhất cho mỗi lượt truy cập.</li>
+<li>Tháng 1/2026, phần cửa sổ 7 ngày và 28 ngày sau xem bị bỏ nốt trên API, kéo theo các công cụ báo cáo bên thứ ba.</li>
+<li>Google Ads dùng mô hình hóa chuyển đổi cho người dùng từ chối cookie, dựa trên hành vi của người dùng đồng ý. Phần chuyển đổi mô hình hóa nằm chung cột Conversions, tức là một phần con số là ước tính chứ không phải đơn đếm được.</li>
+<li>Mỗi nền tảng tự gán đơn theo cửa sổ của mình. Khách xem video TikTok, bấm quảng cáo Meta rồi tìm thương hiệu trên Google trước khi mua sẽ được cả ba nền tảng nhận công. Cộng doanh thu từ ba báo cáo lại thường ra con số lớn hơn doanh thu thật.</li>
+</ul>
+
+<p>Đếm thiếu hay đếm thừa mới là một nửa vấn đề. Nghiên cứu của Gordon, Zettelmeyer và cộng sự trên tạp chí Marketing Science năm 2019 so sánh 15 thử nghiệm ngẫu nhiên trên Facebook, khoảng 1.6 tỷ lượt hiển thị, với các phương pháp đo bằng dữ liệu quan sát. Các phương pháp quan sát thường không ra được mức tăng thật do quảng cáo tạo ra, có trường hợp lệch nhiều lần. ROAS báo cáo đo mức độ liên quan giữa quảng cáo và đơn hàng, không đo được quảng cáo đã tạo thêm bao nhiêu đơn.</p>
+
+<h2>MER, CAC, LTV: định nghĩa và công thức</h2>
+
+<table>
+<thead><tr><th>Chỉ số</th><th>Công thức</th><th>Dùng để quyết định</th></tr></thead>
+<tbody>
+<tr><td>MER (Marketing Efficiency Ratio)</td><td>Tổng doanh thu / tổng chi marketing, cùng kỳ</td><td>Tổng ngân sách có đang sinh lời không</td></tr>
+<tr><td>aMER (doanh thu khách mới)</td><td>Doanh thu từ khách mua lần đầu / tổng chi marketing</td><td>Marketing có đang kéo được khách mới không, hay chỉ bán lại cho khách cũ</td></tr>
+<tr><td>CAC khách mới (blended)</td><td>Tổng chi marketing / số khách mua lần đầu</td><td>Giá thật của một khách mới, mọi kênh cộng lại</td></tr>
+<tr><td>CAC trả phí (paid)</td><td>Chi quảng cáo trả phí / số khách mới được gán cho quảng cáo</td><td>So sánh hiệu quả giữa các kênh trả phí</td></tr>
+<tr><td>LTV (theo lợi nhuận gộp)</td><td>Lợi nhuận đóng góp mà một nhóm khách tạo ra trong 12 hoặc 24 tháng / số khách trong nhóm</td><td>Mức CAC tối đa có thể trả</td></tr>
+<tr><td>Thời gian hoàn vốn CAC</td><td>CAC / lợi nhuận đóng góp mỗi tháng của một khách</td><td>Bao lâu thì tiền bỏ ra để có khách quay về</td></tr>
+<tr><td>CM1, CM2, CM3</td><td>CM1 = doanh thu trừ giá vốn; CM2 = CM1 trừ phí sàn, vận chuyển, thanh toán, đóng gói, hoàn hàng; CM3 = CM2 trừ chi marketing</td><td>Còn lại bao nhiêu tiền sau khi bán và quảng cáo</td></tr>
+</tbody>
+</table>
+
+<p>Shopify khuyên giữ một cách tính doanh thu cố định (trước hay sau hoàn hàng, có hay không VAT) cho MER qua các kỳ, nếu không thì so sánh tháng này với tháng trước không còn ý nghĩa. Cũng cần ghi rõ mẫu số: một số công cụ chỉ tính chi quảng cáo, Adtek tính toàn bộ chi marketing, gồm cả phí KOC, agency và quà tặng.</p>
+
+<p>Tỷ lệ <a href="/glossary/lifetime-value-ltv-gia-tri-vong-doi-khach-hang/">LTV</a>:CAC 3:1 hay được nhắc tới có nguồn từ David Skok, viết cho doanh nghiệp SaaS có doanh thu thuê bao, kèm điều kiện hoàn vốn CAC dưới 12 tháng. Với thương hiệu bán lẻ trực tuyến, khách không trả tiền đều đặn mỗi tháng, nên LTV cần tính trên lợi nhuận đóng góp trong một khung cố định, 12 tháng là đủ để ra quyết định ngân sách năm.</p>
+
+<h2>Phí sàn ăn mất ROAS ở đâu?</h2>
+
+<p>ROAS 5 trên Shopee Ads không có nghĩa là lãi. Từ tháng 5/2026, phí xử lý giao dịch trên cả Shopee và TikTok Shop ở mức khoảng 6%, cộng phí cố định theo ngành hàng và phí hạ tầng mỗi đơn. Bài <a href="/tiktok-shop-vs-shopee/">TikTok Shop vs Shopee</a> tổng hợp tổng chi phí hiện diện và giao dịch trên sàn ở mức khoảng 23 đến 24% doanh thu, chưa tính quảng cáo. Đây là lý do Adtek đọc CM2 và CM3 cạnh MER, không đọc MER một mình.</p>
+
+<p>Ví dụ giả định cho một thương hiệu chăm sóc da bán trên website, Shopee và TikTok Shop, số liệu một tháng:</p>
+
+<table>
+<thead><tr><th>Dòng</th><th>Giá trị (triệu đồng)</th><th>Ghi chú</th></tr></thead>
+<tbody>
+<tr><td>Doanh thu</td><td>2,000</td><td>Website 800, Shopee 700, TikTok Shop 500</td></tr>
+<tr><td>Giá vốn</td><td>600</td><td>30% doanh thu</td></tr>
+<tr><td>CM1</td><td>1,400</td><td></td></tr>
+<tr><td>Phí sàn</td><td>276</td><td>23% doanh thu trên sàn (1,200)</td></tr>
+<tr><td>Vận chuyển, thanh toán trên website</td><td>64</td><td>8% doanh thu website</td></tr>
+<tr><td>CM2</td><td>1,060</td><td>53% doanh thu</td></tr>
+<tr><td>Chi marketing</td><td>500</td><td>Meta 220, Google 80, TikTok 60, quảng cáo sàn 90, KOC 50</td></tr>
+<tr><td>CM3</td><td>560</td><td>28% doanh thu</td></tr>
+</tbody>
+</table>
+
+<p>MER của tháng là 2,000 / 500 = 4.0. Cộng doanh thu mà bốn nền tảng quảng cáo tự báo cáo: Meta 900, Google 400, TikTok 240, quảng cáo sàn 450, tổng 1,990 triệu, gần bằng toàn bộ doanh thu. Nghĩa là theo báo cáo nền tảng, gần như không có đơn nào đến từ khách quen, tìm kiếm tự nhiên hay giới thiệu. Con số đó gần như chắc chắn bị đếm trùng.</p>
+
+<p>Tháng có 2,500 khách mua lần đầu trên tổng 5,000 đơn. CAC khách mới là 500 triệu / 2,500 = 200,000 đồng. Mỗi đơn mang về CM2 khoảng 212,000 đồng, nên khách mới hoàn vốn CAC ngay ở đơn đầu tiên. Nếu dữ liệu 12 tháng của các nhóm khách cũ cho thấy một khách mới mua trung bình 1.8 đơn, LTV theo lợi nhuận đóng góp là 1.8 × 212,000 = 381,600 đồng, tỷ lệ LTV:CAC khoảng 1.9. Theo quy tắc 3:1 thì con số này "kém", nhưng thương hiệu vẫn lãi ngay từ đơn đầu. Đó là lý do không nên áp quy tắc của SaaS vào bán lẻ.</p>
+
+<h2>Đọc các chỉ số cùng nhau: bảng chẩn đoán</h2>
+
+<p>Mỗi chỉ số riêng lẻ đều có thể gây hiểu nhầm. Đặt chúng cạnh nhau mới ra được nguyên nhân:</p>
+
+<table>
+<thead><tr><th>ROAS nền tảng</th><th>MER</th><th>CAC khách mới</th><th>Khả năng cao nhất</th><th>Việc nên làm</th></tr></thead>
+<tbody>
+<tr><td>Giảm</td><td>Giữ nguyên</td><td>Giữ nguyên</td><td>Nền tảng đổi cách đo hoặc mất tín hiệu</td><td>Giữ ngân sách, ghi chú mốc thay đổi đo lường, kiểm tra Conversions API</td></tr>
+<tr><td>Giảm</td><td>Giảm</td><td>Tăng</td><td>Hiệu quả quảng cáo giảm thật</td><td>Rà creative và ưu đãi; với Meta, xem lại độ đa dạng creative theo <a href="/meta-andromeda/">Meta Andromeda</a></td></tr>
+<tr><td>Giữ nguyên</td><td>Giảm</td><td>Tăng</td><td>Kênh không trả phí giảm: tìm kiếm tự nhiên, khách quen, giới thiệu</td><td>Kiểm tra SEO, email, Zalo, tỷ lệ mua lại</td></tr>
+<tr><td>Tăng</td><td>Tăng</td><td>Giảm</td><td>Đang giảm giá sâu, kéo đơn nhưng bào lợi nhuận</td><td>Xem CM3; tính lại mức giảm giá hòa vốn như trong <a href="/ke-hoach-11-11/">kế hoạch 11.11</a></td></tr>
+<tr><td>Giữ nguyên</td><td>Giữ nguyên</td><td>Giữ nguyên</td><td>Đơn ổn nhưng khách mới mua lại ít hơn</td><td>Xem LTV theo nhóm khách và <a href="/glossary/retention-rate/">retention rate</a></td></tr>
+</tbody>
+</table>
+
+<p>Dòng đầu tiên là trường hợp hay bị xử lý sai nhất. Ví dụ ở đầu bài, khi Meta bỏ cửa sổ sau xem trên API, rơi đúng vào dòng này. Cắt ngân sách ở đây là phản ứng với một thay đổi trong cách đếm, không phải với kết quả kinh doanh.</p>
+
+<h2>Chỉ số nào xem hằng ngày, chỉ số nào xem hằng quý?</h2>
+
+<p>Đây là nhịp đo lường Adtek dùng với khách hàng thương mại điện tử và D2C. Mỗi tầng dùng cho một loại quyết định khác nhau:</p>
+
+<table>
+<thead><tr><th>Nhịp</th><th>Chỉ số</th><th>Quyết định</th></tr></thead>
+<tbody>
+<tr><td>Hằng ngày</td><td>ROAS, CPA trên nền tảng, chi tiêu, tồn kho SKU chủ lực</td><td>Bật tắt creative, nhóm quảng cáo; xử lý lỗi theo dõi</td></tr>
+<tr><td>Hằng tuần</td><td>MER, aMER, CAC khách mới, tỷ lệ khách mới trên tổng đơn</td><td>Tăng giảm tổng ngân sách, chia lại giữa các kênh</td></tr>
+<tr><td>Hằng tháng</td><td>CM2, CM3, thời gian hoàn vốn CAC</td><td>Giá bán, độ sâu khuyến mại, cơ cấu kênh bán</td></tr>
+<tr><td>Hằng quý</td><td>LTV 12 tháng theo nhóm khách, kết quả thử nghiệm tăng trưởng thực, MMM</td><td>Ngân sách năm, mức CAC trần, kênh nào nên mở rộng</td></tr>
+</tbody>
+</table>
+
+<p>Gartner cho biết ngân sách marketing năm 2025 đứng ở mức 7.7% doanh thu doanh nghiệp, 59% CMO nói ngân sách không đủ. Khi ngân sách không tăng, quyết định chia tiền giữa các kênh phải dựa trên tầng tuần và tầng tháng, không dựa trên ROAS của từng nền tảng.</p>
+
+<h2>Kiểm chứng bằng thử nghiệm tăng trưởng thực và MMM</h2>
+
+<p>MER cho biết tổng thể có lãi hay không, nhưng không cho biết kênh nào tạo ra phần lãi đó. Có hai cách để trả lời câu hỏi này mà không cần tin vào báo cáo của nền tảng.</p>
+
+<p>Cách thứ nhất là thử nghiệm tăng trưởng thực (incrementality test): chia người dùng hoặc khu vực thành nhóm có quảng cáo và nhóm không, rồi so doanh thu. Meta có Conversion Lift, Google có Conversion Lift theo khu vực địa lý đang ở bản beta. Doanh nghiệp vừa có thể tự làm bản đơn giản: tắt một kênh ở một nhóm tỉnh thành tương đồng trong 4 tuần, so doanh thu với nhóm còn lại, sau khi đã trừ xu hướng mùa vụ. Thử nghiệm này đo được phần doanh thu sẽ mất nếu tắt kênh, thứ mà ROAS không đo được.</p>
+
+<p>Cách thứ hai là Marketing Mix Modeling, mô hình hồi quy trên dữ liệu chi tiêu và doanh thu theo tuần. Google mở Meridian cho mọi doanh nghiệp từ tháng 1/2025, Meta có Robyn, cả hai là mã nguồn mở. MMM cần ít nhất 1 đến 2 năm dữ liệu tuần sạch, nên với nhiều thương hiệu Việt Nam, bước đầu tiên là chuẩn hóa dữ liệu theo hướng <a href="/tat-tan-tat-ve-data-driven-marketing/">data-driven marketing</a> và gom dữ liệu khách hàng về một chỗ, ví dụ bằng <a href="/tat-tan-tat-ve-cdps-du-lieu-khach-hang-trong-thoi-dai-chuyen-doi-so/">CDP</a>. BCG khuyến nghị kết hợp MMM, phân bổ đa chạm và thử nghiệm thay vì tin vào một phương pháp duy nhất.</p>
+
+<p>Dữ liệu cho cả hai cách đều chịu ràng buộc về sự đồng ý của người dùng. Pixel, Conversions API và danh sách khách hàng tải lên nền tảng chỉ dùng được với người đã đồng ý, theo quy định trong bài <a href="/luat-bao-ve-du-lieu-ca-nhan-marketing/">luật bảo vệ dữ liệu cá nhân marketing</a>. Tín hiệu sẽ còn giảm, nên MER và thử nghiệm sẽ càng quan trọng hơn ROAS.</p>
+
+<h2>LTV phụ thuộc vào khách mua lại</h2>
+
+<p>Con số "tăng 5% tỷ lệ giữ chân, lợi nhuận tăng 25 đến 95%" đến từ nghiên cứu của Frederick Reichheld (Bain) về các doanh nghiệp dịch vụ những năm 1990, và được Harvard Business Review nhắc lại năm 2014. Nó cho thấy hướng đi, không phải chuẩn cho thương hiệu bán lẻ trực tuyến năm 2026. Thực tế hơn là đo tỷ lệ mua lại trong 90 ngày và 12 tháng của từng nhóm khách theo tháng mua đầu tiên.</p>
+
+<p>Trong ví dụ trên, nếu số đơn trung bình của một khách mới trong 12 tháng tăng từ 1.8 lên 2.2, LTV tăng từ 381,600 lên 466,400 đồng. Thương hiệu khi đó có thể trả CAC cao hơn khoảng 20% mà vẫn giữ cùng tỷ lệ lợi nhuận, tức là thắng được những đối thủ chỉ nhìn ROAS trong các phiên đấu giá quảng cáo.</p>
+
+<p>Thị trường đang lớn nhanh. Theo Metric, bốn sàn Shopee, TikTok Shop, Lazada và Tiki đạt khoảng 429.7 nghìn tỷ đồng năm 2025, tăng 34.75%, trong đó TikTok Shop chiếm khoảng 41%. Khi chi phí sàn và quảng cáo cùng tăng, thương hiệu tăng trưởng bền là thương hiệu biết mình trả bao nhiêu cho một khách mới và khách đó mang lại bao nhiêu trong một năm.</p>
+
+<p>Adtek dựng dashboard MER, CAC, CM3 và LTV theo nhóm khách cho thương hiệu bán trên website, Shopee và TikTok Shop, kết hợp dữ liệu quảng cáo, sàn và CRM. Nếu bạn muốn kiểm tra lại cách đo hiện tại trước khi chốt ngân sách quý tới, hãy <a href="/contact/">liên hệ đội ngũ Adtek</a>.</p>
+
+<h2>Nguồn tham khảo</h2>
+
+<ul>
+<li>Meta for Developers (10/2025). <a href="https://developers.facebook.com/blog/post/2025/10/16/ads-insights-api-metric-availability-updates/" target="_blank" rel="nofollow noopener">Ads Insights API metric availability updates</a>.</li>
+<li>Meta for Developers (1/2021). <a href="https://developers.secure.facebook.com/blog/post/2021/01/19/actions-partners-mobile-web-advertisers" target="_blank" rel="nofollow noopener">Actions for partners and mobile and web advertisers</a>.</li>
+<li>Google Ads Help (truy cập 10/2026). <a href="https://support.google.com/google-ads/answer/10548233" target="_blank" rel="nofollow noopener">About consent mode conversion modeling</a>.</li>
+<li>Gordon, Zettelmeyer, Bhargava, Chapsky (2019). <a href="https://pubsonline.informs.org/doi/10.1287/mksc.2018.1135" target="_blank" rel="nofollow noopener">A Comparison of Approaches to Advertising Measurement: Evidence from Big Field Experiments at Facebook</a>. Marketing Science.</li>
+<li>Shopify (truy cập 10/2026). <a href="https://www.shopify.com/blog/marketing-efficiency-ratio" target="_blank" rel="nofollow noopener">Marketing Efficiency Ratio</a>.</li>
+<li>David Skok, For Entrepreneurs (truy cập 10/2026). <a href="https://www.forentrepreneurs.com/saas-metrics-2-definitions-2/" target="_blank" rel="nofollow noopener">SaaS Metrics 2.0</a>.</li>
+<li>Gartner (5/2025). <a href="https://www.gartner.com/en/newsroom/press-releases/2025-05-12-gartner-2025-cmo-spend-survey-reveals-marketing-budgets-have-flatlined-at-seven-percent-of-overall-company-revenue" target="_blank" rel="nofollow noopener">2025 CMO Spend Survey</a>.</li>
+<li>Google (1/2025). <a href="https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/" target="_blank" rel="nofollow noopener">Meridian marketing mix model is now open to everyone</a>.</li>
+<li>Meta for Developers (12/2024). <a href="https://developers.facebook.com/blog/post/2024/12/19/announcing-the-python-version-of-project-robyn/" target="_blank" rel="nofollow noopener">Announcing the Python version of Project Robyn</a>.</li>
+<li>BCG (2019). <a href="https://www.bcg.com/publications/2019/marketing-measurement-done-right" target="_blank" rel="nofollow noopener">Marketing Measurement Done Right</a>.</li>
+<li>Harvard Business Review (10/2014). <a href="https://hbr.org/2014/10/the-value-of-keeping-the-right-customers" target="_blank" rel="nofollow noopener">The Value of Keeping the Right Customers</a>.</li>
+<li>Thanh Niên, dẫn số liệu Metric (2/2026). <a href="https://thanhnien.vn/4-san-thuong-mai-dien-tu-bo-tui-gan-430000-ti-dong-trong-nam-2025-185260202085014664.htm" target="_blank" rel="nofollow noopener">4 sàn thương mại điện tử bỏ túi gần 430,000 tỉ đồng trong năm 2025</a>.</li>
+</ul>

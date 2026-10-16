@@ -109,7 +109,7 @@ def build(nos, mark=False):
     text = "Chào anh Tin,\n\n" + "\n\n".join(
         f"Bài {p['no']}: {p['title']}\nĐăng: {when(p)}\nXem trước: {links(p)[0]}\nSửa (cần đăng nhập): {links(p)[1]}\n{p.get('summary', '')}"
         + ("\nCần anh xác nhận:\n" + "\n".join(f"- {c}" for c in p["confirm"]) if p.get("confirm") else "")
-        + (f"\n\nBài đăng Facebook:\n{p['fb_caption']}\nBình luận đầu tiên: {p.get('fb_comment', '')}" if p.get("fb_caption") else "")
+        + (f"\n\nBài đăng Facebook:\n{message(p)}\nBình luận đầu tiên: {p.get('fb_comment', '')}" if p.get("fb_caption") else "")
         for p in posts) + "\n\n" + howto
     return {"to": [TO], "subject": subject, "body": text, "htmlBody": htmlbody, "deadline": deadline.isoformat(timespec="minutes")}
 

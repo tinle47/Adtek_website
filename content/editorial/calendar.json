@@ -239,10 +239,38 @@
     "4175"
    ],
    "words": 2000,
-   "status": "planned",
-   "wp_id": null,
+   "status": "draft",
+   "wp_id": 6112,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "slug": "chi-so-growth-marketing",
+   "seo_title": "Chỉ số growth marketing: MER, CAC, LTV khi ROAS giảm",
+   "meta_desc": "ROAS trên Meta, Google giảm chưa chắc quảng cáo kém. Cách đọc MER, CAC khách mới, LTV và lợi nhuận sau phí sàn, kèm bảng chẩn đoán và ví dụ có số liệu.",
+   "cover": {
+    "kicker": "Dữ liệu & đo lường",
+    "title": "MER, CAC, LTV",
+    "subtitle": "Đọc đúng tăng trưởng khi ROAS trên nền tảng giảm",
+    "chips": [
+     "MER",
+     "CAC khách mới",
+     "LTV 12 tháng",
+     "Lợi nhuận CM3"
+    ]
+   },
+   "summary": "Bài trụ cột cụm Dữ liệu và đo lường: vì sao ROAS nền tảng sai lệch (ATT, Meta bỏ cửa sổ sau xem trên API từ 12/1/2026, chuyển đổi mô hình hóa, đếm trùng giữa các nền tảng), công thức MER, aMER, CAC khách mới, LTV theo lợi nhuận và CM1 đến CM3. Có ví dụ một thương hiệu chăm sóc da tính cả phí sàn, bảng chẩn đoán 5 tình huống khi ROAS giảm, nhịp đo lường ngày, tuần, tháng, quý và cách kiểm chứng bằng thử nghiệm, MMM.",
+   "confirm": [
+    "Ví dụ thương hiệu chăm sóc da (doanh thu 2 tỷ, MER 4.0, CAC 200,000 đồng) là số liệu giả định em dựng, không lấy từ khách hàng thật.",
+    "Bài ghi \"nhịp đo lường Adtek dùng với khách hàng\" và CTA \"Adtek dựng dashboard MER, CAC, CM3, LTV theo nhóm khách\": anh xác nhận Adtek có làm đúng như vậy.",
+    "Phí sàn 23 đến 24% doanh thu lấy từ bài 3 (VnBusiness); phí xử lý giao dịch khoảng 6% từ 5/2026 theo thông báo Shopee và báo chí, chưa đối chiếu Seller Center.",
+    "Nguồn lấy qua kết quả tìm kiếm; em chưa mở trực tiếp được trang nào vì môi trường chặn truy cập.",
+    "Bài có link tới bài 3 (đăng 20/10) và bài 4 (đăng 22/10); nếu hủy 2 bài đó thì phải gỡ link."
+   ],
+   "fb_caption": "Một thương hiệu chăm sóc da (ví dụ giả định trong bài) mở báo cáo tháng: Meta báo ROAS 4.1, Google 5.0, TikTok 4.0, quảng cáo sàn 5.0.\n\nCộng doanh thu bốn nền tảng tự ghi nhận lại được 1.99 tỷ đồng. Doanh thu thật của cả tháng là 2 tỷ.\n\nTheo báo cáo quảng cáo, gần như không có đơn nào đến từ khách quen, tìm kiếm tự nhiên hay giới thiệu. Con số đó gần như chắc chắn bị đếm trùng.\n\nTừ 12/1/2026, Meta còn bỏ dữ liệu cửa sổ 7 ngày và 28 ngày sau xem trên API. Nhiều dashboard thấy chuyển đổi tụt, đội marketing cắt ngân sách, trong khi số đơn trong kho không đổi.\n\nTrước khi cắt, hãy xem ba con số không phụ thuộc vào cách nền tảng tự đếm: MER (tổng doanh thu chia tổng chi marketing), CAC khách mới, và lợi nhuận còn lại sau phí sàn và quảng cáo.\n\nAdtek viết lại cách đọc MER, CAC, LTV cho thương hiệu bán trên website, Shopee và TikTok Shop, kèm bảng chẩn đoán 5 tình huống khi ROAS giảm.",
+   "fb_comment": "MER, CAC, LTV: cách đọc đúng khi ROAS giảm https://adtek.agency/chi-so-growth-marketing/",
+   "fb_status": "ready",
+   "media_id": 6111,
+   "approval": "pending",
+   "approval_requested": "2026-10-16T09:13:31+07:00"
   },
   {
    "no": 6,
@@ -260,10 +288,39 @@
     28
    ],
    "words": 2000,
-   "status": "planned",
-   "wp_id": null,
+   "status": "draft",
+   "wp_id": 6114,
    "published": null,
-   "last_reviewed": null
+   "last_reviewed": null,
+   "slug": "luat-thuong-mai-dien-tu-livestream",
+   "seo_title": "Luật thương mại điện tử livestream 2026: KOL, KOC, affiliate",
+   "meta_desc": "Luật Thương mại điện tử 122/2025 và Nghị định 248/2026 quy định gì với livestream, KOL/KOC và affiliate? Trách nhiệm từng bên, mức phạt, checklist hồ sơ.",
+   "cover": {
+    "kicker": "Social Commerce",
+    "title": "Luật TMĐT 2026",
+    "subtitle": "Livestream, KOL/KOC và affiliate theo Luật 122/2025 và Nghị định 248",
+    "chips": [
+     "Hồ sơ sản phẩm",
+     "Xác thực KOC",
+     "Lưu 1 năm",
+     "Mức phạt KOL"
+    ]
+   },
+   "summary": "Tổng hợp Luật Thương mại điện tử 122/2025 (hiệu lực 1/7/2026), Nghị định 248/2026 và Luật Quảng cáo sửa đổi: trách nhiệm của nền tảng, người bán, người livestream và người làm affiliate, mốc xác thực điện tử 1/1/2027, lưu bản ghi 1 năm, mức phạt KOL 40 đến 100 triệu đồng. Có bộ hồ sơ 6 phần gửi KOC, ví dụ một phiên live serum trước và sau luật mới, checklist cho nhãn hàng.",
+   "confirm": [
+    "Nội dung Điều 22 đến 26 Luật 122/2025 và Nghị định 248 tổng hợp từ trang luật và báo chí; em chưa đọc được văn bản gốc vì môi trường chặn truy cập.",
+    "Mốc xác thực điện tử người bán, người livestream 1/1/2027 theo điều khoản thi hành Nghị định 248; một số báo ghi 1/7/2026.",
+    "Mức phạt Nghị định 87/2026 Điều 51 (40 đến 60, 60 đến 80, 80 đến 100 triệu đồng) lấy từ báo chí, chưa rõ là mức cho cá nhân hay tổ chức.",
+    "Bảng giấy tờ theo nhóm hàng (mỹ phẩm, thực phẩm bảo vệ sức khỏe, hợp quy) là ví dụ theo luật chuyên ngành, không nằm trong Luật Thương mại điện tử.",
+    "Bài có link tới bài 3 (đăng 20/10) và bài 4 (đăng 22/10); nếu hủy 2 bài đó thì phải gỡ link.",
+    "Bài pháp lý: nên nhờ luật sư đọc lướt trước khi đăng."
+   ],
+   "fb_caption": "Ngày 19/11/2025, ba người có ảnh hưởng nổi tiếng nhận mỗi người 2 năm tù vì quảng cáo kẹo rau Kera, sản phẩm không có 10 loại bột rau củ như ghi trên nhãn.\n\nTừ 1/7/2026, Luật Thương mại điện tử mới chia trách nhiệm trong mỗi phiên livestream cho ba bên. Nhãn hàng phải đưa giấy tờ sản phẩm cho người livestream trước khi lên sóng. KOC phải từ chối hợp tác nếu thiếu giấy tờ. Sàn lưu bản ghi phiên live ít nhất 1 năm, nên mỗi câu nói về giá hay công dụng đều có thể được mở lại khi khách khiếu nại.\n\nLuật Quảng cáo sửa đổi còn cấm người có ảnh hưởng giới thiệu sản phẩm mình chưa dùng. Mức phạt cho lỗi này lên tới 100 triệu đồng.\n\nVới nhãn hàng, lịch booking KOC sẽ đổi: gửi sản phẩm sớm 2 đến 3 tuần, gửi bộ hồ sơ trước 7 ngày, viết sẵn câu thông báo quảng cáo cho KOC đọc.\n\nAdtek tổng hợp các văn bản đang áp dụng, bảng trách nhiệm từng bên, bộ hồ sơ 6 phần gửi KOC và checklist cần xong trước 1/1/2027.",
+   "fb_comment": "Luật Thương mại điện tử 2026: livestream, KOL/KOC và affiliate cần chuẩn bị gì? https://adtek.agency/luat-thuong-mai-dien-tu-livestream/",
+   "fb_status": "ready",
+   "media_id": 6113,
+   "approval": "pending",
+   "approval_requested": "2026-10-16T09:13:31+07:00"
   },
   {
    "no": 7,
