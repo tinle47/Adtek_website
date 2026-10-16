@@ -5,12 +5,13 @@ Mỗi phong cách dựng được 2 khổ từ cùng dữ liệu cover trong cal
   fb    1080x1080 (ảnh bài đăng Facebook)
 
 Dữ liệu dùng: cover.kicker, title, subtitle, chips (blog); cover.fb_kicker, hero, hero_text, subtitle (fb).
-cover.style (không bắt buộc) ép một phong cách; bỏ trống thì pick() tự chọn.
+cover.style: phong cách của bài. Bỏ trống thì lần dựng đầu tiên tự chọn (pick) rồi ghi lại; muốn đổi thì sửa tay.
+Lệnh dựng ảnh thật: python3 tools/blog_post.py cover X (blog) và python3 tools/fb_post.py cover X (Facebook).
 
 Cách dùng:
   python3 tools/covers.py styles                     liệt kê phong cách
   python3 tools/covers.py pick                       xem phong cách tự chọn cho từng bài đã có cover
-  python3 tools/covers.py render <số bài> [--style X] [--kind blog|fb|all] [--out thư-mục]
+  python3 tools/covers.py render <số bài> [--style X] [--kind blog|fb|all] [--out thư-mục]   dựng thử, không ghi cover.style
   python3 tools/covers.py sheet <số bài> [--out thư-mục]   dựng mọi phong cách cho một bài để so sánh
 """
 import base64
@@ -26,6 +27,8 @@ from string import Template
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "tools/assets"
 SIZES = {"blog": (1200, 630), "fb": (1080, 1080)}
+# Khổ blog: trang danh sách bài của WordPress cắt giữa ảnh còn 370x250, mất khoảng 134px mỗi bên ảnh 1200x630.
+# Chữ và logo khổ ngang đặt cách mép trái phải ít nhất 140px; chỉ họa tiết được tràn ra ngoài vùng này.
 NAVY, ORANGE, CREAM = "#002D72", "#FF9014", "#F4EEE3"
 esc = html.escape
 
@@ -100,7 +103,7 @@ linear-gradient(180deg,#A9ABF6 0%,#8384DA 34%,#4A4CA3 66%,#1E2056 100%)}}
 .grid{{position:absolute;left:0;right:0;bottom:0;height:38%;opacity:.4}}
 .horizon{{position:absolute;left:8%;right:8%;bottom:38%;height:2px;background:linear-gradient(90deg,transparent,rgba(170,215,255,.9),transparent);filter:blur(1px)}}
 .wrap{{position:absolute;inset:{v['pad']}px 80px {v['padb']}px;display:flex;flex-direction:column;align-items:center}}
-.ls .wrap{{align-items:flex-start}}
+.ls .wrap{{align-items:flex-start;left:140px;right:140px}}
 .body{{flex:1;width:100%;display:flex;flex-direction:column;justify-content:center;gap:{v['gap']}px;padding-bottom:{v['bodyb']}px}}
 .main{{width:100%;display:flex;align-items:center;justify-content:center;gap:{v['side']}px}}
 .ls .main{{justify-content:flex-start}}
@@ -126,7 +129,7 @@ font-weight:700;font-size:{v['sub']:.0f}px;line-height:1.38;text-align:left;text
 def editorial(f, sq):
     """Tạp chí: nền kem, số cam khổng lồ có bóng in lệch, chữ xanh navy, đường kẻ mảnh."""
     n = len(f["num"])
-    hero = (560 if n == 1 else 440 if n == 2 else 300) if sq else (400 if n == 1 else 330 if n == 2 else 220)
+    hero = (560 if n == 1 else 440 if n == 2 else 300) if sq else (400 if n == 1 else 290 if n == 2 else 200)
     css = f"""
 body{{background:{CREAM};color:{NAVY}}}
 body::after{{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,45,114,.025) 0 1px,transparent 1px 4px);pointer-events:none}}
@@ -149,10 +152,10 @@ display:flex;justify-content:space-between;font-weight:700;font-size:var(--foot)
 .sq .copy{{right:72px;bottom:150px}}
 .sq h1{{font-size:88px;max-height:3.6em;max-width:620px}}
 .sq .sub{{font-size:36px;max-width:820px;max-height:4.5em}}
-.ls{{--px:64px;--py:48px;--mb:16px;--meta:15px;--kick:22px;--foot:19px}}
-.ls .num{{right:40px;top:120px}}
-.ls .copy{{top:150px;width:700px}}
-.ls h1{{font-size:72px;max-height:2.5em}}
+.ls{{--px:140px;--py:48px;--mb:16px;--meta:15px;--kick:22px;--foot:19px}}
+.ls .num{{right:140px;top:130px}}
+.ls .copy{{top:150px;width:{600 if n == 1 else 520}px}}
+.ls h1{{font-size:66px;max-height:2.5em}}
 .ls .sub{{font-size:27px;max-height:4.5em}}"""
     chips = "".join(f"<span>{x}</span>" for x in f["chips"][:3])
     body = f"""<div class="mast">{logo(NAVY, 78 if sq else 58)}<div class="meta">Adtek <b>Insights</b><br>Số {f['no']:02d} · {f['date']}</div></div>
@@ -190,12 +193,12 @@ h1{{font-weight:900;font-size:68px;line-height:1.12;margin:16px 0 22px;max-heigh
     chips = "".join(f"<span>{x}</span>" for x in f["chips"])
     css = f"""
 body{{background:{NAVY};color:#fff}}
-.panel{{position:absolute;left:0;top:0;bottom:0;width:470px;background:{ORANGE};clip-path:polygon(0 0,100% 0,78% 100%,0 100%)}}
+.panel{{position:absolute;left:0;top:0;bottom:0;width:560px;background:{ORANGE};clip-path:polygon(0 0,100% 0,80% 100%,0 100%)}}
 .panel::after{{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 15%,rgba(255,255,255,.35),transparent 50%)}}
-.num{{position:absolute;left:40px;top:50%;transform:translateY(-54%);width:360px;text-align:center;font-weight:900;font-size:{hero}px;line-height:.82;letter-spacing:-.05em;color:{NAVY};white-space:nowrap}}
-.cap{{position:absolute;left:40px;bottom:46px;width:320px;text-align:center;font-weight:800;font-size:22px;line-height:1.25;color:{NAVY};max-height:2.7em}}
-.copy{{position:absolute;left:500px;right:64px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
-.lg{{position:absolute;right:56px;top:44px}}
+.num{{position:absolute;left:140px;top:50%;transform:translateY(-54%);width:300px;text-align:center;font-weight:900;font-size:{hero}px;line-height:.82;letter-spacing:-.05em;color:{NAVY};white-space:nowrap}}
+.cap{{position:absolute;left:140px;bottom:46px;width:300px;text-align:center;font-weight:800;font-size:22px;line-height:1.25;color:{NAVY};max-height:2.7em}}
+.copy{{position:absolute;left:590px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
+.lg{{position:absolute;right:140px;top:44px}}
 .kicker{{color:{ORANGE};font-weight:800;font-size:22px;letter-spacing:4px;text-transform:uppercase}}
 h1{{font-weight:900;font-size:76px;line-height:1.16;margin:14px 0 18px;max-height:2.5em}}
 .sub{{font-weight:600;font-size:26px;line-height:1.4;color:#C9D6EE;max-height:4.5em}}
@@ -253,12 +256,12 @@ border:1.5px solid rgba(255,255,255,.18);box-shadow:0 40px 80px rgba(0,0,0,.45);
 .sq .card{{left:72px;right:72px;bottom:-30px;height:530px;transform:perspective(1400px) rotateX(10deg);transform-origin:bottom}}
 .sq .kpi .v{{font-size:120px}}.sq .kpi .l{{font-size:32px}}
 .sq .chart{{height:250px}}.sq .bars{{width:290px;height:64px}}
-.ls .top{{position:absolute;left:64px;top:0;bottom:0;width:560px;display:flex;flex-direction:column;justify-content:center}}
-.ls .lg{{position:absolute;left:64px;top:44px}}
+.ls .top{{position:absolute;left:140px;top:0;bottom:0;width:500px;display:flex;flex-direction:column;justify-content:center}}
+.ls .lg{{position:absolute;left:140px;top:44px}}
 .ls .kicker{{font-size:17px;padding:8px 16px;align-self:flex-start}}
 .ls h1{{font-size:64px;margin:20px 0 16px;max-height:2.5em}}
 .ls .sub{{font-size:24px;max-height:4.5em}}
-.ls .card{{left:680px;width:470px;top:70px;bottom:70px;transform:perspective(1200px) rotateY(-12deg) rotateZ(-1.5deg)}}
+.ls .card{{left:680px;width:390px;top:70px;bottom:70px;transform:perspective(1200px) rotateY(-12deg) rotateZ(-1.5deg)}}
 .ls .kpi .v{{font-size:96px}}.ls .kpi .l{{font-size:22px}}
 .ls .chart{{height:180px}}.ls .bars{{width:230px;height:50px}}"""
     body = f"""<div class="lg">{logo('#fff', 70 if sq else 52)}</div>
@@ -296,7 +299,7 @@ h1{{font-weight:900;line-height:1.16}}
 .sq .sub{{font-size:32px;max-height:4.5em}}
 .sq .foot{{padding-top:26px;font-size:22px}}
 .ls .num{{right:-20px;top:-40px}}
-.ls .glass{{left:64px;top:56px;bottom:56px;width:760px;padding:40px 46px 30px}}
+.ls .glass{{left:140px;top:56px;bottom:56px;width:700px;padding:40px 46px 30px}}
 .ls .kicker{{font-size:16px;padding:8px 18px}}
 .ls h1{{font-size:78px;margin:22px 0 16px;max-height:2.5em}}
 .ls .sub{{font-size:26px;max-height:4.5em}}
@@ -312,7 +315,7 @@ h1{{font-weight:900;line-height:1.16}}
 def poster(f, sq):
     """Áp phích: nền cam phủ kín, số navy khổng lồ tràn mép, tiêu đề in hoa đậm."""
     n = len(f["num"])
-    hero = (720 if n == 1 else 600 if n == 2 else 400) if sq else (720 if n == 1 else 560 if n == 2 else 330)
+    hero = (720 if n == 1 else 600 if n == 2 else 400) if sq else (600 if n == 1 else 420 if n == 2 else 280)
     css = f"""
 body{{background:{ORANGE};color:{NAVY}}}
 body::before{{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,rgba(0,45,114,.06) 0 2px,transparent 2px 22px)}}
@@ -329,10 +332,10 @@ h1{{font-weight:900;line-height:1.16;text-transform:uppercase;letter-spacing:-.0
 .sq .kicker{{font-size:24px;padding:10px 18px}}
 .sq h1{{font-size:88px;margin:24px 0 20px;max-height:3.6em}}
 .sq .sub{{font-size:32px;max-height:4.4em;border-left:8px solid {NAVY};padding-left:24px}}
-.ls .num{{left:-30px;bottom:-40px}}
+.ls .num{{left:110px;bottom:-40px}}
 .ls .ring{{width:220px;height:220px;right:-70px;bottom:-70px}}
-.ls .lg{{right:64px;top:48px}}
-.ls .copy{{position:absolute;left:{'480' if n <= 2 else '560'}px;right:64px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}}
+.ls .lg{{right:140px;top:48px}}
+.ls .copy{{position:absolute;left:{'570' if n == 1 else '660'}px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}}
 .ls .kicker{{font-size:18px;padding:8px 14px}}
 .ls h1{{font-size:66px;margin:18px 0 16px;max-height:3.6em}}
 .ls .sub{{font-size:24px;max-height:4.4em;border-left:6px solid {NAVY};padding-left:18px}}"""
@@ -364,11 +367,11 @@ display:flex;align-items:center;justify-content:center;font-weight:900;letter-sp
 .sq .nb{{right:72px;top:660px;width:420px;font-size:96px;max-height:2.5em}}
 .sq .vs{{width:170px;height:170px;font-size:70px;top:52%}}
 .sq .band{{left:72px;right:72px;bottom:64px;padding:26px 34px;font-size:34px;max-height:4.4em}}
-.ls .lg{{left:56px;top:44px}}.ls .kicker{{left:56px;top:140px;font-size:18px}}
-.ls .na{{left:56px;top:190px;width:440px;font-size:80px;max-height:2.5em}}
-.ls .nb{{right:56px;top:190px;width:440px;font-size:80px;max-height:2.5em}}
+.ls .lg{{left:140px;top:44px}}.ls .kicker{{left:140px;top:140px;font-size:18px}}
+.ls .na{{left:140px;top:190px;width:360px;font-size:80px;max-height:2.5em}}
+.ls .nb{{right:140px;top:190px;width:360px;font-size:80px;max-height:2.5em}}
 .ls .vs{{width:128px;height:128px;font-size:52px;top:46%}}
-.ls .band{{left:50%;transform:translateX(-50%);bottom:44px;width:820px;text-align:center;padding:18px 28px;font-size:25px;max-height:3.6em}}"""
+.ls .band{{left:50%;transform:translateX(-50%);bottom:44px;width:860px;text-align:center;padding:18px 28px;font-size:25px;max-height:3.6em}}"""
     cap = html.unescape(f["cap"])
     if cap[1:2].islower() and cap.split()[0] not in src:  # "Sàn, chia..." đọc liền sau số: "2 sàn, chia..."
         cap = cap[0].lower() + cap[1:]
@@ -408,15 +411,16 @@ h1{{font-weight:900;line-height:1.16}}
 .sq .paper{{left:110px;right:110px;bottom:-70px;height:520px;padding:50px 54px}}
 .sq .paper h5{{font-size:19px}}.sq .paper li{{font-size:31px;gap:20px;padding:15px 0}}.sq .paper li b{{width:44px;height:44px;padding:7px}}
 .sq .stamp{{width:230px;right:-40px;top:-60px}}
-.ls .lg{{position:absolute;left:64px;top:46px}}
-.ls .copy{{position:absolute;left:64px;width:600px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;padding-top:40px}}
+.ls .lg{{position:absolute;left:140px;top:46px}}
+.ls .copy{{position:absolute;left:140px;width:540px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;padding-top:40px}}
 .ls .kicker{{font-size:19px}}.ls h1{{font-size:64px;margin:14px 0 14px;max-height:2.5em}}.ls .sub{{font-size:24px;max-height:4.5em}}
-.ls .paper{{left:730px;width:420px;top:60px;bottom:-60px;padding:42px 38px}}
+.ls .paper{{left:715px;width:360px;top:60px;bottom:-60px;padding:42px 38px}}
 .ls .paper h5{{font-size:14px}}.ls .paper li{{font-size:21px;gap:14px;padding:11px 0}}.ls .paper li b{{width:32px;height:32px;padding:5px}}
-.ls .stamp{{width:170px;right:-50px;top:-50px}}"""
+.ls .stamp{{width:160px;right:-75px;top:-70px}}
+.ls .paper h5 .no{{display:none}}"""
     body = f"""<div class="lg">{logo('#fff', 74 if sq else 56)}</div>
 <div class="copy"><div class="kicker">{f['kicker']}</div><h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>
-<div class="paper"><h5>Hồ sơ tuân thủ · Số {f['no']:02d}</h5><div class="ln" style="width:70%"></div><div class="ln" style="width:45%"></div>
+<div class="paper"><h5>Hồ sơ tuân thủ<span class="no"> · Số {f['no']:02d}</span></h5><div class="ln" style="width:70%"></div><div class="ln" style="width:45%"></div>
 <ul>{items}</ul>{stamp}</div>"""
     return css, body
 
@@ -490,6 +494,23 @@ def render(jobs):
 
 def output_path(post, kind):
     return ROOT / f"content/posts/{post['slug']}-{'cover' if kind == 'blog' else 'fb'}.jpg"
+
+
+def make(post, kind, out=None):
+    """Dựng ảnh thật của bài. Lần đầu chọn phong cách bằng pick() và ghi cover.style vào calendar.json,
+    để dựng lại (sửa bài, đổi ảnh) vẫn ra đúng phong cách cũ và các bài sau tính lịch sử đúng."""
+    from blog_post import find, load, save
+    style = post["cover"].get("style")
+    if not style:
+        data = load()
+        fresh = find(data, post["no"])
+        style = pick(data, fresh)
+        fresh["cover"]["style"] = post["cover"]["style"] = style
+        save(data)
+    out = out or output_path(post, kind)
+    render([(post, kind, style, out)])
+    print(out)
+    return out
 
 
 if __name__ == "__main__":

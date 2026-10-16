@@ -69,7 +69,8 @@
     ],
     "hero": "30",
     "hero_text": "Ngày chuẩn bị 11.11",
-    "fb_kicker": "Mega sale 2026"
+    "fb_kicker": "Mega sale 2026",
+    "style": "editorial"
    },
    "media_id": 6115,
    "summary": "Checklist theo từng tuần từ D-30 đến D+7 cho mùa 11.11 và 12.12: phí sàn 2026, bảng tính mức giảm giá hòa vốn, quảng cáo GMV Max, KOC và livestream, vận hành và giữ chân khách sau sale.",
@@ -119,7 +120,8 @@
     ],
     "hero": "8",
     "hero_text": "Điểm rà tài khoản Meta Ads 2026",
-    "fb_kicker": "Quảng cáo Meta"
+    "fb_kicker": "Quảng cáo Meta",
+    "style": "split"
    },
    "media_id": 6116,
    "summary": "Bài trụ cột cụm Quảng cáo: Meta Andromeda là gì, Advantage+ thay đổi những gì, cách tính chuyển đổi mới từ 3/2026, cấu trúc tài khoản, đa dạng hóa creative, đo lường và ngân sách, kèm ví dụ tái cấu trúc tài khoản mỹ phẩm.",
@@ -169,7 +171,8 @@
     ],
     "hero": "2",
     "hero_text": "Sàn, chia ngân sách thế nào?",
-    "fb_kicker": "TikTok Shop vs Shopee"
+    "fb_kicker": "TikTok Shop vs Shopee",
+    "style": "versus"
    },
    "summary": "Bài trụ cột cụm Thương mại điện tử: thị trường hai sàn theo ngành hàng (Metric, Q&Me, YouNet ECI), phí sàn 2026, Shopee Ads và GMV Max, vai trò affiliate, KOC, livestream. Phần chính là khung chia vai trò và ngân sách theo giai đoạn thương hiệu, kèm ví dụ giả định thương hiệu skincare chi 1 tỷ đồng mỗi tháng.",
    "confirm": [
@@ -222,7 +225,8 @@
     ],
     "hero": "3",
     "hero_text": "Ô đồng ý bắt buộc trên form lead",
-    "fb_kicker": "Luật dữ liệu 2026"
+    "fb_kicker": "Luật dữ liệu 2026",
+    "style": "dossier"
    },
    "summary": "Luật 91/2025/QH15, Nghị định 356/2025 và Nghị định 330/2026 (xử phạt) tác động thế nào tới form lead, mua bán và chia sẻ danh sách, telesales và ZNS, pixel, CAPI, custom audience, dữ liệu nhạy cảm. Có bảng mức phạt, thời hạn xử lý yêu cầu, mẫu nội dung xin đồng ý 3 ô, ví dụ giả định chủ đầu tư bất động sản và checklist.",
    "confirm": [
@@ -278,7 +282,8 @@
     ],
     "hero": "3",
     "hero_text": "Chỉ số đọc đúng khi ROAS giảm",
-    "fb_kicker": "MER, CAC, LTV"
+    "fb_kicker": "MER, CAC, LTV",
+    "style": "poster"
    },
    "summary": "Bài trụ cột cụm Dữ liệu và đo lường: vì sao ROAS nền tảng sai lệch (ATT, Meta bỏ cửa sổ sau xem trên API từ 12/1/2026, chuyển đổi mô hình hóa, đếm trùng giữa các nền tảng), công thức MER, aMER, CAC khách mới, LTV theo lợi nhuận và CM1 đến CM3. Có ví dụ một thương hiệu chăm sóc da tính cả phí sàn, bảng chẩn đoán 5 tình huống khi ROAS giảm, nhịp đo lường ngày, tuần, tháng, quý và cách kiểm chứng bằng thử nghiệm, MMM.",
    "confirm": [
@@ -330,7 +335,8 @@
     ],
     "hero": "6",
     "hero_text": "Phần hồ sơ gửi KOC trước phiên live",
-    "fb_kicker": "Luật TMĐT 2026"
+    "fb_kicker": "Luật TMĐT 2026",
+    "style": "neon3d"
    },
    "summary": "Tổng hợp Luật Thương mại điện tử 122/2025 (hiệu lực 1/7/2026), Nghị định 248/2026 và Luật Quảng cáo sửa đổi: trách nhiệm của nền tảng, người bán, người livestream và người làm affiliate, mốc xác thực điện tử 1/1/2027, lưu bản ghi 1 năm, mức phạt KOL 40 đến 100 triệu đồng. Có bộ hồ sơ 6 phần gửi KOC, ví dụ một phiên live serum trước và sau luật mới, checklist cho nhãn hàng.",
    "confirm": [
