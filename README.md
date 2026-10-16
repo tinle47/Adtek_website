@@ -33,6 +33,10 @@ Cài đặt: upload file vào `httpdocs/wp-content/mu-plugins/`. Khi chưa cài,
 
 Đồng bộ trang chủ EN theo bản VI: sửa chữ trong `content/pages/home.json`, chạy `python3 tools/sync_home.py` (chạy thử) rồi `--apply`.
 
+## Lưu ý khi sửa trang tiếng Anh qua REST
+
+Lưu nội dung một trang bản dịch (POST `/wp/v2/pages/<id>` với `content`) có thể làm WPML đặt lại slug theo bản tiếng Việt, ví dụ trang 5242 từ `press` thành `bao-chi` khiến `/en/press/` trả 404. Sau mỗi lần ghi trang EN, đọc lại `link` và nếu slug đổi thì gửi lại `{"slug": "<slug cũ>"}`. Ghi riêng `meta` không gặp lỗi này.
+
 ## video/
 
 Hệ thống tạo video infographic TikTok từ bài blog (Remotion + giọng ElevenLabs). Xem `video/README.md`.
