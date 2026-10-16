@@ -1,0 +1,93 @@
+{
+  "wp_id": 6315,
+  "slug": "khoi-chay-thanh-cong-ung-dung-tren-app-store",
+  "keyword": "ra mắt app",
+  "seo_title": "Ra mắt app trên App Store và Google Play: checklist 2026",
+  "meta_desc": "Ra mắt app 2026: checklist store listing, ASO tiếng Việt, pre-order, in-app events, App Review, kế hoạch 30 ngày và chỉ số cần đo sau khi lên store.",
+  "title": "Ra mắt app thành công trên App Store và Google Play: checklist 2026",
+  "changes": [
+    "Viết lại toàn bộ bằng giọng Adtek (tôi/bạn), bỏ dịch theo câu từ bài Adjust/App Radar 2021",
+    "Bỏ nhận định đã sai: 40% app bị từ chối lần đầu, App Store chưa có A/B test, Google Play duyệt trong vài giờ, số 100,000 app mới mỗi tháng; thay bằng số liệu App Store Transparency Report 2024 và bảng so sánh 2021 với 2026",
+    "Thêm số liệu Việt Nam: thị phần Android/iOS (StatCounter 07/2026), người dùng internet (DataReportal Digital 2026)",
+    "Thêm checklist 8 mục 2026: store listing (bảng giới hạn ký tự hai store), ASO tiếng Việt kèm ví dụ từng bước và danh sách Không nên, ảnh và video, pre-order và pre-registration, In-App Events và Promotional content, custom product pages (70) và custom store listings (50), Product Page Optimization và store listing experiments, yêu cầu xét duyệt 2026 (Xcode 26 SDK, câu hỏi độ tuổi mới, closed test 12 người 14 ngày, target API 36)",
+    "Thêm kế hoạch 30 ngày quanh ngày ra mắt (D-21 đến D+9) dạng bảng",
+    "Thêm mục đo lường sau ra mắt: tỷ lệ chuyển đổi trang store, ngưỡng Android vitals, retention, nguồn cài đặt, Analytics mới của App Store Connect (03/2026)",
+    "Thêm mục Góc nhìn Adtek: 8 câu hỏi trước khi bấm Submit",
+    "Bỏ link ngoài cũ tới Adjust ebook và App Radar; thêm 5 link nội bộ (thuật ngữ ASO, retention rate, MMP; bài chiến lược app marketing, app marketing KPIs) và lời mời /contact/",
+    "Giữ nguyên 2 ảnh cũ và alt"
+  ],
+  "sources": [
+    {
+      "name": "Apple, App Store Transparency Report 2024 (qua 9to5Mac)",
+      "url": "https://9to5mac.com/2025/05/30/apple-shares-full-app-store-transparency-report-for-2024/",
+      "date": "05/2025"
+    },
+    {
+      "name": "StatCounter, Mobile OS market share Viet Nam",
+      "url": "https://gs.statcounter.com/os-market-share/mobile/viet-nam",
+      "date": "07/2026"
+    },
+    {
+      "name": "DataReportal, Digital 2026: Vietnam",
+      "url": "https://datareportal.com/reports/digital-2026-vietnam",
+      "date": "2026 (số liệu cuối 2025)"
+    },
+    {
+      "name": "Apple Developer, Product page",
+      "url": "https://developer.apple.com/app-store/product-page/",
+      "date": "10/2026 (truy cập)"
+    },
+    {
+      "name": "App Store Connect Help, Publish for pre-order",
+      "url": "https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/publish-for-pre-order",
+      "date": "10/2026 (truy cập)"
+    },
+    {
+      "name": "Play Console Help, Pre-registration",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9859047",
+      "date": "10/2026 (truy cập)"
+    },
+    {
+      "name": "Apple Developer, In-App Events",
+      "url": "https://developer.apple.com/app-store/in-app-events/",
+      "date": "10/2026 (truy cập)"
+    },
+    {
+      "name": "Apple Developer, Custom product pages",
+      "url": "https://developer.apple.com/app-store/custom-product-pages/",
+      "date": "10/2026 (truy cập)"
+    },
+    {
+      "name": "Apple Developer, Product page optimization",
+      "url": "https://developer.apple.com/app-store/product-page-optimization/",
+      "date": "10/2026 (truy cập)"
+    },
+    {
+      "name": "Apple Developer, App Review",
+      "url": "https://developer.apple.com/distribute/app-review/",
+      "date": "10/2026 (truy cập)"
+    },
+    {
+      "name": "Android Developers, Target API level requirements",
+      "url": "https://developer.android.com/google/play/requirements/target-sdk",
+      "date": "10/2026 (truy cập)"
+    },
+    {
+      "name": "Android Developers, Android vitals",
+      "url": "https://developer.android.com/topic/performance/vitals",
+      "date": "10/2026 (truy cập)"
+    },
+    {
+      "name": "9to5Mac, Apple announces major update to Analytics in App Store Connect",
+      "url": "https://9to5mac.com/2026/03/25/apple-announces-major-update-to-analytics-in-app-store-connect/",
+      "date": "03/2026"
+    }
+  ],
+  "confirm": [
+    "Từ khóa chính chọn 'ra mắt app' (slug cũ là 'khoi-chay...', giữ nguyên URL); H1 đổi sang 'Ra mắt app thành công trên App Store và Google Play: checklist 2026'. Anh xác nhận có đổi H1 không",
+    "Một số con số Google Play chỉ kiểm chứng qua kết quả tìm kiếm trích trang trợ giúp Google, môi trường không mở được support.google.com và play.google.com: closed test 12 người/14 ngày (tài khoản cá nhân tạo sau 13/11/2023), pre-registration tối đa 90 ngày và khuyến nghị bật trước 3 đến 6 tuần, 50 custom store listings, store listing experiments 3 biến thể và 1 bài đồ họa mặc định hoặc 5 bài theo ngôn ngữ, xét duyệt có thể đến 7 ngày",
+    "Yêu cầu Xcode 26/SDK iOS 26 từ 28/04/2026 và hạn câu hỏi độ tuổi 31/01/2026 lấy từ bài tổng hợp bên thứ ba, chưa mở được trang Upcoming requirements của Apple; không gắn link nguồn trong bài",
+    "Ví dụ app 'Lumi' là tình huống giả định, đã ghi rõ trong bài",
+    "Chưa thêm dòng 'Cập nhật ngày ...' đầu bài theo quy trình cập nhật trong README, để giữ từ khóa trong câu đầu; nếu cần, phiên SEO thêm khi đưa lên"
+  ]
+}

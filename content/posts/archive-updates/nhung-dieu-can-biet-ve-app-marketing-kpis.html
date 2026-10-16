@@ -1,0 +1,112 @@
+<p>KPI app marketing là bộ chỉ số dùng để trả lời ba câu hỏi về một ứng dụng: mua một người dùng mới tốn bao nhiêu, người đó có ở lại không, và bao lâu thì họ trả lại số tiền quảng cáo đã bỏ ra. Năm 2026, bộ tối thiểu gồm CPI (hoặc chi phí cho hành động đầu tiên), tỷ lệ giữ chân ngày 1, ngày 7 và ngày 30, ARPU, LTV, ROAS theo cohort và churn. Các chỉ số còn lại như CTR, tỷ lệ chuyển đổi trên store hay số phiên chỉ dùng để chẩn đoán khi một trong bảy chỉ số trên đi xuống.</p>
+
+<p>Bản gốc bài này viết năm 2021 và liệt kê gần 30 chỉ số. Từ đó đến nay có ba thay đổi làm đổi cách đọc số: thị trường app chuyển trọng tâm từ lượt tải sang doanh thu, Apple thay SKAdNetwork bằng AdAttributionKit, và dữ liệu mới cho thấy người dùng ở lại tuần đầu nhưng rời đi trước ngày 30. Bài dưới đây giữ lại phần còn dùng được và bỏ phần đã lỗi thời.</p>
+
+<h2>Bảy KPI app marketing cốt lõi năm 2026</h2>
+
+<p>Mỗi chỉ số dưới đây gắn với một quyết định cụ thể. Nếu một chỉ số không làm thay đổi quyết định ngân sách hay sản phẩm của bạn, chưa cần đưa nó lên dashboard.</p>
+
+<table>
+<thead>
+<tr><th>Chỉ số</th><th>Cách tính</th><th>Quyết định nó hỗ trợ</th></tr>
+</thead>
+<tbody>
+<tr><td>CPI (Cost per install)</td><td>Chi phí quảng cáo / số lượt cài từ quảng cáo</td><td>Kênh nào mua người dùng rẻ hơn, creative nào cần thay</td></tr>
+<tr><td>CPA hành động đầu tiên</td><td>Chi phí / số người hoàn tất đăng ký, nạp tiền hoặc mua lần đầu</td><td>Dùng thay CPI khi app có bước kích hoạt rõ ràng (ví tiền, sàn, fintech)</td></tr>
+<tr><td>Retention D1, D7, D30</td><td>Số người mở lại app vào ngày N / số người cài trong cohort</td><td>Onboarding có ổn không, sản phẩm có giữ được người dùng không</td></tr>
+<tr><td>ARPU</td><td>Doanh thu trong kỳ / số người dùng hoạt động trong kỳ</td><td>Mỗi người dùng đáng giá bao nhiêu, kể cả người không trả tiền</td></tr>
+<tr><td>LTV</td><td>Tổng doanh thu (hoặc lợi nhuận gộp) một cohort tạo ra trong N ngày / số người trong cohort</td><td>Mức CPI tối đa còn có lãi</td></tr>
+<tr><td>ROAS theo cohort (D7, D30)</td><td>Doanh thu cohort đến ngày N / chi phí mua cohort đó</td><td>Tăng hay giảm ngân sách cho kênh, chiến dịch</td></tr>
+<tr><td>Churn</td><td>Số người dùng mất đi trong kỳ / số người dùng đầu kỳ</td><td>App đang mất người nhanh hơn hay chậm hơn tốc độ mua mới</td></tr>
+</tbody>
+</table>
+
+<p>Ba điểm hay bị hiểu sai. <a href="/glossary/average-revenue-per-user-arpu-doanh-thu-trung-binh-tren-moi-nguoi-dung/">ARPU</a> chia cho mọi người dùng hoạt động, còn ARPPU chỉ chia cho người trả tiền, nên app freemium có ARPPU cao vẫn có thể có ARPU rất thấp. LTV nên tính trên lợi nhuận gộp nếu app bán hàng hóa vật lý, vì doanh thu một đơn hàng 500,000 đồng không phải là 500,000 đồng để bù chi phí quảng cáo. ROAS chỉ có nghĩa khi gắn với mốc ngày: ROAS D7 bằng 40% và ROAS D30 bằng 40% là hai tình huống rất khác nhau.</p>
+
+<h3>Các chỉ số trong bản 2021 nên xếp vào nhóm chẩn đoán</h3>
+
+<p>CTR, tỷ lệ nhấp để cài (CTI), tỷ lệ chuyển đổi trên trang store, tỷ lệ organic và non-organic, số phiên trung bình, DAU/MAU, tỷ lệ gỡ cài đặt, eCPM cho app kiếm tiền bằng quảng cáo, và tỷ lệ gian lận cài đặt. Chúng vẫn cần theo dõi, nhưng ở tầng dưới. Ví dụ CPI tăng 30% trong một tuần thì mới mở CTR và tỷ lệ chuyển đổi trên store ra xem lỗi nằm ở creative hay ở trang store. ROX (return on experience) trong bản cũ đã bị bỏ vì không có cách tính thống nhất.</p>
+
+<h2>Thị trường app 2025 đến 2026 đổi trọng tâm từ lượt tải sang doanh thu</h2>
+
+<p>Theo <a href="https://sensortower.com/blog/state-of-mobile-2026" target="_blank" rel="nofollow noopener">báo cáo State of Mobile 2026 của Sensor Tower</a> (1/2026), lượt tải trên iOS và Google Play năm 2025 chỉ tăng 0.8%, lên gần 150 tỷ. Doanh thu từ mua hàng trong app tăng 10.6%, đạt 167 tỷ USD, và lần đầu tiên doanh thu của app không phải game vượt game. Sensor Tower viết rằng với game, khi lượt cài giảm, tăng trưởng phụ thuộc vào việc tăng LTV của tập người dùng hiện có, và đội UA nên đặt mục tiêu theo thời gian hoàn vốn thay vì số lượng cài.</p>
+
+<p>Số liệu của Adjust cùng giai đoạn lại khác. <a href="https://www.nasdaq.com/press-release/adjust-mobile-app-use-grew-globally-2025-continued-move-multi-platform-2026-02-18" target="_blank" rel="nofollow noopener">Báo cáo Mobile App Trends 2026 của Adjust</a> (2/2026) ghi nhận lượt cài toàn cầu năm 2025 tăng 10% và số phiên tăng 7%. Hai con số không mâu thuẫn: Sensor Tower ước tính toàn bộ thị trường, còn Adjust đo trên các app đang dùng công cụ của họ. Bài học cho người làm marketing là luôn ghi rõ nguồn và tập dữ liệu khi đưa một benchmark vào báo cáo.</p>
+
+<h3>Việt Nam: lượt cài chững lại, iOS tăng tỷ trọng</h3>
+
+<p><a href="https://www.appsflyer.com/resources/reports/app-marketing-vietnam/" target="_blank" rel="nofollow noopener">Báo cáo State of App Marketing in Vietnam 2025 của AppsFlyer</a> (10/2025), dựa trên 13.6 tỷ lượt cài từ 2017 đến 2025, cho thấy lượt cài app tại Việt Nam đạt 2.17 tỷ năm 2024 rồi giảm 2% năm 2025. Tỷ trọng cài trên iOS tăng từ 22% năm 2017 lên 33% năm 2025. Riêng nhóm tài chính, iOS được dự báo chiếm 54% lượt cài năm 2025 và chiếm 68% số phiên trong quý 2/2025, theo <a href="https://thitruongtaichinhtiente.vn/appsflyer-nen-kinh-te-ung-dung-viet-nam-buoc-vao-giai-doan-truong-thanh-khi-chat-luong-len-ngoi-thay-cho-so-luong-72056.html" target="_blank" rel="nofollow noopener">bản tin tiếng Việt về báo cáo</a>. Nghĩa là với app tài chính và tiện ích, phần lớn người dùng giá trị nhất nằm trên nền tảng khó đo nhất.</p>
+
+<h2>Retention D1, D7, D30: chỉ số dễ đọc sai nhất</h2>
+
+<p><a href="/glossary/retention-rate/">Retention rate</a> ngày N là tỷ lệ người dùng của một cohort cài đặt quay lại mở app vào đúng ngày thứ N. D1 phản ánh onboarding, D7 phản ánh việc người dùng có tìm thấy giá trị trong tuần đầu không, D30 cho biết app có trở thành thói quen hay không.</p>
+
+<p>Dữ liệu mới nhất cho thấy ba mốc này không còn đi cùng nhau. <a href="https://cxotoday.com/others/apac-app-usage-soars-but-long-term-retention-lags-appsflyer-report/" target="_blank" rel="nofollow noopener">Báo cáo State of Marketing in APAC 2026 của AppsFlyer</a> (8/2026), dựa trên 30 tỷ lượt cài từ gần 12,000 app trong giai đoạn quý 3/2024 đến quý 2/2026, ghi nhận retention D7 của app tài chính trên Android tại Đông Nam Á tăng 45% so với cùng kỳ, trong khi D30 giảm 32%. Khoảng cách giữa giữ chân sớm và giữ chân dài hạn xuất hiện ở cả tài chính, giải trí và mua sắm. Retention D30 giảm ở cả bốn nhóm ngành, bốn khu vực và hai nền tảng, không có ngoại lệ.</p>
+
+<p>Cùng báo cáo đó, chi tiêu UA cho app giải trí tại Việt Nam trên Android tăng 194%, app tài chính tăng 153% và game tăng 106%, theo <a href="https://thitruongtaichinhtiente.vn/appsflyer-nen-kinh-te-ung-dung-tai-apac-dang-tang-truong-nhung-bai-toan-giu-chan-nguoi-dung-ngay-cang-kho-85373.html" target="_blank" rel="nofollow noopener">Thị trường Tài chính Tiền tệ</a> (9/2026). Ngân sách mua người dùng tăng mạnh trong khi D30 đi xuống là tín hiệu nên kiểm tra lại: một phần D7 tốt có thể đến từ ưu đãi tân thủ, nhiệm vụ nhận thưởng 7 ngày hoặc hoàn tiền lần đầu, và người dùng rời đi khi ưu đãi hết.</p>
+
+<h3>Lấy benchmark retention ở đâu</h3>
+
+<p>Nhiều bài viết vẫn trích một mức trung bình chung cho mọi ngành mà không ghi năm dữ liệu. Con số đó gần như vô dụng vì retention của app tin tức, game casual và ví điện tử chênh nhau vài lần. Nguồn tốt hơn là công cụ benchmark miễn phí của AppsFlyer: <a href="https://www.appsflyer.com/benchmarks/faq/" target="_blank" rel="nofollow noopener">theo trang phương pháp</a>, dữ liệu cập nhật mỗi quý, retention tính trên cohort hai tháng trong 30 ngày sau cài, loại 10% app cao nhất và thấp nhất, và có bộ lọc quốc gia (khi Việt Nam không đủ ngưỡng dữ liệu, công cụ hiển thị số của tiểu vùng). Benchmark nội bộ của chính app, so cohort tháng này với cùng tháng năm trước, vẫn đáng tin hơn mọi số trung bình ngành.</p>
+
+<h2>Đo lường quyền riêng tư thay đổi cách đọc KPI app marketing trên iOS</h2>
+
+<p>Từ khi Apple bật App Tracking Transparency năm 2021, phần lớn KPI app marketing trên iOS không còn đọc được ở cấp người dùng. Tỷ lệ đồng ý theo dõi đã tăng nhưng vẫn là thiểu số. Adjust ghi nhận tỷ lệ đồng ý trung bình quý 1/2026 là 38%, tăng từ 35% của quý 1/2025, tính trên những người được hiển thị hộp thoại xin phép (báo cáo 2/2026). AppsFlyer công bố mức 50% vào <a href="https://www.appsflyer.com/company/newsroom/pr/post-att-growth-2/" target="_blank" rel="nofollow noopener">tháng 4/2025</a>. Hai con số khác nhau vì cách chọn mẫu số khác nhau, nhưng cùng một kết luận: ít nhất một nửa số người dùng iOS được hỏi chỉ đo được qua cơ chế tổng hợp của Apple.</p>
+
+<p>Cơ chế đó trước đây là <a href="/glossary/skadnetwork/">SKAdNetwork</a>. Từ iOS 17.4 (3/2024), Apple đưa ra AdAttributionKit, và theo <a href="https://developer.apple.com/documentation/adattributionkit" target="_blank" rel="nofollow noopener">tài liệu chính thức của Apple</a>, hệ thống xét cả lượt hiển thị từ SKAdNetwork lẫn AdAttributionKit khi quyết định lượt cài thuộc về quảng cáo nào. Một số quy tắc ảnh hưởng trực tiếp tới cách đọc KPI:</p>
+
+<ul>
+<li>Có ba cửa sổ chuyển đổi: ngày 0 đến 2, ngày 3 đến 7 và ngày 8 đến 35, tính từ lần mở app đầu tiên. Mỗi cửa sổ cho tối đa một postback.</li>
+<li>Postback đầu tiên đến sau khi cửa sổ đóng, cộng thêm độ trễ ngẫu nhiên 24 đến 48 giờ. Postback thứ hai và thứ ba trễ 24 đến 144 giờ. ROAS D7 từ dữ liệu Apple vì vậy chỉ có sau 8 đến 13 ngày kể từ lần mở app đầu tiên.</li>
+<li>Giá trị chuyển đổi chi tiết chỉ có ở postback đầu. Postback thứ hai, thứ ba và các chiến dịch có lượng cài nhỏ (data tier thấp) chỉ nhận giá trị thô: low, medium, high.</li>
+<li>Cửa sổ ghi nhận mặc định là 1 ngày sau xem và 30 ngày sau nhấp. Nhà phát triển có thể chỉnh trong khoảng 1 đến 7 ngày sau xem và 1 đến 30 ngày sau nhấp.</li>
+</ul>
+
+<p>Hệ quả thực tế: retention D30 và LTV theo từng chiến dịch trên iOS phải ước tính, không đếm được. Cách làm phổ biến là dùng nhóm người dùng đồng ý theo dõi làm mẫu để suy ra cả cohort, kết hợp postback tổng hợp của Apple và thử nghiệm tăng trưởng thực (incrementality). Phần ánh xạ giá trị chuyển đổi (ví dụ: high nghĩa là đã nạp tiền trong 48 giờ) cần thống nhất giữa đội sản phẩm và đội quảng cáo trước khi chạy chiến dịch, không phải sau.</p>
+
+<p>Android đi hướng khác. Ngày 17/10/2025, Google <a href="https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies" target="_blank" rel="nofollow noopener">thông báo dừng Attribution Reporting API</a> và một loạt công nghệ Privacy Sandbox trên cả Chrome lẫn Android, với lý do mức độ áp dụng thấp. Ở thời điểm viết bài, Android chưa có thay đổi đo lường tương đương ATT, nên số liệu Android và iOS của cùng một app nên đặt cạnh nhau, đừng cộng gộp rồi so sánh với nhau.</p>
+
+<h2>Bảng KPI app marketing theo giai đoạn của app</h2>
+
+<p>App mới ra mắt và app đã có một triệu người dùng không nên nhìn cùng một bộ chỉ số. Bảng dưới đây là khung Adtek đề xuất khi lập kế hoạch đo lường.</p>
+
+<table>
+<thead>
+<tr><th>Giai đoạn</th><th>KPI chính</th><th>KPI chẩn đoán</th><th>Câu hỏi cần trả lời</th></tr>
+</thead>
+<tbody>
+<tr><td>Ra mắt (0 đến 3 tháng)</td><td>Retention D1, D7; tỷ lệ hoàn tất onboarding</td><td>Tỷ lệ chuyển đổi trên store, CTI, crash rate</td><td>Người dùng có hiểu app làm gì không?</td></tr>
+<tr><td>Tìm kênh (3 đến 9 tháng)</td><td>CPA hành động đầu tiên, retention D30 theo kênh</td><td>CPI, tỷ lệ organic, tỷ lệ gian lận cài đặt</td><td>Kênh nào mang người dùng ở lại sau 30 ngày?</td></tr>
+<tr><td>Mở rộng ngân sách</td><td>ROAS D7 và D30 theo cohort, thời gian hoàn vốn</td><td>CPI theo creative, ARPU, tỷ lệ người trả tiền</td><td>Tăng ngân sách 50% thì ROAS D30 giảm bao nhiêu?</td></tr>
+<tr><td>Trưởng thành</td><td>LTV/CAC, churn tháng, DAU/MAU</td><td>Tỷ lệ tái kích hoạt, ARPPU, tần suất mua</td><td>Giữ người cũ hay mua người mới rẻ hơn?</td></tr>
+</tbody>
+</table>
+
+<h2>ROAS theo cohort và LTV: cách đặt mức CPI tối đa</h2>
+
+<p><a href="/glossary/return-on-ad-spend-roas/">ROAS</a> theo cohort lấy doanh thu của những người cài trong một ngày (hoặc tuần) cụ thể, cộng dồn đến mốc D7, D30, D90, rồi chia cho chi phí đã bỏ ra để mua chính nhóm đó. Cách này khác ROAS trong trình quản lý quảng cáo, vốn ghép doanh thu hôm nay với chi phí hôm nay dù hai thứ thuộc về hai nhóm người khác nhau.</p>
+
+<p>Ví dụ minh họa, số giả định: một app thương mại điện tử chi 100 triệu đồng mua 10,000 lượt cài, CPI 10,000 đồng. Cohort này tạo 25 triệu đồng doanh thu đến D7 và 60 triệu đồng đến D30. ROAS D7 là 25%, ROAS D30 là 60%. Nếu biên lợi nhuận gộp là 30%, lợi nhuận gộp đến D30 mới bằng 18 triệu đồng, tức 18% chi phí. Muốn hoàn vốn trong 6 tháng, đội ngũ cần dữ liệu các cohort cũ để biết đường cong doanh thu sau D30 tăng thêm bao nhiêu. Không có đường cong đó, mọi mục tiêu ROAS đều là đoán.</p>
+
+<p>Churn là mặt còn lại của retention. Khi churn tháng cao hơn tốc độ mua người dùng mới, MAU giảm dù ngân sách quảng cáo không đổi. Theo dõi churn theo cohort giúp phân biệt hai tình huống: người dùng mới rời nhanh (lỗi onboarding hoặc sai tệp quảng cáo) và người dùng cũ rời dần (sản phẩm hết giá trị mới).</p>
+
+<h2>Góc nhìn Adtek: checklist trước khi chốt bộ KPI cho app</h2>
+
+<p>Trước khi bàn đến ngân sách cho một app, hãy trả lời tám câu hỏi dưới đây. Hai đội nhìn cùng một app mà ra hai con số ROAS khác nhau thường là do định nghĩa khác nhau, không phải do quảng cáo.</p>
+
+<ol>
+<li>Có một MMP (AppsFlyer, Adjust hoặc tương đương) làm nguồn số liệu chung chưa, hay mỗi kênh tự báo số của mình?</li>
+<li>"Người dùng hoạt động" được định nghĩa là mở app, đăng nhập hay thực hiện một hành động cụ thể? Định nghĩa này quyết định retention và ARPU.</li>
+<li>Hành động đầu tiên có giá trị (đăng ký, nạp tiền, đơn đầu) đã được gửi thành sự kiện về MMP và nền tảng quảng cáo chưa?</li>
+<li>Bảng giá trị chuyển đổi cho SKAdNetwork và AdAttributionKit đã ánh xạ tới KPI kinh doanh chưa, hay vẫn để mặc định?</li>
+<li>LTV tính trên doanh thu hay lợi nhuận gộp, và có trừ hoàn tiền, hủy đơn không?</li>
+<li>Báo cáo ROAS là theo cohort hay theo ngày giao dịch?</li>
+<li>Số liệu iOS và Android được báo cáo riêng, có ghi chú phần nào là ước tính không?</li>
+<li>Có quy định ngưỡng gian lận cài đặt để tự động loại nguồn không?</li>
+</ol>
+
+<p>Khi tám điểm trên đã rõ, bộ KPI app marketing thường chỉ còn năm đến bảy chỉ số trên dashboard tuần, phần còn lại để dành cho lúc cần tìm nguyên nhân. Bước tiếp theo là chọn kênh và cách tiếp cận phù hợp từng giai đoạn, phần này nằm trong bài <a href="/chien-luoc-app-marketing-9-phuong-phap/">chiến lược app marketing</a>.</p>
+
+<p>Nếu bạn cần rà lại cách đo lường app trước khi tăng ngân sách quý tới, hãy <a href="/contact/">liên hệ đội ngũ Adtek</a>.</p>
+
+<p><em>Bài viết được Adtek biên soạn lại và cập nhật năm 2026, tham khảo nội dung gốc của AppsFlyer (2021).</em></p>

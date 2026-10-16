@@ -1,0 +1,112 @@
+<p>Phân tích marketing và phân tích sản phẩm trả lời hai nửa của cùng một câu hỏi. Marketing analytics cho biết khách đến từ kênh nào, chiến dịch nào và tốn bao nhiêu tiền. Product analytics cho biết sau khi đến, họ làm gì trên website, app hay Zalo Mini App: dùng tính năng nào, bỏ dở ở bước nào, có quay lại mua lần hai không. <strong>Kết hợp phân tích marketing và phân tích sản phẩm là nối hai bộ dữ liệu này qua cùng một mã người dùng, để biết chiến dịch nào mang về khách ở lại lâu và mua lại, thay vì chỉ biết chiến dịch nào có giá mỗi lead thấp nhất.</strong></p>
+
+<p>Bản gốc của bài này (2021) viết cho đội làm mobile app. Năm 2026 bài toán rộng hơn và rẻ hơn để giải. GA4 cho xuất dữ liệu sự kiện thô sang BigQuery, Amplitude và Mixpanel đồng bộ được dữ liệu từ kho dữ liệu (data warehouse), còn khách hàng Việt thì đi qua Zalo, Shopee, TikTok Shop và website trước khi mua. Phần dưới đi từ khác biệt giữa hai loại phân tích, tới cách nối dữ liệu và quy trình thiết lập cho doanh nghiệp trong nước.</p>
+
+<h2>Marketing analytics và product analytics khác nhau ở đâu?</h2>
+
+<table>
+<thead><tr><th></th><th>Marketing analytics</th><th>Product analytics</th></tr></thead>
+<tbody>
+<tr><td>Câu hỏi chính</td><td>Khách đến từ đâu, chi phí bao nhiêu, kênh nào ra chuyển đổi</td><td>Khách làm gì sau khi đến, ở lại bao lâu, tính năng nào giữ họ</td></tr>
+<tr><td>Đơn vị dữ liệu</td><td>Lượt nhấp, phiên, chiến dịch, chi phí, lead, đơn đầu tiên</td><td>Sự kiện theo từng người dùng: xem sản phẩm, thêm giỏ, dùng tính năng, mua lại</td></tr>
+<tr><td>Chỉ số tiêu biểu</td><td>CPC, CPL, CAC, ROAS, tỷ lệ chuyển đổi theo kênh</td><td><a href="/glossary/retention-rate/">Retention rate</a>, tỷ lệ kích hoạt, tần suất sử dụng, phễu, giá trị theo nhóm khách</td></tr>
+<tr><td>Công cụ thường gặp</td><td>GA4, Google Ads, Meta Ads Manager, AppsFlyer hoặc Adjust cho app</td><td>Amplitude, Mixpanel, PostHog, Firebase</td></tr>
+<tr><td>Ai dùng</td><td>Đội performance, media, growth</td><td>Product manager, UX, CRM, chăm sóc khách hàng</td></tr>
+<tr><td>Nhịp xem số</td><td>Theo ngày, theo chiến dịch</td><td>Theo tuần, tháng, theo cohort</td></tr>
+</tbody>
+</table>
+
+<p>Mỗi bên có điểm mù riêng. Báo cáo quảng cáo dừng lại ở lượt chuyển đổi đầu tiên. Công cụ product analytics thấy rõ hành vi trong sản phẩm nhưng thường không biết người dùng đó đến từ quảng cáo nào, tốn bao nhiêu.</p>
+
+<p>Một ví dụ giả định để thấy hậu quả. Chiến dịch A có CPL 80,000 đồng, chiến dịch B 150,000 đồng. Nhìn riêng Ads Manager, đội media sẽ dồn tiền cho A. Nếu dữ liệu sau chuyển đổi cho thấy lead từ A gần như không trả lời tin nhắn Zalo, còn lead từ B chốt đơn gấp đôi, thì quyết định phải đảo lại. Không đội nào tự thấy điều đó khi chỉ đọc báo cáo của mình.</p>
+
+<h2>Tách riêng hai nguồn dữ liệu thì sai ở chỗ nào?</h2>
+
+<h3>Kênh tạo nhận biết bị đánh giá thấp</h3>
+<p>Một kênh như video YouTube hay KOL có thể mang về ít đơn trực tiếp nhưng là điểm chạm đầu tiên của nhóm khách mua nhiều nhất. Mô hình last click sẽ cắt ngân sách của kênh đó. Muốn thấy vai trò thật của nó, cần nhìn cả chuỗi điểm chạm bằng <a href="/multi-touch-attribution-mo-hinh-phan-bo-da-diem-cham/">multi-touch attribution</a> và đối chiếu với hành vi mua lại trong sản phẩm.</p>
+
+<h3>Đội sản phẩm sửa một vấn đề không có thật</h3>
+<p>Tỷ lệ rời bỏ cao ngay sau lượt cài hoặc lượt đăng ký thường bị quy cho trải nghiệm onboarding. Nếu phần lớn lượt đó đến từ traffic bot hoặc nguồn gian lận, đội sản phẩm đang tối ưu cho người dùng giả. Chỉ khi gắn nguồn traffic vào từng phiên trong sản phẩm mới tách được hai khả năng này.</p>
+
+<h3>Lời hứa của quảng cáo không khớp với trang đích</h3>
+<p>Quảng cáo nói về ưu đãi gói thành viên, người dùng bấm vào lại rơi về trang chủ hoặc màn hình đăng nhập chung. Ý tưởng deep link trong bài gốc vẫn đúng: đưa khách thẳng tới đúng nội dung đã hứa. Điểm mới là có thể đo việc đó bằng một phễu chung, tách theo chiến dịch và theo mẫu quảng cáo, thay vì đoán.</p>
+
+<h2>Câu hỏi chỉ trả lời được khi kết hợp phân tích marketing và phân tích sản phẩm</h2>
+
+<p>Tài liệu Warehouse Connectors của Mixpanel đưa ra một ví dụ rất thực tế: đã chi 50,000 USD cho một chiến dịch, người dùng mang về có còn ở lại sau một tháng không? Câu hỏi này cần dữ liệu chi phí của marketing và dữ liệu giữ chân của sản phẩm trong cùng một bảng. Những câu tương tự mà doanh nghiệp Việt hay gặp:</p>
+
+<ul>
+<li>Kênh nào mang về khách có tỷ lệ mua lần hai trong 90 ngày cao nhất, không chỉ đơn đầu tiên rẻ nhất?</li>
+<li>Khách đến từ TikTok dùng sản phẩm khác gì khách đến từ Google Search? Họ có cần màn hình onboarding khác nhau không?</li>
+<li>Mẫu quảng cáo nói về giá và mẫu nói về công dụng, mẫu nào ra khách có <a href="/glossary/lifetime-value-ltv-gia-tri-vong-doi-khach-hang/">giá trị vòng đời khách hàng (LTV)</a> cao hơn?</li>
+<li>Tính năng mới ra mắt tháng trước có giữ chân nhóm khách từ chiến dịch khuyến mãi không, hay họ rời đi khi hết mã giảm giá?</li>
+<li>Lead nào nên chuyển sale gọi ngay, dựa trên nguồn đến cộng với hành vi trên website (xem bảng giá, tải tài liệu, mở tin nhắn Zalo)?</li>
+</ul>
+
+<p>Mỗi câu hỏi trên quay về một yêu cầu kỹ thuật: cùng một người phải mang cùng một mã định danh ở cả hệ thống quảng cáo, công cụ phân tích và CRM.</p>
+
+<h2>Cách nối dữ liệu năm 2026: GA4, BigQuery, Amplitude, Mixpanel và CDP</h2>
+
+<h3>GA4 và BigQuery export</h3>
+<p>Theo tài liệu chính thức của Google Analytics (tra cứu tháng 10/2026), GA4 cho xuất dữ liệu sự kiện thô sang BigQuery, kể cả vào bản BigQuery sandbox miễn phí. Thuộc tính GA4 bản thường có giới hạn 1 triệu sự kiện mỗi ngày cho kiểu xuất hằng ngày; vượt giới hạn liên tục thì việc xuất bị tạm dừng. Kiểu xuất streaming không giới hạn số sự kiện nhưng tính thêm 0.05 USD mỗi GB, khoảng 600,000 sự kiện.</p>
+<p>Có hai lý do nên bật BigQuery export sớm. Thứ nhất, dữ liệu cấp người dùng trong GA4 bản thường chỉ giữ được tối đa 14 tháng, mặc định là 2 tháng; dữ liệu đã xuất sang BigQuery thì doanh nghiệp giữ bao lâu tùy ý. Thứ hai, Google không xuất lại dữ liệu của những ngày trước khi bật liên kết, nên bật muộn tháng nào mất lịch sử tháng đó.</p>
+<p>Một lưu ý khi làm attribution: bảng streaming không có dữ liệu nguồn traffic cấp người dùng cho người dùng mới, và Google khuyên lấy dữ liệu này từ bảng xuất hằng ngày.</p>
+
+<h3>Đưa dữ liệu vào Amplitude hoặc Mixpanel</h3>
+<p>Khi dữ liệu đã nằm trong warehouse, công cụ product analytics có thể lấy từ đó thay vì cài thêm một bộ tracking song song. Amplitude có tích hợp nhập dữ liệu GA4 qua BigQuery: dữ liệu đi từ GA4 sang BigQuery, được dỡ ra một bucket Google Cloud Storage rồi mới nạp vào Amplitude. Mixpanel có Warehouse Connectors đồng bộ từ Snowflake, BigQuery, Databricks, Redshift và Postgres; tài liệu Mixpanel ghi tính năng này là add-on miễn phí cho tổ chức dùng gói trả phí theo sự kiện khi gia hạn hoặc nâng gói.</p>
+<p>Điểm hay của cách làm này là dữ liệu chi phí quảng cáo, đơn hàng từ sàn và trạng thái lead từ CRM cũng có thể đưa vào cùng warehouse, rồi đồng bộ sang công cụ phân tích dưới dạng thuộc tính người dùng. Product manager mở báo cáo giữ chân là thấy luôn cột kênh và chi phí.</p>
+
+<h3>CDP hay data warehouse?</h3>
+<p>Warehouse là nơi lưu và tính toán. <a href="/tat-tan-tat-ve-cdps-du-lieu-khach-hang-trong-thoi-dai-chuyen-doi-so/">CDP</a> lo phần hợp nhất hồ sơ khách hàng từ nhiều nguồn và đẩy phân khúc ra kênh kích hoạt như Zalo, email, tệp quảng cáo. Doanh nghiệp vừa và nhỏ thường bắt đầu được với GA4, BigQuery và một công cụ trực quan hóa. CDP đáng đầu tư khi đã có nhiều nguồn dữ liệu khách hàng định danh và có đội đủ người dùng phân khúc đó hằng tuần. Mua CDP trước khi thống nhất được mã khách hàng giữa các hệ thống thường chỉ tạo thêm một nơi chứa dữ liệu rời rạc.</p>
+
+<h2>Doanh nghiệp Việt: dữ liệu khách nằm ở Zalo, sàn và website</h2>
+
+<p>Mô hình "quảng cáo dẫn về app, đo hành vi trong app" của bài gốc chỉ đúng với một phần doanh nghiệp Việt. Phần lớn hành trình diễn ra trên nền tảng mà doanh nghiệp không sở hữu:</p>
+
+<ul>
+<li>Theo báo cáo kết quả kinh doanh quý 2/2026 của VNG (VietnamPlus đưa tin tháng 7/2026), Zalo có 81.3 triệu người dùng hàng tháng và khoảng 30,000 tài khoản Official Account đang hoạt động vào tháng 6/2026.</li>
+<li>Theo Metric.vn (VnEconomy đưa tin tháng 1/2026), doanh số trên Shopee, TikTok Shop, Lazada và Tiki năm 2025 ước đạt 429.66 nghìn tỷ đồng, tăng 34.75% so với 2024. Shopee chiếm 56.04% thị phần doanh số, TikTok Shop 41.31%.</li>
+</ul>
+
+<p>Với thương hiệu bán chủ yếu trên sàn, "dữ liệu sản phẩm" thực tế là dữ liệu đơn hàng, tỷ lệ mua lại, đánh giá và tương tác trong gian hàng, lấy qua file xuất trong trang quản lý người bán hoặc API của sàn. Mức chi tiết thông tin người mua phụ thuộc chính sách từng sàn. Với doanh nghiệp bất động sản, giáo dục, ô tô, hành trình thật nằm trên Zalo: khách để lại số điện thoại, nhân viên tư vấn nhắn tin, khách quay lại website xem bảng giá rồi mới gặp trực tiếp.</p>
+
+<p>Số điện thoại vì vậy thường là mã nối dữ liệu thực tế nhất ở Việt Nam. Từ 1/1/2026, Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15 có hiệu lực, ghi nhận quyền của khách được biết, đồng ý, rút lại đồng ý và yêu cầu xóa dữ liệu. Muốn nối số điện thoại từ form với dữ liệu hành vi và đẩy ngược lên nền tảng quảng cáo, doanh nghiệp cần xin đồng ý cho đúng các mục đích đó ngay từ form.</p>
+
+<h2>Góc nhìn Adtek: 6 bước thiết lập phân tích kết hợp</h2>
+
+<p>Khi làm <a href="/tat-tan-tat-ve-data-driven-marketing/">data-driven marketing</a> cho khách hàng, Adtek thường đi theo thứ tự dưới đây. Mỗi bước có đầu ra cụ thể để kiểm tra trước khi sang bước sau.</p>
+
+<ol>
+<li><strong>Chọn 3 đến 5 câu hỏi kinh doanh.</strong> Lấy từ danh sách ở trên hoặc từ cuộc họp ngân sách gần nhất. Câu hỏi quyết định cần sự kiện nào, không làm ngược lại.</li>
+<li><strong>Viết tracking plan một trang.</strong> Liệt kê sự kiện quan trọng (đăng ký, xem bảng giá, thêm giỏ, mua, mua lại, mở tin Zalo), tham số đi kèm và tên gọi thống nhất giữa web, app và CRM.</li>
+<li><strong>Thống nhất mã định danh.</strong> Gán user_id cho người dùng đã đăng nhập hoặc đã để lại thông tin, lưu cùng mã đó trong CRM. Với kênh Zalo và sàn, xác định trường nào dùng để nối (số điện thoại, mã đơn, mã khách CRM) và có đồng ý của khách cho việc đó.</li>
+<li><strong>Bật BigQuery export cho GA4 ngay.</strong> Kể cả khi chưa dùng tới, để giữ lịch sử. Kiểm tra lượng sự kiện mỗi ngày so với giới hạn 1 triệu.</li>
+<li><strong>Đưa dữ liệu ngoài vào warehouse.</strong> Chi phí quảng cáo theo ngày và chiến dịch, đơn hàng từ sàn, trạng thái lead từ CRM. Bắt đầu bằng file xuất định kỳ cũng được, tự động hóa sau.</li>
+<li><strong>Dựng một báo cáo chung cho cả hai đội.</strong> Một bảng theo cohort tháng: kênh, chi phí, số khách mới, tỷ lệ còn hoạt động sau 30 và 90 ngày, doanh thu lũy kế. Xem cùng nhau mỗi tháng, ghi lại quyết định đã đổi nhờ bảng này.</li>
+</ol>
+
+<h3>Câu hỏi kiểm tra trước khi mua thêm công cụ</h3>
+<ul>
+<li>Cùng một khách hàng có mang cùng một mã ở GA4, CRM và hệ thống đơn hàng không?</li>
+<li>GA4 đã liên kết BigQuery chưa, và đang xuất từ ngày nào?</li>
+<li>Báo cáo hiện tại có trả lời được câu "kênh nào ra khách mua lại" không? Nếu không, thiếu dữ liệu nào?</li>
+<li>Form thu lead đã xin đồng ý riêng cho mục đích phân tích và quảng cáo chưa?</li>
+<li>Ai trong đội marketing và đội sản phẩm chịu trách nhiệm đọc báo cáo chung hằng tháng?</li>
+</ul>
+
+<p>Phần lớn doanh nghiệp vướng ở bước 3, không phải ở công cụ. Amplitude hay Mixpanel đều không cứu được dữ liệu mà mỗi hệ thống gọi khách hàng bằng một mã khác nhau.</p>
+
+<p>Adtek thiết lập đo lường GA4, BigQuery và báo cáo kết hợp dữ liệu quảng cáo, sàn, Zalo và CRM cho doanh nghiệp bán lẻ, bất động sản và giáo dục. Nếu bạn muốn rà lại cách đo hiện tại, hãy <a href="/contact/">liên hệ đội ngũ Adtek</a>.</p>
+
+<h2>Nguồn tham khảo</h2>
+<ul>
+<li>Google Analytics Help (tra cứu 10/2026). <a href="https://support.google.com/analytics/answer/9358801" target="_blank" rel="nofollow noopener">[GA4] BigQuery Export</a>.</li>
+<li>Google Analytics Help (tra cứu 10/2026). <a href="https://support.google.com/analytics/answer/7667196" target="_blank" rel="nofollow noopener">Data retention</a>.</li>
+<li>Mixpanel Docs (tra cứu 10/2026). <a href="https://docs.mixpanel.com/docs/tracking-methods/warehouse-connectors" target="_blank" rel="nofollow noopener">Warehouse Connectors</a>.</li>
+<li>Amplitude Docs (tra cứu 10/2026). <a href="https://amplitude.com/docs/data/source-catalog/ga4" target="_blank" rel="nofollow noopener">Google Analytics 4 Import</a>.</li>
+<li>VietnamPlus (7/2026). <a href="https://www.vietnamplus.vn/zalo-co-813-trieu-nguoi-dung-hang-thang-post1127226.vnp" target="_blank" rel="nofollow noopener">Zalo có 81,3 triệu người dùng hàng tháng</a>.</li>
+<li>VnEconomy (1/2026). <a href="https://vneconomy.vn/bon-ong-lon-thuong-mai-dien-tu-co-doanh-thu-nam-2025-uoc-dat-42966-nghin-ty.htm" target="_blank" rel="nofollow noopener">Bốn "ông lớn" thương mại điện tử có doanh thu năm 2025 ước đạt 429,66 nghìn tỷ</a>.</li>
+<li>Cổng thông tin điện tử tỉnh Hà Tĩnh (1/2026). <a href="https://hatinh.gov.vn/vi/bai-viet/luat-bao-ve-du-lieu-ca-nhan-chinh-thuc-co-hieu-luc-thi-hanh-tu-ngay-112026" target="_blank" rel="nofollow noopener">Luật Bảo vệ dữ liệu cá nhân chính thức có hiệu lực thi hành từ ngày 1/1/2026</a>.</li>
+</ul>
+
+<p><em>Bài viết được Adtek biên soạn lại và cập nhật năm 2026, tham khảo nội dung gốc của AppsFlyer (2021).</em></p>
