@@ -15,7 +15,7 @@ Cập nhật: 14/10/2026. Đây là tài liệu để tài khoản Claude mới 
 Việc đang dở:
 
 - Liên kết ngược cho bài 1 (đã đăng 13/10) và bài 2: làm trong lần chạy thứ Sáu kế tiếp.
-- Đăng Facebook: nội dung đã có trong `calendar.json` (`fb_caption`, `fb_comment`) cho bài 1 đến 4. Chưa có cách đăng tự động; đang chờ chọn giữa kết nối Graph API, plugin WordPress hoặc đăng tay qua Meta Business Suite.
+- Đăng Facebook: đã chọn Graph API (16/10/2026). Page Adtek Growth Agency (ID 101888089257566), công cụ `tools/fb_post.py`: đăng ảnh 4:5 + câu CTA chung + `fb_caption`, Page tự bình luận `fb_comment` chứa link. Network secret cho `graph.facebook.com` phải là **Page access token** (kiểm tra: `curl -sS "https://graph.facebook.com/me?fields=id,name"` trả về Page, không phải System User). Bài 1 đến 4 chưa đăng Facebook, chờ anh Tin duyệt lịch.
 
 ## 2. Những gì nằm trong repo (đi theo dự án)
 
@@ -40,7 +40,7 @@ Repo `tinle47/adtek_website`, nhánh `claude/brave-curie-2c6zbc`.
 | Thông báo đẩy | Đăng nhập ứng dụng Claude trên điện thoại bằng tài khoản mới |
 | Lịch tự động | Tạo lại 2 routine theo `content/editorial/routines/` (cùng lịch, cùng prompt), gắn vào một phiên cố định |
 | Trang "Lịch blog Adtek" | Trang cũ thuộc tài khoản cũ. Dựng lại bằng `python3 tools/build_blog_page.py <file.html>` rồi publish artifact mới, hoặc chia sẻ trang cũ cho tài khoản mới |
-| Facebook (nếu chọn Graph API) | Thêm `graph.facebook.com` vào network access và Page access token vào network secret |
+| Facebook (Graph API) | Thêm `graph.facebook.com` vào network access; network secret header `Authorization: Bearer <Page access token>` (lấy từ System User `claude-blog` trong Business Manager, token không hết hạn, đổi sang Page token bằng `GET /101888089257566?fields=access_token`). Chạy `python3 tools/fb_post.py check` phải ra Page 101888089257566 |
 
 ## 4. Thứ tự chuyển giao để không chạy trùng
 
