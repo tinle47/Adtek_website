@@ -14,7 +14,7 @@ Cách dùng:
   python3 tools/covers.py render <số bài> [--style X] [--kind blog|fb|all] [--out thư-mục]   dựng thử, không ghi cover.style
   python3 tools/covers.py sheet <số bài> [--out thư-mục]   dựng mọi phong cách cho một bài để so sánh
   python3 tools/covers.py existing <wp_id>           dựng ảnh bìa blog cho bài cũ trong mục existing (vd 6076, 6078)
-  python3 tools/covers.py fbcover [split|center|cream] [--out thư-mục]   ảnh bìa Fanpage Facebook 1640x624 (content/brand/fb-cover.jpg)
+  python3 tools/covers.py fbcover [center|split|cream] [--out thư-mục]   ảnh bìa Fanpage Facebook 1640x624 (content/brand/fb-cover.jpg)
   python3 tools/covers.py og [navy|cream|panel] [--out thư-mục]   ảnh chia sẻ mặc định của website (content/brand/og-default.jpg và @2x)
 """
 import base64
@@ -554,10 +554,10 @@ FB_COVER_SIZE = (1640, 624)  # khổ tải lên Facebook khuyến nghị (hiển
 # Điện thoại hiển thị 640x360: cắt hai bên, chỉ giữ khoảng 68% chiều ngang ở giữa (x 265 đến 1375);
 # máy tính: ảnh đại diện Page đè góc dưới bên trái. Chữ và logo nằm trong x 300 đến 1340, chỉ dấu A cam (không chữ) tràn ra ngoài.
 SERVICES = ["User acquisition strategy", "CRM management", "Integrated marketing communication", "Growth consultancy", "SEO services"]
-FB_COVER_VARIANTS = ("split", "center", "cream")
+FB_COVER_VARIANTS = ("center", "split", "cream")  # center: anh Tin chọn 16/10/2026
 
 
-def fb_cover(variant="split"):
+def fb_cover(variant="center"):
     """split: nền navy, tiêu đề bên trái, 5 dịch vụ đánh số bên phải, dấu A cam tràn mép phải.
     center: nền navy, bố cục giữa như ảnh bìa cũ, 5 dịch vụ thành hàng (số trên, chữ dưới), dấu A cam ở hai góc dưới.
     cream: nền kem, tiêu đề navy bên trái, dịch vụ trên khối navy tràn mép phải, dấu A cam ở mép phải."""
@@ -570,10 +570,10 @@ body{{background:{NAVY};color:#fff}}
 .b1{{left:-150px;bottom:-130px}}.b2{{right:-150px;bottom:-130px}}
 .lg{{position:absolute;left:0;right:0;top:84px;display:flex;justify-content:center}}
 h1{{position:absolute;left:300px;right:300px;top:236px;text-align:center;font-size:76px;line-height:1}}
-ul{{position:absolute;left:300px;right:300px;top:390px;list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:28px}}
+ul{{position:absolute;left:290px;right:290px;top:388px;list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:26px}}
 li{{display:flex;flex-direction:column;gap:6px}}
 .num{{font-size:46px;line-height:1;color:{ORANGE}}}
-.t{{font-size:22px;line-height:1.28;font-weight:500;color:#DCE4F2}}"""
+.t{{font-size:25px;line-height:1.24;font-weight:500;color:#DCE4F2}}"""
         body = f"""<div class="big mark b1"></div><div class="big mark b2"></div>
 <div class="lg">{logo('#fff', 104)}</div><h1>{head}</h1><ul>{items}</ul>"""
     else:
@@ -594,7 +594,7 @@ li{{display:flex;align-items:baseline;gap:18px}}
     return document(css, body, *FB_COVER_SIZE)
 
 
-def fb_cover_render(variant="split", out=None):
+def fb_cover_render(variant="center", out=None):
     """Ghi content/brand/fb-cover.jpg (1640x624); out: thư mục khác để xem thử."""
     d = Path(out) if out else ROOT / "content/brand"
     return shoot([(fb_cover(variant), d / ("fb-cover.jpg" if not out else f"fb-cover-{variant}.jpg"), *FB_COVER_SIZE, 1)])
@@ -629,8 +629,8 @@ if __name__ == "__main__":
     elif cmd == "og":  # ảnh chia sẻ mặc định của website: og [navy|cream|panel] [--out thư-mục để xem thử]
         v = args[1] if len(args) > 1 and not args[1].startswith("--") else "navy"
         print("\n".join(og_render(v, opt("--out"))))
-    elif cmd == "fbcover":  # ảnh bìa Fanpage: fbcover [split|center|cream] [--out thư-mục để xem thử]
-        v = args[1] if len(args) > 1 and not args[1].startswith("--") else "split"
+    elif cmd == "fbcover":  # ảnh bìa Fanpage: fbcover [center|split|cream] [--out thư-mục để xem thử]
+        v = args[1] if len(args) > 1 and not args[1].startswith("--") else "center"
         print("\n".join(fb_cover_render(v, opt("--out"))))
     elif cmd == "sheet":
         post = find(data, int(args[1]))
