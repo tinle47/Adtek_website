@@ -57,9 +57,23 @@ def check():
     print(json.dumps({"page_id": r["id"], "page_name": r["name"]}, ensure_ascii=False))
 
 
+HASHTAGS = ["#Adtek", "#GrowthMarketing"]  # 2 hashtag mặc định, mỗi bài thêm 3 hashtag riêng (fb_hashtags)
+FOOTER = "Website: adtek.agency\nEmail: contact@adtek.agency"
+
+
 def message(post):
-    """Caption đăng thật: câu CTA chung ở đầu, rồi nội dung fb_caption."""
-    return f"{CTA}\n\n{post['fb_caption'].strip()}"
+    """Caption đăng thật theo template anh Tin duyệt:
+    TIÊU ĐỀ CÂU HỎI (in hoa) / câu CTA / fb_caption / 5 hashtag / website và email."""
+    parts = []
+    if post.get("fb_title"):
+        parts.append(post["fb_title"].strip().upper() + "\n" + CTA)
+    else:
+        parts.append(CTA)
+    parts.append(post["fb_caption"].strip())
+    tags = HASHTAGS + [h if h.startswith("#") else "#" + h for h in post.get("fb_hashtags", [])][:3]
+    parts.append(" ".join(tags))
+    parts.append(FOOTER)
+    return "\n\n".join(parts)
 
 
 def cover(post, size=(1080, 1080), out=None):
@@ -85,7 +99,7 @@ def post_fb(data, post, dry_run=False, sample=False, image=None):
         sys.exit(f"Bài {post['no']}: thiếu slug, fb_caption hoặc fb_comment")
     image = Path(image) if image else ROOT / f"content/posts/{post['slug']}-fb.jpg"
     caption, comment = message(post), post["fb_comment"]
-    if "http" in caption or "adtek.agency" in caption:
+    if any("http" in s or "adtek.agency" in s for s in (post["fb_caption"], post.get("fb_title", ""))):
         sys.exit(f"Bài {post['no']}: caption có link, cần bỏ link khỏi caption")
     if not image.exists():  # ảnh do phiên "Adtek - Designer" làm và đưa lên nhánh, script không tự dựng
         sys.exit(f"Bài {post['no']}: chưa có ảnh {image.relative_to(ROOT)} từ phiên Adtek - Designer, chưa đăng")
