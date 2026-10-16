@@ -116,7 +116,7 @@ def cover(post, size=(1080, 1350)):
     square = w == h
     side = len(hero) <= 2  # số hoặc chữ ngắn: đặt bên trái, chữ bên phải như mẫu "5 xu hướng"
     k = 0.88 if square else 1
-    vals = {"w": w, "h": h, "pad": 64 if square else 80, "padb": 64 if square else 90, "logo": 52 if square else 60,
+    vals = {"w": w, "h": h, "pad": 64 if square else 80, "padb": 64 if square else 90, "logo": 104 if square else 116,
             "kick": round(34 * k), "sub": round(38 * k),
             "tsize": round((84 if len(c["title"]) <= 16 else 70) * k * (0.9 if side else 1)),
             "gapbox": 56, "bodyb": 40 if square else 60, "hero": round((380 if side else 250 if len(hero) <= 4 else 190) * k), "layout": "side" if side else "stack"}
