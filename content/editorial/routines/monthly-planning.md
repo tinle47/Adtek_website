@@ -15,10 +15,10 @@ Kế hoạch tháng M gồm các tuần có thứ Hai nằm trong tháng M (ví 
 | Kênh | Nhịp | Giờ |
 |---|---|---|
 | Blog | 4 bài/tuần: thứ Hai, Ba, Năm, Sáu | 08:05 đến 08:55, phút chọn ngẫu nhiên |
-| Facebook | 1 bài mỗi ngày, định dạng riêng cho Facebook, không đăng lại bài blog | 12:13 ngày thường, 20:13 thứ Bảy và Chủ nhật |
+| Facebook | 1 bài mỗi ngày, định dạng riêng cho Facebook, không đăng lại bài blog | Ngẫu nhiên 19:00 đến 20:00 mỗi ngày (anh Tin chọn 17/10/2026). Trường time để bất kỳ, phiên Facebook post tự gán bằng `fb_daily.py retime` |
 | TikTok | 3 video/tuần từ 1 bài blog (công cụ trong `video/`) | 19:13 thứ Ba, Năm, Bảy |
 
-Định dạng Facebook xoay theo ngày: thứ Hai góc số liệu, thứ Ba thuật ngữ 1 phút, thứ Tư carousel hướng dẫn, thứ Năm tin nóng (có tin lớn thì thay), thứ Sáu phép tính nhanh (con số ví dụ ghi rõ là ví dụ), thứ Bảy hiểu lầm và sự thật hoặc câu hỏi mở, Chủ nhật video ngắn (Reels, dùng lại video TikTok; chưa có video thì đổi sang câu hỏi mở). Bài liên quan tới một bài blog đã lên sóng thì Page bình luận link bài đó, không giới hạn số bài có link mỗi tuần (anh Tin chọn phương án A ngày 16/10/2026).
+Định dạng Facebook xoay theo ngày: thứ Hai góc số liệu, thứ Ba thuật ngữ 1 phút, thứ Tư carousel hướng dẫn, thứ Năm tin nóng (có tin lớn thì thay), thứ Sáu phép tính nhanh (con số ví dụ ghi rõ là ví dụ), thứ Bảy hiểu lầm và sự thật hoặc câu hỏi mở, Chủ nhật video ngắn (Reels, dùng lại video TikTok; chưa có video thì đổi sang câu hỏi mở). Caption Facebook giữ giọng riêng của Page Adtek, không áp dụng `van-phong.md` (anh Tin chọn phương án A ngày 17/10/2026). Bài liên quan tới một bài blog đã lên sóng thì Page bình luận link bài đó, không giới hạn số bài có link mỗi tuần (anh Tin chọn phương án A ngày 16/10/2026).
 
 ## Các bước
 
@@ -27,6 +27,7 @@ Kế hoạch tháng M gồm các tuần có thứ Hai nằm trong tháng M (ví 
 3. Cập nhật phần nghiên cứu trong `reports/chien-luoc-noi-dung.html` (bức tranh thị trường, bảng ngành, bảng công nghệ), thêm một dòng vào nhật ký nghiên cứu.
 4. Lập kế hoạch tháng mới cho cả 3 kênh:
    - Chủ đề tháng nối với thông điệp xuyên suốt.
+   - Tiêu đề và brief bài blog viết theo `content/editorial/van-phong.md` (văn phong anh Tin, 17/10/2026): hứa một kết quả cụ thể, vào thẳng việc, ưu tiên bài có ví dụ làm từng bước.
    - Blog: chọn bài từ `calendar.json` (status planned hoặc backlog) và bài mới từ nghiên cứu, ưu tiên tin có tính thời sự và ngành tăng trưởng; mỗi bài có số bài, tiêu đề, cụm, từ khóa, ngày giờ.
    - Facebook: 1 bài mỗi ngày theo định dạng xoay vòng, mỗi bài có tiêu đề câu hỏi, brief, số liệu kèm nguồn, bài blog để bình luận link (chỉ khi bài đó đã lên sóng trước ngày đăng). Không lên bài mini-case hay số liệu dự án (anh Tin bỏ ngày 16/10/2026).
    - TikTok: 3 video/tuần từ 1 bài blog đã lên sóng trước ngày đăng video, mỗi video một góc.
