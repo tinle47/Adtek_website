@@ -1,6 +1,6 @@
 # Quy tắc làm video TikTok Adtek
 
-Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc dưới đây do anh Tin chốt, áp dụng cho mọi video. Chi tiết kỹ thuật xem `README.md`, lịch và nguồn số liệu xem `plan/lich-noi-dung-tiktok.xlsx`.
+Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc dưới đây do anh Tin chốt, áp dụng cho mọi video. Chi tiết kỹ thuật xem `README.md`, lịch và nguồn số liệu xem `plan/lich-noi-dung-tiktok.xlsx`. Phiên Claude mới nhận dự án: đọc `HANDOFF.md` trước (tình trạng hiện tại, routine, việc đang chờ).
 
 ## Nội dung
 
