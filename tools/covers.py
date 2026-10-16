@@ -1,7 +1,7 @@
 """Bộ mẫu ảnh bìa Adtek: nhiều phong cách, mỗi bài một phong cách khác bài trước.
 
 Mỗi phong cách dựng được 2 khổ từ cùng dữ liệu cover trong calendar.json:
-  blog  1200x630 (ảnh đại diện WordPress, ảnh xem trước khi chia sẻ link)
+  blog  bố cục 1200x630, file 2400x1260 (ảnh đại diện WordPress, ảnh xem trước khi chia sẻ link)
   fb    1080x1080 (ảnh bài đăng Facebook)
 
 Dữ liệu dùng: cover.kicker, title, subtitle, chips (blog); cover.fb_kicker, hero, hero_text, subtitle (fb).
@@ -26,7 +26,8 @@ from string import Template
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "tools/assets"
-SIZES = {"blog": (1200, 630), "fb": (1080, 1080)}
+SIZES = {"blog": (1200, 630), "fb": (1080, 1080)}  # kích thước bố cục (px CSS)
+SCALE = {"blog": 2, "fb": 1}  # ảnh bìa blog xuất gấp đôi (2400x1260) cho khung 870px trên màn Retina; ảnh Facebook giữ 1080
 # Khổ blog: trang danh sách bài của WordPress cắt giữa ảnh còn 370x250, mất khoảng 134px mỗi bên ảnh 1200x630.
 # Trang /blog/ cắt ảnh thành 870x362 (tỉ lệ 2.4:1), mất khoảng 65px ở mép trên và mép dưới.
 # Vùng an toàn cho chữ và logo khổ ngang: x 140 đến 1060, y 70 đến 560; chỉ họa tiết được tràn ra ngoài vùng này.
@@ -462,15 +463,15 @@ def page(post, kind, style):
 
 
 def shoot(pages):
-    """pages: danh sách (html, output, rộng, cao). Chụp tất cả trong một lần mở trình duyệt."""
+    """pages: danh sách (html, output, rộng, cao[, hệ số điểm ảnh]). Chụp tất cả trong một lần mở trình duyệt."""
     tmp = ROOT / "previews/_covers"
     tmp.mkdir(parents=True, exist_ok=True)
     manifest = []
-    for i, (html_text, out, w, h) in enumerate(pages):
+    for i, (html_text, out, w, h, *scale) in enumerate(pages):
         src = tmp / f"{i}.html"
         src.write_text(html_text, encoding="utf-8")
         Path(out).parent.mkdir(parents=True, exist_ok=True)
-        manifest.append({"input": str(src), "output": str(out), "width": w, "height": h})
+        manifest.append({"input": str(src), "output": str(out), "width": w, "height": h, "scale": scale[0] if scale else 1})
     mf = tmp / "jobs.json"
     mf.write_text(json.dumps(manifest), encoding="utf-8")
     subprocess.run(["node", str(ROOT / "tools/render_cover.js"), str(mf)], check=True)
@@ -482,7 +483,7 @@ def shoot(pages):
 
 def render(jobs):
     """jobs: danh sách (post, kind, style, output)."""
-    return shoot([(page(post, kind, style), out, *SIZES[kind]) for post, kind, style, out in jobs])
+    return shoot([(page(post, kind, style), out, *SIZES[kind], SCALE[kind]) for post, kind, style, out in jobs])
 
 
 def output_path(post, kind):

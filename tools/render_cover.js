@@ -1,12 +1,13 @@
 // Chụp file HTML thành ảnh.
 // Cách dùng: node tools/render_cover.js input.html output.jpg [rộng cao] (mặc định 1200x630)
-//        hoặc node tools/render_cover.js danh-sach.json   (mảng {input, output, width, height}, chụp nhiều ảnh trong một lần mở trình duyệt)
+//        hoặc node tools/render_cover.js danh-sach.json   (mảng {input, output, width, height, scale}, chụp nhiều ảnh trong một lần mở trình duyệt)
+// scale: hệ số điểm ảnh, 2 cho ảnh bìa blog (bố cục 1200x630, file 2400x1260 để nét trên màn Retina).
 // Chờ font tải xong; nếu trang có script co chữ thì chờ thêm body[data-done].
 const { chromium } = require("playwright");
 const path = require("path");
 
-async function shot(browser, { input, output, width = 1200, height = 630 }) {
-  const page = await browser.newPage({ viewport: { width: +width, height: +height } });
+async function shot(browser, { input, output, width = 1200, height = 630, scale = 1 }) {
+  const page = await browser.newPage({ viewport: { width: +width, height: +height }, deviceScaleFactor: +scale });
   await page.goto("file://" + path.resolve(input));
   await page.evaluate(() => document.fonts.ready);
   await page.waitForFunction(() => !document.body.hasAttribute("data-fit") || document.body.dataset.done, null, { timeout: 5000 }).catch(() => {});
