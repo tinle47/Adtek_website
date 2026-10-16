@@ -10,7 +10,9 @@ Cách dùng:
   python3 tools/report_pdf.py --thumb <slug> [<slug> ...]   chỉ dựng lại ảnh đại diện, không dựng PDF
   python3 tools/report_pdf.py all
 """
+import base64
 import html
+import io
 import json
 import subprocess
 import sys
@@ -18,7 +20,7 @@ from pathlib import Path
 
 from pypdf import PdfWriter
 
-from covers import ASSETS, NAVY, ORANGE, REPORT_SIZE, font_css, report_cover, shoot
+from covers import ASSETS, NAVY, ORANGE, REPORT_SIZE, REPORT_THEMES, font_css, hl, report_cover, shoot
 
 ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "content/reports"
@@ -88,23 +90,65 @@ def head(title):
     return f'<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>{esc(title)}</title><style>{CSS}</style></head><body>'
 
 
+def theme(r):
+    """Phối màu của báo cáo, cùng bộ với ảnh đại diện (covers.REPORT_THEMES): nền, chữ, khối dưới, thẻ trong khối, chữ thẻ, màu số."""
+    return REPORT_THEMES[(r.get("cover") or {}).get("theme", 0) % len(REPORT_THEMES)]
+
+
+# Trang bìa và trang cuối theo series "Báo cáo Adtek" (giống ảnh đại diện): phẳng, không đường kẻ, không hình tròn,
+# tiêu đề Inter Tight có từ khóa tô cam, số Newsreader, không đặt chữ trên nền cam (khối cam luôn có thẻ kem hoặc navy).
+def logo_img(color):
+    """Logo Adtek tô sẵn một màu, nhúng data URI (in PDF bằng mask để lại vạch mảnh ở mép, nên dùng ảnh)."""
+    from PIL import Image
+    im = Image.open(ASSETS / "adtek-logo-white.png").convert("RGBA")
+    fill = Image.new("RGBA", im.size, color)
+    fill.putalpha(im.getchannel("A"))
+    buf = io.BytesIO()
+    fill.save(buf, "PNG")
+    src = "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
+    return f'<img src="{src}" alt="Adtek" style="position:absolute;left:18mm;top:18mm;height:15mm">'
+
+
+FULL_CSS = """
+.full{font-family:IT,sans-serif}
+.full .lab{font-weight:600;font-size:11pt;opacity:.75}
+.full h1{font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+.full .hl{color:%s}
+.full .num{font-family:NR,serif;font-weight:600;letter-spacing:-.02em;line-height:1}
+.block{position:absolute;left:0;right:0;bottom:0}
+.inner{position:absolute;inset:0;display:flex;flex-direction:column}
+""" % ORANGE
+
+
+def block(r, height, content):
+    """Khối màu ở cuối trang; khối cam thì nội dung nằm trên thẻ kem hoặc navy bên trong."""
+    bg, fg, panel, card, pfg, numc = theme(r)
+    inner = f'<div class="inner" style="padding:16mm 18mm 14mm;color:{pfg}">{content}</div>'
+    if card:
+        inner = (f'<div class="inner" style="inset:12mm 12mm 12mm;background:{card};padding:12mm 14mm 10mm;color:{pfg}">{content}</div>')
+    return f'<div class="block" style="height:{height}mm;background:{panel}">{inner}</div>'
+
+
 def cover_page(r):
-    stats = "".join(f'<div><div class="nr" style="font-size:18pt;color:{ORANGE};line-height:1.1;white-space:nowrap">{esc(s["value"])}</div>'
-                    f'<div style="font-size:8.6pt;margin-top:1.5mm;color:#D6DEEB">{esc(s["label"])}</div></div>'
-                    for s in r["key_stats"][:3])
-    return f"""{head(r["title"])}<div class="full">
-<div style="position:absolute;right:-70mm;top:-55mm;width:190mm;height:190mm;border-radius:50%;border:16mm solid {ORANGE};opacity:.95"></div>
-<div style="position:absolute;right:-40mm;top:-25mm;width:130mm;height:130mm;border-radius:50%;border:.5mm solid rgba(255,255,255,.35)"></div>
-<img src="{uri("adtek-logo-white.png")}" alt="Adtek" style="position:absolute;left:18mm;top:18mm;height:17mm">
-<div style="position:absolute;left:18mm;right:22mm;top:142mm">
- <div class="eyebrow" style="color:{ORANGE}">Báo cáo Adtek &nbsp;|&nbsp; {esc(r["period"])}</div>
- <div class="nr" style="font-size:33pt;line-height:1.12;margin:5mm 0 6mm;text-wrap:balance">{esc(r["title"])}</div>
- <div style="height:1.2mm;width:22mm;background:{ORANGE};margin-bottom:6mm"></div>
- <div style="font-size:12.5pt;line-height:1.5;color:#D6DEEB;max-width:150mm">{esc(r["subtitle"])}</div>
+    bg, fg, panel, card, pfg, numc = theme(r)
+    c = r.get("cover") or {}
+    main = c.get("stat", 0)
+    st = r["key_stats"][main]
+    others = [s for i, s in enumerate(r["key_stats"]) if i != main][:2]
+    small = "".join(f'<div><div class="num" style="font-size:20pt;color:{numc}">{esc(s["value"])}</div>'
+                    f'<div style="font-size:9.5pt;line-height:1.4;margin-top:2mm">{esc(s["label"])}</div></div>' for s in others)
+    content = f"""<div class="num" style="font-size:44pt;color:{numc}">{esc(st["value"])}</div>
+<div style="font-size:13pt;line-height:1.35;margin-top:4mm;max-width:150mm">{esc(st["label"])}</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10mm;margin-top:10mm">{small}</div>
+<div style="margin-top:auto;display:flex;justify-content:space-between;font-size:8.5pt;opacity:.7"><span>adtek.agency</span><span>Growth Marketing Agency</span></div>"""
+    return f"""{head(r["title"])}<style>{FULL_CSS}</style><div class="full" style="background:{bg};color:{fg}">
+{logo_img(fg)}
+<div style="position:absolute;left:18mm;right:22mm;top:58mm">
+ <div class="lab">Báo cáo Adtek &nbsp;·&nbsp; {esc(r["period"])}</div>
+ <h1 style="font-size:46pt;line-height:1.04;margin:7mm 0 9mm">{hl(c.get("title") or r["title"])}</h1>
+ <div style="font-size:14pt;line-height:1.45;opacity:.85;max-width:160mm">{esc(r["subtitle"])}</div>
 </div>
-<div style="position:absolute;left:18mm;right:18mm;bottom:30mm;display:grid;grid-template-columns:repeat(3,1fr);gap:8mm;border-top:.3mm solid rgba(255,255,255,.35);padding-top:5mm">{stats}</div>
-<div style="position:absolute;left:18mm;right:18mm;bottom:14mm;display:flex;justify-content:space-between;font-size:8.5pt;color:#B7C3D8">
- <span>adtek.agency</span><span>Growth Marketing Agency</span></div>
+{block(r, 118, content)}
 </div></body></html>"""
 
 
@@ -171,20 +215,19 @@ def body_page(r):
 
 
 def back_page(r):
-    return f"""{head(r["title"])}<div class="full">
-<div style="position:absolute;left:-70mm;bottom:-95mm;width:160mm;height:160mm;border-radius:50%;border:14mm solid {ORANGE}"></div>
-<img src="{uri("adtek-logo-white.png")}" alt="Adtek" style="position:absolute;left:18mm;top:18mm;height:17mm">
-<div style="position:absolute;left:18mm;right:24mm;top:80mm">
- <div class="eyebrow">Về Adtek</div>
- <div class="nr" style="font-size:26pt;line-height:1.18;margin:4mm 0 6mm;text-wrap:balance">Biến dữ liệu thị trường thành kế hoạch tăng trưởng cho doanh nghiệp của bạn</div>
- <div style="font-size:11pt;line-height:1.6;color:#D6DEEB;max-width:150mm">Adtek là Growth Marketing Agency với hơn 100 khách hàng và 200 dự án. Đội ngũ Adtek triển khai quảng cáo tìm kiếm và mạng xã hội, thương mại điện tử, SEO và tạo khách hàng tiềm năng, đo lường bằng doanh thu thay vì lượt hiển thị.</div>
- <div style="margin-top:12mm;font-size:10.5pt;line-height:1.9">
-  <div><span style="color:{ORANGE};font-weight:700">Website</span>&nbsp;&nbsp; adtek.agency</div>
-  <div><span style="color:{ORANGE};font-weight:700">Email</span>&nbsp;&nbsp; contact@adtek.agency</div>
-  <div><span style="color:{ORANGE};font-weight:700">Tài nguyên</span>&nbsp;&nbsp; adtek.agency/resources-report</div>
- </div>
+    bg, fg, panel, card, pfg, numc = theme(r)
+    rows = "".join(f'<div style="display:grid;grid-template-columns:30mm 1fr;padding:1.6mm 0"><b style="font-weight:600">{k}</b><span>{v}</span></div>'
+                   for k, v in (("Website", "adtek.agency"), ("Email", "contact@adtek.agency"), ("Tài nguyên", "adtek.agency/resources-report")))
+    content = f"""<div class="lab">Liên hệ</div><div style="font-size:12pt;margin-top:4mm">{rows}</div>
+<div style="margin-top:auto;font-size:8pt;line-height:1.5;opacity:.7">© 2026 Adtek. Tài liệu được chia sẻ miễn phí, vui lòng ghi nguồn khi trích dẫn.</div>"""
+    return f"""{head(r["title"])}<style>{FULL_CSS}</style><div class="full" style="background:{bg};color:{fg}">
+{logo_img(fg)}
+<div style="position:absolute;left:18mm;right:24mm;top:60mm">
+ <div class="lab">Về Adtek</div>
+ <h1 style="font-size:34pt;line-height:1.08;margin:6mm 0 8mm">Biến dữ liệu thị trường thành <span class="hl">kế hoạch tăng trưởng</span> cho doanh nghiệp của bạn</h1>
+ <div style="font-size:11.5pt;line-height:1.6;opacity:.85;max-width:155mm">Adtek là Growth Marketing Agency với hơn 100 khách hàng và 200 dự án. Đội ngũ Adtek triển khai quảng cáo tìm kiếm và mạng xã hội, thương mại điện tử, SEO và tạo khách hàng tiềm năng, đo lường bằng doanh thu thay vì lượt hiển thị.</div>
 </div>
-<div style="position:absolute;right:18mm;bottom:14mm;max-width:95mm;text-align:right;font-size:8pt;line-height:1.5;color:#B7C3D8">© 2026 Adtek. Tài liệu được chia sẻ miễn phí, vui lòng ghi nguồn khi trích dẫn.</div>
+{block(r, 96, content)}
 </div></body></html>"""
 
 
