@@ -1,0 +1,88 @@
+{
+  "wp_id": 6275,
+  "slug": "case-study-shopee-ung-dung-crm",
+  "keyword": "CRM trên Shopee",
+  "seo_title": "CRM trên Shopee 2026: cách giữ chân khách mua lại",
+  "meta_desc": "CRM trên Shopee 2026: thông tin người mua đã bị ẩn, người bán giữ chân khách bằng follower, chat, livestream, đánh giá. Kèm checklist 10 câu hỏi.",
+  "title": "Case study CRM trên Shopee 2026: người bán giữ chân khách khi dữ liệu nằm trên sàn",
+  "changes": [
+    "Bỏ số liệu 72% thị phần (5/2022); thay bằng Q&Me 5/2025 đến 4/2026 (Shopee 53%, 7.29 tỷ USD), YouNet ECI và Metric nửa đầu 2026",
+    "Bỏ hướng dẫn xuất dữ liệu người mua ra Excel, gọi điện, nhắn SMS xin đánh giá vì Shopee đã ẩn tên, số điện thoại, địa chỉ người mua từ 24/7/2024",
+    "Thêm mục ranh giới dữ liệu: người bán được thấy gì, cấm giao dịch ngoài sàn, Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 (Điều 8, Điều 28) và Nghị định 356/2025",
+    "Thêm bảng công cụ giữ chân khách Shopee đã công bố: Ưu đãi Follower, Shopee Live/Video (số liệu 11.11/2025), Shopee Chat, Shopee Mall Brand Memberships, Shopee Rewards",
+    "Rút gọn quy trình chăm sóc khách theo giai đoạn đơn hàng; bỏ các câu mẫu dựa trên chính sách cũ (đổi địa chỉ, hủy đơn) và số liệu Shopee 2022 không kiểm chứng lại được",
+    "Thêm mục bài học cho thương hiệu (CRM trên sàn và CRM riêng) và checklist 10 câu hỏi Góc nhìn Adtek",
+    "Bỏ đoạn quảng cáo dịch vụ CRM của Adtek, thay bằng lời mời liên hệ; đổi tiêu đề bỏ cụm 'tăng trưởng toàn diện' vì bài không phải case study nội bộ của Shopee"
+  ],
+  "sources": [
+    {
+      "name": "The Investor, dẫn báo cáo Vietnam E-commerce Market Report 2026 của Q&Me",
+      "url": "https://theinvestor.vn/tiktok-shop-narrows-gap-with-shopee-as-vietnam-e-commerce-becomes-duopoly-d19240.html",
+      "date": "06/2026"
+    },
+    {
+      "name": "Dân trí, dẫn báo cáo nửa đầu 2026 của YouNet ECI và Metric",
+      "url": "https://dantri.com.vn/kinh-doanh/suc-ep-chi-phi-bua-vay-hon-160000-gian-hang-thuong-mai-dien-tu-dong-cua-20260929092200561.htm",
+      "date": "09/2026"
+    },
+    {
+      "name": "VnEconomy, dẫn số liệu Metric nửa đầu 2026",
+      "url": "https://vneconomy.vn/nguoi-viet-chi-it-nhat-1611-ty-dong-moi-ngay-de-mua-sam-online.htm",
+      "date": "07/2026"
+    },
+    {
+      "name": "Dân trí, số liệu Shopee mùa 11.11 năm 2025",
+      "url": "https://dantri.com.vn/kinh-doanh/hon-45-trieu-san-pham-ban-ra-qua-livestream-va-video-tai-shopee-1111-20251114173947860.htm",
+      "date": "11/2025"
+    },
+    {
+      "name": "Shopee Blog: Cách tăng follow Shopee (Ưu đãi Follower)",
+      "url": "https://shopee.vn/blog/cach-tang-follow-shopee/",
+      "date": "07/2026"
+    },
+    {
+      "name": "Shopee Blog: Các hạng thành viên Shopee (Shopee Rewards)",
+      "url": "https://shopee.vn/blog/cac-hang-thanh-vien-shopee/",
+      "date": "04/2026"
+    },
+    {
+      "name": "Sea Limited: Shopee Mall launches Brand Memberships program",
+      "url": "https://www.sea.com/news/207",
+      "date": "07/2021"
+    },
+    {
+      "name": "CafeF: Shopee ẩn thông tin người mua từ 24/7/2024",
+      "url": "https://cafef.vn/shopee-an-thong-tin-nguoi-mua-chinh-sach-bi-cho-la-tiep-tay-cho-van-nan-hoan-hang-san-len-tieng-188240719151648062.chn",
+      "date": "07/2024"
+    },
+    {
+      "name": "GenK: giao dịch ngoài sàn trên Shopee",
+      "url": "https://genk.vn/bi-hai-voi-cach-nha-ban-va-nguoi-mua-lach-luat-tren-shopee-de-giao-dich-ngoai-san-2025031616432419.chn",
+      "date": "03/2025"
+    },
+    {
+      "name": "Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15, Điều 28",
+      "url": "https://hethongphapluat.com/luat-bao-ve-du-lieu-ca-nhan-2025/dieu-28",
+      "date": "06/2025 (hiệu lực 01/2026)"
+    },
+    {
+      "name": "Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15, Điều 8",
+      "url": "https://hethongphapluat.com/luat-bao-ve-du-lieu-ca-nhan-2025/dieu-8",
+      "date": "06/2025 (hiệu lực 01/2026)"
+    },
+    {
+      "name": "PwC Việt Nam: Quy định mới về bảo vệ dữ liệu cá nhân (Nghị định 356/2025/NĐ-CP)",
+      "url": "https://www.pwc.com/vn/vn/publications/legal-news-brief/20260128-new-rules-personal-data-protection.html",
+      "date": "01/2026"
+    }
+  ],
+  "confirm": [
+    "Tiêu đề mới bỏ 'thành công để tăng trưởng toàn diện' vì nội dung là hướng dẫn cho người bán trên Shopee, không phải case study nội bộ của Shopee. Anh Tin xem có muốn giữ tiêu đề cũ không.",
+    "Shopee Mall Brand Memberships: nguồn chính thức là thông cáo của Sea năm 2021 (có Việt Nam). Chưa tìm được tài liệu 2026 xác nhận tính năng còn mở cho gian hàng Mall tại Việt Nam; nếu có tài khoản Mall nên kiểm tra trong Kênh Người Bán, không thì bỏ dòng này.",
+    "Chat broadcast (gửi tin hàng loạt) chưa có nguồn chính thức của Shopee Việt Nam nên bài chỉ nhắc là chưa xác nhận.",
+    "Câu 'tỷ lệ phản hồi chat hiển thị trên trang shop' dựa trên tài liệu Shopee 2022 và giao diện hiện tại, chưa có văn bản 2026; tiêu chí Shop Yêu Thích mới từ 1/7/2026 chỉ thấy ở nguồn bên thứ ba nên không đưa vào.",
+    "Đoạn diễn giải Luật 91/2025 (số điện thoại thấy khi tự giao hàng không được dùng để nhắn khuyến mãi) là cách đọc của Adtek, bài đã ghi rõ và khuyên hỏi luật sư.",
+    "Bài luat-bao-ve-du-lieu-ca-nhan-marketing (lịch 22/10/2026) chưa có trong internal-links.json nên chưa link; nên thêm link từ mục Luật Bảo vệ dữ liệu cá nhân 2025 sang bài đó khi bài lên sóng.",
+    "Số liệu thị phần dùng Q&Me (12 tháng tới 4/2026); chưa có báo cáo Metric quý 3/2026 công khai tại thời điểm viết (16/10/2026)."
+  ]
+}
