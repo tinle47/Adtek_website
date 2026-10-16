@@ -10,6 +10,20 @@
         background: #161342 url("<?php echo esc_url(get_site_url() . '/template-v2/assets/images/ver2/ft-bg.jpg'); ?>") center bottom / cover no-repeat;
         box-shadow: inset 0 2px 0 #161342;
     }
+    /* Link footer giống trang chủ: trắng mờ 60%, rê chuột hoặc trang đang mở thì sáng 100% (bỏ màu đỏ #DD3535 cũ). */
+    footer.ft .ft-menu-item .menu-item a,
+    footer.ft .ft-menu-item .widget-contact .menu-item > p {
+        color: #fff;
+        opacity: 0.6;
+        transition: opacity 0.4s;
+    }
+    footer.ft .ft-menu-item .menu-item a:hover,
+    footer.ft .ft-menu-item .current-menu-item > a,
+    footer.ft .ft-menu-item .current_page_item > a {
+        /* !important để thắng quy tắc .current_page_item > a { color: #dd3535 !important } của theme. */
+        color: #fff !important;
+        opacity: 1;
+    }
 </style>
 <footer class="ft">
     <div class="container">
