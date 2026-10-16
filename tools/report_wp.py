@@ -81,6 +81,12 @@ def draft(slug):
     path.write_text(json.dumps(r, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     body = {"title": r["title"], "slug": slug, "author": AUTHOR, "content": content(r), "excerpt": r["excerpt"],
             "featured_media": wp["cover_id"], "meta": {"_yoast_wpseo_metadesc": r["meta_desc"]}, **terms}
+    if not wp.get("id"):
+        # api() gửi lại khi phản hồi chậm hoặc bị cắt, nên lệnh tạo có thể đã chạy dù không nhận được kết quả:
+        # tìm bài cùng slug trước khi tạo để không sinh bài trùng (WordPress sẽ đặt slug "-2" cho bài sau)
+        found = api("GET", f"mona_reports?slug={slug}&status=draft,publish,pending,private&context=edit&_fields=id")
+        if isinstance(found, list) and found:
+            wp["id"] = found[0]["id"]
     if wp.get("id"):
         res = api("POST", f"mona_reports/{wp['id']}?_fields=id,status,link", body)
     else:
