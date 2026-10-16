@@ -8,7 +8,7 @@ Khi anh Tin trả lời trong phiên: "duyệt <id>" thì chạy `python3 tools/
 
 ## 1. Báo trước bài sắp đăng
 
-- Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 43 8,16 * * *` (8:43 và 16:43 mỗi ngày)
+- Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 43 8,16 * * *` (8:43 và 16:43 mỗi ngày), trig_011G6TDdHPbm7yqo6ZqqGrgA
 
 ### Prompt
 
@@ -22,7 +22,7 @@ Khi anh Tin trả lời trong phiên: "duyệt <id>" thì chạy `python3 tools/
 
 ## 2. Đăng bài đến giờ
 
-- Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 13 12,20 * * *` (12:13 và 20:13 mỗi ngày)
+- Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 13 12,20 * * *` (12:13 và 20:13 mỗi ngày), trig_01BM7F7Xa9Aumx4BjSNK3vH1
 
 ### Prompt
 
@@ -34,7 +34,7 @@ Khi anh Tin trả lời trong phiên: "duyệt <id>" thì chạy `python3 tools/
 
 ## 3. Viết caption tuần tới (từ tuần 26/10/2026)
 
-- Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 7 9 * * 3` (9:07 thứ Tư)
+- Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 7 9 * * 3` (9:07 thứ Tư), trig_01Q9TrdfsUDXYTE9vAGoosNe
 
 ### Prompt
 
