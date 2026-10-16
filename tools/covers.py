@@ -14,6 +14,7 @@ Cách dùng:
   python3 tools/covers.py render <số bài> [--style X] [--kind blog|fb|all] [--out thư-mục]   dựng thử, không ghi cover.style
   python3 tools/covers.py sheet <số bài> [--out thư-mục]   dựng mọi phong cách cho một bài để so sánh
   python3 tools/covers.py existing <wp_id>           dựng ảnh bìa blog cho bài cũ trong mục existing (vd 6076, 6078)
+  python3 tools/covers.py fbcover [split|center|cream] [--out thư-mục]   ảnh bìa Fanpage Facebook 1640x624 (content/brand/fb-cover.jpg)
   python3 tools/covers.py og [navy|cream|panel] [--out thư-mục]   ảnh chia sẻ mặc định của website (content/brand/og-default.jpg và @2x)
 """
 import base64
@@ -547,6 +548,58 @@ def og_render(variant="navy", out=None):
     return shoot([(page_html, d / f"{name}.jpg", *OG_SIZE, 1), (page_html, d / f"{name}@2x.jpg", *OG_SIZE, 2)])
 
 
+# ---------------------------------------------------------------- ảnh bìa Fanpage Facebook
+
+FB_COVER_SIZE = (1640, 624)  # khổ tải lên Facebook khuyến nghị (hiển thị 820x312 trên máy tính)
+# Điện thoại hiển thị 640x360: cắt hai bên, chỉ giữ khoảng 68% chiều ngang ở giữa (x 265 đến 1375);
+# máy tính: ảnh đại diện Page đè góc dưới bên trái. Chữ và logo nằm trong x 300 đến 1340, chỉ dấu A cam (không chữ) tràn ra ngoài.
+SERVICES = ["User acquisition strategy", "CRM management", "Integrated marketing communication", "Growth consultancy", "SEO services"]
+FB_COVER_VARIANTS = ("split", "center", "cream")
+
+
+def fb_cover(variant="split"):
+    """split: nền navy, tiêu đề bên trái, 5 dịch vụ đánh số bên phải, dấu A cam tràn mép phải.
+    center: nền navy, bố cục giữa như ảnh bìa cũ, 5 dịch vụ thành hàng (số trên, chữ dưới), dấu A cam ở hai góc dưới.
+    cream: nền kem, tiêu đề navy bên trái, dịch vụ trên khối navy tràn mép phải, dấu A cam ở mép phải."""
+    items = "".join(f'<li><span class="num">{i:02d}</span><span class="t">{esc(t)}</span></li>' for i, t in enumerate(SERVICES, 1))
+    head = hl("*Growth* marketing agency")
+    if variant == "center":
+        css = f"""
+body{{background:{NAVY};color:#fff}}
+.big{{position:absolute;aspect-ratio:285/253;background:{ORANGE};height:430px}}
+.b1{{left:-150px;bottom:-130px}}.b2{{right:-150px;bottom:-130px}}
+.lg{{position:absolute;left:0;right:0;top:84px;display:flex;justify-content:center}}
+h1{{position:absolute;left:300px;right:300px;top:236px;text-align:center;font-size:76px;line-height:1}}
+ul{{position:absolute;left:300px;right:300px;top:390px;list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:28px}}
+li{{display:flex;flex-direction:column;gap:6px}}
+.num{{font-size:46px;line-height:1;color:{ORANGE}}}
+.t{{font-size:22px;line-height:1.28;font-weight:500;color:#DCE4F2}}"""
+        body = f"""<div class="big mark b1"></div><div class="big mark b2"></div>
+<div class="lg">{logo('#fff', 104)}</div><h1>{head}</h1><ul>{items}</ul>"""
+    else:
+        cream = variant == "cream"
+        bg, fg = (CREAM, NAVY) if cream else (NAVY, "#fff")
+        css = f"""
+body{{background:{bg};color:{fg}}}
+.big{{position:absolute;aspect-ratio:285/253;background:{ORANGE};height:820px;right:{-470 if cream else -420}px;bottom:-330px}}
+.panel{{position:absolute;left:860px;top:0;right:0;bottom:0;background:{NAVY}}}
+.lg{{position:absolute;left:300px;top:96px}}
+h1{{position:absolute;left:300px;top:{232 if cream else 222}px;width:520px;font-size:80px;line-height:1.04}}
+ul{{position:absolute;left:{920 if cream else 880}px;top:0;bottom:0;width:{420 if cream else 460}px;list-style:none;display:flex;flex-direction:column;justify-content:center;gap:24px}}
+li{{display:flex;align-items:baseline;gap:18px}}
+.num{{font-size:40px;line-height:1;color:{ORANGE};width:48px;flex:none}}
+.t{{font-size:28px;line-height:1.15;font-weight:500;color:{'#fff' if cream else '#DCE4F2'}}}"""
+        art = ('<div class="panel"></div>' if cream else '') + '<div class="big mark"></div>'
+        body = f"""{art}<div class="lg">{logo(fg, 92)}</div><h1>{head}</h1><ul>{items}</ul>"""
+    return document(css, body, *FB_COVER_SIZE)
+
+
+def fb_cover_render(variant="split", out=None):
+    """Ghi content/brand/fb-cover.jpg (1640x624); out: thư mục khác để xem thử."""
+    d = Path(out) if out else ROOT / "content/brand"
+    return shoot([(fb_cover(variant), d / ("fb-cover.jpg" if not out else f"fb-cover-{variant}.jpg"), *FB_COVER_SIZE, 1)])
+
+
 if __name__ == "__main__":
     sys.path.insert(0, str(ROOT / "tools"))
     from blog_post import find, load
@@ -576,6 +629,9 @@ if __name__ == "__main__":
     elif cmd == "og":  # ảnh chia sẻ mặc định của website: og [navy|cream|panel] [--out thư-mục để xem thử]
         v = args[1] if len(args) > 1 and not args[1].startswith("--") else "navy"
         print("\n".join(og_render(v, opt("--out"))))
+    elif cmd == "fbcover":  # ảnh bìa Fanpage: fbcover [split|center|cream] [--out thư-mục để xem thử]
+        v = args[1] if len(args) > 1 and not args[1].startswith("--") else "split"
+        print("\n".join(fb_cover_render(v, opt("--out"))))
     elif cmd == "sheet":
         post = find(data, int(args[1]))
         out = Path(opt("--out", ROOT / "previews/covers"))
