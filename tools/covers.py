@@ -14,7 +14,7 @@ Cách dùng:
   python3 tools/covers.py render <số bài> [--style X] [--kind blog|fb|all] [--out thư-mục]   dựng thử, không ghi cover.style
   python3 tools/covers.py sheet <số bài> [--out thư-mục]   dựng mọi phong cách cho một bài để so sánh
   python3 tools/covers.py existing <wp_id>           dựng ảnh bìa blog cho bài cũ trong mục existing (vd 6076, 6078)
-  python3 tools/covers.py fbcover [arrow|bars|cream|pattern|columns|minimal|center|split] [--out thư-mục]   ảnh bìa Fanpage Facebook 1640x624 (content/brand/fb-cover.jpg)
+  python3 tools/covers.py fbcover [classic|arrow|bars|cream|pattern|columns|minimal|center|split] [--out thư-mục]   ảnh bìa Fanpage Facebook 1640x624 (content/brand/fb-cover.jpg)
   python3 tools/covers.py og [navy|cream|panel] [--out thư-mục]   ảnh chia sẻ mặc định của website (content/brand/og-default.jpg và @2x)
 """
 import base64
@@ -676,10 +676,55 @@ h1{{position:absolute;left:315px;right:315px;top:224px;text-align:center;font-si
     body = f"""{art}<div class="lg">{logo(fg, 64)}</div><h1>{hl("*Growth* marketing agency")}</h1>"""
     return document(css, body, *FB_COVER_SIZE)
 
+def fb_cover_classic():
+    """Ảnh bìa Fanpage theo mẫu cũ của Adtek (anh Tin 16/10/2026: làm lại mẫu cũ, bỏ 5 ô dịch vụ). Riêng ảnh này giữ phong cách
+    mẫu cũ (nền chuyển màu navy sang hồng, chữ A lớn mờ, tam giác, mạng lưới chấm, tiêu đề in hoa đậm Lexend Zetta), khác quy tắc
+    thiết kế phẳng của ảnh bìa blog. Bố cục theo khung điện thoại FB_MOBILE: logo và tiêu đề giữa phía trên, trên hình tròn ảnh đại diện."""
+    import random
+    rnd = random.Random(7)
+    W, H = FB_COVER_SIZE
+    font = (ASSETS / "fonts/lexend-zetta-latin-900-normal.woff2").as_uri()
+    dots = "".join(f'<circle cx="{rnd.randint(0, W)}" cy="{rnd.randint(0, H)}" r="{rnd.choice((1.4, 1.8, 2.4))}" fill="#fff" opacity="{rnd.choice((.35, .5, .7))}"/>'
+                   for _ in range(70))
+    # mạng lưới: điểm nối bằng đường mảnh, góc dưới trái và mép phải như mẫu cũ
+    nets = [[(0, 500), (70, 538), (160, 540), (215, 624)], [(70, 538), (40, 624)], [(70, 538), (0, 590)],
+            [(1445, 320), (1530, 318), (1590, 330), (1640, 300)], [(1445, 320), (1350, 420), (1455, 476), (1560, 500), (1640, 470)],
+            [(1530, 318), (1455, 476), (1300, 560), (1300, 624)], [(1590, 330), (1560, 500), (1600, 624)], [(1455, 476), (1500, 624)],
+            [(1350, 420), (1300, 560)], [(1560, 500), (1640, 560)]]
+    lines = "".join(f'<polyline points="{" ".join(f"{x},{y}" for x, y in n)}" fill="none" stroke="#fff" stroke-width="1.6" opacity=".55"/>' for n in nets)
+    nodes = {pt for n in nets for pt in n if 0 < pt[0] < W and 0 < pt[1] < H}
+    knots = "".join(f'<circle cx="{x}" cy="{y}" r="{4 if (x + y) % 3 else 6}" fill="#fff"/>' for x, y in nodes)
+    # tam giác: (điểm, màu, độ mờ, chỉ viền)
+    tris = [([(45, 370), (130, 395), (75, 450)], "#6F86D6", .55, 0), ([(195, 425), (310, 380), (330, 470)], "#6F86D6", .6, 0),
+            ([(230, 490), (270, 570), (300, 520)], "#6F86D6", .5, 0), ([(160, 465), (200, 510), (160, 505)], "#fff", .45, 1),
+            ([(1290, 160), (1370, 195), (1300, 240)], "#7F7FE0", .6, 0), ([(1205, 440), (1258, 470), (1210, 480)], "#fff", .5, 1),
+            ([(925, 520), (960, 560), (915, 552)], "#4C6FE0", .7, 0), ([(1405, 255), (1440, 250), (1430, 290)], "#fff", .45, 1),
+            ([(380, 520), (410, 495), (420, 545)], "#fff", .35, 1)]
+    tri = "".join(f'<polygon points="{" ".join(f"{x},{y}" for x, y in pts)}" '
+                  + (f'fill="none" stroke="{c}" stroke-width="1.6" opacity="{o}"/>' if outline else f'fill="{c}" opacity="{o}"/>')
+                  for pts, c, o, outline in tris)
+    css = f"""
+@font-face{{font-family:LZ;font-weight:900;src:url({font})}}
+body{{background:linear-gradient(100deg,#1D3271 0%,#2E3F7C 30%,#5B5E92 55%,#A88DB8 78%,#EBBEDD 100%)}}
+.haze{{position:absolute;inset:0;background:radial-gradient(ellipse 520px 260px at 0 0,rgba(205,170,210,.55),transparent 70%),
+  radial-gradient(ellipse 600px 300px at 100% 0,rgba(255,215,240,.35),transparent 70%)}}
+.bigA{{position:absolute;aspect-ratio:285/253;height:900px;left:50%;top:-40px;transform:translateX(-50%);
+  background:linear-gradient(105deg,rgba(14,28,84,.75) 0%,rgba(96,122,196,.7) 38%,rgba(36,44,104,.6) 58%,rgba(170,160,215,.3) 100%)}}
+svg{{position:absolute;inset:0}}
+.lg{{position:absolute;left:0;right:0;top:108px;display:flex;justify-content:center}}
+h1.cl{{position:absolute;left:0;right:0;top:278px;text-align:center;font-family:LZ;font-weight:900;font-size:44px;letter-spacing:-.11em;
+  color:#fff;text-transform:uppercase;text-shadow:0 3px 6px rgba(10,20,60,.45)}}
+.rule{{position:absolute;left:340px;right:340px;top:350px;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.85) 30%,rgba(255,255,255,.85) 70%,transparent)}}"""
+    body = f"""<div class="haze"></div><div class="bigA mark"></div>
+<svg width="{W}" height="{H}">{tri}{lines}{knots}{dots}</svg>
+<div class="lg">{logo('#fff', 132)}</div><h1 class="cl">Growth marketing agency</h1><div class="rule"></div>"""
+    return document(css, body, W, H)
+
+
 def fb_cover_render(variant="arrow", out=None):
     """Ghi content/brand/fb-cover.jpg (1640x624); out: thư mục khác để xem thử."""
     d = Path(out) if out else ROOT / "content/brand"
-    html_text = fb_cover_bold(variant) if variant in FB_COVER_BOLD else fb_cover(variant)
+    html_text = fb_cover_classic() if variant == "classic" else fb_cover_bold(variant) if variant in FB_COVER_BOLD else fb_cover(variant)
     return shoot([(html_text, d / ("fb-cover.jpg" if not out else f"fb-cover-{variant}.jpg"), *FB_COVER_SIZE, 1)])
 
 
@@ -712,7 +757,7 @@ if __name__ == "__main__":
     elif cmd == "og":  # ảnh chia sẻ mặc định của website: og [navy|cream|panel] [--out thư-mục để xem thử]
         v = args[1] if len(args) > 1 and not args[1].startswith("--") else "navy"
         print("\n".join(og_render(v, opt("--out"))))
-    elif cmd == "fbcover":  # ảnh bìa Fanpage: fbcover [arrow|bars|cream|pattern|columns|minimal|center|split] [--out thư-mục để xem thử]
+    elif cmd == "fbcover":  # ảnh bìa Fanpage: fbcover [classic|arrow|bars|cream|pattern|columns|minimal|center|split] [--out thư-mục để xem thử]
         v = args[1] if len(args) > 1 and not args[1].startswith("--") else "arrow"
         print("\n".join(fb_cover_render(v, opt("--out"))))
     elif cmd == "sheet":
