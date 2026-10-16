@@ -4,6 +4,13 @@
     <div class="pyramid"></div>
 </div>
 
+<style>
+    /* Nền footer giống trang chủ (Home V2): ảnh chuyển màu navy, tím, cam. Dòng pixel sáng ở mép trên ảnh được phủ bằng viền navy. */
+    footer.ft {
+        background: #161342 url("<?php echo esc_url(get_site_url() . '/template-v2/assets/images/ver2/ft-bg.jpg'); ?>") center bottom / cover no-repeat;
+        box-shadow: inset 0 2px 0 #161342;
+    }
+</style>
 <footer class="ft">
     <div class="container">
         <div class="ft-ctn">
