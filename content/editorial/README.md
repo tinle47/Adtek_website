@@ -6,7 +6,7 @@ Lịch đăng, cụm chủ đề và danh sách bài nằm trong `calendar.json`
 
 - 2 bài/tuần, mỗi bài khoảng 2,000 chữ, đăng Thứ Ba và Thứ Năm. Giờ đăng không cố định: mỗi bài chọn ngẫu nhiên khung 12:00-12:59 hoặc 20:00-20:59 (trường `time` trong `calendar.json`, gán bằng `python3 tools/blog_post.py retime` cho bài chưa đăng).
 - Mỗi bài cần có một phần chỉ Adtek viết được: mini-case ẩn danh, số liệu từ dự án, khung hoặc checklist dùng ngay.
-- Tác giả Tin Le, có SEO title, meta description và ảnh bìa. Ảnh bìa blog khổ 1200x630 cùng phong cách ảnh Facebook (số lớn 3D `cover.hero` + `cover.hero_text`, nhãn `cover.fb_kicker`, mô tả `cover.subtitle`), dựng bằng `python3 tools/blog_post.py cover X`. Đổi ảnh bìa bài đã đưa lên WordPress: `python3 tools/blog_post.py recover X [--delete-old]`.
+- Tác giả Tin Le, có SEO title, meta description và ảnh bìa. Ảnh bìa blog (`content/posts/<slug>-cover.jpg`, 1200x630) và ảnh Facebook (`content/posts/<slug>-fb.jpg`, 1080x1080) do phiên Claude "Adtek - Designer" dựng bằng `tools/covers.py` và commit lên branch; phiên viết blog chỉ tải ảnh lên. `blog_post.py draft` dùng file ảnh bìa có sẵn (chưa có thì tự dựng ảnh tạm theo phong cách Facebook). Đổi ảnh bìa bài đã đưa lên WordPress: `python3 tools/blog_post.py recover X [--delete-old]`.
 
 ## Quy trình viết và duyệt
 

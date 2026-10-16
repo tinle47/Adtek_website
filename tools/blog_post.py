@@ -6,7 +6,7 @@ và file nội dung content/posts/<slug>.html.
 Cách dùng:
   python3 tools/blog_post.py cover <số bài>     tạo ảnh bìa content/posts/<slug>-cover.jpg (1200x630, phong cách ảnh Facebook)
   python3 tools/blog_post.py draft <số bài>     tải ảnh bìa, tạo hoặc cập nhật bản nháp
-  python3 tools/blog_post.py recover <số bài> [--delete-old]  dựng lại ảnh bìa, thay ảnh đại diện trên WordPress (giữ nguyên trạng thái bài)
+  python3 tools/blog_post.py recover <số bài> [--delete-old]  tải content/posts/<slug>-cover.jpg lên, thay ảnh đại diện trên WordPress (giữ nguyên trạng thái bài)
   python3 tools/blog_post.py schedule <số bài>  đặt lịch đăng theo date/time (anh Tin đã duyệt)
   python3 tools/blog_post.py changes <số bài>   anh Tin yêu cầu sửa: không tự đăng cho tới khi gửi duyệt lại
   python3 tools/blog_post.py unschedule <số bài> hủy lịch đăng, đưa bài về nháp
@@ -96,9 +96,11 @@ def draft(data, post):
 
 
 def recover(data, post, delete_old=False):
-    """Thay ảnh đại diện bằng ảnh bìa dựng lại. --delete-old: xóa hẳn ảnh cũ khỏi Media Library."""
+    """Thay ảnh đại diện bằng content/posts/<slug>-cover.jpg (ảnh do phiên Adtek - Designer dựng; chưa có thì tự dựng).
+    --delete-old: xóa hẳn ảnh cũ khỏi Media Library."""
     old = post.get("media_id")
-    new = upload(cover(post), post["title"])
+    path = ROOT / f"content/posts/{post['slug']}-cover.jpg"
+    new = upload(path if path.exists() else cover(post), post["title"])
     r = api("POST", f"posts/{post['wp_id']}?_fields=id,status,featured_media", {"featured_media": new})
     if r.get("featured_media") != new:  # cập nhật bài đã đăng có thể chạy xong nhưng proxy cắt phản hồi: đọc lại
         r = api("GET", f"posts/{post['wp_id']}?context=edit&_fields=id,status,featured_media")
