@@ -7,6 +7,7 @@ Cách dùng:
   python3 tools/blog_post.py cover <số bài>     tạo ảnh bìa content/posts/<slug>-cover.jpg (1200x630, bộ mẫu tools/covers.py)
   python3 tools/blog_post.py draft <số bài>     tải ảnh bìa, tạo hoặc cập nhật bản nháp
   python3 tools/blog_post.py recover <số bài> [--delete-old]  tải content/posts/<slug>-cover.jpg lên, thay ảnh đại diện trên WordPress (giữ nguyên trạng thái bài)
+  python3 tools/blog_post.py feature <ID bài WP> <file ảnh> [--delete-old]  thay ảnh đại diện cho bài không có trong calendar.json
   python3 tools/blog_post.py schedule <số bài>  đặt lịch đăng theo date/time (anh Tin đã duyệt)
   python3 tools/blog_post.py changes <số bài>   anh Tin yêu cầu sửa: không tự đăng cho tới khi gửi duyệt lại
   python3 tools/blog_post.py unschedule <số bài> hủy lịch đăng, đưa bài về nháp
@@ -95,24 +96,38 @@ def draft(data, post):
     print(f"Bài {post['no']}: post {r['id']} ({r['status']}), xem trước: https://adtek.agency/?p={r['id']}&preview=true")
 
 
+def set_featured(wp_id, path, old, delete_old=False):
+    """Tải ảnh lên, đặt làm ảnh đại diện của bài wp_id, xóa ảnh cũ nếu delete_old. Trả về (id ảnh mới, trạng thái bài)."""
+    title = api("GET", f"posts/{wp_id}?context=edit&_fields=title")["title"]["raw"]
+    new = upload(path, title)
+    r = api("POST", f"posts/{wp_id}?_fields=id,status,featured_media", {"featured_media": new})
+    if r.get("featured_media") != new:  # cập nhật bài đã đăng có thể chạy xong nhưng proxy cắt phản hồi: đọc lại
+        r = api("GET", f"posts/{wp_id}?context=edit&_fields=id,status,featured_media")
+    if r.get("featured_media") != new:
+        sys.exit(f"Lỗi: {str(r)[:300]}")
+    if delete_old and old and old != new:
+        d = api("DELETE", f"media/{old}?force=true")
+        if not d.get("deleted"):
+            print(f"Post {wp_id}: chưa xóa được ảnh cũ {old}: {str(d)[:200]}")
+    return new, r["status"]
+
+
 def recover(data, post, delete_old=False):
     """Thay ảnh đại diện bằng content/posts/<slug>-cover.jpg (ảnh do phiên Adtek - Designer dựng; chưa có thì tự dựng).
     --delete-old: xóa hẳn ảnh cũ khỏi Media Library."""
     old = post.get("media_id")
     path = ROOT / f"content/posts/{post['slug']}-cover.jpg"
-    new = upload(path if path.exists() else cover(post), post["title"])
-    r = api("POST", f"posts/{post['wp_id']}?_fields=id,status,featured_media", {"featured_media": new})
-    if r.get("featured_media") != new:  # cập nhật bài đã đăng có thể chạy xong nhưng proxy cắt phản hồi: đọc lại
-        r = api("GET", f"posts/{post['wp_id']}?context=edit&_fields=id,status,featured_media")
-    if r.get("featured_media") != new:
-        sys.exit(f"Lỗi: {str(r)[:300]}")
+    new, status = set_featured(post["wp_id"], path if path.exists() else cover(post), old, delete_old)
     post["media_id"] = new
     save(data)
-    if delete_old and old and old != new:
-        d = api("DELETE", f"media/{old}?force=true")
-        if not d.get("deleted"):
-            print(f"Bài {post['no']}: chưa xóa được ảnh cũ {old}: {str(d)[:200]}")
-    print(f"Bài {post['no']}: ảnh đại diện {old} -> {new} ({r['status']})")
+    print(f"Bài {post['no']}: ảnh đại diện {old} -> {new} ({status})")
+
+
+def feature(wp_id, path, delete_old=False):
+    """Bài không có trong calendar.json (bài đăng trước lịch): thay ảnh đại diện bằng file ảnh cho sẵn."""
+    old = api("GET", f"posts/{wp_id}?context=edit&_fields=featured_media").get("featured_media")
+    new, status = set_featured(wp_id, Path(path), old, delete_old)
+    print(f"Post {wp_id}: ảnh đại diện {old} -> {new} ({status})")
 
 
 VN = timezone(timedelta(hours=7))
@@ -175,6 +190,9 @@ def auto(data):
 if __name__ == "__main__":
     cmd = sys.argv[1]
     data = load()
+    if cmd == "feature":
+        feature(int(sys.argv[2]), sys.argv[3], "--delete-old" in sys.argv)
+        sys.exit()
     if cmd in ("auto", "retime"):
         {"auto": auto, "retime": retime}[cmd](data)
         sys.exit()
