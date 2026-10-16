@@ -1,12 +1,12 @@
 <p>Mô hình phân bổ đa điểm chạm (multi-touch attribution, MTA) là cách chia phần ghi nhận của một đơn hàng, một lượt cài app hay một lead cho tất cả điểm chạm mà khách đã đi qua: quảng cáo Facebook, tìm kiếm Google, email, video KOL, cuộc gọi tư vấn. Last click dồn 100% cho cú nhấp cuối, còn MTA trả lời câu hỏi "mỗi kênh góp bao nhiêu phần".</p>
 
-<p>Năm 2021, câu hỏi chính là nên chọn mô hình tuyến tính, chữ U hay chữ W. Năm 2026 thì khác: Apple siết theo dõi cấp người dùng trên iOS, GA4 bỏ bốn mô hình theo quy tắc từ tháng 11/2023, còn marketing mix modeling (MMM) và kiểm thử tăng tiến đã rẻ hơn nhiều. MTA vẫn hữu ích, nhưng chỉ là một trong ba công cụ đo lường.</p>
+<p>Năm 2021, câu hỏi chính là nên chọn mô hình tuyến tính, chữ U hay chữ W. Năm 2026 thì khác: Apple siết theo dõi cấp người dùng trên iOS, GA4 bỏ bốn mô hình theo quy tắc từ tháng 11/2023, còn marketing mix modeling (MMM) và kiểm thử tăng tiến đã dễ tiếp cận hơn nhiều. MTA vẫn hữu ích, nhưng chỉ là một trong ba công cụ đo lường.</p>
 
 <h2>Mô hình phân bổ đa điểm chạm là gì?</h2>
 
 <p>Một khách mua máy lọc không khí có thể thấy video TikTok tuần trước, bấm quảng cáo Facebook hai lần, đọc bài so sánh trên blog, rồi gõ tên thương hiệu trên Google và đặt hàng. Mô hình first click trao toàn bộ đơn hàng cho TikTok. Last click trao cho tìm kiếm thương hiệu. Cả hai đều đúng một phần và sai phần lớn.</p>
 
-<p>MTA lấy toàn bộ đường đi đó làm đơn vị phân tích. Mỗi điểm chạm nhận một tỷ lệ, theo quy tắc cố định hoặc theo thuật toán học từ dữ liệu, và tổng luôn bằng 1 chuyển đổi. Điều kiện để MTA chạy được là nối được các điểm chạm về cùng một người, và đây là chỗ các thay đổi về quyền riêng tư tác động trực tiếp.</p>
+<p>MTA lấy cả đường đi làm đơn vị phân tích. Mỗi điểm chạm nhận một tỷ lệ, theo quy tắc cố định hoặc theo thuật toán học từ dữ liệu, và tổng luôn bằng 1 chuyển đổi. Điều kiện để MTA chạy được là nối được các điểm chạm về cùng một người, và đây là chỗ các thay đổi về quyền riêng tư tác động trực tiếp.</p>
 
 <h2>Các mô hình MTA và tình trạng năm 2026</h2>
 
@@ -34,9 +34,9 @@
 
 <p>Apple ra mắt <a href="/glossary/app-tracking-transparency-att-tinh-minh-bach-theo-doi-ung-dung/">App Tracking Transparency (ATT)</a> tháng 4/2021: app phải hỏi người dùng trước khi theo dõi họ qua app và website của bên khác. Theo <a href="https://www.nasdaq.com/press-release/adjust-mobile-app-use-grew-globally-2025-continued-move-multi-platform-2026-02-18" target="_blank" rel="nofollow noopener">báo cáo Mobile App Trends 2026 của Adjust</a> (công bố 02/2026), tỷ lệ đồng ý trung bình trong quý 1/2026 là 38%, tăng từ 35% cùng kỳ 2025, tính trên những người đã thấy hộp thoại xin phép. Nói cách khác, phần lớn người dùng iOS vẫn nằm ngoài dữ liệu đường đi cấp người dùng.</p>
 
-<p>Theo <a href="https://gs.statcounter.com/os-market-share/mobile/viet-nam" target="_blank" rel="nofollow noopener">StatCounter</a>, iOS chiếm 40.19% lưu lượng web trên di động tại Việt Nam trong tháng 9/2026. MTA bỏ sót phần lớn người dùng iPhone sẽ lệch về các kênh mạnh trên Android.</p>
+<p>Theo <a href="https://gs.statcounter.com/os-market-share/mobile/viet-nam" target="_blank" rel="nofollow noopener">StatCounter</a>, iOS chiếm 40.19% lưu lượng web trên di động tại Việt Nam trong tháng 9/2026. MTA bỏ sót phần lớn người dùng iPhone có thể lệch về các kênh mạnh trên Android.</p>
 
-<p>Để đo quảng cáo app mà không cần định danh, Apple dùng <a href="/glossary/skadnetwork/">SKAdNetwork</a> và khung kế nhiệm là AdAttributionKit. Theo <a href="https://developer.apple.com/videos/play/wwdc2025/221/" target="_blank" rel="nofollow noopener">phiên WWDC 2025 của Apple</a> (06/2025), AdAttributionKit ra mắt với iOS 17.4, thêm đo tái tương tác (re-engagement) từ iOS 18. Từ iOS 18.4, app có thể có nhiều cửa sổ tái tương tác song song, nhà quảng cáo tự đặt cửa sổ phân bổ theo từng ad network và loại tương tác (xem hoặc nhấp), đặt "cooldown" để lượt tái tương tác ngay sau lượt cài không lấy mất ghi nhận, và postback có thêm mã quốc gia khi đủ ngưỡng ẩn danh.</p>
+<p>Để đo quảng cáo app mà không cần định danh, Apple có <a href="/glossary/skadnetwork/">SKAdNetwork</a> và khung mới hơn là AdAttributionKit, hai bên tương thích với nhau. Theo <a href="https://developer.apple.com/videos/play/wwdc2025/221/" target="_blank" rel="nofollow noopener">phiên WWDC 2025 của Apple</a> (06/2025), AdAttributionKit ra mắt với iOS 17.4, thêm đo tái tương tác (re-engagement) từ iOS 18. Từ iOS 18.4, app có thể có nhiều cửa sổ tái tương tác song song, nhà quảng cáo tự đặt cửa sổ phân bổ theo từng ad network và loại tương tác (xem hoặc nhấp), đặt "cooldown" để lượt tái tương tác ngay sau lượt cài không lấy mất ghi nhận, và postback có thêm mã quốc gia khi đủ ngưỡng ẩn danh.</p>
 
 <p>Dù vậy, dữ liệu vẫn là postback tổng hợp, có độ trễ, không kèm danh sách điểm chạm của từng người, nên không đưa thẳng vào MTA kiểu cũ được. Các nền tảng đo lường mobile (MMP) phải ghép dữ liệu người đã đồng ý ATT với postback và mô hình hóa phần còn thiếu.</p>
 
@@ -65,13 +65,13 @@
 
 <p>Hai thay đổi khiến cách kết hợp này khả thi với doanh nghiệp tầm trung. Ngày 29/01/2025, Google mở <a href="https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/" target="_blank" rel="nofollow noopener">Meridian</a>, mô hình MMM mã nguồn mở, cho mọi marketer, kèm chương trình hơn 20 đối tác đo lường được chứng nhận. Meridian dùng suy luận nhân quả Bayes, đo video theo reach và frequency, và nhận kết quả thử nghiệm tăng tiến làm giả định ban đầu (prior) để hiệu chỉnh mô hình.</p>
 
-<p>Thay đổi thứ hai là chi phí thử nghiệm. Theo <a href="https://business.google.com/us/think/measurement/marketing-experimentation-incrementality-testing/" target="_blank" rel="nofollow noopener">Think with Google</a> (02/2026), trong năm 2025 Google Ads hạ ngân sách tối thiểu cho một thử nghiệm tăng tiến từ mức cao trước đây khoảng 100,000 USD xuống 5,000 USD. Thử nghiệm ngân sách nhỏ nên xem là tín hiệu định hướng. Cách thiết kế nhóm đối chứng có trong bài <a href="/kiem-thu-tang-tien-incrementality-testing/">kiểm thử tăng tiến</a>.</p>
+<p>Thay đổi thứ hai là chi phí thử nghiệm. Theo <a href="https://business.google.com/us/think/measurement/marketing-experimentation-incrementality-testing/" target="_blank" rel="nofollow noopener">Think with Google</a> (02/2026), trong năm 2025 Google Ads hạ ngân sách tối thiểu cho một thử nghiệm tăng tiến từ mức cao trước đây là 100,000 USD xuống 5,000 USD. Thử nghiệm ngân sách nhỏ nên xem là tín hiệu định hướng. Cách thiết kế nhóm đối chứng có trong bài <a href="/kiem-thu-tang-tien-incrementality-testing/">kiểm thử tăng tiến</a>.</p>
 
 <p>Ba công cụ ăn khớp như sau: thử nghiệm tăng tiến cho con số nhân quả của vài kênh lớn và dùng để hiệu chỉnh MMM, MMM quyết định chia ngân sách theo quý, còn MTA tối ưu hằng tuần bên trong từng kênh (từ khóa, creative).</p>
 
 <h2>Doanh nghiệp Việt nên chọn mô hình phân bổ đa điểm chạm nào?</h2>
 
-<p>Góc nhìn của Adtek: chọn theo quy mô chi tiêu và nơi đơn hàng xảy ra, không chọn theo độ phức tạp của mô hình.</p>
+<p>Góc nhìn của Adtek: chọn theo quy mô chi tiêu và nơi đơn hàng xảy ra.</p>
 
 <h3>Chi tiêu nhỏ, một đến hai kênh chính</h3>
 

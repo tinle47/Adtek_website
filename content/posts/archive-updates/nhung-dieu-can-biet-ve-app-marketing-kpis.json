@@ -1,0 +1,78 @@
+{
+ "wp_id": 6258,
+ "slug": "nhung-dieu-can-biet-ve-app-marketing-kpis",
+ "keyword": "KPI app marketing",
+ "seo_title": "KPI app marketing 2026: 7 chỉ số cần đo và cách đọc",
+ "meta_desc": "KPI app marketing 2026: CPI, retention D1, D7, D30, ARPU, LTV, ROAS theo cohort, churn, cách đọc số iOS với AdAttributionKit và bảng KPI theo giai đoạn.",
+ "title": "KPI app marketing 2026: những điều cần biết về 7 chỉ số cốt lõi",
+ "changes": [
+  "Rút từ gần 30 chỉ số (19 chính, 10 phụ) xuống 7 KPI cốt lõi kèm công thức và quyết định mỗi chỉ số hỗ trợ; các chỉ số còn lại (CTR, CTI, tỷ lệ chuyển đổi store, organic, DAU/MAU, gỡ cài, eCPM, gian lận) chuyển xuống nhóm chẩn đoán; bỏ ROX vì không có cách tính thống nhất",
+  "Bỏ số liệu cũ không nguồn năm (1/2 app bị gỡ trong tháng đầu, 5% người dùng chiếm doanh thu gấp 20 lần) và tiêu đề mốc 2021-2022",
+  "Thêm bối cảnh thị trường 2025-2026: Sensor Tower State of Mobile 2026, Adjust Mobile App Trends 2026",
+  "Thêm mục Việt Nam: lượt cài 2.17 tỷ năm 2024, giảm 2% năm 2025, iOS lên 33% (AppsFlyer 10/2025); chi tiêu UA tại Việt Nam tăng mạnh (AppsFlyer APAC 2026)",
+  "Viết lại phần retention: D7 tăng nhưng D30 giảm ở mọi ngành và khu vực APAC (AppsFlyer 8/2026), cách lấy benchmark theo ngành và quốc gia",
+  "Thêm mục đo lường quyền riêng tư: tỷ lệ đồng ý ATT 2025-2026, AdAttributionKit (3 cửa sổ chuyển đổi, độ trễ postback, giá trị thô), Google ngừng Attribution Reporting API trên Android (10/2025)",
+  "Thêm bảng KPI theo 4 giai đoạn của app, mục ROAS theo cohort và LTV có ví dụ tính (số giả định, ghi rõ), checklist 8 câu hỏi Góc nhìn Adtek",
+  "Thêm 5 link nội bộ (ARPU, retention rate, SKAdNetwork, ROAS, chiến lược app marketing), CTA /contact/ và dòng ghi nguồn gốc AppsFlyer (2021)"
+ ],
+ "sources": [
+  {
+   "name": "Sensor Tower, State of Mobile 2026",
+   "url": "https://sensortower.com/blog/state-of-mobile-2026",
+   "date": "1/2026"
+  },
+  {
+   "name": "Adjust, Mobile App Trends 2026 (thông cáo báo chí qua Nasdaq)",
+   "url": "https://www.nasdaq.com/press-release/adjust-mobile-app-use-grew-globally-2025-continued-move-multi-platform-2026-02-18",
+   "date": "2/2026"
+  },
+  {
+   "name": "AppsFlyer, State of App Marketing in Vietnam 2025",
+   "url": "https://www.appsflyer.com/resources/reports/app-marketing-vietnam/",
+   "date": "10/2025"
+  },
+  {
+   "name": "Thị trường Tài chính Tiền tệ, AppsFlyer: Nền kinh tế ứng dụng Việt Nam bước vào giai đoạn trưởng thành",
+   "url": "https://thitruongtaichinhtiente.vn/appsflyer-nen-kinh-te-ung-dung-viet-nam-buoc-vao-giai-doan-truong-thanh-khi-chat-luong-len-ngoi-thay-cho-so-luong-72056.html",
+   "date": "10/2025"
+  },
+  {
+   "name": "CXOToday, AppsFlyer State of Marketing in APAC 2026",
+   "url": "https://cxotoday.com/others/apac-app-usage-soars-but-long-term-retention-lags-appsflyer-report/",
+   "date": "8/2026"
+  },
+  {
+   "name": "Thị trường Tài chính Tiền tệ, AppsFlyer: Nền kinh tế ứng dụng tại APAC đang tăng trưởng",
+   "url": "https://thitruongtaichinhtiente.vn/appsflyer-nen-kinh-te-ung-dung-tai-apac-dang-tang-truong-nhung-bai-toan-giu-chan-nguoi-dung-ngay-cang-kho-85373.html",
+   "date": "9/2026"
+  },
+  {
+   "name": "AppsFlyer, Benchmarks FAQ (phương pháp)",
+   "url": "https://www.appsflyer.com/benchmarks/faq/",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "AppsFlyer, Market Adaptation to Privacy-First Ecosystem Four Years After ATT",
+   "url": "https://www.appsflyer.com/company/newsroom/pr/post-att-growth-2/",
+   "date": "4/2025"
+  },
+  {
+   "name": "Apple Developer, AdAttributionKit documentation",
+   "url": "https://developer.apple.com/documentation/adattributionkit",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Google Privacy Sandbox, Update on Plans for Privacy Sandbox Technologies",
+   "url": "https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies",
+   "date": "10/2025"
+  }
+ ],
+ "confirm": [
+  "Từ khóa chính chọn 'KPI app marketing' (slug cũ dùng 'app-marketing-kpis'); anh Tin xác nhận hay muốn dùng 'chỉ số đo lường app'",
+  "Không đưa số retention trung bình toàn ngành (D1 khoảng 25%, D30 khoảng 6%) vì không tìm được nguồn gốc 2025-2026 kiểm chứng được, các trang trích lại thường dùng dữ liệu AppsFlyer 2021; bài hướng người đọc tới công cụ benchmark AppsFlyer",
+  "Số liệu AppsFlyer APAC 2026 lấy qua thông cáo đăng trên CXOToday và Thị trường Tài chính Tiền tệ (không mở được trang báo cáo gốc); số liệu chi tiêu UA Việt Nam cho tài chính (153%) và game (106%) chỉ có trong bản tiếng Việt",
+  "Câu 'Android chưa có thay đổi đo lường tương đương ATT' là nhận định ở thời điểm 10/2026, nên rà lại theo chu kỳ hạng A",
+  "Bảng KPI theo giai đoạn ghi là 'khung Adtek đề xuất'; anh Tin xác nhận có muốn gắn tên Adtek không",
+  "Đổi H1 thành 'KPI app marketing 2026: những điều cần biết về 7 chỉ số cốt lõi' (giữ ý 'những điều cần biết'); có thể giữ H1 cũ nếu muốn"
+ ]
+}

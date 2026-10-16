@@ -1,0 +1,69 @@
+{
+  "wp_id": 6318,
+  "slug": "ket-hop-phan-tich-marketing-va-phan-tich-san-pham",
+  "keyword": "phân tích marketing và phân tích sản phẩm",
+  "seo_title": "Phân tích marketing và phân tích sản phẩm: nối dữ liệu",
+  "meta_desc": "Phân tích marketing và phân tích sản phẩm khác nhau ra sao, cách nối dữ liệu qua GA4, BigQuery, Amplitude, Mixpanel, CDP và 6 bước cho doanh nghiệp Việt.",
+  "title": "Phân tích marketing và phân tích sản phẩm: vì sao nên kết hợp và cách nối dữ liệu năm 2026",
+  "changes": [
+    "Viết lại toàn bộ bằng giọng Adtek, bỏ cấu trúc 5 mẹo dịch từ AppsFlyer và các đoạn quảng bá sản phẩm AppsFlyer (OneLink, Protect360, dự đoán LTV)",
+    "Bỏ số liệu cũ: gian lận cài app 1.6 tỷ USD nửa đầu 2020, tỷ lệ kích hoạt tăng 2 đến 5 lần nhờ deep link; giữ ý deep link và traffic gian lận làm sai dữ liệu sản phẩm",
+    "Thêm bảng so sánh marketing analytics và product analytics",
+    "Thêm mục câu hỏi kinh doanh chỉ trả lời được khi kết hợp dữ liệu (dẫn ví dụ từ tài liệu Mixpanel)",
+    "Thêm mục kỹ thuật 2026: GA4 BigQuery export (giới hạn 1 triệu sự kiện/ngày, streaming 0.05 USD/GB, thời gian lưu dữ liệu 2 hoặc 14 tháng), Amplitude nhập GA4 qua BigQuery, Mixpanel Warehouse Connectors, phân vai CDP và warehouse",
+    "Thêm bối cảnh Việt Nam: Zalo 81.3 triệu MAU quý 2/2026, doanh số 4 sàn năm 2025 theo Metric.vn, Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15",
+    "Thêm mục Góc nhìn Adtek: quy trình 6 bước và câu hỏi kiểm tra",
+    "Mở rộng phạm vi từ mobile app sang website, Zalo và sàn TMĐT; bỏ 5 ảnh chụp giao diện AppsFlyer, thay bằng bảng",
+    "5 link nội bộ (retention rate, multi-touch attribution, LTV, CDP, data-driven marketing), 8 link ngoài nofollow, CTA /contact/, dòng ghi nguồn AppsFlyer (2021)"
+  ],
+  "sources": [
+    {
+      "name": "Google Analytics Help: [GA4] BigQuery Export",
+      "url": "https://support.google.com/analytics/answer/9358801",
+      "date": "10/2026 (tra cứu)"
+    },
+    {
+      "name": "Google Analytics Help: [GA4] Set up BigQuery Export",
+      "url": "https://support.google.com/analytics/answer/9823238",
+      "date": "10/2026 (tra cứu)"
+    },
+    {
+      "name": "Google Analytics Help: Data retention",
+      "url": "https://support.google.com/analytics/answer/7667196",
+      "date": "10/2026 (tra cứu)"
+    },
+    {
+      "name": "Mixpanel Docs: Warehouse Connectors",
+      "url": "https://docs.mixpanel.com/docs/tracking-methods/warehouse-connectors",
+      "date": "10/2026 (tra cứu)"
+    },
+    {
+      "name": "Amplitude Docs: Google Analytics 4 Import",
+      "url": "https://amplitude.com/docs/data/source-catalog/ga4",
+      "date": "10/2026 (tra cứu)"
+    },
+    {
+      "name": "VietnamPlus: Zalo có 81,3 triệu người dùng hàng tháng (báo cáo quý 2/2026 của VNG)",
+      "url": "https://www.vietnamplus.vn/zalo-co-813-trieu-nguoi-dung-hang-thang-post1127226.vnp",
+      "date": "7/2026"
+    },
+    {
+      "name": "VnEconomy: Bốn ông lớn thương mại điện tử có doanh thu năm 2025 ước đạt 429,66 nghìn tỷ (số liệu Metric.vn)",
+      "url": "https://vneconomy.vn/bon-ong-lon-thuong-mai-dien-tu-co-doanh-thu-nam-2025-uoc-dat-42966-nghin-ty.htm",
+      "date": "1/2026"
+    },
+    {
+      "name": "Cổng TTĐT tỉnh Hà Tĩnh: Luật Bảo vệ dữ liệu cá nhân chính thức có hiệu lực từ 1/1/2026",
+      "url": "https://hatinh.gov.vn/vi/bai-viet/luat-bao-ve-du-lieu-ca-nhan-chinh-thuc-co-hieu-luc-thi-hanh-tu-ngay-112026",
+      "date": "1/2026"
+    }
+  ],
+  "confirm": [
+    "Từ khóa: chọn cụm khớp slug 'phân tích marketing và phân tích sản phẩm' thay vì 'product analytics'; anh xác nhận hoặc đổi",
+    "H1 mới dài hơn bản cũ nhưng giữ nghĩa 'vì sao kết hợp cả hai'; có thể giữ H1 cũ",
+    "Bản mới bỏ 5 ảnh chụp giao diện AppsFlyer; cần quyết định ảnh đại diện (giữ ảnh hiện tại hay làm ảnh mới)",
+    "CTA nêu Adtek thiết lập GA4, BigQuery và báo cáo kết hợp dữ liệu quảng cáo, sàn, Zalo, CRM: xác nhận đúng dịch vụ đang cung cấp",
+    "Ví dụ CPL 80,000 và 150,000 đồng là ví dụ giả định (đã ghi rõ trong bài), không phải số liệu dự án",
+    "Tài liệu GA4 không nói thẳng 'không xuất lại lịch sử'; bài diễn đạt theo tài liệu thiết lập (xuất từ sau khi liên kết)"
+  ]
+}

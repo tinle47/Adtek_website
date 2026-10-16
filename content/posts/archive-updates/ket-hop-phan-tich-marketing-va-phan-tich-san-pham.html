@@ -48,7 +48,7 @@
 
 <h3>GA4 và BigQuery export</h3>
 <p>Theo tài liệu chính thức của Google Analytics (tra cứu tháng 10/2026), GA4 cho xuất dữ liệu sự kiện thô sang BigQuery, kể cả vào bản BigQuery sandbox miễn phí. Thuộc tính GA4 bản thường có giới hạn 1 triệu sự kiện mỗi ngày cho kiểu xuất hằng ngày; vượt giới hạn liên tục thì việc xuất bị tạm dừng. Kiểu xuất streaming không giới hạn số sự kiện nhưng tính thêm 0.05 USD mỗi GB, khoảng 600,000 sự kiện.</p>
-<p>Có hai lý do nên bật BigQuery export sớm. Thứ nhất, dữ liệu cấp người dùng trong GA4 bản thường chỉ giữ được tối đa 14 tháng, mặc định là 2 tháng; dữ liệu đã xuất sang BigQuery thì doanh nghiệp giữ bao lâu tùy ý. Thứ hai, tài liệu thiết lập chỉ mô tả việc xuất từ sau khi liên kết (dữ liệu đổ về trong vòng 24 giờ, mỗi ngày một bảng của ngày hôm trước), nên bật muộn tháng nào thì kho thiếu lịch sử tháng đó.</p>
+<p>Có hai lý do nên bật BigQuery export sớm. Thứ nhất, dữ liệu cấp người dùng mà báo cáo Khám phá (Explorations) của GA4 bản thường dùng tới chỉ giữ tối đa 14 tháng, mặc định 2 tháng; dữ liệu đã xuất sang BigQuery thì doanh nghiệp giữ bao lâu tùy ý. Thứ hai, tài liệu thiết lập chỉ mô tả việc xuất từ sau khi liên kết (dữ liệu đổ về trong vòng 24 giờ, mỗi ngày một bảng của ngày hôm trước), nên bật muộn tháng nào thì kho thiếu lịch sử tháng đó.</p>
 <p>Lưu ý cho attribution: bảng streaming thiếu nguồn traffic của người dùng mới, Google khuyên lấy dữ liệu này từ bảng xuất hằng ngày.</p>
 
 <h3>Đưa dữ liệu vào Amplitude hoặc Mixpanel</h3>

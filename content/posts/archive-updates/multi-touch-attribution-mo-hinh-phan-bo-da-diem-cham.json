@@ -1,0 +1,71 @@
+{
+  "wp_id": 6280,
+  "slug": "multi-touch-attribution-mo-hinh-phan-bo-da-diem-cham",
+  "keyword": "mô hình phân bổ đa điểm chạm",
+  "seo_title": "Mô hình phân bổ đa điểm chạm (MTA): cách dùng năm 2026",
+  "meta_desc": "Mô hình phân bổ đa điểm chạm là gì, mô hình nào còn trong GA4, ảnh hưởng của ATT trên iOS và cách kết hợp MTA với MMM, kiểm thử tăng tiến.",
+  "title": "Multi-touch attribution (Mô hình phân bổ đa điểm chạm): cách dùng đúng năm 2026",
+  "changes": [
+    "Viết lại toàn bộ bằng giọng Adtek, rút gọn phần định nghĩa và mô tả từng mô hình thành một bảng so sánh, bỏ ví dụ booking.com và các đoạn dịch sát bản gốc.",
+    "Bỏ số liệu 2021 đã cũ (eMarketer 42%, tỷ lệ áp dụng MTA 65% tại Mỹ, 9% hiểu rất tốt, 43% rào cản dữ liệu, lượt tải app tăng 33% năm 2020) và mục 'Những điểm chính' lặp ý.",
+    "Cập nhật trạng thái từng mô hình trong GA4 và Google Ads: first click, linear, time decay, position-based bị bỏ từ 11/2023; chỉ còn data-driven và hai biến thể last click.",
+    "Thêm mục quyền riêng tư iOS: ATT, tỷ lệ đồng ý ATT 38% quý 1/2026 (Adjust), SKAdNetwork và các thay đổi AdAttributionKit đến iOS 18.4 (WWDC 2025).",
+    "Thêm bối cảnh Việt Nam: tỷ trọng iOS 40.19% (StatCounter 9/2026), doanh số 4 sàn TMĐT 2025 theo Metric, Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 hiệu lực 01/01/2026.",
+    "Thay mục 'Phân bổ toàn diện' bằng bảng so sánh MTA, MMM và kiểm thử tăng tiến; cập nhật Google Meridian (01/2025) và ngưỡng thử nghiệm tăng tiến 5,000 USD của Google Ads (2025).",
+    "Thêm mục Góc nhìn Adtek: chọn mô hình theo 4 nhóm doanh nghiệp Việt và checklist 8 bước trước khi dùng số liệu phân bổ để chia ngân sách.",
+    "Thêm 5 link nội bộ (bài BĐS khu công nghiệp, marketing analytics không cookie, kiểm thử tăng tiến, thuật ngữ ATT, SKAdNetwork), 9 nguồn ngoài có nofollow, câu mời liên hệ và dòng ghi nguồn AppsFlyer (2021)."
+  ],
+  "sources": [
+    {
+      "name": "Google Ads Help: First click, linear, time decay, and position-based attribution models are going away",
+      "url": "https://support.google.com/google-ads/answer/13427716",
+      "date": "04/2023"
+    },
+    {
+      "name": "Google Analytics Help: Get started with attribution (các mô hình hiện có, ghi chú bỏ mô hình từ 11/2023)",
+      "url": "https://support.google.com/analytics/answer/10596866",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple WWDC 2025: What's new in AdAttributionKit",
+      "url": "https://developer.apple.com/videos/play/wwdc2025/221/",
+      "date": "06/2025"
+    },
+    {
+      "name": "Adjust: Mobile App Use Grew Globally In 2025 (Mobile App Trends 2026, thông cáo báo chí)",
+      "url": "https://www.nasdaq.com/press-release/adjust-mobile-app-use-grew-globally-2025-continued-move-multi-platform-2026-02-18",
+      "date": "02/2026"
+    },
+    {
+      "name": "StatCounter: Mobile Operating System Market Share Viet Nam",
+      "url": "https://gs.statcounter.com/os-market-share/mobile/viet-nam",
+      "date": "09/2026"
+    },
+    {
+      "name": "Báo Đại biểu Nhân dân dẫn số liệu Metric: Toàn cảnh thương mại điện tử 2025",
+      "url": "https://daibieunhandan.vn/toan-canh-thuong-mai-dien-tu-2025-cuoc-dua-song-ma-va-su-thanh-loc-khac-nghiet-10404029.html",
+      "date": "01/2026"
+    },
+    {
+      "name": "Cổng TTĐT tỉnh Hà Tĩnh: Luật Bảo vệ dữ liệu cá nhân chính thức có hiệu lực từ 1/1/2026",
+      "url": "https://hatinh.gov.vn/vi/bai-viet/luat-bao-ve-du-lieu-ca-nhan-chinh-thuc-co-hieu-luc-thi-hanh-tu-ngay-112026",
+      "date": "01/2026"
+    },
+    {
+      "name": "Google Blog: Meridian is now available to everyone",
+      "url": "https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/",
+      "date": "01/2025"
+    },
+    {
+      "name": "Think with Google: How experimentation and incrementality testing reveal the true value of marketing",
+      "url": "https://business.google.com/us/think/measurement/marketing-experimentation-incrementality-testing/",
+      "date": "02/2026"
+    }
+  ],
+  "confirm": [
+    "H1 đổi thành 'Multi-touch attribution (Mô hình phân bổ đa điểm chạm): cách dùng đúng năm 2026' thay cho phụ đề 'Khi thành công là một hành trình'. Anh muốn giữ H1 cũ thì bỏ trường title.",
+    "Số liệu Metric (429,700 tỷ đồng, TikTok Shop 41.31%) lấy qua báo Đại biểu Nhân dân, chưa đối chiếu báo cáo gốc của Metric; có thể đã gồm phần dự báo quý 4/2025.",
+    "Tỷ lệ đồng ý ATT dùng số Adjust (38%, quý 1/2026, tính trên người đã thấy hộp thoại). AppsFlyer (tác giả bài gốc) công bố 50% vào 04/2025 với cách tính khác, không đưa vào để tránh hai số mâu thuẫn.",
+    "Bài có 2 bảng; kiểm tra theme hiển thị bảng trên di động trước khi đăng."
+  ]
+}

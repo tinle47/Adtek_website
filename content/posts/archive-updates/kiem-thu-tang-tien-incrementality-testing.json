@@ -1,0 +1,68 @@
+{
+ "wp_id": 6339,
+ "slug": "kiem-thu-tang-tien-incrementality-testing",
+ "keyword": "kiểm thử tăng tiến",
+ "seo_title": "Kiểm thử tăng tiến (incrementality testing): bản 2026",
+ "meta_desc": "Kiểm thử tăng tiến đo đơn chỉ có nhờ quảng cáo: holdout, geo experiment, Conversion Lift của Meta, Google Ads và quy trình 7 bước cho doanh nghiệp Việt.",
+ "title": "Kiểm thử tăng tiến (incrementality testing): những điều marketer cần biết năm 2026",
+ "changes": [
+  "Viết lại toàn bộ bằng giọng Adtek, mở bài bằng định nghĩa trực tiếp có từ khóa; bỏ ví dụ Marco's Pizzeria, bỏ phần quảng bá công cụ của nhà cung cấp attribution",
+  "Sửa công thức: bài cũ trừ thẳng doanh thu hai nhóm (chỉ đúng khi hai nhóm bằng nhau); bản mới quy về tỷ lệ trên mỗi người, có ví dụ tính lift, đơn tăng tiến, iROAS và CPA tăng tiến bằng VND",
+  "Thêm phần holdout theo người dùng và geo experiment (Google geo-based Conversion Lift, Google Marketing Areas, Meridian GeoX), rút gọn phần ghost ads/PSA/ITT vì nay nằm trong công cụ nền tảng",
+  "Thêm bảng so sánh Conversion Lift của Google Ads và Meta theo tài liệu 2025-2026: ngưỡng 5,000 USD và 1,000 chuyển đổi, Bayesian, mức chắc chắn 50-95%, 14 ngày, 150/65 chuyển đổi; Meta self-serve trong Experiments, CAPI, incremental attribution",
+  "Thêm phần quan hệ với MMM và phân bổ đa điểm chạm, hiệu chỉnh (calibration) theo white paper Meta 05/2025 (31% chuyển đổi bị ghi công nhầm, hệ số 1.45x, Kantar 3.8 giải pháp và 55% kết quả mâu thuẫn)",
+  "Thêm góc nhìn Việt Nam: 34 tỉnh thành sau Nghị quyết 202/2025/QH15 ảnh hưởng thiết kế geo test; Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 với CAPI và enhanced conversions",
+  "Thêm mục Góc nhìn Adtek: quy trình 7 bước cho doanh nghiệp ngân sách vừa và 4 câu hỏi kiểm tra trước khi chạy",
+  "Bỏ 4 ảnh minh họa cũ (đồ họa tiếng Anh lấy từ bài AppsFlyer) để giảm rủi ro bản quyền",
+  "Link nội bộ: phân bổ đa điểm chạm, ROAS, LTV, marketing analytics không cookie, kế hoạch 11.11; 9 link ngoài nofollow; câu mời liên hệ và dòng ghi nguồn AppsFlyer (2021) cuối bài"
+ ],
+ "sources": [
+  {
+   "name": "Google Ads Help: Strengthen media measurement and ROI clarity with incrementality testing improvements (John Chen)",
+   "url": "https://support.google.com/google-ads/answer/16719772",
+   "date": "11/2025"
+  },
+  {
+   "name": "Google Ads Help: Set up Conversion Lift based on users",
+   "url": "https://support.google.com/google-ads/answer/12005564",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Google Ads Help: About Bayesian methodology in Conversion Lift",
+   "url": "https://support.google.com/google-ads/answer/16627074",
+   "date": "2025"
+  },
+  {
+   "name": "Google Ads Help: Set up Conversion Lift based on geography",
+   "url": "https://support.google.com/google-ads/answer/14097193",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Google for Developers: Meridian GeoX",
+   "url": "https://developers.google.com/meridian/geox",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Meta: Building a suite of truth, A hybrid approach to measuring incrementality (bản PDF IAB UK lưu)",
+   "url": "https://www.iabuk.com/sites/default/files/public_files/Measurement%20360%20Whitepaper-%20Building%20a%20Suite%20of%20Truth.pdf",
+   "date": "05/2025"
+  },
+  {
+   "name": "Nghị quyết 202/2025/QH15 về sắp xếp đơn vị hành chính cấp tỉnh",
+   "url": "https://luatvietnam.vn/hanh-chinh/nghi-quyet-202-2025-qh15-cua-quoc-hoi-ve-viec-sap-xep-don-vi-hanh-chinh-cap-tinh-402728-d1.html",
+   "date": "06/2025"
+  },
+  {
+   "name": "Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15",
+   "url": "https://thuvienphapluat.vn/van-ban/Bo-may-hanh-chinh/Luat-Bao-ve-du-lieu-ca-nhan-2025-so91-2025-QH15-625628.aspx",
+   "date": "06/2025"
+  }
+ ],
+ "confirm": [
+  "Từ khóa chọn 'kiểm thử tăng tiến' vì đã có trong slug và tiêu đề cũ; người tìm thực tế có thể gõ 'incrementality testing' nhiều hơn, anh xem số liệu GSC/Keyword Planner nếu muốn đổi",
+  "Meta không công bố ngưỡng ngân sách tối thiểu cho Conversion Lift trong tài liệu công khai mà em tra được; bài chỉ ghi 'chưa thấy ngưỡng cố định', anh có thể hỏi đại diện Meta để bổ sung",
+  "Google ghi Conversion Lift 'không có sẵn cho mọi tài khoản' và phiên bản theo địa lý cần đại diện Google; chưa rõ tài khoản Việt Nam có Google Marketing Areas để chạy geo lift hay không",
+  "Đã bỏ 4 ảnh trong bài cũ (đồ họa AppsFlyer); cần xác nhận ảnh đại diện hiện tại không phải đồ họa AppsFlyer, nếu có thì nên làm ảnh mới",
+  "Bài Luật Bảo vệ dữ liệu cá nhân của Adtek chưa có trong internal-links.json nên chưa link nội bộ; khi bài đó lên sóng có thể thêm link ở bước 4"
+ ]
+}
