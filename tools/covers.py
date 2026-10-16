@@ -42,7 +42,8 @@ $css
 /* Chữ: tiêu đề và con số dùng Newsreader (chữ có chân kiểu báo chí), viết thường như câu; nhãn và mô tả dùng Be Vietnam Pro nhẹ.
    Đặt sau CSS của từng phong cách để thống nhất kiểu chữ cho cả bộ. */
 h1,.num,.name,.cap,.disc span,.vs{font-family:NR,serif;font-weight:600;text-transform:none;letter-spacing:-.012em}
-.num,.disc span{letter-spacing:-.03em}
+.num,.disc span{letter-spacing:-.03em;font-variant-numeric:lining-nums}
+.kicker+.num{margin-top:.1em}  /* phần trên của chữ số cao hơn khung dòng, chừa chỗ để không chạm nhãn */
 .kicker{font-weight:600;letter-spacing:0}
 .sub,.band{font-weight:400}
 </style></head><body class="$shape" data-fit="1">$body
@@ -82,6 +83,8 @@ def fields(post, kind):
         "head": esc((c.get("hero_text") or c["title"]) if fb else c["title"]),
         "num": esc(c.get("hero") or f"{post['no']:02d}"),
         "cap": esc(c.get("hero_text") or ""),
+        # paired: tiêu đề chính là cụm chữ đọc liền sau con số (khổ Facebook), nên số phải đứng ngay trước tiêu đề
+        "paired": fb and bool(c.get("hero_text")),
         "title": esc(c["title"]),
         "sub": esc(c["subtitle"]),
         "chips": [esc(x) for x in c.get("chips", [])[:4]],
@@ -136,78 +139,85 @@ font-weight:700;font-size:{v['sub']:.0f}px;line-height:1.38;text-align:left;text
 
 
 def editorial(f, sq):
-    """Tạp chí: nền kem phẳng, số cam đặc khổng lồ, tiêu đề navy đậm, không kẻ dòng."""
+    """Tạp chí: nền kem phẳng, số cam lớn đặt ngay trên cụm chữ đi kèm, chữ navy."""
     n = len(f["num"])
-    hero = (600 if n == 1 else 460 if n == 2 else 300) if sq else (430 if n == 1 else 300 if n == 2 else 200)
     chips = " &nbsp;·&nbsp; ".join(f["chips"][:3])
+    if f["paired"]:  # số đọc liền với tiêu đề: số ở trên, tiêu đề ngay dưới
+        hero = 400 if n == 1 else 340 if n == 2 else 230
+        main = f"""<div class="copy"><div class="kicker">{f['kicker']}</div><div class="num">{f['num']}</div>
+<h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>"""
+    else:  # tiêu đề riêng; số và cụm chữ của nó thành một khối bên phải, số trên chữ dưới
+        hero = 300 if n == 1 else 230 if n == 2 else 160
+        unit = f'<div class="unit"><div class="num">{f["num"]}</div><div class="cap fit bal">{f["cap"]}</div></div>' if f["cap"] else ""
+        main = f"""<div class="copy"><div class="kicker">{f['kicker']}</div><h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>{unit}"""
     css = f"""
 body{{background:{CREAM};color:{NAVY}}}
 .meta{{position:absolute;text-align:right;font-weight:700;line-height:1.45;color:{NAVY}}}
 .meta b{{font-weight:800;color:{ORANGE}}}
-.num{{position:absolute;font-weight:900;font-size:{hero}px;line-height:.8;letter-spacing:-.06em;color:{ORANGE};white-space:nowrap}}
-.copy{{position:absolute}}
-.kicker{{font-weight:800;color:{ORANGE}}}
-h1{{font-weight:900;line-height:1.12;letter-spacing:-.015em}}
-.sub{{font-weight:600;line-height:1.42;color:rgba(0,45,114,.72)}}
+.num{{font-size:{hero}px;line-height:.8;color:{ORANGE};white-space:nowrap}}
+.copy,.unit{{position:absolute}}
+.kicker{{color:{ORANGE}}}
+h1{{line-height:1.12}}
+.sub{{line-height:1.42;color:rgba(0,45,114,.75)}}
+.cap{{line-height:1.15;margin-top:-8px;max-height:3.6em}}
 .foot{{position:absolute;display:flex;justify-content:space-between;font-weight:700;color:rgba(0,45,114,.6)}}
 .sq .lg{{position:absolute;left:72px;top:64px}}.sq .meta{{right:72px;top:70px;font-size:20px}}
-.sq .num{{right:56px;top:170px}}
-.sq .copy{{left:72px;right:72px;bottom:140px}}
-.sq .kicker{{font-size:30px}}
-.sq h1{{font-size:100px;margin:14px 0 22px;max-height:3.5em;max-width:640px}}
-.sq .sub{{font-size:34px;max-width:820px;max-height:4.4em}}
+.sq .copy{{left:72px;right:72px;top:150px;bottom:120px;display:flex;flex-direction:column;justify-content:center}}
+.sq .kicker{{font-size:30px;margin-bottom:22px}}
+.sq h1{{font-size:104px;margin:-.12em 0 24px;max-height:3.4em}}
+.sq .sub{{font-size:34px;max-width:860px;max-height:3em}}
 .sq .foot{{left:72px;right:72px;bottom:64px;font-size:22px}}
 .ls .lg{{position:absolute;left:140px;top:44px}}.ls .meta{{right:140px;top:50px;font-size:15px}}
-.ls .num{{right:140px;top:140px}}
-.ls .copy{{left:140px;top:160px;width:{600 if n == 1 else 540}px}}
+.ls .copy{{left:140px;top:150px;width:520px}}
 .ls .kicker{{font-size:22px}}
 .ls h1{{font-size:76px;margin:10px 0 16px;max-height:2.3em}}
 .ls .sub{{font-size:25px;max-height:4.4em}}
+.ls .unit{{left:740px;right:140px;top:150px}}
+.ls .cap{{font-size:28px}}
 .ls .foot{{left:140px;right:140px;bottom:42px;font-size:17px}}"""
     body = f"""<div class="lg">{logo(NAVY, 78 if sq else 58)}</div><div class="meta"><b>Adtek Insights</b><br>Số {f['no']:02d}, {f['date']}</div>
-<div class="num">{f['num']}</div>
-<div class="copy"><div class="kicker">{f['kicker']}</div><h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>
-<div class="foot"><div>{chips}</div><div>adtek.agency</div></div>"""
+{main}<div class="foot"><div>{chips}</div><div>adtek.agency</div></div>"""
     return css, body
 
 
 def split(f, sq):
-    """Khối tương phản: mảng cam cắt chéo chứa số navy, nửa còn lại navy chứa tiêu đề. Màu phẳng."""
+    """Khối tương phản: mảng cam cắt chéo chứa số navy và cụm chữ đi kèm ngay bên phải hoặc ngay bên dưới số."""
     n = len(f["num"])
     chips = " &nbsp;·&nbsp; ".join(f["chips"][:3])
     if sq:
-        hero = 520 if n == 1 else 360 if n == 2 else 240
-        own_head = f["head"] != f["cap"]
+        hero = 400 if n == 1 else 330 if n == 2 else 220
         css = f"""
 body{{background:{NAVY};color:#fff}}
-.panel{{position:absolute;left:0;top:0;right:0;height:560px;background:{ORANGE};clip-path:polygon(0 0,100% 0,100% 74%,0 100%)}}
-.num{{position:absolute;left:56px;top:60px;font-weight:900;font-size:{hero}px;line-height:.82;letter-spacing:-.05em;color:{NAVY};white-space:nowrap}}
-.cap{{position:absolute;right:72px;top:250px;width:{420 if n == 1 else 360}px;font-weight:900;font-size:48px;line-height:1.14;color:{NAVY};max-height:4.7em}}
-.lg{{position:absolute;right:72px;top:64px}}
+.panel{{position:absolute;left:0;top:0;right:0;height:580px;background:{ORANGE};clip-path:polygon(0 0,100% 0,100% 72%,0 100%)}}
+.unit{{position:absolute;left:64px;right:72px;top:150px;display:flex;align-items:flex-end;gap:30px}}
+.num{{flex:none;font-size:{hero}px;line-height:.8;color:{NAVY};white-space:nowrap}}
+.cap{{flex:1;font-size:56px;line-height:1.1;color:{NAVY};max-height:3.4em;padding-bottom:6px}}
+.lg{{position:absolute;right:72px;top:56px}}
 .copy{{position:absolute;left:72px;right:72px;bottom:72px}}
-.kicker{{color:{ORANGE};font-weight:800;font-size:30px}}
-h1{{font-weight:900;font-size:76px;line-height:1.14;margin:12px 0 20px;max-height:3.5em}}
-.sub{{font-weight:600;font-size:32px;line-height:1.4;color:#C9D6EE;max-height:4.4em}}
-.chips{{font-weight:700;font-size:24px;color:{ORANGE}}}"""
-        body = f"""<div class="panel"></div><div class="num">{f['num']}</div><div class="lg">{logo(NAVY, 92)}</div>
-<div class="cap fit bal">{f['cap'] or f['kicker']}</div>
-<div class="copy"><div class="kicker">{f['kicker']}</div><h1 class="fit bal">{f['head'] if own_head else f['sub']}</h1>
-{f'<div class="sub fit">{f["sub"]}</div>' if own_head else ''}<div class="chips">{chips}</div></div>"""
+.kicker{{color:{ORANGE};font-size:30px}}
+h1{{font-size:68px;line-height:1.14;margin:12px 0 20px;max-height:3.5em}}
+.sub{{font-size:32px;line-height:1.4;color:#C9D6EE;max-height:4.4em}}
+.chips{{font-weight:600;font-size:24px;color:{ORANGE}}}"""
+        rest = f'<h1 class="fit bal">{f["sub"]}</h1>' if f["paired"] else f'<h1 class="fit bal">{f["head"]}</h1><div class="sub fit">{f["sub"]}</div>'
+        body = f"""<div class="panel"></div><div class="lg">{logo(NAVY, 84)}</div>
+<div class="unit"><div class="num">{f['num']}</div><div class="cap fit bal">{f['cap'] or f['kicker']}</div></div>
+<div class="copy"><div class="kicker">{f['kicker']}</div>{rest}<div class="chips">{chips}</div></div>"""
         return css, body
-    hero = 400 if n == 1 else 240 if n == 2 else 170
+    hero = 300 if n == 1 else 220 if n == 2 else 150
     css = f"""
 body{{background:{NAVY};color:#fff}}
-.panel{{position:absolute;left:0;top:0;bottom:0;width:560px;background:{ORANGE};clip-path:polygon(0 0,100% 0,80% 100%,0 100%)}}
-.num{{position:absolute;left:140px;top:50%;transform:translateY(-54%);width:300px;text-align:center;font-weight:900;font-size:{hero}px;line-height:.82;letter-spacing:-.05em;color:{NAVY};white-space:nowrap}}
-.cap{{position:absolute;left:140px;bottom:46px;width:300px;text-align:center;font-weight:800;font-size:22px;line-height:1.25;color:{NAVY};max-height:2.7em}}
-.copy{{position:absolute;left:590px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
+.panel{{position:absolute;left:0;top:0;bottom:0;width:580px;background:{ORANGE};clip-path:polygon(0 0,100% 0,80% 100%,0 100%)}}
+.unit{{position:absolute;left:140px;width:300px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
+.num{{font-size:{hero}px;line-height:.8;color:{NAVY};white-space:nowrap}}
+.cap{{margin-top:16px;font-size:32px;line-height:1.12;color:{NAVY};max-height:3.4em}}
+.copy{{position:absolute;left:600px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
 .lg{{position:absolute;right:140px;top:44px}}
-.kicker{{color:{ORANGE};font-weight:800;font-size:24px}}
-h1{{font-weight:900;font-size:84px;line-height:1.1;margin:10px 0 16px;max-height:2.3em}}
-.sub{{font-weight:600;font-size:25px;line-height:1.4;color:#C9D6EE;max-height:4.3em}}
-.chips{{margin-top:22px;font-weight:700;font-size:19px;color:{ORANGE}}}"""
-    body = f"""<div class="panel"></div><div class="num">{f['num']}</div><div class="cap fit bal">{f['cap']}</div>
-<div class="lg">{logo('#fff', 64)}</div>
+.kicker{{color:{ORANGE};font-size:23px}}
+h1{{font-size:80px;line-height:1.1;margin:10px 0 16px;max-height:2.3em}}
+.sub{{font-size:25px;line-height:1.4;color:#C9D6EE;max-height:4.3em}}
+.chips{{margin-top:22px;font-weight:600;font-size:19px;color:{ORANGE}}}"""
+    body = f"""<div class="panel"></div><div class="unit"><div class="num">{f['num']}</div><div class="cap fit bal">{f['cap']}</div></div>
+<div class="lg">{logo('#fff', 60)}</div>
 <div class="copy"><div class="kicker">{f['kicker']}</div><h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div><div class="chips">{chips}</div></div>"""
     return css, body
 
@@ -248,64 +258,75 @@ h1{{font-weight:900;line-height:1.12;letter-spacing:-.01em}}
 
 
 def stack(f, sq):
-    """Hai tầng màu: khối navy chứa tiêu đề, nền kem chứa mô tả, đĩa cam đặc chứa con số."""
+    """Hai tầng màu: khối navy và nền kem; đĩa cam chứa con số, cụm chữ đi kèm nằm ngay bên phải hoặc ngay dưới đĩa."""
     n = len(f["num"])
+    if sq:
+        css = f"""
+body{{background:{CREAM};color:{NAVY}}}
+.top{{position:absolute;left:0;right:0;top:0;height:660px;background:{NAVY};color:#fff;padding:190px 72px 0}}
+.lg{{position:absolute;left:72px;top:64px}}
+.kicker{{color:{ORANGE};font-size:30px;margin-bottom:30px}}
+.row{{display:flex;align-items:center;gap:36px}}
+.disc{{flex:none;width:280px;height:280px;border-radius:50%;background:{ORANGE};display:flex;align-items:center;justify-content:center}}
+.disc span{{font-size:{170 if n == 1 else 140 if n == 2 else 90}px;line-height:1;color:{NAVY};white-space:nowrap}}
+h1{{flex:1;font-size:74px;line-height:1.12;max-height:4.5em}}
+.sub{{position:absolute;left:72px;right:72px;top:730px;font-size:40px;line-height:1.38;max-height:4.2em}}
+.chips{{position:absolute;left:72px;bottom:64px;font-weight:600;font-size:24px;color:{ORANGE}}}"""
+        head = f["head"] if f["paired"] else f["cap"] or f["head"]
+        body = f"""<div class="top"><div class="kicker">{f['kicker']}</div><div class="row"><div class="disc"><span>{f['num']}</span></div>
+<h1 class="fit bal">{head}</h1></div></div><div class="lg">{logo('#fff', 74)}</div><div class="sub fit">{f['sub']}</div>
+<div class="chips">{' &nbsp;·&nbsp; '.join(f['chips'][:3])}</div>"""
+        return css, body
     css = f"""
 body{{background:{CREAM};color:{NAVY}}}
-.top{{position:absolute;background:{NAVY};color:#fff}}
-.kicker{{color:{ORANGE};font-weight:800}}
-h1{{font-weight:900;line-height:1.12;letter-spacing:-.01em}}
-.sub{{position:absolute;font-weight:700;line-height:1.42}}
-.disc{{position:absolute;border-radius:50%;background:{ORANGE};display:flex;align-items:center;justify-content:center}}
-.disc span{{font-weight:900;line-height:1;letter-spacing:-.05em;color:{NAVY};white-space:nowrap;transform:translateY(-.04em)}}
-.lg{{position:absolute}}
-.sq .top{{left:0;right:0;top:0;height:640px;padding:200px 72px 0}}
-.sq .lg{{left:72px;top:64px}}
-.sq .kicker{{font-size:30px}}
-.sq h1{{font-size:96px;margin-top:14px;max-height:3.4em;max-width:900px}}
-.sq .sub{{left:72px;bottom:72px;width:520px;font-size:32px;max-height:5.8em}}
-.sq .disc{{width:400px;height:400px;right:72px;top:520px}}
-.sq .disc span{{font-size:{230 if n == 1 else 190 if n == 2 else 120}px}}
-.ls .top{{left:0;top:0;bottom:0;width:740px;padding:0 60px 0 140px;display:flex;flex-direction:column;justify-content:center}}
-.ls .lg{{left:140px;top:44px}}
-.ls .kicker{{font-size:23px}}
-.ls h1{{font-size:80px;margin:10px 0 0;max-height:3.4em}}
-.ls .sub{{left:780px;right:140px;bottom:56px;font-size:20px;max-height:4.3em}}
-.ls .disc{{width:280px;height:280px;left:785px;top:60px}}
-.ls .disc span{{font-size:{170 if n == 1 else 130 if n == 2 else 84}px}}"""
-    body = f"""<div class="top"><div class="kicker">{f['kicker']}</div><h1 class="fit bal">{f['head']}</h1></div>
-<div class="lg">{logo('#fff', 74 if sq else 56)}</div><div class="disc"><span>{f['num']}</span></div><div class="sub fit">{f['sub']}</div>"""
+.top{{position:absolute;left:0;top:0;bottom:0;width:740px;padding:0 60px 0 140px;background:{NAVY};color:#fff;display:flex;flex-direction:column;justify-content:center}}
+.lg{{position:absolute;left:140px;top:44px}}
+.kicker{{color:{ORANGE};font-size:23px}}
+h1{{font-size:80px;line-height:1.12;margin:10px 0 16px;max-height:2.3em}}
+.sub{{font-size:24px;line-height:1.42;color:#C9D6EE;max-height:4.3em}}
+.unit{{position:absolute;left:780px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
+.disc{{width:220px;height:220px;border-radius:50%;background:{ORANGE};display:flex;align-items:center;justify-content:center}}
+.disc span{{font-size:{140 if n == 1 else 110 if n == 2 else 70}px;line-height:1;color:{NAVY};white-space:nowrap}}
+.cap{{margin-top:18px;font-size:30px;line-height:1.15;max-height:3.5em}}"""
+    unit = f'<div class="unit"><div class="disc"><span>{f["num"]}</span></div><div class="cap fit bal">{f["cap"]}</div></div>' if f["cap"] else ""
+    body = f"""<div class="top"><div class="kicker">{f['kicker']}</div><h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>
+<div class="lg">{logo('#fff', 56)}</div>{unit}"""
     return css, body
 
 
 def poster(f, sq):
-    """Áp phích: nền cam phẳng, số navy khổng lồ tràn mép, tiêu đề in hoa, góc tròn navy giữ logo."""
+    """Áp phích: nền cam phẳng, số navy rất lớn đứng ngay trước cụm chữ đi kèm (trên chữ ở khổ vuông, trái chữ ở khổ ngang)."""
     n = len(f["num"])
-    hero = (720 if n == 1 else 600 if n == 2 else 400) if sq else (600 if n == 1 else 420 if n == 2 else 280)
     css = f"""
 body{{background:{ORANGE};color:{NAVY}}}
-.num{{position:absolute;font-weight:900;font-size:{hero}px;line-height:.78;letter-spacing:-.06em;color:{NAVY};white-space:nowrap}}
 .corner{{position:absolute;border-radius:50%;background:{NAVY}}}
-.kicker{{font-weight:800}}
-h1{{font-weight:900;line-height:1.1;text-transform:uppercase;letter-spacing:-.01em}}
-.sub{{font-weight:700;line-height:1.38}}
 .lg{{position:absolute}}
-.sq .num{{left:-30px;top:30px}}
+.num{{font-size:var(--hero);line-height:.78;color:{NAVY};white-space:nowrap}}
+h1{{line-height:1.1}}
+.sub{{line-height:1.4}}
+.sq{{--hero:{560 if n == 1 else 470 if n == 2 else 320}px}}
 .sq .corner{{width:440px;height:440px;right:-170px;top:-170px}}
 .sq .lg{{right:64px;top:60px}}
-.sq .copy{{position:absolute;left:72px;right:72px;bottom:72px}}
-.sq .kicker{{font-size:30px}}
-.sq h1{{font-size:96px;margin:14px 0 20px;max-height:3.4em}}
-.sq .sub{{font-size:32px;max-height:4.2em}}
-.ls .num{{left:110px;bottom:-40px}}
+.sq .copy{{position:absolute;left:64px;right:72px;top:64px}}
+.sq .kicker{{font-size:30px;margin:0 0 20px 8px}}
+.sq h1{{font-size:92px;margin:10px 0 18px 8px;max-height:3.4em}}
+.sq .sub{{font-size:32px;max-height:2.9em;margin-left:8px}}
+.ls{{--hero:{420 if n == 1 else 330 if n == 2 else 220}px}}
 .ls .corner{{width:380px;height:380px;right:-110px;top:-150px}}
 .ls .lg{{right:140px;top:46px}}
-.ls .copy{{position:absolute;left:{'570' if n == 1 else '660'}px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}}
+.ls .copy{{position:absolute;left:140px;right:140px;top:0;bottom:0;display:flex;align-items:center;gap:44px}}
+.ls .num{{flex:none}}
+.ls .text{{flex:1}}
 .ls .kicker{{font-size:22px}}
-.ls h1{{font-size:74px;margin:10px 0 16px;max-height:3.4em}}
-.ls .sub{{font-size:24px;max-height:4.2em}}"""
-    body = f"""<div class="corner"></div><div class="num">{f['num']}</div><div class="lg">{logo('#fff', 80 if sq else 58)}</div>
-<div class="copy"><div class="kicker">{f['kicker']}</div><h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>"""
+.ls h1{{font-size:64px;margin:8px 0 14px;max-height:3.4em}}
+.ls .sub{{font-size:23px;max-height:4.2em}}"""
+    if sq:
+        inner = f"""<div class="kicker">{f['kicker']}</div><div class="num">{f['num']}</div>
+<h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div>"""
+    else:  # khổ ngang: số bên trái, cụm chữ của số làm tiêu đề ngay bên phải, tên bài làm nhãn
+        inner = f"""<div class="num">{f['num']}</div><div class="text"><div class="kicker">{f['title']}</div>
+<h1 class="fit bal">{f['cap'] or f['head']}</h1><div class="sub fit">{f['sub']}</div></div>"""
+    body = f"""<div class="corner"></div><div class="lg">{logo('#fff', 80 if sq else 58)}</div><div class="copy">{inner}</div>"""
     return css, body
 
 
