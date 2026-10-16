@@ -12,7 +12,7 @@ Cách dùng:
   python3 tools/fb_post.py cover <số bài>        dựng ảnh 4:5 content/posts/<slug>-fb.jpg (làm cùng lúc đưa nháp blog)
   python3 tools/fb_post.py post <số bài>         đăng ảnh + caption, rồi bình luận link (chỉ khi bài blog đã lên sóng)
   python3 tools/fb_post.py post <số bài> --dry-run   in nội dung sẽ gửi, không đăng
-  python3 tools/fb_post.py post <số bài> --sample    đăng bài mẫu để duyệt, không ghi vào calendar.json
+  python3 tools/fb_post.py post <số bài> --sample [--image <file>]   đăng bài mẫu để duyệt, không ghi vào calendar.json
   python3 tools/fb_post.py delete <số bài>       gỡ bài Facebook đã đăng (bình luận đi kèm bị gỡ theo), xóa fb_post_id
   python3 tools/fb_post.py delete --id <post_id> gỡ một bài theo ID, ví dụ bài mẫu
 
@@ -23,6 +23,7 @@ import json
 import subprocess
 import sys
 from datetime import datetime
+from pathlib import Path
 
 from blog_post import ROOT, VN, find, load, save
 from fix_alt import api
@@ -145,8 +146,8 @@ def is_live(post):
     return code == "200"
 
 
-def post_fb(data, post, dry_run=False, sample=False):
-    image = ROOT / f"content/posts/{post['slug']}-fb.jpg"
+def post_fb(data, post, dry_run=False, sample=False, image=None):
+    image = Path(image) if image else ROOT / f"content/posts/{post['slug']}-fb.jpg"
     if not post.get("fb_caption") or not post.get("fb_comment"):
         sys.exit(f"Bài {post['no']}: thiếu fb_caption hoặc fb_comment")
     caption, comment = message(post), post["fb_comment"]
@@ -155,7 +156,7 @@ def post_fb(data, post, dry_run=False, sample=False):
     if not image.exists():
         image = cover(post)
     if dry_run:
-        print(json.dumps({"image": str(image.relative_to(ROOT)), "caption": caption, "comment": comment},
+        print(json.dumps({"image": str(image), "caption": caption, "comment": comment},
                          ensure_ascii=False, indent=1))
         return
     if sample:
@@ -225,4 +226,5 @@ if __name__ == "__main__":
     elif cmd == "cover":
         cover(post)
     else:
-        post_fb(data, post, dry_run="--dry-run" in sys.argv, sample="--sample" in sys.argv)
+        img = sys.argv[sys.argv.index("--image") + 1] if "--image" in sys.argv else None
+        post_fb(data, post, dry_run="--dry-run" in sys.argv, sample="--sample" in sys.argv, image=img)
