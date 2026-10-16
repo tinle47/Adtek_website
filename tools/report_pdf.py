@@ -50,12 +50,14 @@ ul.b li:before{{content:"";position:absolute;left:0;top:.62em;width:2mm;height:2
 .callout small{{display:block;font-family:BVP;font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;color:{ORANGE};font-weight:600;margin-bottom:1mm}}
 figure{{margin:5mm 0 3mm;break-inside:avoid;border-top:.3mm solid {NAVY};padding-top:3mm}}
 figcaption{{font-weight:700;color:{NAVY};font-size:9.6pt;margin-bottom:3mm}}
-.bar{{display:grid;grid-template-columns:40% 1fr 22mm;align-items:center;gap:3mm;margin-bottom:2mm;font-size:8.8pt}}
+.bar{{display:grid;grid-template-columns:38% 1fr 30mm;align-items:center;gap:3mm;margin-bottom:2mm;font-size:8.8pt}}
 .bar .t{{height:4.2mm;background:#EEF1F6}}
 .bar .f{{height:100%;background:{NAVY}}}
 .bar.top .f{{background:{ORANGE}}}
 .bar.neg .f{{background:#9CA3AF}}
-.bar .v{{font-weight:700;color:{NAVY};text-align:right;font-variant-numeric:tabular-nums}}
+.bar .v{{white-space:nowrap;font-weight:700;color:{NAVY};text-align:right;font-variant-numeric:tabular-nums}}
+.tl{{display:grid;grid-template-columns:20mm 1fr;gap:4mm;padding:2mm 0;border-bottom:.3mm solid {LINE};font-size:9pt;align-items:baseline}}
+.tl .d{{color:{ORANGE};font-size:13pt}}
 .src{{font-size:7.6pt;color:{MUTED};margin-top:1.5mm}}
 .stats{{display:grid;grid-template-columns:1fr 1fr;gap:7mm 10mm;margin:3mm 0 9mm}}
 .stat{{border-top:.3mm solid {NAVY};padding-top:3mm}}
@@ -90,7 +92,7 @@ def cover_page(r):
 <div style="position:absolute;right:-70mm;top:-55mm;width:190mm;height:190mm;border-radius:50%;border:16mm solid {ORANGE};opacity:.95"></div>
 <div style="position:absolute;right:-40mm;top:-25mm;width:130mm;height:130mm;border-radius:50%;border:.5mm solid rgba(255,255,255,.35)"></div>
 <img src="{uri("adtek-logo-white.png")}" alt="Adtek" style="position:absolute;left:18mm;top:18mm;height:17mm">
-<div style="position:absolute;left:18mm;right:22mm;top:112mm">
+<div style="position:absolute;left:18mm;right:22mm;top:142mm">
  <div class="eyebrow" style="color:{ORANGE}">Báo cáo Adtek &nbsp;|&nbsp; {esc(r["period"])}</div>
  <div class="nr" style="font-size:33pt;line-height:1.12;margin:5mm 0 6mm;text-wrap:balance">{esc(r["title"])}</div>
  <div style="height:1.2mm;width:22mm;background:{ORANGE};margin-bottom:6mm"></div>
@@ -102,7 +104,15 @@ def cover_page(r):
 </div></body></html>"""
 
 
+def timeline(c):
+    rows = "".join(f'<div class="tl"><div class="d nr">{esc(i["date"])}</div><div>{esc(i["label"])}</div></div>' for i in c["items"])
+    return (f'<figure><figcaption>{esc(c["title"])}</figcaption>{rows}'
+            f'<div class="src">Nguồn: {esc(c["source"])}</div></figure>')
+
+
 def chart(c):
+    if c.get("type") == "timeline":
+        return timeline(c)
     items = c["items"]
     top = max(abs(i["value"]) for i in items) or 1
     unit = c.get("unit", "")
