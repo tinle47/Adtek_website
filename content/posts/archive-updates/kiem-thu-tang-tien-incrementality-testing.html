@@ -1,4 +1,4 @@
-<p>Kiểm thử tăng tiến (incrementality testing) đo phần kết quả chỉ xảy ra nhờ quảng cáo. Cách làm: giữ lại một nhóm người dùng hoặc một nhóm khu vực không thấy quảng cáo (nhóm đối chứng, holdout), so kết quả của họ với nhóm vẫn thấy quảng cáo, phần chênh lệch là lift. Báo cáo trong Ads Manager hay Google Ads không trả lời được câu này, vì nó đếm cả những đơn khách vẫn sẽ mua dù bạn không chạy quảng cáo.</p>
+<p>Kiểm thử tăng tiến (incrementality testing) đo phần kết quả chỉ xảy ra nhờ quảng cáo. Cách làm: giữ lại một nhóm người dùng hoặc một nhóm khu vực không thấy quảng cáo (nhóm đối chứng, holdout), so kết quả của họ với nhóm vẫn thấy quảng cáo, phần chênh lệch là lift. Báo cáo trong Ads Manager hay Google Ads không cho bạn con số này, vì nó đếm cả đơn khách vẫn sẽ mua khi không có quảng cáo.</p>
 
 <p>Năm 2026, kiểm thử tăng tiến không còn là việc riêng của tập đoàn lớn. Google cho biết một thử nghiệm trước đây có thể tốn hơn 100,000 USD, nay ngưỡng tối thiểu là 5,000 USD. Meta công bố rằng ở các nhà quảng cáo họ nghiên cứu, 31% chuyển đổi tăng tiến do Meta tạo ra bị mô hình phân bổ theo quy tắc ghi công nhầm cho kênh khác.</p>
 
@@ -6,7 +6,7 @@
 
 <p>Mô hình phân bổ trả lời câu hỏi "chuyển đổi này đã chạm quảng cáo nào". Thử nghiệm trả lời câu hỏi "nếu không có quảng cáo thì chuyển đổi này còn xảy ra không". Hai con số này lệch nhau nhiều nhất ở remarketing và tìm kiếm từ khóa thương hiệu, nơi người xem vốn đã định mua.</p>
 
-<p>Ví dụ giả định: một shop mỹ phẩm chạy remarketing cho tệp 1,000,000 người, giữ lại 20% làm nhóm đối chứng.</p>
+<p>Ví dụ giả định: shop mỹ phẩm chạy remarketing cho 1,000,000 người, giữ lại 20% làm nhóm đối chứng.</p>
 
 <table>
 <thead><tr><th>Chỉ số</th><th>Nhóm thấy quảng cáo</th><th>Nhóm đối chứng</th></tr></thead>
@@ -23,7 +23,7 @@
 
 <p>Lưu ý: nếu hai nhóm có quy mô khác nhau như 80/20 ở trên, phải quy về tỷ lệ trên mỗi người trước khi trừ, không trừ thẳng tổng doanh thu.</p>
 
-<p>Kết quả có ba khả năng. Lift dương: quảng cáo tạo thêm đơn, câu hỏi tiếp theo là chi phí cho mỗi đơn tăng tiến có thấp hơn <a href="/glossary/lifetime-value-ltv-gia-tri-vong-doi-khach-hang/">LTV</a> hoặc lợi nhuận gộp của một khách không. Lift quanh 0: chiến dịch đang trả tiền cho đơn tự nhiên, nên đổi tệp, đổi thông điệp hoặc cắt. Lift âm hiếm gặp, thường do tần suất quá dày làm khách khó chịu, hoặc do thử nghiệm cài sai, nên kiểm tra thiết lập trước khi kết luận.</p>
+<p>Lift dương thì hỏi tiếp: CPA tăng tiến có thấp hơn <a href="/glossary/lifetime-value-ltv-gia-tri-vong-doi-khach-hang/">LTV</a> hoặc lợi nhuận gộp của một khách không. Lift quanh 0 nghĩa là chiến dịch đang trả tiền cho đơn tự nhiên, nên đổi tệp, đổi thông điệp hoặc cắt. Lift âm hiếm gặp, thường do tần suất quá dày hoặc thử nghiệm cài sai.</p>
 
 <h2>Holdout theo người dùng và geo experiment</h2>
 
@@ -35,21 +35,21 @@
 
 <p>Thay vì chia người, bạn chia khu vực: tắt quảng cáo (go-dark), giữ nguyên, hoặc tăng mạnh ngân sách (heavy-up) ở một nhóm tỉnh, rồi so doanh số với nhóm tỉnh tương đồng. Cách này đo được doanh thu thật từ hệ thống bán hàng, kể cả cửa hàng, sàn và hotline.</p>
 
-<p>Google có Conversion Lift dựa trên địa lý, dùng đơn vị Google Marketing Areas được thiết kế để giảm việc người thấy quảng cáo ở vùng này lại mua ở vùng kia. Theo trang hướng dẫn, phiên bản beta chỉ hỗ trợ thiết kế holdback và go-dark, chiến dịch phải nhắm một quốc gia, và vẫn cần qua đại diện Google. Nếu không dùng được công cụ của nền tảng, thư viện mã nguồn mở Meridian GeoX của Google cho phép tự thiết kế và phân tích geo experiment, kể cả thử nghiệm nhiều nhóm so với một nhóm đối chứng chung.</p>
+<p>Google có Conversion Lift dựa trên địa lý, chia theo Google Marketing Areas để hạn chế việc thấy quảng cáo ở vùng này nhưng mua ở vùng kia. Bản beta chỉ hỗ trợ holdback và go-dark, chiến dịch phải nhắm một quốc gia và cần qua đại diện Google. Nếu không dùng được công cụ của nền tảng, thư viện mã nguồn mở Meridian GeoX của Google cho phép tự thiết kế và phân tích geo experiment, kể cả thử nghiệm nhiều nhóm so với một nhóm đối chứng chung.</p>
 
-<p>Ở Việt Nam có một điểm cần tính lại từ năm 2025. Theo Nghị quyết 202/2025/QH15, cả nước còn 34 đơn vị hành chính cấp tỉnh, hoạt động từ 1/7/2025. Ít đơn vị hơn nghĩa là ít cặp tỉnh để ghép, và mỗi tỉnh mới to hơn: TP.HCM nay gồm cả Bình Dương và Bà Rịa - Vũng Tàu cũ. Nếu phần lớn đơn của bạn nằm ở Hà Nội và TP.HCM, không thể đưa một trong hai vào nhóm đối chứng mà vẫn so sánh công bằng. Khi đó nên thử ở các tỉnh còn lại, hoặc chuyển sang holdout theo người dùng.</p>
+<p>Ở Việt Nam có một điểm cần tính lại từ năm 2025. Theo Nghị quyết 202/2025/QH15, cả nước còn 34 đơn vị hành chính cấp tỉnh, hoạt động từ 1/7/2025. Ít đơn vị hơn nghĩa là ít cặp tỉnh để ghép, và mỗi tỉnh mới to hơn: TP.HCM nay gồm cả Bình Dương và Bà Rịa - Vũng Tàu cũ. Nếu phần lớn đơn của bạn nằm ở Hà Nội và TP.HCM, không thể đưa một trong hai vào nhóm đối chứng mà vẫn so sánh công bằng. Khi đó hãy thử ở các tỉnh còn lại hoặc dùng holdout theo người dùng.</p>
 
 <h2>Conversion Lift của Meta và Google Ads năm 2026</h2>
 
-<p>Google Ads chuyển Conversion Lift sang phương pháp thống kê Bayesian trong năm 2025. Phương pháp này dùng thêm dữ liệu chiến dịch trong quá khứ làm "prior", nên cần ít chuyển đổi và ít ngân sách hơn để ra kết luận. Đến tháng 11/2025, Google công bố ngưỡng chi tiêu 5,000 USD và cho biết kết quả kết luận được nhiều hơn tới 50%. Meta đi theo hướng khác: mở Conversion Lift tự phục vụ trong mục Experiments cho nhà quảng cáo đủ điều kiện, và đưa dữ liệu lift vào phân phối quảng cáo qua thiết lập incremental attribution.</p>
+<p>Năm 2025, Google Ads chuyển Conversion Lift sang thống kê Bayesian, dùng thêm dữ liệu chiến dịch cũ làm "prior" nên cần ít chuyển đổi và ngân sách hơn. Tháng 11/2025, Google công bố ngưỡng 5,000 USD và cho biết tỷ lệ nghiên cứu ra kết luận tăng tới 50%. Meta mở Conversion Lift tự phục vụ trong mục Experiments cho nhà quảng cáo đủ điều kiện, và đưa dữ liệu lift vào phân phối qua thiết lập incremental attribution.</p>
 
 <table>
 <thead><tr><th></th><th>Google Ads Conversion Lift</th><th>Meta Conversion Lift</th></tr></thead>
 <tbody>
-<tr><td>Điều kiện công bố</td><td>Ít nhất 1,000 chuyển đổi quan sát được, ngân sách chiến dịch trong nghiên cứu tối thiểu 5,000 USD, có hành động chuyển đổi tương thích</td><td>Meta không nêu một ngưỡng ngân sách cố định trong tài liệu chúng tôi tra được, tự phục vụ cho nhà quảng cáo "đủ điều kiện"</td></tr>
+<tr><td>Điều kiện công bố</td><td>Ít nhất 1,000 chuyển đổi quan sát được, ngân sách nghiên cứu tối thiểu 5,000 USD</td><td>Không công bố ngưỡng ngân sách cố định; tự phục vụ cho nhà quảng cáo đủ điều kiện</td></tr>
 <tr><td>Nguồn dữ liệu</td><td>Thẻ chuyển đổi, enhanced conversions cho web và lead, consent mode</td><td>Conversions API (Meta khuyến nghị), Meta Pixel, App Events API</td></tr>
 <tr><td>Thời gian</td><td>Tối thiểu 7 ngày, khuyến nghị trên 14 ngày</td><td>Tùy độ dài chu kỳ mua</td></tr>
-<tr><td>Cách đọc kết quả</td><td>Mức chắc chắn từ 50% đến 95%; dưới 90% chỉ dùng như kết quả định hướng</td><td>Single-cell để so nhà phát hành, multi-cell để so chiến lược</td></tr>
+<tr><td>Cách đọc kết quả</td><td>Mức chắc chắn 50% đến 95%; dưới 90% là kết quả định hướng</td><td>Single-cell để so nhà phát hành, multi-cell để so chiến lược</td></tr>
 <tr><td>Lưu ý</td><td>Không phải tài khoản nào cũng dùng được, cần liên hệ đại diện Google</td><td>Incremental attribution tối ưu theo chuyển đổi tăng tiến ngay trong Ads Manager</td></tr>
 </tbody>
 </table>
@@ -66,10 +66,10 @@
 
 <ul>
 <li>Hiệu chỉnh phân bổ: nếu báo cáo ghi nhận 1,000 đơn mà thử nghiệm cho thấy 600 đơn tăng tiến, nhân số báo cáo của kênh đó với 0.6 cho tới lần thử tiếp theo. Chiều ngược lại cũng xảy ra: Meta thấy ở mức trung vị, mô hình phân bổ theo quy tắc cần hệ số ít nhất 1.45 lần mới khớp với giá trị tăng tiến thật của Meta.</li>
-<li>Hiệu chỉnh MMM: đưa kết quả thử nghiệm vào làm prior cho hệ số ROI của kênh. Meridian của Google và Robyn của Meta đều là MMM mã nguồn mở hỗ trợ việc này; Meridian GeoX còn gợi ý kênh nào nên thử trước.</li>
+<li>Hiệu chỉnh MMM: đưa kết quả thử nghiệm vào làm prior cho hệ số ROI của kênh, việc mà Meridian (Google) và Robyn (Meta), hai MMM mã nguồn mở, đều hỗ trợ.</li>
 </ul>
 
-<p>Cookie bên thứ ba và mã định danh di động ngày càng khó dùng, như Adtek đã phân tích trong bài <a href="/marketing-analytics-trong-the-gioi-khong-con-cookie/">marketing analytics trong thế giới không còn cookie</a>. Thử nghiệm không cần theo dấu từng người qua nhiều kênh, nên đây là phương pháp ít bị ảnh hưởng nhất.</p>
+<p>Thử nghiệm không cần theo dấu từng người qua nhiều kênh, nên ít bị ảnh hưởng nhất khi cookie và mã định danh di động khó dùng dần, vấn đề Adtek đã viết trong bài <a href="/marketing-analytics-trong-the-gioi-khong-con-cookie/">marketing analytics trong thế giới không còn cookie</a>.</p>
 
 <h2>Góc nhìn Adtek: thiết kế một thử nghiệm cho doanh nghiệp ngân sách vừa</h2>
 
@@ -77,7 +77,7 @@
 
 <h3>1. Viết ra quyết định trước khi viết giả thuyết</h3>
 
-<p>Câu hỏi tốt có dạng: "Nếu remarketing trên Meta có iROAS dưới 2 thì chuyển 30% ngân sách sang tìm kiếm không thương hiệu". Không có quyết định đi kèm thì thử nghiệm chỉ sinh thêm một báo cáo.</p>
+<p>Ví dụ: "Nếu remarketing trên Meta có iROAS dưới 2 thì chuyển 30% ngân sách sang tìm kiếm không thương hiệu". Không có quyết định đi kèm, thử nghiệm chỉ sinh thêm một báo cáo.</p>
 
 <h3>2. Chọn chiến dịch dễ "ăn" đơn tự nhiên nhất</h3>
 
@@ -95,13 +95,13 @@
 
 <ul>
 <li>Đủ 5,000 USD và 1,000 chuyển đổi trên Google, hoặc Meta báo đủ điều kiện trong Experiments: dùng Conversion Lift của nền tảng.</li>
-<li>Chưa đủ: geo experiment tự làm. Chọn 6 đến 10 tỉnh có doanh số 8 tuần gần nhất tương đồng, ghép thành cặp, tắt quảng cáo ở một tỉnh mỗi cặp. Kiểm tra danh sách địa điểm trong trình quản lý quảng cáo đã khớp địa giới mới chưa.</li>
+<li>Chưa đủ: tự làm geo experiment. Ghép 6 đến 10 tỉnh thành cặp có doanh số 8 tuần gần nhất tương đồng, tắt quảng cáo ở một tỉnh mỗi cặp. Kiểm tra danh sách địa điểm trong trình quản lý quảng cáo đã theo địa giới mới chưa.</li>
 <li>Phương án cuối: tắt quảng cáo luân phiên theo tuần. Dễ nhiễu bởi mùa vụ và đối thủ, chỉ coi là tín hiệu định hướng.</li>
 </ul>
 
 <h3>6. Chọn thời điểm sạch</h3>
 
-<p>Tránh Tết, 11.11, 12.12, Black Friday và các đợt khuyến mãi lớn của chính bạn. Nếu đang làm <a href="/ke-hoach-11-11/">kế hoạch 11.11</a>, hãy đặt thử nghiệm xong trước tháng 10 hoặc dời sang tháng 1. Chạy tối thiểu 2 tuần, lâu hơn với sản phẩm giá cao.</p>
+<p>Tránh Tết, 11.11, 12.12, Black Friday và đợt khuyến mãi lớn của chính bạn. Nếu đang làm <a href="/ke-hoach-11-11/">kế hoạch 11.11</a>, hãy đặt thử nghiệm xong trước tháng 10 hoặc dời sang tháng 1. Chạy tối thiểu 2 tuần, lâu hơn với sản phẩm giá cao.</p>
 
 <h3>7. Đọc kết quả theo luật đã đặt</h3>
 

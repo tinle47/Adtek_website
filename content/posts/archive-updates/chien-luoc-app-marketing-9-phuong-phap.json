@@ -1,0 +1,84 @@
+{
+  "wp_id": 6300,
+  "slug": "chien-luoc-app-marketing-9-phuong-phap",
+  "keyword": "chiến lược app marketing",
+  "seo_title": "Chiến lược app marketing 2026: 9 phương pháp theo giai đoạn",
+  "meta_desc": "Chiến lược app marketing 2026 qua 4 giai đoạn: người dùng mục tiêu, ASO, Apple Ads, Google App campaigns, AdAttributionKit, deep link và checklist.",
+  "title": "Chiến lược app marketing 2026: 9 phương pháp marketer nên biết",
+  "changes": [
+    "Viết lại toàn bộ theo 4 giai đoạn (trước ra mắt, thu hút, giữ chân, tái tương tác), vẫn giữ 9 phương pháp đánh số để khớp slug và tiêu đề cũ.",
+    "Gộp ý đáng giữ của bài 6244 (đã noindex): 3 câu hỏi về giá trị sản phẩm, đọc đánh giá thấp của đối thủ, persona theo hành vi, vào mục 1.",
+    "Bỏ số liệu cũ không còn đúng hoặc không kiểm chứng được: 1,000 app/ngày, 1 giờ 22 phút mạng xã hội (2020), 90% tính chân thực, ngân sách influencer +65%, retention Adjust 26/11/7/6%, Emarsys 81%/80%, Toast 371%, HubSpot 202%, case Bumble, Clash of Clans, MyFitnessPal, Dig.",
+    "Thêm bối cảnh 2025 đến 2026: lượt tải toàn cầu 149 tỷ (+0.8%) và doanh thu IAP 167 tỷ USD (Sensor Tower); Việt Nam thứ 11 về lượt cài, 2.88 tỷ lượt, D1 game 19% so với 28% toàn cầu (Adjust 5/2026).",
+    "Thêm Apple Ads (đổi tên từ Apple Search Ads 4/2025) và 4 vị trí quảng cáo; trang sản phẩm tùy chỉnh tối đa 70 trang có từ khóa riêng; custom store listings Google Play tối đa 50 trang.",
+    "Thêm Google App campaigns: khuyến nghị tối đa 8 chiến dịch cài đặt iOS, App campaigns for engagement cần 50,000 lượt cài, deep link bằng App Links và Universal Links.",
+    "Thêm mục đo lường: SKAdNetwork, AdAttributionKit (iOS 17.4, tái tương tác từ iOS 18, nhiều cửa sổ từ iOS 18.4), Google Ads chưa dùng AdAttributionKit, Google dừng Attribution Reporting và SDK Runtime của Privacy Sandbox (10/2025).",
+    "Gộp social media và influencer thành mục creator; gộp email marketing vào mục tái tương tác với deep link; PR rút gọn vào mục landing page.",
+    "Thêm ví dụ tính trần CPI theo doanh thu 90 ngày (số giả định, ghi rõ), bảng checklist theo giai đoạn và danh sách Không nên.",
+    "Link nội bộ: thuật ngữ ASO, ARPU, Deep linking; bài app marketing KPIs (6258) và bài khởi chạy ứng dụng trên App Store (6315)."
+  ],
+  "sources": [
+    {
+      "name": "Sensor Tower, State of Mobile 2026",
+      "url": "https://sensortower.com/blog/state-of-mobile-2026",
+      "date": "1/2026"
+    },
+    {
+      "name": "Adjust, Vietnam app trends and benchmarks for 2026",
+      "url": "https://www.adjust.com/blog/vietnam-app-trends-2026/",
+      "date": "5/2026"
+    },
+    {
+      "name": "Apple Developer News, Enhancements to help you submit and market your apps and games",
+      "url": "https://developer.apple.com/news/?id=gf6mgrs6",
+      "date": "10/2025"
+    },
+    {
+      "name": "Apple Ads Help, Ad Placement Options",
+      "url": "https://ads.apple.com/app-store/help/ad-placements/0081-ad-placement-options",
+      "date": "xem 10/2026"
+    },
+    {
+      "name": "9to5Mac, Apple rebrands Search Ads business as Apple Ads",
+      "url": "https://9to5mac.com/2025/04/14/apple-rebrands-search-ads-business-as-apple-ads",
+      "date": "4/2025"
+    },
+    {
+      "name": "Apple Developer, What's new in AdAttributionKit (WWDC25)",
+      "url": "https://developer.apple.com/videos/play/wwdc2025/221/",
+      "date": "6/2025"
+    },
+    {
+      "name": "Google Privacy Sandbox, Update on Plans for Privacy Sandbox Technologies",
+      "url": "https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies",
+      "date": "10/2025"
+    },
+    {
+      "name": "Google Ads Help, Best practices guide for iOS App campaigns",
+      "url": "https://support.google.com/google-ads/answer/10384955?hl=en",
+      "date": "xem 10/2026"
+    },
+    {
+      "name": "Google Ads Help, Create an App campaign for engagement",
+      "url": "https://support.google.com/google-ads/answer/9234102?hl=en",
+      "date": "xem 10/2026"
+    },
+    {
+      "name": "Google Ads Help, Set up deep links for your App campaigns",
+      "url": "https://support.google.com/google-ads/answer/10024200?hl=en",
+      "date": "xem 10/2026"
+    },
+    {
+      "name": "Play Console Help, Create custom store listings",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9867158?hl=en",
+      "date": "xem 10/2026"
+    }
+  ],
+  "confirm": [
+    "Tên Apple Ads: trang chính thức ads.apple.com đã dùng tên Apple Ads, nhưng mốc 4/2025 lấy từ 9to5Mac (dẫn email Apple gửi nhà phát triển), không tìm được thông cáo báo chí riêng của Apple.",
+    "Môi trường chặn WebFetch tới site ngoài nên mọi số liệu được kiểm qua kết quả WebSearch, chưa mở trực tiếp trang nguồn. Số 2.88 tỷ lượt cài và 127 tỷ giờ của Adjust lấy qua PPC Land và Tuổi Trẻ; D1 game 19%/20%/28% lấy từ blog Adjust. Nên mở lại link trước khi đăng.",
+    "Nhận định Google Ads chưa hỗ trợ AdAttributionKit dựa trên trang hướng dẫn iOS App campaigns (cập nhật khoảng 8/2026); có thể đổi nhanh.",
+    "Bài chưa có dòng 'Cập nhật ngày ...' ở đầu theo quy trình sửa lớn trong README, vì chưa biết ngày đưa lên; phiên SEO thêm khi đăng.",
+    "Tiêu đề H1 đề xuất thêm '2026'; nếu muốn giữ nguyên H1 cũ thì bỏ trường title."
+  ]
+}

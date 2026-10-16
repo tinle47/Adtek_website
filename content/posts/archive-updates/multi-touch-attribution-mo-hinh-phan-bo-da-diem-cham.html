@@ -13,14 +13,14 @@
 <table>
 <thead><tr><th>Mô hình</th><th>Cách chia ghi nhận</th><th>Hợp với</th><th>Trong GA4 và Google Ads</th></tr></thead>
 <tbody>
-<tr><td>Last click</td><td>100% cho điểm chạm cuối</td><td>Đối soát, tính phí với đối tác</td><td>Còn (Paid and organic last click, Google paid channels last click)</td></tr>
-<tr><td>First click</td><td>100% cho điểm chạm đầu</td><td>Xem kênh nào mang khách mới</td><td>Đã bỏ</td></tr>
+<tr><td>Last click</td><td>100% cho điểm chạm cuối</td><td>Tính phí với đối tác</td><td>Còn (Paid and organic last click, Google paid channels last click)</td></tr>
+<tr><td>First click</td><td>100% cho điểm chạm đầu</td><td>Xem kênh mang khách mới</td><td>Đã bỏ</td></tr>
 <tr><td>Tuyến tính (linear)</td><td>Chia đều cho mọi điểm chạm</td><td>Liệt kê kênh có tham gia</td><td>Đã bỏ</td></tr>
 <tr><td>Time decay</td><td>Điểm chạm càng gần chuyển đổi càng nhiều điểm</td><td>Chiến dịch khuyến mãi ngắn ngày</td><td>Đã bỏ</td></tr>
 <tr><td>Chữ U (position-based)</td><td>40% đầu, 40% cuối, 20% chia cho phần giữa</td><td>Chu kỳ mua ngắn</td><td>Đã bỏ</td></tr>
 <tr><td>Chữ W</td><td>30% mỗi mốc: chạm đầu, tạo lead, tạo cơ hội; 10% còn lại cho phần giữa</td><td>B2B, bất động sản, giáo dục</td><td>Không có sẵn, tự dựng trong CRM</td></tr>
-<tr><td>Full path</td><td>22.5% mỗi mốc: thêm mốc chốt hợp đồng; 10% cho phần giữa</td><td>Giao dịch giá trị lớn, nhiều vòng tư vấn</td><td>Tự dựng trong CRM</td></tr>
-<tr><td>Data-driven</td><td>Thuật toán so sánh đường đi có và không có chuyển đổi</td><td>Tài khoản có nhiều chuyển đổi</td><td>Mặc định</td></tr>
+<tr><td>Full path</td><td>22.5% mỗi mốc: thêm mốc chốt hợp đồng; 10% cho phần giữa</td><td>Giao dịch giá trị lớn</td><td>Tự dựng trong CRM</td></tr>
+<tr><td>Data-driven</td><td>Thuật toán học từ đường đi có và không có chuyển đổi</td><td>Tài khoản có nhiều chuyển đổi</td><td>Mặc định</td></tr>
 </tbody>
 </table>
 
@@ -34,7 +34,7 @@
 
 <p>Apple ra mắt <a href="/glossary/app-tracking-transparency-att-tinh-minh-bach-theo-doi-ung-dung/">App Tracking Transparency (ATT)</a> tháng 4/2021: app phải hỏi người dùng trước khi theo dõi họ qua app và website của bên khác. Theo <a href="https://www.nasdaq.com/press-release/adjust-mobile-app-use-grew-globally-2025-continued-move-multi-platform-2026-02-18" target="_blank" rel="nofollow noopener">báo cáo Mobile App Trends 2026 của Adjust</a> (công bố 02/2026), tỷ lệ đồng ý trung bình trong quý 1/2026 là 38%, tăng từ 35% cùng kỳ 2025, tính trên những người đã thấy hộp thoại xin phép. Nói cách khác, phần lớn người dùng iOS vẫn nằm ngoài dữ liệu đường đi cấp người dùng.</p>
 
-<p>Ở Việt Nam, con số này không nhỏ. Theo <a href="https://gs.statcounter.com/os-market-share/mobile/viet-nam" target="_blank" rel="nofollow noopener">StatCounter</a>, iOS chiếm 40.19% lưu lượng web trên di động tại Việt Nam trong tháng 9/2026. Một mô hình MTA bỏ qua phần lớn người dùng iPhone sẽ lệch về những kênh mạnh trên Android.</p>
+<p>Theo <a href="https://gs.statcounter.com/os-market-share/mobile/viet-nam" target="_blank" rel="nofollow noopener">StatCounter</a>, iOS chiếm 40.19% lưu lượng web trên di động tại Việt Nam trong tháng 9/2026. MTA bỏ sót phần lớn người dùng iPhone sẽ lệch về các kênh mạnh trên Android.</p>
 
 <p>Để đo quảng cáo app mà không cần định danh, Apple dùng <a href="/glossary/skadnetwork/">SKAdNetwork</a> và khung kế nhiệm là AdAttributionKit. Theo <a href="https://developer.apple.com/videos/play/wwdc2025/221/" target="_blank" rel="nofollow noopener">phiên WWDC 2025 của Apple</a> (06/2025), AdAttributionKit ra mắt với iOS 17.4, thêm đo tái tương tác (re-engagement) từ iOS 18. Từ iOS 18.4, app có thể có nhiều cửa sổ tái tương tác song song, nhà quảng cáo tự đặt cửa sổ phân bổ theo từng ad network và loại tương tác (xem hoặc nhấp), đặt "cooldown" để lượt tái tương tác ngay sau lượt cài không lấy mất ghi nhận, và postback có thêm mã quốc gia khi đủ ngưỡng ẩn danh.</p>
 
@@ -57,17 +57,17 @@
 <table>
 <thead><tr><th>Phương pháp</th><th>Câu hỏi trả lời</th><th>Dữ liệu cần</th><th>Nhịp dùng</th><th>Điểm mù</th></tr></thead>
 <tbody>
-<tr><td>MTA, data-driven attribution</td><td>Trong các đường đi đo được, điểm chạm nào gắn với chuyển đổi?</td><td>Đường đi cấp người dùng</td><td>Hằng ngày, hằng tuần</td><td>Kênh không đo được, người không đồng ý theo dõi; là tương quan, chưa phải nhân quả</td></tr>
-<tr><td>Marketing mix modeling (MMM)</td><td>Mỗi kênh đóng góp bao nhiêu vào tổng doanh số, nên chia lại ngân sách thế nào?</td><td>Chi tiêu và doanh số tổng hợp theo tuần, kèm giá, khuyến mãi, mùa vụ</td><td>Hằng quý</td><td>Cần chuỗi dữ liệu đủ dài và chi tiêu có biến động</td></tr>
-<tr><td>Kiểm thử tăng tiến</td><td>Nếu bật hoặc tắt kênh này, doanh số thay đổi bao nhiêu?</td><td>Nhóm thử và nhóm đối chứng (theo người hoặc theo vùng)</td><td>Theo đợt</td><td>Mỗi lần chỉ trả lời một câu hỏi, tốn thời gian và ngân sách</td></tr>
+<tr><td>MTA, data-driven attribution</td><td>Trong các đường đi đo được, điểm chạm nào gắn với chuyển đổi?</td><td>Đường đi cấp người dùng</td><td>Hằng tuần</td><td>Kênh không đo được; là tương quan, chưa phải nhân quả</td></tr>
+<tr><td>Marketing mix modeling (MMM)</td><td>Mỗi kênh góp bao nhiêu vào tổng doanh số?</td><td>Chi tiêu, doanh số theo tuần, kèm giá, khuyến mãi, mùa vụ</td><td>Hằng quý</td><td>Cần chuỗi dữ liệu dài, chi tiêu có biến động</td></tr>
+<tr><td>Kiểm thử tăng tiến</td><td>Bật hoặc tắt kênh này, doanh số đổi bao nhiêu?</td><td>Nhóm thử và nhóm đối chứng (theo người hoặc vùng)</td><td>Theo đợt</td><td>Mỗi lần một câu hỏi, tốn thời gian</td></tr>
 </tbody>
 </table>
 
 <p>Hai thay đổi khiến cách kết hợp này khả thi với doanh nghiệp tầm trung. Ngày 29/01/2025, Google mở <a href="https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/" target="_blank" rel="nofollow noopener">Meridian</a>, mô hình MMM mã nguồn mở, cho mọi marketer, kèm chương trình hơn 20 đối tác đo lường được chứng nhận. Meridian dùng suy luận nhân quả Bayes, đo video theo reach và frequency, và nhận kết quả thử nghiệm tăng tiến làm giả định ban đầu (prior) để hiệu chỉnh mô hình.</p>
 
-<p>Thay đổi thứ hai là chi phí thử nghiệm. Theo <a href="https://business.google.com/us/think/measurement/marketing-experimentation-incrementality-testing/" target="_blank" rel="nofollow noopener">Think with Google</a> (02/2026), trong năm 2025 Google Ads hạ ngân sách tối thiểu cho một thử nghiệm tăng tiến từ mức cao trước đây khoảng 100,000 USD xuống 5,000 USD. Một thử nghiệm nhỏ cho kết quả còn rộng, nên xem là tín hiệu định hướng hơn là con số chốt. Cách thiết kế nhóm đối chứng được trình bày trong bài <a href="/kiem-thu-tang-tien-incrementality-testing/">kiểm thử tăng tiến</a>.</p>
+<p>Thay đổi thứ hai là chi phí thử nghiệm. Theo <a href="https://business.google.com/us/think/measurement/marketing-experimentation-incrementality-testing/" target="_blank" rel="nofollow noopener">Think with Google</a> (02/2026), trong năm 2025 Google Ads hạ ngân sách tối thiểu cho một thử nghiệm tăng tiến từ mức cao trước đây khoảng 100,000 USD xuống 5,000 USD. Thử nghiệm ngân sách nhỏ nên xem là tín hiệu định hướng. Cách thiết kế nhóm đối chứng có trong bài <a href="/kiem-thu-tang-tien-incrementality-testing/">kiểm thử tăng tiến</a>.</p>
 
-<p>Cách ba công cụ ăn khớp: thử nghiệm tăng tiến cho con số nhân quả của một vài kênh lớn, con số đó hiệu chỉnh MMM, MMM quyết định chia ngân sách theo quý, còn MTA hoặc data-driven attribution dùng để tối ưu hằng tuần bên trong từng kênh (nhóm quảng cáo, từ khóa, creative).</p>
+<p>Ba công cụ ăn khớp như sau: thử nghiệm tăng tiến cho con số nhân quả của vài kênh lớn và dùng để hiệu chỉnh MMM, MMM quyết định chia ngân sách theo quý, còn MTA tối ưu hằng tuần bên trong từng kênh (từ khóa, creative).</p>
 
 <h2>Doanh nghiệp Việt nên chọn mô hình phân bổ đa điểm chạm nào?</h2>
 
@@ -75,7 +75,7 @@
 
 <h3>Chi tiêu nhỏ, một đến hai kênh chính</h3>
 
-<p>Ví dụ shop chạy chủ yếu Facebook và bán trên Shopee. Chưa cần dựng MTA. Dùng báo cáo nền tảng để tối ưu trong kênh, nhưng đánh giá tổng bằng một chỉ số gộp: tổng doanh thu chia tổng chi phí marketing theo tuần. Khi muốn biết một kênh có thật sự mang thêm đơn, tạm dừng nó ở một vài tỉnh hoặc trong hai tuần và so với giai đoạn trước. Cách làm thô, nhưng trung thực hơn cộng số từ ba trình quản lý quảng cáo.</p>
+<p>Ví dụ shop chạy chủ yếu Facebook và bán trên Shopee. Chưa cần dựng MTA. Tối ưu trong kênh bằng báo cáo nền tảng, nhưng đánh giá tổng bằng tổng doanh thu chia tổng chi phí marketing theo tuần. Muốn biết một kênh có thật sự mang thêm đơn, tạm dừng nó ở vài tỉnh rồi so sánh. Thô, nhưng trung thực hơn cộng số từ ba trình quản lý quảng cáo.</p>
 
 <h3>Website hoặc app có nhiều chuyển đổi, chạy nhiều kênh Google</h3>
 
@@ -87,7 +87,7 @@
 
 <h3>Chi tiêu lớn, có TV, ngoài trời, KOL</h3>
 
-<p>Đây là lúc nên đầu tư MMM. Meridian miễn phí về mã nguồn, nhưng cần người làm dữ liệu và chuỗi dữ liệu chi tiêu, doanh số theo tuần đủ dài. Chạy ít nhất một thử nghiệm tăng tiến mỗi quý cho kênh chi nhiều nhất hoặc kênh bị nghi "ăn ké" doanh số tự nhiên, như tìm kiếm thương hiệu và retargeting, rồi dùng kết quả đó hiệu chỉnh mô hình.</p>
+<p>Đây là lúc nên đầu tư MMM. Meridian miễn phí về mã nguồn nhưng cần người làm dữ liệu. Mỗi quý chạy ít nhất một thử nghiệm tăng tiến cho kênh chi nhiều nhất hoặc kênh bị nghi "ăn ké" doanh số tự nhiên, như tìm kiếm thương hiệu và retargeting, rồi dùng kết quả hiệu chỉnh mô hình.</p>
 
 <h2>Checklist trước khi dùng số liệu phân bổ để chia ngân sách</h2>
 
@@ -102,7 +102,7 @@
 <li>Chuyển sang MMM khi có từ ba kênh trả phí lớn, có kênh offline, hoặc khi các báo cáo phân bổ mâu thuẫn đến mức không ai tin.</li>
 </ul>
 
-<p>Ba câu hỏi nên hỏi trong mọi buổi review ngân sách: "Nếu tắt kênh này hai tuần, mình mất bao nhiêu đơn?", "Con số này đến từ báo cáo của nền tảng hay từ doanh thu thật?", và "Lần gần nhất mình kiểm chứng kênh này bằng nhóm đối chứng là khi nào?". Nếu câu trả lời là chưa bao giờ, mô hình phân bổ đa điểm chạm đang được tin nhiều hơn mức nó xứng đáng.</p>
+<p>Câu hỏi nên có trong mọi buổi review ngân sách: "Nếu tắt kênh này hai tuần, mình mất bao nhiêu đơn?" và "Lần gần nhất kiểm chứng kênh này bằng nhóm đối chứng là khi nào?". Nếu câu trả lời là chưa bao giờ, mô hình phân bổ đa điểm chạm đang được tin nhiều hơn mức nó xứng đáng.</p>
 
 <p>Nếu doanh nghiệp của bạn đang có báo cáo phân bổ mâu thuẫn giữa Meta, Google, TikTok và doanh thu thật, hãy <a href="/contact/">trao đổi với đội ngũ Adtek</a> để rà lại hệ thống đo lường và lập kế hoạch thử nghiệm.</p>
 
