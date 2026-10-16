@@ -14,7 +14,7 @@ Cách dùng:
   python3 tools/covers.py render <số bài> [--style X] [--kind blog|fb|all] [--out thư-mục]   dựng thử, không ghi cover.style
   python3 tools/covers.py sheet <số bài> [--out thư-mục]   dựng mọi phong cách cho một bài để so sánh
   python3 tools/covers.py existing <wp_id>           dựng ảnh bìa blog cho bài cũ trong mục existing (vd 6076, 6078)
-  python3 tools/covers.py fbcover [center|split|cream] [--out thư-mục]   ảnh bìa Fanpage Facebook 1640x624 (content/brand/fb-cover.jpg)
+  python3 tools/covers.py fbcover [columns|minimal|center|split|cream] [--out thư-mục]   ảnh bìa Fanpage Facebook 1640x624 (content/brand/fb-cover.jpg)
   python3 tools/covers.py og [navy|cream|panel] [--out thư-mục]   ảnh chia sẻ mặc định của website (content/brand/og-default.jpg và @2x)
 """
 import base64
@@ -551,19 +551,42 @@ def og_render(variant="navy", out=None):
 # ---------------------------------------------------------------- ảnh bìa Fanpage Facebook
 
 FB_COVER_SIZE = (1640, 624)  # khổ tải lên Facebook khuyến nghị (hiển thị 820x312 trên máy tính)
-# Điện thoại hiển thị 640x360: cắt hai bên, chỉ giữ khoảng 68% chiều ngang ở giữa (x 265 đến 1375);
-# máy tính: ảnh đại diện Page đè góc dưới bên trái. Chữ và logo nằm trong x 300 đến 1340, chỉ dấu A cam (không chữ) tràn ra ngoài.
+# Ứng dụng Facebook trên điện thoại (đo từ ảnh chụp anh Tin gửi 16/10/2026): chỉ thấy x 315 đến 1325; thanh trạng thái che y < 80;
+# nút menu, sửa, tìm kiếm ở hai góc trên (y 155 đến 210); ảnh đại diện Page là hình tròn tâm (818, 573) bán kính khoảng 200
+# che giữa phía dưới (chủ Page còn thấy bong bóng "Share a note" ở x 670 đến 965, y 305 đến 400); khung trắng che y > 595.
+# Máy tính: ảnh đại diện đè góc dưới bên trái. Mẫu "columns": logo, tiêu đề giữa phía trên; dịch vụ hai cột hai bên hình tròn.
 SERVICES = ["User acquisition strategy", "CRM management", "Integrated marketing communication", "Growth consultancy", "SEO services"]
-FB_COVER_VARIANTS = ("center", "split", "cream")  # center: anh Tin chọn 16/10/2026
+FB_COVER_VARIANTS = ("columns", "minimal", "center", "split", "cream")  # anh Tin chọn bố cục giữa, chỉnh lại thành columns cho điện thoại
+FB_MOBILE = {"view": (315, 1325), "top": 80, "icons": [(330, 155, 400, 210), (1020, 155, 1290, 210)],
+             "circle": (818, 573, 200), "note": (670, 305, 965, 400), "bottom": 595}
 
 
-def fb_cover(variant="center"):
-    """split: nền navy, tiêu đề bên trái, 5 dịch vụ đánh số bên phải, dấu A cam tràn mép phải.
+def fb_cover(variant="columns"):
+    """columns: nền navy, logo và tiêu đề giữa phía trên, dịch vụ 01 đến 03 cột trái, 04 đến 05 cột phải, dấu A cam giữa phía dưới
+    (trên điện thoại nằm sau ảnh đại diện Page). minimal: như columns nhưng bỏ danh sách dịch vụ, tiêu đề lớn hơn.
+    split: nền navy, tiêu đề bên trái, 5 dịch vụ đánh số bên phải, dấu A cam tràn mép phải.
     center: nền navy, bố cục giữa như ảnh bìa cũ, 5 dịch vụ thành hàng (số trên, chữ dưới), dấu A cam ở hai góc dưới.
     cream: nền kem, tiêu đề navy bên trái, dịch vụ trên khối navy tràn mép phải, dấu A cam ở mép phải."""
     items = "".join(f'<li><span class="num">{i:02d}</span><span class="t">{esc(t)}</span></li>' for i, t in enumerate(SERVICES, 1))
     head = hl("*Growth* marketing agency")
-    if variant == "center":
+    if variant in ("columns", "minimal"):
+        li = lambda i, t: f'<li><span class="num">{i:02d}</span><span class="t">{esc(t)}</span></li>'  # noqa: E731
+        left = "".join(li(i, t) for i, t in enumerate(SERVICES[:3], 1))
+        right = "".join(li(i, t) for i, t in enumerate(SERVICES[3:], 4))
+        mini = variant == "minimal"
+        css = f"""
+body{{background:{NAVY};color:#fff}}
+.big{{position:absolute;aspect-ratio:285/253;background:{ORANGE};width:{460 if mini else 400}px;left:50%;transform:translateX(-50%);bottom:{-162 if mini else -112}px}}
+.lg{{position:absolute;left:0;right:0;top:{96 if mini else 88}px;display:flex;justify-content:center}}
+h1{{position:absolute;left:330px;right:330px;top:{230 if mini else 214}px;text-align:center;font-size:{74 if mini else 68}px;line-height:1}}
+ul{{position:absolute;top:340px;width:262px;list-style:none;display:flex;flex-direction:column;gap:20px}}
+ul.l{{left:345px}}ul.r{{left:1040px}}
+li{{display:flex;align-items:baseline;gap:12px}}
+.num{{font-size:34px;line-height:1;color:{ORANGE};width:42px;flex:none}}
+.t{{font-size:23px;line-height:1.2;font-weight:500;color:#DCE4F2}}"""
+        lists = "" if mini else f'<ul class="l">{left}</ul><ul class="r">{right}</ul>'
+        body = f"""<div class="big mark"></div><div class="lg">{logo('#fff', 80)}</div><h1>{head}</h1>{lists}"""
+    elif variant == "center":
         css = f"""
 body{{background:{NAVY};color:#fff}}
 .big{{position:absolute;aspect-ratio:285/253;background:{ORANGE};height:430px}}
@@ -594,7 +617,7 @@ li{{display:flex;align-items:baseline;gap:18px}}
     return document(css, body, *FB_COVER_SIZE)
 
 
-def fb_cover_render(variant="center", out=None):
+def fb_cover_render(variant="columns", out=None):
     """Ghi content/brand/fb-cover.jpg (1640x624); out: thư mục khác để xem thử."""
     d = Path(out) if out else ROOT / "content/brand"
     return shoot([(fb_cover(variant), d / ("fb-cover.jpg" if not out else f"fb-cover-{variant}.jpg"), *FB_COVER_SIZE, 1)])
@@ -629,8 +652,8 @@ if __name__ == "__main__":
     elif cmd == "og":  # ảnh chia sẻ mặc định của website: og [navy|cream|panel] [--out thư-mục để xem thử]
         v = args[1] if len(args) > 1 and not args[1].startswith("--") else "navy"
         print("\n".join(og_render(v, opt("--out"))))
-    elif cmd == "fbcover":  # ảnh bìa Fanpage: fbcover [center|split|cream] [--out thư-mục để xem thử]
-        v = args[1] if len(args) > 1 and not args[1].startswith("--") else "center"
+    elif cmd == "fbcover":  # ảnh bìa Fanpage: fbcover [columns|minimal|center|split|cream] [--out thư-mục để xem thử]
+        v = args[1] if len(args) > 1 and not args[1].startswith("--") else "columns"
         print("\n".join(fb_cover_render(v, opt("--out"))))
     elif cmd == "sheet":
         post = find(data, int(args[1]))
