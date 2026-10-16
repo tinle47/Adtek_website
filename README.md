@@ -28,7 +28,7 @@ Cài đặt: upload file vào `httpdocs/wp-content/mu-plugins/`. Khi chưa cài,
 
 - `GET /wp-json/adtek/v1/acf/<id>` trả toàn bộ trường ACF.
 - `POST /wp-json/adtek/v1/acf/<id>` với `{"fields": {"tên_trường": giá_trị}}` ghi từng trường (nhóm, repeater truyền dạng mảng), trả kết quả từng trường và dữ liệu sau khi ghi. Tên trường không có trong ACF bị bỏ qua (`unknown_field`).
-- `POST` với `{"purge": true}` (không kèm fields) chỉ xóa cache trang. Từ bản 1.1.0, mỗi lần ghi đều xóa cache WP-Optimize theo đúng link của trang (WP-Optimize không tự xóa trang chủ `/en/`).
+- `POST` với `{"purge": true}` (không kèm fields) chỉ xóa cache trang. Từ bản 1.1.0, mỗi lần ghi đều xóa cache WP-Optimize theo đúng link của trang (WP-Optimize không tự xóa trang chủ `/en/`). Từ bản 1.2.0, trang chủ của mỗi ngôn ngữ được xóa thêm theo link khách mở (`/`, `/en/`), trường `purged` trả danh sách link đã xóa.
 - Chỉ tài khoản có quyền sửa bài dùng được.
 
 Đồng bộ trang chủ EN theo bản VI: sửa chữ trong `content/pages/home.json`, chạy `python3 tools/sync_home.py` (chạy thử) rồi `--apply`.

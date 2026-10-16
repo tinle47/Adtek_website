@@ -292,7 +292,7 @@ if __name__ == "__main__":
         print(f"Đã lưu nội dung bài {sys.argv[2]} vào {sys.argv[3]}")
     elif cmd == "put":
         backup, purged = write_content(int(sys.argv[2]), Path(sys.argv[3]).read_text(encoding="utf-8"), sys.argv[4])
-        print(f"Đã ghi bài {sys.argv[2]}, backup {backup.relative_to(ROOT)}, xóa cache thủ công: {'có' if purged else 'không (cần adtek-acf-rest 1.1.0; WordPress vẫn tự xóa cache bài khi lưu)'}")
+        print(f"Đã ghi bài {sys.argv[2]}, backup {backup.relative_to(ROOT)}, xóa cache thủ công: {'có' if purged else 'không (cần adtek-acf-rest 1.1.0 trở lên; WordPress vẫn tự xóa cache bài khi lưu)'}")
     elif cmd == "done":
         post = find(data, int(sys.argv[2]))
         post["seo_optimized"] = datetime.now(VN).strftime("%Y-%m-%d %H:%M")

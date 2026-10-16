@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Adtek ACF REST
  * Description: Đọc và ghi trường ACF của trang/bài qua REST API, dùng để cập nhật nội dung trang chủ (vi + en) mà không cần vào wp-admin. Chỉ người có quyền sửa bài mới dùng được.
- * Version:     1.1.0
+ * Version:     1.2.0
  * Author:      Adtek
  */
 
@@ -16,20 +16,42 @@ defined( 'ABSPATH' ) || exit;
  */
 
 /*
+ * Các link cần xóa cache của bài. Trang chủ có link riêng (/en/homepage/) khác link khách thật sự mở (/en/),
+ * nên khi bài là trang chủ của ngôn ngữ nào thì thêm link trang chủ của ngôn ngữ đó.
+ */
+function adtek_acf_rest_purge_urls( $id ) {
+	$urls  = array( get_permalink( $id ) );
+	$front = (int) get_option( 'page_on_front' );
+	$lang  = apply_filters( 'wpml_element_language_code', null, array( 'element_id' => $id, 'element_type' => get_post_type( $id ) ) );
+	if ( $front && $lang ) {
+		// Bản dịch của trang chủ sang đúng ngôn ngữ của bài đang sửa.
+		$front = (int) apply_filters( 'wpml_object_id', $front, 'page', false, $lang );
+	}
+	if ( $front && $front === $id ) {
+		$urls[] = $lang ? apply_filters( 'wpml_permalink', home_url( '/' ), $lang, true ) : home_url( '/' );
+	}
+	return array_values( array_unique( array_filter( $urls ) ) );
+}
+
+/*
  * Xóa cache trang theo đúng link của bài. WP-Optimize chỉ tự xóa trang chủ ngôn ngữ mặc định,
  * trang chủ tiếng Anh (/en/) phải xóa theo URL.
  */
 function adtek_acf_rest_purge( $id ) {
 	clean_post_cache( $id );
 	do_action( 'litespeed_purge_post', $id );
+	$urls = adtek_acf_rest_purge_urls( $id );
 	if ( class_exists( 'WPO_Page_Cache' ) ) {
 		if ( method_exists( 'WPO_Page_Cache', 'delete_single_post_cache' ) ) {
 			WPO_Page_Cache::delete_single_post_cache( $id );
 		}
 		if ( method_exists( 'WPO_Page_Cache', 'delete_cache_by_url' ) ) {
-			WPO_Page_Cache::delete_cache_by_url( get_permalink( $id ) );
+			foreach ( $urls as $url ) {
+				WPO_Page_Cache::delete_cache_by_url( $url );
+			}
 		}
 	}
+	return $urls;
 }
 add_action(
 	'rest_api_init',
@@ -55,7 +77,7 @@ add_action(
 						return array(
 							'id'      => $id,
 							'fields'  => get_fields( $id ) ?: new stdClass(),
-							'version' => '1.1.0',
+							'version' => '1.2.0',
 						);
 					},
 				),
@@ -72,11 +94,10 @@ add_action(
 							return new WP_Error( 'not_found', 'Không có bài này.', array( 'status' => 404 ) );
 						}
 						if ( ! $fields && $request['purge'] ) {
-							adtek_acf_rest_purge( $id );
 							return array(
 								'id'      => $id,
-								'purged'  => get_permalink( $id ),
-								'version' => '1.1.0',
+								'purged'  => adtek_acf_rest_purge( $id ),
+								'version' => '1.2.0',
 							);
 						}
 						if ( ! is_array( $fields ) || ! $fields ) {
@@ -93,12 +114,13 @@ add_action(
 							// Ghi theo field key để ACF nhận đúng cấu trúc nhóm/repeater cả khi bài chưa từng lưu trường này.
 							$result[ $name ] = update_field( $field['key'], $value, $id ) ? 'ok' : 'unchanged';
 						}
-						adtek_acf_rest_purge( $id );
+						$purged = adtek_acf_rest_purge( $id );
 						return array(
 							'id'      => $id,
 							'result'  => $result,
+							'purged'  => $purged,
 							'fields'  => get_fields( $id ) ?: new stdClass(),
-							'version' => '1.1.0',
+							'version' => '1.2.0',
 						);
 					},
 				),
