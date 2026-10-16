@@ -7,6 +7,7 @@ Trường filters trong JSON: {"category_reports": "Việt Nam", "field_reports"
 Cách dùng:
   python3 tools/report_wp.py draft <slug>     tải PDF và ảnh bìa, tạo hoặc cập nhật bản nháp, gắn file PDF và bộ lọc
   python3 tools/report_wp.py preview <slug>   link xem trước không cần đăng nhập (7 ngày), gửi anh Tin duyệt
+  python3 tools/report_wp.py refresh <slug>   đã sửa nội dung: thay PDF, ảnh bìa và chữ trên bài (kể cả bài đã đăng)
   python3 tools/report_wp.py publish <slug>   đăng bản nháp (anh Tin đã duyệt) và xóa cache trang Reports
 ID trên WordPress ghi lại vào trường wp của file JSON để lần chạy sau cập nhật đúng bài.
 """
@@ -103,14 +104,31 @@ def preview(slug):
     print(res["url"].replace("/?p=", "/?post_type=mona_reports&p="), "hết hạn", res["expires"])
 
 
-def publish(slug):
-    r = json.loads((DIR / f"{slug}.json").read_text(encoding="utf-8"))
-    res = api("POST", f"mona_reports/{r['wp']['id']}?_fields=id,status,link", {"status": "publish"})
+def refresh(slug):
+    """Báo cáo đã sửa nội dung: tải PDF và ảnh bìa mới, cập nhật bài (giữ nguyên trạng thái), xóa ảnh bìa cũ.
+    PDF cũ giữ lại để link trong email đã gửi cho người tải trước vẫn mở được."""
+    path = DIR / f"{slug}.json"
+    r = json.loads(path.read_text(encoding="utf-8"))
+    old = {k: r["wp"].pop(k) for k in ("pdf_id", "cover_id")}
+    r["wp"].setdefault("old_pdf_ids", []).append(old["pdf_id"])
+    path.write_text(json.dumps(r, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    draft(slug)
+    api("DELETE", f"media/{old['cover_id']}?force=true")
+    purge_list()
+
+
+def purge_list():
     page = api("GET", f"pages?slug={LIST_PAGE}&_fields=id")
     if isinstance(page, list) and page:
         acf(page[0]["id"], {"purge": True})
+
+
+def publish(slug):
+    r = json.loads((DIR / f"{slug}.json").read_text(encoding="utf-8"))
+    res = api("POST", f"mona_reports/{r['wp']['id']}?_fields=id,status,link", {"status": "publish"})
+    purge_list()
     print(res)
 
 
 if __name__ == "__main__":
-    {"draft": draft, "preview": preview, "publish": publish}[sys.argv[1]](sys.argv[2])
+    {"draft": draft, "preview": preview, "refresh": refresh, "publish": publish}[sys.argv[1]](sys.argv[2])
