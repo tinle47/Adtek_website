@@ -15,7 +15,7 @@ Kế hoạch tháng M gồm các tuần có thứ Hai nằm trong tháng M (ví 
 | Kênh | Nhịp | Giờ |
 |---|---|---|
 | Blog | 4 bài/tuần: thứ Hai, Ba, Năm, Sáu | 08:05 đến 08:55, phút chọn ngẫu nhiên |
-| Facebook | 1 bài mỗi ngày, định dạng riêng cho Facebook, không đăng lại bài blog | 12:13 ngày thường, 20:13 thứ Bảy và Chủ nhật |
+| Facebook | 1 bài mỗi ngày, định dạng riêng cho Facebook, không đăng lại bài blog | Ngẫu nhiên 19:00 đến 20:00 mỗi ngày (anh Tin chọn 17/10/2026). Trường time để bất kỳ, phiên Facebook post tự gán bằng `fb_daily.py retime` |
 | TikTok | 3 video/tuần từ 1 bài blog (công cụ trong `video/`) | 19:13 thứ Ba, Năm, Bảy |
 
 Định dạng Facebook xoay theo ngày: thứ Hai góc số liệu, thứ Ba thuật ngữ 1 phút, thứ Tư carousel hướng dẫn, thứ Năm tin nóng (có tin lớn thì thay), thứ Sáu phép tính nhanh (con số ví dụ ghi rõ là ví dụ), thứ Bảy hiểu lầm và sự thật hoặc câu hỏi mở, Chủ nhật video ngắn (Reels, dùng lại video TikTok; chưa có video thì đổi sang câu hỏi mở). Caption Facebook giữ giọng riêng của Page Adtek, không áp dụng `van-phong.md` (anh Tin chọn phương án A ngày 17/10/2026). Bài liên quan tới một bài blog đã lên sóng thì Page bình luận link bài đó, không giới hạn số bài có link mỗi tuần (anh Tin chọn phương án A ngày 16/10/2026).
