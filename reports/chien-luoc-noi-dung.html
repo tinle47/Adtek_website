@@ -1,0 +1,388 @@
+<title>Chiến lược nội dung Adtek</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+<style>
+/* Layout: báo cáo một cột khoảng 760px, mục lục dính trên cùng, bảng cuộn ngang riêng. Màu theo bộ nhận diện Adtek (navy, cam), tiêu đề Newsreader như ảnh bìa blog. */
+:root {
+  --navy: #002D72;
+  --orange: #FF9014;
+  --orange-ink: #B05A00;
+  --bg: #F5F7FB;
+  --surface: #FFFFFF;
+  --line: #DCE2EC;
+  --fg: #16223A;
+  --muted: #56647D;
+  --heading: #002D72;
+  --chip: #E8EEF8;
+  --hi: #FFF2E2;
+  --ok: #1E7A4C; --ok-bg: #E3F4EA;
+  --warn: #9A5B00; --warn-bg: #FFF1DD;
+  --risk: #A3332B; --risk-bg: #FBE7E5;
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1426; --surface: #121D33; --line: #26355A; --fg: #E5EBF6; --muted: #9AA8C2;
+    --heading: #B9CEF5; --chip: #1B2844; --hi: #2E2213; --orange-ink: #FFB25C;
+    --ok: #6FD39C; --ok-bg: #12301F; --warn: #FFC274; --warn-bg: #352411; --risk: #FF9A90; --risk-bg: #3A1A18;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1426; --surface: #121D33; --line: #26355A; --fg: #E5EBF6; --muted: #9AA8C2;
+  --heading: #B9CEF5; --chip: #1B2844; --hi: #2E2213; --orange-ink: #FFB25C;
+  --ok: #6FD39C; --ok-bg: #12301F; --warn: #FFC274; --warn-bg: #352411; --risk: #FF9A90; --risk-bg: #3A1A18;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15.5px; line-height: 1.65; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.wrap { max-width: 800px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 64px; }
+nav.toc { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+nav.toc .in { max-width: 800px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 10px; display: flex; gap: 6px 16px; overflow-x: auto; white-space: nowrap; font-size: 13px; }
+nav.toc a { color: var(--muted); text-decoration: none; font-weight: 500; }
+nav.toc a:hover, nav.toc a:focus-visible { color: var(--heading); }
+a { color: var(--heading); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+header.top { padding-block: 40px 8px; display: grid; gap: 10px; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--orange-ink); font-weight: 600; }
+h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 6vw, 44px); line-height: 1.12; color: var(--heading); margin: 0; text-wrap: balance; }
+.byline { color: var(--muted); font-size: 13.5px; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: 27px; line-height: 1.2; color: var(--heading); margin: 0; text-wrap: balance; }
+h3 { font-size: 16.5px; font-weight: 700; margin: 0; color: var(--fg); }
+section { padding-block: 34px 0; display: grid; gap: 14px; scroll-margin-top: 56px; }
+p { margin: 0; max-width: 68ch; }
+ul, ol { margin: 0; padding-left: 20px; display: grid; gap: 5px; max-width: 70ch; }
+.lead { font-size: 17px; }
+.muted { color: var(--muted); }
+small, .note { font-size: 13px; color: var(--muted); }
+.thesis { background: var(--navy); color: #FFFFFF; border-radius: var(--radius); padding: 22px 22px; display: grid; gap: 8px; }
+.thesis .k { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); font-weight: 600; }
+.thesis q { font-family: var(--font-display); font-size: clamp(21px, 4vw, 27px); line-height: 1.3; quotes: none; font-weight: 500; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; display: grid; gap: 2px; align-content: start; }
+.stat b { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--heading); font-variant-numeric: tabular-nums; line-height: 1.15; }
+.stat span { font-size: 13px; color: var(--muted); line-height: 1.45; }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 640px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+th { font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--chip); }
+tr:last-child td { border-bottom: 0; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; color: var(--heading); }
+.pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
+.p-ok { background: var(--ok-bg); color: var(--ok); }
+.p-warn { background: var(--warn-bg); color: var(--warn); }
+.p-risk { background: var(--risk-bg); color: var(--risk); }
+.callout { background: var(--hi); border-radius: var(--radius); padding: 14px 16px; display: grid; gap: 6px; }
+.opts { display: grid; gap: 10px; }
+.opt { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; display: grid; gap: 6px; }
+.opt.rec { border-color: var(--orange); }
+.opt h3 { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+.tag { font-size: 12px; font-weight: 600; color: var(--orange-ink); }
+.pc { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pc div { min-width: 0; }
+.pc b { font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+@media (max-width: 560px) { .pc { grid-template-columns: 1fr; } }
+.month { display: grid; gap: 10px; padding-block: 6px; }
+.month + .month { border-top: 1px solid var(--line); padding-top: 18px; }
+.mhead { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.mhead .m { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--heading); }
+.mhead .t { font-weight: 600; }
+.fbpost { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: grid; gap: 8px; font-size: 14.5px; }
+.fbpost .ttl { font-weight: 700; letter-spacing: .01em; }
+.fbpost .meta { font-size: 12px; color: var(--muted); }
+.fbpost p { white-space: pre-line; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.grid2 > * { min-width: 0; }
+.p-blog { background: var(--chip); color: var(--heading); }
+.p-fb { background: var(--hi); color: var(--orange-ink); }
+table.cal { min-width: 680px; }
+.chg { font-size: 12.5px; color: var(--orange-ink); margin-top: 2px; }
+.brief { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.ref { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.src { font-size: 13px; color: var(--muted); display: grid; gap: 4px; padding-left: 18px; }
+.src a { word-break: break-word; }
+footer { padding-block: 40px 0; font-size: 13px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<nav class="toc" aria-label="Mục lục"><div class="in">
+  <a href="#tomtat">Tóm tắt</a>
+  <a href="#thitruong">Thị trường</a>
+  <a href="#nganh">Ngành</a>
+  <a href="#congnghe">Công nghệ</a>
+  <a href="#chung">Chiến lược chung</a>
+  <a href="#blog">Blog</a>
+  <a href="#facebook">Facebook</a>
+  <a href="#tiktok">TikTok</a>
+  <a href="#vanhanh">Vận hành</a>
+  <a href="#nguon">Nguồn</a>
+</div></nav>
+
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">Phòng Marketing Adtek · Kế hoạch tháng 11/2026</div>
+  <h1>Chiến lược nội dung Adtek</h1>
+  <div class="byline">Nghiên cứu cập nhật 16/10/2026 · Lần cập nhật tới 29/10/2026 · Kế hoạch tháng 11: 2/11 đến 6/12/2026 · Trạng thái: chờ áp dụng cho các phiên đăng bài</div>
+</header>
+
+<section id="tomtat">
+  <h2>Tóm tắt</h2>
+  <ul>
+    <li><b>Thị trường:</b> GDP quý III/2026 tăng 9.95%, bán lẻ 9 tháng tăng 13.4%, thương mại điện tử 9 tháng tăng 22%. Ngành ưu tiên: làm đẹp, FMCG và mẹ bé trên sàn, ô tô và xe máy điện, giáo dục, du lịch, tài chính số và bảo hiểm.</li>
+    <li><b>Công nghệ:</b> quảng cáo do AI vận hành trên Meta, Google, TikTok; ChatGPT Ads mở tại Việt Nam từ 23/9/2026; nội dung AI mô phỏng người thật phải gắn nhãn từ 1/5/2026.</li>
+    <li><b>Chủ đề tháng 11:</b> mùa sale có lãi khi AI chạy quảng cáo.</li>
+    <li><b>Tháng 11 trên ba kênh:</b> 20 bài blog (4 bài/tuần), 35 bài Facebook (mỗi ngày 1 bài, 9 định dạng, không đăng lại bài blog), 15 video TikTok.</li>
+    <li><b>Lịch nghiên cứu:</b> mỗi tháng một lần, 3 ngày trước ngày 1 tháng mới, chỉ lập lịch cho tháng kế tiếp. Lịch tự động đã tạo, lần chạy đầu 29/10/2026.</li>
+  </ul>
+  <div class="thesis">
+    <div class="k">Thông điệp xuyên suốt</div>
+    <q>Khi AI tự chạy quảng cáo, lợi thế nằm ở ba việc máy không tự làm: creative khác biệt, dữ liệu sạch và phép tính lợi nhuận.</q>
+  </div>
+  <div class="callout">
+    <h3>Cần anh quyết hoặc cung cấp</h3>
+    <ol>
+      <li>Cho phép ghi lịch vào nhánh của các phiên đăng bài và sửa lịch tự động của các phiên đó. Hạn: trước thứ Sáu 30/10, ngày phiên Blog post viết 4 bài cho tuần 2/11 (<a href="#vanhanh">mục Vận hành</a>).</li>
+      <li>Cách tăng người xem cho Page 107 người theo dõi (<a href="#pa-reach">mục Facebook</a>).</li>
+      <li>Kênh TikTok đang chạy chưa, phiên nào phụ trách (<a href="#tiktok">mục TikTok</a>).</li>
+      <li>Số liệu 2 mini-case ẩn danh: quy trình 30 mẫu quảng cáo (trước 16/11), tỷ trọng doanh thu từ khách cũ (trước 30/11).</li>
+    </ol>
+  </div>
+</section>
+
+<section id="thitruong">
+  <h2>1. Bức tranh thị trường 9 tháng 2026</h2>
+  <div class="stats">
+    <div class="stat"><b>9.95%</b><span>Tăng trưởng GDP quý III/2026, cao nhất từ 2022. 9 tháng: 9.01%</span></div>
+    <div class="stat"><b>+13.4%</b><span>Bán lẻ hàng hóa và dịch vụ 9 tháng, đạt 5,925.7 nghìn tỷ đồng</span></div>
+    <div class="stat"><b>50.36 tỷ</b><span>USD vốn FDI đăng ký 9 tháng, tăng 76.4%</span></div>
+    <div class="stat"><b>17.7 triệu</b><span>Lượt khách quốc tế 9 tháng, tăng 14.5%</span></div>
+    <div class="stat"><b>+22%</b><span>GMV thương mại điện tử 9 tháng, 411,800 tỷ đồng (YouNet ECI)</span></div>
+    <div class="stat"><b>45%</b><span>Thị phần GMV của TikTok Shop 9 tháng, Shopee 53%</span></div>
+  </div>
+  <ul>
+    <li><b>Ý nghĩa với khách hàng của Adtek:</b> cầu tiêu dùng tăng thật (bán lẻ trừ giá vẫn tăng 7.8%), nhưng người bán nhỏ bị ép: hơn 160,000 gian hàng đóng cửa vì chi phí, số shop nhỏ giảm khoảng 27%. Tiền dồn về thương hiệu có hệ thống.</li>
+    <li><b>Chính sách tạo nhu cầu tư vấn:</b> Luật Bảo vệ dữ liệu cá nhân (1/1/2026), Luật Quảng cáo sửa đổi về trách nhiệm KOL (1/1/2026), Luật Trí tuệ nhân tạo (1/3/2026), Luật Thương mại điện tử (1/7/2026), bỏ thuế khoán hộ kinh doanh (1/1/2026), sáp nhập còn 34 tỉnh thành.</li>
+    <li><b>Triển vọng 2027:</b> ADB dự báo 7.6%, Standard Chartered kỳ vọng 11%. Hai dự báo chênh nhau nhiều, nên nội dung chỉ nên nói "tăng trưởng cao" thay vì chốt một con số.</li>
+  </ul>
+</section>
+
+<section id="nganh">
+  <h2>2. Ngành đang tăng trưởng, xếp theo mức phù hợp với Adtek</h2>
+  <p class="muted">Tiêu chí xếp hạng: tốc độ tăng, mức chi cho quảng cáo số, khớp với dịch vụ Adtek (Brand Commerce, Lead generation, Creative, SEO, App UA) và rủi ro pháp lý.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Ngành</th><th>Tín hiệu tăng trưởng</th><th>Kênh hiệu quả</th><th>Phù hợp</th><th>Rủi ro chính</th></tr></thead>
+    <tbody>
+      <tr><td><b>Làm đẹp, chăm sóc cá nhân</b></td><td>Ngành lớn nhất trên sàn, 49,508 tỷ đồng H1/2026 (+38.4%, Metric). Thị phần TikTok Shop ở mỹ phẩm lên 49%</td><td>TikTok Shop GMV Max, KOC, livestream, Shopee Ads</td><td><span class="pill p-ok">Cao</span></td><td>Trách nhiệm KOL theo luật mới, phí sàn tăng</td></tr>
+      <tr><td><b>FMCG, bách hóa, mẹ và bé</b></td><td>FMCG +36% riêng quý III (YouNet). Bách hóa, thực phẩm H1 +151%, sữa và thực phẩm cho bé +48% (Metric)</td><td>Brand commerce đa sàn, Zalo OA giữ khách</td><td><span class="pill p-ok">Cao</span></td><td>Biên lợi nhuận mỏng, hạn chế quảng cáo sữa cho trẻ nhỏ</td></tr>
+      <tr><td><b>Ô tô, xe máy điện</b></td><td>VAMA 9 tháng +12%, hybrid +64%. Xe máy điện 7 tháng gần gấp đôi (+97.2%). Hà Nội hạn chế xe xăng Vành đai 1 từ 1/7/2026</td><td>Lead cho đại lý qua Google Search, Meta Lead Ads, Zalo, SEO local</td><td><span class="pill p-ok">Cao</span></td><td>Phụ thuộc chính sách, lãi vay cao</td></tr>
+      <tr><td><b>Giáo dục</b></td><td>Nghị quyết 71: tiếng Anh thành ngôn ngữ thứ hai, Hà Nội thí điểm 20 trường từ năm học 2026-2027. Du học Mỹ +16%</td><td>Lead theo mùa tuyển sinh, SEO, Zalo nurture</td><td><span class="pill p-ok">Cao</span></td><td>Chi phí lead tăng mạnh mùa cao điểm</td></tr>
+      <tr><td><b>Du lịch, khách sạn</b></td><td>Khách quốc tế 9 tháng +14.5%, lữ hành 8 tháng +17.1%. Đà Nẵng lưu trú ăn uống +26.2%</td><td>Google Search, Hotel Ads, SEO tiếng Hàn và tiếng Trung, TikTok</td><td><span class="pill p-ok">Cao</span></td><td>Mùa vụ, OTA quốc tế chiếm ngân sách</td></tr>
+      <tr><td><b>Tài chính số, bảo hiểm</b></td><td>Thanh toán qua Internet quý I +65.7%. Bảo hiểm sức khỏe H1 +17.3%</td><td>App UA (Google App, TikTok, Meta), lead bảo hiểm sức khỏe</td><td><span class="pill p-ok">Cao</span></td><td>Luật dữ liệu cá nhân hạn chế remarketing</td></tr>
+      <tr><td><b>Y tế tư nhân, nhà thuốc, TPCN</b></td><td>Long Châu H1/2026 doanh thu +33%. Các chuỗi bệnh viện tư mở rộng</td><td>Google Search, SEO y khoa, Zalo đặt lịch</td><td><span class="pill p-warn">Trung bình</span></td><td>Phải xin xác nhận nội dung quảng cáo, nền tảng hạn chế ngành</td></tr>
+      <tr><td><b>Bất động sản nhà ở</b></td><td>Đang hạ nhiệt: mở bán căn hộ Hà Nội quý III -40% (CBRE). Điểm sáng: nhà ở xã hội</td><td>Lead gen, landing page, Zalo, video 3D</td><td><span class="pill p-warn">Trung bình</span></td><td>Lãi vay 12% đến 16%, chủ đầu tư cắt ngân sách</td></tr>
+      <tr><td><b>BĐS khu công nghiệp, logistics</b></td><td>FDI đăng ký +76.4%, chế biến chế tạo chiếm 82.6% vốn thực hiện</td><td>SEO đa ngôn ngữ, nội dung chuyên sâu, LinkedIn</td><td><span class="pill p-warn">Trung bình</span></td><td>Ít lead, chu kỳ rất dài, phụ thuộc thuế quan Mỹ</td></tr>
+      <tr><td><b>Điện mặt trời mái nhà</b></td><td>Nghị định 243/2026 cho bán điện dư tới 50% (trước 20%)</td><td>Google Search, Meta lead, SEO local</td><td><span class="pill p-warn">Trung bình</span></td><td>Thủ tục chưa ổn định, chưa có số liệu doanh số</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Theo dõi, chưa ưu tiên: F&amp;B chuỗi (H1 chỉ +6.55%, 43% cơ sở giảm doanh thu), thẩm mỹ (rủi ro pháp lý), thú cưng, nội thất, bán dẫn và trung tâm dữ liệu (B2B thuần, chi quảng cáo số thấp).</p>
+  <div class="callout">
+    <h3>Khoảng trống trong nội dung hiện có</h3>
+    <p>Cụm C6 (playbook ngành) mới có bất động sản, giáo dục, thực phẩm chức năng. Tháng 11 thêm FMCG trên sàn và ô tô, xe điện. Du lịch, tài chính và bảo hiểm để dành cho các tháng sau.</p>
+  </div>
+</section>
+
+<section id="congnghe">
+  <h2>3. Xu hướng công nghệ digital marketing</h2>
+  <p class="muted">Xếp theo mức tác động với doanh nghiệp Việt Nam. Cột "Tại Việt Nam" phân biệt đã có ở Việt Nam hay mới có ở thị trường khác.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Xu hướng</th><th>Tại Việt Nam</th><th>Mốc và số liệu</th><th>Góc nội dung cho Adtek</th></tr></thead>
+    <tbody>
+      <tr><td><b>TikTok GMV Max, KOC, livestream</b></td><td><span class="pill p-ok">Đã có</span></td><td>GMV Max là loại chiến dịch duy nhất cho TikTok Shop Ads từ 7/2025. Số nhà sáng tạo affiliate tăng 140% năm 2025 (TikTok tự công bố)</td><td>GMV Max nắm quyền điều khiển, marketer còn làm được gì</td></tr>
+      <tr><td><b>Meta AI vận hành quảng cáo (Andromeda, GEM, Advantage+)</b></td><td><span class="pill p-ok">Đã có</span></td><td>Meta báo chuyển đổi +15.7% trên Facebook. Nghiên cứu độc lập của Confect trên 3,014 nhà quảng cáo: ROAS trung bình giảm 7%</td><td>Meta báo tăng 15.7%, còn ROAS của bạn thì sao</td></tr>
+      <tr><td><b>AI Search: AI Overviews, AI Mode tiếng Việt, GEO</b></td><td><span class="pill p-ok">Đã có</span></td><td>CTR tự nhiên trên truy vấn có AI Overview giảm từ 1.76% xuống 0.61% (Seer, 9/2025). Thương hiệu được trích dẫn có thêm 35% click</td><td>Traffic SEO giảm nhưng doanh thu không giảm: đọc số liệu đúng cách</td></tr>
+      <tr><td><b>ChatGPT Ads</b></td><td><span class="pill p-ok">Mở 23/9/2026</span></td><td>Việt Nam nằm trong đợt mở 7 thị trường Đông Nam Á. 81% người dùng AI tại Việt Nam dùng ChatGPT (Decision Lab)</td><td>ChatGPT Ads đã vào Việt Nam: ngành nào nên chạy thử, ngành nào nên chờ</td></tr>
+      <tr><td><b>Google AI Max, Smart Bidding Exploration, Demand Gen</b></td><td><span class="pill p-ok">Đã có</span></td><td>Từ 1/9/2026, chiến dịch Search dùng broad match cấp chiến dịch bị tự chuyển sang AI Max (nguồn agency, cần xác minh)</td><td>Google đã bật AI Max thay bạn: 6 cài đặt cần kiểm tra</td></tr>
+      <tr><td><b>AI agent bán hàng qua chat</b></td><td><span class="pill p-warn">Một phần</span></td><td>Meta Business Agent ra mắt toàn cầu 3/6/2026. Zalo có Chat AI đặt hàng trong Mini App. Checkout bằng agent (ChatGPT, Google UCP) chưa có ở Việt Nam</td><td>Nhân viên tư vấn 24/7 trên Messenger và Zalo: thực tế ra sao</td></tr>
+      <tr><td><b>Zalo làm CRM</b></td><td><span class="pill p-ok">Đã có</span></td><td>81.3 triệu người dùng hằng tháng, khoảng 30,000 OA đang hoạt động (VNG, quý II/2026)</td><td>Playbook OA, ZNS, Mini App cho doanh nghiệp vừa</td></tr>
+      <tr><td><b>Creative bằng AI và gắn nhãn AI</b></td><td><span class="pill p-ok">Luật có hiệu lực</span></td><td>Luật Trí tuệ nhân tạo hiệu lực 1/3/2026. Nghị định 142/2026 (hiệu lực 1/5/2026): nội dung mô phỏng người thật, giọng thật phải gắn nhãn. Sora đã đóng API 24/9/2026</td><td>Quảng cáo dùng AI phải gắn nhãn: ai bị áp dụng, làm thế nào</td></tr>
+      <tr><td><b>Đo lường: CAPI, server-side, MMM</b></td><td><span class="pill p-ok">Đã có</span></td><td>Chrome giữ cookie bên thứ ba, Privacy Sandbox dừng. iOS 26 xóa gclid, fbclid ở chế độ riêng tư. Meridian (MMM miễn phí của Google) tích hợp vào GA360</td><td>Cookie chưa chết nhưng dữ liệu của bạn đang thiếu</td></tr>
+      <tr><td><b>Social search, video ngắn đa nền tảng</b></td><td><span class="pill p-ok">Đã có</span></td><td>Zalo Video 40 triệu người dùng hằng tháng. YouTube khoảng 62.1 triệu người dùng tại Việt Nam</td><td>Một video, bốn nền tảng: tối ưu tìm kiếm trên TikTok</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Chưa nên viết thành bài riêng vì thiếu số liệu Việt Nam: retail media ngoài sàn (GrabAds), CTV. Quảng cáo trong AI Overviews chưa mở ở Việt Nam.</p>
+</section>
+
+
+
+<section id="nhatky">
+  <h2>Nhật ký nghiên cứu</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Ngày</th><th>Nội dung cập nhật</th></tr></thead>
+    <tbody><tr><td class="n">16/10/2026</td><td>Nghiên cứu lần đầu: vĩ mô 9 tháng 2026, 10 ngành tăng trưởng, 10 xu hướng công nghệ</td></tr></tbody>
+  </table></div>
+</section>
+
+<section id="chung">
+  <h2>4. Chiến lược chung cho các kênh</h2>
+  <h3>Bốn trụ nội dung</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Trụ</th><th>Tỷ trọng</th><th>Ví dụ tháng 11</th></tr></thead>
+    <tbody>
+      <tr><td><b>Cập nhật nền tảng và luật</b></td><td class="n">30%</td><td>ChatGPT Ads, Google AI Max, gắn nhãn nội dung AI</td></tr>
+      <tr><td><b>Playbook ngành tăng trưởng</b></td><td class="n">30%</td><td>FMCG trên sàn, mỹ phẩm trên TikTok Shop, ô tô và xe điện</td></tr>
+      <tr><td><b>Đo lường và lợi nhuận</b></td><td class="n">20%</td><td>Giá hòa vốn 11.11, lãi lỗ một phiên livestream, Conversions API</td></tr>
+      <tr><td><b>Bằng chứng Adtek</b></td><td class="n">20%</td><td>Mini-case trong mỗi bài blog, 2 mini-case trên Facebook</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Quy tắc giữ các kênh cùng một hướng</h3>
+  <ul>
+    <li>Cùng chủ đề tháng và cùng chủ đề tuần: bài Facebook và video TikTok trong tuần bám vào bài blog cùng tuần.</li>
+    <li>Cùng số liệu: một con số dùng trên nhiều kênh phải giống nhau và ghi cùng nguồn.</li>
+    <li>Mỗi kênh một định dạng riêng: Facebook không đăng lại bài blog. Bài nào liên quan tới bài blog đã lên sóng thì Page bình luận link bài đó.</li>
+    <li>Cùng thuật ngữ theo từ điển Adtek, cùng giọng chuyên gia nói thẳng, có số, không emoji, không gạch dài.</li>
+    <li>Hashtag tháng thêm vào hashtag riêng của từng bài, ví dụ <code>#TangTruongCoLai</code>.</li>
+  </ul>
+</section>
+
+<section id="blog">
+  <h2>5. Kênh Blog</h2>
+  <div class="tbl"><table>
+    <tbody>
+      <tr><td><b>Mục tiêu</b></td><td>Được Google và AI trích dẫn, tạo lead qua /contact/</td></tr>
+      <tr><td><b>Người đọc</b></td><td>Người đang tìm giải pháp, có ý định tìm kiếm rõ</td></tr>
+      <tr><td><b>Định dạng</b></td><td>Khoảng 2,000 chữ, bảng, checklist, ít nhất 3 nguồn có tháng/năm, một phần chỉ Adtek viết được</td></tr>
+      <tr><td><b>Nhịp</b></td><td>4 bài/tuần: thứ Hai, Ba, Năm, Sáu (trước đây 2 bài/tuần)</td></tr>
+      <tr><td><b>Giờ đăng</b></td><td>08:05 đến 08:55, phút chọn ngẫu nhiên</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Lý do chọn giờ:</b> người đọc B2B đọc tin đầu giờ làm việc. Đăng buổi sáng thì Google có cả ngày để thu thập, phiên SEO tối ưu luôn lúc 21:43 cùng ngày. Giờ này cũng tách khỏi giờ đăng Facebook 12:13.</p>
+  <p><b>Thay đổi so với lịch cũ:</b> thêm 4 bài mới theo nghiên cứu (ChatGPT Ads, FMCG trên sàn, gắn nhãn nội dung AI, ô tô và xe điện). Dời bài Livestream, Quảng cáo Tết, Hook 3 giây và một số bài tháng 12, tháng 1 lên tháng 11. Các bài còn lại chuyển thành danh sách chờ, mỗi tháng chọn lại theo nghiên cứu mới.</p>
+  <h3>Lịch blog tháng 11 (20 bài)</h3><div class="tbl"><table class="cal"><thead><tr><th>Ngày</th><th>Giờ</th><th>Bài</th><th>Tiêu đề</th><th>Cụm</th><th>Từ khóa</th></tr></thead><tbody><tr><td class="n">Thứ Hai 2/11</td><td class="n">08:33</td><td class="n">33</td><td>ChatGPT Ads tại Việt Nam: ngành nào nên chạy thử, ngành nào nên chờ<div class="chg">Bài mới. </div></td><td>C2</td><td>ChatGPT Ads</td></tr><tr><td class="n">Thứ Ba 3/11</td><td class="n">08:31</td><td class="n">7</td><td>Kế hoạch marketing Tết 2027: timeline từ tháng 11 đến tháng 2</td><td>C5</td><td>kế hoạch marketing Tết</td></tr><tr><td class="n">Thứ Năm 5/11</td><td class="n">08:28</td><td class="n">8</td><td>Google AI Max for Search: có nên bật và cách kiểm soát</td><td>C2</td><td>AI Max for Search</td></tr><tr><td class="n">Thứ Sáu 6/11</td><td class="n">08:49</td><td class="n">10</td><td>Retail media tại Việt Nam: Shopee Ads, TikTok GMV Max hoạt động thế nào</td><td>C1</td><td>quảng cáo sàn thương mại điện tử</td></tr><tr><td class="n">Thứ Hai 9/11</td><td class="n">08:12</td><td class="n">16</td><td>Livestream bán hàng: kịch bản, KPI và cách tính lãi lỗ một phiên<div class="chg">Dời từ tháng 12 lên trước 11.11</div></td><td>C1</td><td>livestream bán hàng hiệu quả</td></tr><tr><td class="n">Thứ Ba 10/11</td><td class="n">08:43</td><td class="n">9</td><td>Lead generation bất động sản 2026: từ quảng cáo đến CRM</td><td>C6</td><td>lead bất động sản</td></tr><tr><td class="n">Thứ Năm 12/11</td><td class="n">08:36</td><td class="n">34</td><td>FMCG trên Shopee và TikTok Shop 2026: bán hàng thiết yếu và giữ khách mua lại<div class="chg">Bài mới. </div></td><td>C1</td><td>FMCG thương mại điện tử</td></tr><tr><td class="n">Thứ Sáu 13/11</td><td class="n">08:10</td><td class="n">11</td><td>Lập ngân sách marketing 2027 theo giai đoạn tăng trưởng doanh nghiệp</td><td>C5</td><td>ngân sách marketing</td></tr><tr><td class="n">Thứ Hai 16/11</td><td class="n">08:08</td><td class="n">12</td><td>Đo lượng truy cập từ ChatGPT, Gemini, Perplexity trong GA4<div class="chg">Thêm cách đo lượt truy cập từ ChatGPT Ads</div></td><td>C4</td><td>traffic từ AI GA4</td></tr><tr><td class="n">Thứ Ba 17/11</td><td class="n">08:45</td><td class="n">35</td><td>Gắn nhãn nội dung AI trong quảng cáo: Nghị định 142/2026 áp dụng thế nào<div class="chg">Bài mới. </div></td><td>C2</td><td>gắn nhãn nội dung AI</td></tr><tr><td class="n">Thứ Năm 19/11</td><td class="n">08:34</td><td class="n">13</td><td>Sản xuất 30 mẫu quảng cáo mỗi tháng với AI mà vẫn giữ bản sắc thương hiệu<div class="chg">Thêm phần quy trình gắn nhãn AI, dẫn sang bài 35</div></td><td>C2</td><td>creative strategy</td></tr><tr><td class="n">Thứ Sáu 20/11</td><td class="n">08:33</td><td class="n">30</td><td>Công thức hook 3 giây cho video ngắn bán hàng</td><td>C2</td><td>hook video TikTok</td></tr><tr><td class="n">Thứ Hai 23/11</td><td class="n">08:51</td><td class="n">14</td><td>Xây mạng lưới KOC và affiliate trên TikTok Shop cho ngành mỹ phẩm</td><td>C1</td><td>KOC TikTok Shop</td></tr><tr><td class="n">Thứ Ba 24/11</td><td class="n">08:53</td><td class="n">15</td><td>Zalo OA và ZNS: kênh CRM hiệu quả nhất tại Việt Nam</td><td>C3</td><td>Zalo ZNS marketing</td></tr><tr><td class="n">Thứ Năm 26/11</td><td class="n">08:41</td><td class="n">23</td><td>Quảng cáo mùa Tết: CPM tăng cao, khi nào tăng hoặc giảm ngân sách<div class="chg">Đổi từ 29/12 lên 26/11 để doanh nghiệp kịp lập ngân sách Tết</div></td><td>C2</td><td>quảng cáo Tết</td></tr><tr><td class="n">Thứ Sáu 27/11</td><td class="n">08:20</td><td class="n">17</td><td>Conversions API và server-side tracking: vì sao dữ liệu quảng cáo bị thiếu</td><td>C3</td><td>Conversions API</td></tr><tr><td class="n">Thứ Hai 30/11</td><td class="n">08:34</td><td class="n">36</td><td>Digital marketing ngành ô tô và xe máy điện 2027: lead cho đại lý<div class="chg">Bài mới. </div></td><td>C6</td><td>marketing ô tô</td></tr><tr><td class="n">Thứ Ba 1/12</td><td class="n">08:36</td><td class="n">18</td><td>Brand Commerce: cân bằng giữa đầu tư thương hiệu và performance</td><td>C5</td><td>brand commerce</td></tr><tr><td class="n">Thứ Năm 3/12</td><td class="n">08:23</td><td class="n">26</td><td>Retention marketing: tăng doanh thu từ khách hàng cũ</td><td>C3</td><td>retention marketing</td></tr><tr><td class="n">Thứ Sáu 4/12</td><td class="n">08:50</td><td class="n">29</td><td>AI agent trong marketing: 5 quy trình doanh nghiệp có thể tự động hóa ngay<div class="chg">Thêm Meta Business Agent (ra mắt 3/6/2026) và chatbot Zalo</div></td><td>C5</td><td>AI agent marketing</td></tr></tbody></table></div>
+  <h3>KPI blog</h3>
+  <ul>
+    <li>100% bài được Google index trong 7 ngày.</li>
+    <li>Đo nền số lần AI Overview và ChatGPT trích dẫn Adtek cho 10 từ khóa chính trong tháng 11.</li>
+    <li>Gắn UTM cho mọi link từ Facebook và TikTok để đếm lead từ blog.</li>
+  </ul>
+</section>
+
+<section id="facebook">
+  <h2>6. Kênh Facebook</h2>
+  <div class="tbl"><table>
+    <tbody>
+      <tr><td><b>Hiện trạng</b></td><td>107 người theo dõi. Bỏ trống từ 9/2024 đến 16/10/2026, các bài cũ đạt 0 đến 10 lượt cảm xúc</td></tr>
+      <tr><td><b>Mục tiêu</b></td><td>Tạo nhận diện, trò chuyện với chủ doanh nghiệp và người làm marketing, có tin nhắn hỏi dịch vụ</td></tr>
+      <tr><td><b>Nhịp</b></td><td>1 bài mỗi ngày, định dạng riêng cho Facebook, không đăng lại bài blog</td></tr>
+      <tr><td><b>Giờ đăng</b></td><td>12:13 thứ Hai đến thứ Sáu (giờ nghỉ trưa), 20:13 thứ Bảy và Chủ nhật (buổi tối cuối tuần)</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Định dạng theo ngày</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Ngày</th><th>Định dạng</th><th>Cách làm</th><th>Hình ảnh</th></tr></thead>
+    <tbody>
+      <tr><td><b>Thứ Hai</b></td><td>Góc số liệu</td><td>Một con số thị trường hoặc ngành, ba câu giải thích ý nghĩa cho doanh nghiệp</td><td>Ảnh 1:1, số lớn</td></tr>
+      <tr><td><b>Thứ Ba</b></td><td>Thuật ngữ 1 phút</td><td>Định nghĩa một khái niệm, một ví dụ Việt Nam, một lỗi hay gặp</td><td>Thẻ định nghĩa 1:1</td></tr>
+      <tr><td><b>Thứ Tư</b></td><td>Carousel hướng dẫn</td><td>5 đến 7 trang, mỗi trang một bước hoặc một ý</td><td>Nhiều ảnh 1:1</td></tr>
+      <tr><td><b>Thứ Năm</b></td><td>Tin nóng</td><td>Thay đổi của nền tảng hoặc luật: thay đổi gì, ai bị ảnh hưởng, làm gì ngay. Có tin lớn trong tuần thì thay brief dự phòng</td><td>Ảnh tin 1:1</td></tr>
+      <tr><td><b>Thứ Sáu</b></td><td>Phép tính nhanh hoặc mini-case</td><td>Một phép tính bằng ví dụ cụ thể, hoặc một kết quả dự án ẩn danh của Adtek</td><td>Bảng tính 1:1</td></tr>
+      <tr><td><b>Thứ Bảy</b></td><td>Hiểu lầm và sự thật, hoặc câu hỏi mở</td><td>Một hiểu lầm phổ biến và sự thật kèm số liệu, hoặc một câu hỏi mời bình luận</td><td>Ảnh hai cột 1:1</td></tr>
+      <tr><td><b>Chủ nhật</b></td><td>Video ngắn (Reels)</td><td>Dùng lại video TikTok của tuần. Chưa có video thì đổi sang câu hỏi mở</td><td>Video dọc 9:16</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Lịch Facebook tháng 11 (35 bài, mỗi ngày 1 bài)</h3><div class="tbl"><table class="cal"><thead><tr><th>Ngày</th><th>Giờ</th><th>Định dạng</th><th>Nội dung</th><th>Số liệu và nguồn</th></tr></thead><tbody><tr><td class="n">Thứ Hai 2/11</td><td class="n">12:13</td><td><span class="pill p-fb">Góc số liệu</span></td><td><b>TikTok Shop còn cách Shopee bao xa?</b><div class="brief">Bình luận link bài 3</div></td><td>GMV 9 tháng 411,800 tỷ đồng (+22%), Shopee 53%, TikTok Shop 45%, khoảng cách quý III khoảng 4,300 tỷ đồng<div class="brief">YouNet ECI quý III/2026</div></td></tr><tr><td class="n">Thứ Ba 3/11</td><td class="n">12:13</td><td><span class="pill p-fb">Thuật ngữ 1 phút</span></td><td><b>GMV Max là gì?</b><div class="brief">Bình luận link bài 3</div></td><td>Loại chiến dịch duy nhất cho TikTok Shop Ads từ 7/2025, AI tối ưu theo GMV; người làm marketing còn kiểm soát creative, ngân sách, sản phẩm<div class="brief">TikTok Ads Help Center</div></td></tr><tr><td class="n">Thứ Tư 4/11</td><td class="n">12:13</td><td><span class="pill p-fb">Carousel hướng dẫn</span></td><td><b>Lịch marketing Tết 2027 trong 7 trang</b><div class="brief">Bình luận link bài 7</div></td><td>Mốc từ tháng 11 đến tháng 2 lấy từ bài blog 7<div class="brief">Bài blog 7</div></td></tr><tr><td class="n">Thứ Năm 5/11</td><td class="n">12:13</td><td><span class="pill p-fb">Tin nóng</span></td><td><b>Quảng cáo trên ChatGPT đã chạy ở Việt Nam, bạn có nên thử?</b><div class="brief">Bình luận link bài 33</div><div class="chg">Khung tin nóng: có tin lớn trong tuần thì thay bằng tin đó</div></td><td>Mở từ 23/9/2026, chỉ hiện với gói Free và Go; 81% người dùng AI tại Việt Nam dùng ChatGPT<div class="brief">OpenAI 9/2026; Decision Lab 8/2025</div></td></tr><tr><td class="n">Thứ Sáu 6/11</td><td class="n">12:13</td><td><span class="pill p-fb">Phép tính nhanh</span></td><td><b>Giảm giá 30% ngày 11.11, mỗi đơn còn lãi bao nhiêu?</b><div class="brief">Bình luận link bài 1</div></td><td>Ví dụ serum 400,000 đồng trong bài 1: lãi mỗi đơn từ 123,000 còn 46,800 đồng; phí xử lý giao dịch 6% từ tháng 5<div class="brief">Bài blog 1</div></td></tr><tr><td class="n">Thứ Bảy 7/11</td><td class="n">20:13</td><td><span class="pill p-fb">Hiểu lầm và sự thật</span></td><td><b>Bật AI Max là mất quyền kiểm soát từ khóa?</b><div class="brief">Bình luận link bài 8</div></td><td>Vẫn giữ được loại trừ thương hiệu, loại trừ URL, từ khóa phủ định; chạy Experiments để so sánh<div class="brief">Google Ads 5/2025</div></td></tr><tr><td class="n">Chủ nhật 8/11</td><td class="n">20:13</td><td><span class="pill p-fb">Video ngắn (Reels)</span></td><td><b>Video 1 về ChatGPT Ads</b><div class="brief">Bình luận link bài 33</div><div class="chg">Chưa có video thì đổi sang Câu hỏi mở: 11.11 năm nay bạn dồn ngân sách vào sàn nào?</div></td><td>Đăng lại video TikTok tuần này<div class="brief">Kênh TikTok</div></td></tr><tr><td class="n">Thứ Hai 9/11</td><td class="n">12:13</td><td><span class="pill p-fb">Góc số liệu</span></td><td><b>FMCG tăng 36% trên sàn chỉ trong quý III</b></td><td>Hàng thiết yếu mua lặp lại; FMCG +26% sau 9 tháng; mùa cuối năm dự báo tăng trên 20%<div class="brief">YouNet ECI quý III/2026</div></td></tr><tr><td class="n">Thứ Ba 10/11</td><td class="n">12:13</td><td><span class="pill p-fb">Thuật ngữ 1 phút</span></td><td><b>MER là gì, vì sao mùa sale nên nhìn MER thay vì ROAS?</b><div class="brief">Bình luận link bài 5</div></td><td>MER = tổng doanh thu chia tổng chi phí marketing; ROAS từng kênh dễ đếm trùng ngày sale<div class="brief">Bài blog 5</div></td></tr><tr><td class="n">Thứ Tư 11/11</td><td class="n">12:13</td><td><span class="pill p-fb">Carousel hướng dẫn</span></td><td><b>7 chỉ số cần nhìn trong ngày 11.11</b><div class="brief">Bình luận link bài 1</div></td><td>Theo dõi theo giờ: GMV, ROAS, tồn kho, tỷ lệ chuyển đổi, chi phí, đơn hủy, tin nhắn chờ<div class="brief">Bài blog 1</div></td></tr><tr><td class="n">Thứ Năm 12/11</td><td class="n">12:13</td><td><span class="pill p-fb">Tin nóng</span></td><td><b>Livestream bán hàng phải xác thực danh tính, bạn đã chuẩn bị chưa?</b><div class="brief">Bình luận link bài 6</div><div class="chg">Khung tin nóng</div></td><td>Luật Thương mại điện tử 122/2025/QH15 hiệu lực 1/7/2026: nền tảng xác thực người livestream và người làm affiliate, lưu dữ liệu phiên live<div class="brief">Luật 122/2025/QH15</div></td></tr><tr><td class="n">Thứ Sáu 13/11</td><td class="n">12:13</td><td><span class="pill p-fb">Phép tính nhanh</span></td><td><b>Một phiên livestream 3 giờ lãi hay lỗ?</b><div class="brief">Bình luận link bài 16</div></td><td>Cách tính lãi lỗ một phiên theo bài 16: doanh thu, giá vốn, phí sàn, chi phí người live, quảng cáo<div class="brief">Bài blog 16</div></td></tr><tr><td class="n">Thứ Bảy 14/11</td><td class="n">20:13</td><td><span class="pill p-fb">Câu hỏi mở</span></td><td><b>Ngân sách marketing 2027 của bạn tăng hay giảm?</b><div class="brief">Bình luận link bài 11</div></td><td>Mời bình luận; dẫn sang bài 11 về lập ngân sách theo giai đoạn tăng trưởng<div class="brief">Bài blog 11</div></td></tr><tr><td class="n">Chủ nhật 15/11</td><td class="n">20:13</td><td><span class="pill p-fb">Video ngắn (Reels)</span></td><td><b>Video 1 về livestream bán hàng</b><div class="brief">Bình luận link bài 16</div><div class="chg">Chưa có video thì đổi sang Câu hỏi mở</div></td><td>Đăng lại video TikTok tuần này<div class="brief">Kênh TikTok</div></td></tr><tr><td class="n">Thứ Hai 16/11</td><td class="n">12:13</td><td><span class="pill p-fb">Góc số liệu</span></td><td><b>78% người Việt online đã dùng AI trong 3 tháng</b><div class="brief">Bình luận link bài 12</div></td><td>33% dùng hằng ngày; ChatGPT 81%, Gemini 51%, Meta AI 36%<div class="brief">Decision Lab 8/2025</div></td></tr><tr><td class="n">Thứ Ba 17/11</td><td class="n">12:13</td><td><span class="pill p-fb">Thuật ngữ 1 phút</span></td><td><b>GEO là gì?</b><div class="brief">Bình luận link bài 6076</div></td><td>Tối ưu để được AI trích dẫn; thương hiệu được AI Overview trích dẫn có thêm 35% click tự nhiên<div class="brief">Seer Interactive 9/2025</div></td></tr><tr><td class="n">Thứ Tư 18/11</td><td class="n">12:13</td><td><span class="pill p-fb">Carousel hướng dẫn</span></td><td><b>Quảng cáo dùng AI: 5 trường hợp phải gắn nhãn</b><div class="brief">Bình luận link bài 35</div></td><td>Nghị định 142/2026 (hiệu lực 1/5/2026), Điều 18: mô phỏng ngoại hình, giọng nói người thật, tái hiện sự kiện thật<div class="brief">Nghị định 142/2026/NĐ-CP</div></td></tr><tr><td class="n">Thứ Năm 19/11</td><td class="n">12:13</td><td><span class="pill p-fb">Tin nóng</span></td><td><b>Sora đã đóng, công cụ video AI nào thay thế?</b><div class="brief">Bình luận link bài 13</div><div class="chg">Khung tin nóng</div></td><td>OpenAI đóng app Sora 26/4/2026, API 24/9/2026; Veo có trong Google Ads, Seedance 2.0 trong TikTok Symphony<div class="brief">TechCrunch 3/2026; Search Engine Land; PPC Land 5/2026</div></td></tr><tr><td class="n">Thứ Sáu 20/11</td><td class="n">12:13</td><td><span class="pill p-fb">Mini-case Adtek</span></td><td><b>Một tháng 30 mẫu quảng cáo: quy trình của Adtek</b><div class="brief">Bình luận link bài 13</div><div class="chg">Cần anh Tin cung cấp số liệu trước 16/11</div></td><td>Mini-case ẩn danh: số mẫu, thời gian sản xuất, kết quả thử nghiệm<div class="brief">Cần anh Tin cung cấp số liệu dự án</div></td></tr><tr><td class="n">Thứ Bảy 21/11</td><td class="n">20:13</td><td><span class="pill p-fb">Hiểu lầm và sự thật</span></td><td><b>Video càng dài càng thuyết phục?</b><div class="brief">Bình luận link bài 30</div></td><td>3 giây đầu quyết định người xem ở lại; dẫn sang bài 30 về công thức hook<div class="brief">Bài blog 30</div></td></tr><tr><td class="n">Chủ nhật 22/11</td><td class="n">20:13</td><td><span class="pill p-fb">Video ngắn (Reels)</span></td><td><b>Video 1 về FMCG trên sàn</b><div class="brief">Bình luận link bài 34</div><div class="chg">Chưa có video thì đổi sang Câu hỏi mở: bạn đã dùng AI tạo quảng cáo chưa?</div></td><td>Đăng lại video TikTok tuần này<div class="brief">Kênh TikTok</div></td></tr><tr><td class="n">Thứ Hai 23/11</td><td class="n">12:13</td><td><span class="pill p-fb">Góc số liệu</span></td><td><b>Mỹ phẩm: TikTok Shop sắp vượt Shopee?</b><div class="brief">Bình luận link bài 14</div></td><td>Thị phần TikTok Shop ngành mỹ phẩm từ 42% lên 49% trong 4 tháng đầu 2026; làm đẹp 49,508 tỷ đồng H1/2026<div class="brief">Metric 2026</div></td></tr><tr><td class="n">Thứ Ba 24/11</td><td class="n">12:13</td><td><span class="pill p-fb">Thuật ngữ 1 phút</span></td><td><b>ZNS là gì?</b><div class="brief">Bình luận link bài 15</div></td><td>Tin nhắn chăm sóc khách qua Zalo; Zalo có 81.3 triệu người dùng hằng tháng, khoảng 30,000 OA<div class="brief">VNG quý II/2026</div></td></tr><tr><td class="n">Thứ Tư 25/11</td><td class="n">12:13</td><td><span class="pill p-fb">Carousel hướng dẫn</span></td><td><b>Hợp đồng KOC 2026: 6 điều khoản phải có</b><div class="brief">Bình luận link bài 14</div></td><td>Luật Quảng cáo sửa đổi hiệu lực 1/1/2026: KOL, KOC kiểm chứng sản phẩm, công khai quảng cáo, chịu trách nhiệm khi sai<div class="brief">Luật 75/2025/QH15</div></td></tr><tr><td class="n">Thứ Năm 26/11</td><td class="n">12:13</td><td><span class="pill p-fb">Tin nóng</span></td><td><b>Quảng cáo trên Threads đã mở, có nên bật?</b><div class="brief">Bình luận link bài 2</div><div class="chg">Khung tin nóng</div></td><td>Threads hiển thị quảng cáo cho mọi người dùng toàn cầu từ cuối 1/2026; kiểm tra lựa chọn vị trí hiển thị<div class="brief">TechCrunch 1/2026</div></td></tr><tr><td class="n">Thứ Sáu 27/11</td><td class="n">12:13</td><td><span class="pill p-fb">Phép tính nhanh</span></td><td><b>CPM mùa Tết tăng, khi nào nên giảm ngân sách?</b><div class="brief">Bình luận link bài 23</div></td><td>Phép tính minh họa ngưỡng CPM hòa vốn theo bài 23; ghi rõ là ví dụ<div class="brief">Bài blog 23</div></td></tr><tr><td class="n">Thứ Bảy 28/11</td><td class="n">20:13</td><td><span class="pill p-fb">Câu hỏi mở</span></td><td><b>Sau mùa sale, bạn chăm sóc khách cũ bằng kênh nào?</b><div class="brief">Bình luận link bài 15</div></td><td>Mời bình luận: Zalo, email, SMS, remarketing<div class="brief">Bài blog 15</div></td></tr><tr><td class="n">Chủ nhật 29/11</td><td class="n">20:13</td><td><span class="pill p-fb">Video ngắn (Reels)</span></td><td><b>Video 1 về sản xuất quảng cáo bằng AI</b><div class="brief">Bình luận link bài 13</div><div class="chg">Chưa có video thì đổi sang Hiểu lầm và sự thật: cookie bên thứ ba đã bị khai tử?</div></td><td>Đăng lại video TikTok tuần này<div class="brief">Kênh TikTok</div></td></tr><tr><td class="n">Thứ Hai 30/11</td><td class="n">12:13</td><td><span class="pill p-fb">Góc số liệu</span></td><td><b>Xe máy điện tăng gần gấp đôi</b><div class="brief">Bình luận link bài 36</div></td><td>Xe máy điện 7 tháng 2026 +97.2%; ô tô 9 tháng +12% (VAMA), hybrid +64%<div class="brief">MotorcyclesData qua VnEconomy; VAMA qua VietnamPlus 10/2026</div></td></tr><tr><td class="n">Thứ Ba 1/12</td><td class="n">12:13</td><td><span class="pill p-fb">Thuật ngữ 1 phút</span></td><td><b>Brand Commerce là gì?</b><div class="brief">Bình luận link bài 18</div></td><td>Kết hợp đầu tư thương hiệu và bán hàng trên cùng một hành trình<div class="brief">Bài blog 18</div></td></tr><tr><td class="n">Thứ Tư 2/12</td><td class="n">12:13</td><td><span class="pill p-fb">Carousel hướng dẫn</span></td><td><b>5 tin nhắn ZNS sau mua hàng giúp khách quay lại</b><div class="brief">Bình luận link bài 15</div></td><td>Xác nhận đơn, giao hàng, hướng dẫn dùng, xin đánh giá, nhắc mua lại; xin đồng ý theo Luật Bảo vệ dữ liệu cá nhân<div class="brief">Bài blog 15</div></td></tr><tr><td class="n">Thứ Năm 3/12</td><td class="n">12:13</td><td><span class="pill p-fb">Tin nóng</span></td><td><b>Meta Business Agent: nhân viên tư vấn AI trên Messenger</b><div class="chg">Khung tin nóng</div></td><td>Ra mắt toàn cầu 3/6/2026, hơn 1 triệu doanh nghiệp dùng<div class="brief">Meta 6/2026</div></td></tr><tr><td class="n">Thứ Sáu 4/12</td><td class="n">12:13</td><td><span class="pill p-fb">Mini-case Adtek</span></td><td><b>Khách cũ mang lại bao nhiêu phần doanh thu?</b><div class="brief">Bình luận link bài 26</div><div class="chg">Cần anh Tin cung cấp số liệu trước 30/11</div></td><td>Mini-case ẩn danh: tỷ trọng doanh thu từ khách mua lại của một khách hàng Adtek<div class="brief">Cần anh Tin cung cấp số liệu dự án</div></td></tr><tr><td class="n">Thứ Bảy 5/12</td><td class="n">20:13</td><td><span class="pill p-fb">Hiểu lầm và sự thật</span></td><td><b>Chatbot AI sẽ thay nhân viên sale?</b><div class="brief">Bình luận link bài 29</div></td><td>Chatbot xử lý câu hỏi lặp lại, chuyển ca khó cho người thật<div class="brief">Bài blog 29</div></td></tr><tr><td class="n">Chủ nhật 6/12</td><td class="n">20:13</td><td><span class="pill p-fb">Video ngắn (Reels)</span></td><td><b>Video 1 về marketing ô tô và xe điện</b><div class="brief">Bình luận link bài 36</div><div class="chg">Chưa có video thì đổi sang Câu hỏi mở</div></td><td>Đăng lại video TikTok tuần này<div class="brief">Kênh TikTok</div></td></tr></tbody></table></div>
+  <h3 id="pa-reach">Tăng người xem cho Page (cần anh chọn)</h3>
+  <div class="opts">
+    <div class="opt rec">
+      <h3>A. Lãnh đạo chia sẻ từ trang cá nhân <span class="tag">Đề xuất, làm cùng B</span></h3>
+      <p>Anh Tín Lê chia sẻ 2 đến 3 bài mỗi tuần kèm một câu nhận định riêng.</p>
+      <div class="pc"><div><b>Ưu</b><p>Miễn phí, trang cá nhân thường tới nhiều người hơn Page nhỏ, tạo niềm tin.</p></div><div><b>Nhược</b><p>Tốn khoảng 10 phút mỗi lần, không tự động hóa được.</p></div></div>
+    </div>
+    <div class="opt rec">
+      <h3>B. Quảng cáo nhỏ cho bài tốt nhất tuần <span class="tag">Đề xuất, làm cùng A</span></h3>
+      <p>Mỗi tuần chọn 1 bài tương tác tốt nhất, chạy tới chủ doanh nghiệp và người làm marketing. Ngân sách thử 2 đến 3 triệu đồng/tháng trong 3 tháng.</p>
+      <div class="pc"><div><b>Ưu</b><p>Có kết quả nhanh, đo được chi phí mỗi người theo dõi và mỗi tin nhắn.</p></div><div><b>Nhược</b><p>Tốn tiền. Ngân sách là giả định cần thử, chưa có số liệu chi phí thực của Page.</p></div></div>
+    </div>
+    <div class="opt">
+      <h3>C. Đăng lại trong các nhóm cộng đồng marketing</h3>
+      <div class="pc"><div><b>Ưu</b><p>Miễn phí, đúng người đọc.</p></div><div><b>Nhược</b><p>Nhiều nhóm cấm bài quảng bá, dễ bị xem là spam nếu đăng đều.</p></div></div>
+    </div>
+    <div class="opt">
+      <h3>D. Mời khách hàng và đối tác theo dõi Page</h3>
+      <div class="pc"><div><b>Ưu</b><p>Nhanh có vài trăm người theo dõi đúng ngành.</p></div><div><b>Nhược</b><p>Làm một lần, không tạo tăng trưởng lâu dài.</p></div></div>
+    </div>
+  </div>
+  <h3>KPI Facebook</h3>
+  <ul>
+    <li>Người theo dõi: 107 hiện tại, mục tiêu đề xuất 300 cuối tháng 11 nếu làm A và B. Con số cần chỉnh sau 2 tuần theo số thật.</li>
+    <li>Lượt tiếp cận và tương tác trung bình mỗi định dạng, để tháng 12 giữ định dạng tốt và bỏ định dạng yếu.</li>
+    <li>Số tin nhắn hỏi dịch vụ mỗi tháng.</li>
+  </ul>
+</section>
+
+<section id="tiktok">
+  <h2>7. Kênh TikTok</h2>
+  <p>Repo đã có công cụ dựng video dọc 1080x1920 từ bài blog, giọng đọc nhân bản của anh Tin (thư mục <code>video/</code>), nhịp ghi trong tài liệu là 3 video mỗi tuần, mỗi bài blog tách thành 3 video. Lịch dưới đây chọn mỗi tuần 1 bài blog nhiều số liệu nhất, đăng 19:13 thứ Ba, Năm, Bảy. Video đầu của tuần được đăng lại lên Facebook dạng Reels vào Chủ nhật.</p>
+  <div class="callout"><p>Cần anh xác nhận kênh TikTok đang hoạt động chưa và phiên nào phụ trách. Nếu chưa chạy, lịch Facebook Chủ nhật tự đổi sang câu hỏi mở.</p></div>
+  <h3>Lịch TikTok tháng 11 (15 video)</h3><div class="tbl"><table class="cal"><thead><tr><th>Ngày</th><th>Giờ</th><th>Từ bài blog</th><th>Video</th></tr></thead><tbody><tr><td class="n">Thứ Ba 3/11</td><td class="n">19:13</td><td>Bài 33: ChatGPT Ads tại Việt Nam: ngành nào nên chạy thử, ngành nào nên chờ</td><td>Video 1: ChatGPT Ads là gì, hiện ở đâu</td></tr><tr><td class="n">Thứ Năm 5/11</td><td class="n">19:13</td><td>Bài 33: ChatGPT Ads tại Việt Nam: ngành nào nên chạy thử, ngành nào nên chờ</td><td>Video 2: Ngành nào nên chạy thử</td></tr><tr><td class="n">Thứ Bảy 7/11</td><td class="n">19:13</td><td>Bài 33: ChatGPT Ads tại Việt Nam: ngành nào nên chạy thử, ngành nào nên chờ</td><td>Video 3: 3 việc chuẩn bị trước khi chạy</td></tr><tr><td class="n">Thứ Ba 10/11</td><td class="n">19:13</td><td>Bài 16: Livestream bán hàng: kịch bản, KPI và cách tính lãi lỗ một phiên</td><td>Video 1: Tính lãi lỗ một phiên live</td></tr><tr><td class="n">Thứ Năm 12/11</td><td class="n">19:13</td><td>Bài 16: Livestream bán hàng: kịch bản, KPI và cách tính lãi lỗ một phiên</td><td>Video 2: KPI theo giờ của phiên live</td></tr><tr><td class="n">Thứ Bảy 14/11</td><td class="n">19:13</td><td>Bài 16: Livestream bán hàng: kịch bản, KPI và cách tính lãi lỗ một phiên</td><td>Video 3: Luật mới: xác thực người livestream</td></tr><tr><td class="n">Thứ Ba 17/11</td><td class="n">19:13</td><td>Bài 34: FMCG trên Shopee và TikTok Shop 2026: bán hàng thiết yếu và giữ khách mua lại</td><td>Video 1: FMCG tăng 36% trên sàn</td></tr><tr><td class="n">Thứ Năm 19/11</td><td class="n">19:13</td><td>Bài 34: FMCG trên Shopee và TikTok Shop 2026: bán hàng thiết yếu và giữ khách mua lại</td><td>Video 2: Vì sao khách mua lần hai quan trọng</td></tr><tr><td class="n">Thứ Bảy 21/11</td><td class="n">19:13</td><td>Bài 34: FMCG trên Shopee và TikTok Shop 2026: bán hàng thiết yếu và giữ khách mua lại</td><td>Video 3: Shopee hay TikTok Shop cho hàng thiết yếu</td></tr><tr><td class="n">Thứ Ba 24/11</td><td class="n">19:13</td><td>Bài 13: Sản xuất 30 mẫu quảng cáo mỗi tháng với AI mà vẫn giữ bản sắc thương hiệu</td><td>Video 1: 30 mẫu quảng cáo một tháng với AI</td></tr><tr><td class="n">Thứ Năm 26/11</td><td class="n">19:13</td><td>Bài 13: Sản xuất 30 mẫu quảng cáo mỗi tháng với AI mà vẫn giữ bản sắc thương hiệu</td><td>Video 2: Khi nào phải gắn nhãn AI</td></tr><tr><td class="n">Thứ Bảy 28/11</td><td class="n">19:13</td><td>Bài 13: Sản xuất 30 mẫu quảng cáo mỗi tháng với AI mà vẫn giữ bản sắc thương hiệu</td><td>Video 3: Giữ bản sắc thương hiệu khi dùng AI</td></tr><tr><td class="n">Thứ Ba 1/12</td><td class="n">19:13</td><td>Bài 36: Digital marketing ngành ô tô và xe máy điện 2027: lead cho đại lý</td><td>Video 1: Xe máy điện tăng gần gấp đôi</td></tr><tr><td class="n">Thứ Năm 3/12</td><td class="n">19:13</td><td>Bài 36: Digital marketing ngành ô tô và xe máy điện 2027: lead cho đại lý</td><td>Video 2: Đại lý nên chạy kênh nào để có lead</td></tr><tr><td class="n">Thứ Bảy 5/12</td><td class="n">19:13</td><td>Bài 36: Digital marketing ngành ô tô và xe máy điện 2027: lead cho đại lý</td><td>Video 3: Hà Nội hạn chế xe xăng: cơ hội nội dung</td></tr></tbody></table></div>
+</section>
+
+<section id="vanhanh">
+  <h2>8. Vận hành</h2>
+  <h3>Phân vai: một nơi lập lịch, các phiên chỉ đăng</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Phiên</th><th>Việc làm</th><th>Thay đổi</th></tr></thead>
+    <tbody>
+      <tr><td><b>Adtek - Marketing</b></td><td>Nghiên cứu thị trường mỗi tháng, lập lịch tháng cho mọi kênh: ngày giờ, tiêu đề, từ khóa, định dạng, brief số liệu</td><td>Mới. Lịch tự động trig_01J49h9HgUQyCgdzQLvNZNXY</td></tr>
+      <tr><td><b>Adtek - Blog post</b></td><td>Thứ Sáu viết 4 bài cho tuần kế tiếp theo lịch, gửi duyệt, đặt lịch WordPress đúng ngày giờ có sẵn</td><td>Từ 2 lên 4 bài. Không viết caption Facebook, không hẹn đăng Facebook</td></tr>
+      <tr><td><b>Adtek - Facebook post</b></td><td>Viết caption theo brief cho 7 bài tuần kế tiếp, gửi duyệt cùng hạn D+1, đăng đúng giờ</td><td>Không nhận lịch hẹn từng bài. Cần đăng được bài không gắn blog, carousel và video</td></tr>
+      <tr><td><b>Adtek - Designer</b></td><td>Ảnh bìa 4 bài blog, 7 bộ ảnh Facebook mỗi tuần (có carousel)</td><td>Tăng khối lượng, thêm mẫu carousel và thẻ thuật ngữ</td></tr>
+      <tr><td><b>Adtek - SEO</b></td><td>Tối ưu SEO sau khi đăng</td><td>Lịch 21:43 đổi từ thứ Ba, Năm sang thứ Hai, Ba, Năm, Sáu</td></tr>
+      <tr><td><b>Phiên TikTok</b></td><td>Dựng và đăng 3 video mỗi tuần theo lịch</td><td>Chờ anh xác nhận</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Lịch tự động</h3>
+  <ul>
+    <li><b>Nghiên cứu và lập lịch tháng</b> (đã tạo): 6:47 sáng, ngày cuối tháng trừ 2 (29/10, 28/11, 29/12...). Mỗi lần chạy: cập nhật nghiên cứu, lập lịch tháng kế tiếp cho 3 kênh, đăng lại trang này, báo anh qua push notification, tin nhắn và email.</li>
+    <li><b>Phạm vi một tháng:</b> các tuần có thứ Hai nằm trong tháng. Ví dụ tháng 11 tính từ 2/11 đến 6/12, nên phiên Blog post luôn có lịch trước thứ Sáu viết bài cho tuần đầu tháng.</li>
+    <li><b>Đăng Facebook</b> (cần tạo khi được cho phép): một lịch cố định 12:13 và 20:13 mỗi ngày ở phiên Facebook post, đến giờ thì đăng bài đã duyệt.</li>
+  </ul>
+  <h3>Việc cần làm trước 30/10 khi anh cho phép</h3>
+  <ol>
+    <li>Ghi lịch tháng 11 vào <code>content/editorial/calendar.json</code> trên nhánh <code>claude/brave-curie-2c6zbc</code>: thêm bài 33 đến 36, đổi ngày giờ 16 bài cũ, chuyển các bài còn lại sang danh sách chờ, thêm danh sách bài Facebook và TikTok.</li>
+    <li>Gửi yêu cầu cho từng phiên sửa công cụ và lịch tự động của mình: Blog post (4 bài, bỏ phần Facebook), Facebook post (bài không gắn blog, carousel, video, lịch đăng cố định), Designer (mẫu carousel, thẻ thuật ngữ), SEO (đổi ngày chạy).</li>
+    <li>Bài 1 đến 6 và lịch đăng Facebook bài 2 đến 4 đã hẹn giữ nguyên cách cũ đến hết 1/11.</li>
+  </ol>
+</section>
+
+<section id="nguon">
+  <h2>9. Nguồn và độ tin cậy</h2>
+  <div class="callout">
+    <p><b>Lưu ý:</b> số liệu được tổng hợp từ kết quả tìm kiếm ngày 16/10/2026. Môi trường làm việc chặn truy cập trực tiếp nhiều trang báo, nên chưa mở được bản gốc của từng nguồn. Trước khi đưa vào bài blog, phiên Blog post cần đối chiếu lại bản gốc theo quy tắc 3 nguồn có tháng/năm.</p>
+    <p><b>Số liệu lệch giữa các nguồn:</b> quy mô thương mại điện tử H1/2026 theo Metric là 291,600 tỷ đồng (+44.1%), theo YouNet ECI là 264,800 tỷ đồng (+19%). Không trộn hai nguồn trong cùng một bài. Số VinFast là số hãng tự công bố. Lịch tự chuyển AI Max ngày 1/9/2026 mới có nguồn agency.</p>
+  </div>
+  <ol class="src">
+    <li>Cục Thống kê: GDP, bán lẻ 9 tháng 2026, qua VTC News 3/10/2026 và VietnamPlus 10/2026. <a href="https://vtcnews.vn/gdp-quy-iii-2026-tang-9-95-9-thang-tang-9-01-ar1043199.html" rel="nofollow noopener" target="_blank">vtcnews.vn</a>, <a href="https://www.vietnamplus.vn/thi-truong-noi-dia-tang-toc-dong-luc-quan-trong-cua-tang-truong-kinh-te-post1140148.vnp" rel="nofollow noopener" target="_blank">vietnamplus.vn</a></li>
+    <li>FDI 9 tháng 2026, Báo Đấu thầu 10/2026. <a href="https://baodauthau.vn/von-fdi-thuc-hien-9-thang-dat-hon-21-ty-usd-cao-nhat-5-nam-post208924.html" rel="nofollow noopener" target="_blank">baodauthau.vn</a></li>
+    <li>Khách quốc tế 9 tháng, Cục Du lịch Quốc gia qua Báo Văn hóa 10/2026. <a href="https://baovanhoa.vn/du-lich/khach-quoc-te-den-viet-nam-9-thang-2026-tang-145-271196.html" rel="nofollow noopener" target="_blank">baovanhoa.vn</a></li>
+    <li>YouNet ECI quý III/2026, qua Tuổi Trẻ 15/10/2026. <a href="https://tuoitre.vn/cho-mang-tang-truong-27-trong-quy-3-gen-z-va-gen-y-tang-chi-tieu-100261015202516071.htm" rel="nofollow noopener" target="_blank">tuoitre.vn</a></li>
+    <li>Metric, báo cáo thương mại điện tử 6 tháng 2026. <a href="https://metric.vn/insights/metric-bao-cao-thuong-mai-dien-tu-viet-nam-6-thang-dau-nam-2026/" rel="nofollow noopener" target="_blank">metric.vn</a></li>
+    <li>VAMA 9 tháng 2026, qua VietnamPlus 10/2026. <a href="https://www.vietnamplus.vn/doanh-so-ban-oto-tai-viet-nam-tang-38-xe-hybrid-tang-toc-post1141084.vnp" rel="nofollow noopener" target="_blank">vietnamplus.vn</a></li>
+    <li>CBRE quý III/2026, qua Doanh nhân và Pháp luật. <a href="https://doanhnhan.baophapluat.vn/nguon-cung-can-ho-ha-noi-quy-iii-2026-giam-40-thanh-khoan-di-xuong.html" rel="nofollow noopener" target="_blank">doanhnhan.baophapluat.vn</a></li>
+    <li>OpenAI, ChatGPT Ads mở rộng Đông Nam Á và Đài Loan, 9/2026. <a href="https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan/" rel="nofollow noopener" target="_blank">openai.com</a></li>
+    <li>Seer Interactive, tác động của AI Overviews lên CTR, 9/2025. <a href="https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update" rel="nofollow noopener" target="_blank">seerinteractive.com</a></li>
+    <li>Nghị định 142/2026/NĐ-CP về gắn nhãn nội dung AI, qua LuatVietnam. <a href="https://luatvietnam.vn/tin-van-ban-moi/tu-01-5-2026-noi-dung-ai-gia-giong-noi-hinh-anh-nguoi-that-phai-gan-nhan-186-108844-article.html" rel="nofollow noopener" target="_blank">luatvietnam.vn</a></li>
+    <li>VNG quý II/2026: Zalo 81.3 triệu người dùng hằng tháng, qua VietnamPlus. <a href="https://www.vietnamplus.vn/zalo-co-813-trieu-nguoi-dung-hang-thang-post1127226.vnp" rel="nofollow noopener" target="_blank">vietnamplus.vn</a></li>
+    <li>TikTok Ads Help Center: GMV Max cho TikTok Shop Ads. <a href="https://ads.tiktok.com/help/article/set-up-tiktok-shopping?lang=vi" rel="nofollow noopener" target="_blank">ads.tiktok.com</a></li>
+    <li>Search Engine Land: Andromeda, GEM và nghiên cứu Confect. <a href="https://searchengineland.com/meta-ai-driven-advertising-system-andromeda-gem-468020" rel="nofollow noopener" target="_blank">searchengineland.com</a></li>
+    <li>Decision Lab, mức sử dụng AI tại Việt Nam, 8/2025. <a href="https://technode.global/2025/08/27/report-78-percent-of-online-population-in-vietnam-have-engaged-with-ai-one-third-turn-it-into-a-daily-habit/" rel="nofollow noopener" target="_blank">technode.global</a></li>
+    <li>Số liệu Page Facebook: Graph API, Page 101888089257566, đọc ngày 16/10/2026.</li>
+  </ol>
+</section>
+
+<footer>Adtek Growth Agency · adtek.agency · Tài liệu nội bộ phòng Marketing</footer>
+</div>
