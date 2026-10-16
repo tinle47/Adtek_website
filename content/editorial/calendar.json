@@ -81,7 +81,9 @@
    "fb_status": "scheduled",
    "fb_scheduled": "2026-10-16 20:15",
    "fb_trigger": "trig_01MKSBryPzydKMzKufq61sKd",
-   "seo_optimized": "2026-10-16 19:45"
+   "seo_optimized": "2026-10-16 19:45",
+   "index_status": "NEUTRAL",
+   "index_checked": "2026-10-16 20:12"
   },
   {
    "no": 2,
@@ -133,7 +135,9 @@
    "fb_status": "scheduled",
    "fb_scheduled": "2026-10-18 12:15",
    "fb_trigger": "trig_016ubU28txMfPQ5E89k2Z8wb",
-   "seo_optimized": "2026-10-16 19:45"
+   "seo_optimized": "2026-10-16 19:45",
+   "index_status": "NEUTRAL",
+   "index_checked": "2026-10-16 20:12"
   },
   {
    "no": 3,
