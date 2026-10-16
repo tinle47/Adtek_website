@@ -49,7 +49,7 @@ ul.b li:before{{content:"";position:absolute;left:0;top:.62em;width:2mm;height:2
 .rule{{height:1.2mm;width:22mm;background:{ORANGE};margin:0 0 6mm}}
 .callout{{border-left:1mm solid {ORANGE};padding:1mm 0 1mm 5mm;margin:5mm 0;font-family:NR,serif;font-weight:500;font-size:13pt;line-height:1.4;color:{NAVY};break-inside:avoid}}
 .callout small{{display:block;font-family:BVP;font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;color:{ORANGE};font-weight:600;margin-bottom:1mm}}
-figure{{margin:5mm 0 3mm;break-inside:avoid;border-top:.3mm solid {NAVY};padding-top:3mm}}
+figure{{margin:2mm 0 6mm;break-inside:avoid;border-top:.3mm solid {NAVY};padding-top:3mm}}
 figcaption{{font-weight:700;color:{NAVY};font-size:9.6pt;margin-bottom:3mm}}
 .bar{{display:grid;grid-template-columns:38% 1fr 30mm;align-items:center;gap:3mm;margin-bottom:2mm;font-size:8.8pt}}
 .bar .t{{height:4.2mm;background:#EEF1F6}}
@@ -59,6 +59,9 @@ figcaption{{font-weight:700;color:{NAVY};font-size:9.6pt;margin-bottom:3mm}}
 .bar .v{{white-space:nowrap;font-weight:700;color:{NAVY};text-align:right;font-variant-numeric:tabular-nums}}
 .tl{{display:grid;grid-template-columns:20mm 1fr;gap:4mm;padding:2mm 0;border-bottom:.3mm solid {LINE};font-size:9pt;align-items:baseline}}
 .tl .d{{color:{ORANGE};font-size:13pt}}
+.figs{{display:grid;gap:8mm;margin:1mm 0 2mm}}
+.fig .v{{font-family:NR,serif;font-weight:600;font-size:24pt;line-height:1.1;color:{NAVY};letter-spacing:-.02em}}
+.fig .l{{font-size:8.8pt;margin-top:1.5mm;color:#374151}}
 .src{{font-size:7.6pt;color:{MUTED};margin-top:1.5mm}}
 .stats{{display:grid;grid-template-columns:1fr 1fr;gap:7mm 10mm;margin:3mm 0 9mm}}
 .stat{{border-top:.3mm solid {NAVY};padding-top:3mm}}
@@ -111,9 +114,18 @@ def timeline(c):
             f'<div class="src">Nguồn: {esc(c["source"])}</div></figure>')
 
 
+def figures(c):
+    """Hình mô tả dạng 2-3 con số lớn, cho phần không có chuỗi số để vẽ biểu đồ (văn bản luật, mốc thời gian)."""
+    cells = "".join(f'<div class="fig"><div class="v">{esc(i["value"])}</div><div class="l">{esc(i["label"])}</div></div>' for i in c["items"])
+    return (f'<figure><figcaption>{esc(c["title"])}</figcaption><div class="figs" style="grid-template-columns:repeat({len(c["items"])},1fr)">{cells}</div>'
+            f'<div class="src">Nguồn: {esc(c["source"])}</div></figure>')
+
+
 def chart(c):
     if c.get("type") == "timeline":
         return timeline(c)
+    if c.get("type") == "figures":
+        return figures(c)
     items = c["items"]
     top = max(abs(i["value"]) for i in items) or 1
     unit = c.get("unit", "")
@@ -137,10 +149,11 @@ def body_page(r):
             f'<div class="s">Nguồn: {esc(s["source"])}</div></div>' for s in r["key_stats"]]
     out.append('</div><ol class="sum">' + "".join(f"<li>{esc(x)}</li>" for x in r["summary"]) + "</ol>")
     for n, s in enumerate(r["sections"], 1):
-        out.append(f'<section class="page"><div class="eyebrow">Phần {n:02d}</div><h2>{esc(s["heading"])}</h2><div class="rule"></div>'
-                   f'<p class="lead">{esc(s["lead"])}</p><ul class="b">' + "".join(f"<li>{esc(b)}</li>" for b in s["bullets"]) + "</ul>")
+        # Bố cục mỗi phần (anh Tin chốt): tiêu đề, biểu đồ hoặc hình mô tả, diễn giải, nhận định của Adtek
+        out.append(f'<section class="page"><div class="eyebrow">Phần {n:02d}</div><h2>{esc(s["heading"])}</h2><div class="rule"></div>')
         if s.get("chart"):
             out.append(chart(s["chart"]))
+        out.append(f'<p class="lead">{esc(s["lead"])}</p><ul class="b">' + "".join(f"<li>{esc(b)}</li>" for b in s["bullets"]) + "</ul>")
         if s.get("callout"):
             out.append(f'<div class="callout"><small>Nhận định của Adtek</small>{esc(s["callout"])}</div>')
         out.append("</section>")

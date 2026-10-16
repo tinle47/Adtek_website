@@ -89,7 +89,25 @@
     "Trong 6 tuần trước Tết Bính Ngọ (15/12/2025 đến 25/1/2026), TikTok Shop chiếm khoảng 51% đến 52% doanh số của hai sàn, nhỉnh hơn Shopee (Metric qua Doanh nhân và Pháp luật, Vietnam News).",
     "Ở ngành thời trang và phụ kiện, TikTok Shop chiếm 56,2% thị phần trong nửa đầu năm 2026, tăng từ 53,6% cùng kỳ (YouNet ECI)."
    ],
-   "chart": null,
+   "chart": {
+    "title": "Tăng trưởng GMV 9 tháng 2026 so với cùng kỳ, theo sàn",
+    "unit": "%",
+    "items": [
+     {
+      "label": "TikTok Shop",
+      "value": 38
+     },
+     {
+      "label": "Toàn thị trường bốn sàn",
+      "value": 22
+     },
+     {
+      "label": "Shopee",
+      "value": 12
+     }
+    ],
+    "source": "YouNet ECI, báo cáo quý III/2026"
+   },
    "callout": "TikTok Shop thắng ở các mùa cao điểm và ngành hàng mua theo cảm hứng, còn Shopee giữ lợi thế ở nhu cầu tìm kiếm có chủ đích. Thương hiệu cần kế hoạch riêng cho từng sàn."
   },
   {
