@@ -407,6 +407,43 @@ h1{{font-weight:900;line-height:1.12}}
     return css, body
 
 
+# ---------------------------------------------------------------- ảnh bìa báo cáo (Trung Tâm Tài Nguyên)
+
+REPORT_SIZE = (1245, 825)
+# Bốn phối màu cho series "Báo cáo Adtek": (nền, chữ, khối số liệu, chữ khối, màu số). Cùng bố cục, khác màu theo chủ đề.
+REPORT_THEMES = [(NAVY, "#fff", CREAM, NAVY, ORANGE), (NAVY, "#fff", ORANGE, NAVY, NAVY),
+                 (CREAM, NAVY, NAVY, "#fff", ORANGE), (CREAM, NAVY, ORANGE, NAVY, NAVY)]
+
+
+def report_cover(r):
+    """Ảnh đại diện báo cáo 1245x825: bên trái nhãn series, tên báo cáo, lời mời tải; bên phải khối màu chứa một số liệu chính
+    (số trên, nhãn ngay dưới). Chữ trong vùng y 100 đến 725 để Facebook cắt 1.91:1 và thẻ 370x250 vẫn đủ chữ.
+    r: nội dung JSON báo cáo; r["cover"] (không bắt buộc): title (có *từ khóa*), stat (chỉ số trong key_stats), theme (0 đến 3)."""
+    c = r.get("cover") or {}
+    bg, fg, panel, pfg, numc = REPORT_THEMES[c.get("theme", 0) % len(REPORT_THEMES)]
+    st = r["key_stats"][c.get("stat", 0)]
+    w, h = REPORT_SIZE
+    css = f"""
+body{{background:{bg};color:{fg}}}
+.lg{{position:absolute;left:100px;top:100px}}
+.copy{{position:absolute;left:100px;width:600px;top:200px;bottom:100px;display:flex;flex-direction:column}}
+.series{{font-weight:600;font-size:26px;color:{ORANGE}}}
+.series span{{color:{fg};opacity:.7;font-weight:500}}
+h1{{font-size:78px;line-height:1.06;margin-top:24px;max-height:4.3em}}
+.dl{{margin-top:auto;font-weight:600;font-size:24px}}
+.panel{{position:absolute;left:780px;right:0;top:0;bottom:0;background:{panel};color:{pfg};padding:0 60px 0 56px;display:flex;flex-direction:column;justify-content:center}}
+.panel .num{{font-size:104px;line-height:.9;color:{numc};white-space:nowrap}}
+.panel .lab{{font-size:28px;line-height:1.28;margin-top:22px;max-height:6.5em}}
+.panel .src{{font-size:17px;margin-top:22px;opacity:.7}}
+{'.panel .hl{color:inherit}' if panel == ORANGE else ''}"""
+    body = f"""<div class="lg">{logo(fg, 64)}</div>
+<div class="copy"><div class="series">Báo cáo Adtek <span>&nbsp;·&nbsp; {esc(r.get("period", ""))}</span></div>
+<h1 class="fit bal">{hl(c.get("title") or r.get("short_title") or r["title"])}</h1><div class="dl">Tải miễn phí bản PDF</div></div>
+<div class="panel"><div class="num fit">{esc(st["value"])}</div><div class="lab fit">{esc(st["label"])}</div>
+<div class="src">Nguồn: {esc(st.get("source", ""))}</div></div>"""
+    return document(css, body, w, h)
+
+
 # Phong cách dùng chung cho mọi bài (xoay vòng), phong cách theo chủ đề (chỉ dùng khi bài hợp),
 # và phong cách chỉ dùng khi ghi tay cover.style (không tự chọn).
 GENERIC = {"editorial": editorial, "split": split, "mark": mark, "stack": stack, "poster": poster}

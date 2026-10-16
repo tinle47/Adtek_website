@@ -7,6 +7,7 @@ Kết quả (cùng thư mục):
 
 Cách dùng:
   python3 tools/report_pdf.py <slug> [<slug> ...]
+  python3 tools/report_pdf.py --thumb <slug> [<slug> ...]   chỉ dựng lại ảnh đại diện, không dựng PDF
   python3 tools/report_pdf.py all
 """
 import html
@@ -17,7 +18,7 @@ from pathlib import Path
 
 from pypdf import PdfWriter
 
-from covers import ASSETS, NAVY, ORANGE, font_css
+from covers import ASSETS, NAVY, ORANGE, REPORT_SIZE, font_css, report_cover, shoot
 
 ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "content/reports"
@@ -175,36 +176,24 @@ def back_page(r):
 
 
 def thumb(r):
-    s = r["key_stats"][0]
-    return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}
-body{{width:1245px;height:825px;overflow:hidden;background:{NAVY};color:#fff;position:relative}}</style></head><body>
-<div style="position:absolute;right:-300px;top:-280px;width:600px;height:600px;border-radius:50%;border:56px solid {ORANGE}"></div>
-<div style="position:absolute;left:150px;right:420px;top:150px">
- <div class="eyebrow" style="font-size:20px">Báo cáo Adtek &nbsp;|&nbsp; {esc(r["period"])}</div>
- <div class="nr" style="font-size:60px;line-height:1.1;margin:22px 0 26px;text-wrap:balance">{esc(r.get("short_title") or r["title"])}</div>
- <div style="height:6px;width:90px;background:{ORANGE};margin-bottom:26px"></div>
- <div class="nr" style="font-size:46px;color:{ORANGE};line-height:1">{esc(s["value"])}</div>
- <div style="font-size:21px;color:#D6DEEB;margin-top:10px">{esc(s["label"])}</div>
-</div>
-<img src="{uri("adtek-logo-white.png")}" alt="Adtek" style="position:absolute;right:150px;bottom:80px;height:78px">
-<div style="position:absolute;left:150px;bottom:92px;font-size:20px;font-weight:600;letter-spacing:.06em;color:#fff">TẢI MIỄN PHÍ</div>
-</body></html>"""
+    """Ảnh đại diện 1245x825 theo series "Báo cáo Adtek" trong tools/covers.py (report_cover)."""
+    return report_cover(r)
 
 
 def build(slug):
     r = json.loads((DIR / f"{slug}.json").read_text(encoding="utf-8"))
     tmp = ROOT / "previews/_report"
     tmp.mkdir(parents=True, exist_ok=True)
-    parts = {"cover": cover_page(r), "body": body_page(r), "back": back_page(r), "thumb": thumb(r)}
+    parts = {"cover": cover_page(r), "body": body_page(r), "back": back_page(r)}
     for k, v in parts.items():
         (tmp / f"{k}.html").write_text(v, encoding="utf-8")
     foot = f"Adtek  |  {r.get('short_title') or r['title']}"
     jobs = [{"input": str(tmp / "cover.html"), "output": str(tmp / "cover.pdf")},
             {"input": str(tmp / "body.html"), "output": str(tmp / "body.pdf"), "margin": "16mm", "footer": esc(foot)},
-            {"input": str(tmp / "back.html"), "output": str(tmp / "back.pdf")},
-            {"input": str(tmp / "thumb.html"), "output": str(DIR / f"{slug}-cover.jpg"), "kind": "jpg", "width": 1245, "height": 825}]
+            {"input": str(tmp / "back.html"), "output": str(tmp / "back.pdf")}]
     (tmp / "jobs.json").write_text(json.dumps(jobs), encoding="utf-8")
     subprocess.run(["node", str(ROOT / "tools/render_pdf.js"), str(tmp / "jobs.json")], check=True)
+    shoot([(thumb(r), DIR / f"{slug}-cover.jpg", *REPORT_SIZE)])  # ảnh đại diện: cùng bộ dựng với ảnh bìa blog (co chữ, logo)
     w = PdfWriter()
     for k in ("cover", "body", "back"):
         w.append(str(tmp / f"{k}.pdf"))
@@ -219,6 +208,13 @@ def build(slug):
 
 
 if __name__ == "__main__":
-    slugs = [p.stem for p in sorted(DIR.glob("*.json"))] if sys.argv[1:] == ["all"] else sys.argv[1:]
+    args = sys.argv[1:]
+    only_thumb = "--thumb" in args
+    args = [a for a in args if a != "--thumb"]
+    slugs = [p.stem for p in sorted(DIR.glob("*.json"))] if args == ["all"] else args
     for s in slugs:
-        build(s)
+        if only_thumb:
+            r = json.loads((DIR / f"{s}.json").read_text(encoding="utf-8"))
+            print(shoot([(thumb(r), DIR / f"{s}-cover.jpg", *REPORT_SIZE)])[0])
+        else:
+            build(s)
