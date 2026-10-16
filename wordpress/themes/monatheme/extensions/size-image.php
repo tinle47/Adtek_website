@@ -18,6 +18,8 @@ function mona_image_size()
     add_image_size('80x70', 80, 70, true);
     add_image_size('100x100', 100, 100, true);
     add_image_size('870x362', 870, 362, true);
+    // Bản gấp đôi của 870x362 (cùng tỉ lệ) để WordPress đưa vào srcset, màn hình Retina ở trang /blog/ không bị phóng mờ.
+    add_image_size('1740x724', 1740, 724, true);
     add_image_size('570x345', 570, 345, false);
     add_image_size('960x534', 960, 534, true);
     add_image_size('30x30', 30, 30, true);
@@ -28,3 +30,8 @@ function mona_image_size()
     add_image_size('0', 0, 0, true);
 }
 add_action('after_setup_theme', 'mona_image_size');
+
+// Nén lại ảnh cắt (thumbnail) ở chất lượng 90 thay vì 82 mặc định, chữ trên ảnh bìa đỡ nhòe.
+add_filter('jpeg_quality', function () {
+    return 90;
+});
