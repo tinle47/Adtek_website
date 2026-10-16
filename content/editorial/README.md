@@ -35,6 +35,7 @@ Bài Facebook riêng (danh sách `facebook` trong `calendar.json`) dùng ảnh 1
 - Mỗi dạng bài có 2 biến thể, tự xoay vòng theo số lần dạng đó đã xuất hiện; ghi `design.variant` (0 hoặc 1) để ép một biến thể.
 - Dạng bài: Góc số liệu (số lớn đứng trên cụm chữ), Thuật ngữ 1 phút (như mục từ điển), Carousel hướng dẫn (trang bìa, mỗi bước một trang, trang kết; số trang ghi chữ ở góc), Tin nóng (mốc thời gian trên tiêu đề, các ý đánh số), Phép tính nhanh (bảng tính, dòng kết quả nền cam), Hiểu lầm và sự thật (hai khối màu), Câu hỏi mở (lựa chọn A, B, C). Video ngắn (Reels) không dựng ảnh.
 - Lệnh: `python3 tools/social.py render <id>`, `python3 tools/social.py week <ngày đầu> <ngày cuối>`, `python3 tools/social.py missing` (bài sắp đăng chưa có design hoặc ảnh).
+- Duyệt ảnh (anh Tin chọn phương án A ngày 16/10/2026): ảnh được duyệt cùng bài, không có bước duyệt riêng. Bài quá hạn duyệt thì tự duyệt và đăng kèm ảnh hiện có; ảnh xem trước phiên Designer gửi không chặn việc đăng. Ảnh lỗi sau khi đăng: phiên Facebook post gỡ bài, phiên Designer sửa rồi đăng lại.
 - Nhịp: ảnh tuần sau xong trước thứ Sáu tuần trước để kịp gửi duyệt; sửa `design` thì dựng lại và báo phiên Facebook post.
 
 ## Cụm chủ đề (topic cluster)

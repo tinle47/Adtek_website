@@ -4,7 +4,7 @@ Chạy trong phiên **Adtek - Facebook post** (session_0196UuuQJu6Edu8fi8VXJDzh)
 
 Quy tắc caption: viết theo `brief` và `source`, chỉ dùng số liệu có trong brief (không thêm số liệu chưa kiểm chứng), đúng định dạng ở `format`, 120 đến 200 chữ, dùng skill anti-ai-writing, không emoji, không ký tự gạch dài, không link, số theo định dạng US, ví dụ giả định phải ghi rõ là ví dụ. `hashtags` là 3 hashtag riêng, không dấu, viết liền. Script tự ghép template: tiêu đề in hoa, câu "Xem full bài viết ở bình luận bên dưới." (chỉ khi bài blog `link_post` đã lên sóng, Page sẽ bình luận link), caption, 5 hashtag, Website, Email. Bình luận link: mọi bài có `link_post` mà bài blog đã lên sóng đều bình luận link, không giới hạn số bài mỗi tuần (anh Tin chọn phương án A ngày 16/10/2026).
 
-Khi anh Tin trả lời trong phiên: "duyệt <id>" thì chạy `python3 tools/fb_daily.py approve <id>`; "hủy <id>" thì `python3 tools/fb_daily.py cancel <id>`; yêu cầu sửa thì sửa `caption` hoặc `hashtags` trong `calendar.json`, gửi lại email (notify không kèm cờ) và giữ approval hiện có. Gỡ bài đã đăng: `python3 tools/fb_daily.py delete <id>`.
+Khi anh Tin trả lời trong phiên: "duyệt <id>" thì chạy `python3 tools/fb_daily.py approve <id>`; "hủy <id>" thì `python3 tools/fb_daily.py cancel <id>`; yêu cầu sửa thì sửa `caption` hoặc `hashtags` trong `calendar.json`, gửi lại email (notify không kèm cờ) và giữ approval hiện có. Gỡ bài đã đăng: `python3 tools/fb_daily.py delete <id>` (bài chuyển sang approval held, lịch đăng bỏ qua; ảnh lỗi thì nhắn phiên Designer kèm id; sửa xong, anh Tin nhắn "duyệt <id>" thì lượt đăng kế tiếp đăng lại).
 
 ## 1. Báo trước bài sắp đăng
 
