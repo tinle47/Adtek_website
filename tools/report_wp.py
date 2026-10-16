@@ -6,6 +6,7 @@ Trường filters trong JSON: {"category_reports": "Việt Nam", "field_reports"
 
 Cách dùng:
   python3 tools/report_wp.py draft <slug>     tải PDF và ảnh bìa, tạo hoặc cập nhật bản nháp, gắn file PDF và bộ lọc
+  python3 tools/report_wp.py preview <slug>   link xem trước không cần đăng nhập (7 ngày), gửi anh Tin duyệt
   python3 tools/report_wp.py publish <slug>   đăng bản nháp (anh Tin đã duyệt) và xóa cache trang Reports
 ID trên WordPress ghi lại vào trường wp của file JSON để lần chạy sau cập nhật đúng bài.
 """
@@ -14,6 +15,7 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 from fix_alt import API, api
 
@@ -46,7 +48,7 @@ def acf(post_id, payload):
 
 
 def term(tax, name):
-    found = api("GET", f"{tax}?search={name}&per_page=100&_fields=id,name,slug")
+    found = api("GET", f"{tax}?search={quote(name)}&per_page=100&_fields=id,name,slug")
     if not isinstance(found, list):
         sys.exit(f"Chưa đọc được bộ lọc {tax} qua REST: cần cài wordpress/mu-plugins/adtek-reports-rest.php ({found})")
     for t in found:
@@ -92,6 +94,15 @@ def draft(slug):
                      ensure_ascii=False))
 
 
+def preview(slug):
+    """Plugin adtek-public-preview trả link ?p=<id>, nhưng với mona_reports link đó 404: phải thêm post_type."""
+    r = json.loads((DIR / f"{slug}.json").read_text(encoding="utf-8"))
+    out = subprocess.run(["curl", "-sS", "-X", "POST", f"https://adtek.agency/wp-json/adtek/v1/preview/{r['wp']['id']}?days=7"],
+                         capture_output=True, text=True).stdout
+    res = json.loads(out)
+    print(res["url"].replace("/?p=", "/?post_type=mona_reports&p="), "hết hạn", res["expires"])
+
+
 def publish(slug):
     r = json.loads((DIR / f"{slug}.json").read_text(encoding="utf-8"))
     res = api("POST", f"mona_reports/{r['wp']['id']}?_fields=id,status,link", {"status": "publish"})
@@ -102,4 +113,4 @@ def publish(slug):
 
 
 if __name__ == "__main__":
-    {"draft": draft, "publish": publish}[sys.argv[1]](sys.argv[2])
+    {"draft": draft, "preview": preview, "publish": publish}[sys.argv[1]](sys.argv[2])

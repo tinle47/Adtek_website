@@ -3,9 +3,9 @@
  "title": "Cẩm nang pháp lý marketing 2026: các luật mới doanh nghiệp cần biết",
  "subtitle": "Dữ liệu cá nhân, thương mại điện tử, quảng cáo, nội dung AI, thuế hộ kinh doanh và bản đồ 34 tỉnh: thay đổi gì và đội marketing cần làm gì.",
  "period": "Cập nhật 10/2026",
- "excerpt": "Năm 2026 có năm nhóm quy định mới tác động trực tiếp tới marketing: dữ liệu cá nhân, thương mại điện tử, quảng cáo qua KOL, thuế hộ kinh doanh và địa giới 34 tỉnh. Cẩm nang tóm tắt mốc hiệu lực, mức phạt và checklist tuân thủ cho đội marketing.",
- "meta_desc": "Cẩm nang pháp lý marketing 2026: Luật Bảo vệ dữ liệu cá nhân, Luật TMĐT, Luật Quảng cáo sửa đổi, thuế hộ kinh doanh, 34 tỉnh và checklist tuân thủ.",
- "web_intro": "Từ 1/1/2026 đến giữa năm, hàng loạt luật và nghị định mới thay đổi cách doanh nghiệp thu thập lead, chạy remarketing, hợp tác KOL và bán hàng qua livestream. Cẩm nang của Adtek tổng hợp những điểm đội marketing cần nắm, kèm số hiệu văn bản, ngày hiệu lực, mức phạt và một checklist tuân thủ có thể dùng ngay.",
+ "excerpt": "Năm 2026 có sáu nhóm quy định mới tác động trực tiếp tới marketing: dữ liệu cá nhân, thương mại điện tử, quảng cáo qua KOL, nội dung do AI tạo ra, thuế hộ kinh doanh và địa giới 34 tỉnh. Cẩm nang tóm tắt mốc hiệu lực, mức phạt và checklist tuân thủ cho đội marketing.",
+ "meta_desc": "Cẩm nang pháp lý marketing 2026: Luật Bảo vệ dữ liệu cá nhân, Luật TMĐT, Luật Quảng cáo, gắn nhãn nội dung AI, 34 tỉnh và checklist tuân thủ.",
+ "web_intro": "Từ 1/1/2026 đến giữa năm, hàng loạt luật và nghị định mới thay đổi cách doanh nghiệp thu thập lead, chạy remarketing, hợp tác KOL, dùng nội dung AI và bán hàng qua livestream. Cẩm nang của Adtek tổng hợp những điểm đội marketing cần nắm, kèm số hiệu văn bản, ngày hiệu lực, mức phạt và một checklist tuân thủ có thể dùng ngay.",
  "web_bullets": [
   "Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 và Nghị định 356/2025: mức phạt, sự đồng ý, remarketing và chuyển dữ liệu ra nước ngoài",
   "Ưu đãi miễn trừ cho hộ kinh doanh, doanh nghiệp siêu nhỏ, nhỏ và khởi nghiệp, cùng các ngoại lệ cần lưu ý",
@@ -462,8 +462,13 @@
  ],
  "short_title": "Cẩm nang pháp lý marketing 2026",
  "filters": {
-  "category_reports": "Việt Nam",
-  "field_reports": "Pháp lý marketing",
+  "category_reports": "Nghiên cứu thị trường",
+  "field_reports": "Pháp lý",
   "year_reports": "2026"
+ },
+ "wp": {
+  "pdf_id": 6151,
+  "cover_id": 6152,
+  "id": 6153
  }
 }
