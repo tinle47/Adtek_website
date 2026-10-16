@@ -2,12 +2,15 @@
 
 Đăng nhập bằng service account: biến môi trường GSC_SERVICE_ACCOUNT chứa file khóa JSON (nguyên văn hoặc base64).
 Email của service account phải được thêm vào property adtek.agency trong Search Console với quyền Full.
-Google không có API cho nút "Yêu cầu lập chỉ mục": bài chưa được index thì in link để anh Tin bấm tay.
+Google không có API cho nút "Yêu cầu lập chỉ mục". Lệnh notify dùng Indexing API (anh Tin chọn phương án B ngày 16/10/2026,
+biết Google chỉ chính thức hỗ trợ trang tuyển dụng và livestream): service account phải là Owner của property, project bật
+Web Search Indexing API, hạn mức mặc định 200 URL/ngày. Google từ chối thì in link để anh Tin bấm tay.
 
 Cách dùng:
   python3 tools/gsc.py sites              property mà service account truy cập được (kiểm tra kết nối)
   python3 tools/gsc.py submit             gửi lại sitemap_index.xml
   python3 tools/gsc.py inspect <số bài>   tình trạng index của bài, ghi index_status, index_checked vào calendar.json
+  python3 tools/gsc.py notify <số bài>    báo Google bài mới hoặc vừa cập nhật qua Indexing API (thay cho bấm tay "Yêu cầu lập chỉ mục")
   python3 tools/gsc.py pending [số ngày]  kiểm tra bài đăng từ <số ngày> ngày trước (mặc định 2, tối đa 30 ngày) mà chưa index, in link bấm tay
 """
 import base64
@@ -25,10 +28,11 @@ from blog_post import VN, find, load, save
 
 SITE_URL = "https://adtek.agency"
 SITEMAP = f"{SITE_URL}/sitemap_index.xml"
-SCOPE = "https://www.googleapis.com/auth/webmasters"
+SCOPE = "https://www.googleapis.com/auth/webmasters https://www.googleapis.com/auth/indexing"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 WEBMASTERS = "https://www.googleapis.com/webmasters/v3"
 INSPECT = "https://searchconsole.googleapis.com/v1/urlInspection/index:inspect"
+PUBLISH = "https://indexing.googleapis.com/v3/urlNotifications:publish"
 
 
 def b64url(data):
@@ -135,6 +139,22 @@ if __name__ == "__main__":
         out = inspect(data, find(data, int(sys.argv[2])), tok, prop)
         save(data)
         print(json.dumps(out, ensure_ascii=False, indent=1))
+    elif cmd == "notify":
+        post = find(data, int(sys.argv[2]))
+        url = f"{SITE_URL}/{post['slug']}/"
+        r = call("POST", PUBLISH, {"url": url, "type": "URL_UPDATED"}, bearer=tok)
+        meta = r.get("urlNotificationMetadata")
+        if not meta:
+            # Bị từ chối (chưa là Owner, chưa bật API, hết hạn mức, bị thu hồi quyền): quay về bấm tay.
+            out = inspect(data, post, tok, prop)
+            save(data)
+            print(json.dumps({"no": post["no"], "url": url, "notified": False, "error": r.get("error", r),
+                              "request_indexing": out.get("request_indexing")}, ensure_ascii=False, indent=1))
+            sys.exit(1)
+        post["index_notified"] = datetime.now(VN).strftime("%Y-%m-%d %H:%M")
+        save(data)
+        print(json.dumps({"no": post["no"], "url": url, "notified": True,
+                          "notify_time": meta.get("latestUpdate", {}).get("notifyTime")}, ensure_ascii=False, indent=1))
     elif cmd == "pending":
         days = int(sys.argv[2]) if len(sys.argv) > 2 else 2
         cutoff = (datetime.now(VN) - timedelta(days=days)).strftime("%Y-%m-%d")
