@@ -48,13 +48,13 @@ linear-gradient(180deg,#A9ABF6 0%,#8384DA 34%,#4A4CA3 66%,#1E2056 100%)}
 .body{flex:1;width:100%;display:flex;flex-direction:column;justify-content:center;gap:{gapbox}px;padding-bottom:{bodyb}px}
 .main{width:100%;display:flex;align-items:center;justify-content:center;gap:44px}
 .stack .main{flex-direction:column;gap:16px}
-.side .text{text-align:left}.stack .text{text-align:center}
+.side .text{text-align:left;flex:1}.stack .text{text-align:center}
 .kicker{color:#D3E7FF;font-weight:800;font-size:{kick}px;letter-spacing:3px;text-transform:uppercase}
 .hero{position:relative;flex:none;font-weight:900;font-size:{hero}px;line-height:.9;letter-spacing:-4px;
 background:linear-gradient(165deg,#FFFFFF 8%,#F6DCF2 38%,#CDB8F2 62%,#8F8CE4 88%);-webkit-background-clip:text;background-clip:text;color:transparent;
 filter:drop-shadow(1px 1px 0 #6F6FC8) drop-shadow(2px 2px 0 #5E5EB6) drop-shadow(3px 3px 0 #5052A4) drop-shadow(4px 4px 0 #444694)
 drop-shadow(5px 6px 0 #3A3C85) drop-shadow(0 18px 26px rgba(10,12,50,.55)) drop-shadow(0 0 30px rgba(140,205,255,.45))}
-.title{margin-top:12px;font-weight:900;font-size:{tsize}px;line-height:1.04;text-transform:uppercase;text-shadow:0 4px 18px rgba(20,20,70,.45)}
+.title{margin-top:12px;font-weight:900;font-size:{tsize}px;line-height:1.14;text-transform:uppercase;text-shadow:0 4px 18px rgba(20,20,70,.45)}
 .box{width:100%;border:2px solid rgba(255,255,255,.9);border-radius:30px;padding:30px 38px;background:rgba(255,255,255,.12);
 font-weight:700;font-size:{sub}px;line-height:1.38;text-align:left;text-shadow:0 2px 10px rgba(20,20,70,.4)}
 </style></head><body>
@@ -112,19 +112,21 @@ def cover(post, size=(1080, 1350)):
     """Ảnh Facebook theo nhận diện bài đăng của Adtek: nền tím xanh, lưới công nghệ, chữ 3D lớn, khung mô tả bo góc."""
     c, esc = post["cover"], html.escape
     w, h = size
+    # Số lớn và dòng chữ cạnh nó phải đọc liền thành một câu ("30" + "ngày chuẩn bị 11.11"), như mẫu "5 xu hướng marketing".
     hero = c.get("hero") or c["title"].split()[-1]
+    title = c.get("hero_text") or c["title"]
     square = w == h
     side = len(hero) <= 2  # số hoặc chữ ngắn: đặt bên trái, chữ bên phải như mẫu "5 xu hướng"
     k = 0.88 if square else 1
     vals = {"w": w, "h": h, "pad": 64 if square else 80, "padb": 64 if square else 90, "logo": 104 if square else 116,
             "kick": round(34 * k), "sub": round(38 * k),
-            "tsize": round((84 if len(c["title"]) <= 16 else 70) * k * (0.9 if side else 1)),
-            "gapbox": 56, "bodyb": 40 if square else 60, "hero": round((380 if side else 250 if len(hero) <= 4 else 190) * k), "layout": "side" if side else "stack"}
+            "tsize": round((86 if len(title) <= 16 else 76 if len(title) <= 28 else 68) * k),
+            "gapbox": 56, "bodyb": 40 if square else 60, "hero": round(((380 if len(hero) == 1 else 310) if side else 250 if len(hero) <= 4 else 190) * k), "layout": "side" if side else "stack"}
     page = COVER.replace("FONTS", (ASSETS / "fonts").as_uri()).replace("LOGO", (ASSETS / "adtek-logo-white.png").as_uri())
     for k, v in vals.items():
         page = page.replace("{" + k + "}", f"{v:g}" if isinstance(v, float) else str(v))
     page = (page.replace("{gridlines}", grid_lines()).replace("{kicker}", esc(c["kicker"]))
-            .replace("{herotext}", esc(hero)).replace("{title}", esc(c["title"])).replace("{subtitle}", esc(c["subtitle"])))
+            .replace("{herotext}", esc(hero)).replace("{title}", esc(title)).replace("{subtitle}", esc(c["subtitle"])))
     src = ROOT / f"previews/fb-{post['slug']}.html"
     out = ROOT / f"content/posts/{post['slug']}-fb.jpg"
     src.parent.mkdir(exist_ok=True)
