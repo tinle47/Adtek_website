@@ -25,6 +25,17 @@ Lịch đăng, cụm chủ đề và danh sách bài nằm trong `calendar.json`
 3. Thứ Hai, Ba, Năm, Sáu 21:43 (lịch tự động của phiên **Adtek - SEO**): tối ưu SEO và làm liên kết ngược cho bài vừa lên sóng, xem mục "Tối ưu SEO sau khi đăng".
 4. Ngày 1 hằng tháng (lịch tự động 8:47 sáng): rà soát và cập nhật nội dung, gửi báo cáo qua email, push notification và tin nhắn trong phiên.
 
+## Ảnh Facebook hằng ngày
+
+Bài Facebook riêng (danh sách `facebook` trong `calendar.json`) dùng ảnh 1080x1080 do phiên **Adtek - Designer** dựng bằng `tools/social.py`, cùng nhận diện với ảnh bìa (phẳng, navy, cam, kem; Newsreader cho tiêu đề và số, Be Vietnam Pro cho chữ; không đường kẻ, không hình tròn bao chữ hoặc logo, không gradient, không bóng đổ).
+
+- Nội dung chữ trên ảnh nằm trong trường `design` của từng bài (phiên Designer viết, chỉ dùng số liệu có trong `brief`, nguồn hoặc bài blog). Cấu trúc theo dạng bài ghi ở đầu `tools/social.py`.
+- Ảnh lưu ở `content/facebook/<id>/1.jpg`, `2.jpg`... (carousel nhiều ảnh theo thứ tự). Trường `images` ghi danh sách đường dẫn tương đối theo đúng thứ tự đăng; phiên Facebook post đăng đúng các file này, thiếu `images` thì dừng và báo.
+- Mỗi dạng bài có 2 biến thể, tự xoay vòng theo số lần dạng đó đã xuất hiện; ghi `design.variant` (0 hoặc 1) để ép một biến thể.
+- Dạng bài: Góc số liệu (số lớn đứng trên cụm chữ), Thuật ngữ 1 phút (như mục từ điển), Carousel hướng dẫn (trang bìa, mỗi bước một trang, trang kết; số trang ghi chữ ở góc), Tin nóng (mốc thời gian trên tiêu đề, các ý đánh số), Phép tính nhanh (bảng tính, dòng kết quả nền cam), Hiểu lầm và sự thật (hai khối màu), Câu hỏi mở (lựa chọn A, B, C). Video ngắn (Reels) không dựng ảnh.
+- Lệnh: `python3 tools/social.py render <id>`, `python3 tools/social.py week <ngày đầu> <ngày cuối>`, `python3 tools/social.py missing` (bài sắp đăng chưa có design hoặc ảnh).
+- Nhịp: ảnh tuần sau xong trước thứ Sáu tuần trước để kịp gửi duyệt; sửa `design` thì dựng lại và báo phiên Facebook post.
+
 ## Cụm chủ đề (topic cluster)
 
 Mỗi cụm có một bài trụ cột (pillar) bao quát, các bài con đi sâu từng khía cạnh.
