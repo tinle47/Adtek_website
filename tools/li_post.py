@@ -240,7 +240,7 @@ def upload_video(path):
             code, h, d = call("PUT", part["uploadUrl"], upload=chunk)
             if code not in (200, 201) or "etag" not in h:
                 fail(f"tải phần {i + 1} của {path.name}", code, d)
-            etags.append(h["etag"])
+            etags.append(h["etag"].strip("\""))  # header ETag có ngoặc kép, uploadedPartIds thì không
     code, _, d = call("POST", "videos?action=finalizeUpload", {"finalizeUploadRequest": {
         "video": v["video"], "uploadToken": v.get("uploadToken", ""), "uploadedPartIds": etags}})
     if code != 200:
