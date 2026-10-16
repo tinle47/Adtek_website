@@ -14,7 +14,7 @@ Cách dùng:
   python3 tools/covers.py render <số bài> [--style X] [--kind blog|fb|all] [--out thư-mục]   dựng thử, không ghi cover.style
   python3 tools/covers.py sheet <số bài> [--out thư-mục]   dựng mọi phong cách cho một bài để so sánh
   python3 tools/covers.py existing <wp_id>           dựng ảnh bìa blog cho bài cũ trong mục existing (vd 6076, 6078)
-  python3 tools/covers.py fbcover [columns|minimal|center|split|cream] [--out thư-mục]   ảnh bìa Fanpage Facebook 1640x624 (content/brand/fb-cover.jpg)
+  python3 tools/covers.py fbcover [arrow|bars|cream|pattern|columns|minimal|center|split] [--out thư-mục]   ảnh bìa Fanpage Facebook 1640x624 (content/brand/fb-cover.jpg)
   python3 tools/covers.py og [navy|cream|panel] [--out thư-mục]   ảnh chia sẻ mặc định của website (content/brand/og-default.jpg và @2x)
 """
 import base64
@@ -557,7 +557,7 @@ FB_COVER_SIZE = (1640, 624)  # khổ tải lên Facebook khuyến nghị (hiển
 # Máy tính: ảnh đại diện đè góc dưới bên trái. Mẫu "columns": logo, tiêu đề giữa phía trên; dịch vụ hai cột hai bên hình tròn.
 SERVICES = ["User acquisition strategy", "CRM management", "Integrated marketing communication", "Growth consultancy", "SEO services"]
 FB_COVER_VARIANTS = ("columns", "minimal", "center", "split", "cream")  # anh Tin chọn bố cục giữa, chỉnh lại thành columns cho điện thoại
-FB_COVER_BOLD = ("bars", "cream", "pattern")
+FB_COVER_BOLD = ("arrow", "bars", "cream", "pattern")
 FB_MOBILE = {"view": (315, 1325), "top": 80, "icons": [(330, 155, 400, 210), (1020, 155, 1290, 210)],
              "circle": (818, 573, 200), "note": (670, 305, 965, 400), "bottom": 595}
 
@@ -618,11 +618,35 @@ li{{display:flex;align-items:baseline;gap:18px}}
     return document(css, body, *FB_COVER_SIZE)
 
 
+def growth_arrow(points, color=CREAM, width=14, head=46):
+    """Mũi tên cong đi qua các điểm (đường Catmull-Rom đổi sang Bezier), đầu mũi tên tam giác theo hướng cuối đường.
+    Đường kéo dài thêm từ điểm cuối theo hướng đi lên để đầu mũi tên ra khỏi cột cuối."""
+    import math
+    pts = [points[0]] + points + [points[-1]]
+    d = f"M{pts[1][0]},{pts[1][1]}"
+    for i in range(1, len(pts) - 2):
+        p0, p1, p2, p3 = pts[i - 1], pts[i], pts[i + 1], pts[i + 2]
+        c1 = (p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6)
+        c2 = (p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6)
+        d += f" C{c1[0]:.1f},{c1[1]:.1f} {c2[0]:.1f},{c2[1]:.1f} {p2[0]},{p2[1]}"
+    (x1, y1), (x2, y2) = points[-2], points[-1]
+    a = math.atan2(y2 - y1, x2 - x1)
+    tip = (x2 + head * .9 * math.cos(a), y2 + head * .9 * math.sin(a))
+    d += f" L{x2 + head * .2 * math.cos(a):.1f},{y2 + head * .2 * math.sin(a):.1f}"
+    left = (tip[0] - head * math.cos(a - .5), tip[1] - head * math.sin(a - .5))
+    right = (tip[0] - head * math.cos(a + .5), tip[1] - head * math.sin(a + .5))
+    tri = " ".join(f"{x:.1f},{y:.1f}" for x, y in (tip, left, right))
+    return (f'<svg class="abs" style="left:0;top:0" width="{FB_COVER_SIZE[0]}" height="{FB_COVER_SIZE[1]}">'
+            f'<path d="{d}" fill="none" stroke="{color}" stroke-width="{width}" stroke-linecap="round" stroke-linejoin="round"/>'
+            f'<polygon points="{tri}" fill="{color}" stroke="{color}" stroke-width="6" stroke-linejoin="round"/></svg>')
+
+
 def fb_cover_bold(variant):
     """Bản gọn nhiều hình hơn (anh Tin 16/10/2026: bản gọn chưa đủ ấn tượng). Tiêu đề giữa phía trên, hình nằm ngoài vùng chữ.
     bars: biểu đồ cột tăng dần từ trái sang phải trên nền navy; ba cột cuối chuyển cam (giai đoạn tăng trưởng).
     cream: cùng biểu đồ trên nền kem, cột navy đặc, ba cột cuối cam.
-    pattern: lưới dấu A chìm trên nền navy, một dấu A cam lớn nổi bật ở cột phải (thấy cả trên điện thoại)."""
+    pattern: lưới dấu A chìm trên nền navy, một dấu A cam lớn nổi bật ở cột phải (thấy cả trên điện thoại).
+    arrow: như bars, thêm mũi tên kem cong vút lên theo đỉnh cột (anh Tin chọn 16/10/2026)."""
     cream = variant == "cream"
     bg, fg = (CREAM, NAVY) if cream else (NAVY, "#fff")
     css = f"""
@@ -633,9 +657,12 @@ h1{{position:absolute;left:315px;right:315px;top:224px;text-align:center;font-si
 .bar.o{{background:{ORANGE}}}
 .pa{{position:absolute;aspect-ratio:285/253;background:rgba(244,238,227,.07)}}
 .pa.o{{background:{ORANGE}}}"""
-    if variant in ("bars", "cream"):
+    if variant in ("bars", "cream", "arrow"):
         hs = [36, 50, 68, 92, 124, 168, 232, 316]  # tăng nhanh dần như đường cong tăng trưởng
         art = "".join(f'<div class="bar{" o" if i >= 5 else ""}" style="left:{40 + 200 * i}px;height:{h}px"></div>' for i, h in enumerate(hs))
+        if variant == "arrow":
+            # sát đỉnh cột ở đầu, càng về cuối càng xa đỉnh cột để đường cong dốc dần lên (vút)
+            art += growth_arrow([(115 + 200 * i, 624 - h - 22 - (i / 7) ** 2.2 * 96) for i, h in enumerate(hs)], width=16, head=54)
     else:
         cells = []
         for r, y in enumerate(range(-30, 640, 120)):
@@ -649,7 +676,7 @@ h1{{position:absolute;left:315px;right:315px;top:224px;text-align:center;font-si
     body = f"""{art}<div class="lg">{logo(fg, 64)}</div><h1>{hl("*Growth* marketing agency")}</h1>"""
     return document(css, body, *FB_COVER_SIZE)
 
-def fb_cover_render(variant="columns", out=None):
+def fb_cover_render(variant="arrow", out=None):
     """Ghi content/brand/fb-cover.jpg (1640x624); out: thư mục khác để xem thử."""
     d = Path(out) if out else ROOT / "content/brand"
     html_text = fb_cover_bold(variant) if variant in FB_COVER_BOLD else fb_cover(variant)
@@ -685,8 +712,8 @@ if __name__ == "__main__":
     elif cmd == "og":  # ảnh chia sẻ mặc định của website: og [navy|cream|panel] [--out thư-mục để xem thử]
         v = args[1] if len(args) > 1 and not args[1].startswith("--") else "navy"
         print("\n".join(og_render(v, opt("--out"))))
-    elif cmd == "fbcover":  # ảnh bìa Fanpage: fbcover [columns|minimal|center|split|cream] [--out thư-mục để xem thử]
-        v = args[1] if len(args) > 1 and not args[1].startswith("--") else "columns"
+    elif cmd == "fbcover":  # ảnh bìa Fanpage: fbcover [arrow|bars|cream|pattern|columns|minimal|center|split] [--out thư-mục để xem thử]
+        v = args[1] if len(args) > 1 and not args[1].startswith("--") else "arrow"
         print("\n".join(fb_cover_render(v, opt("--out"))))
     elif cmd == "sheet":
         post = find(data, int(args[1]))
