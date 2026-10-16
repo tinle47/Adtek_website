@@ -26,7 +26,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
-from covers import CREAM, NAVY, ORANGE, ROOT, document, logo, shoot
+from covers import CREAM, NAVY, ORANGE, ROOT, document, hl, logo, shoot
 
 SIZE = 1080
 esc = html.escape
@@ -37,8 +37,7 @@ body{{color:{NAVY}}}
 .label{{position:absolute;left:72px;top:72px;font-weight:600;font-size:28px}}
 .src{{position:absolute;left:72px;bottom:60px;font-weight:500;font-size:20px;opacity:.7}}
 .site{{position:absolute;right:72px;bottom:60px;font-weight:600;font-size:20px;opacity:.7}}
-h1,h2{{line-height:1.12}}
-h2{{font-family:NR,serif;font-weight:600;letter-spacing:-.012em}}
+h1,h2{{line-height:1.1}}
 p{{line-height:1.42}}
 """
 
@@ -70,9 +69,9 @@ body{{background:{BG[theme]};color:{FG[theme]}}}
 .copy{{position:absolute;left:72px;right:72px;top:170px;bottom:150px;display:flex;flex-direction:column;justify-content:center}}
 .num{{font-size:{size}px;line-height:.8;color:{num_color};white-space:nowrap}}
 h1{{font-size:76px;margin-top:-.08em;max-height:3.4em}}
-p{{font-size:32px;margin-top:26px;max-height:4.4em;opacity:.85}}"""
+p{{font-size:36px;line-height:1.3;margin-top:26px;max-height:4.4em;opacity:.85}}"""
     body = f"""{frame(theme, "Góc số liệu", d.get("source", ""))}
-<div class="copy"><div class="num">{esc(d['num'])}</div><h1 class="fit bal">{esc(d['phrase'])}</h1><p class="fit">{esc(d.get('context', ''))}</p></div>"""
+<div class="copy"><div class="num">{esc(d['num'])}</div><h1 class="fit bal phrase">{hl(d['phrase'])}</h1><p class="fit">{esc(d.get('context', ''))}</p></div>"""
     return [(css, body)]
 
 
@@ -84,12 +83,12 @@ body{{background:{BG[theme]};color:{FG[theme]}}}
 .copy{{position:absolute;left:72px;right:72px;top:190px}}
 h1{{font-size:132px;line-height:1;color:{ORANGE if theme == 'navy' else NAVY};max-height:2.1em}}
 .kind{{font-family:NR,serif;font-style:italic;font-size:34px;margin:18px 0 34px;color:{ORANGE}}}
-.def{{font-size:40px;line-height:1.35;font-weight:500;max-height:5.5em}}
+.def{{font-size:42px;line-height:1.28;font-weight:400;max-height:5.5em}}
 .why{{position:absolute;left:72px;right:72px;bottom:130px;font-size:30px;line-height:1.42;max-height:4.4em}}
 .why b{{color:{ORANGE};font-weight:600}}"""
     body = f"""{frame(theme, "Thuật ngữ 1 phút", d.get("source", ""))}
-<div class="copy"><h1 class="fit">{esc(d['term'])}</h1><div class="kind">{esc(d.get('kind', ''))}</div>
-<div class="def fit">{esc(d['definition'])}</div></div>
+<div class="copy"><h1 class="fit">{hl(d['term'])}</h1><div class="kind">{esc(d.get('kind', ''))}</div>
+<div class="def fit">{hl(d['definition'])}</div></div>
 <div class="why fit"><b>Vì sao quan trọng: </b>{esc(d.get('why', ''))}</div>"""
     return [(css, body)]
 
@@ -103,10 +102,10 @@ body{{background:{CREAM}}}
 .b{{position:absolute;left:0;right:0;top:470px;bottom:0;background:{NAVY};color:#fff;padding:56px 72px 0}}
 .t{{font-weight:600;font-size:28px;color:{ORANGE};margin-bottom:14px}}
 .a h2{{font-size:76px;max-height:3.4em;color:{NAVY}}}
-.b p{{font-size:40px;font-weight:500;max-height:6.2em}}
+.b p{{font-size:42px;line-height:1.28;max-height:6.2em}}
 """
-        body = f"""<div class="a"><div class="t">Hiểu lầm</div><h2 class="fit bal">“{esc(d['myth'])}”</h2></div>
-<div class="b"><div class="t">Sự thật</div><p class="fit">{esc(d['fact'])}</p></div>{frame("cream", "Hiểu lầm và sự thật", d.get("source", ""), foot="navy")}"""
+        body = f"""<div class="a"><div class="t">Hiểu lầm</div><h2 class="fit bal">“{hl(d['myth'])}”</h2></div>
+<div class="b"><div class="t">Sự thật</div><p class="fit">{hl(d['fact'])}</p></div>{frame("cream", "Hiểu lầm và sự thật", d.get("source", ""), foot="navy")}"""
         return [(css, body)]
     css = BASE + f"""
 body{{background:{NAVY}}}
@@ -115,9 +114,10 @@ body{{background:{NAVY}}}
 .t{{font-weight:600;font-size:28px;margin-bottom:16px}}
 .a .t{{color:{NAVY}}}.b .t{{color:{ORANGE}}}
 .a h2{{font-size:56px;max-height:9em}}
-.b p{{font-size:34px;font-weight:500;max-height:15em}}"""
-    body = f"""<div class="a"><div class="t">Hiểu lầm</div><h2 class="fit bal">“{esc(d['myth'])}”</h2></div>
-<div class="b"><div class="t">Sự thật</div><p class="fit">{esc(d['fact'])}</p></div>
+.b p{{font-size:36px;line-height:1.28;max-height:15em}}
+.a .hl{{color:inherit}}"""
+    body = f"""<div class="a"><div class="t">Hiểu lầm</div><h2 class="fit bal">“{hl(d['myth'])}”</h2></div>
+<div class="b"><div class="t">Sự thật</div><p class="fit">{hl(d['fact'])}</p></div>
 <div class="lg" style="right:72px">{logo('#fff', 70)}</div><div class="label" style="color:{NAVY}">Hiểu lầm và sự thật</div>
 <div class="src" style="left:542px;color:#fff">Nguồn: {esc(d.get('source', ''))}</div>"""
     return [(css, body)]
@@ -137,8 +137,9 @@ ul{{list-style:none;margin-top:70px}}
 li{{display:flex;align-items:baseline;gap:26px;font-size:40px;font-weight:600;padding:12px 0}}
 li span{{font-family:NR,serif;font-size:56px;color:{letter};width:44px}}
 .cta{{position:absolute;left:72px;bottom:96px;font-size:24px;font-weight:600;opacity:.8}}
+{'.hl{color:inherit}' if theme == 'orange' else ''}
 .site{{display:none}}"""
-    body = f"""{frame(theme, "Câu hỏi mở")}<div class="q"><div class="ctx fit">{esc(d.get('context', ''))}</div><h1 class="fit bal">{esc(d['question'])}</h1><ul>{opts}</ul></div><div class="cta">Trả lời ở phần bình luận</div>"""
+    body = f"""{frame(theme, "Câu hỏi mở")}<div class="q"><div class="ctx fit">{esc(d.get('context', ''))}</div><h1 class="fit bal">{hl(d['question'])}</h1><ul>{opts}</ul></div><div class="cta">Trả lời ở phần bình luận</div>"""
     return [(css, body)]
 
 
@@ -155,7 +156,7 @@ ul{{list-style:none;margin-top:70px}}
 li{{display:flex;gap:24px;font-size:34px;line-height:1.38;padding:12px 0}}
 li span{{font-family:NR,serif;font-weight:600;font-size:40px;line-height:1;color:{ORANGE};flex:none;width:30px}}"""
     body = f"""{frame(theme, "Tin nóng", d.get("source", ""))}
-<div class="copy"><div class="when">{esc(d.get('when', ''))}</div><h1 class="fit bal">{esc(d['headline'])}</h1><ul>{pts}</ul></div>"""
+<div class="copy"><div class="when">{esc(d.get('when', ''))}</div><h1 class="fit bal">{hl(d['headline'])}</h1><ul>{pts}</ul></div>"""
     return [(css, body)]
 
 
@@ -177,7 +178,7 @@ tr:nth-child(odd) td{{background:{band}}}
 .res span{{font-size:30px;font-weight:600}}
 .res b{{font-family:NR,serif;font-weight:600;font-size:64px;line-height:1}}
 .note{{margin-top:16px;font-size:22px;line-height:1.4;opacity:.75}}"""
-    body = f"""{frame(theme, "Phép tính nhanh", d.get("source", ""))}<h1 class="fit bal">{esc(d['title'])}</h1>
+    body = f"""{frame(theme, "Phép tính nhanh", d.get("source", ""))}<h1 class="fit bal">{hl(d['title'])}</h1>
 <div class="calc"><table>{rows}</table><div class="res"><span>{esc(ra)}</span><b>{esc(rb)}</b></div><div class="note">{esc(d.get('note', ''))}</div></div>"""
     return [(css, body)]
 
@@ -200,7 +201,7 @@ body{{background:{BG[t]};color:{FG[t]}}}
 .num{{position:absolute;left:72px;top:190px;font-size:360px;line-height:.8;color:{ORANGE}}}
 h1{{position:absolute;left:72px;right:72px;top:500px;font-size:84px;max-height:3.4em}}
 .go{{position:absolute;left:72px;bottom:110px;font-size:28px;font-weight:600;color:{ORANGE}}}"""
-    body = f"""{frame(t, d['title'])}<div class="num">{len(steps)}</div><h1 class="fit bal">{esc(d['promise'])}</h1>
+    body = f"""{frame(t, d['title'])}<div class="num">{len(steps)}</div><h1 class="fit bal phrase">{hl(d['promise'])}</h1>
 <div class="go">Lướt sang để xem từng bước</div>{pageno(1, t)}"""
     pages.append((css, body))
     # các bước, xen kẽ hai nền
@@ -211,19 +212,20 @@ body{{background:{BG[t]};color:{FG[t]}}}
 .copy{{position:absolute;left:72px;right:72px;top:170px;bottom:140px;display:flex;flex-direction:column;justify-content:center}}
 .num{{font-size:300px;line-height:.8;color:{ORANGE}}}
 h1{{font-size:72px;margin-top:-.05em;max-height:2.3em}}
-p{{font-size:34px;margin-top:24px;max-height:6em}}"""
-        body = f"""{frame(t, d['title'])}<div class="copy"><div class="num">{i + 1}</div><h1 class="fit bal">{esc(s['title'])}</h1>
+p{{font-size:40px;line-height:1.28;margin-top:24px;max-height:6.5em}}"""
+        body = f"""{frame(t, d['title'])}<div class="copy"><div class="num">{i + 1}</div><h1 class="fit bal">{hl(s['title'])}</h1>
 <p class="fit">{esc(s['body'])}</p></div>{pageno(i + 2, t)}"""
         pages.append((css, body))
     # trang kết
     t = "orange"
     css = common + f"""
 body{{background:{ORANGE};color:{NAVY}}}
+.hl{{color:inherit}}
 h1{{position:absolute;left:72px;right:72px;top:200px;font-size:78px;max-height:4.5em}}
 .go{{position:absolute;left:72px;bottom:150px;font-size:32px;font-weight:600}}"""
     src = f'<div class="src">Nguồn: {esc(d["source"])}</div>' if d.get("source") else ""
     body = f"""<div class="lg" style="right:72px">{logo(NAVY, 70)}</div><div class="label" style="color:{NAVY}">{esc(d['title'])}</div>
-<h1 class="fit bal">{esc(d['end'])}</h1><div class="go">Xem bài đầy đủ ở phần bình luận</div>{src}{pageno(total, t)}"""
+<h1 class="fit bal">{hl(d['end'])}</h1><div class="go">Xem bài đầy đủ ở phần bình luận</div>{src}{pageno(total, t)}"""
     pages.append((css, body))
     return pages
 

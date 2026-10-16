@@ -36,18 +36,21 @@ esc = html.escape
 HEAD = Template("""<!doctype html><html><head><meta charset="utf-8"><style>
 $fontcss
 *{box-sizing:border-box;margin:0;padding:0}
-body{width:${w}px;height:${h}px;overflow:hidden;position:relative;font-family:BVP,sans-serif;-webkit-font-smoothing:antialiased}
+body{width:${w}px;height:${h}px;overflow:hidden;position:relative;font-family:IT,sans-serif;-webkit-font-smoothing:antialiased}
 .fit{overflow:hidden;padding-top:.1em}.bal{text-wrap:balance}.abs{position:absolute}
 .logo{aspect-ratio:440/369;-webkit-mask:url($logo) center/contain no-repeat;mask:url($logo) center/contain no-repeat}
 .mark{-webkit-mask:url($mark) center/contain no-repeat;mask:url($mark) center/contain no-repeat}
 $css
-/* Chữ: tiêu đề và con số dùng Newsreader (chữ có chân kiểu báo chí), viết thường như câu; nhãn và mô tả dùng Be Vietnam Pro nhẹ.
+/* Chữ (theo mẫu anh Tin gửi 16/10/2026): tiêu đề Inter Tight đậm vừa, viết thường như câu, một từ khóa tô màu nhấn (.hl);
+   mô tả Inter Tight nét thường; con số và cụm chữ đọc liền sau số (.cap, .phrase) dùng Newsreader có chân.
    Đặt sau CSS của từng phong cách để thống nhất kiểu chữ cho cả bộ. */
-h1,.num,.name,.cap,.vs{font-family:NR,serif;font-weight:600;text-transform:none;letter-spacing:-.012em}
+h1,h2,.name{font-family:IT,sans-serif;font-weight:600;text-transform:none;letter-spacing:-.02em}
+.num,.cap,.phrase,.vs{font-family:NR,serif;font-weight:600;text-transform:none;letter-spacing:-.012em}
+:where(.hl){color:#FF9014}  /* độ ưu tiên 0: mẫu nền cam ghi đè .hl{color:inherit} được */
 .num{letter-spacing:-.03em;font-variant-numeric:lining-nums}
 .kicker+.num{margin-top:.1em}  /* phần trên của chữ số cao hơn khung dòng, chừa chỗ để không chạm nhãn */
 .kicker{font-weight:600;letter-spacing:0}
-.sub,.band{font-weight:400}
+.sub,.band,p{font-weight:400}
 </style></head><body class="$shape" data-fit="1">$body
 <script>
 // Co chữ: giảm cỡ chữ của .fit tới khi không tràn khung (chữ tiếng Việt dài ngắn khác nhau từng bài)
@@ -62,12 +65,12 @@ VI = "U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+
 LATIN = "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
 
 
-FONTS = {"BVP": ("be-vietnam-pro", (400, 500, 600, 700, 800, 900)), "NR": ("newsreader", (500, 600))}
+FONTS = {"IT": ("inter-tight", (400, 500, 600, 700)), "NR": ("newsreader", (500, 600)), "BVP": ("be-vietnam-pro", (400, 500, 600, 700, 800, 900))}
 
 
 def font_css():
     """Mỗi font tách 2 file (tiếng Việt, Latin): mỗi file một @font-face kèm unicode-range.
-    NR = Newsreader (tiêu đề, con số lớn), BVP = Be Vietnam Pro (nhãn, mô tả)."""
+    IT = Inter Tight (tiêu đề, nhãn, mô tả), NR = Newsreader (con số và cụm chữ đi liền sau số), BVP = Be Vietnam Pro (mẫu cũ neon3d)."""
     d = (ASSETS / "fonts").as_uri()
     return "\n".join(f"@font-face{{font-family:{fam};font-weight:{w};src:url({d}/{file}-{sub}-{w}-normal.woff2);unicode-range:{r}}}"
                      for fam, (file, weights) in FONTS.items() for w in weights for sub, r in (("vietnamese", VI), ("latin", LATIN)))
@@ -77,18 +80,27 @@ def logo(color, height, extra=""):
     return f'<div class="logo" style="height:{height}px;background:{color};{extra}"></div>'
 
 
+def hl(text):
+    """Thoát HTML rồi đổi *từ khóa* thành phần tô màu nhấn."""
+    return re.sub(r"\*(.+?)\*", r'<span class="hl">\1</span>', esc(text))
+
+
+def plain(text):
+    return esc(text.replace("*", ""))
+
+
 def fields(post, kind):
     c = post["cover"]
     fb = kind == "fb"
     return {
         "kicker": esc((c.get("fb_kicker") or c["kicker"]) if fb else c["kicker"]),
-        "head": esc((c.get("hero_text") or c["title"]) if fb else c["title"]),
+        "head": hl((c.get("hero_text") or c["title"]) if fb else c["title"]),
         "num": esc(c.get("hero") or f"{post['no']:02d}"),
-        "cap": esc(c.get("hero_text") or ""),
+        "cap": hl(c.get("hero_text") or ""),
         # paired: tiêu đề chính là cụm chữ đọc liền sau con số (khổ Facebook), nên số phải đứng ngay trước tiêu đề
         "paired": fb and bool(c.get("hero_text")),
-        "title": esc(c["title"]),
-        "sub": esc(c["subtitle"]),
+        "title": plain(c["title"]),
+        "sub": hl(c["subtitle"]),
         "chips": [esc(x) for x in c.get("chips", [])[:4]],
         "no": post["no"],
         "date": ".".join(reversed(post["date"].split("-")[1:])) + "." + post["date"][:4],
@@ -147,7 +159,7 @@ def editorial(f, sq):
     if f["paired"]:  # số đọc liền với tiêu đề: số ở trên, tiêu đề ngay dưới
         hero = 400 if n == 1 else 340 if n == 2 else 230
         main = f"""<div class="copy"><div class="kicker">{f['kicker']}</div><div class="num">{f['num']}</div>
-<h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>"""
+<h1 class="fit bal phrase">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>"""
     else:  # tiêu đề riêng; số và cụm chữ của nó thành một khối bên phải, số trên chữ dưới
         hero = 300 if n == 1 else 230 if n == 2 else 160
         unit = f'<div class="unit"><div class="num">{f["num"]}</div><div class="cap fit bal">{f["cap"]}</div></div>' if f["cap"] else ""
@@ -194,6 +206,7 @@ body{{background:{NAVY};color:#fff}}
 .unit{{position:absolute;left:64px;right:72px;top:150px;display:flex;align-items:flex-end;gap:30px}}
 .num{{flex:none;font-size:{hero}px;line-height:.8;color:{NAVY};white-space:nowrap}}
 .cap{{flex:1;font-size:56px;line-height:1.1;color:{NAVY};max-height:3.4em;padding-bottom:6px}}
+.cap .hl{{color:inherit}}
 .lg{{position:absolute;right:72px;top:56px}}
 .copy{{position:absolute;left:72px;right:72px;bottom:72px}}
 .kicker{{color:{ORANGE};font-size:30px}}
@@ -212,6 +225,7 @@ body{{background:{NAVY};color:#fff}}
 .unit{{position:absolute;left:140px;width:300px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
 .num{{font-size:{hero}px;line-height:.8;color:{NAVY};white-space:nowrap}}
 .cap{{margin-top:16px;font-size:32px;line-height:1.12;color:{NAVY};max-height:3.4em}}
+.cap .hl{{color:inherit}}
 .copy{{position:absolute;left:600px;right:140px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}}
 .lg{{position:absolute;right:140px;top:84px}}
 .kicker{{color:{ORANGE};font-size:23px}}
@@ -254,7 +268,7 @@ h1{{font-weight:900;line-height:1.12;letter-spacing:-.01em}}
 .ls .site{{display:none}}"""
     num = f'<div class="num">{f["num"]}</div>' if sq and fb else ""
     body = f"""<div class="big mark"></div><div class="lg">{logo('#fff', 74 if sq else 56)}</div>
-<div class="copy"><div class="kicker">{f['kicker']}</div>{num}<h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>
+<div class="copy"><div class="kicker">{f['kicker']}</div>{num}<h1 class="fit bal{' phrase' if num else ''}">{f['head']}</h1><div class="sub fit">{f['sub']}</div></div>
 <div class="site">adtek.agency</div>"""
     return css, body
 
@@ -275,7 +289,7 @@ h1{{flex:1;font-size:74px;line-height:1.12;max-height:4.5em}}
 .chips{{position:absolute;left:72px;bottom:64px;font-weight:600;font-size:24px;color:{ORANGE}}}"""
         head = f["head"] if f["paired"] else f["cap"] or f["head"]
         body = f"""<div class="top"><div class="kicker">{f['kicker']}</div><div class="row"><div class="num">{f['num']}</div>
-<h1 class="fit bal">{head}</h1></div></div><div class="lg">{logo('#fff', 74)}</div><div class="sub fit">{f['sub']}</div>
+<h1 class="fit bal{' phrase' if f['paired'] else ''}">{head}</h1></div></div><div class="lg">{logo('#fff', 74)}</div><div class="sub fit">{f['sub']}</div>
 <div class="chips">{' &nbsp;·&nbsp; '.join(f['chips'][:3])}</div>"""
         return css, body
     css = f"""
@@ -299,6 +313,7 @@ def poster(f, sq):
     n = len(f["num"])
     css = f"""
 body{{background:{ORANGE};color:{NAVY}}}
+.hl{{color:inherit}}
 .lg{{position:absolute}}
 .num{{font-size:var(--hero);line-height:.78;color:{NAVY};white-space:nowrap}}
 h1{{line-height:1.1}}
@@ -319,10 +334,10 @@ h1{{line-height:1.1}}
 .ls .sub{{font-size:23px;max-height:4.2em}}"""
     if sq:
         inner = f"""<div class="kicker">{f['kicker']}</div><div class="num">{f['num']}</div>
-<h1 class="fit bal">{f['head']}</h1><div class="sub fit">{f['sub']}</div>"""
+<h1 class="fit bal{' phrase' if f['paired'] else ''}">{f['head']}</h1><div class="sub fit">{f['sub']}</div>"""
     else:  # khổ ngang: số bên trái, cụm chữ của số làm tiêu đề ngay bên phải, tên bài làm nhãn
         inner = f"""<div class="num">{f['num']}</div><div class="text"><div class="kicker">{f['title']}</div>
-<h1 class="fit bal">{f['cap'] or f['head']}</h1><div class="sub fit">{f['sub']}</div></div>"""
+<h1 class="fit bal{' phrase' if f['cap'] else ''}">{f['cap'] or f['head']}</h1><div class="sub fit">{f['sub']}</div></div>"""
     body = f"""<div class="lg">{logo(NAVY, 80 if sq else 58)}</div><div class="copy">{inner}</div>"""
     return css, body
 
@@ -351,7 +366,7 @@ body{{background:{ORANGE};color:#fff}}
 .ls .nb{{right:140px;top:210px;width:360px;font-size:80px;max-height:2.3em}}
 .ls .vs{{left:42%;top:46%;font-size:96px}}
 .ls .band{{left:0;right:0;bottom:0;text-align:center;padding:22px 160px 84px;font-size:24px;max-height:5.6em}}"""
-    cap = html.unescape(f["cap"])
+    cap = html.unescape(re.sub(r"<[^>]+>", "", f["cap"]))
     if cap[1:2].islower() and cap.split()[0] not in src:  # "Sàn, chia..." đọc liền sau số: "2 sàn, chia..."
         cap = cap[0].lower() + cap[1:]
     band = f"{f['num']} {esc(cap)}" if sq and cap else f["sub"]
