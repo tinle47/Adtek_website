@@ -721,7 +721,7 @@ h1.cl{{position:absolute;left:0;right:0;top:278px;text-align:center;font-family:
     return document(css, body, W, H)
 
 
-def fb_cover_render(variant="arrow", out=None):
+def fb_cover_render(variant="classic", out=None):
     """Ghi content/brand/fb-cover.jpg (1640x624); out: thư mục khác để xem thử."""
     d = Path(out) if out else ROOT / "content/brand"
     html_text = fb_cover_classic() if variant == "classic" else fb_cover_bold(variant) if variant in FB_COVER_BOLD else fb_cover(variant)
@@ -758,7 +758,7 @@ if __name__ == "__main__":
         v = args[1] if len(args) > 1 and not args[1].startswith("--") else "navy"
         print("\n".join(og_render(v, opt("--out"))))
     elif cmd == "fbcover":  # ảnh bìa Fanpage: fbcover [classic|arrow|bars|cream|pattern|columns|minimal|center|split] [--out thư-mục để xem thử]
-        v = args[1] if len(args) > 1 and not args[1].startswith("--") else "arrow"
+        v = args[1] if len(args) > 1 and not args[1].startswith("--") else "classic"
         print("\n".join(fb_cover_render(v, opt("--out"))))
     elif cmd == "sheet":
         post = find(data, int(args[1]))
