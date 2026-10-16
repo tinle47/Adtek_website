@@ -24,7 +24,7 @@ Cách dùng:
   python3 tools/fb_daily.py auto                   bài pending quá 24 giờ chưa phản hồi: approval = auto (JSON)
   python3 tools/fb_daily.py publish <id> [--dry-run]  đăng (cần approval approved hoặc auto, đủ ảnh)
   python3 tools/fb_daily.py cancel <id>            anh Tin nhắn "hủy": không đăng bài này
-  python3 tools/fb_daily.py delete <id>            gỡ bài đã đăng
+  python3 tools/fb_daily.py delete <id>            gỡ bài đã đăng, approval = held (không tự đăng lại cho tới khi approve)
 """
 import base64
 import html
@@ -113,7 +113,7 @@ def summary(data, x, live_check=False):
 def due(data):
     now = datetime.now(VN)
     out = [summary(data, x, live_check=True) for x in data["facebook"]
-           if x.get("status") not in ("posted", "cancelled") and when(x) <= now]
+           if x.get("status") not in ("posted", "cancelled") and x.get("approval") != "held" and when(x) <= now]
     print(json.dumps(out, ensure_ascii=False, indent=1))
 
 
@@ -272,7 +272,8 @@ if __name__ == "__main__":
         if not x.get("fb_post_id"):
             sys.exit(f"{x['id']}: chưa đăng")
         graph_delete(x["fb_post_id"])
-        x.update({"status": "planned", "fb_post_id": None, "fb_comment_id": None})
+        # held: không tự đăng lại ở lượt kế tiếp; chờ Designer sửa ảnh và anh Tin nhắn "duyệt <id>"
+        x.update({"status": "planned", "approval": "held", "fb_post_id": None, "fb_comment_id": None})
         save(data)
     else:
         sys.exit(__doc__)
