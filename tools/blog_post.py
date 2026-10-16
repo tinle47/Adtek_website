@@ -4,7 +4,7 @@ Mỗi bài trong calendar.json cần: slug, seo_title, meta_desc, cover {kicker,
 và file nội dung content/posts/<slug>.html.
 
 Cách dùng:
-  python3 tools/blog_post.py cover <số bài>     tạo ảnh bìa content/posts/<slug>-cover.jpg (1200x630, bộ mẫu tools/covers.py)
+  python3 tools/blog_post.py cover <số bài>     tạo ảnh bìa content/posts/<slug>-cover.jpg (bố cục 1200x630, file 2400x1260, bộ mẫu tools/covers.py)
   python3 tools/blog_post.py draft <số bài>     tải ảnh bìa, tạo hoặc cập nhật bản nháp
   python3 tools/blog_post.py recover <số bài> [--delete-old]  tải content/posts/<slug>-cover.jpg lên, thay ảnh đại diện trên WordPress (giữ nguyên trạng thái bài)
   python3 tools/blog_post.py feature <ID bài WP> <file ảnh> [--delete-old]  thay ảnh đại diện cho bài không có trong calendar.json
@@ -45,7 +45,7 @@ def find(data, no):
 
 
 def cover(post):
-    """Ảnh bìa blog 1200x630 theo bộ mẫu tools/covers.py (cùng phong cách với ảnh Facebook của bài)."""
+    """Ảnh bìa blog (file 2400x1260) theo bộ mẫu tools/covers.py (cùng phong cách với ảnh Facebook của bài)."""
     import covers  # covers import blog_post, nên import ở đây để tránh vòng lặp
     return covers.make(post, "blog")
 
