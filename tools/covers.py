@@ -427,8 +427,8 @@ def report_cover(r):
 body{{background:{bg};color:{fg}}}
 .lg{{position:absolute;left:100px;top:100px}}
 .copy{{position:absolute;left:100px;width:600px;top:200px;bottom:100px;display:flex;flex-direction:column}}
-.series{{font-weight:600;font-size:26px;color:{ORANGE}}}
-.series span{{color:{fg};opacity:.7;font-weight:500}}
+.series{{font-weight:600;font-size:26px;color:{fg};opacity:.75}}
+.series span{{font-weight:500}}
 h1{{font-size:78px;line-height:1.06;margin-top:24px;max-height:4.3em}}
 .dl{{margin-top:auto;font-weight:600;font-size:24px}}
 .panel{{position:absolute;left:780px;right:0;top:0;bottom:0;background:{panel};color:{pfg};padding:0 60px 0 56px;display:flex;flex-direction:column;justify-content:center}}
