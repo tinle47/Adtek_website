@@ -11,7 +11,7 @@ Cách dùng:
   python3 tools/blog_post.py schedule <số bài>  đặt lịch đăng theo date/time (anh Tin đã duyệt)
   python3 tools/blog_post.py changes <số bài>   anh Tin yêu cầu sửa: không tự đăng cho tới khi gửi duyệt lại
   python3 tools/blog_post.py unschedule <số bài> hủy lịch đăng, đưa bài về nháp
-  python3 tools/blog_post.py retime             gán giờ đăng ngẫu nhiên cho các bài chưa đăng (khung 12:00-12:59 hoặc 20:00-20:59)
+  python3 tools/blog_post.py retime --force     (không dùng: ngày giờ đăng do phiên Adtek - Marketing lập) gán giờ ngẫu nhiên 12:00-12:59 hoặc 20:00-20:59
   python3 tools/blog_post.py auto               tự đặt lịch các bài đã gửi email quá 24 giờ mà chưa có phản hồi
 
 Trạng thái duyệt (trường approval): pending (đã gửi email, ghi approval_requested), approved, auto, changes_requested.
@@ -140,6 +140,8 @@ def random_time():
 
 
 def retime(data):
+    if "--force" not in sys.argv:  # từ 16/10/2026 phiên Adtek - Marketing lập date, time cho mọi bài
+        sys.exit("Không chạy retime: ngày giờ đăng do phiên Adtek - Marketing lập. Cần thật thì thêm --force.")
     for post in data["posts"]:
         if post["status"] in ("planned", "draft"):
             post["time"] = random_time()
