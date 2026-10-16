@@ -11,6 +11,7 @@ Cách dùng:
   python3 tools/gsc.py submit             gửi lại sitemap_index.xml
   python3 tools/gsc.py inspect <số bài>   tình trạng index của bài, ghi index_status, index_checked vào calendar.json
   python3 tools/gsc.py notify <số bài>    báo Google bài mới hoặc vừa cập nhật qua Indexing API (thay cho bấm tay "Yêu cầu lập chỉ mục")
+  python3 tools/gsc.py audit <file.json>  kiểm tra tình trạng index mọi URL trong sitemap, ghi kết quả ra file, in tổng hợp theo trạng thái
   python3 tools/gsc.py pending [số ngày]  kiểm tra bài đăng từ <số ngày> ngày trước (mặc định 2, tối đa 30 ngày) mà chưa index, in link bấm tay
 """
 import base64
@@ -133,6 +134,28 @@ if __name__ == "__main__":
         info = call("GET", f"{WEBMASTERS}/sites/{quote(prop, safe='')}/sitemaps/{quote(SITEMAP, safe='')}", bearer=tok)
         print(json.dumps({"property": prop, "sitemap": SITEMAP, "lastSubmitted": info.get("lastSubmitted"),
                           "errors": info.get("errors"), "warnings": info.get("warnings")}, ensure_ascii=False, indent=1))
+        sys.exit()
+    if cmd == "audit":
+        import re
+        from collections import Counter
+        def get(u):
+            return subprocess.run(["curl", "-sS", "--max-time", "60", u], capture_output=True, text=True).stdout
+        urls = []
+        for sm in re.findall(r"<loc>([^<]+)</loc>", get(SITEMAP)):
+            urls += re.findall(r"<loc>([^<]+)</loc>", get(sm))
+        rows = []
+        for i, u in enumerate(urls, 1):
+            r = call("POST", INSPECT, {"inspectionUrl": u, "siteUrl": prop, "languageCode": "vi"}, bearer=tok)
+            res = r.get("inspectionResult", {}).get("indexStatusResult", {})
+            rows.append({"url": u, "verdict": res.get("verdict"), "coverage": res.get("coverageState"),
+                         "last_crawl": res.get("lastCrawlTime"), "google_canonical": res.get("googleCanonical"),
+                         "user_canonical": res.get("userCanonical"), "robots": res.get("robotsTxtState"),
+                         "indexing": res.get("indexingState"), "fetch": res.get("pageFetchState"),
+                         "error": None if res else str(r)[:200]})
+            print(f"{i}/{len(urls)} {res.get('coverageState')} {u}", file=sys.stderr, flush=True)
+            time.sleep(0.4)
+        json.dump(rows, open(sys.argv[2], "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        print(json.dumps(Counter(r["coverage"] for r in rows).most_common(), ensure_ascii=False, indent=1))
         sys.exit()
     data = load()
     if cmd == "inspect":
