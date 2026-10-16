@@ -254,6 +254,84 @@ while (have_posts()):
                 </section>
             <?php } ?>
 
+            <?php /* --- SECTION BÀI VIẾT MỚI NHẤT --- */ ?>
+            <?php
+            // WPML tự lọc theo ngôn ngữ trang: /en/ chưa có bài thì khối tự ẩn.
+            $mona_home_news = new WP_Query([
+                'post_type'           => 'post',
+                'post_status'         => 'publish',
+                'posts_per_page'      => 3,
+                'ignore_sticky_posts' => true,
+                'no_found_rows'       => true,
+            ]);
+            if ($mona_home_news->have_posts()) {
+                $is_en = apply_filters('wpml_current_language', null) === 'en';
+                $news_blog_id = (int) get_option('page_for_posts');
+                $news_blog_url = $news_blog_id ? get_permalink($news_blog_id) : home_url('/blog/');
+            ?>
+                <style>
+                    .homever2-news { padding: 0 0 6rem; }
+                    .homever2-news-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem; margin-top: 3.2rem; }
+                    .homever2-news-it { display: flex; flex-direction: column; border: 0.1rem solid var(--cl-bd); border-radius: 1.6rem; overflow: hidden; background: #fff; transition: 0.4s; }
+                    .homever2-news-it:hover { box-shadow: 0 1.2rem 3rem rgba(3, 13, 66, 0.1); }
+                    .homever2-news-img { display: block; aspect-ratio: 1200 / 630; overflow: hidden; background: #f3f4f8; }
+                    .homever2-news-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+                    .homever2-news-it:hover .homever2-news-img img { transform: scale(1.04); }
+                    .homever2-news-body { display: flex; flex-direction: column; gap: 1rem; padding: 2rem 2.4rem 2.4rem; flex: 1; }
+                    .homever2-news-meta { font-size: 1.3rem; color: var(--color-second); font-weight: 500; }
+                    .homever2-news-tt { font-size: 1.8rem; line-height: 1.4; font-weight: 600; color: var(--color-pri); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+                    .homever2-news-tt a { color: inherit; }
+                    .homever2-news-tt a:hover { color: var(--color-second); }
+                    html:has(.page-homever2) .sec-homever2-news .btn-box { margin: 3.2rem auto 0; }
+                    @media screen and (max-width: 1024px) {
+                        .homever2-news-list { gap: 1.6rem; }
+                        .homever2-news-body { padding: 1.6rem; }
+                        .homever2-news-tt { font-size: 1.6rem; }
+                    }
+                    @media screen and (max-width: 768px) {
+                        .homever2-news-list { grid-template-columns: 1fr; }
+                    }
+                </style>
+                <section class="sec-homever2-news section fp-auto-height" id="section-news">
+                    <div class="homever2-heading center">
+                        <div class="container">
+                            <h2 class="tt"><?php echo $is_en ? 'Latest insights' : 'Bài viết mới nhất'; ?></h2>
+                        </div>
+                    </div>
+                    <div class="homever2-news">
+                        <div class="container">
+                            <div class="homever2-news-list">
+                                <?php while ($mona_home_news->have_posts()) : $mona_home_news->the_post();
+                                    $news_cats = get_the_category();
+                                ?>
+                                    <article class="homever2-news-it">
+                                        <?php if (has_post_thumbnail()) { ?>
+                                            <a href="<?php the_permalink(); ?>" class="homever2-news-img">
+                                                <?php the_post_thumbnail('medium_large', ['loading' => 'lazy']); ?>
+                                            </a>
+                                        <?php } ?>
+                                        <div class="homever2-news-body">
+                                            <div class="homever2-news-meta">
+                                                <?php echo esc_html(get_the_date('d/m/Y')); ?>
+                                                <?php if (!empty($news_cats)) echo ' · ' . esc_html($news_cats[0]->name); ?>
+                                            </div>
+                                            <h3 class="homever2-news-tt">
+                                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                            </h3>
+                                        </div>
+                                    </article>
+                                <?php endwhile; ?>
+                            </div>
+                            <div class="btn-box">
+                                <?php mona_homev2_render_button($is_en ? 'View all articles' : 'Xem tất cả bài viết', $news_blog_url); ?>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            <?php }
+            // Trả lại bài của trang chủ cho các trường ACF bên dưới (Footer).
+            wp_reset_postdata(); ?>
+
             <?php /* --- SECTION FOOTER --- */ ?>
             <?php $mona_home_footer = get_field('mona_home_footer');
             if (content_exists($mona_home_footer)) { ?>
