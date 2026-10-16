@@ -432,25 +432,29 @@ def pick(data, post):
     return names[post["no"] % len(names)]
 
 
-def page(post, kind, style):
-    w, h = SIZES[kind]
-    css, body = STYLES[style](fields(post, kind), w == h)
+def document(css, body, w, h):
+    """Trang HTML hoàn chỉnh theo nhận diện chung (font, logo, co chữ) từ CSS và thân trang của một mẫu."""
     # mask-image không đọc được file:// (chặn CORS) nên nhúng logo dạng data URI
     uri = lambda name: "data:image/png;base64," + base64.b64encode((ASSETS / name).read_bytes()).decode()  # noqa: E731
     return HEAD.substitute(fontcss=font_css(), logo=uri("adtek-logo-white.png"), mark=uri("adtek-mark-white.png"),
                            w=w, h=h, css=css, body=body, shape="sq" if w == h else "ls")
 
 
-def render(jobs):
-    """jobs: danh sách (post, kind, style, output). Dựng tất cả trong một lần mở trình duyệt."""
+def page(post, kind, style):
+    w, h = SIZES[kind]
+    css, body = STYLES[style](fields(post, kind), w == h)
+    return document(css, body, w, h)
+
+
+def shoot(pages):
+    """pages: danh sách (html, output, rộng, cao). Chụp tất cả trong một lần mở trình duyệt."""
     tmp = ROOT / "previews/_covers"
     tmp.mkdir(parents=True, exist_ok=True)
     manifest = []
-    for i, (post, kind, style, out) in enumerate(jobs):
-        src = tmp / f"{i}-{post['slug']}-{kind}-{style}.html"
-        src.write_text(page(post, kind, style), encoding="utf-8")
+    for i, (html_text, out, w, h) in enumerate(pages):
+        src = tmp / f"{i}.html"
+        src.write_text(html_text, encoding="utf-8")
         Path(out).parent.mkdir(parents=True, exist_ok=True)
-        w, h = SIZES[kind]
         manifest.append({"input": str(src), "output": str(out), "width": w, "height": h})
     mf = tmp / "jobs.json"
     mf.write_text(json.dumps(manifest), encoding="utf-8")
@@ -459,6 +463,11 @@ def render(jobs):
         p.unlink()
     tmp.rmdir()
     return [m["output"] for m in manifest]
+
+
+def render(jobs):
+    """jobs: danh sách (post, kind, style, output)."""
+    return shoot([(page(post, kind, style), out, *SIZES[kind]) for post, kind, style, out in jobs])
 
 
 def output_path(post, kind):
