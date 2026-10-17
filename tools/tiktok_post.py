@@ -1,4 +1,4 @@
-"""Video TikTok theo danh sách "tiktok" trong content/editorial/calendar.json (3 video/tuần, lịch do phiên Adtek - Marketing lập).
+"""Video TikTok theo danh sách "tiktok" trong content/editorial/calendar.json (1 video/ngày, lịch do phiên Adtek - Marketing quản lý).
 
 Đăng qua Zernio (zernio.com, anh Tin chọn 17/10/2026): script tải video lên Zernio và hẹn giờ đăng công khai đúng date,
 time của video (giờ Việt Nam); đến giờ Zernio đăng lên TikTok Adtek, có nhãn "Nội dung do AI tạo" (giọng đọc nhân bản).
@@ -6,11 +6,12 @@ Hủy trước giờ đăng thì script xóa lịch trên Zernio. TikTok không 
 của chính mình (Content Sharing Guidelines), Zernio là đơn vị đã được TikTok duyệt.
 Dự phòng (phương án B): lệnh upload đẩy video vào hộp nháp TikTok bằng ứng dụng TikTok riêng của Adtek, anh Tin tự bấm Đăng.
 
-Mỗi mục tiktok có id (tt-YYYYMMDD), date, time, post (số bài blog), part (video thứ mấy của bài), angle, status.
-Kịch bản: video/scripts/<slug bài blog>/<part>.json (id, caption, hashtags); video dựng ra: video/out/<id kịch bản>.mp4
-(node tools/render.mjs <slug> <part> trong thư mục video, cần giọng đọc ở video/public/voice/<id>/).
+Mỗi mục tiktok có id (tt-YYYYMMDD), date, time, topic, scripts ([slug video]), status. Video do phiên Adtek - Video production
+làm và đưa lên hub (HUB); thông tin video (caption, hashtags, url video, cover) ở video/hub/videos.json trên nhánh HUB_BRANCH.
+Trước khi hẹn đăng, tải video và cover từ hub bằng Artifact read (url HUB, path = mã asset trong show) rồi chép vào
+video/out/<slug>.mp4 và video/out/<slug>-cover.png (thư mục out/ không nằm trong git).
 
-status: planned -> scheduled (đã hẹn trên Zernio, zernio_post_id) -> posted (tiktok_url); cancelled; failed (fail_reason).
+status do Marketing và Video production ghi: proposed, scripted, video_ready. Phiên đăng ghi tiếp: scheduled (đã hẹn trên Zernio, zernio_post_id) -> posted (tiktok_url); cancelled; failed (fail_reason).
 Phương án B: planned -> inbox (publish_id) -> posted.
 
 Khóa đọc từ biến môi trường (network secret của môi trường), script không in khóa:
@@ -47,6 +48,8 @@ API = "https://open.tiktokapis.com/v2"
 AUTHORIZE = "https://www.tiktok.com/v2/auth/authorize/"
 SCOPES = "user.info.basic,video.upload"
 REDIRECT = os.environ.get("TIKTOK_REDIRECT_URI", "https://adtek.agency/")  # phải khai báo trong Login Kit của ứng dụng
+HUB = "https://claude.ai/artifact/YAeKXQbpBZj26HyPKV5wxN"  # hub video của phiên Video production
+HUB_BRANCH = "origin/claude/confident-ramanujan-t3jbi6"
 REFRESH_FILE = Path.home() / ".config/adtek/tiktok_refresh_token"
 VIDEO = ROOT / "video"
 CHUNK = 10_000_000  # TikTok: mỗi phần 5 đến 64 MB, phần cuối gánh số byte dư (tối đa 128 MB); file đến 64 MB gửi một lần
@@ -153,48 +156,72 @@ def label(x):
     return f"{DAYS[d.weekday()]} {d.day}/{d.month}, {x['time']}"
 
 
-def script(data, x):
-    """(slug, kịch bản) của video, hoặc (slug, None) khi chưa có kịch bản."""
-    slug = find(data, x["post"]).get("slug")
-    path = VIDEO / f"scripts/{slug}/{x['part']}.json"
-    return slug, (json.loads(path.read_text(encoding="utf-8")) if slug and path.exists() else None)
+def hub():
+    """Danh sách video trên hub, theo slug. Đọc bản mới nhất trên nhánh của phiên Video production (git fetch trước)."""
+    r = subprocess.run(["git", "-C", str(ROOT), "show", f"{HUB_BRANCH}:video/hub/videos.json"], capture_output=True)
+    path = VIDEO / "hub/videos.json"
+    raw = r.stdout if r.returncode == 0 else (path.read_bytes() if path.exists() else b"[]")
+    return {v["slug"]: v for v in json.loads(raw)}
 
 
-def mp4(s):
-    return VIDEO / f"out/{s['id']}.mp4"
+_HUB = None
 
 
-def caption(s):
-    """Caption để anh Tin dán khi đăng: lời dẫn + hashtag, không link (TikTok không cho bấm, link để ở bio)."""
-    return f"{s['caption'].strip()}\n\n{' '.join(s['hashtags'])}"
+def video(x):
+    """(slug, mục hub) của video, mục hub là None khi hub chưa có video này."""
+    global _HUB
+    if _HUB is None:
+        _HUB = hub()
+    slug = (x.get("scripts") or [None])[0]
+    return slug, _HUB.get(slug)
+
+
+def asset(v, key):
+    return (v.get(key) or "").removeprefix("/_blob/") or None
+
+
+def mp4(slug):
+    return VIDEO / f"out/{slug}.mp4"
+
+
+def cover(slug):
+    return VIDEO / f"out/{slug}-cover.png"
+
+
+def caption(v):
+    """Caption đăng thật: caption + hashtag trên hub, không link (TikTok không cho bấm, link để ở bio)."""
+    return f"{v['caption'].strip()}\n\n{' '.join(v['hashtags'])}"
 
 
 def problems(data, x):
-    slug, s = script(data, x)
+    slug, v = video(x)
     if not slug:
-        return [f"bài blog {x['post']} chưa có slug"]
-    if not s:
-        return [f"thiếu kịch bản video/scripts/{slug}/{x['part']}.json"]
+        return [f"chưa có kịch bản (status {x.get('status')})"]
+    if not v or not v.get("url"):
+        return [f"hub chưa có video {slug}"]
     out = []
-    if any(t in s.get("caption", "") for t in ("http", "adtek.agency")):
+    if any(t in v.get("caption", "") for t in ("http", "adtek.agency")):
         out.append("caption có link")
-    if not (VIDEO / f"public/voice/{s['id']}/manifest.json").exists():
-        out.append(f"chưa có giọng đọc: cd video && node tools/voice.mjs {slug}")
-    if not mp4(s).exists():
-        out.append(f"chưa dựng video: cd video && node tools/render.mjs {slug} {x['part']}")
+    if not mp4(slug).exists():
+        out.append(f"chưa tải video: Artifact read url {HUB} path {asset(v, 'url')}, chép vào {mp4(slug).relative_to(ROOT)}")
+    if v.get("cover") and not cover(slug).exists():
+        out.append(f"chưa tải cover: Artifact read url {HUB} path {asset(v, 'cover')}, chép vào {cover(slug).relative_to(ROOT)}")
     return out
 
 
 def summary(data, x):
-    _, s = script(data, x)
-    return {"id": x["id"], "when": label(x), "angle": x["angle"], "status": x.get("status"),
-            "video": str(mp4(s).relative_to(ROOT)) if s else None, "caption": caption(s) if s else None,
-            "problems": problems(data, x)}
+    slug, v = video(x)
+    return {"id": x["id"], "when": label(x), "topic": x.get("topic"), "status": x.get("status"), "slug": slug,
+            "video_asset": asset(v, "url") if v else None, "cover_asset": asset(v, "cover") if v else None,
+            "caption": caption(v) if v else None, "problems": problems(data, x)}
+
+
+DONE = ("scheduled", "inbox", "posted", "cancelled", "failed")
 
 
 def due(data):
     now = datetime.now(VN)
-    out = [summary(data, x) for x in data["tiktok"] if x.get("status") in (None, "planned") and when(x) <= now]
+    out = [summary(data, x) for x in data["tiktok"] if x.get("status") not in DONE and when(x) <= now]
     print(json.dumps(out, ensure_ascii=False, indent=1))
 
 
@@ -206,8 +233,9 @@ def week(data, start):
 
 def show(data, x):
     s = summary(data, x)
-    print(s["caption"] or "(chưa có kịch bản)")
-    print("\n---\nVideo:", s["video"], "\nCần xử lý:", "; ".join(s["problems"]) or "không")
+    print(s["caption"] or "(hub chưa có video)")
+    print("\n---\nVideo:", s["slug"], s["video_asset"], "\nCover:", s["cover_asset"],
+          "\nCần xử lý:", "; ".join(s["problems"]) or "không")
 
 
 def chunks(size):
@@ -223,13 +251,13 @@ def upload(data, x, dry_run=False):
     issues = problems(data, x)
     if issues:
         sys.exit(f"{x['id']}: chưa đẩy: {'; '.join(issues)}")
-    _, s = script(data, x)
-    path = mp4(s)
+    slug, v = video(x)
+    path = mp4(slug)
     size = path.stat().st_size
     chunk, count = chunks(size)
     if dry_run:
         print(json.dumps({"id": x["id"], "video": str(path.relative_to(ROOT)), "bytes": size, "chunk_size": chunk,
-                          "chunks": count, "caption": caption(s)}, ensure_ascii=False, indent=1))
+                          "chunks": count, "caption": caption(v)}, ensure_ascii=False, indent=1))
         return
     access = token()
     r = call("POST", "post/publish/inbox/video/init/", {"source_info": {
@@ -251,7 +279,7 @@ def upload(data, x, dry_run=False):
     save(data)  # lưu ngay để lần chạy lại không đẩy trùng
     st = call("POST", "post/publish/status/fetch/", {"publish_id": publish_id}, access)
     print(json.dumps({"id": x["id"], "publish_id": publish_id, "tiktok_status": (st.get("data") or {}).get("status"),
-                      "caption": caption(s), "refresh_token_rotated": ROTATED}, ensure_ascii=False))
+                      "caption": caption(v), "refresh_token_rotated": ROTATED}, ensure_ascii=False))
 
 
 def inbox_status(data, x):
@@ -338,6 +366,18 @@ def settings(c):
     return out
 
 
+def presign_put(path, content_type):
+    """Tải file lên kho của Zernio, trả publicUrl để gắn vào bài."""
+    code, r = zapi("POST", "media/presign", {"filename": path.name, "contentType": content_type, "size": path.stat().st_size})
+    if code != 200 or "uploadUrl" not in r:
+        zfail(f"xin link tải {path.name}", code, r)
+    u = subprocess.run(["curl", "-sS", "--max-time", "600", "-o", "/dev/null", "-w", "%{http_code}", "-X", "PUT",
+                        r["uploadUrl"], "-H", f"Content-Type: {content_type}", "--data-binary", f"@{path}"], capture_output=True)
+    if not u.stdout.startswith(b"2"):  # link lưu trữ, không gửi Authorization
+        sys.exit(f"Lỗi tải {path.name} lên Zernio: HTTP {u.stdout.decode()} {u.stderr.decode()[:200]}")
+    return r["publicUrl"]
+
+
 def schedule(data, x, dry_run=False):
     if x.get("status") in ("scheduled", "inbox", "posted"):
         sys.exit(f"{x['id']}: đã hẹn hoặc đã đăng ({x.get('zernio_post_id') or x.get('publish_id')}), không hẹn lại")
@@ -346,14 +386,14 @@ def schedule(data, x, dry_run=False):
     issues = problems(data, x)
     if issues:
         sys.exit(f"{x['id']}: chưa hẹn: {'; '.join(issues)}")
-    _, s = script(data, x)
-    path = mp4(s)
-    body = {"content": caption(s), "platforms": [{"platform": "tiktok", "accountId": None}],
+    slug, v = video(x)
+    path, art = mp4(slug), cover(slug) if v.get("cover") else None
+    body = {"content": caption(v), "platforms": [{"platform": "tiktok", "accountId": None}],
             "scheduledFor": when(x).isoformat(), "timezone": "Asia/Ho_Chi_Minh", "tiktokSettings": dict(TIKTOK_SETTINGS),
-            "mediaItems": [{"type": "video", "url": None}], "metadata": {"calendar_id": x["id"], "script": s["id"]}}
+            "mediaItems": [{"type": "video", "url": None}], "metadata": {"calendar_id": x["id"], "hub_slug": slug}}
     if dry_run:
-        print(json.dumps({"id": x["id"], "video": str(path.relative_to(ROOT)), "bytes": path.stat().st_size, "post": body},
-                         ensure_ascii=False, indent=1))
+        print(json.dumps({"id": x["id"], "video": str(path.relative_to(ROOT)), "bytes": path.stat().st_size,
+                          "cover": str(art.relative_to(ROOT)) if art else None, "post": body}, ensure_ascii=False, indent=1))
         return
     acc = account()
     c = creator(acc)
@@ -361,14 +401,9 @@ def schedule(data, x, dry_run=False):
         sys.exit(f"{x['id']}: TikTok báo tài khoản tạm thời không đăng thêm được, thử lại sau")
     body["platforms"][0]["accountId"] = acc
     body["tiktokSettings"] = settings(c)
-    code, r = zapi("POST", "media/presign", {"filename": path.name, "contentType": "video/mp4", "size": path.stat().st_size})
-    if code != 200 or "uploadUrl" not in r:
-        zfail("xin link tải video", code, r)
-    u = subprocess.run(["curl", "-sS", "--max-time", "600", "-o", "/dev/null", "-w", "%{http_code}", "-X", "PUT",
-                        r["uploadUrl"], "-H", "Content-Type: video/mp4", "--data-binary", f"@{path}"], capture_output=True)
-    if not u.stdout.startswith(b"2"):  # link lưu trữ, không gửi Authorization
-        sys.exit(f"Lỗi tải video lên Zernio: HTTP {u.stdout.decode()} {u.stderr.decode()[:200]}")
-    body["mediaItems"][0]["url"] = r["publicUrl"]
+    if art:  # tài khoản Business: Zernio gửi ảnh này cho TikTok làm cover; không có thì TikTok lấy khung giây thứ 1
+        body["tiktokSettings"]["videoCoverImageUrl"] = presign_put(art, "image/png")
+    body["mediaItems"][0]["url"] = presign_put(path, "video/mp4")
     # cùng khóa trong 24 giờ thì Zernio trả lại bài cũ, chạy lại sau lỗi mạng không tạo bài trùng
     code, r = zapi("POST", "posts", body, [f"Idempotency-Key: adtek-{x['id']}-{x.get('attempt', 0)}"])
     post = r.get("post") or {}
@@ -378,7 +413,7 @@ def schedule(data, x, dry_run=False):
               "scheduled_at": datetime.now(VN).isoformat(timespec="seconds")})
     save(data)
     print(json.dumps({"id": x["id"], "zernio_post_id": post["_id"], "zernio_status": post.get("status"),
-                      "when": label(x), "caption": body["content"]}, ensure_ascii=False))
+                      "when": label(x), "cover": bool(art), "caption": body["content"]}, ensure_ascii=False))
 
 
 def status(data, x):

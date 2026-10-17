@@ -2604,10 +2604,14 @@
    "hook": "Mua data khách hàng, có thể bị phạt tới 10 lần?",
    "service": "Digital, Growth",
    "production_status": "Đã viết kịch bản",
-   "status": "scripted",
+   "status": "posted",
    "scripts": [
     "mua-data-khach-hang"
-   ]
+   ],
+   "zernio_post_id": "6ad3323c782fac7f472d0593",
+   "tiktok_url": "https://www.tiktok.com/@adtek.growth.marketing/video/7697551427345943860",
+   "posted_at": "2026-10-17T15:38:00+07:00",
+   "note": "Đăng sớm 1 ngày (anh Tin chọn đăng thử ngay 17/10), cover là khung giây thứ 1, chưa dùng cover của hub"
   },
   {
    "id": "tt-20261019",
