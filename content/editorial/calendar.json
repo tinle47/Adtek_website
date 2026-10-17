@@ -2612,7 +2612,15 @@
    "attempt": 1,
    "zernio_post_id": "6ad335ec8d477d146464c5e5",
    "scheduled_at": "2026-10-17T15:46:44+07:00",
-   "tiktok_url": "https://www.tiktok.com/@adtek.growth.marketing/video/7697555460240493831"
+   "tiktok_url": "https://www.tiktok.com/@adtek.growth.marketing/video/7697555460240493831",
+   "music": {
+    "id": "7055200957088565249",
+    "track_id": "7055200957088565249",
+    "name": "Breaking News_Accident, Investigative Journalism, Medical, Corruption, Democracy, Conflict, Serious #viral #fyp #trending (1181925)",
+    "artist": "Ney",
+    "clip_sec": 289,
+    "volume": 15
+   }
   },
   {
    "id": "tt-20261019",
@@ -2629,8 +2637,17 @@
    "scripts": [
     "kinh-te-so-viet-nam-dung-thu-may"
    ],
-   "zernio_post_id": "6ad3394405f232877c48e90c",
-   "scheduled_at": "2026-10-17T16:00:54+07:00"
+   "zernio_post_id": "6ad35d779c059454bc4f4e75",
+   "scheduled_at": "2026-10-17T18:35:20+07:00",
+   "music": {
+    "id": "7338118640749365249",
+    "track_id": "7338118640749365249",
+    "name": "positive, confident, present, progress, corporate VP(1518395)",
+    "artist": "KosukeKawaguchi",
+    "clip_sec": 116,
+    "volume": 15
+   },
+   "attempt": 1
   },
   {
    "id": "tt-20261020",
@@ -2647,8 +2664,17 @@
    "scripts": [
     "3-dieu-truoc-sale-11-11"
    ],
-   "scheduled_at": "2026-10-17T16:00:14+07:00",
-   "zernio_post_id": "6ad3391af48c16ebae0d584c"
+   "scheduled_at": "2026-10-17T18:35:27+07:00",
+   "zernio_post_id": "6ad35d7e7296dbccca7c9ad9",
+   "music": {
+    "id": "7338120583484803073",
+    "track_id": "7338120583484803073",
+    "name": "A refreshing piano solo during the cherry blossom season(1520405)",
+    "artist": "Sumochi",
+    "clip_sec": 112,
+    "volume": 15
+   },
+   "attempt": 1
   },
   {
    "id": "tt-20261021",
@@ -2665,8 +2691,17 @@
    "scripts": [
     "top5-tu-khoa-tang-manh-2025"
    ],
-   "zernio_post_id": "6ad3394ff48c16ebae0d5902",
-   "scheduled_at": "2026-10-17T16:01:06+07:00"
+   "zernio_post_id": "6ad35d84cdb56b0fac5686c9",
+   "scheduled_at": "2026-10-17T18:35:34+07:00",
+   "music": {
+    "id": "7369288394545416193",
+    "track_id": "7369288394545416193",
+    "name": "(Loop) Dramatic Motivation Summer(1546894)",
+    "artist": "SKUNK",
+    "clip_sec": 116,
+    "volume": 15
+   },
+   "attempt": 1
   },
   {
    "id": "tt-20261022",
@@ -2683,8 +2718,17 @@
    "scripts": [
     "nhan-tin-truoc-khi-mua"
    ],
-   "scheduled_at": "2026-10-17T16:01:15+07:00",
-   "zernio_post_id": "6ad33959f48c16ebae0d591c"
+   "scheduled_at": "2026-10-17T18:36:13+07:00",
+   "zernio_post_id": "6ad35daccdb56b0fac56877f",
+   "music": {
+    "id": "7023375770634422273",
+    "track_id": "7023375770634422273",
+    "name": "Presentation",
+    "artist": "FlyFlyMusic",
+    "clip_sec": 156,
+    "volume": 15
+   },
+   "attempt": 1
   },
   {
    "id": "tt-20261023",
