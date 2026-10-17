@@ -1,0 +1,163 @@
+<p><em>Cập nhật tháng 10/2026.</em></p>
+
+<p>Đo lường quảng cáo app iOS sau ATT dựa trên hai nguồn chạy song song: dữ liệu cấp thiết bị từ người đồng ý cho theo dõi, và postback tổng hợp từ SKAdNetwork hoặc AdAttributionKit cho các lượt cài còn lại. Không nguồn nào đủ một mình. Bài này giải thích hai khung của Apple, vì sao số Meta, Google lệch với MMP, kèm bảng conversion value mẫu và checklist trước khi tăng ngân sách <a href="/glossary/user-acquisition-ua/">user acquisition</a>. Phần cài SDK từng bước thì tài liệu của Apple và MMP đã viết đủ.</p>
+
+<h2>ATT và IDFA: thay đổi gốc từ iOS 14.5</h2>
+
+<p>Từ iOS 14.5, app phải xin phép qua <a href="/glossary/app-tracking-transparency-att-tinh-minh-bach-theo-doi-ung-dung/">App Tracking Transparency (ATT)</a> trước khi theo dõi người dùng hoặc đọc <a href="/glossary/identity-for-advertisers-idfa-dinh-danh-cho-nha-quang-cao/">IDFA</a> (mã định danh quảng cáo). Người dùng từ chối thì IDFA trả về toàn số 0 (<a href="https://developer.apple.com/documentation/adsupport/asidentifiermanager/advertisingidentifier" target="_blank" rel="nofollow noopener">Apple Developer, advertisingIdentifier</a>).</p>
+
+<p>Trang <a href="https://developer.apple.com/app-store/user-privacy-and-data-use/" target="_blank" rel="nofollow noopener">User Privacy and Data Use</a> của Apple nói rõ hai điều hay bị hiểu sai: không được dùng email hay số điện thoại đã băm để theo dõi người chưa đồng ý; IDFV chỉ dùng để phân tích giữa các app cùng nhà phát triển, không được ghép dữ liệu để theo dõi qua app công ty khác.</p>
+
+<p>Hệ quả: <a href="/glossary/mobile-attribution/">mobile attribution</a> cấp thiết bị chỉ còn chạy trên nhóm đồng ý. Nhóm từ chối được đo bằng khung tổng hợp của Apple, chậm hơn và ít chi tiết hơn.</p>
+
+<h2>SKAdNetwork 4: postback, conversion value và crowd anonymity</h2>
+
+<p><a href="/glossary/skadnetwork/">SKAdNetwork</a> ghi nhận lượt cài từ quảng cáo mà không cần IDFA. Phiên bản hiện hành là 4.0, chạy từ iOS 16.1 (<a href="https://developer.apple.com/documentation/storekit/skadnetwork-4-release-notes" target="_blank" rel="nofollow noopener">SKAdNetwork 4 release notes</a>).</p>
+
+<p><strong>1. Ba cửa sổ chuyển đổi (conversion window)</strong> tính từ lần mở app đầu: ngày 0 đến 2, ngày 3 đến 7, ngày 8 đến 35. Mỗi cửa sổ cho tối đa một postback. Postback 1 đến sau 24 đến 48 giờ ngẫu nhiên, postback 2 và 3 sau 24 đến 144 giờ. App có thể khóa (lock) giá trị để nhận sớm hơn, nhưng sự kiện sau đó trong cùng cửa sổ bị bỏ qua.</p>
+
+<p><strong>2. Conversion value.</strong> Giá trị chi tiết (fine value) từ 0 đến 63, chỉ có trong postback 1. Giá trị thô (coarse value) có ba mức low, medium, high, dùng ở postback 2, 3 và ở postback 1 khi dữ liệu bị giới hạn. App tự quy định ý nghĩa từng mức.</p>
+
+<p><strong>3. Crowd anonymity.</strong> Apple xếp mỗi lượt cài vào một bậc dữ liệu (postback data tier) theo quy mô đám đông của app hiển thị quảng cáo, app được quảng cáo, quốc gia và mã nguồn (source identifier). Ít lượt cài thì postback ít thông tin (<a href="https://developer.apple.com/documentation/storekit/receiving-postbacks-in-multiple-conversion-windows" target="_blank" rel="nofollow noopener">Apple Developer, Receiving postbacks in multiple conversion windows</a>):</p>
+
+<table>
+<thead><tr><th>Bậc</th><th>Postback 1</th><th>Postback 2 và 3</th></tr></thead>
+<tbody>
+<tr><td>Tier 3</td><td>Source identifier 2 đến 4 chữ số, fine value, app nguồn, country code</td><td>Source identifier 2 chữ số, coarse value</td></tr>
+<tr><td>Tier 2</td><td>Source identifier 2 đến 4 chữ số, fine value</td><td>Như trên</td></tr>
+<tr><td>Tier 1</td><td>Source identifier 2 chữ số, coarse value</td><td>Như trên</td></tr>
+<tr><td>Tier 0</td><td>Chỉ source identifier 2 chữ số</td><td>Không có</td></tr>
+</tbody>
+</table>
+
+<p>Bảng này giải thích một lỗi phổ biến: chia quá nhiều campaign nhỏ trên iOS. Mỗi campaign ít lượt cài, rơi xuống Tier 0 hoặc 1, và mất luôn fine value. Google Ads cũng khuyên giới hạn số campaign iOS vì nhiều campaign làm mờ dữ liệu SKAdNetwork (<a href="https://support.google.com/google-ads/answer/10384955?hl=en" target="_blank" rel="nofollow noopener">Google Ads Help, iOS App campaigns</a>).</p>
+
+<h2>AdAttributionKit: trạng thái 2026</h2>
+
+<p>AdAttributionKit (AAK) có từ iOS 17.4, ra mắt đầu năm 2024, đo quảng cáo cho cả App Store lẫn chợ ứng dụng thay thế. Tháng 6/2024, Apple thêm đo re-engagement: người đã cài app bấm quảng cáo rồi quay lại cũng được ghi nhận (iOS 18 trở lên). Trợ giúp Apple Ads hiện ghi "SKAdNetwork is now called AdAttributionKit" (<a href="https://ads.apple.com/app-store/help/attribution/0094-ad-attribution-overview" target="_blank" rel="nofollow noopener">Apple Ads, App ad attribution overview</a>).</p>
+
+<p>Trang AdAttributionKit Updates (tra ngày 17/10/2026) ghi đợt cập nhật gần nhất vào tháng 6/2025, chưa có tính năng mới trong năm 2026 (<a href="https://developer.apple.com/documentation/updates/adattributionkit" target="_blank" rel="nofollow noopener">Apple Developer, AdAttributionKit Updates</a>). Các tính năng mới nhất trong tài liệu:</p>
+
+<ul>
+<li><strong>Cửa sổ ghi nhận tùy chỉnh:</strong> mặc định click 30 ngày, view 1 ngày; app đặt được click 1 đến 30 ngày, view 1 đến 7 ngày, chung hoặc riêng từng mạng.</li>
+<li><strong>Cooldown</strong> 0 đến 720 giờ sau một chuyển đổi, tránh quảng cáo re-engagement giành công của lượt cài vừa xảy ra.</li>
+<li><strong>Conversion tag</strong> (iOS 18.4): cập nhật đúng postback khi nhiều lượt re-engagement chồng nhau.</li>
+<li><strong>Country code</strong> trong postback khi quốc gia đạt Tier 3.</li>
+<li><strong>Development postbacks:</strong> tạo postback thử trong phần Developer của iPhone, chọn được bậc dữ liệu.</li>
+</ul>
+
+<p>Hai khung chạy song song. Nếu một lượt cài có impression của cả hai, thiết bị xếp hạng chung, click thắng view, xét tối đa 6 impression và chỉ một impression thắng. Lệnh cập nhật conversion value của SKAdNetwork được tự chuyển sang AAK (<a href="https://developer.apple.com/documentation/adattributionkit/adattributionkit-skadnetwork-interoperability" target="_blank" rel="nofollow noopener">Apple Developer, AAK and SKAdNetwork interoperability</a>).</p>
+
+<p>Nền tảng hỗ trợ chưa đồng đều. Hướng dẫn iOS của Google Ads (tra 10/2026) ghi chưa hỗ trợ AAK cho attribution. Apple Ads đăng ký SKAdNetwork từ 10/4/2025 (<a href="https://ads.apple.com/app-store/help/attribution/0028-measuring-ad-performance" target="_blank" rel="nofollow noopener">Apple Ads Help</a>), và AppsFlyer ghi rằng từ iOS 26.2 postback Apple Ads gửi bằng AAK (<a href="https://support.appsflyer.com/hc/en-us/articles/34395758837137-Bulletin-Apple-Ads-now-supports-SKAN-attribution" target="_blank" rel="nofollow noopener">AppsFlyer, sửa 5/2026</a>). Cách an toàn: nhận bản sao postback của cả hai khung.</p>
+
+<h3>So sánh SKAdNetwork và AdAttributionKit</h3>
+
+<table>
+<thead><tr><th>Tiêu chí</th><th>SKAdNetwork 4</th><th>AdAttributionKit</th></tr></thead>
+<tbody>
+<tr><td>iOS tối thiểu</td><td>16.1</td><td>17.4; re-engagement từ 18</td></tr>
+<tr><td>Nguồn cài</td><td>App Store</td><td>App Store và chợ ứng dụng thay thế</td></tr>
+<tr><td>Re-engagement</td><td>Không</td><td>Có, chỉ tính click</td></tr>
+<tr><td>Cửa sổ chuyển đổi, conversion value</td><td>3 cửa sổ; fine 0 đến 63, coarse 3 mức</td><td>Giống SKAN 4</td></tr>
+<tr><td>Attribution window</td><td>Cố định: click 30 ngày, view 24 giờ</td><td>Mặc định như SKAN, tùy chỉnh trong Info.plist</td></tr>
+<tr><td>Cooldown, conversion tag</td><td>Không</td><td>Có</td></tr>
+<tr><td>Khóa nhận bản sao postback</td><td>NSAdvertisingAttributionReportEndpoint</td><td>AttributionCopyEndpoint</td></tr>
+</tbody>
+</table>
+
+<h2>MMP làm gì trong đo lường UA</h2>
+
+<p><a href="/glossary/mobile-measurement-partner-mmp-nen-tang-do-luong-mobile/">MMP (mobile measurement partner)</a> như AppsFlyer, Adjust, Branch, Singular đứng giữa app và các mạng quảng cáo; Google Ads liệt kê họ là App Attribution Partner cho chiến dịch iOS. Bốn việc chính:</p>
+
+<ol>
+<li>Ghi nhận cấp thiết bị cho người đồng ý ATT và cho nguồn ngoài mạng quảng cáo như link, QR, <a href="/glossary/deep-linking/">deep linking</a>.</li>
+<li>Gom postback SKAN, AAK từ mọi mạng, giải mã conversion value theo schema của bạn, khử trùng lặp với dữ liệu cấp thiết bị.</li>
+<li>Nhận bản sao postback từ thiết bị. AppsFlyer lưu ý conversion value không nằm trong chữ ký của Apple, nên số mạng quảng cáo báo lại có thể bị sửa; bản sao giúp đối chiếu.</li>
+<li>Lọc <a href="/glossary/install-fraud-gian-lan-cai-dat/">install fraud</a> trước khi tính tiền cho mạng.</li>
+</ol>
+
+<h2>Vì sao số Meta, Google lệch với MMP</h2>
+
+<p>Đừng đặt mục tiêu hai bên khớp 100%, vì mỗi bên dùng mô hình ghi nhận khác nhau (<a href="https://support.appsflyer.com/hc/en-us/articles/4410481130641-Meta-ads-discrepancies" target="_blank" rel="nofollow noopener">AppsFlyer, Meta ads discrepancies, sửa 11/2025</a>; <a href="https://support.appsflyer.com/hc/en-us/articles/4404976682257-iOS-metrics-in-the-Overview-dashboard-SKAN-and-AppsFlyer-metrics-side-by-side" target="_blank" rel="nofollow noopener">AppsFlyer, iOS metrics dashboard, sửa 5/2025</a>):</p>
+
+<table>
+<thead><tr><th>Nguyên nhân</th><th>Chuyện gì xảy ra</th><th>Cách xử lý</th></tr></thead>
+<tbody>
+<tr><td>Cửa sổ ghi nhận</td><td>Meta mặc định 7 ngày click, 1 ngày view; MMP cho chỉnh 1 đến 30 ngày</td><td>Đặt trên MMP giống Meta</td></tr>
+<tr><td>Tự ghi nhận</td><td>Meta nhận lượt cài bất kể nguồn khác; MMP dùng last-click giữa các nguồn</td><td>Tổng các mạng lớn hơn MMP là bình thường</td></tr>
+<tr><td>Mô hình hóa</td><td>Meta dùng mô hình xác suất (AEM) trên iOS, có lượt chỉ hiện ở một bên; Google dùng conversion modeling</td><td>Ghi rõ cột nào là số mô hình hóa</td></tr>
+<tr><td>Múi giờ, ngày cài</td><td>Meta mặc định PST, SKAN theo UTC; ngày cài SKAN suy ra từ lúc postback đến; dữ liệu Google Ads trong SKAN có thể trễ tới 13 ngày</td><td>Thống nhất múi giờ; xem khoảng tối thiểu 7 ngày, kết thúc 3 đến 5 ngày trước hôm nay</td></tr>
+<tr><td>Vòng đời sự kiện</td><td>Meta tính sự kiện trong 7 ngày sau click, AppsFlyer tới 180 ngày</td><td>So doanh thu cùng mốc ngày</td></tr>
+<tr><td>Sự kiện trùng</td><td>Cùng sự kiện gửi từ Facebook SDK và MMP, Meta không khử trùng lặp</td><td>Chỉ gửi từ một nguồn</td></tr>
+</tbody>
+</table>
+
+<p>Tôi theo dõi tỷ lệ, không theo dõi con số. Ví dụ giả định: tuần 1, Meta báo 1,000 lượt cài, MMP ghi 700 cho Meta, tỷ lệ 0.70. Ba tuần liền quanh 0.70 thì chênh lệch do mô hình. Tuần thứ năm tụt xuống 0.40 khi ngân sách không đổi thì có gì đó hỏng: SDK mới, schema đổi, hoặc sự kiện gửi trùng. Muốn biết kênh nào thật sự tạo thêm người dùng, hãy chạy <a href="/kiem-thu-tang-tien-incrementality-testing/">kiểm thử tăng tiến (incrementality testing)</a> thay vì tranh luận số nào đúng.</p>
+
+<h2>So sánh nhanh với Android</h2>
+
+<p>Android chưa có lớp xin phép tương tự ATT. Google Play Install Referrer API trả về URL giới thiệu, thời điểm click và thời điểm bắt đầu cài, lấy thẳng từ Google Play (<a href="https://developer.android.com/google/play/installreferrer" target="_blank" rel="nofollow noopener">Android Developers, cập nhật 7/2025</a>), nên số Android thường khớp hơn iOS. Advertising ID thì người dùng xóa được trong Cài đặt, khi đó app nhận chuỗi số 0 (<a href="https://support.google.com/googleplay/android-developer/answer/6048248?hl=en" target="_blank" rel="nofollow noopener">Play Console Help</a>).</p>
+
+<p>Privacy Sandbox trên Android từng được xem là "ATT của Android". Kế hoạch đã đổi: ngày 17/10/2025, Google thông báo dừng Attribution Reporting API, Protected Audience, Topics (cả Chrome và Android) cùng SDK Runtime vì ít được dùng (<a href="https://privacysandbox.com/news/update-on-plans-for-privacy-sandbox-technologies/" target="_blank" rel="nofollow noopener">Privacy Sandbox, 17/10/2025</a>). Trang trạng thái cập nhật 14/8/2026 vẫn ghi các công nghệ này đang được loại bỏ dần. Lộ trình đo lường Android nào còn chờ Attribution Reporting API thì nên gạch đi.</p>
+
+<h2>Thiết lập conversion value schema cho app thương mại điện tử</h2>
+
+<p>Schema là bảng quy ước mỗi conversion value nghĩa là gì. Đây là phần quyết định chất lượng đo lường quảng cáo app iOS, vì thiếu schema thì postback chỉ là con số. Quy trình:</p>
+
+<ol>
+<li>Chọn sự kiện phản ánh giá trị trong 48 giờ đầu, vì chỉ postback 1 có fine value.</li>
+<li>Xếp giá trị tăng dần theo mức quan trọng. Với quảng cáo ký bằng SKAN 3 trở về trước, bộ đếm 24 giờ chỉ chạy lại khi giá trị mới lớn hơn giá trị cũ.</li>
+<li>Gán coarse value có nghĩa, vì Tier 0, 1 và postback 2, 3 chỉ có coarse.</li>
+<li>Chọn khóa sớm (dữ liệu về nhanh cho thuật toán) hay chờ hết cửa sổ (đo đủ hơn).</li>
+<li>Nhập schema vào MMP, dùng chung một bản cho mọi mạng.</li>
+<li>Thử bằng development postbacks, xem lại sau 2 tuần chạy thật.</li>
+</ol>
+
+<p>Bảng mẫu, ví dụ giả định cho app bán mỹ phẩm có giá trị đơn trung bình khoảng 350,000 đồng:</p>
+
+<table>
+<thead><tr><th>Fine value</th><th>Ý nghĩa (postback 1, ngày 0 đến 2)</th><th>Coarse</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>Mở app lần đầu</td><td>low</td></tr>
+<tr><td>1</td><td>Đăng ký tài khoản</td><td>low</td></tr>
+<tr><td>2</td><td>Thêm vào giỏ</td><td>medium</td></tr>
+<tr><td>3</td><td>Bắt đầu thanh toán</td><td>medium</td></tr>
+<tr><td>10 đến 19</td><td>Đơn đầu tiên, 10 dải doanh thu mỗi dải 100,000 đồng (10 là dưới 100,000; 19 là từ 900,000)</td><td>medium nếu dưới 300,000, high nếu từ 300,000</td></tr>
+<tr><td>30 đến 39</td><td>Từ 2 đơn, cùng cách chia dải doanh thu cộng dồn</td><td>high</td></tr>
+</tbody>
+</table>
+
+<p>Postback 2 (ngày 3 đến 7) và 3 (ngày 8 đến 35) chỉ có coarse: low là quay lại app, medium là 1 đơn, high là từ 2 đơn hoặc doanh thu cộng dồn từ 700,000 đồng. Postback 3 là tín hiệu gần <a href="/glossary/lifetime-value-ltv-gia-tri-vong-doi-khach-hang/">LTV</a> nhất mà SKAN cho bạn; tỷ lệ high theo nguồn giúp ước <a href="/glossary/return-on-ad-spend-roas/">ROAS</a> ngày 35.</p>
+
+<p>Không nên:</p>
+<ul>
+<li>Dùng hết 64 giá trị cho 64 sự kiện. Fine value chỉ có từ Tier 2, nhiều lượt cài sẽ không mang nó.</li>
+<li>Đổi schema giữa chiến dịch: dữ liệu trước và sau không so được.</li>
+<li>Đặt "mở app" là coarse high. Thuật toán sẽ tối ưu cho người cài rồi bỏ.</li>
+</ul>
+
+<p>Sự kiện trong schema nên khớp bộ <a href="/nhung-dieu-can-biet-ve-app-marketing-kpis/">app marketing KPIs</a> đội đang báo cáo nội bộ.</p>
+
+<h2>Góc nhìn từ thực tế</h2>
+
+<p>[ANH TIN BỔ SUNG: Anh kể một lần số lượt cài hoặc doanh thu iOS trên Meta hoặc Google lệch hẳn so với MMP (AppsFlyer, Adjust...): lệch khoảng bao nhiêu, nguyên nhân tìm ra là gì (cửa sổ ghi nhận, sự kiện trùng, schema, mô hình hóa của nền tảng), và đội đã tin số nào để quyết định tăng hay giảm ngân sách?]</p>
+
+<h2>Checklist đo lường quảng cáo app iOS trước khi tăng ngân sách UA</h2>
+
+<p>Mỗi mục trả lời bằng có hoặc không. Còn mục "không" thì chưa nên tăng.</p>
+
+<ol>
+<li>SDK MMP bản mới, hỗ trợ cả SKAdNetwork và AdAttributionKit.</li>
+<li>Info.plist có cả hai khóa nhận bản sao postback trỏ về MMP, báo cáo bản sao đã có dữ liệu.</li>
+<li>Schema conversion value có tài liệu, giống nhau trên MMP, Meta, Google.</li>
+<li>Đã thử development postbacks ở Tier 0 và Tier 3, server đọc đúng.</li>
+<li>Màn hình xin ATT có câu giải thích mục đích rõ, tỷ lệ đồng ý theo dõi theo tuần.</li>
+<li>Cửa sổ ghi nhận và múi giờ trên MMP khớp từng nền tảng.</li>
+<li>Mỗi sự kiện chỉ gửi về Meta từ một nguồn.</li>
+<li>Số campaign iOS đủ ít để phần lớn postback có fine value.</li>
+<li>Có ít nhất 3 tuần lịch sử tỷ lệ nền tảng so với MMP để biết mức chênh bình thường.</li>
+<li>Quy tắc chống gian lận trên MMP đã bật; universal link, kể cả link re-engagement của AAK, mở đúng màn hình.</li>
+<li>Đã ghi mức <a href="/glossary/organic-install/">organic install</a> nền để thấy quảng cáo có ăn vào lượt cài tự nhiên không.</li>
+</ol>
+
+<p>Qua checklist rồi mới chọn kênh và mức ngân sách theo <a href="/chien-luoc-app-marketing-9-phuong-phap/">chiến lược app marketing</a> của từng giai đoạn; app sắp ra mắt thì rà lại các bước <a href="/khoi-chay-thanh-cong-ung-dung-tren-app-store/">khởi chạy ứng dụng trên App Store</a> trước. Nếu cần rà hệ thống đo lường iOS hoặc lên kế hoạch UA cho app, đội App Marketing của Adtek (có chứng chỉ Apple Ads) có thể làm cùng bạn qua trang <a href="/contact/">liên hệ Adtek</a>.</p>

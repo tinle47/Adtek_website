@@ -1,0 +1,154 @@
+{
+ "title": "Đo lường quảng cáo app iOS sau ATT: SKAdNetwork, AdAttributionKit và cách đọc số lệch với MMP",
+ "keyword": "đo lường quảng cáo app iOS",
+ "keywords_secondary": [
+  "SKAdNetwork",
+  "AdAttributionKit",
+  "đo lường UA"
+ ],
+ "cluster": "C3",
+ "slug": "do-luong-quang-cao-app-ios",
+ "seo_title": "Đo lường quảng cáo app iOS: SKAdNetwork và AdAttributionKit",
+ "meta_desc": "Đo lường quảng cáo app iOS sau ATT: SKAdNetwork 4, AdAttributionKit, vì sao Meta, Google lệch với MMP, bảng conversion value mẫu và checklist UA.",
+ "words": 2297,
+ "cover": {
+  "kicker": "Đo lường UA",
+  "title": "Đo lường quảng cáo *app iOS*",
+  "subtitle": "SKAdNetwork, AdAttributionKit, MMP và checklist trước khi tăng ngân sách",
+  "chips": [
+   "SKAdNetwork",
+   "AdAttributionKit",
+   "MMP",
+   "Checklist"
+  ],
+  "hero": "64",
+  "hero_text": "mức conversion value trong postback đầu tiên",
+  "fb_kicker": "Đo lường app iOS"
+ },
+ "summary": "Bài cụm C3 về đo lường quảng cáo app iOS sau ATT: SKAdNetwork 4 (postback, conversion value, crowd anonymity), AdAttributionKit và trạng thái 2026, bảng so sánh hai khung, vai trò MMP và cách đọc số lệch giữa Meta, Google với MMP. Kèm so sánh Android (Install Referrer, Privacy Sandbox đã dừng), bảng conversion value mẫu cho app thương mại điện tử và checklist 11 mục trước khi tăng ngân sách UA.",
+ "links_internal": [
+  "/glossary/user-acquisition-ua/",
+  "/glossary/app-tracking-transparency-att-tinh-minh-bach-theo-doi-ung-dung/",
+  "/glossary/identity-for-advertisers-idfa-dinh-danh-cho-nha-quang-cao/",
+  "/glossary/mobile-attribution/",
+  "/glossary/skadnetwork/",
+  "/glossary/mobile-measurement-partner-mmp-nen-tang-do-luong-mobile/",
+  "/glossary/deep-linking/",
+  "/glossary/install-fraud-gian-lan-cai-dat/",
+  "/kiem-thu-tang-tien-incrementality-testing/",
+  "/glossary/lifetime-value-ltv-gia-tri-vong-doi-khach-hang/",
+  "/glossary/return-on-ad-spend-roas/",
+  "/nhung-dieu-can-biet-ve-app-marketing-kpis/",
+  "/glossary/organic-install/",
+  "/chien-luoc-app-marketing-9-phuong-phap/",
+  "/khoi-chay-thanh-cong-ung-dung-tren-app-store/",
+  "/contact/"
+ ],
+ "sources": [
+  {
+   "name": "Apple Developer: advertisingIdentifier (IDFA trả về số 0 khi chưa được phép)",
+   "url": "https://developer.apple.com/documentation/adsupport/asidentifiermanager/advertisingidentifier",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Apple Developer: User Privacy and Data Use (ATT, IDFV, email băm)",
+   "url": "https://developer.apple.com/app-store/user-privacy-and-data-use/",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Apple Developer: SKAdNetwork 4 release notes (iOS 16.1)",
+   "url": "https://developer.apple.com/documentation/storekit/skadnetwork-4-release-notes",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Apple Developer: Receiving postbacks in multiple conversion windows (SKAdNetwork, tier dữ liệu)",
+   "url": "https://developer.apple.com/documentation/storekit/receiving-postbacks-in-multiple-conversion-windows",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Apple Developer: AdAttributionKit Updates (mục gần nhất 06/2025)",
+   "url": "https://developer.apple.com/documentation/updates/adattributionkit",
+   "date": "06/2025, tra 17/10/2026"
+  },
+  {
+   "name": "Apple Developer: Understanding AdAttributionKit and SKAdNetwork interoperability",
+   "url": "https://developer.apple.com/documentation/adattributionkit/adattributionkit-skadnetwork-interoperability",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Apple Developer: Configuring attribution rules for your app (cửa sổ ghi nhận, cooldown; đối chiếu, không đặt link trong bài)",
+   "url": "https://developer.apple.com/documentation/adattributionkit/configuring-attribution-rules-for-your-app",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Apple Developer: Identifying conversion values with conversion tags (iOS 18.4; đối chiếu, không đặt link trong bài)",
+   "url": "https://developer.apple.com/documentation/adattributionkit/conversion-tags",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Apple Ads Help: App ad attribution overview",
+   "url": "https://ads.apple.com/app-store/help/attribution/0094-ad-attribution-overview",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Apple Ads Help: Measuring performance of ads on the App Store (đăng ký SKAdNetwork 10/4/2025)",
+   "url": "https://ads.apple.com/app-store/help/attribution/0028-measuring-ad-performance",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Google Ads Help: Best practices guide for iOS App campaigns (chưa hỗ trợ AAK, App Attribution Partners)",
+   "url": "https://support.google.com/google-ads/answer/10384955?hl=en",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "AppsFlyer: Bulletin, Apple Ads now supports SKAN attribution",
+   "url": "https://support.appsflyer.com/hc/en-us/articles/34395758837137-Bulletin-Apple-Ads-now-supports-SKAN-attribution",
+   "date": "sửa 04/05/2026"
+  },
+  {
+   "name": "AppsFlyer: Meta ads discrepancies",
+   "url": "https://support.appsflyer.com/hc/en-us/articles/4410481130641-Meta-ads-discrepancies",
+   "date": "sửa 17/11/2025"
+  },
+  {
+   "name": "AppsFlyer: iOS metrics in the Overview dashboard (SKAN and AppsFlyer side-by-side)",
+   "url": "https://support.appsflyer.com/hc/en-us/articles/4404976682257-iOS-metrics-in-the-Overview-dashboard-SKAN-and-AppsFlyer-metrics-side-by-side",
+   "date": "sửa 28/05/2025"
+  },
+  {
+   "name": "AppsFlyer: Send SKAN and AdAttributionKit postback copies directly to AppsFlyer (conversion value không nằm trong chữ ký; đối chiếu, không đặt link trong bài)",
+   "url": "https://support.appsflyer.com/hc/en-us/articles/4402320969617",
+   "date": "sửa 31/12/2025"
+  },
+  {
+   "name": "Android Developers: Play Install Referrer",
+   "url": "https://developer.android.com/google/play/installreferrer",
+   "date": "cập nhật 21/07/2025"
+  },
+  {
+   "name": "Play Console Help: Advertising ID",
+   "url": "https://support.google.com/googleplay/android-developer/answer/6048248?hl=en",
+   "date": "truy cập 10/2026"
+  },
+  {
+   "name": "Privacy Sandbox: Update on plans for Privacy Sandbox technologies (Anthony Chavez)",
+   "url": "https://privacysandbox.com/news/update-on-plans-for-privacy-sandbox-technologies/",
+   "date": "17/10/2025"
+  },
+  {
+   "name": "Privacy Sandbox feature status (đối chiếu, không đặt link trong bài)",
+   "url": "https://privacysandbox.google.com/overview/status",
+   "date": "cập nhật 14/08/2026"
+  }
+ ],
+ "confirm": [
+  "Mục \"Góc nhìn từ thực tế\" còn chỗ trống [ANH TIN BỔ SUNG: ...]: cần anh Tin kể một lần số iOS trên Meta/Google lệch với MMP, nguyên nhân và quyết định ngân sách sau đó.",
+  "Chưa có link lên bài trụ cột C3 (bài 5, /chi-so-growth-marketing/, đăng 27/10) vì URL chưa có trong internal-links.json; thêm khi bài 5 lên sóng.",
+  "Apple Ads và AdAttributionKit: AppsFlyer (sửa 5/2026) ghi từ iOS 26.2 postback Apple Ads gửi bằng AAK, trong khi trang trợ giúp Apple Ads (tra 10/2026) vẫn ghi Apple Ads đăng ký SKAdNetwork 1 đến 3 và 'sẽ đăng ký AAK sau'. Bài chỉ nêu ý của AppsFlyer kèm nguồn và khuyên nhận bản sao postback cả hai khung; nên thống nhất cách viết với bài Apple Ads đang viết song song.",
+  "Trang AdAttributionKit Updates của Apple (tra 17/10/2026) chưa có mục nào năm 2026 (mục gần nhất 06/2025); bài ghi đúng như vậy. Nếu WWDC26 có thay đổi chưa vào trang này thì cần bổ sung.",
+  "Bảng conversion value cho app mỹ phẩm (giá trị đơn trung bình 350,000 đồng, các dải doanh thu, ngưỡng 300,000 và 700,000) và ví dụ tỷ lệ Meta/MMP 0.70, 0.40 là ví dụ giả định, đã ghi rõ trong bài.",
+  "Đoạn 'Tôi theo dõi tỷ lệ, không theo dõi con số' viết ở ngôi tôi như phương pháp làm nghề, không phải case thật: anh Tin xác nhận đồng ý với cách đọc này.",
+  "Câu mời cuối bài có nhắc 'đội App Marketing của Adtek (có chứng chỉ Apple Ads)' theo brief; anh Tin xác nhận tên dịch vụ.",
+  "Số chữ 2,297 (tính cả bảng), sát trần 2,300; nếu thêm phần anh Tin bổ sung thì cần cắt bớt chỗ khác hoặc chấp nhận vượt nhẹ."
+ ]
+}
