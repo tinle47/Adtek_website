@@ -39,6 +39,7 @@ import os
 import secrets
 import subprocess
 import sys
+import time
 import urllib.parse
 from datetime import datetime
 from pathlib import Path
@@ -311,12 +312,18 @@ def zapi(method, path, body=None, headers=()):
     if body is not None:
         args += ["-H", "Content-Type: application/json", "--data-binary", "@-"]
         data = json.dumps(body, ensure_ascii=False).encode()
-    r = subprocess.run(["curl", "-sS", "--max-time", "300", *args], input=data, capture_output=True)
-    text, _, code = r.stdout.decode(errors="replace").rpartition("\n")
-    try:
-        return int(code), json.loads(text or "{}")
-    except (ValueError, json.JSONDecodeError):
-        return 0, {"error": (text or r.stderr.decode(errors="replace"))[:300]}
+    for wait in (2, 4, 8, 0):  # mất kết nối (HTTP 0) thì thử lại; tạo bài có Idempotency-Key nên không đăng trùng
+        r = subprocess.run(["curl", "-sS", "--max-time", "300", *args], input=data, capture_output=True)
+        text, _, code = r.stdout.decode(errors="replace").rpartition("\n")
+        try:
+            code, out = int(code), json.loads(text or "{}")
+        except (ValueError, json.JSONDecodeError):
+            code, out = 0, {"error": (text or r.stderr.decode(errors="replace"))[:300]}
+        if not code:
+            out = {"error": f"mất kết nối: {r.stderr.decode(errors='replace').strip()[:300]}"}
+        if code or not wait:
+            return code, out
+        time.sleep(wait)
 
 
 def zfail(what, code, r):
@@ -372,8 +379,13 @@ def presign_put(path, content_type):
     code, r = zapi("POST", "media/presign", {"filename": path.name, "contentType": content_type, "size": path.stat().st_size})
     if code != 200 or "uploadUrl" not in r:
         zfail(f"xin link tải {path.name}", code, r)
-    u = subprocess.run(["curl", "-sS", "--max-time", "600", "-o", "/dev/null", "-w", "%{http_code}", "-X", "PUT",
-                        r["uploadUrl"], "-H", f"Content-Type: {content_type}", "--data-binary", f"@{path}"], capture_output=True)
+    for wait in (2, 4, 8, 0):
+        u = subprocess.run(["curl", "-sS", "--max-time", "600", "-o", "/dev/null", "-w", "%{http_code}", "-X", "PUT",
+                            r["uploadUrl"], "-H", f"Content-Type: {content_type}", "--data-binary", f"@{path}"],
+                           capture_output=True)
+        if u.stdout.startswith(b"2") or not wait:
+            break
+        time.sleep(wait)
     if not u.stdout.startswith(b"2"):  # link lưu trữ, không gửi Authorization
         sys.exit(f"Lỗi tải {path.name} lên Zernio: HTTP {u.stdout.decode()} {u.stderr.decode()[:200]}")
     return r["publicUrl"]
