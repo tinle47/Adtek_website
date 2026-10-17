@@ -1,0 +1,764 @@
+{
+ "5132": {
+  "id": 5132,
+  "fields": {
+   "mona_home_banner": {
+    "title": "Growth Marketing <br />\r\nAgency",
+    "content": "Với hơn 100 khách hàng và 200 dự án thành công, đội ngũ chuyên gia của Adtek sở hữu bề dày kinh nghiệm, từng đảm nhiệm vai trò quan trọng tại các tập đoàn hàng đầu Việt Nam.<br />\r\n<br />\r\n",
+    "image": 5137,
+    "btn": "Tư vấn ngay",
+    "link": "[contact-form-7 id=\"b4c4709\" title=\"CONTACTFORM - HO CHI MINH OFFCIER_VI\"]"
+   },
+   "mona_home_service_sub": "Dịch vụ của chúng tôi",
+   "mona_home_service": [
+    {
+     "title": "Brand Commerce",
+     "content": "Chúng tôi kết hợp Branding và Performance Marketing để tạo ra các chiến dịch thương mại hiệu quả, giúp thương hiệu vừa nâng cao nhận diện vừa thúc đẩy doanh số. Adtek tối ưu hóa toàn bộ hành trình mua hàng, từ nhận thức đến chuyển đổi, nhằm đảm bảo ROI tối ưu.<br /><br />\r\n<br /><br />\r\n",
+     "btn": "Tư vấn ngay",
+     "link": "[contact-form-7 id=\"b4c4709\" title=\"CONTACTFORM - HO CHI MINH OFFCIER_VI\"]",
+     "image": 5143,
+     "image_2": 5247,
+     "image_3": false,
+     "repeater": [
+      {
+       "image": 5193,
+       "content": "Xây dựng chiến lược thương hiệu số toàn diện."
+      },
+      {
+       "image": 5195,
+       "content": "Triển khai chiến dịch truyền thông đa kênh hiệu quả."
+      },
+      {
+       "image": 5197,
+       "content": "Tối ưu hóa trải nghiệm khách hàng xuyên suốt online và offline."
+      }
+     ]
+    },
+    {
+     "title": "Lead generation",
+     "content": "Chúng tôi xây dựng hệ thống tạo khách hàng tiềm năng đa kênh, từ quảng cáo, nội dung đến trang đích, giúp doanh nghiệp có nguồn lead đều đặn, đúng chân dung khách hàng và tối ưu chi phí trên mỗi lead.<br /><br />\r\n",
+     "btn": "Tư vấn ngay ",
+     "link": "[contact-form-7 id=\"b4c4709\" title=\"CONTACTFORM - HO CHI MINH OFFCIER_VI\"]",
+     "image": 5250,
+     "image_2": 5250,
+     "image_3": 5250,
+     "repeater": [
+      {
+       "image": 5193,
+       "content": "Quảng cáo tìm kiếm và hiển thị (Google Ads, Facebook Ads, LinkedIn Ads, Zalo Ads, Messenger, Chatbot)."
+      },
+      {
+       "image": 5195,
+       "content": "Chiến lược nội dung và tối ưu SEO để tạo nguồn khách hàng tiềm năng tự nhiên."
+      },
+      {
+       "image": 5197,
+       "content": "Tối ưu trang đích và quy trình chăm sóc khách hàng tiềm năng."
+      }
+     ]
+    },
+    {
+     "title": "Creative Strategy",
+     "content": "Sáng tạo không chỉ dừng lại ở thiết kế đẹp mà còn phải tạo ra tác động thực sự. Chúng tôi kết hợp dữ liệu phân tích, hiểu sâu hành vi người dùng và nghệ thuật kể chuyện để tạo ra những nội dung thu hút, giúp thương hiệu chinh phục khách hàng.",
+     "btn": "Tư vấn ngay ",
+     "link": "[contact-form-7 id=\"b4c4709\" title=\"CONTACTFORM - HO CHI MINH OFFCIER_VI\"]",
+     "image": 5155,
+     "image_2": 5157,
+     "image_3": false,
+     "repeater": [
+      {
+       "image": 5193,
+       "content": "Phát triển ý tưởng sáng tạo, hình ảnh chủ đạo và định hướng chiến dịch."
+      },
+      {
+       "image": 5195,
+       "content": "Sản xuất video quảng cáo, hình ảnh và nội dung marketing."
+      },
+      {
+       "image": 5197,
+       "content": "Xây dựng chiến lược nội dung đa nền tảng."
+      }
+     ]
+    },
+    {
+     "title": "Search Engine Optimization (SEO)",
+     "content": "SEO là chiến lược dài hạn nhằm nâng cao thứ hạng thương hiệu trên công cụ tìm kiếm, thu hút lượng truy cập chất lượng và tối ưu hóa chi phí marketing.",
+     "btn": "Tư vấn ngay",
+     "link": "[contact-form-7 id=\"b4c4709\" title=\"CONTACTFORM - HO CHI MINH OFFCIER_VI\"]",
+     "image": 5161,
+     "image_2": 5163,
+     "image_3": 5165,
+     "repeater": [
+      {
+       "image": 5193,
+       "content": "SEO kỹ thuật, tối ưu website và xây dựng liên kết."
+      },
+      {
+       "image": 5195,
+       "content": "Xây dựng chiến lược SEO bền vững dựa trên ý định tìm kiếm."
+      },
+      {
+       "image": 5197,
+       "content": "Phân tích, nghiên cứu từ khóa và tối ưu nội dung."
+      }
+     ]
+    },
+    {
+     "title": "App user acquisition",
+     "content": "Chúng tôi giúp ứng dụng của bạn tiếp cận đúng đối tượng người dùng, tăng lượt tải xuống, tối ưu hóa chi phí và cải thiện tỷ lệ giữ chân khách hàng.",
+     "btn": "Tư vấn ngay",
+     "link": "[contact-form-7 id=\"b4c4709\" title=\"CONTACTFORM - HO CHI MINH OFFCIER_VI\"]",
+     "image": 5169,
+     "image_2": 5270,
+     "image_3": 5266,
+     "repeater": [
+      {
+       "image": 5193,
+       "content": "Chiến dịch quảng cáo thu hút người dùng mới (UA)."
+      },
+      {
+       "image": 5195,
+       "content": "Chiến dịch tiếp thị lại và tương tác người dùng."
+      },
+      {
+       "image": 5197,
+       "content": "Tối ưu hóa cửa hàng ứng dụng (ASO)."
+      }
+     ]
+    }
+   ],
+   "mona_home_doingu": {
+    "title": "Là cánh tay nối dài của bạn",
+    "btn": "Tư vấn ngay",
+    "link": "[contact-form-7 id=\"b4c4709\" title=\"CONTACTFORM - HO CHI MINH OFFCIER_VI\"]",
+    "image": 5141,
+    "content": "<p>Đội ngũ chuyên gia <span class=\"pri\">Growth Marketing của Adtek</span> với hơn 10 năm kinh nghiệm, sẵn sàng tư vấn và đồng hành cùng bạn để đạt được các mục tiêu tăng trưởng cụ thể. Với phương pháp tiếp cận toàn diện, chúng tôi không chỉ hỗ trợ xây dựng chiến lược mà còn trực tiếp triển khai như một cánh tay nối dài của đội ngũ bạn, đảm bảo hiệu quả tối đa trong từng giai đoạn phát triển.</p>\n"
+   },
+   "mona_home_vechungtoi": {
+    "title": "Adteker những con người đam mê tăng trưởng!",
+    "sub": "Về chúng tôi",
+    "btn": "Tư vấn ngay",
+    "link": "[contact-form-7 id=\"b4c4709\" title=\"CONTACTFORM - HO CHI MINH OFFCIER_VI\"]",
+    "image": 5189,
+    "content": "<p>Chúng tôi là đội ngũ bước ra từ các tập đoàn công nghệ và bán lẻ hàng đầu Việt Nam như <strong>Vingroup, Lazada và Shopee</strong>. Năm 2022, với cùng một tầm nhìn, chúng tôi thành lập Adtek mang theo sứ mệnh đồng hành cùng doanh nghiệp Việt trong hành trình chuyển đổi số và kiến tạo những bước đột phá tăng trưởng bền vững.</p>\n"
+   },
+   "mona_home_doitac": {
+    "title": "Các đối tác của Adtek",
+    "repeater": [
+     {
+      "title": "Real Estate",
+      "album": [
+       5399,
+       5381,
+       5387
+      ]
+     },
+     {
+      "title": "Fashion",
+      "album": [
+       5367,
+       5369
+      ]
+     },
+     {
+      "title": "E-commerce",
+      "album": [
+       5397,
+       5377
+      ]
+     },
+     {
+      "title": "Cosmetic",
+      "album": [
+       5391,
+       5379
+      ]
+     },
+     {
+      "title": "Pharmacy",
+      "album": [
+       5389,
+       5383
+      ]
+     },
+     {
+      "title": "Education",
+      "album": [
+       5403,
+       5371
+      ]
+     },
+     {
+      "title": "Electronics",
+      "album": [
+       5385
+      ]
+     },
+     {
+      "title": "Khác",
+      "album": [
+       5375,
+       5365,
+       5401,
+       5373
+      ]
+     }
+    ]
+   },
+   "mona_home_footer": {
+    "title": "Growth marketing agency",
+    "title_2": "Liên hệ",
+    "content": "Hỗ trợ khách hàng tăng trưởng vượt bậc thông qua chuyển đổi số và chiến lược dựa trên phân tích dữ liệu.",
+    "logo": 5217,
+    "repeater": [
+     {
+      "link": "https://www.facebook.com/101888089257566",
+      "image": 5201
+     },
+     {
+      "link": "https://www.instagram.com/",
+      "image": 5203
+     },
+     {
+      "link": "https://www.tiktok.com/",
+      "image": 5207
+     },
+     {
+      "link": "https://www.youtube.com/",
+      "image": 5211
+     },
+     {
+      "link": "http://zalo.me/",
+      "image": 5213
+     }
+    ],
+    "repeater_2": [
+     {
+      "link": "mailto:contact@adtek.agency",
+      "content": "contact@adtek.agency"
+     },
+     {
+      "link": "tel:+84 9323 494 34",
+      "content": "+84 9323 494 34"
+     },
+     {
+      "link": "",
+      "content": "123/30B Nguyễn Hoàng, phường Bình Trưng, TP. Hồ Chí Minh"
+     }
+    ]
+   },
+   "mona_home_header": "+84 9323 494 34",
+   "mona_stayintouch": {
+    "title": "",
+    "description": "",
+    "label": "",
+    "link": "",
+    "social_network": false
+   },
+   "mona_aboutus_contact": {
+    "title": "",
+    "description": "",
+    "contact_information": false,
+    "contact_form": {
+     "title_contact_form": "",
+     "description_contact_form": "",
+     "shortcode_contact_form": ""
+    },
+    "contact_map": ""
+   },
+   "mona_aboutus_descriptions": {
+    "title": "",
+    "link": "",
+    "description": "",
+    "decor_img": false,
+    "decor_img_mobile": false
+   },
+   "mona_aboutus_news": {
+    "title": "",
+    "description": "",
+    "news": false,
+    "count": ""
+   },
+   "mona_aboutus_leadership_team": {
+    "title": "",
+    "description": "",
+    "team": false
+   }
+  },
+  "version": "1.2.1"
+ },
+ "5240": {
+  "id": 5240,
+  "fields": {
+   "mona_home_banner": {
+    "title": "Growth Marketing <br />\r\nAgency",
+    "content": "With more than 100 clients and 200 successful projects, Adtek's team of experts brings deep experience from key roles at Vietnam's leading corporations.",
+    "image": 5137,
+    "btn": "Get a consultation",
+    "link": "[contact-form-7 id=\"1a1d42e\" title=\"CONTACTFORM - HO CHI MINH OFFCIER\"]"
+   },
+   "mona_home_service_sub": "Our Services",
+   "mona_home_service": [
+    {
+     "title": "Brand Commerce",
+     "content": "We combine Branding and Performance Marketing to create effective commercial campaigns that help brands increase awareness and drive sales. Adtek optimizes the entire purchase journey, from awareness to conversion, to ensure optimal ROI.",
+     "btn": "Get a consultation",
+     "link": "[contact-form-7 id=\"1a1d42e\" title=\"CONTACTFORM - HO CHI MINH OFFCIER\"]",
+     "image": 5143,
+     "image_2": 5248,
+     "image_3": false,
+     "repeater": [
+      {
+       "image": 5193,
+       "content": "Build a comprehensive digital brand strategy."
+      },
+      {
+       "image": 5195,
+       "content": "Run effective multi-channel communication campaigns."
+      },
+      {
+       "image": 5197,
+       "content": "Optimize the customer experience across online and offline."
+      }
+     ]
+    },
+    {
+     "title": "Lead generation",
+     "content": "We build multi-channel lead generation systems, from advertising and content to landing pages, giving businesses a steady flow of leads that match their ideal customer profile at an optimized cost per lead.",
+     "btn": "Get a consultation",
+     "link": "[contact-form-7 id=\"1a1d42e\" title=\"CONTACTFORM - HO CHI MINH OFFCIER\"]",
+     "image": 5251,
+     "image_2": 5251,
+     "image_3": 5251,
+     "repeater": [
+      {
+       "image": 5193,
+       "content": "Search and display advertising (Google Ads, Facebook Ads, LinkedIn Ads, Zalo Ads, Messenger, Chatbot)."
+      },
+      {
+       "image": 5195,
+       "content": "Content strategy and SEO to generate organic leads."
+      },
+      {
+       "image": 5197,
+       "content": "Optimize landing pages and lead nurturing processes."
+      }
+     ]
+    },
+    {
+     "title": "Creative Strategy",
+     "content": "Creativity goes beyond beautiful design; it has to make a real impact. We combine data analytics, a deep understanding of user behavior and storytelling to create engaging content that helps brands win over customers.",
+     "btn": "Get a consultation",
+     "link": "[contact-form-7 id=\"1a1d42e\" title=\"CONTACTFORM - HO CHI MINH OFFCIER\"]",
+     "image": 5155,
+     "image_2": 5157,
+     "image_3": false,
+     "repeater": [
+      {
+       "image": 5193,
+       "content": "Develop creative ideas, key visuals and campaign direction."
+      },
+      {
+       "image": 5195,
+       "content": "Produce advertising videos, images and marketing content."
+      },
+      {
+       "image": 5197,
+       "content": "Build a multi-platform content strategy."
+      }
+     ]
+    },
+    {
+     "title": "Search Engine Optimization (SEO)",
+     "content": "SEO is a long-term strategy to improve your brand's search engine rankings, attract quality traffic and optimize marketing costs.",
+     "btn": "Get a consultation",
+     "link": "[contact-form-7 id=\"1a1d42e\" title=\"CONTACTFORM - HO CHI MINH OFFCIER\"]",
+     "image": 5161,
+     "image_2": 5163,
+     "image_3": 5165,
+     "repeater": [
+      {
+       "image": 5193,
+       "content": "Technical SEO, website optimization and link building."
+      },
+      {
+       "image": 5195,
+       "content": "Build a sustainable SEO strategy based on search intent."
+      },
+      {
+       "image": 5197,
+       "content": "Keyword research, analysis and content optimization."
+      }
+     ]
+    },
+    {
+     "title": "App user acquisition",
+     "content": "We help your app reach the right users, increase downloads, optimize costs and improve customer retention.",
+     "btn": "Get a consultation",
+     "link": "[contact-form-7 id=\"1a1d42e\" title=\"CONTACTFORM - HO CHI MINH OFFCIER\"]",
+     "image": 5169,
+     "image_2": 5271,
+     "image_3": 5267,
+     "repeater": [
+      {
+       "image": 5193,
+       "content": "User acquisition (UA) advertising campaigns."
+      },
+      {
+       "image": 5195,
+       "content": "Remarketing and user engagement campaigns."
+      },
+      {
+       "image": 5197,
+       "content": "App Store Optimization (ASO)."
+      }
+     ]
+    }
+   ],
+   "mona_home_doingu": {
+    "title": "Your extended team",
+    "btn": "Get a consultation",
+    "link": "[contact-form-7 id=\"1a1d42e\" title=\"CONTACTFORM - HO CHI MINH OFFCIER\"]",
+    "image": 5141,
+    "content": "<p>Adtek&#8217;s <span class=\"pri\">Growth Marketing experts</span>, with over 10 years of experience, are ready to advise and work alongside you to reach specific growth goals. With a comprehensive approach, we do not just help build the strategy; we execute it directly as an extension of your team, ensuring maximum effectiveness at every stage of growth.</p>\n"
+   },
+   "mona_home_vechungtoi": {
+    "title": "Adtekers, people passionate about growth!",
+    "sub": "About us",
+    "btn": "Get a consultation",
+    "link": "[contact-form-7 id=\"1a1d42e\" title=\"CONTACTFORM - HO CHI MINH OFFCIER\"]",
+    "image": 5189,
+    "content": "<p>Our team comes from Vietnam&#8217;s leading technology and retail companies, including <strong>Vingroup, Lazada and Shopee</strong>. In 2022, sharing the same vision, we founded Adtek with a mission to support Vietnamese businesses on their digital transformation journey and create breakthroughs in sustainable growth.</p>\n"
+   },
+   "mona_home_doitac": {
+    "title": "Adtek Partners",
+    "repeater": [
+     {
+      "title": "Real Estate",
+      "album": [
+       5400,
+       5382,
+       5388
+      ]
+     },
+     {
+      "title": "Fashion",
+      "album": [
+       5368,
+       5370
+      ]
+     },
+     {
+      "title": "E-commerce",
+      "album": [
+       5398,
+       5378
+      ]
+     },
+     {
+      "title": "Cosmetic",
+      "album": [
+       5392,
+       5380
+      ]
+     },
+     {
+      "title": "Pharmacy",
+      "album": [
+       5390,
+       5384
+      ]
+     },
+     {
+      "title": "Education",
+      "album": [
+       5404,
+       5372
+      ]
+     },
+     {
+      "title": "Electronics",
+      "album": [
+       5386
+      ]
+     },
+     {
+      "title": "Others",
+      "album": [
+       5376,
+       5366,
+       5402,
+       5374
+      ]
+     }
+    ]
+   },
+   "mona_home_footer": {
+    "title": "Growth marketing agency",
+    "title_2": "Contact",
+    "content": "Helping clients achieve breakthrough growth through digital transformation and data-driven strategy.",
+    "logo": 5217,
+    "repeater": [
+     {
+      "link": "https://www.facebook.com/101888089257566",
+      "image": 5201
+     },
+     {
+      "link": "https://www.instagram.com/",
+      "image": 5203
+     },
+     {
+      "link": "https://www.tiktok.com/",
+      "image": 5207
+     },
+     {
+      "link": "https://www.youtube.com/",
+      "image": 5211
+     },
+     {
+      "link": "http://zalo.me/",
+      "image": 5213
+     }
+    ],
+    "repeater_2": [
+     {
+      "link": "mailto:contact@adtek.agency",
+      "content": "contact@adtek.agency"
+     },
+     {
+      "link": "tel:+84 9323 494 34",
+      "content": "+84 9323 494 34"
+     },
+     {
+      "link": "",
+      "content": "123/30B Nguyen Hoang Street, Binh Trung Ward, Ho Chi Minh City, Vietnam"
+     }
+    ]
+   },
+   "mona_home_header": "+84 9323 494 34",
+   "mona_stayintouch": {
+    "title": "",
+    "description": "",
+    "label": "",
+    "link": "",
+    "social_network": false
+   },
+   "mona_aboutus_contact": {
+    "title": "",
+    "description": "",
+    "contact_information": false,
+    "contact_form": {
+     "title_contact_form": "",
+     "description_contact_form": "",
+     "shortcode_contact_form": ""
+    },
+    "contact_map": ""
+   },
+   "mona_aboutus_descriptions": {
+    "title": "",
+    "link": "",
+    "description": "",
+    "decor_img": false,
+    "decor_img_mobile": false
+   },
+   "mona_aboutus_news": {
+    "title": "",
+    "description": "",
+    "news": false,
+    "count": ""
+   },
+   "mona_aboutus_leadership_team": {
+    "title": "",
+    "description": "",
+    "team": false
+   }
+  },
+  "version": "1.2.1"
+ },
+ "1149": {
+  "id": 1149,
+  "fields": {
+   "contact_information_group": {
+    "title": "Kết nối với đội ngũ chuyên gia Adtek Agency",
+    "description": "Mọi hành trình bứt phá doanh số đều bắt đầu từ một cuộc trò chuyện. Hãy để Adtek đồng hành cùng chiến dịch Marketing của bạn.",
+    "contact_information_list": [
+     {
+      "contact_information_title": "TRỤ SỞ CHÍNH TẠI TP. HỒ CHÍ MINH",
+      "contact_map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.199542414271!2d106.74610674995633!3d10.79602379496798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175270069c9e249%3A0xeea1d47896e6ede1!2sThe%20Lin!5e0!3m2!1sen!2s!4v1777638769408!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+      "contact_information": [
+       {
+        "icon": 126,
+        "title": "VĂN PHÒNG HỒ CHÍ MINH",
+        "information_select": "value_text",
+        "information_detail": "123/30B Nguyễn Hoàng, phường Bình Trưng, TP. Hồ Chí Minh"
+       },
+       {
+        "icon": 123,
+        "title": "EMAIL",
+        "information_select": "value_email",
+        "information_detail": "contact@adtek.agency"
+       },
+       {
+        "icon": 125,
+        "title": "PHONE",
+        "information_select": "value_tel",
+        "information_detail": "+84 9323 494 34 (Mr. Tín)"
+       }
+      ],
+      "contact_form": {
+       "title_contact_form": "Yêu cầu một cuộc gọi lại",
+       "description_contact_form": "Hãy để lại thông tin bên dưới, chúng tôi sẽ gọi lại cho bạn trong thời gian sớm nhất.<br />\r\n",
+       "shortcode_contact_form": "[contact-form-7 id=\"1307\" title=\"CONTACTFORM - HO CHI MINH OFFCIER_VI\"]"
+      }
+     }
+    ]
+   }
+  },
+  "version": "1.2.1"
+ },
+ "18": {
+  "id": 18,
+  "fields": {
+   "contact_information_group": {
+    "title": "",
+    "description": "",
+    "contact_information_list": [
+     {
+      "contact_information_title": "HO CHI MINH OFFICE",
+      "contact_map": "<iframe  src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3043490413734!2d106.69485491526038!3d10.787985761929047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3520227b57%3A0x3a3fcfb0939b79fb!2zMTQ2IMSQxrDhu51uZyBOZ3V54buFbiBWxINuIFRo4bunLCDEkGEgS2FvLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1643341367146!5m2!1svi!2s\"\r\n                            width=\"100%\" height=\"574\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>",
+      "contact_information": [
+       {
+        "icon": 126,
+        "title": "HO CHI MINH OFFICE",
+        "information_select": "value_text",
+        "information_detail": "146 Nguyen Van Thu street, Da Kao ward, District 1, HCMC"
+       },
+       {
+        "icon": 123,
+        "title": "EMAIL",
+        "information_select": "value_email",
+        "information_detail": "Info@gmail.com"
+       },
+       {
+        "icon": 125,
+        "title": "PHONE",
+        "information_select": "value_tel",
+        "information_detail": "+84 9323 494 34 (Mr. Tín)"
+       }
+      ],
+      "contact_form": {
+       "title_contact_form": "Request a Call Back",
+       "description_contact_form": "Please leave your information below; we will call you back soon.",
+       "shortcode_contact_form": "[contact-form-7 id=\"264\" title=\"CONTACTFORM - HO CHI MINH OFFCIER\"]"
+      }
+     }
+    ]
+   }
+  },
+  "version": "1.2.1"
+ },
+ "11": {
+  "id": 11,
+  "fields": {
+   "mona_aboutus_banners": {
+    "banner": 101,
+    "banner_mobile": 99,
+    "title": "Problem-solving is our DNA.",
+    "description": "The people at Adtek are always challenging through data and technology to differentiate themselves from the crowd.",
+    "statistical_information": {
+     "statistical_title": "Let’s Start Your Project With Adtek.co",
+     "statistical_list": [
+      {
+       "icon": 86,
+       "number": "10",
+       "description": "PROJECTS COMPLETED"
+      },
+      {
+       "icon": 85,
+       "number": "3",
+       "description": "SATISFIED CLIENTS"
+      },
+      {
+       "icon": 84,
+       "number": "8",
+       "description": "EXPERT TEAMS"
+      }
+     ]
+    }
+   },
+   "mona_aboutus_descriptions": {
+    "title": "About Us",
+    "link": "http://adtek.agency/contact/",
+    "description": "<p>Adtek was founded in 2021 to help brands grow their businesses from branding building to revenue growth. Unlike other agencies, we combine creatives and data-driven to provide end-to-end marketing strategies from branding, user acquisition, and user retention. We challenge conventional marketing methods by understanding clients’ markets, profoundly diving into their problems, and growing clients’ businesses at scale.</p>\n",
+    "decor_img": [
+     95,
+     96,
+     97
+    ],
+    "decor_img_mobile": false
+   },
+   "mona_aboutus_protect": {
+    "background": 69,
+    "title": "LET US KNOW WHAT THE PROBLEM YOU NEED TO SOLVE. WE WILL THINK WITH YOU.",
+    "link": "http://adtek.agency/contact/"
+   },
+   "mona_aboutus_leadership_team": {
+    "title": "Leardership Team",
+    "description": "With more than 10 years of experience in growth marketing and e-commerce, we are strongly confident to deliver the best results to our clients.",
+    "team": [
+     3023,
+     3025
+    ]
+   },
+   "mona_aboutus_awards": {
+    "title": "Our Certificates",
+    "description": "100% of our experts are certified in Google Ads, Facebook Blueprint",
+    "awards": [
+     2955,
+     2957
+    ]
+   },
+   "mona_aboutus_news": {
+    "title": "",
+    "description": "",
+    "news": false,
+    "count": ""
+   },
+   "mona_aboutus_platform": {
+    "title": "",
+    "platforms": false
+   },
+   "mona_aboutus_contact": {
+    "title": "Contact",
+    "description": "Contact Adtek now to get a free consultation from our experts.",
+    "contact_information": [
+     {
+      "icon": 126,
+      "title": "HO CHI MINH OFFICE",
+      "information_select": "value_text",
+      "information_detail": "146 Nguyen Van Thu street, Da Kao ward, District 1, HCMC"
+     },
+     {
+      "icon": 123,
+      "title": "Email",
+      "information_select": "value_email",
+      "information_detail": "Info@gmail.com"
+     },
+     {
+      "icon": 125,
+      "title": "PHONE",
+      "information_select": "value_tel",
+      "information_detail": "+84 9323 494 34 (Mr. Tín)"
+     }
+    ],
+    "contact_form": {
+     "title_contact_form": "Request a Call Back",
+     "description_contact_form": "Please leave your information below; we will call you back soon.",
+     "shortcode_contact_form": "[contact-form-7 id=\"235\" title=\"CONTACTFORM - ABOUTUS PAGE\"]"
+    },
+    "contact_map": "  <iframe\r\n            src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3043490413734!2d106.69485491526038!3d10.787985761929047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3520227b57%3A0x3a3fcfb0939b79fb!2zMTQ2IMSQxrDhu51uZyBOZ3V54buFbiBWxINuIFRo4bunLCDEkGEgS2FvLCBRdeG6rW4gMSwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1643341367146!5m2!1svi!2s\"\r\n            width=\"100%\" height=\"574\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+   }
+  },
+  "version": "1.2.1"
+ }
+}

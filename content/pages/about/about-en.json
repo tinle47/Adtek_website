@@ -1,0 +1,51 @@
+{
+ "page": {
+  "id": 11,
+  "seo_title": "About Adtek: Growth Marketing Agency in Vietnam",
+  "meta_desc": "Adtek is a growth marketing agency in Ho Chi Minh City, founded in 2022, helping brands grow from brand building to revenue with data-driven marketing."
+ },
+ "team": {
+  "id": 3023,
+  "title": "Tín Lê",
+  "position": "Founder & Managing Director",
+  "description_information": "<ul>\n<li>10+ years in senior digital marketing roles</li>\n<li>Previously at VNG, Adayroi (Vingroup), Lazada and Shopee</li>\n</ul>\n",
+  "social_network": [
+   {
+    "icon": 1060,
+    "link": "https://www.linkedin.com/in/lethanhtin/"
+   }
+  ]
+ },
+ "fields": {
+  "mona_aboutus_banners": {
+   "statistical_information": {
+    "statistical_title": "",
+    "statistical_list": []
+   }
+  },
+  "mona_aboutus_descriptions": {
+   "title": "About Us",
+   "link": "https://adtek.agency/en/contact/",
+   "description": "<p>Adtek is a growth marketing agency in Ho Chi Minh City, founded on May 5, 2022. We help brands grow from brand building to revenue through Brand Commerce, performance advertising, SEO and AI Search, data and CRM, and e-commerce.</p>\n<p>Every engagement starts with understanding the client's market and business problem. We then combine creative work with data to build the strategy, run it and measure the results.</p>\n<p>Legal entity: Adtek Technology Joint Stock Company, tax code 0317120810.</p>\n"
+  },
+  "mona_aboutus_protect": {
+   "title": "Tell us the problem you need to solve. We will work through it with you.",
+   "link": "https://adtek.agency/en/contact/"
+  },
+  "mona_aboutus_leadership_team": {
+   "title": "Leadership Team",
+   "description": "Adtek is led by a founder with more than 10 years of senior digital marketing experience at leading technology and e-commerce companies in Vietnam.",
+   "team": [
+    3023
+   ]
+  },
+  "mona_aboutus_awards": {
+   "title": "Our Certificates",
+   "description": "Our team holds Google Ads, Meta Blueprint and Apple Ads certifications.",
+   "awards": [
+    2957,
+    2955
+   ]
+  }
+ }
+}

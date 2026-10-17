@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Adtek Yoast Settings REST
- * Description: Đọc và sửa cấu hình Yoast SEO, cài đặt SEO của WPML và hồ sơ mạng xã hội của tác giả qua REST (chỉ quản trị viên); phục vụ /llms.txt tiếng Việt thay cho file của Yoast.
- * Version:     1.1.1
+ * Description: Đọc và sửa cấu hình Yoast SEO, cài đặt SEO của WPML và hồ sơ mạng xã hội của tác giả qua REST (chỉ quản trị viên); phục vụ /llms.txt tiếng Việt thay cho file của Yoast; chuyển hướng 301 và nối bản dịch WPML.
+ * Version:     1.2.0
  * Author:      Adtek
  */
 
@@ -18,9 +18,14 @@ defined( 'ABSPATH' ) || exit;
  *
  * /llms.txt (từ 1.1.0): file của Yoast bị ghi 2 lần nối nhau khi chạy cùng WPML, nên tắt llms.txt của Yoast
  * và để plugin này tạo nội dung tiếng Việt từ dữ liệu WordPress, lưu đệm 12 giờ, làm mới khi có bài đăng hoặc cập nhật.
+ *
+ * Từ 1.2.0:
+ *      "redirects": { "/glossary/cpm-2/": "/glossary/cpm/", "/cu/": null } thêm hoặc xóa (null) chuyển hướng 301, lưu ở option adtek_redirects.
+ *      Thay cho plugin redirect riêng: chỉ nhận đường dẫn nội bộ bắt đầu bằng /.
+ *      "wpml_link": { "id": 123, "translation_of": 11, "lang": "vi" } nối trang 123 làm bản dịch ngôn ngữ lang của trang 11.
  */
 
-const ADTEK_LLMS_CACHE = 'adtek_llms_txt_v2';
+const ADTEK_LLMS_CACHE = 'adtek_llms_txt_v3';
 
 function adtek_llms_md( $text ) {
 	// Tiêu đề và mô tả nằm trong cú pháp link Markdown: bỏ ngoặc vuông, gộp khoảng trắng.
@@ -64,7 +69,7 @@ function adtek_llms_build() {
 	$lines = array(
 		'# Adtek',
 		'',
-		'> Adtek là growth marketing agency tại Việt Nam, thành lập năm 2021, giúp thương hiệu tăng trưởng từ xây dựng thương hiệu đến doanh thu: Brand Commerce, quảng cáo hiệu suất, SEO và AI Search, dữ liệu và CRM, thương mại điện tử.',
+		'> Adtek là growth marketing agency tại Việt Nam, thành lập năm 2022, giúp thương hiệu tăng trưởng từ xây dựng thương hiệu đến doanh thu: Brand Commerce, quảng cáo hiệu suất, SEO và AI Search, dữ liệu và CRM, thương mại điện tử.',
 		'',
 		'Tệp này giúp các trợ lý AI nắm nội dung chính của adtek.agency. Nội dung tiếng Việt, bản tiếng Anh ở mục English.',
 		'',
@@ -170,6 +175,35 @@ add_action(
 	2
 );
 
+/*
+ * Chuyển hướng 301 (từ 1.2.0): bản đồ đường dẫn lưu ở option adtek_redirects, sửa qua REST.
+ * Chỉ đường dẫn nội bộ, so khớp đúng đường dẫn (bỏ query, chuẩn hóa dấu / cuối).
+ */
+function adtek_redirect_path( $path ) {
+	$path = wp_parse_url( (string) $path, PHP_URL_PATH );
+	if ( ! $path || '/' !== $path[0] || false !== strpos( $path, '//' ) ) {
+		return '';
+	}
+	return trailingslashit( strtolower( rawurldecode( $path ) ) );
+}
+
+add_action(
+	'template_redirect',
+	static function () {
+		$map = get_option( 'adtek_redirects', array() );
+		if ( ! $map || ! is_array( $map ) ) {
+			return;
+		}
+		$path = adtek_redirect_path( isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '' );
+		if ( $path && isset( $map[ $path ] ) ) {
+			// get_option( 'home' ) không qua bộ lọc ngôn ngữ của WPML: đích đã là đường dẫn đầy đủ (có /en/ nếu cần).
+			wp_safe_redirect( untrailingslashit( get_option( 'home' ) ) . $map[ $path ], 301, 'Adtek' );
+			exit;
+		}
+	},
+	0
+);
+
 function adtek_yoast_user_keys() {
 	// Trường hồ sơ tác giả Yoast dùng cho schema Person (sameAs) và trang tác giả.
 	return array( 'facebook', 'instagram', 'linkedin', 'myspace', 'pinterest', 'soundcloud', 'tumblr', 'twitter', 'youtube', 'wikipedia', 'adtek_job_title', 'adtek_avatar_id' );
@@ -246,7 +280,7 @@ add_action(
 							$users[] = array( 'id' => (int) $u->ID, 'name' => $u->display_name, 'meta' => $meta );
 						}
 						return array(
-							'version'  => '1.1.1',
+							'version'  => '1.2.0',
 							'yoast'    => defined( 'WPSEO_VERSION' ) ? WPSEO_VERSION : null,
 							'settings' => WPSEO_Options::get_all(),
 							'wpml_seo' => ( is_array( $wpml ) && isset( $wpml['seo'] ) ) ? $wpml['seo'] : null,
@@ -255,6 +289,7 @@ add_action(
 								'pillars'   => get_option( 'adtek_llms_pillars', array() ),
 								'yoast_file' => file_exists( ABSPATH . 'llms.txt' ),
 							),
+							'redirects' => get_option( 'adtek_redirects', array() ),
 						);
 					},
 				),
@@ -265,7 +300,7 @@ add_action(
 						if ( ! class_exists( 'WPSEO_Options' ) ) {
 							return new WP_Error( 'no_yoast', 'Yoast SEO chưa bật.', array( 'status' => 500 ) );
 						}
-						$out = array( 'version' => '1.1.1' );
+						$out = array( 'version' => '1.2.0' );
 
 						$settings = $request['settings'];
 						if ( is_array( $settings ) ) {
@@ -339,6 +374,49 @@ add_action(
 								$out['llms_cleanup'] = wp_delete_file( $file ) || ! file_exists( $file ) ? 'deleted' : 'delete_failed';
 							}
 							delete_transient( ADTEK_LLMS_CACHE );
+						}
+
+						$redirects = $request['redirects'];
+						if ( is_array( $redirects ) ) {
+							$old = get_option( 'adtek_redirects', array() );
+							$map = is_array( $old ) ? $old : array();
+							foreach ( $redirects as $from => $to ) {
+								$from = adtek_redirect_path( $from );
+								if ( ! $from ) {
+									continue;
+								}
+								if ( null === $to ) {
+									unset( $map[ $from ] );
+								} elseif ( adtek_redirect_path( $to ) && adtek_redirect_path( $to ) !== $from ) {
+									$map[ $from ] = adtek_redirect_path( $to );
+								}
+							}
+							update_option( 'adtek_redirects', $map, true );
+							$out['redirects'] = array( 'old' => $old, 'new' => $map );
+						}
+
+						$link = $request['wpml_link'];
+						if ( is_array( $link ) && ! empty( $link['id'] ) && ! empty( $link['translation_of'] ) && ! empty( $link['lang'] ) ) {
+							$id   = (int) $link['id'];
+							$src  = (int) $link['translation_of'];
+							$type = apply_filters( 'wpml_element_type', get_post_type( $src ) );
+							$trid = apply_filters( 'wpml_element_trid', null, $src, $type );
+							if ( ! $trid || ! get_post( $id ) || get_post_type( $id ) !== get_post_type( $src ) ) {
+								$out['wpml_link'] = 'bad_request';
+							} else {
+								$src_lang = apply_filters( 'wpml_element_language_code', null, array( 'element_id' => $src, 'element_type' => get_post_type( $src ) ) );
+								do_action(
+									'wpml_set_element_language_details',
+									array(
+										'element_id'           => $id,
+										'element_type'         => $type,
+										'trid'                 => $trid,
+										'language_code'        => sanitize_key( $link['lang'] ),
+										'source_language_code' => $src_lang,
+									)
+								);
+								$out['wpml_link'] = apply_filters( 'wpml_get_element_translations', null, $trid, $type );
+							}
 						}
 
 						if ( $request['purge'] ) {

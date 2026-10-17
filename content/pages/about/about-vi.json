@@ -1,0 +1,89 @@
+{
+ "page": {
+  "title": "Giới thiệu",
+  "slug": "gioi-thieu",
+  "template": "page-template/about-template.php",
+  "seo_title": "Giới thiệu Adtek: Growth Marketing Agency tại TP.HCM",
+  "meta_desc": "Adtek là growth marketing agency thành lập năm 2022 tại TP. Hồ Chí Minh, đồng hành cùng thương hiệu từ xây dựng thương hiệu đến tăng trưởng doanh thu.",
+  "id": 6412
+ },
+ "team": {
+  "id": 3009,
+  "title": "Tín Lê",
+  "position": "Founder & Managing Director",
+  "description_information": "<ul>\n<li>Hơn 10 năm giữ vị trí cấp cao về digital marketing</li>\n<li>Từng làm việc tại VNG, Adayroi (Vingroup), Lazada và Shopee</li>\n</ul>\n"
+ },
+ "fields": {
+  "mona_aboutus_banners": {
+   "banner": 101,
+   "banner_mobile": 99,
+   "title": "Giải quyết vấn đề là cách Adtek làm việc.",
+   "description": "Adtek dùng dữ liệu và công nghệ để tìm hướng tăng trưởng riêng cho từng thương hiệu.",
+   "statistical_information": {
+    "statistical_title": "",
+    "statistical_list": []
+   }
+  },
+  "mona_aboutus_descriptions": {
+   "title": "Về Adtek",
+   "link": "https://adtek.agency/contact/",
+   "description": "<p>Adtek là growth marketing agency tại TP. Hồ Chí Minh, thành lập ngày 5/5/2022. Chúng tôi giúp thương hiệu tăng trưởng trên cả chặng đường, từ xây dựng thương hiệu đến doanh thu: Brand Commerce, quảng cáo hiệu suất, SEO và AI Search, dữ liệu và CRM, thương mại điện tử.</p>\n<p>Mỗi dự án bắt đầu bằng việc hiểu thị trường và bài toán kinh doanh của khách hàng. Sau đó Adtek kết hợp sáng tạo với dữ liệu để xây chiến lược, triển khai và đo lường kết quả.</p>\n<p>Pháp nhân: Công ty Cổ phần Adtek Technology, mã số thuế 0317120810.</p>\n",
+   "decor_img": [
+    95,
+    96,
+    97
+   ],
+   "decor_img_mobile": false
+  },
+  "mona_aboutus_protect": {
+   "background": 69,
+   "title": "Hãy cho Adtek biết bài toán bạn đang cần giải. Chúng tôi sẽ cùng bạn tìm hướng đi.",
+   "link": "https://adtek.agency/contact/"
+  },
+  "mona_aboutus_leadership_team": {
+   "title": "Ban lãnh đạo",
+   "description": "Adtek được dẫn dắt bởi nhà sáng lập có hơn 10 năm làm digital marketing tại các doanh nghiệp công nghệ và thương mại điện tử lớn ở Việt Nam.",
+   "team": [
+    3009
+   ]
+  },
+  "mona_aboutus_awards": {
+   "title": "Chứng chỉ",
+   "description": "Đội ngũ Adtek có chứng chỉ Google Ads, Meta Blueprint và Apple Ads.",
+   "awards": [
+    2957,
+    2955
+   ]
+  },
+  "mona_aboutus_contact": {
+   "title": "Liên hệ",
+   "description": "Liên hệ Adtek để được chuyên gia tư vấn miễn phí.",
+   "contact_information": [
+    {
+     "icon": 126,
+     "title": "VĂN PHÒNG HỒ CHÍ MINH",
+     "information_select": "value_text",
+     "information_detail": "146 Bis Nguyễn Văn Thủ, Phường Tân Định, TP. Hồ Chí Minh"
+    },
+    {
+     "icon": 123,
+     "title": "EMAIL",
+     "information_select": "value_email",
+     "information_detail": "contact@adtek.agency"
+    },
+    {
+     "icon": 125,
+     "title": "ĐIỆN THOẠI",
+     "information_select": "value_tel",
+     "information_detail": "+84 9323 494 34 (Mr. Tín)"
+    }
+   ],
+   "contact_form": {
+    "title_contact_form": "Yêu cầu một cuộc gọi lại",
+    "description_contact_form": "Hãy để lại thông tin bên dưới, chúng tôi sẽ gọi lại cho bạn trong thời gian sớm nhất.",
+    "shortcode_contact_form": "[contact-form-7 id=\"1307\" title=\"CONTACTFORM - HO CHI MINH OFFCIER_VI\"]"
+   },
+   "contact_map": "<iframe src=\"https://www.google.com/maps?q=146%20Bis%20Nguy%E1%BB%85n%20V%C4%83n%20Th%E1%BB%A7%2C%20T%C3%A2n%20%C4%90%E1%BB%8Bnh%2C%20H%E1%BB%93%20Ch%C3%AD%20Minh&output=embed\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\" title=\"Bản đồ văn phòng Adtek\"></iframe>"
+  }
+ }
+}
