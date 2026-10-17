@@ -23,9 +23,13 @@ Cách dùng:
   python3 tools/tiktok_post.py check               kiểm tra kết nối Zernio (chỉ đọc): tài khoản TikTok, quyền riêng tư, còn đăng được không
   python3 tools/tiktok_post.py week <YYYY-MM-DD>   video trong 7 ngày từ ngày đó (JSON tóm tắt)
   python3 tools/tiktok_post.py show <id>           caption đăng thật, file video, việc còn thiếu
-  python3 tools/tiktok_post.py schedule <id> [--dry-run]   tải video lên Zernio, hẹn đăng đúng date, time
+  python3 tools/tiktok_post.py schedule <id> [--dry-run] [--now]   tải video lên Zernio, hẹn đăng đúng date, time
+                                                   (--now: đăng ngay khi anh Tin yêu cầu)
   python3 tools/tiktok_post.py status <id>         hỏi Zernio: đã đăng thì status = posted, ghi tiktok_url; lỗi thì failed
   python3 tools/tiktok_post.py cancel <id>         anh Tin nhắn "hủy": xóa lịch trên Zernio (nếu có), status = cancelled
+  python3 tools/tiktok_post.py tracks              100 bài nhạc thương mại (CML) thịnh hành ở VN: id, tên, thể loại, độ dài clip
+  python3 tools/tiktok_post.py music <id> <track_id> [--volume=30]   gắn bài nhạc CML cho video (ghi vào calendar.json)
+  python3 tools/tiktok_post.py reschedule <id>     xóa bài đã hẹn trên Zernio rồi hẹn lại (sau khi đổi nhạc, video, caption)
   python3 tools/tiktok_post.py due                 video đã qua giờ đăng mà chưa hẹn hay đăng (JSON)
 Phương án B:
   python3 tools/tiktok_post.py auth                lấy refresh token (chạy trên máy anh Tin, không chạy trong phiên cloud)
@@ -38,6 +42,7 @@ import os
 import secrets
 import subprocess
 import sys
+import time
 import urllib.parse
 from datetime import datetime
 from pathlib import Path
@@ -61,6 +66,7 @@ TIKTOK_SETTINGS = {"privacyLevel": "PUBLIC_TO_EVERYONE", "allowComment": True, "
                    "videoMadeWithAi": True, "commercialContentType": "none",
                    # anh Tin duyệt qua email báo trước và được hủy đến giờ đăng (routines/tiktok.md)
                    "contentPreviewConfirmed": True, "expressConsentGiven": True}
+MUSIC_VOLUME = 30  # nhạc nền CML (anh Tin chọn phương án D 17/10/2026): giọng đọc 100, nhạc 30 (anh Tin chốt theo thanh Sound trong app; 15 nghe không thấy nhạc)
 DAYS = ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"]
 
 
@@ -310,12 +316,18 @@ def zapi(method, path, body=None, headers=()):
     if body is not None:
         args += ["-H", "Content-Type: application/json", "--data-binary", "@-"]
         data = json.dumps(body, ensure_ascii=False).encode()
-    r = subprocess.run(["curl", "-sS", "--max-time", "300", *args], input=data, capture_output=True)
-    text, _, code = r.stdout.decode(errors="replace").rpartition("\n")
-    try:
-        return int(code), json.loads(text or "{}")
-    except (ValueError, json.JSONDecodeError):
-        return 0, {"error": (text or r.stderr.decode(errors="replace"))[:300]}
+    for wait in (2, 4, 8, 0):  # mất kết nối (HTTP 0) thì thử lại; tạo bài có Idempotency-Key nên không đăng trùng
+        r = subprocess.run(["curl", "-sS", "--max-time", "300", *args], input=data, capture_output=True)
+        text, _, code = r.stdout.decode(errors="replace").rpartition("\n")
+        try:
+            code, out = int(code), json.loads(text or "{}")
+        except (ValueError, json.JSONDecodeError):
+            code, out = 0, {"error": (text or r.stderr.decode(errors="replace"))[:300]}
+        if not code:
+            out = {"error": f"mất kết nối: {r.stderr.decode(errors='replace').strip()[:300]}"}
+        if code or not wait:
+            return code, out
+        time.sleep(wait)
 
 
 def zfail(what, code, r):
@@ -371,14 +383,74 @@ def presign_put(path, content_type):
     code, r = zapi("POST", "media/presign", {"filename": path.name, "contentType": content_type, "size": path.stat().st_size})
     if code != 200 or "uploadUrl" not in r:
         zfail(f"xin link tải {path.name}", code, r)
-    u = subprocess.run(["curl", "-sS", "--max-time", "600", "-o", "/dev/null", "-w", "%{http_code}", "-X", "PUT",
-                        r["uploadUrl"], "-H", f"Content-Type: {content_type}", "--data-binary", f"@{path}"], capture_output=True)
+    for wait in (2, 4, 8, 0):
+        u = subprocess.run(["curl", "-sS", "--max-time", "600", "-o", "/dev/null", "-w", "%{http_code}", "-X", "PUT",
+                            r["uploadUrl"], "-H", f"Content-Type: {content_type}", "--data-binary", f"@{path}"],
+                           capture_output=True)
+        if u.stdout.startswith(b"2") or not wait:
+            break
+        time.sleep(wait)
     if not u.stdout.startswith(b"2"):  # link lưu trữ, không gửi Authorization
         sys.exit(f"Lỗi tải {path.name} lên Zernio: HTTP {u.stdout.decode()} {u.stderr.decode()[:200]}")
     return r["publicUrl"]
 
 
-def schedule(data, x, dry_run=False):
+def tracks_vn():
+    code, r = zapi("GET", f"accounts/{account()}/tiktok/commercial-music?countryCode=VN")
+    if code != 200:
+        zfail("đọc danh sách nhạc CML (có thể phải kết nối lại tài khoản qua TikTok for Business)", code, r)
+    return r.get("tracks", [])
+
+
+def tracks():
+    print(json.dumps([{"id": t["id"], "name": t.get("name"), "artist": t.get("artist"), "genres": t.get("genres"),
+                       "clip_sec": (t.get("clip") or {}).get("durationSec") or t.get("durationSec")} for t in tracks_vn()],
+                     ensure_ascii=False, indent=1))
+
+
+def seconds(path):
+    r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)],
+                       capture_output=True, text=True)
+    return float(r.stdout.strip() or 0)
+
+
+def music(data, x, track_id, volume=MUSIC_VOLUME):
+    """Gắn bài CML cho video. Dùng clip.id (id bài đầy đủ có thể báo "không có ở nước bạn"); clip phải dài hơn video
+    để nhạc không dừng giữa chừng; không trùng bài với video ngày liền trước, liền sau."""
+    t = next((t for t in tracks_vn() if track_id in (t["id"], (t.get("clip") or {}).get("id"))), None)
+    if not t:
+        sys.exit(f"{track_id}: không có trong 100 bài CML thịnh hành ở VN hiện tại (chạy lệnh tracks)")
+    clip = t.get("clip") or {}
+    sec = clip.get("durationSec") or t.get("durationSec") or 0
+    slug, _ = video(x)
+    if slug and mp4(slug).exists() and sec < seconds(mp4(slug)):
+        sys.exit(f"{t.get('name')}: clip {sec} giây ngắn hơn video {seconds(mp4(slug)):.0f} giây, nhạc sẽ dừng giữa chừng")
+    d = datetime.fromisoformat(x["date"]).date()
+    for y in data["tiktok"]:
+        if y is not x and (y.get("music") or {}).get("track_id") == t["id"] \
+                and abs((datetime.fromisoformat(y["date"]).date() - d).days) <= 1:
+            sys.exit(f"{t.get('name')}: đã dùng cho {y['id']}, không dùng cùng bài 2 ngày liền")
+    x["music"] = {"id": clip.get("id") or t["id"], "track_id": t["id"], "name": t.get("name"), "artist": t.get("artist"),
+                  "clip_sec": sec, "volume": volume}
+    save(data)
+    print(json.dumps({"id": x["id"], "music": x["music"]}, ensure_ascii=False))
+
+
+def reschedule(data, x):
+    if x.get("status") != "scheduled" or not x.get("zernio_post_id"):
+        sys.exit(f"{x['id']}: chưa hẹn trên Zernio (status {x.get('status')}), dùng lệnh schedule")
+    if when(x) <= datetime.now(VN):
+        sys.exit(f"{x['id']}: đã tới giờ đăng, không hẹn lại")
+    code, r = zapi("DELETE", f"posts/{x['zernio_post_id']}")
+    if code not in (200, 204):
+        zfail("xóa lịch cũ trên Zernio", code, r)
+    # attempt tăng để Idempotency-Key mới, Zernio không trả lại bài vừa xóa
+    x.update({"status": "video_ready", "zernio_post_id": None, "attempt": x.get("attempt", 0) + 1})
+    save(data)
+    schedule(data, x)
+
+
+def schedule(data, x, dry_run=False, now=False):
     if x.get("status") in ("scheduled", "inbox", "posted"):
         sys.exit(f"{x['id']}: đã hẹn hoặc đã đăng ({x.get('zernio_post_id') or x.get('publish_id')}), không hẹn lại")
     if x.get("status") == "cancelled":
@@ -391,6 +463,13 @@ def schedule(data, x, dry_run=False):
     body = {"content": caption(v), "platforms": [{"platform": "tiktok", "accountId": None}],
             "scheduledFor": when(x).isoformat(), "timezone": "Asia/Ho_Chi_Minh", "tiktokSettings": dict(TIKTOK_SETTINGS),
             "mediaItems": [{"type": "video", "url": None}], "metadata": {"calendar_id": x["id"], "hub_slug": slug}}
+    if x.get("music"):  # API mặc định tắt tiếng gốc khi gắn nhạc, phải đặt 100 để giữ giọng đọc
+        body["tiktokSettings"].update({"musicSoundInfo": {"musicSoundId": x["music"]["id"],
+                                                          "musicSoundVolume": x["music"].get("volume", MUSIC_VOLUME)},
+                                       "videoOriginalSoundVolume": 100})
+    if now:  # anh Tin yêu cầu đăng ngay, không chờ date, time của lịch
+        body.pop("scheduledFor"), body.pop("timezone")
+        body["publishNow"] = True
     if dry_run:
         print(json.dumps({"id": x["id"], "video": str(path.relative_to(ROOT)), "bytes": path.stat().st_size,
                           "cover": str(art.relative_to(ROOT)) if art else None, "post": body}, ensure_ascii=False, indent=1))
@@ -400,7 +479,7 @@ def schedule(data, x, dry_run=False):
     if c.get("creator", {}).get("canPostMore") is False:
         sys.exit(f"{x['id']}: TikTok báo tài khoản tạm thời không đăng thêm được, thử lại sau")
     body["platforms"][0]["accountId"] = acc
-    body["tiktokSettings"] = settings(c)
+    body["tiktokSettings"] = {**body["tiktokSettings"], **settings(c)}
     if art:  # tài khoản Business: Zernio gửi ảnh này cho TikTok làm cover; không có thì TikTok lấy khung giây thứ 1
         body["tiktokSettings"]["videoCoverImageUrl"] = presign_put(art, "image/png")
     body["mediaItems"][0]["url"] = presign_put(path, "video/mp4")
@@ -409,11 +488,12 @@ def schedule(data, x, dry_run=False):
     post = r.get("post") or {}
     if code not in (200, 201) or not post.get("_id") or post.get("status") == "failed":
         zfail("hẹn đăng trên Zernio", code, r)
-    x.update({"status": "scheduled", "zernio_post_id": post["_id"],
+    x.update({"status": "posted" if post.get("status") == "published" else "scheduled", "zernio_post_id": post["_id"],
               "scheduled_at": datetime.now(VN).isoformat(timespec="seconds")})
     save(data)
     print(json.dumps({"id": x["id"], "zernio_post_id": post["_id"], "zernio_status": post.get("status"),
-                      "when": label(x), "cover": bool(art), "caption": body["content"]}, ensure_ascii=False))
+                      "when": label(x), "cover": bool(art), "music": (x.get("music") or {}).get("name"),
+                      "caption": body["content"]}, ensure_ascii=False))
 
 
 def status(data, x):
@@ -466,11 +546,18 @@ if __name__ == "__main__":
     elif cmd == "show":
         show(data, item(data, args[0]))
     elif cmd == "schedule":
-        schedule(data, item(data, args[0]), dry_run="--dry-run" in sys.argv)
+        schedule(data, item(data, args[0]), dry_run="--dry-run" in sys.argv, now="--now" in sys.argv)
     elif cmd == "status":
         status(data, item(data, args[0]))
     elif cmd == "cancel":
         cancel(data, item(data, args[0]))
+    elif cmd == "tracks":
+        tracks()
+    elif cmd == "music":
+        vol = next((int(a.split("=", 1)[1]) for a in sys.argv if a.startswith("--volume=")), MUSIC_VOLUME)
+        music(data, item(data, args[0]), args[1], vol)
+    elif cmd == "reschedule":
+        reschedule(data, item(data, args[0]))
     elif cmd == "upload":
         upload(data, item(data, args[0]), dry_run="--dry-run" in sys.argv)
     elif cmd == "inbox-status":

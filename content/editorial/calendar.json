@@ -1423,7 +1423,7 @@
    "source": "Search Engine Land; Meta Q2/2026",
    "link_post": 2,
    "note": null,
-   "status": "planned",
+   "status": "posted",
    "caption": "Hiểu lầm: bật Advantage+ là Meta lo hết, đội marketing không cần làm creative nữa.\n\nSự thật: hệ thống Andromeda của Meta chọn quảng cáo dựa vào chính nội dung creative. Hình ảnh, câu chữ, nhịp video đều là tín hiệu để hệ thống quyết định ai thấy quảng cáo nào. Creative càng giống nhau, hệ thống càng ít lựa chọn.\n\nMeta báo cáo số chuyển đổi tăng 15.7% nhờ mô hình GEM. Cùng lúc đó, nghiên cứu của Confect trên 3,014 nhà quảng cáo lại thấy ROAS trung bình giảm 7%.\n\nHai con số này đo hai thứ khác nhau. Tự động hóa giúp quảng cáo đến đúng người hơn. Còn lợi nhuận vẫn phụ thuộc vào việc bạn đưa cho hệ thống bao nhiêu ý tưởng thật sự khác nhau: góc nhìn khác, người trong video khác, câu mở đầu khác.\n\n20 quảng cáo dùng chung một ảnh, chỉ đổi tiêu đề, có thể bị tính như một.",
    "hashtags": [
     "#MetaAds",
@@ -1434,7 +1434,7 @@
     "content/facebook/fb-20261017/1.jpg"
    ],
    "approval": "auto",
-   "fb_post_id": null,
+   "fb_post_id": "101888089257566_1091386493650295",
    "design": {
     "myth": "Bật Advantage+ là không cần làm *creative* nữa",
     "fact": "Andromeda chọn quảng cáo dựa vào chính nội dung creative. Meta báo chuyển đổi tăng 15.7% với GEM, nhưng nghiên cứu của Confect trên 3,014 nhà quảng cáo thấy ROAS trung bình giảm 7%. Creative đa dạng vẫn là việc của người làm marketing.",
@@ -1442,7 +1442,9 @@
    },
    "notified_media": 1,
    "notified_at": "2026-10-17T08:44:20+07:00",
-   "publish_trigger": "trig_01M7R4dA5juEwEybaYLztHEm"
+   "publish_trigger": "trig_01M7R4dA5juEwEybaYLztHEm",
+   "posted_at": "2026-10-17T19:34:02+07:00",
+   "fb_comment_id": "1091386493650295_1416608160599465"
   },
   {
    "id": "fb-20261018",
@@ -2608,10 +2610,38 @@
    "scripts": [
     "mua-data-khach-hang"
    ],
-   "zernio_post_id": "6ad3323c782fac7f472d0593",
-   "tiktok_url": "https://www.tiktok.com/@adtek.growth.marketing/video/7697551427345943860",
-   "posted_at": "2026-10-17T15:38:00+07:00",
-   "note": "Đăng sớm 1 ngày (anh Tin chọn đăng thử ngay 17/10), cover là khung giây thứ 1, chưa dùng cover của hub"
+   "note": "Bản đăng 15:38 17/10 (https://www.tiktok.com/@adtek.growth.marketing/video/7697551427345943860) chưa có cover hub, anh Tin đã xóa trong app 17/10 và chọn đăng lại ngay có cover",
+   "attempt": 3,
+   "zernio_post_id": null,
+   "scheduled_at": "2026-10-17T20:32:18+07:00",
+   "tiktok_url": null,
+   "music": {
+    "id": "7055200957088565249",
+    "track_id": "7055200957088565249",
+    "name": "Breaking News_Accident, Investigative Journalism, Medical, Corruption, Democracy, Conflict, Serious #viral #fyp #trending (1181925)",
+    "artist": "Ney",
+    "clip_sec": 289,
+    "volume": 30
+   },
+   "replaced": [
+    {
+     "tiktok_url": "https://www.tiktok.com/@adtek.growth.marketing/video/7697555460240493831",
+     "zernio_post_id": "6ad335ec8d477d146464c5e5",
+     "reason": "đăng lại có nhạc, anh Tin xóa bản cũ trong app"
+    },
+    {
+     "tiktok_url": "https://www.tiktok.com/@adtek.growth.marketing/video/7697608331728309524",
+     "zernio_post_id": "6ad365f7b25bc7c22c4407e7",
+     "reason": "nhạc mức 15 nghe không thấy, đăng lại mức 30, anh Tin xóa bản cũ trong app"
+    },
+    {
+     "zernio_post_id": "6ad378d279d189c68e4d7306",
+     "tiktok_post_id": "7697628889216124948",
+     "reason": "Zernio báo published nhưng TikTok không hiện sau 40 phút; anh Tin tự đăng tay"
+    }
+   ],
+   "posted_at": "2026-10-17T22:26:57+07:00",
+   "posted_by": "anh Tin đăng tay trong app"
   },
   {
    "id": "tt-20261019",
@@ -2624,10 +2654,21 @@
    "hook": "Kinh tế số Việt Nam tăng nhanh hay chậm so với láng giềng? Năm 2025, con số là 17%.",
    "service": "Digital, Growth",
    "production_status": "Đã có video",
-   "status": "video_ready",
+   "status": "scheduled",
    "scripts": [
     "kinh-te-so-viet-nam-dung-thu-may"
-   ]
+   ],
+   "zernio_post_id": "6ad3780cd653db7c95342c9b",
+   "scheduled_at": "2026-10-17T20:28:46+07:00",
+   "music": {
+    "id": "7338118640749365249",
+    "track_id": "7338118640749365249",
+    "name": "positive, confident, present, progress, corporate VP(1518395)",
+    "artist": "KosukeKawaguchi",
+    "clip_sec": 116,
+    "volume": 30
+   },
+   "attempt": 2
   },
   {
    "id": "tt-20261020",
@@ -2640,10 +2681,21 @@
    "hook": "Chỉ còn 3 tuần nữa là 11.11, bạn định chạy sale mà chưa chuẩn bị gì sao?",
    "service": "Performance",
    "production_status": "Đã có video",
-   "status": "video_ready",
+   "status": "scheduled",
    "scripts": [
     "3-dieu-truoc-sale-11-11"
-   ]
+   ],
+   "scheduled_at": "2026-10-17T20:28:54+07:00",
+   "zernio_post_id": "6ad378142dbf31ff6f550f3e",
+   "music": {
+    "id": "7338120583484803073",
+    "track_id": "7338120583484803073",
+    "name": "A refreshing piano solo during the cherry blossom season(1520405)",
+    "artist": "Sumochi",
+    "clip_sec": 112,
+    "volume": 30
+   },
+   "attempt": 2
   },
   {
    "id": "tt-20261021",
@@ -2656,10 +2708,21 @@
    "hook": "Năm 2025, người Việt tìm gì trên Google tăng mạnh nhất? Đoán thử hạng 1 rồi comment trước nhé.",
    "service": "SEO",
    "production_status": "Đã có video",
-   "status": "video_ready",
+   "status": "scheduled",
    "scripts": [
     "top5-tu-khoa-tang-manh-2025"
-   ]
+   ],
+   "zernio_post_id": "6ad3781c05d86468db022072",
+   "scheduled_at": "2026-10-17T20:29:01+07:00",
+   "music": {
+    "id": "7369288394545416193",
+    "track_id": "7369288394545416193",
+    "name": "(Loop) Dramatic Motivation Summer(1546894)",
+    "artist": "SKUNK",
+    "clip_sec": 116,
+    "volume": 30
+   },
+   "attempt": 2
   },
   {
    "id": "tt-20261022",
@@ -2672,10 +2735,21 @@
    "hook": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua?",
    "service": "Performance, Digital",
    "production_status": "Đã có video",
-   "status": "video_ready",
+   "status": "scheduled",
    "scripts": [
     "nhan-tin-truoc-khi-mua"
-   ]
+   ],
+   "scheduled_at": "2026-10-17T20:29:09+07:00",
+   "zernio_post_id": "6ad3782477f6e7b26fa3a758",
+   "music": {
+    "id": "7023375770634422273",
+    "track_id": "7023375770634422273",
+    "name": "Presentation",
+    "artist": "FlyFlyMusic",
+    "clip_sec": 156,
+    "volume": 30
+   },
+   "attempt": 2
   },
   {
    "id": "tt-20261023",
