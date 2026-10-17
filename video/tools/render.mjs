@@ -5,6 +5,8 @@
 //            node tools/render.mjs <slug> [số...] --format 1:1    khổ vuông 1080x1080 (hoặc 16:9: 1920x1080), file out/<id>-1x1.mp4
 //            node tools/render.mjs <slug> [số...] --carousel      bản ảnh lướt cho TikTok: mỗi cảnh 1 ảnh out/<id>-slide<n>.png
 //            node tools/render.mjs <slug> [số...] --mascot        thêm mèo Adtek ở góc trái, miệng mở theo độ to giọng đọc
+//            node tools/render.mjs <slug> [số...] --fx            bản thử: chữ tiêu đề trồi lên từng chữ (GSAP), dấu tích Lottie ở "Làm gì ngay" -> out/<id>-fx.mp4
+//            node tools/render.mjs <slug> [số...] --fx3d          bản thử: bản đồ 3D (Three.js, dựng bằng phần mềm nên chậm hơn) -> out/<id>-3d.mp4
 // Kết quả: out/<id>.mp4 và out/<id>.txt (caption + hashtag để đăng TikTok).
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from "node:fs";
@@ -24,7 +26,11 @@ const fps = Number(opt("--fps") ?? 30);
 const format = opt("--format") ?? "9:16";
 const carousel = args.includes("--carousel");
 const mascot = args.includes("--mascot");
-const suffix = (format === "9:16" ? "" : `-${format.replace(":", "x")}`) + (args.includes("--mascot") ? "-meo" : "");
+const fx = args.includes("--fx");
+const fx3d = args.includes("--fx3d");
+const suffix = (format === "9:16" ? "" : `-${format.replace(":", "x")}`) + (mascot ? "-meo" : "") + (fx ? "-fx" : "") + (fx3d ? "-3d" : "");
+// Bản đồ 3D cần WebGL; máy chủ cloud không có card đồ họa nên dùng SwiftShader (dựng 3D bằng CPU).
+const chromiumOptions = fx3d ? { gl: "swangle" } : {};
 const [slug, ...nums] = args.filter((a, i) => !a.startsWith("--") && !["--fps", "--format"].includes(args[i - 1]));
 const dir = path.join(ROOT, "scripts", slug);
 const files = nums.length ? nums.map((n) => `${n}.json`) : readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
@@ -97,14 +103,14 @@ for (const file of files) {
   if (voice && voice.scenes.length !== script.scenes.length) {
     throw new Error(`${script.id}: giọng đọc cũ không khớp số cảnh, chạy lại tools/voice.mjs`);
   }
-  const inputProps = { script, voice, fps, format, carousel, mascot: mascot && voice ? envelope(voice.scenes.map((v) => v.file)) : undefined };
-  const composition = await selectComposition({ serveUrl, id: "Infographic", inputProps, browserExecutable });
+  const inputProps = { script, voice, fps, format, carousel, fx, fx3d, mascot: mascot && voice ? envelope(voice.scenes.map((v) => v.file)) : undefined };
+  const composition = await selectComposition({ serveUrl, id: "Infographic", inputProps, browserExecutable, chromiumOptions });
 
   if (stills) {
     // Chụp khung ở khoảng 80% mỗi cảnh, lúc mọi phần tử đã hiện đủ.
     for (const [i, s] of timeline(inputProps).entries()) {
       const output = path.join(OUT, `${script.id}-scene${i + 1}.png`);
-      await renderStill({ serveUrl, composition, inputProps, frame: s.from + Math.floor(s.frames * 0.8), output, browserExecutable });
+      await renderStill({ serveUrl, composition, inputProps, frame: s.from + Math.floor(s.frames * 0.8), output, browserExecutable, chromiumOptions });
     }
     console.log(`${script.id}: đã chụp ${script.scenes.length} cảnh`);
     continue;
@@ -114,7 +120,7 @@ for (const file of files) {
     // Mỗi cảnh 1 ảnh, chụp ngay trước khi cảnh mờ dần (mọi phần tử đã hiện đủ).
     for (const [i, s] of timeline(inputProps).entries()) {
       const output = path.join(OUT, `${script.id}${suffix}-slide${i + 1}.png`);
-      await renderStill({ serveUrl, composition, inputProps, frame: s.from + s.frames - Math.round((9 * fps) / 30), output, browserExecutable });
+      await renderStill({ serveUrl, composition, inputProps, frame: s.from + s.frames - Math.round((9 * fps) / 30), output, browserExecutable, chromiumOptions });
     }
     console.log(`${script.id}: ${script.scenes.length} ảnh lướt -> out/${script.id}${suffix}-slide*.png`);
     continue;
@@ -122,8 +128,8 @@ for (const file of files) {
 
   // Ảnh bìa: 3 đến 5 chữ thật to (trường "cover" trong kịch bản, mặc định lấy tiêu đề cảnh đầu).
   if (format === "9:16") {
-  const cover = await selectComposition({ serveUrl, id: "Cover", inputProps, browserExecutable });
-  await renderStill({ serveUrl, composition: cover, inputProps, frame: 0, output: path.join(OUT, `${script.id}-cover.png`), browserExecutable });
+  const cover = await selectComposition({ serveUrl, id: "Cover", inputProps, browserExecutable, chromiumOptions });
+  await renderStill({ serveUrl, composition: cover, inputProps, frame: 0, output: path.join(OUT, `${script.id}-cover.png`), browserExecutable, chromiumOptions });
   }
 
   const output = path.join(OUT, `${script.id}${suffix}.mp4`);
@@ -135,6 +141,7 @@ for (const file of files) {
     crf: 18,
     outputLocation: output,
     browserExecutable,
+    chromiumOptions,
     muted: !voice,
   });
   const before = voice ? normalize(output) : null;

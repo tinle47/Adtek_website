@@ -77,8 +77,15 @@
    "#quangcaofacebook",
    "#chotdon"
   ],
-  "note": "Mở đầu mới: 2 giây đầu chỉ có câu hook chữ to giữa màn hình. Dời từ 09/10 sang 22/10; đã kiểm tra lại nguồn Meta và VNG.",
-  "cover": "/_blob/7ece9d503e3f3dd4f1250cd317f81b30"
+  "note": "Mở đầu mới: 2 giây đầu chỉ có câu hook chữ to giữa màn hình. Dời từ 09/10 sang 22/10; đã kiểm tra lại nguồn Meta và VNG. Bản thử hiệu ứng mới (17/10/2026): chữ tiêu đề trồi lên từng chữ, dấu tích vẽ dần ở cảnh \"Làm gì ngay\". Chỉ để so sánh, video chính vẫn là bản thường.",
+  "cover": "/_blob/7ece9d503e3f3dd4f1250cd317f81b30",
+  "alts": [
+   {
+    "label": "Tải bản thử hiệu ứng mới (GSAP, Lottie)",
+    "url": "/_blob/d91a08d90c470935bfa7d56e01eb39db",
+    "suffix": "ban thu hieu ung"
+   }
+  ]
  },
  {
   "slug": "kinh-te-so-viet-nam-dung-thu-may",

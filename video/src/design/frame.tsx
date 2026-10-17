@@ -73,6 +73,9 @@ export const LAYOUTS: Record<Format, Layout> = {
   },
 };
 export const LayoutContext = createContext<Layout>(LAYOUTS["9:16"]);
+// Hiệu ứng thử nghiệm (render.mjs --fx, --fx3d): fx = chữ tiêu đề GSAP và dấu tích Lottie (design/fx.tsx), fx3d = bản đồ 3D (design/map3d.tsx).
+export const FxContext = createContext<{ fx: boolean; fx3d: boolean }>({ fx: false, fx3d: false });
+export const useFx = () => useContext(FxContext);
 export const useLayout = () => useContext(LayoutContext);
 
 export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;

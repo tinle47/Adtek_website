@@ -5,7 +5,7 @@ Nội dung gửi vào phiên mỗi lần chạy (chép nguyên văn phần dư�
 ---
 [Lịch Chủ nhật] Sản xuất các video TikTok đã viết kịch bản hôm qua và email báo anh Tin (hi@tinle.co).
 
-Chuẩn bị: repo tinle47/Adtek_website, nhánh claude/confident-ramanujan-t3jbi6 (fetch, checkout, pull). Đọc lại video/CLAUDE.md (đặc biệt "Khung mở đầu chữ to", "Giọng đọc là đồng hồ" và "Đa dạng dạng video"). cd video && npm install nếu thiếu.
+Chuẩn bị: repo tinle47/Adtek_website, nhánh claude/confident-ramanujan-t3jbi6 (fetch, checkout, pull). Đọc lại video/CLAUDE.md (đặc biệt "Khung mở đầu chữ to", "Giọng đọc là đồng hồ" và "Đa dạng dạng video"). cd video && npm install nếu thiếu. Chạy bash tools/install-skills.sh (cài skill Remotion và GSAP) rồi dùng skill remotion-best-practices khi sửa phần dựng video.
 
 Các bước:
 1. Tìm trong Gmail thread "[Adtek TikTok] Kịch bản tuần" gửi hôm qua, đọc toàn bộ phản hồi của anh Tin (get_thread). Có chỉnh sửa thì sửa kịch bản tương ứng, vẫn giữ đúng quy tắc trong CLAUDE.md. Chưa có phản hồi thì sản xuất luôn theo kịch bản đã gửi.

@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { interpolate, useVideoConfig } from "remotion";
 import type { Word } from "../types";
 import sea from "../data/sea-map.json";
-import { BASE_FPS, C, CueContext, CuedText, SANS, SERIF, SPRING, clamp, cueTime, ease, springAt, useFrame } from "./frame";
+import { BASE_FPS, C, CueContext, CuedText, SANS, SERIF, SPRING, clamp, cueTime, ease, springAt, useFrame, useFx } from "./frame";
+import { Map3D } from "./map3d";
 
 // Các dạng video mới (10/2026): chữ động, biểu đồ đua, bản đồ, đếm ngược. Mọi mốc đều theo giọng đọc
 // (giọng nhắc tới dòng chữ, mốc thời gian, con số hay "hạng 3" thì phần đó mới hiện), không khớp thì chia đều theo cảnh.
@@ -155,6 +156,14 @@ type MapItem = { iso3: string; name: string; value: number; display?: string };
 type Country = { d: string; cx: number; cy: number };
 const MAP = sea as { width: number; height: number; countries: Record<string, Country> };
 // Vị trí nhãn tránh đè nhau (Malaysia và Singapore sát nhau, Indonesia trải dài).
+// Bản 3D (--fx3d) cần màu đặc: trộn màu tô (hex hoặc rgba) với nền navy theo độ mờ, cho ra đúng màu mắt thấy ở bản 2D.
+const MAP_BG = [0, 40, 95];
+const solid = (fill: string, opacity: number) => {
+  const m = fill.match(/rgba?\(([^)]+)\)/);
+  const [r, g, b, a = 1] = m ? m[1].split(",").map(Number) : [1, 3, 5].map((k) => parseInt(fill.slice(k, k + 2), 16));
+  const k = a * opacity;
+  return `rgb(${[r, g, b].map((v, i) => Math.round(MAP_BG[i] + (v - MAP_BG[i]) * k)).join(",")})`;
+};
 const LABEL_AT: Record<string, [number, number]> = { VNM: [575, 120], THA: [250, 150], PHL: [770, 150], MYS: [300, 330], SGP: [250, 455], IDN: [560, 560] };
 export const mapCues = (items: MapItem[], words: Word[], offset: number, frames: number) =>
   cueSeq(words, offset, items.map((it) => it.value), 10, Math.max(40, frames * 0.75));
@@ -163,9 +172,16 @@ export const SeaMap: React.FC<{ metric: string; unit?: string; source: string; i
 }) => {
   const f = useFrame();
   const { fps } = useVideoConfig();
+  const { fx3d } = useFx();
   const { words, offset, hook } = useCueCtx();
   const ats = hook ? items.map(() => 0) : mapCues(items, words, offset, frames);
   const when = new Map(items.map((it, i) => [it.iso3, ats[i]]));
+  // Màu tô và độ mờ của từng nước: chưa có số liệu thì mờ, nước có số liệu sáng dần khi giọng đọc tới, Việt Nam màu cam.
+  const paint = (iso: string): [string, number] => {
+    const t = when.get(iso);
+    if (t === undefined) return ["rgba(255,255,255,0.08)", 1];
+    return [iso === highlight ? C.orange : INK.main, 0.18 + 0.82 * prog(f, t, 10)];
+  };
   // Bản đồ cao tối đa 520px để nguồn không đè phụ đề; căn giữa vùng hình.
   const scale = 520 / MAP.height;
   const mw = MAP.width * scale;
@@ -176,16 +192,20 @@ export const SeaMap: React.FC<{ metric: string; unit?: string; source: string; i
         {unit ? <span>, {unit}</span> : null}
       </div>
       <div style={{ position: "relative", width: mw, height: MAP.height * scale, marginTop: 16, marginLeft: (900 - mw) / 2 }}>
+        {fx3d && (
+          <Map3D
+            width={mw}
+            height={MAP.height * scale}
+            map={MAP}
+            colors={Object.fromEntries(Object.keys(MAP.countries).map((iso) => [iso, solid(...paint(iso))]))}
+          />
+        )}
         <svg width={mw} height={MAP.height * scale} viewBox={`0 0 ${MAP.width} ${MAP.height}`} style={{ position: "absolute", left: 0, top: 0 }}>
-          {Object.entries(MAP.countries).map(([iso, c]) => {
-            const t = when.get(iso);
-            const lit = t === undefined ? 0 : prog(f, t, 10);
-            const hi = iso === highlight;
-            const fill = t === undefined ? "rgba(255,255,255,0.08)" : hi ? C.orange : INK.main;
-            return (
-              <path key={iso} d={c.d} fill={fill} fillOpacity={t === undefined ? 1 : 0.18 + 0.82 * lit} stroke="rgba(255,255,255,0.35)" strokeWidth={0.8} />
-            );
-          })}
+          {!fx3d &&
+            Object.entries(MAP.countries).map(([iso, c]) => {
+              const [fill, opacity] = paint(iso);
+              return <path key={iso} d={c.d} fill={fill} fillOpacity={opacity} stroke="rgba(255,255,255,0.35)" strokeWidth={0.8} />;
+            })}
           {/* Singapore quá nhỏ ở cỡ này: đánh dấu bằng chấm tròn */}
           {when.has("SGP") && <circle cx={MAP.countries.SGP.cx} cy={MAP.countries.SGP.cy} r={7 * prog(f, when.get("SGP")!, 10)} fill={INK.main} />}
         </svg>

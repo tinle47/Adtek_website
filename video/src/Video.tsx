@@ -5,9 +5,10 @@ import { Article, Follow, List, listDelays } from "./design/blocks";
 import { BarChart, ColumnChart, Exhibit, Waffle, type TimedCol, type TimedNote } from "./design/charts";
 import { BigNumber, Donut, Funnel, People, Slope, Trend, Versus } from "./design/charts2";
 import { CHAT_NOTE_AT, ChatScreen } from "./design/chat";
-import { BASE_FPS, Background, C, Caption, CueContext, Fade, Headline, LAYOUTS, LayoutContext, Logo, SANS, SiteFooter, clamp, cueTime, numbersIn, useFonts, useFrame, useLayout } from "./design/frame";
+import { BASE_FPS, Background, C, Caption, CueContext, Fade, FxContext, Headline, LAYOUTS, LayoutContext, Logo, SANS, SiteFooter, clamp, cueTime, numbersIn, useFonts, useFrame, useLayout } from "./design/frame";
 import { Shot } from "./design/shot";
 import { MASCOT, Mascot } from "./design/mascot";
+import { FxHeadline } from "./design/fx";
 import { Countdown, Race, SeaMap, Words, countdownCues, mapCues, raceCues, wordsCues } from "./design/formats";
 import { Myth, QUIZ_REVEAL_AT, Quiz, mythStampAt } from "./design/hook";
 import { Opener, openerEnd } from "./design/opener";
@@ -206,6 +207,7 @@ export const Video: React.FC<VideoProps> = (props) => {
   const layout = mascotOn ? { ...base, caption: { ...base.caption, left: MASCOT.left + 230, width: 990 - MASCOT.left - 230 } } : base;
   return (
     <LayoutContext.Provider value={layout}>
+    <FxContext.Provider value={{ fx: !!props.fx, fx3d: !!props.fx3d }}>
     <AbsoluteFill>
       <Background />
       <Logo />
@@ -226,7 +228,11 @@ export const Video: React.FC<VideoProps> = (props) => {
               <Sequence from={-at(shift)} layout="none">
                 {/* Cảnh lật đáp án: tiêu đề (thường chứa đáp án) chỉ hiện cùng lúc thẻ lật, không lộ trong khoảng lặng. */}
                 <Sequence from={reveal ? at(QUIZ_REVEAL_AT) : 0} layout="none">
-                  <Headline kicker={s.kicker} headline={s.headline} accent={s.accent} big={!s.visual} />
+                  {props.fx ? (
+                    <FxHeadline kicker={s.kicker} headline={s.headline} accent={s.accent} big={!s.visual} />
+                  ) : (
+                    <Headline kicker={s.kicker} headline={s.headline} accent={s.accent} big={!s.visual} />
+                  )}
                 </Sequence>
                 <CueContext.Provider value={{ words: words(i), offset: sc[i].lead + shift, hook: shift > 0 }}>
                   <Stage>
@@ -283,6 +289,7 @@ export const Video: React.FC<VideoProps> = (props) => {
       {mascotOn && <Mascot tracks={sc.map((x, i) => ({ from: x.from, lead: at(x.lead), env: props.mascot![i] ?? [] }))} />}
       {props.audit && <Audit />}
     </AbsoluteFill>
+    </FxContext.Provider>
     </LayoutContext.Provider>
   );
 };

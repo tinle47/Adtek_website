@@ -48,6 +48,9 @@ node tools/render.mjs aio-la-gi --stills  # chụp mỗi cảnh một ảnh đ�
 node tools/check.mjs aio-la-gi          # kiểm tra trước khi xuất: chữ bị cắt/chồng/dưới nút TikTok, đứng hình quá 4 giây, nhịp đọc
 node tools/render.mjs aio-la-gi 1 2     # xuất out/aio-la-gi-1.mp4 và caption out/aio-la-gi-1.txt
 node tools/render.mjs aio-la-gi --fps 60  # bản 60 hình/giây (mượt hơn, render lâu khoảng 2.5 lần, file nặng hơn khoảng 20%)
+node tools/render.mjs aio-la-gi --fx      # bản thử hiệu ứng mới: chữ tiêu đề GSAP, dấu tích Lottie -> out/aio-la-gi-fx.mp4
+node tools/render.mjs aio-la-gi --fx3d    # bản thử bản đồ 3D (Three.js) -> out/aio-la-gi-3d.mp4
+bash tools/install-skills.sh             # đầu mỗi phiên: cài skill Remotion và GSAP (khóa theo commit đã đọc)
 npm run studio                           # xem và chỉnh trực tiếp trên trình duyệt
 node tools/shot.mjs <url> "<câu có con số>" <tên>  # chụp trang gốc, ghi vị trí câu cần tô sáng (public/shots/)
 ```
@@ -66,6 +69,17 @@ Trong môi trường cloud đặt thêm `REMOTION_BROWSER=/opt/pw-browsers/chrom
 - `countdown` (đếm ngược top 5): `items` [{rank, label, note}], hạng hiện khi giọng đọc "Hạng N", hạng 1 lật cuối với tiếng ding; `teaser: true` ở cảnh mở đầu chỉ hiện các ô "?". Ví dụ `scripts/top5-tu-khoa-tang-manh-2025/1.json`.
 - Ảnh lướt: `node tools/render.mjs <slug> --carousel` xuất mỗi cảnh 1 ảnh (ẩn phụ đề, có số trang).
 - Khổ khác: `--format 1:1` hoặc `--format 16:9`, bố cục xếp lại theo `LAYOUTS` trong `design/frame.tsx`.
+
+## Hiệu ứng thử nghiệm (phương án 2, anh Tin chọn 17/10/2026)
+
+Bộ công cụ anh Tin gửi (20 repo) đã được lọc: chỉ giữ thứ chạy đúng trong Remotion và hợp phong cách phẳng của kênh.
+- **Skill cho Claude**: `tools/install-skills.sh` tải Remotion Skills (`remotion-best-practices`) và GSAP Skills vào `~/.claude/skills`, khóa theo commit đã đọc. Mỗi phiên cloud là máy mới nên chạy lại đầu phiên. Đổi commit chỉ sau khi đọc lại mã bản mới.
+- **SVGO**: `tools/make-map.mjs` rút gọn đường viền bản đồ (125 KB còn 46 KB, ảnh không đổi).
+- **GSAP** (`design/fx.tsx`, cờ `--fx`): chữ tiêu đề trồi lên từng chữ, dòng cam bật nảy. GSAP chỉ tính đường cong: timeline dừng sẵn, mỗi khung tua (seek) tới đúng giây của khung đó; không để GSAP chạy theo đồng hồ thật. Khung hook đầu video không đổi (vẫn đủ chữ ngay khung đầu).
+- **Lottie** (`@remotion/lottie`, cờ `--fx`): dấu tích vẽ dần thay số thứ tự ở cảnh "Làm gì ngay". File `src/data/check-lottie.json` tự vẽ, không vướng giấy phép. Muốn dùng file Lottie của LottieFiles thì kiểm tra giấy phép từng file.
+- **3D** (`@remotion/three`, React Three Fiber, Drei; `design/map3d.tsx`, cờ `--fx3d`): bản đồ Đông Nam Á nổi khối, máy quay lướt vào trong 12 khung đầu rồi nhìn thẳng xuống để nhãn số liệu nằm đúng chỗ. Mọi nước dày bằng nhau, không mã hóa số liệu bằng chiều cao. Máy chủ không có card đồ họa nên dựng bằng CPU (`gl: "swangle"`), chậm hơn.
+- Không dùng (lý do đã báo anh Tin 17/10/2026): Motion Canvas (công cụ video thứ hai), Anime.js, Motion, Motion AI Kit, Rive, Satori, Rapier, Postprocessing, Howler.js, Mediabunny.
+- Chưa bật mặc định: chỉ xuất bản thử để anh Tin so sánh trên hub (nút "Tải bản thử"). Anh duyệt thì mới bật cho mọi video.
 
 ## Mèo Adtek nói theo giọng (mẫu 10/2026)
 

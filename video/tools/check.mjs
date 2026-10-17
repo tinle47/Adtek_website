@@ -39,8 +39,10 @@ for (const file of files) {
   const manifest = path.join(ROOT, "public", "voice", script.id, "manifest.json");
   const voice = existsSync(manifest) ? JSON.parse(readFileSync(manifest, "utf8")) : null;
   // --mascot: kiểm tra bố cục có mèo ở góc trái (phụ đề dời phải, chữ nào lọt vào vùng mèo thì báo).
-  const inputProps = { script, voice, audit: true, mascot: args.includes("--mascot") ? script.scenes.map(() => []) : undefined };
-  const composition = await selectComposition({ serveUrl, id: "Infographic", inputProps, browserExecutable });
+  // --fx, --fx3d: kiểm tra bản thử hiệu ứng (design/fx.tsx, design/map3d.tsx).
+  const inputProps = { script, voice, audit: true, fx: args.includes("--fx"), fx3d: args.includes("--fx3d"), mascot: args.includes("--mascot") ? script.scenes.map(() => []) : undefined };
+  const chromiumOptions = inputProps.fx3d ? { gl: "swangle" } : {}; // bản đồ 3D cần WebGL dựng bằng CPU
+  const composition = await selectComposition({ serveUrl, id: "Infographic", inputProps, browserExecutable, chromiumOptions });
   const fps = composition.fps;
   const outDir = path.join(ROOT, "out", "check", script.id);
   rmSync(outDir, { recursive: true, force: true });
@@ -49,7 +51,7 @@ for (const file of files) {
   // 1 lượt render ảnh nhỏ: vừa lấy vị trí chữ (qua console), vừa lấy ảnh để đo đứng hình.
   const audits = new Map();
   await renderFrames({
-    serveUrl, composition, inputProps, browserExecutable,
+    serveUrl, composition, inputProps, browserExecutable, chromiumOptions,
     outputDir: outDir, imageFormat: "jpeg", jpegQuality: 70, scale: 0.25, everyNthFrame: EVERY,
     onStart: () => {}, onFrameUpdate: () => {}, logLevel: "error",
     onBrowserLog: ({ text }) => {

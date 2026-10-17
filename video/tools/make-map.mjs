@@ -4,6 +4,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { geoMercator, geoPath, geoCentroid } from "d3-geo";
 import { feature } from "topojson-client";
+import { optimize } from "svgo";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const topo = JSON.parse(readFileSync(path.join(ROOT, "node_modules/world-atlas/countries-50m.json"), "utf8"));
@@ -16,11 +17,20 @@ const main = ["VNM", "IDN", "THA", "PHL", "MYS", "SGP"].map((k) => pick(ISO[k]))
 const proj = geoMercator().fitExtent([[20, 20], [W - 20, H - 20]], { type: "FeatureCollection", features: main });
 const gp = geoPath(proj);
 const out = { width: W, height: H, countries: {} };
+// SVGO rút gọn đường viền: làm tròn tọa độ còn 1 số lẻ (khung 900x640 nên sai lệch dưới 0.1 điểm ảnh, mắt không thấy),
+// đổi sang tọa độ tương đối. File nhẹ hơn thì dựng mỗi khung hình nhanh hơn.
+const slim = (d) => {
+  const svg = optimize(`<svg xmlns="http://www.w3.org/2000/svg"><path d="${d}"/></svg>`, {
+    multipass: true,
+    plugins: [{ name: "preset-default", params: { overrides: { convertPathData: { floatPrecision: 1 } } } }],
+  }).data;
+  return svg.match(/ d="([^"]+)"/)[1];
+};
 for (const [iso3, code] of Object.entries(ISO)) {
   const f = pick(code);
   if (!f) throw new Error(`thiếu ${iso3}`);
   const [cx, cy] = proj(geoCentroid(f));
-  out.countries[iso3] = { d: gp(f), cx: Math.round(cx), cy: Math.round(cy) };
+  out.countries[iso3] = { d: slim(gp(f)), cx: Math.round(cx), cy: Math.round(cy) };
 }
 writeFileSync(path.join(ROOT, "src/data/sea-map.json"), JSON.stringify(out));
 console.log("src/data/sea-map.json", Object.keys(out.countries).join(" "), Math.round(JSON.stringify(out).length / 1024), "KB");

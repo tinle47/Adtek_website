@@ -46,6 +46,7 @@ Kênh @adtek.growth.marketing (Adtek Growth Marketing Agency). Các quy tắc d�
 - Mọi dạng vẫn giữ: câu đầu là câu hỏi, số liệu gốc đã kiểm tra, lời đọc 150 đến 190 chữ, cảnh cuối `follow` có `ask`, ảnh bìa (`cover`) không lộ đáp án hay hạng 1.
 - Ảnh lướt (TikTok photo mode): mỗi tuần xuất 1 bộ từ video nhiều số liệu nhất của tuần (`render.mjs <slug> --carousel`), đưa lên hub kèm video đó (trường `carousel` trong `hub/videos.json`). Phiên Tiktok post lo việc đăng (gợi ý: 20:00, cách ngày đăng video gốc ít nhất 3 ngày).
 - Khổ vuông 1:1 và khổ ngang 16:9 (`--format`): chỉ xuất khi anh Tin cần đăng Facebook, Instagram, YouTube.
+- Hiệu ứng thử nghiệm (anh Tin chọn phương án 2, 17/10/2026): GSAP cho chữ tiêu đề và Lottie dấu tích (`--fx`), bản đồ 3D (`--fx3d`). Chưa bật mặc định, chỉ xuất bản thử để anh Tin so sánh; anh duyệt thì mới áp dụng cho mọi video. Chi tiết và danh sách thư viện không dùng: mục "Hiệu ứng thử nghiệm" trong `README.md`. Đầu mỗi phiên chạy `bash tools/install-skills.sh` để có skill Remotion và GSAP.
 - Mèo Adtek nói theo giọng (`--mascot`): đã có mẫu nhưng chưa bật (anh Tin chốt 10/10/2026). Không thêm vào video nào cho tới khi anh Tin yêu cầu.
 - Mẫu từng dạng: `scripts/3-dieu-truoc-sale-11-11` (chữ động), `scripts/top5-tu-khoa-tang-manh-2025` (đếm ngược), `scripts/kinh-te-so-viet-nam-dung-thu-may` (bản đồ), `scripts/tiktok-shop-duoi-sat-shopee` (biểu đồ đua), `scripts/khach-so-gia-cho-sale` (đố số liệu), `scripts/thue-kol-khach-co-tin` (phá hiểu lầm).
 

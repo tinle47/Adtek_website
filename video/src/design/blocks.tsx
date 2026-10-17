@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Img, staticFile, useVideoConfig } from "remotion";
 import type { Word } from "../types";
-import { BASE_FPS, C, CueContext, SANS, SERIF, SPRING, cueTime, springAt, useEnter, useFrame } from "./frame";
+import { BASE_FPS, C, CueContext, SANS, SERIF, SPRING, cueTime, springAt, useEnter, useFrame, useFx } from "./frame";
+import { CheckMark } from "./fx";
 
 // Danh sách đánh số: số màu cam font có chân, kẻ mảnh giữa các ý, từng ý hiện lần lượt trong cảnh.
 export type ListItem = string | { text: string; detail?: string };
@@ -53,6 +54,7 @@ const Item: React.FC<{ n: number; item: { text: string; detail?: string }; delay
   const { fps } = useVideoConfig();
   // Số thứ tự bật lên có độ nảy, chữ trượt vào êm.
   const num = springAt(f, fps, delay, SPRING.playful);
+  const { fx } = useFx();
   return (
     <div
       style={{
@@ -65,7 +67,11 @@ const Item: React.FC<{ n: number; item: { text: string; detail?: string }; delay
         transform: `translateY(${(1 - p) * 14}px)`,
       }}
     >
-      <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 48, color: C.orange, width: 40, flex: "none", transform: `scale(${num})` }}>{n}</div>
+      {fx ? (
+        <CheckMark delay={delay} />
+      ) : (
+        <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 48, color: C.orange, width: 40, flex: "none", transform: `scale(${num})` }}>{n}</div>
+      )}
       <div>
         <div style={{ fontFamily: SANS, fontSize: compact ? 30 : 34, lineHeight: 1.3, color: C.white }}>{item.text}</div>
         {item.detail && <div style={{ marginTop: 4, fontFamily: SANS, fontSize: compact ? 22 : 25, lineHeight: 1.3, color: "#C9D5EA", opacity: d, transform: `translateX(${(1 - d) * 16}px)` }}>{item.detail}</div>}
