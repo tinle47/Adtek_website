@@ -9,7 +9,7 @@
   "slug": "apple-ads-la-gi",
   "seo_title": "Apple Ads là gì? Vị trí, đấu giá và cách đo lường",
   "meta_desc": "Apple Ads (tên mới của Apple Search Ads) là gì: 4 vị trí quảng cáo App Store, Basic và Advanced, đấu giá CPT, cấu trúc chiến dịch, đo lường và checklist.",
-  "words": 2296,
+  "words": 2299,
   "cover": {
     "kicker": "Quảng cáo App Store",
     "title": "*Apple Ads* là gì: vị trí, đấu giá và đo lường",
@@ -114,6 +114,16 @@
       "date": "04/2025, truy cập 10/2026"
     },
     {
+      "name": "Apple Developer Documentation: Configuring an advertised app (khai báo URL bản sao postback cho cả AdAttributionKit và SKAdNetwork)",
+      "url": "https://developer.apple.com/documentation/adattributionkit/configuring-an-advertised-app",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "AppsFlyer Help: Bulletin: Apple Ads now supports SKAN attribution (từ iOS 26.2 postback Apple Ads đi qua AdAttributionKit)",
+      "url": "https://support.appsflyer.com/hc/en-us/articles/34395758837137-Bulletin-Apple-Ads-now-supports-SKAN-attribution",
+      "date": "đăng 04/2025, bản sửa 05/2026 (theo bài đo lường iOS)"
+    },
+    {
       "name": "Apple Ads Help: Mobile measurement providers",
       "url": "https://ads.apple.com/app-store/help/attribution/0027-mobile-measurement-providers",
       "date": "truy cập 10/2026"
@@ -135,7 +145,8 @@
     "Cột \"Đặt giá\" cho tab Tìm kiếm, tab Today, trang sản phẩm (\"Max CPT, không có từ khóa\") suy ra từ bảng tính năng (từ khóa chỉ có ở kết quả tìm kiếm) và trang so sánh (đặt mức tối đa cho một lượt chạm). Apple không có trang riêng mô tả giao diện đặt giá của từng vị trí.",
     "Creative assets cho quảng cáo tab Today và kết quả tìm kiếm vẫn ghi \"coming soon\" ngày 17/10/2026; kiểm tra lại trước ngày đăng, nếu đã ra mắt thì sửa đoạn \"Sắp có\".",
     "Vị trí quảng cáo mới trong kết quả tìm kiếm: bài chỉ nêu điều trang chính thức xác nhận (quảng cáo ở đầu hoặc sâu hơn, không chọn được vị trí). Không đưa số ô, ngày triển khai hay phiên bản iOS vì chỉ báo chí bên thứ ba nêu.",
-    "Số chữ 2,296 theo cách đếm tách khoảng trắng như tools/seo_post.py (tính cả bảng). Từ khóa \"Apple Ads\" xuất hiện 5 lần trong phần chữ (mở bài, 2 H2, chỗ trống, câu chứng chỉ); \"Apple Search Ads\" 2 lần; \"quảng cáo App Store\" 5 lần.",
+    "AdAttributionKit và Apple Ads: trang Apple (App ad attribution overview, chú thích 2, truy cập 17/10/2026) vẫn ghi Apple Ads đăng ký từ 10/4/2025 qua SKAdNetwork bản 1 đến 3 và tích hợp API AdAttributionKit sau; AppsFlyer ghi từ iOS 26.2 postback Apple Ads đi qua AdAttributionKit. Bài nêu cả hai nguồn và khuyên khai báo URL bản sao postback cho cả hai khung (theo tài liệu Apple Developer), thống nhất với bài đo lường iOS. Trang AppsFlyer trả 403 từ môi trường này nên tôi chưa tự mở được: nội dung lấy từ kết quả tìm kiếm và từ bài đo lường iOS, cần người mở trang xác nhận câu chữ và ngày sửa 5/2026 trước khi đăng.",
+    "Số chữ 2,299 theo cách đếm tách khoảng trắng như tools/seo_post.py (tính cả bảng). Từ khóa \"Apple Ads\" xuất hiện 5 lần trong phần chữ (mở bài, 2 H2, chỗ trống, câu chứng chỉ); \"Apple Search Ads\" 2 lần; \"quảng cáo App Store\" 5 lần.",
     "Ví dụ app \"EngGo\" và các con số CPT 0.40 USD, CR 50%, LTV 1.20 USD, ngân sách 50 USD/ngày đều là ví dụ giả định, đã ghi rõ trong bài.",
     "Số 500 triệu người/tuần (tab Today), hơn 70% dùng tìm kiếm, 65% lượt tải bắt đầu từ tìm kiếm, CR hơn 60% đều là số Apple tự công bố, bài ghi \"chỉ để tham khảo\".",
     "Câu \"Đội Adtek có chứng chỉ Apple Ads\" nhắc 1 lần ở đoạn kết, không kèm tiểu sử.",

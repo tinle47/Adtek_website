@@ -47,13 +47,13 @@
 </tbody>
 </table>
 
-<p>Basic hợp với nhà phát triển nhỏ, không có người theo dõi hằng ngày. Nhưng Basic không có dữ liệu từ khóa, bạn không biết tiền đi vào đâu. App có ngân sách UA nghiêm túc hoặc cần tính <a href="/glossary/return-on-ad-spend-roas/">ROAS</a> theo nhóm từ khóa thì dùng Advanced ngay từ đầu.</p>
+<p>Basic không có dữ liệu từ khóa, bạn không biết tiền đi vào đâu. App có ngân sách UA nghiêm túc hoặc cần tính <a href="/glossary/return-on-ad-spend-roas/">ROAS</a> theo nhóm từ khóa thì dùng Advanced ngay từ đầu.</p>
 
 <h2>Đấu giá và tính tiền theo từng vị trí</h2>
 
 <p>Với Advanced, Apple ghi cả 4 vị trí đều tính theo CPT: bạn chỉ trả khi có lượt chạm, không vượt mức max CPT đã đặt. <a href="/glossary/cpm/">CPM</a> (chi phí cho 1,000 lần hiển thị) chỉ còn là chỉ số báo cáo "Average CPM". Nếu tài liệu cũ ghi tab Today tính theo CPM, hãy đối chiếu lại trang chính thức.</p>
 
-<p>Giá cao chưa đủ để thắng. Apple xét cả mức liên quan của app với câu tìm kiếm lẫn giá thầu: app học tiếng Anh đặt giá cao cho "giao đồ ăn" vẫn không hiện.</p>
+<p>Giá cao chưa đủ để thắng. Apple xét cả mức liên quan lẫn giá thầu: app học tiếng Anh đặt giá cao cho "giao đồ ăn" vẫn không hiện.</p>
 
 <p><strong>Manage Bids hay Maximize Conversions.</strong> Manage Bids cho bạn tự chọn từ khóa và đặt max CPT từng từ, có thể thêm CPA cap ở cấp ad group. Maximize Conversions (ra mắt 25/2/2026) chỉ dùng cho kết quả tìm kiếm: bạn đặt target CPA, auto-bidder và Search Match tự chọn từ khóa và giá. Apple khuyên để chạy ít nhất hai tuần rồi mới đổi target CPA (<a href="https://ads.apple.com/app-store/help/campaigns/0095-maximize-conversions" target="_blank" rel="nofollow noopener">Use the Maximize Conversions bid strategy</a>).</p>
 
@@ -100,7 +100,7 @@
 
 <ul>
 <li><strong>Attribution API (AdServices).</strong> App gọi framework AdServices (từ iOS 14.3) lấy một token sống 24 giờ, gửi lên máy chủ Apple và nhận bản ghi gồm campaign, ad group, keyword. Đây là nguồn chính để biết từ khóa nào ra lượt cài (<a href="https://developer.apple.com/documentation/adservices" target="_blank" rel="nofollow noopener">AdServices, Apple Developer</a>).</li>
-<li><strong>AdAttributionKit</strong>, tên mới của <a href="/glossary/skadnetwork/">SKAdNetwork</a>, có từ iOS 17.4. Từ 10/4/2025, quảng cáo App Store của Apple cũng được ghi nhận qua AdAttributionKit, chung hệ quy chiếu với các mạng quảng cáo khác. Dữ liệu bị giới hạn bởi ngưỡng ẩn danh và độ trễ, hợp để so kênh, không hợp để tối ưu từ khóa (<a href="https://ads.apple.com/app-store/help/attribution/0094-ad-attribution-overview" target="_blank" rel="nofollow noopener">App ad attribution overview</a>).</li>
+<li><strong>AdAttributionKit</strong>, tên mới của <a href="/glossary/skadnetwork/">SKAdNetwork</a>, có từ iOS 17.4. Dữ liệu bị giới hạn bởi ngưỡng ẩn danh và độ trễ, hợp để so kênh, không hợp để tối ưu từ khóa. Hai nguồn đang ghi khác nhau: Apple ghi quảng cáo App Store đăng ký từ 10/4/2025 qua SKAdNetwork bản 1 đến 3, API AdAttributionKit tích hợp sau (<a href="https://ads.apple.com/app-store/help/attribution/0094-ad-attribution-overview" target="_blank" rel="nofollow noopener">App ad attribution overview</a>); AppsFlyer ghi từ iOS 26.2 postback này đi qua AdAttributionKit (<a href="https://support.appsflyer.com/hc/en-us/articles/34395758837137-Bulletin-Apple-Ads-now-supports-SKAN-attribution" target="_blank" rel="nofollow noopener">AppsFlyer Help</a>). Cách an toàn: khai báo URL nhận bản sao postback cho cả hai khung trong Info.plist (<a href="https://developer.apple.com/documentation/adattributionkit/configuring-an-advertised-app" target="_blank" rel="nofollow noopener">Configuring an advertised app</a>).</li>
 <li><strong><a href="/glossary/mobile-measurement-partner-mmp-nen-tang-do-luong-mobile/">MMP</a></strong> như AppsFlyer, Adjust: lấy token AdServices, gọi API thay bạn, rồi ghép với sự kiện trong app như đăng ký, mua hàng.</li>
 </ul>
 
@@ -119,7 +119,7 @@
 
 <h2>Apple Ads có chạy ở Việt Nam không?</h2>
 
-<p>Có. Trang <a href="https://ads.apple.com/app-store/countries-or-regions" target="_blank" rel="nofollow noopener">Countries and regions</a> (truy cập 10/2026) liệt kê Việt Nam ở cả hai danh sách: App Store Việt Nam có quảng cáo, và doanh nghiệp đặt tại Việt Nam được mở tài khoản. Bạn dùng được cả Basic lẫn Advanced, và chạy được sang Thái Lan, Indonesia, Philippines.</p>
+<p>Có. Trang <a href="https://ads.apple.com/app-store/countries-or-regions" target="_blank" rel="nofollow noopener">Countries and regions</a> (truy cập 10/2026) liệt kê Việt Nam ở cả hai danh sách: App Store Việt Nam có quảng cáo, và doanh nghiệp đặt tại Việt Nam được mở tài khoản.</p>
 
 <ul>
 <li>Không nhắm được theo tỉnh, thành. Việt Nam chưa có trong danh sách hỗ trợ location refinement (<a href="https://ads.apple.com/app-store/help/ad-groups/0021-set-audience-refinements" target="_blank" rel="nofollow noopener">Modify audience settings</a>).</li>
