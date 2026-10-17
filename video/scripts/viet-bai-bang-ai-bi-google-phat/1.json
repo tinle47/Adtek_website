@@ -1,0 +1,132 @@
+{
+  "id": "viet-bai-bang-ai-bi-google-phat",
+  "date": "2026-10-25",
+  "status": "Đã viết kịch bản",
+  "cover": {
+    "kicker": "Phá hiểu lầm",
+    "title": "Viết bài bằng AI",
+    "accent": "là bị Google phạt?"
+  },
+  "hook": {
+    "text": "Viết bài bằng AI",
+    "accent": "bị Google phạt?"
+  },
+  "caption": "Viết bài bằng AI là bị Google phạt? Chưa đúng. 86.5% trang đứng top 20 Google có dùng AI (Ahrefs, 600,000 trang). Google phạt nội dung kém, không phạt AI. Bạn đang dùng AI viết bao nhiêu % nội dung? Comment con số.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#seo",
+    "#aicontent",
+    "#contentmarketing",
+    "#google"
+  ],
+  "scenes": [
+    {
+      "kicker": "Phá hiểu lầm · Số liệu quốc tế",
+      "headline": "Viết bài bằng AI",
+      "accent": "là bị Google phạt?",
+      "voice": "Viết bài bằng AI là bị Google phạt? Chưa đúng. Google phạt nội dung kém, dù viết bằng cách nào.",
+      "visual": {
+        "type": "myth",
+        "claim": "Cứ viết bài bằng AI là bị Google phạt, tụt hạng.",
+        "verdict": "CHƯA ĐÚNG",
+        "note": "Google phạt nội dung kém, làm hàng loạt để lách thứ hạng, dù viết bằng cách nào",
+        "source": "Nguồn: Google Search Central, hướng dẫn về nội dung tạo bằng AI (02/2023) và chính sách spam"
+      }
+    },
+    {
+      "kicker": "Top Google dùng AI không?",
+      "headline": "Gần 9/10 trang top",
+      "accent": "có dùng AI.",
+      "voice": "Ahrefs xét 600,000 trang top 20 Google: 86.5% có dùng AI ít nhiều. Chỉ 4.6% viết hoàn toàn bằng AI.",
+      "visual": {
+        "type": "waffle",
+        "metric": "Trang top 20 Google có nội dung do AI tạo",
+        "source": "Nguồn: Ahrefs, 600,000 trang của 100,000 từ khóa, 07/2025. Số liệu quốc tế",
+        "lit": 87,
+        "legend": [
+          "có dùng AI ít nhiều",
+          "Con số chính xác: 86.5%. Hoàn toàn bằng AI: 4.6%"
+        ]
+      }
+    },
+    {
+      "kicker": "Nhưng có cái giá",
+      "headline": "Càng nhiều AI,",
+      "accent": "càng khó được lập chỉ mục.",
+      "voice": "Nhưng càng nhiều AI, càng khó được Google lập chỉ mục. Trang ít AI: 49%. Trang rất nhiều AI: chỉ 40%.",
+      "visual": {
+        "type": "columns",
+        "metric": "Tỷ lệ trang được Google lập chỉ mục",
+        "unit": "%",
+        "source": "Nguồn: Ahrefs, 1 triệu trang, 07/2026. Số liệu quốc tế, đã làm tròn",
+        "max": 49,
+        "cols": [
+          {
+            "label": "Ít AI",
+            "value": 49,
+            "tone": "accent"
+          },
+          {
+            "label": "Rất nhiều AI",
+            "value": 40,
+            "tone": "base"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Top 3 Google",
+      "headline": "Top 3 vẫn là bài",
+      "accent": "người viết là chính.",
+      "voice": "Còn ở top 3 Google, 82.2% là trang dùng AI dưới một nửa. Trang 100% AI chỉ chiếm 5.3%.",
+      "visual": {
+        "type": "bignumber",
+        "value": 82.2,
+        "suffix": "%",
+        "label": "trang top 3 Google có dưới 50% nội dung do AI tạo",
+        "context": "Trang 100% AI: 5.3%. Đây là tương quan, chưa phải nguyên nhân",
+        "source": "Nguồn: Ahrefs, Google Doesn't Punish AI Content, 07/2026. Số liệu quốc tế"
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Dùng AI để viết nhanh,",
+      "accent": "người để viết hay.",
+      "voice": "Làm gì ngay? Không đăng hàng loạt bài AI chưa biên tập, Google xếp đó vào spam. Thêm trải nghiệm, số liệu của riêng bạn. Ghi tên tác giả trên bài. Và soi báo cáo Trang trong Search Console để biết bài nào chưa được lập chỉ mục.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Không đăng hàng loạt bài AI chưa biên tập",
+            "detail": "Google xếp vào spam: scaled content abuse"
+          },
+          {
+            "text": "Thêm trải nghiệm, số liệu của riêng bạn",
+            "detail": "Google ưu tiên thông tin gốc, trải nghiệm thật"
+          },
+          {
+            "text": "Ghi tên tác giả trên bài",
+            "detail": "Google khuyến khích ghi tên tác giả (byline)"
+          },
+          {
+            "text": "Soi báo cáo Trang trong Search Console",
+            "detail": "Xem bài nào chưa được lập chỉ mục và vì sao"
+          }
+        ],
+        "source": "Nguồn: Google Search Central (chính sách spam; nội dung hữu ích, đáng tin cậy); Search Console Help"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "AI viết nhanh,",
+      "accent": "bạn viết thật.",
+      "voice": "Bạn đang dùng AI viết bao nhiêu phần trăm nội dung? Comment con số. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Bạn dùng AI viết bao nhiêu % nội dung? Comment con số"
+      }
+    }
+  ],
+  "review": "/_blob/789c577c21bf0fdcc40339b349b8b241"
+}

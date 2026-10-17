@@ -1,0 +1,144 @@
+{
+  "id": "mua-data-khach-hang",
+  "date": "2026-10-18",
+  "status": "Đã viết kịch bản",
+  "cover": {
+    "kicker": "Phá hiểu lầm",
+    "title": "Mua data khách hàng",
+    "accent": "chạy quảng cáo được không?"
+  },
+  "hook": {
+    "text": "Mua data khách hàng",
+    "accent": "phạt tới 10 lần?"
+  },
+  "caption": "Mua data khách hàng về chạy quảng cáo là chuyện bình thường? Từ 01/01/2026, Luật Bảo vệ dữ liệu cá nhân cấm mua, bán dữ liệu cá nhân, phạt tối đa 10 lần khoản thu. Shop bạn đang lấy data khách từ đâu? Comment cho Adtek biết.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#dulieucanhan",
+    "#quangcaofacebook",
+    "#banhangonline",
+    "#luatmoi"
+  ],
+  "scenes": [
+    {
+      "kicker": "Phá hiểu lầm · Luật 91/2025",
+      "headline": "Mua data khách hàng",
+      "accent": "về chạy quảng cáo?",
+      "voice": "Mua data khách hàng, có thể bị phạt tới 10 lần? Nhiều shop nghĩ mua data chạy quảng cáo là chuyện bình thường. Sai. Từ năm 2026, luật mới cấm mua, bán dữ liệu cá nhân.",
+      "visual": {
+        "type": "myth",
+        "claim": "Mua data khách hàng về chạy quảng cáo là chuyện bình thường.",
+        "verdict": "SAI",
+        "note": "Luật Bảo vệ dữ liệu cá nhân, hiệu lực từ 01/01/2026. Thông tin tham khảo, không thay tư vấn pháp lý",
+        "source": "Nguồn: Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15, Điều 7 khoản 6"
+      }
+    },
+    {
+      "kicker": "Mức phạt tối đa",
+      "headline": "Phạt tới 10 lần",
+      "accent": "số tiền thu được.",
+      "voice": "Mức phạt tối đa khi mua, bán dữ liệu cá nhân: 10 lần khoản thu có được. Không có khoản thu, vẫn phạt tới 3 tỷ đồng.",
+      "visual": {
+        "type": "bignumber",
+        "value": 10,
+        "display": "10 lần",
+        "label": "khoản thu từ việc mua, bán dữ liệu cá nhân",
+        "context": "Mức tối đa áp cho doanh nghiệp, cá nhân bằng một nửa. Không có khoản thu: tới 3 tỷ đồng",
+        "source": "Nguồn: Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15, Điều 8 khoản 3, 5, 6"
+      }
+    },
+    {
+      "kicker": "Khách đã mất kiên nhẫn",
+      "headline": "2/3 người dùng",
+      "accent": "từng bị dùng trái phép.",
+      "voice": "Vì sao luật siết chặt? Năm 2024, 66% người dùng nói thông tin từng bị dùng trái phép. 95% bị cuộc gọi rác làm phiền.",
+      "visual": {
+        "type": "waffle",
+        "metric": "Người dùng nói thông tin cá nhân từng bị dùng trái phép",
+        "source": "Nguồn: Hiệp hội An ninh mạng quốc gia (NCA), khảo sát năm 2024",
+        "lit": 66,
+        "legend": [
+          "từng bị dùng thông tin trái phép",
+          "Con số chính xác: 66.24%. 95.54% bị cuộc gọi rác làm phiền"
+        ]
+      }
+    },
+    {
+      "kicker": "Khách nghi bị lộ ở đâu?",
+      "headline": "Mua hàng online",
+      "accent": "bị nghi đầu tiên.",
+      "voice": "Họ nghĩ thông tin bị lộ ở đâu? Khi mua hàng online: 74%. Ở nhà hàng, khách sạn, siêu thị: 67%. Trên mạng xã hội: 62%.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Nơi người dùng cho rằng thông tin bị lộ",
+        "unit": "%",
+        "source": "Nguồn: Hiệp hội An ninh mạng quốc gia (NCA), khảo sát năm 2024. Số đã làm tròn",
+        "max": 74,
+        "rows": [
+          {
+            "label": "Mua hàng online",
+            "value": 74,
+            "tone": "accent"
+          },
+          {
+            "label": "Nhà hàng, khách sạn, siêu thị",
+            "value": 67,
+            "tone": "main"
+          },
+          {
+            "label": "Mạng xã hội",
+            "value": 62,
+            "tone": "main"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 0,
+            "text": "Đây là cảm nhận của người dùng, không phải kết quả điều tra"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Tự xây tệp khách",
+      "accent": "có sự đồng ý.",
+      "voice": "Làm gì ngay? Chỉ chạy tệp khách tự để lại thông tin. Với Instant Form của Meta, gắn link chính sách bảo mật, thêm ô đồng ý. Khi xin đồng ý, ghi rõ nội dung, tần suất quảng cáo. Luôn có cách từ chối nhận quảng cáo.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Chỉ chạy tệp khách tự để lại thông tin",
+            "detail": "Google Customer Match chỉ nhận dữ liệu bạn tự thu thập"
+          },
+          {
+            "text": "Instant Form: gắn link chính sách bảo mật",
+            "detail": "Meta bắt buộc; thêm ô đồng ý bằng Custom Disclaimer"
+          },
+          {
+            "text": "Ghi rõ nội dung, tần suất quảng cáo",
+            "detail": "Luật yêu cầu khi xin đồng ý (Điều 28 khoản 3)"
+          },
+          {
+            "text": "Luôn có cách từ chối nhận quảng cáo",
+            "detail": "Khách yêu cầu là phải ngừng (Điều 28 khoản 5)"
+          }
+        ],
+        "source": "Nguồn: Google Ads Help (Customer Match); Meta Business Help Center; Luật 91/2025/QH15, Điều 28"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Data thật,",
+      "accent": "khách thật.",
+      "voice": "Shop bạn đang lấy data khách từ đâu? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Shop bạn đang lấy data khách từ đâu? Comment cho Adtek"
+      }
+    }
+  ],
+  "review": "/_blob/3307b8209ebbf786665631d391e8f98f"
+}

@@ -1,0 +1,163 @@
+{
+  "id": "khach-chon-mua-vi-dieu-gi",
+  "date": "2026-10-23",
+  "status": "Đã viết kịch bản",
+  "cover": {
+    "kicker": "Đố số liệu",
+    "title": "Khách chọn mua online",
+    "accent": "vì điều gì nhất?",
+    "options": [
+      "Giá rẻ",
+      "Chất lượng",
+      "Khuyến mãi"
+    ]
+  },
+  "hook": {
+    "text": "Khách chọn mua",
+    "accent": "vì điều gì nhất?",
+    "options": [
+      "Giá rẻ",
+      "Chất lượng",
+      "Khuyến mãi"
+    ]
+  },
+  "caption": "Mùa sale cuối năm, khách mua online chọn vì điều gì nhất: giá rẻ, chất lượng hay khuyến mãi? Xem 2 gợi ý từ báo cáo quý 3/2026 của YouNet ECI rồi đoán thử. Comment A, B hay C trước khi xem đáp án.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#thuongmaidientu",
+    "#banhangonline",
+    "#sale1111",
+    "#googleads"
+  ],
+  "scenes": [
+    {
+      "kicker": "Đố số liệu · YouNet ECI",
+      "headline": "Khách chọn mua online",
+      "accent": "vì điều gì nhất?",
+      "voice": "Khách chọn mua online vì điều gì nhất? A, giá rẻ. B, chất lượng sản phẩm. C, khuyến mãi. Comment đáp án, kết quả ở cuối video.",
+      "visual": {
+        "type": "quiz",
+        "options": [
+          {
+            "label": "A",
+            "text": "Giá rẻ"
+          },
+          {
+            "label": "B",
+            "text": "Chất lượng sản phẩm"
+          },
+          {
+            "label": "C",
+            "text": "Khuyến mãi"
+          }
+        ],
+        "answer": 1,
+        "tag": "Comment A, B hay C"
+      }
+    },
+    {
+      "kicker": "Gợi ý 1 · Niềm tin mua sắm",
+      "headline": "Khách tự tin",
+      "accent": "chi tiêu trở lại.",
+      "voice": "Gợi ý một: chỉ số niềm tin mua sắm online tăng từ 122 lên 141 điểm. Khách đang tự tin chi tiêu trở lại.",
+      "visual": {
+        "type": "slope",
+        "metric": "Chỉ số niềm tin người mua online (eCCI)",
+        "unit": "điểm",
+        "source": "Nguồn: YouNet ECI, Báo cáo Doanh thu và Tiêu dùng TMĐT Việt Nam quý 3/2026, công bố 13/10/2026",
+        "from": "Quý 2/2026",
+        "to": "Quý 3/2026",
+        "series": [
+          {
+            "label": "eCCI",
+            "a": 122,
+            "b": 141,
+            "display": [
+              "122",
+              "141"
+            ],
+            "tone": "accent"
+          }
+        ],
+        "note": "58% thấy thu nhập hiện tại tích cực, quý 2 là 45%"
+      }
+    },
+    {
+      "kicker": "Gợi ý 2 · Sale không còn là tất cả",
+      "headline": "Khuyến mãi",
+      "accent": "bớt quan trọng.",
+      "voice": "Gợi ý hai: khuyến mãi giảm 7 điểm phần trăm về mức quan trọng so với quý 2. Còn giá vẫn được 67% khách cân nhắc.",
+      "visual": {
+        "type": "bignumber",
+        "value": 7,
+        "label": "Mức quan trọng của khuyến mãi khi mua online (điểm phần trăm), quý 3 so với quý 2/2026",
+        "context": "Giá vẫn được 67% khách cân nhắc",
+        "source": "Nguồn: YouNet ECI, Báo cáo Doanh thu và Tiêu dùng TMĐT Việt Nam quý 3/2026",
+        "display": "-7 điểm"
+      }
+    },
+    {
+      "kicker": "Đáp án · YouNet ECI",
+      "headline": "Đáp án B:",
+      "accent": "chất lượng sản phẩm.",
+      "voice": "Đáp án là B, chất lượng sản phẩm. 74% khách chọn chất lượng, tăng từ 53% ở quý 2. Giá xếp thứ hai, 67%.",
+      "visual": {
+        "type": "quiz",
+        "reveal": true,
+        "options": [
+          {
+            "label": "A",
+            "text": "Giá rẻ"
+          },
+          {
+            "label": "B",
+            "text": "Chất lượng sản phẩm"
+          },
+          {
+            "label": "C",
+            "text": "Khuyến mãi"
+          }
+        ],
+        "answer": 1,
+        "note": "74% chọn chất lượng (quý 2: 53%), 67% chọn giá. Khách vẫn cần giá hợp túi tiền nhưng phải đáng tiền",
+        "source": "Nguồn: YouNet ECI, Báo cáo Doanh thu và Tiêu dùng TMĐT Việt Nam quý 3/2026"
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Bán chất lượng,",
+      "accent": "đo bằng lợi nhuận.",
+      "voice": "Làm gì ngay? Đo lợi nhuận, không chỉ doanh thu: trong Google Ads, gửi dữ liệu giỏ hàng kèm giá vốn. Hiện số sao trên Google Shopping, cần từ 50 đánh giá. Và đừng chỉ đua giảm giá.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Đo lợi nhuận, không chỉ doanh thu",
+            "detail": "Google Ads: dữ liệu giỏ hàng kèm giá vốn (COGS) trong Merchant Center"
+          },
+          {
+            "text": "Hiện số sao trên Google Shopping",
+            "detail": "Product Ratings trong Merchant Center, cần từ 50 đánh giá"
+          },
+          {
+            "text": "Đừng chỉ đua giảm giá",
+            "detail": "Khuyến mãi giảm 7 điểm về mức quan trọng trong quý 3"
+          }
+        ],
+        "source": "Nguồn: Google Ads Help (conversions with cart data); Google Merchant Center Help (Product Ratings); YouNet ECI quý 3/2026"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Khách của bạn hỏi",
+      "accent": "giá hay chất lượng?",
+      "voice": "Bạn đoán A, B hay C? Khách của bạn hỏi về giá hay chất lượng nhiều hơn? Comment cho Adtek. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Khách của bạn hỏi giá hay chất lượng nhiều hơn? Comment cho Adtek"
+      }
+    }
+  ],
+  "review": "/_blob/e0f50512a0ed9d1b1325707fa2de92ce"
+}

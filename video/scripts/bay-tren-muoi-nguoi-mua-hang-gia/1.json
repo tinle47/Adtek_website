@@ -1,0 +1,174 @@
+{
+  "id": "bay-tren-muoi-nguoi-mua-hang-gia",
+  "date": "2026-10-24",
+  "status": "Đã viết kịch bản",
+  "cover": {
+    "kicker": "Growth · Q&Me",
+    "title": "7/10 người Việt",
+    "accent": "từng mua hàng giả"
+  },
+  "hook": {
+    "text": "7/10 người Việt",
+    "accent": "từng mua hàng giả"
+  },
+  "caption": "69% người Việt thành thị từng mua hàng giả, ở tuổi 20 là 84% (Q&Me). Khách phân biệt thật giả bằng mã QR và cửa hàng chính hãng. Bạn từng mua phải hàng giả online chưa? Comment món đó là gì.",
+  "hashtags": [
+    "#adtekagency",
+    "#growthmarketing",
+    "#hanggia",
+    "#thuonghieu",
+    "#banhangonline",
+    "#shopee"
+  ],
+  "scenes": [
+    {
+      "kicker": "Growth · Q&Me",
+      "headline": "7/10 người Việt",
+      "accent": "từng mua hàng giả.",
+      "voice": "7 trên 10 người Việt từng mua hàng giả. Theo khảo sát mới của Q&Me, 69% người thành thị đã từng mua, dù biết hay không biết.",
+      "visual": {
+        "type": "people",
+        "metric": "Người thành thị từng mua hàng giả",
+        "source": "Nguồn: Q&Me, Counterfeit Products in Vietnam, 2026. Khảo sát 200 người 20 đến 49 tuổi, Hà Nội và TP.HCM",
+        "lit": 7,
+        "legend": [
+          "từng mua hàng giả",
+          "Con số chính xác: 69%. Mẫu nhỏ, chỉ 2 thành phố"
+        ]
+      }
+    },
+    {
+      "kicker": "Người trẻ mua nhiều nhất",
+      "headline": "Tuổi 20:",
+      "accent": "8/10 từng mua hàng giả.",
+      "voice": "Người trẻ còn cao hơn. Ở tuổi 20, con số là 84%, so với 69% tính chung.",
+      "visual": {
+        "type": "versus",
+        "metric": "Tỷ lệ từng mua hàng giả",
+        "unit": "%",
+        "source": "Nguồn: Q&Me, Counterfeit Products in Vietnam, 2026",
+        "items": [
+          {
+            "label": "Tuổi 20 đến 29",
+            "value": 84,
+            "suffix": "%"
+          },
+          {
+            "label": "Tính chung",
+            "value": 69,
+            "suffix": "%"
+          }
+        ],
+        "winner": 0
+      }
+    },
+    {
+      "kicker": "Mua giả món gì?",
+      "headline": "Thời trang",
+      "accent": "bị làm giả nhiều nhất.",
+      "voice": "Hàng giả bị mua nhiều nhất là thời trang: quần áo 87%, giày dép 69%, túi xách 45%. Mỹ phẩm, thực phẩm thì khách thường mua nhầm, sau mới biết là giả.",
+      "visual": {
+        "type": "hbars",
+        "metric": "Nhóm hàng giả được mua nhiều nhất",
+        "unit": "%",
+        "source": "Nguồn: Q&Me, Counterfeit Products in Vietnam, 2026",
+        "max": 87,
+        "rows": [
+          {
+            "label": "Quần áo",
+            "value": 87,
+            "tone": "accent"
+          },
+          {
+            "label": "Giày dép",
+            "value": 69,
+            "tone": "main"
+          },
+          {
+            "label": "Túi xách",
+            "value": 45,
+            "tone": "main"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 2,
+            "text": "Mỹ phẩm, thực phẩm: thường mua nhầm, sau mới biết"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Khách kiểm tra bằng gì?",
+      "headline": "Mã QR và gian hàng",
+      "accent": "chính hãng.",
+      "voice": "Khách phân biệt thật giả bằng gì? Mã QR: 69%. Cửa hàng chính hãng: 69%. Còn giá rẻ bất thường là dấu hiệu khiến khách nghi ngờ.",
+      "visual": {
+        "type": "columns",
+        "metric": "Cách khách phân biệt hàng thật, hàng giả",
+        "unit": "%",
+        "source": "Nguồn: Q&Me, Counterfeit Products in Vietnam, 2026",
+        "max": 69,
+        "cols": [
+          {
+            "label": "Mã QR",
+            "value": 69,
+            "tone": "accent"
+          },
+          {
+            "label": "Cửa hàng\nchính hãng",
+            "value": 69,
+            "tone": "main"
+          }
+        ],
+        "notes": [
+          {
+            "kind": "callout",
+            "at": 1,
+            "text": "Giá rẻ bất thường: dấu hiệu bị nghi"
+          }
+        ]
+      }
+    },
+    {
+      "kicker": "Làm gì ngay?",
+      "headline": "Chứng minh hàng thật",
+      "accent": "trước khi khách hỏi.",
+      "voice": "Làm gì ngay? Mở gian hàng chính hãng trên Shopee Mall, TikTok Shop Mall. In mã QR xác thực trên bao bì. Đăng ký Shopee Brand IP Portal để báo cáo gian hàng giả. Và khai báo GTIN trong Merchant Center.",
+      "visual": {
+        "type": "list",
+        "items": [
+          {
+            "text": "Mở gian hàng chính hãng",
+            "detail": "Shopee Mall, TikTok Shop Mall: 69% khách tin cửa hàng chính hãng"
+          },
+          {
+            "text": "In mã QR xác thực trên bao bì",
+            "detail": "69% khách kiểm tra hàng thật bằng mã QR"
+          },
+          {
+            "text": "Đăng ký Shopee Brand IP Portal",
+            "detail": "Báo cáo gian hàng giả mạo thương hiệu, cần giấy chứng nhận nhãn hiệu tại Việt Nam"
+          },
+          {
+            "text": "Khai báo GTIN trong Merchant Center",
+            "detail": "Google khuyên dùng cho sản phẩm có mã của nhà sản xuất"
+          }
+        ],
+        "source": "Nguồn: Q&Me 2026; Shopee Brand IP Portal; Google Merchant Center Help (GTIN)"
+      }
+    },
+    {
+      "kicker": "Follow Adtek",
+      "headline": "Hàng thật,",
+      "accent": "phải chứng minh được.",
+      "voice": "Bạn từng mua phải hàng giả online chưa? Comment món đó là gì. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+      "visual": {
+        "type": "follow",
+        "ask": "Bạn từng mua phải hàng giả online chưa? Comment món đó là gì"
+      }
+    }
+  ],
+  "review": "/_blob/0904b16a5f9290ff754c7f641419bcbf"
+}

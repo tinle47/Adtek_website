@@ -840,6 +840,68 @@
   "review": "/_blob/8c3612cbb28902842917a0d4f2e774e6"
  },
  {
+  "id": "mua-data-khach-hang",
+  "date": "2026-10-18",
+  "status": "Đã viết kịch bản",
+  "title": "Mua data khách hàng về chạy quảng cáo?",
+  "caption": "Mua data khách hàng về chạy quảng cáo là chuyện bình thường? Từ 01/01/2026, Luật Bảo vệ dữ liệu cá nhân cấm mua, bán dữ liệu cá nhân, phạt tối đa 10 lần khoản thu. Shop bạn đang lấy data khách từ đâu? Comment cho Adtek biết.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#dulieucanhan",
+   "#quangcaofacebook",
+   "#banhangonline",
+   "#luatmoi"
+  ],
+  "words": 183,
+  "seconds": 62,
+  "scenes": [
+   {
+    "kicker": "Phá hiểu lầm · Luật 91/2025",
+    "title": "Mua data khách hàng về chạy quảng cáo?",
+    "voice": "Mua data khách hàng, có thể bị phạt tới 10 lần? Nhiều shop nghĩ mua data chạy quảng cáo là chuyện bình thường. Sai. Từ năm 2026, luật mới cấm mua, bán dữ liệu cá nhân.",
+    "visual": "Phá hiểu lầm (đóng dấu)",
+    "source": "Nguồn: Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15, Điều 7 khoản 6"
+   },
+   {
+    "kicker": "Mức phạt tối đa",
+    "title": "Phạt tới 10 lần số tiền thu được.",
+    "voice": "Mức phạt tối đa khi mua, bán dữ liệu cá nhân: 10 lần khoản thu có được. Không có khoản thu, vẫn phạt tới 3 tỷ đồng.",
+    "visual": "Số lớn",
+    "source": "Nguồn: Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15, Điều 8 khoản 3, 5, 6"
+   },
+   {
+    "kicker": "Khách đã mất kiên nhẫn",
+    "title": "2/3 người dùng từng bị dùng trái phép.",
+    "voice": "Vì sao luật siết chặt? Năm 2024, 66% người dùng nói thông tin từng bị dùng trái phép. 95% bị cuộc gọi rác làm phiền.",
+    "visual": "Ô vuông 100",
+    "source": "Nguồn: Hiệp hội An ninh mạng quốc gia (NCA), khảo sát năm 2024"
+   },
+   {
+    "kicker": "Khách nghi bị lộ ở đâu?",
+    "title": "Mua hàng online bị nghi đầu tiên.",
+    "voice": "Họ nghĩ thông tin bị lộ ở đâu? Khi mua hàng online: 74%. Ở nhà hàng, khách sạn, siêu thị: 67%. Trên mạng xã hội: 62%.",
+    "visual": "Thanh ngang",
+    "source": "Nguồn: Hiệp hội An ninh mạng quốc gia (NCA), khảo sát năm 2024. Số đã làm tròn"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Tự xây tệp khách có sự đồng ý.",
+    "voice": "Làm gì ngay? Chỉ chạy tệp khách tự để lại thông tin. Với Instant Form của Meta, gắn link chính sách bảo mật, thêm ô đồng ý. Khi xin đồng ý, ghi rõ nội dung, tần suất quảng cáo. Luôn có cách từ chối nhận quảng cáo.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Google Ads Help (Customer Match); Meta Business Help Center; Luật 91/2025/QH15, Điều 28"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Data thật, khách thật.",
+    "voice": "Shop bạn đang lấy data khách từ đâu? Comment cho Adtek biết. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/3307b8209ebbf786665631d391e8f98f"
+ },
+ {
   "id": "kinh-te-so-viet-nam-dung-thu-may",
   "date": "2026-10-19",
   "status": "Đã có video",
@@ -1100,6 +1162,192 @@
    }
   ],
   "review": ""
+ },
+ {
+  "id": "khach-chon-mua-vi-dieu-gi",
+  "date": "2026-10-23",
+  "status": "Đã viết kịch bản",
+  "title": "Khách chọn mua online vì điều gì nhất?",
+  "caption": "Mùa sale cuối năm, khách mua online chọn vì điều gì nhất: giá rẻ, chất lượng hay khuyến mãi? Xem 2 gợi ý từ báo cáo quý 3/2026 của YouNet ECI rồi đoán thử. Comment A, B hay C trước khi xem đáp án.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#thuongmaidientu",
+   "#banhangonline",
+   "#sale1111",
+   "#googleads"
+  ],
+  "words": 169,
+  "seconds": 59,
+  "scenes": [
+   {
+    "kicker": "Đố số liệu · YouNet ECI",
+    "title": "Khách chọn mua online vì điều gì nhất?",
+    "voice": "Khách chọn mua online vì điều gì nhất? A, giá rẻ. B, chất lượng sản phẩm. C, khuyến mãi. Comment đáp án, kết quả ở cuối video.",
+    "visual": "Đố số liệu (3 lựa chọn)",
+    "source": ""
+   },
+   {
+    "kicker": "Gợi ý 1 · Niềm tin mua sắm",
+    "title": "Khách tự tin chi tiêu trở lại.",
+    "voice": "Gợi ý một: chỉ số niềm tin mua sắm online tăng từ 122 lên 141 điểm. Khách đang tự tin chi tiêu trở lại.",
+    "visual": "Đường dốc",
+    "source": "Nguồn: YouNet ECI, Báo cáo Doanh thu và Tiêu dùng TMĐT Việt Nam quý 3/2026, công bố 13/10/2026"
+   },
+   {
+    "kicker": "Gợi ý 2 · Sale không còn là tất cả",
+    "title": "Khuyến mãi bớt quan trọng.",
+    "voice": "Gợi ý hai: khuyến mãi giảm 7 điểm phần trăm về mức quan trọng so với quý 2. Còn giá vẫn được 67% khách cân nhắc.",
+    "visual": "Số lớn",
+    "source": "Nguồn: YouNet ECI, Báo cáo Doanh thu và Tiêu dùng TMĐT Việt Nam quý 3/2026"
+   },
+   {
+    "kicker": "Đáp án · YouNet ECI",
+    "title": "Đáp án B: chất lượng sản phẩm.",
+    "voice": "Đáp án là B, chất lượng sản phẩm. 74% khách chọn chất lượng, tăng từ 53% ở quý 2. Giá xếp thứ hai, 67%.",
+    "visual": "Đố số liệu (3 lựa chọn)",
+    "source": "Nguồn: YouNet ECI, Báo cáo Doanh thu và Tiêu dùng TMĐT Việt Nam quý 3/2026"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Bán chất lượng, đo bằng lợi nhuận.",
+    "voice": "Làm gì ngay? Đo lợi nhuận, không chỉ doanh thu: trong Google Ads, gửi dữ liệu giỏ hàng kèm giá vốn. Hiện số sao trên Google Shopping, cần từ 50 đánh giá. Và đừng chỉ đua giảm giá.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Google Ads Help (conversions with cart data); Google Merchant Center Help (Product Ratings); YouNet ECI quý 3/2026"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Khách của bạn hỏi giá hay chất lượng?",
+    "voice": "Bạn đoán A, B hay C? Khách của bạn hỏi về giá hay chất lượng nhiều hơn? Comment cho Adtek. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/e0f50512a0ed9d1b1325707fa2de92ce"
+ },
+ {
+  "id": "bay-tren-muoi-nguoi-mua-hang-gia",
+  "date": "2026-10-24",
+  "status": "Đã viết kịch bản",
+  "title": "7/10 người Việt từng mua hàng giả.",
+  "caption": "69% người Việt thành thị từng mua hàng giả, ở tuổi 20 là 84% (Q&Me). Khách phân biệt thật giả bằng mã QR và cửa hàng chính hãng. Bạn từng mua phải hàng giả online chưa? Comment món đó là gì.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#hanggia",
+   "#thuonghieu",
+   "#banhangonline",
+   "#shopee"
+  ],
+  "words": 167,
+  "seconds": 60,
+  "scenes": [
+   {
+    "kicker": "Growth · Q&Me",
+    "title": "7/10 người Việt từng mua hàng giả.",
+    "voice": "7 trên 10 người Việt từng mua hàng giả. Theo khảo sát mới của Q&Me, 69% người thành thị đã từng mua, dù biết hay không biết.",
+    "visual": "Hình người",
+    "source": "Nguồn: Q&Me, Counterfeit Products in Vietnam, 2026. Khảo sát 200 người 20 đến 49 tuổi, Hà Nội và TP.HCM"
+   },
+   {
+    "kicker": "Người trẻ mua nhiều nhất",
+    "title": "Tuổi 20: 8/10 từng mua hàng giả.",
+    "voice": "Người trẻ còn cao hơn. Ở tuổi 20, con số là 84%, so với 69% tính chung.",
+    "visual": "Đối đầu",
+    "source": "Nguồn: Q&Me, Counterfeit Products in Vietnam, 2026"
+   },
+   {
+    "kicker": "Mua giả món gì?",
+    "title": "Thời trang bị làm giả nhiều nhất.",
+    "voice": "Hàng giả bị mua nhiều nhất là thời trang: quần áo 87%, giày dép 69%, túi xách 45%. Mỹ phẩm, thực phẩm thì khách thường mua nhầm, sau mới biết là giả.",
+    "visual": "Thanh ngang",
+    "source": "Nguồn: Q&Me, Counterfeit Products in Vietnam, 2026"
+   },
+   {
+    "kicker": "Khách kiểm tra bằng gì?",
+    "title": "Mã QR và gian hàng chính hãng.",
+    "voice": "Khách phân biệt thật giả bằng gì? Mã QR: 69%. Cửa hàng chính hãng: 69%. Còn giá rẻ bất thường là dấu hiệu khiến khách nghi ngờ.",
+    "visual": "Biểu đồ cột",
+    "source": "Nguồn: Q&Me, Counterfeit Products in Vietnam, 2026"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Chứng minh hàng thật trước khi khách hỏi.",
+    "voice": "Làm gì ngay? Mở gian hàng chính hãng trên Shopee Mall, TikTok Shop Mall. In mã QR xác thực trên bao bì. Đăng ký Shopee Brand IP Portal để báo cáo gian hàng giả. Và khai báo GTIN trong Merchant Center.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Q&Me 2026; Shopee Brand IP Portal; Google Merchant Center Help (GTIN)"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "Hàng thật, phải chứng minh được.",
+    "voice": "Bạn từng mua phải hàng giả online chưa? Comment món đó là gì. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/0904b16a5f9290ff754c7f641419bcbf"
+ },
+ {
+  "id": "viet-bai-bang-ai-bi-google-phat",
+  "date": "2026-10-25",
+  "status": "Đã viết kịch bản",
+  "title": "Viết bài bằng AI là bị Google phạt?",
+  "caption": "Viết bài bằng AI là bị Google phạt? Chưa đúng. 86.5% trang đứng top 20 Google có dùng AI (Ahrefs, 600,000 trang). Google phạt nội dung kém, không phạt AI. Bạn đang dùng AI viết bao nhiêu % nội dung? Comment con số.",
+  "hashtags": [
+   "#adtekagency",
+   "#growthmarketing",
+   "#seo",
+   "#aicontent",
+   "#contentmarketing",
+   "#google"
+  ],
+  "words": 152,
+  "seconds": 56,
+  "scenes": [
+   {
+    "kicker": "Phá hiểu lầm · Số liệu quốc tế",
+    "title": "Viết bài bằng AI là bị Google phạt?",
+    "voice": "Viết bài bằng AI là bị Google phạt? Chưa đúng. Google phạt nội dung kém, dù viết bằng cách nào.",
+    "visual": "Phá hiểu lầm (đóng dấu)",
+    "source": "Nguồn: Google Search Central, hướng dẫn về nội dung tạo bằng AI (02/2023) và chính sách spam"
+   },
+   {
+    "kicker": "Top Google dùng AI không?",
+    "title": "Gần 9/10 trang top có dùng AI.",
+    "voice": "Ahrefs xét 600,000 trang top 20 Google: 86.5% có dùng AI ít nhiều. Chỉ 4.6% viết hoàn toàn bằng AI.",
+    "visual": "Ô vuông 100",
+    "source": "Nguồn: Ahrefs, 600,000 trang của 100,000 từ khóa, 07/2025. Số liệu quốc tế"
+   },
+   {
+    "kicker": "Nhưng có cái giá",
+    "title": "Càng nhiều AI, càng khó được lập chỉ mục.",
+    "voice": "Nhưng càng nhiều AI, càng khó được Google lập chỉ mục. Trang ít AI: 49%. Trang rất nhiều AI: chỉ 40%.",
+    "visual": "Biểu đồ cột",
+    "source": "Nguồn: Ahrefs, 1 triệu trang, 07/2026. Số liệu quốc tế, đã làm tròn"
+   },
+   {
+    "kicker": "Top 3 Google",
+    "title": "Top 3 vẫn là bài người viết là chính.",
+    "voice": "Còn ở top 3 Google, 82.2% là trang dùng AI dưới một nửa. Trang 100% AI chỉ chiếm 5.3%.",
+    "visual": "Số lớn",
+    "source": "Nguồn: Ahrefs, Google Doesn't Punish AI Content, 07/2026. Số liệu quốc tế"
+   },
+   {
+    "kicker": "Làm gì ngay?",
+    "title": "Dùng AI để viết nhanh, người để viết hay.",
+    "voice": "Làm gì ngay? Không đăng hàng loạt bài AI chưa biên tập, Google xếp đó vào spam. Thêm trải nghiệm, số liệu của riêng bạn. Ghi tên tác giả trên bài. Và soi báo cáo Trang trong Search Console để biết bài nào chưa được lập chỉ mục.",
+    "visual": "Danh sách",
+    "source": "Nguồn: Google Search Central (chính sách spam; nội dung hữu ích, đáng tin cậy); Search Console Help"
+   },
+   {
+    "kicker": "Follow Adtek",
+    "title": "AI viết nhanh, bạn viết thật.",
+    "voice": "Bạn đang dùng AI viết bao nhiêu phần trăm nội dung? Comment con số. Follow Adtek để xem số liệu marketing mới mỗi ngày.",
+    "visual": "Thẻ Follow Adtek",
+    "source": ""
+   }
+  ],
+  "review": "/_blob/789c577c21bf0fdcc40339b349b8b241"
  },
  {
   "id": "tiktok-shop-duoi-sat-shopee",
