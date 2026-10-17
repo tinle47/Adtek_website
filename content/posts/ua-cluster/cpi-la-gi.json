@@ -1,0 +1,103 @@
+{
+  "title": "CPI là gì? Công thức, mức tham khảo và cách đặt trần CPI theo LTV",
+  "keyword": "CPI là gì",
+  "secondary_keywords": [
+    "cost per install",
+    "CPI trong marketing"
+  ],
+  "cluster": "C2",
+  "slug": "cpi-la-gi",
+  "seo_title": "CPI là gì? Công thức, mức tham khảo và cách giảm CPI",
+  "meta_desc": "CPI là gì trong marketing app: công thức cost per install, khác CPA và eCPI, mức CPI tham khảo 2025, bảng tính CPI tối đa từ LTV và 7 cách giảm CPI.",
+  "words": 2295,
+  "cover": {
+    "kicker": "App marketing",
+    "title": "*CPI* là gì và bao nhiêu là đủ",
+    "subtitle": "Công thức cost per install, mức tham khảo có nguồn và bảng tính CPI tối đa từ LTV.",
+    "chips": [
+      "CPI, eCPI, CPA",
+      "Benchmark 2025",
+      "Trần CPI từ LTV",
+      "7 cách giảm CPI"
+    ],
+    "hero": "47%",
+    "hero_text": "ROAS ngày 30 của game casual trên iOS, Android chỉ 15%",
+    "fb_kicker": "Chi phí mỗi lượt cài"
+  },
+  "summary": "CPI (cost per install) là chi phí quảng cáo trung bình cho một lượt cài app, khác eCPI, blended CPI và CPA. Bài nêu các yếu tố làm CPI tăng giảm, mức CPI tham khảo từ Liftoff và Adjust, vì sao CPI thấp chưa chắc tốt (retention, ROAS, install fraud), bảng tính CPI tối đa từ LTV và checklist 7 cách giảm CPI.",
+  "links_internal": [
+    "/glossary/user-acquisition-ua/",
+    "/glossary/mobile-attribution/",
+    "/glossary/app-tracking-transparency-att-tinh-minh-bach-theo-doi-ung-dung/",
+    "/glossary/identity-for-advertisers-idfa-dinh-danh-cho-nha-quang-cao/",
+    "/glossary/skadnetwork/",
+    "/glossary/organic-install/",
+    "/glossary/return-on-ad-spend-roas/",
+    "/glossary/cpm/",
+    "/ke-hoach-11-11/",
+    "/glossary/retention-rate/",
+    "/glossary/install-fraud-gian-lan-cai-dat/",
+    "/glossary/click-flooding/",
+    "/glossary/sdk-spoofing/",
+    "/glossary/phone-farms/",
+    "/glossary/lifetime-value-ltv-gia-tri-vong-doi-khach-hang/",
+    "/chien-luoc-app-marketing-9-phuong-phap/",
+    "/glossary/average-revenue-per-user-arpu-doanh-thu-trung-binh-tren-moi-nguoi-dung/",
+    "/nhung-dieu-can-biet-ve-app-marketing-kpis/",
+    "/glossary/app-store-optimization-aso-toi-uu-hoa-cua-hang-ung-dung/",
+    "/khoi-chay-thanh-cong-ung-dung-tren-app-store/",
+    "/meta-andromeda/",
+    "/glossary/deep-linking/",
+    "/contact/"
+  ],
+  "sources": [
+    {
+      "name": "AppsFlyer Glossary, Cost per install (CPI)",
+      "url": "https://www.appsflyer.com/glossary/cost-per-install/",
+      "date": "cập nhật 4/2024, xem 10/2026"
+    },
+    {
+      "name": "Google Ads Help, About bidding in App campaigns",
+      "url": "https://support.google.com/google-ads/answer/7100895?hl=en",
+      "date": "xem 10/2026"
+    },
+    {
+      "name": "Apple Ads Help, Compare Apple Ads solutions",
+      "url": "https://ads.apple.com/app-store/help/apple-ads-basic/0001-compare-apple-ads-solutions",
+      "date": "xem 10/2026"
+    },
+    {
+      "name": "Liftoff và Singular, 2025 Casual Gaming Apps Report (dữ liệu 2/2024 đến 2/2025)",
+      "url": "https://liftoff.ai/2025-casual-gaming-apps-report/",
+      "date": "4/2025"
+    },
+    {
+      "name": "Liftoff, 2024 Mobile Ad Creative Index (dữ liệu 1/2023 đến 1/2024)",
+      "url": "https://content.liftoff.io/hubfs/2024/Reports/Mobile%20Ad%20Creative%20Index/2024%20Mobile%20Ad%20Creative%20Index%20-%20EN.pdf",
+      "date": "3/2024"
+    },
+    {
+      "name": "Adjust, Gaming App Insights Report 2026 (dữ liệu 1/2024 đến 1/2026)",
+      "url": "https://www.adjust.com/blog/gaming-app-insights-2026/",
+      "date": "3/2026"
+    },
+    {
+      "name": "AppsFlyer, State of App Marketing in Vietnam 2025 Edition",
+      "url": "https://www.appsflyer.com/resources/reports/app-marketing-vietnam-report/",
+      "date": "11/2025"
+    },
+    {
+      "name": "AppsFlyer, State of Fraud for Marketers 2026 (dữ liệu quý 1/2025 đến quý 1/2026)",
+      "url": "https://www.appsflyer.com/resources/reports/state-fraud-marketers-report/",
+      "date": "6/2026"
+    }
+  ],
+  "confirm": [
+    "Mục \"Góc nhìn từ thực tế\" còn chỗ trống [ANH TIN BỔ SUNG]: anh Tin kể một bài học khi chạy UA ở Shopee hoặc Lazada về CPI thấp nhưng chất lượng người dùng kém (chỉ số phát hiện, cách xử lý).",
+    "Số Adjust (CPI trung vị game 2025: toàn cầu 0.56 USD, Bắc Mỹ 1.68 USD, châu Âu 0.53 USD, châu Á Thái Bình Dương 0.27 USD, Mỹ Latinh 0.14 USD): trang adjust.com chặn tải tự động (Vercel checkpoint, lỗi 429) nên chưa mở được trực tiếp. Toàn cầu, Bắc Mỹ, châu Âu, Mỹ Latinh khớp giữa bản tóm tắt GameDev Reports (15/4/2026) và nội dung trang hướng dẫn UA của Adjust; riêng 0.27 USD châu Á Thái Bình Dương chỉ thấy ở trang hướng dẫn UA của Adjust qua kết quả tìm kiếm. Nhờ anh hoặc phiên SEO mở link kiểm tra trước khi đăng; không xác nhận được thì bỏ số APAC và câu \"gấp khoảng 6 lần\".",
+    "Không có báo cáo công khai nào có CPI riêng cho Việt Nam hoặc Đông Nam Á kèm phương pháp rõ ràng (AppsFlyer Vietnam 2025 và Adjust Vietnam 2026 không công bố CPI), bài nói rõ điều này và dùng CPI châu Á Thái Bình Dương của Adjust làm mốc gần nhất.",
+    "Tỷ lệ gian lận Việt Nam 20% (quý 1/2026) và 14% đến 16% năm 2025 ở hai báo cáo AppsFlyer khác nhau đo khác nhau; bài chỉ dùng số 29% xuống 20% của báo cáo 2026 và số app tài chính 43% Android, 27% iOS của báo cáo Việt Nam 2025.",
+    "Bảng tính CPI tối đa và ví dụ kênh A, kênh B là số giả định, đã ghi rõ trong bài. Gợi ý đặt mục tiêu thấp hơn trần 10% đến 20% là khuyến nghị nghề, không dẫn nguồn.",
+    "Link /ke-hoach-11-11/ (cụm C1) và /meta-andromeda/ (trụ cột C2) có trong internal-links.json; không link tới /glossary/retargeting/. Chưa link tới bài Apple Ads và bài đo lường iOS đang viết song song (chưa có URL), có thể thêm khi đăng."
+  ]
+}
