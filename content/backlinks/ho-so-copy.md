@@ -110,7 +110,10 @@ Legal entity: Công ty Cổ phần Adtek Technology, tax code 0317120810.
 | Truyền thông marketing tích hợp (IMC) | Kết nối thông điệp và các kênh trả phí, sở hữu, lan truyền thành một kế hoạch thống nhất. | Integrated marketing communications (IMC) | Aligns messaging across paid, owned and earned channels in one coordinated plan. |
 | App Marketing / User Acquisition | Thu hút người dùng ứng dụng iOS và Android qua Apple Ads, Google, Meta và TikTok, kèm đo lường cài đặt và hành vi sau cài đặt. | App marketing / User acquisition | Acquires iOS and Android app users through Apple Ads, Google, Meta and TikTok, with install and post-install measurement. |
 
-Gợi ý trang đích cho từng dịch vụ (nếu nền tảng cho phép link riêng từng dịch vụ): dùng trang dịch vụ tương ứng trên adtek.agency [CẦN XÁC NHẬN danh sách URL dịch vụ]. Khi trang /agency-digital-marketing/ được tạo, dùng trang này cho ô "trang dịch vụ digital marketing" nếu có.
+Trang đích khi nền tảng cho phép link riêng cho dịch vụ:
+
+- Chưa dùng các trang giải pháp hiện có (/solutions/, /solution/integrated-marketing-communication-imc/, /en/solution/*): theo ghi chú trong `content/pages/digital-marketing-agency/meta.json`, các trang này đang là nội dung mẫu Lorem Ipsum hoặc trống. Chỉ link khi đã có nội dung thật.
+- Trang đích digital marketing đang soạn (chưa xuất bản): VI https://adtek.agency/agency-digital-marketing/ , EN https://adtek.agency/en/digital-marketing-agency-vietnam/ . Sau khi xuất bản, dùng cho ô "trang dịch vụ" hoặc "digital marketing services" nếu có; ô website chính vẫn để trang chủ.
 
 ## 5. Ngành phục vụ [CẦN XÁC NHẬN toàn bộ]
 
