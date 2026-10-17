@@ -1,0 +1,155 @@
+<p><em>Cập nhật tháng 10/2026.</em></p>
+
+<p>CPI là gì? CPI trong marketing app là viết tắt của cost per install, tức số tiền quảng cáo bạn trả trung bình cho một lượt cài ứng dụng. Chi 30 triệu đồng, đo được 6,000 lượt cài từ quảng cáo thì CPI là 5,000 đồng. Bài này không bàn về CPI theo nghĩa chỉ số giá tiêu dùng (consumer price index) trong kinh tế học.</p>
+
+<p>Tôi sẽ đi qua công thức, cách phân biệt CPI với CPA và eCPI, các mức CPI tham khảo có nguồn, rồi đưa một bảng tính để bạn tự đặt mức CPI tối đa từ LTV. Phần tổng quan về <a href="/glossary/user-acquisition-ua/">user acquisition</a> đã có trong từ điển Adtek, bài này chỉ đi sâu vào chi phí trên mỗi lượt cài.</p>
+
+<h2>CPI là gì trong marketing app</h2>
+
+<p>Công thức cơ bản:</p>
+
+<p><strong>CPI = Chi phí quảng cáo / Số lượt cài từ quảng cáo</strong></p>
+
+<p>Hai chữ trong công thức cần nói rõ. "Chi phí" chỉ gồm tiền trả cho kênh quảng cáo, chưa tính phí agency, công làm creative hay phí công cụ đo lường. "Lượt cài" là lượt mở app lần đầu mà công cụ đo lường (MMP) như AppsFlyer hay Adjust ghi nhận, không phải lượt tải trên App Store hay Google Play. Người tải về mà chưa mở thì chưa tính. Vì vậy số cài trên MMP gần như luôn thấp hơn số tải trên store.</p>
+
+<p>Việc gán một lượt cài cho đúng quảng cáo gọi là <a href="/glossary/mobile-attribution/">mobile attribution</a>. Trên Android, việc này khá chính xác. Trên iOS, từ khi Apple bật <a href="/glossary/app-tracking-transparency-att-tinh-minh-bach-theo-doi-ung-dung/">ATT</a>, người dùng không đồng ý cho theo dõi thì app không đọc được <a href="/glossary/identity-for-advertisers-idfa-dinh-danh-cho-nha-quang-cao/">IDFA</a>. Lượt cài của nhóm này được báo về qua <a href="/glossary/skadnetwork/">SKAdNetwork</a> ở dạng tổng hợp và trễ vài ngày. CPI trên iOS vì thế luôn có sai số, nhất là khi so giữa các kênh.</p>
+
+<p>CPI còn có hai cách hiểu. Cách thứ nhất là mô hình tính giá: bạn chỉ trả tiền khi có lượt cài. Apple Ads Basic là một ví dụ, bạn đặt mức giá tối đa cho mỗi lượt cài, còn Apple Ads Advanced tính tiền theo lượt chạm (cost per tap) (<a href="https://ads.apple.com/app-store/help/apple-ads-basic/0001-compare-apple-ads-solutions" target="_blank" rel="nofollow noopener">Apple Ads Help</a>). Cách thứ hai là chỉ số báo cáo: Meta hay Google tính tiền theo lượt hiển thị hoặc lượt nhấp, rồi quy ra chi phí trên mỗi lượt cài để bạn so sánh. Khi người làm UA nói "CPI tuần này tăng", họ thường dùng nghĩa thứ hai.</p>
+
+<h2>CPI khác CPA và eCPI thế nào</h2>
+
+<table>
+<thead>
+<tr><th>Chỉ số</th><th>Công thức</th><th>Cho bạn biết</th><th>Bẫy thường gặp</th></tr>
+</thead>
+<tbody>
+<tr><td>CPI (cost per install)</td><td>Chi phí / lượt cài từ quảng cáo</td><td>Giá mua một người dùng mới vào app</td><td>Không nói gì về việc người đó có ở lại hay mua hàng</td></tr>
+<tr><td>eCPI (effective CPI)</td><td>Tổng chi thực tế / tổng lượt cài thực tế của chiến dịch</td><td>Giá thật bạn trả khi mua theo CPM hoặc CPC</td><td>Nền tảng quảng cáo và MMP đếm lượt cài khác nhau nên eCPI hai bên thường lệch</td></tr>
+<tr><td>Blended CPI</td><td>Tổng chi / (lượt cài trả phí + organic install)</td><td>Chi phí trung bình trên toàn bộ người dùng mới</td><td>Lượt cài tự nhiên kéo số xuống đẹp, dễ che một kênh trả phí đang lỗ</td></tr>
+<tr><td>CPA (cost per action)</td><td>Chi phí / số người làm hành động X sau khi cài</td><td>Giá của một lượt đăng ký, nạp tiền hay đơn đầu</td><td>Chọn hành động quá sâu thì ít dữ liệu, thuật toán học chậm</td></tr>
+</tbody>
+</table>
+
+<p>Theo AppsFlyer, CPI đúng nghĩa là mức giá thỏa thuận trước cho mỗi lượt cài, còn eCPI là giá thực tế bạn trả khi lượt cài đổ về. Ví dụ của họ: ngân sách 10,000 USD mang về 5,000 lượt cài thì eCPI là 2 USD (<a href="https://www.appsflyer.com/glossary/cost-per-install/" target="_blank" rel="nofollow noopener">AppsFlyer Glossary</a>). Con số "chi phí trên mỗi lượt cài" bạn thấy trong Meta hay Google thực ra là eCPI, chỉ là ít ai gọi đúng tên. Còn phần <a href="/glossary/organic-install/">organic install</a> trong blended CPI nên tách riêng khi báo cáo, đừng để nó gánh hộ kênh trả phí.</p>
+
+<p>CPA đi xa hơn một bước. Google App campaigns cho chọn mục tiêu theo lượt cài (Target CPI), theo hành động trong app (Target CPA) hoặc theo giá trị (Target <a href="/glossary/return-on-ad-spend-roas/">ROAS</a>). Ví dụ trong tài liệu của Google: ngân sách 100 USD mỗi ngày với Target CPI 2 USD nghĩa là bạn nhắm khoảng 50 lượt cài mỗi ngày (<a href="https://support.google.com/google-ads/answer/7100895?hl=en" target="_blank" rel="nofollow noopener">Google Ads Help</a>).</p>
+
+<h2>Các yếu tố làm CPI tăng hoặc giảm</h2>
+
+<p>Muốn hiểu vì sao CPI lên xuống, tách nó ra hai vế. Với kênh tính tiền theo lượt hiển thị:</p>
+
+<p><strong>CPI = <a href="/glossary/cpm/">CPM</a> / IPM</strong></p>
+
+<p>IPM (installs per mille) là số lượt cài trên 1,000 lượt hiển thị. CPM 50,000 đồng, IPM 5 thì CPI là 10,000 đồng. Giữ nguyên CPM, đẩy IPM lên 8 thì CPI còn 6,250 đồng. Mỗi yếu tố dưới đây tác động vào một trong hai vế đó.</p>
+
+<ul>
+<li><strong>Nền tảng iOS hay Android.</strong> CPI iOS gần như luôn cao hơn, vì người dùng iPhone chi tiêu trong app nhiều hơn và nhà quảng cáo sẵn sàng trả CPM cao hơn để tiếp cận họ. Ở Việt Nam, Android vẫn chiếm 66% lượt cài năm 2025, iOS 33%, tăng từ 22% năm 2017 (<a href="https://www.appsflyer.com/resources/reports/app-marketing-vietnam-report/" target="_blank" rel="nofollow noopener">AppsFlyer, 11/2025</a>).</li>
+<li><strong>Quốc gia.</strong> Thị trường thu nhập cao có CPM cao. Trong dữ liệu game năm 2025 của Adjust, CPI trung vị ở Bắc Mỹ là 1.68 USD, gấp khoảng 6 lần mức 0.27 USD của châu Á Thái Bình Dương.</li>
+<li><strong>Ngành app.</strong> Game casual dễ có IPM cao vì ai cũng có thể là người chơi. App tài chính, bảo hiểm hay app B2B có tệp khách hẹp, cùng ngân sách ra ít lượt cài hơn.</li>
+<li><strong>Mùa vụ.</strong> Dịp 11.11, 12.12, Black Friday và trước Tết, các nhãn thương mại điện tử và bán lẻ cùng dồn ngân sách nên CPM tăng theo. Liftoff ghi nhận CPI của app thương mại điện tử dao động theo mùa. Nếu bạn đang chuẩn bị mùa sale, <a href="/ke-hoach-11-11/">kế hoạch 11.11</a> có lịch từng tuần.</li>
+<li><strong>Creative.</strong> Creative quyết định phần lớn IPM. Với app thương mại điện tử, quảng cáo video có khả năng tạo lượt cài cao gấp 14 lần banner, interstitial gấp 15 lần (<a href="https://content.liftoff.io/hubfs/2024/Reports/Mobile%20Ad%20Creative%20Index/2024%20Mobile%20Ad%20Creative%20Index%20-%20EN.pdf" target="_blank" rel="nofollow noopener">Liftoff Mobile Ad Creative Index, 3/2024</a>).</li>
+<li><strong>Mục tiêu tối ưu.</strong> Chiến dịch tối ưu cho lượt cài sẽ tìm người dễ cài nhất, và đó thường cũng là người dễ bỏ app nhất. Chuyển sang tối ưu cho đăng ký hay mua hàng thì CPI tăng, nhưng mỗi lượt cài đáng tiền hơn. Google cũng ghi rõ: Target ROAS càng cao thì tệp người dùng tiềm năng càng hẹp, chiến dịch càng khó mở rộng.</li>
+</ul>
+
+<h2>Mức CPI tham khảo theo nền tảng và khu vực</h2>
+
+<p>Tôi chỉ đưa số từ báo cáo có công bố phương pháp. Hãy đọc chúng như mốc so sánh thô, chỉ để tham khảo, không phải mục tiêu: mỗi báo cáo lấy mẫu khác nhau, phần lớn là game, tính bằng USD và gộp nhiều thị trường.</p>
+
+<table>
+<thead>
+<tr><th>Nguồn, kỳ dữ liệu</th><th>Nhóm app</th><th>Mức CPI</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://liftoff.ai/2025-casual-gaming-apps-report/" target="_blank" rel="nofollow noopener">Liftoff và Singular, Casual Gaming Apps Report 2025</a> (dữ liệu 2/2024 đến 2/2025, toàn cầu)</td><td>Game casual</td><td>iOS 1.41 USD, Android 0.14 USD</td></tr>
+<tr><td>Như trên</td><td>Game casino</td><td>iOS 21.03 USD</td></tr>
+<tr><td>Liftoff Mobile Ad Creative Index 2024 (dữ liệu 1/2023 đến 1/2024, toàn cầu)</td><td>Thương mại điện tử</td><td>Trung bình khoảng 1.00 đến 1.60 USD. Video: iOS 2.83 USD, Android 1.15 USD. Rẻ nhất: banner iOS 1.37 USD, native Android 0.65 USD</td></tr>
+<tr><td>Như trên</td><td>Tài chính</td><td>Android dưới 1 USD ở mọi định dạng. iOS: 3 trên 4 định dạng trên 5 USD, banner 2.22 USD</td></tr>
+<tr><td><a href="https://www.adjust.com/blog/gaming-app-insights-2026/" target="_blank" rel="nofollow noopener">Adjust, Gaming App Insights Report 2026</a> (dữ liệu năm 2025)</td><td>Game, CPI trung vị theo khu vực</td><td>Toàn cầu 0.56 USD (tăng 30% so với 2024). Bắc Mỹ 1.68 USD, châu Âu 0.53 USD, châu Á Thái Bình Dương 0.27 USD, Mỹ Latinh 0.14 USD</td></tr>
+</tbody>
+</table>
+
+<p>Tôi chưa tìm được báo cáo công khai nào có CPI riêng cho Việt Nam kèm phương pháp rõ ràng. Các trang tự nêu "CPI trung bình Việt Nam" thường không ghi dữ liệu lấy từ đâu, nên tôi không dùng. Mốc gần nhất là mức châu Á Thái Bình Dương của Adjust ở trên, và nó chỉ đúng cho game. Mốc tốt hơn là CPI 4 đến 8 tuần gần nhất của chính bạn, tách theo nền tảng và kênh.</p>
+
+<h2>Vì sao CPI thấp chưa chắc tốt</h2>
+
+<p>Hiểu CPI là gì thì dễ, đọc đúng con số mới khó. Nhìn lại bảng trên: CPI game casual trên Android chỉ bằng 1/10 iOS. Cùng báo cáo đó, ROAS ngày 30 của game casual trên iOS đạt 47%, trên Android 15% (Liftoff, 4/2025). Lượt cài rẻ hơn 10 lần nhưng tiền thu về trên mỗi đồng quảng cáo thấp hơn 3 lần.</p>
+
+<p>Ví dụ giả định: kênh A có CPI 8,000 đồng, 5% người cài còn mở app vào ngày 7. Kênh B có CPI 20,000 đồng, 20% còn mở app vào ngày 7. Chi phí cho một người dùng còn ở lại ngày 7 là 160,000 đồng ở kênh A và 100,000 đồng ở kênh B. Kênh rẻ hơn 2.5 lần tính theo CPI lại đắt hơn 60% tính theo người dùng giữ lại. Vì vậy cạnh CPI luôn cần <a href="/glossary/retention-rate/">retention rate</a> và doanh thu sau cài.</p>
+
+<h3>Install fraud làm CPI rẻ một cách giả tạo</h3>
+
+<p>Nguồn rẻ bất thường thường có lý do. <a href="/glossary/install-fraud-gian-lan-cai-dat/">Install fraud</a> là lượt cài giả hoặc lượt cài thật bị nhận công sai, và bạn vẫn trả tiền cho nó. Theo AppsFlyer, tỷ lệ lượt cài gian lận ở Việt Nam giảm từ 29% (quý 1/2025) xuống 20% (quý 1/2026), vẫn cao hơn mức trung bình toàn cầu. Trên Android toàn cầu, mức nền là 10% ở app mua sắm và 31% ở app tài chính (<a href="https://www.appsflyer.com/resources/reports/state-fraud-marketers-report/" target="_blank" rel="nofollow noopener">AppsFlyer State of Fraud for Marketers 2026, 6/2026</a>). Riêng app tài chính tại Việt Nam năm 2025, tỷ lệ gian lận là 43% trên Android và 27% trên iOS (AppsFlyer, 11/2025).</p>
+
+<p>Báo cáo năm 2026 còn cho thấy 52% lượt cài gian lận toàn cầu nằm ở lưu lượng organic. Tức là con số organic bạn dùng làm mốc so sánh cũng có thể đã bị bơm. Các kỹ thuật hay gặp là <a href="/glossary/click-flooding/">click flooding</a> (bắn hàng loạt lượt nhấp giả để cướp công lượt cài tự nhiên), <a href="/glossary/sdk-spoofing/">SDK spoofing</a> (giả tín hiệu cài từ máy chủ) và <a href="/glossary/phone-farms/">phone farms</a>. Dấu hiệu cần kiểm tra:</p>
+
+<ul>
+<li>Thời gian từ lượt nhấp đến lượt mở app (CTIT) dồn dưới 10 giây, hoặc trải dài bất thường sau 24 giờ.</li>
+<li>Lượt cài nhiều nhưng sự kiện sau cài (đăng ký, mở lần thứ hai) gần như bằng 0.</li>
+<li>Retention ngày 1 thấp hơn hẳn các nguồn khác cùng nền tảng.</li>
+<li>Lượt cài dồn vào vài dòng máy, một phiên bản hệ điều hành hoặc khung giờ đêm.</li>
+<li>Organic tăng vọt đúng lúc một nguồn trả phí mới được bật.</li>
+</ul>
+
+<h2>Bảng tính CPI tối đa cho phép từ LTV</h2>
+
+<p>Thay vì hỏi "CPI bao nhiêu là tốt", hãy hỏi "một lượt cài đáng bao nhiêu tiền với app của mình". Câu trả lời đến từ <a href="/glossary/lifetime-value-ltv-gia-tri-vong-doi-khach-hang/">LTV</a>, tính trên lợi nhuận gộp chứ không phải doanh thu.</p>
+
+<p><strong>CPI tối đa = LTV lợi nhuận gộp mỗi lượt cài × (1 - biên lợi nhuận mục tiêu) × (1 - tỷ lệ lượt cài không hợp lệ)</strong></p>
+
+<p>Ví dụ giả định cho một app thương mại điện tử, cửa sổ 180 ngày, tính riêng Android:</p>
+
+<table>
+<thead>
+<tr><th>Dòng</th><th>Cách tính</th><th>Ví dụ giả định</th></tr>
+</thead>
+<tbody>
+<tr><td>A. Tỷ lệ lượt cài có mua hàng trong 180 ngày</td><td>Từ dữ liệu cohort</td><td>8%</td></tr>
+<tr><td>B. Doanh thu trung bình mỗi người mua trong 180 ngày</td><td>Từ dữ liệu cohort</td><td>1,200,000 đồng</td></tr>
+<tr><td>C. LTV doanh thu mỗi lượt cài</td><td>A × B</td><td>96,000 đồng</td></tr>
+<tr><td>D. Biên lợi nhuận gộp</td><td>Sau giá vốn, trợ giá vận chuyển, phí thanh toán</td><td>25%</td></tr>
+<tr><td>E. LTV lợi nhuận gộp mỗi lượt cài</td><td>C × D</td><td>24,000 đồng</td></tr>
+<tr><td>F. Biên lợi nhuận mục tiêu muốn giữ lại</td><td>Do bạn đặt</td><td>30%</td></tr>
+<tr><td>G. Chi phí UA tối đa cho mỗi lượt cài thật</td><td>E × (1 - F)</td><td>16,800 đồng</td></tr>
+<tr><td>H. Tỷ lệ lượt cài không hợp lệ ước tính</td><td>Từ báo cáo chống gian lận của MMP</td><td>10%</td></tr>
+<tr><td>I. CPI tối đa trên báo cáo</td><td>G × (1 - H)</td><td>15,120 đồng</td></tr>
+</tbody>
+</table>
+
+<p>Đọc bảng này cần nhớ mấy điểm:</p>
+
+<ul>
+<li>LTV tính trên mỗi lượt cài, gồm cả người không bao giờ mua. Lấy LTV của nhóm khách trung thành áp cho mọi lượt cài là cách nhanh nhất để đặt trần quá cao.</li>
+<li>Quy ra ROAS cho dễ theo dõi: 96,000 / 16,800 = 5.7. Với biên gộp 25% và muốn giữ 30% lợi nhuận, ROAS doanh thu 180 ngày phải đạt khoảng 571%.</li>
+<li>App mới chưa có dữ liệu 180 ngày thì lấy doanh thu 30 ngày nhân hệ số rút từ các cohort cũ, hoặc đặt trần thận trọng rồi chỉnh dần. Bài <a href="/chien-luoc-app-marketing-9-phuong-phap/">chiến lược app marketing</a> có thêm ví dụ tính trần CPI theo doanh thu 90 ngày.</li>
+<li>Làm hai bảng riêng cho iOS và Android vì LTV hai bên khác nhau.</li>
+<li>Đặt mục tiêu chạy thấp hơn trần khoảng 10% đến 20% để chừa chỗ cho sai số đo lường trên iOS.</li>
+</ul>
+
+<p>Định nghĩa các chỉ số đầu vào như <a href="/glossary/average-revenue-per-user-arpu-doanh-thu-trung-binh-tren-moi-nguoi-dung/">ARPU</a>, retention, ARPPU có trong bài <a href="/nhung-dieu-can-biet-ve-app-marketing-kpis/">app marketing KPIs</a>.</p>
+
+<h2>Checklist 7 cách giảm CPI không hy sinh chất lượng</h2>
+
+<ol>
+<li><strong>Sửa trang store trước khi tăng ngân sách.</strong> Người bấm quảng cáo vẫn phải bấm "Nhận" hoặc "Cài đặt". Ảnh chụp màn hình, video xem trước và điểm đánh giá ảnh hưởng thẳng tới IPM. Đây là phần việc của <a href="/glossary/app-store-optimization-aso-toi-uu-hoa-cua-hang-ung-dung/">ASO</a>. App sắp ra mắt thì đối chiếu với checklist <a href="/khoi-chay-thanh-cong-ung-dung-tren-app-store/">khởi chạy ứng dụng trên App Store</a>.</li>
+<li><strong>Làm creative theo lô, đọc IPM cùng retention ngày 7.</strong> Mỗi tuần thử 3 đến 5 ý tưởng mới, giữ cái có IPM cao mà retention ngày 7 không thấp hơn mức trung bình. IPM cao, retention thấp thường là creative hứa sai, ví dụ quảng cáo game chiếu lối chơi không có trong game. Với <a href="/meta-andromeda/">quảng cáo Meta</a>, đa dạng creative giờ là cách chính để hệ thống tìm tệp người mới.</li>
+<li><strong>Chuyển mục tiêu từ lượt cài sang hành động khi đủ dữ liệu.</strong> Bắt đầu bằng Target CPI để có dữ liệu, rồi chuyển sang Target CPA cho sự kiện như đăng ký hay đơn đầu. Google khuyên dùng ROAS đã đạt ở chiến dịch Target CPA làm mức Target ROAS ban đầu.</li>
+<li><strong>Tách chiến dịch theo nền tảng và quốc gia.</strong> Gộp iOS và Android chung một mục tiêu, thuật toán sẽ dồn tiền về phía rẻ (thường là Android). CPI trung bình đẹp lên trong khi doanh thu không đổi.</li>
+<li><strong>Bật chống gian lận và không trả tiền cho lượt cài bị loại.</strong> Với mạng quảng cáo và affiliate trả theo CPI, ghi vào hợp đồng rằng lượt cài bị MMP đánh dấu gian lận không được tính tiền. Trong quý 1/2026, tỷ lệ gian lận ở affiliate cao gấp 36 lần các mạng tự báo cáo như Meta hay Google (AppsFlyer, 6/2026).</li>
+<li><strong>Dùng deep link đưa người cài vào đúng nội dung.</strong> Người bấm quảng cáo một đôi giày mà mở app ra trang chủ thì dễ thoát. <a href="/glossary/deep-linking/">Deep linking</a> loại deferred đưa họ thẳng tới sản phẩm đó ngay lần mở đầu tiên, thuật toán nhận được nhiều sự kiện sau cài hơn để học.</li>
+<li><strong>Đo theo cohort, cắt kênh theo chi phí trên người dùng giữ lại.</strong> Mỗi tuần, xếp các nguồn theo CPI chia retention ngày 7 (hoặc chi phí trên người mua đầu), không xếp theo CPI. Nguồn nào vượt trần ở bảng tính hai tuần liền thì giảm ngân sách.</li>
+</ol>
+
+<h3>Không nên</h3>
+
+<ul>
+<li>So CPI của bạn với con số "CPI trung bình Việt Nam" không ghi nguồn trên mạng.</li>
+<li>Báo cáo một con số CPI gộp iOS và Android cho cấp trên.</li>
+<li>Tính LTV từ nhóm khách mua nhiều nhất rồi áp cho mọi lượt cài.</li>
+<li>Dồn tiền vào nguồn rẻ bất thường mà chưa xem dữ liệu sau cài. Ví dụ sai: "Nguồn X chỉ 2,000 đồng một lượt cài, rẻ bằng 1/5 Meta, chuyển hết ngân sách sang đó."</li>
+</ul>
+
+<h2>Góc nhìn từ thực tế</h2>
+
+<p>[ANH TIN BỔ SUNG: Khi chạy UA ở Shopee hoặc Lazada, anh từng gặp trường hợp nào CPI rất thấp nhưng chất lượng người dùng kém (retention, tỷ lệ ra đơn đầu, gian lận)? Anh phát hiện qua chỉ số nào và đã xử lý ra sao, ví dụ đổi mục tiêu tối ưu hay cắt nguồn?]</p>
+
+<p>Nếu bạn cần dựng bảng trần CPI theo LTV cho app của mình hoặc rà lại chất lượng các nguồn cài đặt, đội App Marketing và UA của Adtek có thể làm cùng bạn, <a href="/contact/">liên hệ Adtek</a> để trao đổi.</p>

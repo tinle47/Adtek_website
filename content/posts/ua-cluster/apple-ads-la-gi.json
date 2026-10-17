@@ -1,0 +1,145 @@
+{
+  "title": "Apple Ads là gì? 4 vị trí quảng cáo App Store, cách đấu giá và đo lường",
+  "keyword": "Apple Ads",
+  "secondary_keywords": [
+    "Apple Search Ads",
+    "quảng cáo App Store"
+  ],
+  "cluster": "C2",
+  "slug": "apple-ads-la-gi",
+  "seo_title": "Apple Ads là gì? Vị trí, đấu giá và cách đo lường",
+  "meta_desc": "Apple Ads (tên mới của Apple Search Ads) là gì: 4 vị trí quảng cáo App Store, Basic và Advanced, đấu giá CPT, cấu trúc chiến dịch, đo lường và checklist.",
+  "words": 2296,
+  "cover": {
+    "kicker": "Quảng cáo App Store",
+    "title": "*Apple Ads* là gì: vị trí, đấu giá và đo lường",
+    "subtitle": "Tên mới của Apple Search Ads, đã chạy ở Việt Nam. Chọn Basic hay Advanced, dựng 4 chiến dịch và đọc đúng số liệu.",
+    "chips": [
+      "4 vị trí quảng cáo",
+      "Basic và Advanced",
+      "AdServices và MMP",
+      "Checklist chiến dịch đầu"
+    ],
+    "hero": "4",
+    "hero_text": "vị trí quảng cáo trên App Store",
+    "fb_kicker": "Apple Ads cho app iOS"
+  },
+  "summary": "Apple Ads là tên mới của Apple Search Ads từ 14/4/2025, tính tiền theo lượt chạm ở 4 vị trí trên App Store và đã có ở Việt Nam. Bài so sánh Basic và Advanced, giải thích cách đấu giá, cấu trúc 4 chiến dịch brand, category, competitor, discovery, cách đo lường bằng AdServices, AdAttributionKit và MMP, kèm checklist cho chiến dịch đầu tiên.",
+  "links_internal": [
+    "/glossary/user-acquisition-ua/",
+    "/glossary/app-store-optimization-aso-toi-uu-hoa-cua-hang-ung-dung/",
+    "/glossary/return-on-ad-spend-roas/",
+    "/glossary/cpm/",
+    "/glossary/lifetime-value-ltv-gia-tri-vong-doi-khach-hang/",
+    "/glossary/deep-linking/",
+    "/glossary/mobile-attribution/",
+    "/glossary/skadnetwork/",
+    "/glossary/mobile-measurement-partner-mmp-nen-tang-do-luong-mobile/",
+    "/glossary/organic-install/",
+    "/khoi-chay-thanh-cong-ung-dung-tren-app-store/",
+    "/nhung-dieu-can-biet-ve-app-marketing-kpis/",
+    "/chien-luoc-app-marketing-9-phuong-phap/",
+    "/meta-andromeda/",
+    "/contact/"
+  ],
+  "sources": [
+    {
+      "name": "Apple Ads, News and Updates (đổi tên 14/4/2025; thêm quảng cáo kết quả tìm kiếm 17/12/2025; Maximize Conversions 25/2/2026; creative assets 8/6/2026; Apple Maps 21/8/2026)",
+      "url": "https://ads.apple.com/app-store/news",
+      "date": "04/2025 đến 08/2026"
+    },
+    {
+      "name": "Apple Ads Help: Ad placement options (4 vị trí, 91 quốc gia và khu vực, CPT cho mọi vị trí)",
+      "url": "https://ads.apple.com/app-store/help/ad-placements/0081-ad-placement-options",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads Help: Search results (vị trí đầu hoặc sâu hơn; CR trung bình hơn 60%, dữ liệu 11/2024 đến 10/2025)",
+      "url": "https://ads.apple.com/app-store/help/ad-placements/0082-search-results",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads Help: Today tab (hơn 500 triệu người mỗi tuần)",
+      "url": "https://ads.apple.com/app-store/help/ad-placements/0083-today-tab",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads Help: Search tab (hơn 70% người vào App Store dùng tìm kiếm)",
+      "url": "https://ads.apple.com/app-store/help/search-tab-campaigns/0071-understand-search-tab-campaigns",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads Help: Create Today tab ads",
+      "url": "https://ads.apple.com/app-store/help/ads/0086-create-today-tab-ads",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads: Design your own ads with creative assets (coming soon)",
+      "url": "https://ads.apple.com/app-store/h/help/design-your-own-ads-with-creative-assets",
+      "date": "công bố 06/2026, truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads Help: Compare Apple Ads solutions (Basic và Advanced)",
+      "url": "https://ads.apple.com/app-store/help/apple-ads-basic/0001-compare-apple-ads-solutions",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads Help: Use the Maximize Conversions bid strategy",
+      "url": "https://ads.apple.com/app-store/help/campaigns/0095-maximize-conversions",
+      "date": "ra mắt 02/2026, truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads Help: Manage budgets (30.4 ngày; lifetime budget tạm dừng 06/2026)",
+      "url": "https://ads.apple.com/app-store/help/bids-and-budget/0016-manage-budgets",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads Help: Structure campaigns (brand, category, competitor, discovery)",
+      "url": "https://ads.apple.com/app-store/help/campaigns/0056-structure-campaigns",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple Developer News: Enhancements to help you submit and market your apps and games (70 custom product pages, gắn từ khóa)",
+      "url": "https://developer.apple.com/news/",
+      "date": "29/10/2025"
+    },
+    {
+      "name": "Apple Developer Documentation: AdServices (Apple Ads Attribution API; token TTL 24 giờ, attribution=false khi dùng tuổi hoặc giới tính)",
+      "url": "https://developer.apple.com/documentation/adservices",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads Help: App ad attribution overview (đăng ký AdAttributionKit 10/4/2025)",
+      "url": "https://ads.apple.com/app-store/help/attribution/0094-ad-attribution-overview",
+      "date": "04/2025, truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads Help: Mobile measurement providers",
+      "url": "https://ads.apple.com/app-store/help/attribution/0027-mobile-measurement-providers",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads: Countries and regions (Việt Nam có trong cả danh sách storefront và nơi cư trú nhà quảng cáo)",
+      "url": "https://ads.apple.com/app-store/countries-or-regions",
+      "date": "truy cập 10/2026"
+    },
+    {
+      "name": "Apple Ads Help: Modify audience settings (location refinement, ngưỡng 5,000 người)",
+      "url": "https://ads.apple.com/app-store/help/ad-groups/0021-set-audience-refinements",
+      "date": "truy cập 10/2026"
+    }
+  ],
+  "confirm": [
+    "Mục \"Góc nhìn từ thực tế\" đang là chỗ trống [ANH TIN BỔ SUNG: ...]: anh Tin cho biết CR và CPA của từ khóa thương hiệu so với từ khóa đối thủ khi chạy Apple Ads ở Việt Nam, và cách xử lý khi đối thủ đấu giá từ khóa thương hiệu.",
+    "Cách tính tiền: trang chính thức của Apple (Ad placement options, Compare Apple Ads solutions, truy cập 17/10/2026) ghi CPT cho mọi vị trí của Advanced; CPM chỉ xuất hiện như chỉ số báo cáo \"Average CPM\". Bài viết theo đúng tài liệu này và nhắc tài liệu cũ có thể ghi tab Today tính CPM. Anh Tin xác nhận khớp với giao diện tài khoản thực tế.",
+    "Cột \"Đặt giá\" cho tab Tìm kiếm, tab Today, trang sản phẩm (\"Max CPT, không có từ khóa\") suy ra từ bảng tính năng (từ khóa chỉ có ở kết quả tìm kiếm) và trang so sánh (đặt mức tối đa cho một lượt chạm). Apple không có trang riêng mô tả giao diện đặt giá của từng vị trí.",
+    "Creative assets cho quảng cáo tab Today và kết quả tìm kiếm vẫn ghi \"coming soon\" ngày 17/10/2026; kiểm tra lại trước ngày đăng, nếu đã ra mắt thì sửa đoạn \"Sắp có\".",
+    "Vị trí quảng cáo mới trong kết quả tìm kiếm: bài chỉ nêu điều trang chính thức xác nhận (quảng cáo ở đầu hoặc sâu hơn, không chọn được vị trí). Không đưa số ô, ngày triển khai hay phiên bản iOS vì chỉ báo chí bên thứ ba nêu.",
+    "Số chữ 2,296 theo cách đếm tách khoảng trắng như tools/seo_post.py (tính cả bảng). Từ khóa \"Apple Ads\" xuất hiện 5 lần trong phần chữ (mở bài, 2 H2, chỗ trống, câu chứng chỉ); \"Apple Search Ads\" 2 lần; \"quảng cáo App Store\" 5 lần.",
+    "Ví dụ app \"EngGo\" và các con số CPT 0.40 USD, CR 50%, LTV 1.20 USD, ngân sách 50 USD/ngày đều là ví dụ giả định, đã ghi rõ trong bài.",
+    "Số 500 triệu người/tuần (tab Today), hơn 70% dùng tìm kiếm, 65% lượt tải bắt đầu từ tìm kiếm, CR hơn 60% đều là số Apple tự công bố, bài ghi \"chỉ để tham khảo\".",
+    "Câu \"Đội Adtek có chứng chỉ Apple Ads\" nhắc 1 lần ở đoạn kết, không kèm tiểu sử.",
+    "Link nội bộ: có link lên trụ cột C2 (/meta-andromeda/) theo quy tắc liên kết; không link tới bài CPI, bài đo lường iOS hay trang thuật ngữ UA mới vì chưa có trong internal-links.json. Khi các bài đó đăng, có thể thêm link chéo.",
+    "Không ghi WordPress, không commit, không push."
+  ]
+}
