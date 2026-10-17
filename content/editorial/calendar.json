@@ -2644,17 +2644,17 @@
    "scripts": [
     "kinh-te-so-viet-nam-dung-thu-may"
    ],
-   "zernio_post_id": "6ad35d779c059454bc4f4e75",
-   "scheduled_at": "2026-10-17T18:35:20+07:00",
+   "zernio_post_id": "6ad3780cd653db7c95342c9b",
+   "scheduled_at": "2026-10-17T20:28:46+07:00",
    "music": {
     "id": "7338118640749365249",
     "track_id": "7338118640749365249",
     "name": "positive, confident, present, progress, corporate VP(1518395)",
     "artist": "KosukeKawaguchi",
     "clip_sec": 116,
-    "volume": 15
+    "volume": 30
    },
-   "attempt": 1
+   "attempt": 2
   },
   {
    "id": "tt-20261020",
@@ -2671,17 +2671,17 @@
    "scripts": [
     "3-dieu-truoc-sale-11-11"
    ],
-   "scheduled_at": "2026-10-17T18:35:27+07:00",
-   "zernio_post_id": "6ad35d7e7296dbccca7c9ad9",
+   "scheduled_at": "2026-10-17T20:28:54+07:00",
+   "zernio_post_id": "6ad378142dbf31ff6f550f3e",
    "music": {
     "id": "7338120583484803073",
     "track_id": "7338120583484803073",
     "name": "A refreshing piano solo during the cherry blossom season(1520405)",
     "artist": "Sumochi",
     "clip_sec": 112,
-    "volume": 15
+    "volume": 30
    },
-   "attempt": 1
+   "attempt": 2
   },
   {
    "id": "tt-20261021",
@@ -2698,17 +2698,17 @@
    "scripts": [
     "top5-tu-khoa-tang-manh-2025"
    ],
-   "zernio_post_id": "6ad35d84cdb56b0fac5686c9",
-   "scheduled_at": "2026-10-17T18:35:34+07:00",
+   "zernio_post_id": "6ad3781c05d86468db022072",
+   "scheduled_at": "2026-10-17T20:29:01+07:00",
    "music": {
     "id": "7369288394545416193",
     "track_id": "7369288394545416193",
     "name": "(Loop) Dramatic Motivation Summer(1546894)",
     "artist": "SKUNK",
     "clip_sec": 116,
-    "volume": 15
+    "volume": 30
    },
-   "attempt": 1
+   "attempt": 2
   },
   {
    "id": "tt-20261022",
@@ -2725,17 +2725,17 @@
    "scripts": [
     "nhan-tin-truoc-khi-mua"
    ],
-   "scheduled_at": "2026-10-17T18:36:13+07:00",
-   "zernio_post_id": "6ad35daccdb56b0fac56877f",
+   "scheduled_at": "2026-10-17T20:29:09+07:00",
+   "zernio_post_id": "6ad3782477f6e7b26fa3a758",
    "music": {
     "id": "7023375770634422273",
     "track_id": "7023375770634422273",
     "name": "Presentation",
     "artist": "FlyFlyMusic",
     "clip_sec": 156,
-    "volume": 15
+    "volume": 30
    },
-   "attempt": 1
+   "attempt": 2
   },
   {
    "id": "tt-20261023",

@@ -28,7 +28,7 @@ Cách dùng:
   python3 tools/tiktok_post.py status <id>         hỏi Zernio: đã đăng thì status = posted, ghi tiktok_url; lỗi thì failed
   python3 tools/tiktok_post.py cancel <id>         anh Tin nhắn "hủy": xóa lịch trên Zernio (nếu có), status = cancelled
   python3 tools/tiktok_post.py tracks              100 bài nhạc thương mại (CML) thịnh hành ở VN: id, tên, thể loại, độ dài clip
-  python3 tools/tiktok_post.py music <id> <track_id> [--volume=15]   gắn bài nhạc CML cho video (ghi vào calendar.json)
+  python3 tools/tiktok_post.py music <id> <track_id> [--volume=30]   gắn bài nhạc CML cho video (ghi vào calendar.json)
   python3 tools/tiktok_post.py reschedule <id>     xóa bài đã hẹn trên Zernio rồi hẹn lại (sau khi đổi nhạc, video, caption)
   python3 tools/tiktok_post.py due                 video đã qua giờ đăng mà chưa hẹn hay đăng (JSON)
 Phương án B:
@@ -66,7 +66,7 @@ TIKTOK_SETTINGS = {"privacyLevel": "PUBLIC_TO_EVERYONE", "allowComment": True, "
                    "videoMadeWithAi": True, "commercialContentType": "none",
                    # anh Tin duyệt qua email báo trước và được hủy đến giờ đăng (routines/tiktok.md)
                    "contentPreviewConfirmed": True, "expressConsentGiven": True}
-MUSIC_VOLUME = 15  # nhạc nền CML (anh Tin chọn phương án D 17/10/2026): giọng đọc 100, nhạc 15 như khi đăng tay
+MUSIC_VOLUME = 30  # nhạc nền CML (anh Tin chọn phương án D 17/10/2026): giọng đọc 100, nhạc 30 (anh Tin chốt theo thanh Sound trong app; 15 nghe không thấy nhạc)
 DAYS = ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"]
 
 
