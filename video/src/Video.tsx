@@ -20,6 +20,10 @@ const PHONE_H = 600;
 // Cảnh đầu hiện sẵn trạng thái cuối của hiệu ứng: khung đầu tiên (cũng là ảnh bìa mặc định) đã có con số và câu hook.
 const HOOK = 75;
 const sfx = (name: string) => staticFile(`sfx/${name}.mp3`);
+// Tiếng khi cột, thanh, số liệu và từng việc trong danh sách hiện ra; tách khỏi "pop" (khung mở đầu, con dấu) để đổi riêng.
+// Anh Tin chê tiếng cũ (17/10/2026), đang so 4 mẫu: chart-go, chart-bong, chart-marimba, chart-kinh (tools/sfx-compare.mjs).
+export const CHART_SFX = "chart-cu";
+const ChartSfx = React.createContext(CHART_SFX);
 // Khung (tính từ đầu cảnh) lúc con số chính hiện ra, để đặt tiếng "bật".
 const POP_AT: Partial<Record<Visual["type"], number>> = { bignumber: 34, versus: 40, people: 30, waffle: 40, donut: 30, slope: 30, trend: 30, funnel: 30, shot: 46 };
 const NOTE = { left: 600, top: 350 }; // chú thích cạnh màn hình điện thoại, tính trong vùng hình
@@ -50,6 +54,7 @@ const chartGroups = (scenes: Scene[]): Group[] => {
 
 // Mọi mốc trong ChartGroup tính theo 30 hình/giây (useFrame); k đổi sang khung thật cho Sequence.
 const ChartGroup: React.FC<{ g: Group; sc: TimedScene[]; shift0: number }> = ({ g, sc: real, shift0 }) => {
+  const chartSfx = React.useContext(ChartSfx);
   const f = useFrame();
   const k = useVideoConfig().fps / BASE_FPS;
   const sc = real.map((s) => ({ ...s, from: s.from / k, frames: s.frames / k }));
@@ -86,7 +91,7 @@ const ChartGroup: React.FC<{ g: Group; sc: TimedScene[]; shift0: number }> = ({ 
   const o = interpolate(f, [end - 7, end], [1, 0], clamp);
   const pops = timed.filter((t) => t.at + 16 > 0).map((t, i) => (
     <Sequence key={i} from={Math.round((t.at + 16) * k)} durationInFrames={Math.round(10 * k)}>
-      <Audio src={sfx("pop")} volume={0.32} />
+      <Audio src={sfx(chartSfx)} volume={0.32} />
     </Sequence>
   ));
   return (
@@ -208,6 +213,7 @@ export const Video: React.FC<VideoProps> = (props) => {
   return (
     <LayoutContext.Provider value={layout}>
     <FxContext.Provider value={{ fx: !!props.fx, fx3d: !!props.fx3d }}>
+    <ChartSfx.Provider value={props.chartSfx ?? CHART_SFX}>
     <AbsoluteFill>
       <Background />
       <Logo />
@@ -250,19 +256,19 @@ export const Video: React.FC<VideoProps> = (props) => {
             {i === 0 && opener && <Audio src={sfx("pop")} volume={0.55} />}
             {shift <= 0 && (i > 0 || opener) && s.visual && POP_AT[s.visual.type] !== undefined && (
               <Sequence from={at(enter + POP_AT[s.visual.type]!)} layout="none">
-                <Audio src={sfx("pop")} volume={0.35} />
+                <Audio src={sfx(props.chartSfx ?? CHART_SFX)} volume={0.35} />
               </Sequence>
             )}
             {s.visual?.type === "list" &&
               listDelays(s.visual.items, f30 + shift, shift > 0 ? [] : words(i), sc[i].lead + shift).map((d, j) => (
                 <Sequence key={j} from={at(d + 2 - shift)} layout="none">
-                  <Audio src={sfx("pop")} volume={0.22} />
+                  <Audio src={sfx(props.chartSfx ?? CHART_SFX)} volume={0.22} />
                 </Sequence>
               ))}
             {shift <= 0 &&
               formatPops(s.visual, words(i), sc[i].lead + shift, f30 + shift).map(([d, kind], j) => (
                 <Sequence key={`f${j}`} from={at(d + 2 - shift)} layout="none">
-                  <Audio src={sfx(kind)} volume={kind === "ding" ? 0.7 : 0.25} />
+                  <Audio src={sfx(kind === "pop" ? props.chartSfx ?? CHART_SFX : kind)} volume={kind === "ding" ? 0.7 : 0.25} />
                 </Sequence>
               ))}
             {reveal && (
@@ -289,6 +295,7 @@ export const Video: React.FC<VideoProps> = (props) => {
       {mascotOn && <Mascot tracks={sc.map((x, i) => ({ from: x.from, lead: at(x.lead), env: props.mascot![i] ?? [] }))} />}
       {props.audit && <Audit />}
     </AbsoluteFill>
+    </ChartSfx.Provider>
     </FxContext.Provider>
     </LayoutContext.Provider>
   );

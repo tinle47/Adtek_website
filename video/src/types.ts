@@ -86,6 +86,7 @@ export type Voice = { scenes: VoiceScene[] } | null;
 
 // fps: 30 (mặc định) hoặc 60 cho bản mượt hơn. audit: chỉ tools/check.mjs bật, để đo vị trí chữ.
 // format: khổ video (mặc định 9:16). carousel: bản ảnh lướt, ẩn phụ đề, hiện số trang.
+// chartSfx: tên file trong public/sfx cho tiếng biểu đồ và danh sách (mặc định CHART_SFX trong Video.tsx; render.mjs --sfx <tên>).
 // fx, fx3d: hiệu ứng thử nghiệm (render.mjs --fx, --fx3d), xem design/fx.tsx và design/map3d.tsx.
 // mascot: độ to giọng đọc của từng cảnh (30 giá trị mỗi giây, 0 đến 1) để mèo Adtek nói theo; render.mjs --mascot đo sẵn.
-export type VideoProps = { script: Script; voice: Voice; fps?: number; audit?: boolean; format?: "9:16" | "1:1" | "16:9"; carousel?: boolean; mascot?: number[][]; fx?: boolean; fx3d?: boolean };
+export type VideoProps = { script: Script; voice: Voice; fps?: number; audit?: boolean; format?: "9:16" | "1:1" | "16:9"; carousel?: boolean; mascot?: number[][]; fx?: boolean; fx3d?: boolean; chartSfx?: string };

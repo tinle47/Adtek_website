@@ -6,6 +6,8 @@
 //            node tools/render.mjs <slug> [số...] --carousel      bản ảnh lướt cho TikTok: mỗi cảnh 1 ảnh out/<id>-slide<n>.png
 //            node tools/render.mjs <slug> [số...] --mascot        thêm mèo Adtek ở góc trái, miệng mở theo độ to giọng đọc
 //            node tools/render.mjs <slug> [số...] --fx            bản thử: chữ tiêu đề trồi lên từng chữ (GSAP), dấu tích Lottie ở "Làm gì ngay" -> out/<id>-fx.mp4
+//            node tools/render.mjs <slug> [số...] --sfx chart-go  đổi tiếng biểu đồ (file trong public/sfx)
+//            node tools/render.mjs <slug> [số...] --frames 280-610  chỉ xuất đoạn khung đó (nghe thử, so sánh)
 //            node tools/render.mjs <slug> [số...] --fx3d          bản thử: bản đồ 3D (Three.js, dựng bằng phần mềm nên chậm hơn) -> out/<id>-3d.mp4
 // Kết quả: out/<id>.mp4 và out/<id>.txt (caption + hashtag để đăng TikTok).
 import { spawnSync } from "node:child_process";
@@ -28,10 +30,12 @@ const carousel = args.includes("--carousel");
 const mascot = args.includes("--mascot");
 const fx = args.includes("--fx");
 const fx3d = args.includes("--fx3d");
-const suffix = (format === "9:16" ? "" : `-${format.replace(":", "x")}`) + (mascot ? "-meo" : "") + (fx ? "-fx" : "") + (fx3d ? "-3d" : "");
+const frameRange = opt("--frames")?.split("-").map(Number);
+const suffix = (format === "9:16" ? "" : `-${format.replace(":", "x")}`) + (mascot ? "-meo" : "") + (fx ? "-fx" : "") + (fx3d ? "-3d" : "") +
+  (opt("--sfx") ? `-${opt("--sfx")}` : "") + (frameRange ? `-f${frameRange.join("-")}` : "");
 // Bản đồ 3D cần WebGL; máy chủ cloud không có card đồ họa nên dùng SwiftShader (dựng 3D bằng CPU).
 const chromiumOptions = fx3d ? { gl: "swangle" } : {};
-const [slug, ...nums] = args.filter((a, i) => !a.startsWith("--") && !["--fps", "--format"].includes(args[i - 1]));
+const [slug, ...nums] = args.filter((a, i) => !a.startsWith("--") && !["--fps", "--format", "--sfx", "--frames"].includes(args[i - 1]));
 const dir = path.join(ROOT, "scripts", slug);
 const files = nums.length ? nums.map((n) => `${n}.json`) : readdirSync(dir).filter((f) => f.endsWith(".json")).sort();
 
@@ -103,7 +107,7 @@ for (const file of files) {
   if (voice && voice.scenes.length !== script.scenes.length) {
     throw new Error(`${script.id}: giọng đọc cũ không khớp số cảnh, chạy lại tools/voice.mjs`);
   }
-  const inputProps = { script, voice, fps, format, carousel, fx, fx3d, mascot: mascot && voice ? envelope(voice.scenes.map((v) => v.file)) : undefined };
+  const inputProps = { script, voice, fps, format, carousel, fx, fx3d, chartSfx: opt("--sfx"), mascot: mascot && voice ? envelope(voice.scenes.map((v) => v.file)) : undefined };
   const composition = await selectComposition({ serveUrl, id: "Infographic", inputProps, browserExecutable, chromiumOptions });
 
   if (stills) {
@@ -138,6 +142,7 @@ for (const file of files) {
     composition,
     inputProps,
     codec: "h264",
+    frameRange: frameRange ? [frameRange[0], frameRange[1]] : null,
     crf: 18,
     outputLocation: output,
     browserExecutable,
