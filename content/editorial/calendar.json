@@ -1433,13 +1433,16 @@
    "images": [
     "content/facebook/fb-20261017/1.jpg"
    ],
-   "approval": null,
+   "approval": "auto",
    "fb_post_id": null,
    "design": {
     "myth": "Bật Advantage+ là không cần làm *creative* nữa",
     "fact": "Andromeda chọn quảng cáo dựa vào chính nội dung creative. Meta báo chuyển đổi tăng 15.7% với GEM, nhưng nghiên cứu của Confect trên 3,014 nhà quảng cáo thấy ROAS trung bình giảm 7%. Creative đa dạng vẫn là việc của người làm marketing.",
     "source": "Search Engine Land; Meta Q2/2026"
-   }
+   },
+   "notified_media": 1,
+   "notified_at": "2026-10-17T08:44:20+07:00",
+   "publish_trigger": "trig_01M7R4dA5juEwEybaYLztHEm"
   },
   {
    "id": "fb-20261018",
