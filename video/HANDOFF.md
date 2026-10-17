@@ -6,7 +6,7 @@ File này để một phiên Claude mới nhận việc và làm tiếp mà khô
 
 - Kênh TikTok @adtek.growth.marketing của Adtek Growth Marketing Agency, mỗi ngày 1 video infographic khoảng 1 phút (hoặc bản ngắn 30 giây khi thử nghiệm).
 - Video làm bằng Remotion (thư mục `video/`), giọng đọc nhân bản của anh Tin qua ElevenLabs (giọng "Tin Le v1", model Eleven v4, tốc độ 1.1x).
-- Từ 17/10/2026: phiên Adtek - Marketing (session_01XqVohyrjLRctpapS6FbMXD) quản lý lịch TikTok trong `content/editorial/calendar.json` (nhánh `claude/brave-curie-2c6zbc`); phiên Adtek - Tiktok post (session_01XZK48jTG9DpqHxwCKxGbA6) đăng tự động qua Zernio, đọc `hub/videos.json`. Phiên video (Claude ở đây) viết kịch bản, tạo giọng, xuất video, đưa lên hub, email duyệt và báo 2 phiên kia. Không còn email nhắc đăng.
+- Từ 17/10/2026: phiên Adtek - Marketing (session_01XqVohyrjLRctpapS6FbMXD) quản lý lịch TikTok trong `content/editorial/calendar.json` (nhánh `claude/brave-curie-2c6zbc`); phiên Adtek - TikTok đăng tự động (session_018zu7wyE9zvuKk5Smnpczn4, lượt hẹn đăng 11:43 Chủ nhật, trig_01ETurRhshMmduNMJFWEvmNb) hẹn đăng cả tuần qua Zernio, đọc `hub/videos.json`. Phiên video (Claude ở đây) viết kịch bản, tạo giọng, xuất video, đưa lên hub, email duyệt và báo 2 phiên kia. Không còn email nhắc đăng.
 - Repo `tinle47/Adtek_website`, nhánh làm việc `claude/confident-ramanujan-t3jbi6`. Chỉ đẩy lên nhánh này, không tạo PR khi chưa được yêu cầu.
 
 ## Cách xưng hô và trình bày với anh Tin
