@@ -2625,10 +2625,12 @@
    "hook": "Kinh tế số Việt Nam tăng nhanh hay chậm so với láng giềng? Năm 2025, con số là 17%.",
    "service": "Digital, Growth",
    "production_status": "Đã có video",
-   "status": "video_ready",
+   "status": "scheduled",
    "scripts": [
     "kinh-te-so-viet-nam-dung-thu-may"
-   ]
+   ],
+   "zernio_post_id": "6ad3394405f232877c48e90c",
+   "scheduled_at": "2026-10-17T16:00:54+07:00"
   },
   {
    "id": "tt-20261020",
@@ -2641,10 +2643,12 @@
    "hook": "Chỉ còn 3 tuần nữa là 11.11, bạn định chạy sale mà chưa chuẩn bị gì sao?",
    "service": "Performance",
    "production_status": "Đã có video",
-   "status": "video_ready",
+   "status": "scheduled",
    "scripts": [
     "3-dieu-truoc-sale-11-11"
-   ]
+   ],
+   "scheduled_at": "2026-10-17T16:00:14+07:00",
+   "zernio_post_id": "6ad3391af48c16ebae0d584c"
   },
   {
    "id": "tt-20261021",
@@ -2657,10 +2661,12 @@
    "hook": "Năm 2025, người Việt tìm gì trên Google tăng mạnh nhất? Đoán thử hạng 1 rồi comment trước nhé.",
    "service": "SEO",
    "production_status": "Đã có video",
-   "status": "video_ready",
+   "status": "scheduled",
    "scripts": [
     "top5-tu-khoa-tang-manh-2025"
-   ]
+   ],
+   "zernio_post_id": "6ad3394ff48c16ebae0d5902",
+   "scheduled_at": "2026-10-17T16:01:06+07:00"
   },
   {
    "id": "tt-20261022",
@@ -2673,10 +2679,12 @@
    "hook": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua?",
    "service": "Performance, Digital",
    "production_status": "Đã có video",
-   "status": "video_ready",
+   "status": "scheduled",
    "scripts": [
     "nhan-tin-truoc-khi-mua"
-   ]
+   ],
+   "scheduled_at": "2026-10-17T16:01:15+07:00",
+   "zernio_post_id": "6ad33959f48c16ebae0d591c"
   },
   {
    "id": "tt-20261023",
