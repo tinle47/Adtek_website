@@ -7,6 +7,7 @@ Video infographic dọc 1080x1920 cho kênh TikTok Adtek (@adtek.growth.marketin
 1. **Kịch bản** `scripts/<slug>/<số>.json`: danh sách cảnh, mỗi cảnh có `voice` (lời đọc, cũng là phụ đề) và nội dung hiển thị.
 2. **Giọng đọc** `tools/voice.mjs`: gửi lời đọc từng cảnh lên ElevenLabs, nhận file mp3 và thời điểm từng chữ, lưu vào `public/voice/<id>/`.
 3. **Dựng video** `tools/render.mjs`: Remotion đọc kịch bản và giọng đọc, độ dài mỗi cảnh bằng độ dài câu đọc, phụ đề tô cam đúng chữ đang đọc. Chưa có giọng thì xuất bản không tiếng, thời lượng ước tính. Âm thanh được cân về -14 LUFS (mức to chuẩn của TikTok).
+Tiếng hiệu ứng (`public/sfx`): whoosh khi chuyển cảnh, nốt marimba `chart-marimba.mp3` khi cột, thanh, số liệu và từng việc hiện ra (đổi bằng `--sfx <tên>`), pop cho khung mở đầu và con dấu, ding khi lật đáp án. Các tiếng chart-* tự tạo bằng FFmpeg, không vướng bản quyền.
 4. **Nhạc nền** gắn lúc đăng (nhạc Commercial Music Library của TikTok, qua Zernio), video xuất ra chỉ có giọng đọc.
 
 ## Thiết kế

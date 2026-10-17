@@ -21,8 +21,9 @@ const PHONE_H = 600;
 const HOOK = 75;
 const sfx = (name: string) => staticFile(`sfx/${name}.mp3`);
 // Tiếng khi cột, thanh, số liệu và từng việc trong danh sách hiện ra; tách khỏi "pop" (khung mở đầu, con dấu) để đổi riêng.
-// Anh Tin chê tiếng cũ (17/10/2026), đang so 4 mẫu: chart-go, chart-bong, chart-marimba, chart-kinh (tools/sfx-compare.mjs).
-export const CHART_SFX = "chart-cu";
+// Anh Tin chê tiếng cũ (chart-cu, bằng pop.mp3) và chọn marimba ngày 17/10/2026 sau khi nghe 4 mẫu tự tạo bằng FFmpeg
+// (chart-go, chart-bong, chart-marimba, chart-kinh trong public/sfx). Đổi tiếng: render.mjs --sfx <tên>.
+export const CHART_SFX = "chart-marimba";
 const ChartSfx = React.createContext(CHART_SFX);
 // Khung (tính từ đầu cảnh) lúc con số chính hiện ra, để đặt tiếng "bật".
 const POP_AT: Partial<Record<Visual["type"], number>> = { bignumber: 34, versus: 40, people: 30, waffle: 40, donut: 30, slope: 30, trend: 30, funnel: 30, shot: 46 };
