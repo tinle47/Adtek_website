@@ -1,0 +1,58 @@
+{
+  "id": 2143,
+  "slug": "user-acquisition-ua",
+  "keyword": "UA là gì",
+  "seo_title": "UA là gì? User Acquisition trong marketing app",
+  "meta_desc": "UA là gì? User Acquisition là hoạt động thu hút người dùng mới cho app: kênh chạy, cách tính CPI, CPA, ROAS, LTV và công việc của chuyên viên UA.",
+  "sources": [
+    {
+      "name": "AppsFlyer Newsroom: GenAI App Ad Spend Hits $824M as AppsFlyer Reveals First AI Agent Usage Data (chi tiêu UA 2025 là 78 tỷ USD, remarketing 31.3 tỷ USD)",
+      "url": "https://www.appsflyer.com/company/newsroom/pr/app-marketing-trends/",
+      "date": "12/2025 (10/12/2025)"
+    },
+    {
+      "name": "Apple Ads: Ads on the App Store (vị trí quảng cáo, CPT, 850 triệu người truy cập App Store mỗi tuần)",
+      "url": "https://ads.apple.com/app-store",
+      "date": "truy cập 10/2026 (số liệu App Store 2026)"
+    },
+    {
+      "name": "Apple Ads News: Apple Search Ads is now Apple Ads",
+      "url": "https://ads.apple.com/app-store/news",
+      "date": "04/2025 (14/04/2025)"
+    },
+    {
+      "name": "Apple Developer: User Privacy and Data Use (ATT từ iOS 14.5)",
+      "url": "https://developer.apple.com/app-store/user-privacy-and-data-use/",
+      "date": "truy cập 10/2026 (trang không ghi ngày cập nhật)"
+    },
+    {
+      "name": "Apple Developer Documentation: Understanding AdAttributionKit and SKAdNetwork interoperability",
+      "url": "https://developer.apple.com/documentation/adattributionkit/adattributionkit-skadnetwork-interoperability",
+      "date": "truy cập 10/2026 (AdAttributionKit có từ iOS 17.4)"
+    },
+    {
+      "name": "Google Ads Help: About App campaigns",
+      "url": "https://support.google.com/google-ads/answer/6247380?hl=en",
+      "date": "truy cập 10/2026 (trang không ghi ngày cập nhật)"
+    },
+    {
+      "name": "Meta for Developers: Advantage+ App Campaigns",
+      "url": "https://developers.facebook.com/docs/app-ads/advantage-app-campaigns",
+      "date": "truy cập 10/2026 (trang không ghi ngày cập nhật)"
+    },
+    {
+      "name": "TikTok Ads Help Center: App promotion",
+      "url": "https://ads.tiktok.com/help/article/what-is-app-promotion-objective?lang=en",
+      "date": "truy cập 10/2026"
+    }
+  ],
+  "confirm": [
+    "Bài có 5 link nội bộ (deep-linking, click-fraud-gian-lan-nhap-chuot, return-on-ad-spend-roas, skadnetwork, bài chien-luoc-app-marketing-9-phuong-phap) cộng 1 link /contact/. Không link /glossary/cpm/ và /glossary/attribution-modeling-mo-hinh-phan-bo/ để giữ giới hạn 5; các thuật ngữ ASO, LTV, MMP, ATT có trang riêng nhưng chưa link, anh có muốn đổi bớt link nào sang các trang đó không.",
+    "Ví dụ app bán lẻ chi 50 triệu đồng (CPI 5,000 đồng, CPA 62,500 đồng, ROAS D7 60%) là giả định, đã ghi rõ trong bài.",
+    "Câu 'có chạy tại Việt Nam' của Apple Ads dựa trên trang Countries and Regions của Apple Ads (Vietnam có trong danh sách, kiểm tra 10/2026).",
+    "Tên ad network AppLovin, Unity Ads, Mintegral và MMP AppsFlyer, Adjust, Singular chỉ nêu làm ví dụ, không phải đối tác hay khuyến nghị của Adtek. Anh xác nhận có muốn giữ tên thương hiệu không.",
+    "Câu CTA nhắc 'dịch vụ App Marketing và User Acquisition': cần xác nhận Adtek đang chào dịch vụ này (website có trang dịch vụ tương ứng không) để có thể đổi link /contact/ sang trang dịch vụ.",
+    "Đoạn đầu có 1 câu phân biệt UA với User-Agent để phục vụ từ khóa 'ua' (1,400 hiển thị, ý định lẫn lộn); bỏ được nếu anh muốn bài chỉ tập trung marketing.",
+    "Ảnh wp-image-2144 giữ nguyên, đổi src sang https và thêm alt tiếng Việt; alt trong thư viện Media (ID 2144) hiện đang rỗng, nên cập nhật luôn khi đưa bài lên."
+  ]
+}
