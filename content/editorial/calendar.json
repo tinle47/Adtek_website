@@ -2616,7 +2616,7 @@
   {
    "id": "tt-20261019",
    "date": "2026-10-19",
-   "time": "19:13",
+   "time": "12:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "17",
@@ -2632,7 +2632,7 @@
   {
    "id": "tt-20261020",
    "date": "2026-10-20",
-   "time": "19:13",
+   "time": "12:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "18",
@@ -2648,7 +2648,7 @@
   {
    "id": "tt-20261021",
    "date": "2026-10-21",
-   "time": "19:13",
+   "time": "12:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "19",
@@ -2664,7 +2664,7 @@
   {
    "id": "tt-20261022",
    "date": "2026-10-22",
-   "time": "19:13",
+   "time": "12:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "20",
@@ -2680,7 +2680,7 @@
   {
    "id": "tt-20261023",
    "date": "2026-10-23",
-   "time": "19:13",
+   "time": "12:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "21",
@@ -2696,7 +2696,7 @@
   {
    "id": "tt-20261024",
    "date": "2026-10-24",
-   "time": "19:13",
+   "time": "09:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "22",
@@ -2712,7 +2712,7 @@
   {
    "id": "tt-20261025",
    "date": "2026-10-25",
-   "time": "19:13",
+   "time": "09:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "23",
@@ -2728,7 +2728,7 @@
   {
    "id": "tt-20261026",
    "date": "2026-10-26",
-   "time": "19:13",
+   "time": "12:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "24",
@@ -2747,7 +2747,7 @@
   {
    "id": "tt-20261027",
    "date": "2026-10-27",
-   "time": "19:13",
+   "time": "12:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "25",
@@ -2763,7 +2763,7 @@
   {
    "id": "tt-20261028",
    "date": "2026-10-28",
-   "time": "19:13",
+   "time": "12:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "26",
@@ -2782,7 +2782,7 @@
   {
    "id": "tt-20261029",
    "date": "2026-10-29",
-   "time": "19:13",
+   "time": "12:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "27",
@@ -2801,7 +2801,7 @@
   {
    "id": "tt-20261030",
    "date": "2026-10-30",
-   "time": "19:13",
+   "time": "12:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "28",
@@ -2820,7 +2820,7 @@
   {
    "id": "tt-20261031",
    "date": "2026-10-31",
-   "time": "19:13",
+   "time": "09:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "29",
@@ -2839,7 +2839,7 @@
   {
    "id": "tt-20261101",
    "date": "2026-11-01",
-   "time": "19:13",
+   "time": "09:13",
    "month": "2026-10",
    "source": "video-production",
    "stt": "30",
@@ -2856,5 +2856,5 @@
    "proposed_by": "Adtek - Marketing"
   }
  ],
- "tiktok_note": "TikTok 1 video mỗi ngày (anh Tin chọn 17/10/2026 giữ lịch của phiên Adtek - Video production). Lịch gốc: video/plan/lich-noi-dung-tiktok.xlsx và video/hub/schedule.json trên nhánh claude/confident-ramanujan-t3jbi6; danh sách tiktok ở đây là bản đồng bộ để phiên Adtek - Tiktok post đăng. Phiên Marketing đề xuất chủ đề cho ngày trống (status proposed) và chủ đề tháng; phiên Video production viết kịch bản, dựng video, cập nhật lịch gốc."
+ "tiktok_note": "TikTok 1 video mỗi ngày. Anh Tin chọn 17/10/2026: lấy lịch của phiên Adtek - Video production làm chuẩn và chuyển quyền quản lý lịch về phiên Adtek - Marketing. Danh sách tiktok ở đây là nguồn chính về ngày, giờ, chủ đề; video/plan/lich-noi-dung-tiktok.xlsx trên nhánh claude/confident-ramanujan-t3jbi6 chỉ là bản sao để sản xuất. Giờ đăng: 12:13 thứ Hai đến thứ Sáu, 09:13 thứ Bảy và Chủ nhật (phiên Marketing chốt 17/10/2026, theo khung nhắc đăng tay trước đây của Video production, tách khỏi khung Facebook 19:00 đến 20:00). Phiên Tiktok post chỉ ghi status scheduled, posted, cancelled, failed và zernio_post_id, tiktok_url, posted_at."
 }
