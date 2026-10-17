@@ -7,7 +7,7 @@ Video infographic dọc 1080x1920 cho kênh TikTok Adtek (@adtek.growth.marketin
 1. **Kịch bản** `scripts/<slug>/<số>.json`: danh sách cảnh, mỗi cảnh có `voice` (lời đọc, cũng là phụ đề) và nội dung hiển thị.
 2. **Giọng đọc** `tools/voice.mjs`: gửi lời đọc từng cảnh lên ElevenLabs, nhận file mp3 và thời điểm từng chữ, lưu vào `public/voice/<id>/`.
 3. **Dựng video** `tools/render.mjs`: Remotion đọc kịch bản và giọng đọc, độ dài mỗi cảnh bằng độ dài câu đọc, phụ đề tô cam đúng chữ đang đọc. Chưa có giọng thì xuất bản không tiếng, thời lượng ước tính. Âm thanh được cân về -14 LUFS (mức to chuẩn của TikTok).
-4. **Nhạc nền** chèn trên TikTok lúc đăng, video xuất ra chỉ có giọng đọc.
+4. **Nhạc nền** gắn lúc đăng (nhạc Commercial Music Library của TikTok, qua Zernio), video xuất ra chỉ có giọng đọc.
 
 ## Thiết kế
 
@@ -89,9 +89,9 @@ Skill không nằm trong repo. Môi trường cloud mỗi phiên là máy mới,
 
 ## Đăng lên TikTok
 
-1. Tải `out/<id>.mp4` lên, dán caption từ `out/<id>.txt`.
-2. Bấm **Sounds**, chọn nhạc nhẹ không lời trong Commercial Music Library (tài khoản doanh nghiệp chỉ được dùng kho này).
-3. Bấm **Volume**: **Original** (giọng đọc) kéo hết cỡ 100%, **Sound** (nhạc) khoảng 15%. Giọng đã ở -14 LUFS nên mức này nhạc nằm nhẹ phía sau, không lấn lời.
+Từ 17/10/2026 phiên Adtek - TikTok đăng tự động hẹn đăng qua Zernio, đọc `hub/videos.json` (caption, hashtags, url video, cover). Nhạc nền do phiên đó gắn khi đăng (`tiktokSettings.musicSoundInfo`, bài không lời trong Commercial Music Library của TikTok, kho duy nhất tài khoản doanh nghiệp được dùng): giọng đọc 100, nhạc 15 đến 20. Giọng đã ở -14 LUFS nên mức này nhạc nằm nhẹ phía sau, không lấn lời. Video xuất ra không trộn nhạc.
+
+Đăng tay khi cần (dự phòng): tải `out/<id>.mp4` lên, dán caption từ `out/<id>.txt`, bấm **Sounds** chọn nhạc nhẹ không lời trong Commercial Music Library, bấm **Volume**: **Original** 100%, **Sound** khoảng 15%.
 
 ## Giọng đọc
 
