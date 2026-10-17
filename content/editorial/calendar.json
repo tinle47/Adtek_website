@@ -2594,214 +2594,263 @@
  ],
  "tiktok": [
   {
+   "id": "tt-20261018",
+   "date": "2026-10-18",
+   "time": "19:13",
+   "month": "2026-10",
+   "source": "video-production",
+   "stt": "16",
+   "topic": "Mua data khách hàng để chạy quảng cáo: rủi ro tới đâu? (phá hiểu lầm)",
+   "hook": "Mua data khách hàng, có thể bị phạt tới 10 lần?",
+   "service": "Digital, Growth",
+   "production_status": "Đã viết kịch bản",
+   "status": "scripted",
+   "scripts": [
+    "mua-data-khach-hang"
+   ]
+  },
+  {
+   "id": "tt-20261019",
+   "date": "2026-10-19",
+   "time": "19:13",
+   "month": "2026-10",
+   "source": "video-production",
+   "stt": "17",
+   "topic": "Bản đồ: kinh tế số Việt Nam tăng 17%, nhanh thứ 2 Đông Nam Á",
+   "hook": "Kinh tế số Việt Nam tăng nhanh hay chậm so với láng giềng? Năm 2025, con số là 17%.",
+   "service": "Digital, Growth",
+   "production_status": "Đã có video",
+   "status": "video_ready",
+   "scripts": [
+    "kinh-te-so-viet-nam-dung-thu-may"
+   ]
+  },
+  {
    "id": "tt-20261020",
    "date": "2026-10-20",
    "time": "19:13",
    "month": "2026-10",
-   "post": 1,
-   "part": 1,
-   "angle": "Giảm giá 30% ngày 11.11, mỗi đơn còn lãi bao nhiêu",
-   "status": "planned"
+   "source": "video-production",
+   "stt": "18",
+   "topic": "Chữ động: đừng chạy sale 11.11 nếu chưa biết 3 điều này",
+   "hook": "Chỉ còn 3 tuần nữa là 11.11, bạn định chạy sale mà chưa chuẩn bị gì sao?",
+   "service": "Performance",
+   "production_status": "Đã có video",
+   "status": "video_ready",
+   "scripts": [
+    "3-dieu-truoc-sale-11-11"
+   ]
+  },
+  {
+   "id": "tt-20261021",
+   "date": "2026-10-21",
+   "time": "19:13",
+   "month": "2026-10",
+   "source": "video-production",
+   "stt": "19",
+   "topic": "Đếm ngược: top 5 từ khóa tăng mạnh nhất trên Google năm 2025",
+   "hook": "Năm 2025, người Việt tìm gì trên Google tăng mạnh nhất? Đoán thử hạng 1 rồi comment trước nhé.",
+   "service": "SEO",
+   "production_status": "Đã có video",
+   "status": "video_ready",
+   "scripts": [
+    "top5-tu-khoa-tang-manh-2025"
+   ]
   },
   {
    "id": "tt-20261022",
    "date": "2026-10-22",
    "time": "19:13",
    "month": "2026-10",
-   "post": 1,
-   "part": 2,
-   "angle": "Phí sàn 2026 và giá hòa vốn",
-   "status": "planned"
+   "source": "video-production",
+   "stt": "20",
+   "topic": "Khách muốn nhắn tin trước khi mua",
+   "hook": "Vì sao 8 trên 10 khách muốn nhắn tin với shop trước khi bấm mua?",
+   "service": "Performance, Digital",
+   "production_status": "Đã có video",
+   "status": "video_ready",
+   "scripts": [
+    "nhan-tin-truoc-khi-mua"
+   ]
+  },
+  {
+   "id": "tt-20261023",
+   "date": "2026-10-23",
+   "time": "19:13",
+   "month": "2026-10",
+   "source": "video-production",
+   "stt": "21",
+   "topic": "Khách chọn mua online vì điều gì nhất? (đố số liệu)",
+   "hook": "Khách chọn mua online vì điều gì nhất? A giá rẻ, B chất lượng, C khuyến mãi",
+   "service": "Performance, Growth",
+   "production_status": "Đã viết kịch bản",
+   "status": "scripted",
+   "scripts": [
+    "khach-chon-mua-vi-dieu-gi"
+   ]
   },
   {
    "id": "tt-20261024",
    "date": "2026-10-24",
    "time": "19:13",
    "month": "2026-10",
-   "post": 1,
-   "part": 3,
-   "angle": "7 ngày giữ khách để nối sang 12.12",
-   "status": "planned"
+   "source": "video-production",
+   "stt": "22",
+   "topic": "7/10 người Việt từng mua hàng giả (infographic)",
+   "hook": "7 trên 10 người Việt từng mua hàng giả?",
+   "service": "Growth, Performance",
+   "production_status": "Đã viết kịch bản",
+   "status": "scripted",
+   "scripts": [
+    "bay-tren-muoi-nguoi-mua-hang-gia"
+   ]
+  },
+  {
+   "id": "tt-20261025",
+   "date": "2026-10-25",
+   "time": "19:13",
+   "month": "2026-10",
+   "source": "video-production",
+   "stt": "23",
+   "topic": "Viết bài bằng AI là bị Google phạt? (phá hiểu lầm)",
+   "hook": "Viết bài bằng AI là bị Google phạt?",
+   "service": "SEO, AIO",
+   "production_status": "Đã viết kịch bản",
+   "status": "scripted",
+   "scripts": [
+    "viet-bai-bang-ai-bi-google-phat"
+   ]
+  },
+  {
+   "id": "tt-20261026",
+   "date": "2026-10-26",
+   "time": "19:13",
+   "month": "2026-10",
+   "source": "video-production",
+   "stt": "24",
+   "topic": "ChatGPT Ads đã chạy ở Việt Nam, ai nên thử?",
+   "hook": "Quảng cáo trên ChatGPT đã chạy ở Việt Nam từ 23/9. Ngành của bạn nên thử hay nên chờ?",
+   "service": "",
+   "production_status": "Cần chủ đề",
+   "status": "proposed",
+   "scripts": [],
+   "format": "Tin nóng",
+   "brief": "OpenAI mở ChatGPT Ads tại Việt Nam 23/9/2026, chỉ hiện với gói Free và Go; 81% người dùng AI tại Việt Nam dùng ChatGPT",
+   "source_note": "OpenAI 9/2026; Decision Lab 8/2025",
+   "link_post": 33,
+   "proposed_by": "Adtek - Marketing"
   },
   {
    "id": "tt-20261027",
    "date": "2026-10-27",
    "time": "19:13",
    "month": "2026-10",
-   "post": 10,
-   "part": 1,
-   "angle": "GMV Max hoạt động thế nào",
-   "status": "planned"
+   "source": "video-production",
+   "stt": "25",
+   "topic": "Biểu đồ đua: Shopee và TikTok Shop, khoảng cách 22 điểm còn 11 điểm",
+   "hook": "Shopee còn giữ ngôi số 1 được bao lâu? Năm 2024, Shopee chiếm 64% doanh số các sàn, TikTok Shop 29%.",
+   "service": "Performance, Digital",
+   "production_status": "Đã có video",
+   "status": "video_ready",
+   "scripts": [
+    "tiktok-shop-duoi-sat-shopee"
+   ]
+  },
+  {
+   "id": "tt-20261028",
+   "date": "2026-10-28",
+   "time": "19:13",
+   "month": "2026-10",
+   "source": "video-production",
+   "stt": "26",
+   "topic": "Giảm giá 30% ngày 11.11, mỗi đơn còn lãi bao nhiêu?",
+   "hook": "Giảm 30% ngày 11.11, bạn nghĩ mỗi đơn còn lãi bao nhiêu?",
+   "service": "",
+   "production_status": "Cần chủ đề",
+   "status": "proposed",
+   "scripts": [],
+   "format": "Phép tính (chữ động)",
+   "brief": "Ví dụ serum 400,000 đồng: lãi mỗi đơn 123,000 đồng, giảm 30% với ROAS 8 còn 46,800, ROAS 5 còn 25,800; phải bán gấp 2.6 lần; phí xử lý giao dịch 6% từ 5/2026 (ghi rõ là ví dụ)",
+   "source_note": "Bài blog 1 Kế hoạch 11.11 và nguồn trong bài",
+   "link_post": 1,
+   "proposed_by": "Adtek - Marketing"
   },
   {
    "id": "tt-20261029",
    "date": "2026-10-29",
    "time": "19:13",
    "month": "2026-10",
-   "post": 10,
-   "part": 2,
-   "angle": "Shopee Ads và GMV Max: chia ngân sách trước 11.11",
-   "status": "planned"
+   "source": "video-production",
+   "stt": "27",
+   "topic": "GMV Max: AI chạy quảng cáo thay bạn, bạn còn làm gì?",
+   "hook": "Quảng cáo TikTok Shop giờ do AI tự chạy. Vậy người làm marketing còn làm được gì?",
+   "service": "",
+   "production_status": "Cần chủ đề",
+   "status": "proposed",
+   "scripts": [],
+   "format": "Giải thích",
+   "brief": "GMV Max là loại chiến dịch duy nhất cho TikTok Shop Ads từ 7/2025; người làm marketing kiểm soát creative, sản phẩm, ngân sách và ROI mục tiêu",
+   "source_note": "TikTok Ads Help Center; bài blog 10",
+   "link_post": 10,
+   "proposed_by": "Adtek - Marketing"
+  },
+  {
+   "id": "tt-20261030",
+   "date": "2026-10-30",
+   "time": "19:13",
+   "month": "2026-10",
+   "source": "video-production",
+   "stt": "28",
+   "topic": "Quảng cáo dùng AI phải gắn nhãn từ khi nào?",
+   "hook": "Quảng cáo dùng giọng hoặc gương mặt tạo bằng AI có phải gắn nhãn không?",
+   "service": "",
+   "production_status": "Cần chủ đề",
+   "status": "proposed",
+   "scripts": [],
+   "format": "Luật mới",
+   "brief": "Luật Trí tuệ nhân tạo 134/2025/QH15 hiệu lực 1/3/2026; Nghị định 142/2026 hiệu lực 1/5/2026, Điều 18: nội dung mô phỏng ngoại hình, giọng nói người thật phải gắn nhãn dễ nhận biết",
+   "source_note": "Luật 134/2025/QH15; Nghị định 142/2026/NĐ-CP (đối chiếu văn bản gốc trước khi dựng)",
+   "link_post": null,
+   "proposed_by": "Adtek - Marketing"
   },
   {
    "id": "tt-20261031",
    "date": "2026-10-31",
    "time": "19:13",
    "month": "2026-10",
-   "post": 10,
-   "part": 3,
-   "angle": "Đo ROAS theo từng sản phẩm",
-   "status": "planned"
+   "source": "video-production",
+   "stt": "29",
+   "topic": "FMCG tăng bao nhiêu trên sàn quý III? (đố số liệu)",
+   "hook": "Đoán thử: hàng tiêu dùng nhanh trên sàn tăng bao nhiêu % trong quý III? A 12%, B 26%, C 36%",
+   "service": "",
+   "production_status": "Cần chủ đề",
+   "status": "proposed",
+   "scripts": [],
+   "format": "Đố số liệu",
+   "brief": "FMCG +36% riêng quý III/2026, +26% sau 9 tháng; GMV 9 tháng 411,800 tỷ đồng (+22%)",
+   "source_note": "YouNet ECI quý III/2026 (đã dùng ở video 23/10 cho chỉ số khác, không trùng số)",
+   "link_post": null,
+   "proposed_by": "Adtek - Marketing"
   },
   {
-   "id": "tt-20261103",
-   "date": "2026-11-03",
+   "id": "tt-20261101",
+   "date": "2026-11-01",
    "time": "19:13",
-   "month": "2026-11",
-   "post": 33,
-   "part": 1,
-   "angle": "ChatGPT Ads là gì, hiện ở đâu",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261105",
-   "date": "2026-11-05",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 33,
-   "part": 2,
-   "angle": "Ngành nào nên chạy thử",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261107",
-   "date": "2026-11-07",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 33,
-   "part": 3,
-   "angle": "3 việc chuẩn bị trước khi chạy",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261110",
-   "date": "2026-11-10",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 16,
-   "part": 1,
-   "angle": "Tính lãi lỗ một phiên live",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261112",
-   "date": "2026-11-12",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 16,
-   "part": 2,
-   "angle": "KPI theo giờ của phiên live",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261114",
-   "date": "2026-11-14",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 16,
-   "part": 3,
-   "angle": "Luật mới: xác thực người livestream",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261117",
-   "date": "2026-11-17",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 34,
-   "part": 1,
-   "angle": "FMCG tăng 36% trên sàn",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261119",
-   "date": "2026-11-19",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 34,
-   "part": 2,
-   "angle": "Vì sao khách mua lần hai quan trọng",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261121",
-   "date": "2026-11-21",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 34,
-   "part": 3,
-   "angle": "Shopee hay TikTok Shop cho hàng thiết yếu",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261124",
-   "date": "2026-11-24",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 13,
-   "part": 1,
-   "angle": "30 mẫu quảng cáo một tháng với AI",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261126",
-   "date": "2026-11-26",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 13,
-   "part": 2,
-   "angle": "Khi nào phải gắn nhãn AI",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261128",
-   "date": "2026-11-28",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 13,
-   "part": 3,
-   "angle": "Giữ bản sắc thương hiệu khi dùng AI",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261201",
-   "date": "2026-12-01",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 36,
-   "part": 1,
-   "angle": "Xe máy điện tăng gần gấp đôi",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261203",
-   "date": "2026-12-03",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 36,
-   "part": 2,
-   "angle": "Đại lý nên chạy kênh nào để có lead",
-   "status": "planned"
-  },
-  {
-   "id": "tt-20261205",
-   "date": "2026-12-05",
-   "time": "19:13",
-   "month": "2026-11",
-   "post": 36,
-   "part": 3,
-   "angle": "Hà Nội hạn chế xe xăng: cơ hội nội dung",
-   "status": "planned"
+   "month": "2026-10",
+   "source": "video-production",
+   "stt": "30",
+   "topic": "Bật AI Max là mất quyền kiểm soát từ khóa? (phá hiểu lầm)",
+   "hook": "Bật AI Max là Google tự chạy hết, bạn mất quyền kiểm soát?",
+   "service": "",
+   "production_status": "Cần chủ đề",
+   "status": "proposed",
+   "scripts": [],
+   "format": "Phá hiểu lầm",
+   "brief": "Vẫn giữ được loại trừ thương hiệu, loại trừ URL, từ khóa phủ định; Google nói AI Max tăng 14% chuyển đổi ở cùng CPA (số nội bộ Google); nên chạy Experiments để so sánh",
+   "source_note": "Google Ads 5/2025; bài blog 8 (30/10)",
+   "link_post": 8,
+   "proposed_by": "Adtek - Marketing"
   }
- ]
+ ],
+ "tiktok_note": "TikTok 1 video mỗi ngày (anh Tin chọn 17/10/2026 giữ lịch của phiên Adtek - Video production). Lịch gốc: video/plan/lich-noi-dung-tiktok.xlsx và video/hub/schedule.json trên nhánh claude/confident-ramanujan-t3jbi6; danh sách tiktok ở đây là bản đồng bộ để phiên Adtek - Tiktok post đăng. Phiên Marketing đề xuất chủ đề cho ngày trống (status proposed) và chủ đề tháng; phiên Video production viết kịch bản, dựng video, cập nhật lịch gốc."
 }
