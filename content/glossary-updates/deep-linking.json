@@ -1,0 +1,34 @@
+{
+  "id": 1811,
+  "slug": "deep-linking",
+  "keyword": "deep link là gì",
+  "seo_title": "Deep link là gì? Universal link, App link và deferred",
+  "meta_desc": "Deep link là gì, khác nhau giữa URI scheme, Universal Links, Android App Links và deferred deep link, lưu ý sau khi Firebase Dynamic Links ngừng.",
+  "sources": [
+    {
+      "name": "Apple Developer Documentation: Allowing apps and websites to link to your content",
+      "url": "https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content",
+      "date": "truy cập 10/2026 (trang không ghi ngày cập nhật)"
+    },
+    {
+      "name": "Android Developers: About deep links",
+      "url": "https://developer.android.com/training/app-links",
+      "date": "10/2026 (cập nhật 16/10/2026)"
+    },
+    {
+      "name": "Android Developers: Google Play Install Referrer",
+      "url": "https://developer.android.com/google/play/installreferrer",
+      "date": "07/2025"
+    },
+    {
+      "name": "Firebase: Dynamic Links Deprecation FAQ (ngừng dịch vụ 25/08/2025)",
+      "url": "https://firebase.google.com/support/dynamic-links-faq",
+      "date": "10/2026 (cập nhật 13/10/2026)"
+    }
+  ],
+  "confirm": [
+    "Từ khóa chọn \"deep link là gì\" thay cho \"deep linking là gì\" (cách người Việt hay gõ); tên thuật ngữ \"Deep Linking\" có thể giữ.",
+    "Bài không link tới /glossary/deferred-deep-linking/ vì thuật ngữ này đã noindex; đề xuất chuyển hướng 301 về /glossary/deep-linking/.",
+    "Ví dụ app thời trang và tên miền tenmien.vn là giả định."
+  ]
+}

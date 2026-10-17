@@ -1,0 +1,44 @@
+{
+  "id": 2692,
+  "slug": "brand-awareness-objective",
+  "keyword": "brand awareness là gì",
+  "seo_title": "Brand awareness là gì? Mục tiêu nhận diện trên Meta, TikTok",
+  "meta_desc": "Brand awareness là gì, cách chọn mục tiêu nhận diện thương hiệu trên Meta, Google, TikTok, chỉ số đo ad recall, reach và ví dụ tính ngân sách.",
+  "sources": [
+    {
+      "name": "Meta Business Help Center: About the awareness objective",
+      "url": "https://www.facebook.com/business/help/1629235777115312",
+      "date": "truy cập 10/2026 (trang không ghi ngày cập nhật)"
+    },
+    {
+      "name": "Meta Business Help Center: About the ad recall lift metric",
+      "url": "https://www.facebook.com/business/help/1029827880390718",
+      "date": "truy cập 10/2026 (trang không ghi ngày cập nhật)"
+    },
+    {
+      "name": "Google Ads Help: About Target frequency",
+      "url": "https://support.google.com/google-ads/answer/12400225?hl=en",
+      "date": "truy cập 10/2026 (trang không ghi ngày cập nhật)"
+    },
+    {
+      "name": "TikTok Business Help Center: About the reach objective",
+      "url": "https://ads.tiktok.com/help/article/reach-objective?lang=en",
+      "date": "01/2026"
+    },
+    {
+      "name": "TikTok Business Help Center: Best practices for optimizing brand awareness and ad recall with TikTok's Brand Basics",
+      "url": "https://ads.tiktok.com/help/article/best-practices-for-optimizing-brand-awareness-and-ad-recall-with-tiktoks?lang=en",
+      "date": "05/2026"
+    },
+    {
+      "name": "DataReportal: Digital 2026 Vietnam",
+      "url": "https://datareportal.com/reports/digital-2026-vietnam",
+      "date": "11/2025"
+    }
+  ],
+  "confirm": [
+    "Từ khóa chọn \"brand awareness là gì\" (lượng tìm cao hơn \"brand awareness objective là gì\"); anh Tin có muốn đổi tên thuật ngữ trên WordPress từ \"Brand awareness objective\" thành \"Brand awareness (nhận diện thương hiệu)\" không? Slug giữ nguyên.",
+    "Ví dụ hãng sữa hạt và CPM 25,000 đồng là giả định, đã ghi rõ trong bài.",
+    "Link tới /glossary/reach-va-frequency/ hợp lý sau khi bản viết lại của slug đó được đưa lên (tên hiện tại trên WordPress là \"Reach\")."
+  ]
+}

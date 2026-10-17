@@ -1,0 +1,55 @@
+<p>Deep link (liên kết sâu) là đường link đưa người dùng tới thẳng một màn hình cụ thể bên trong ứng dụng, ví dụ trang sản phẩm hay giỏ hàng, thay vì chỉ mở trang chủ của app. Deep linking là việc thiết lập và dùng các đường link đó trong quảng cáo, email, SMS, mã QR hoặc thông báo đẩy.</p>
+
+<h2>Deep link là gì và vì sao cần?</h2>
+
+<p>Người dùng bấm quảng cáo đôi giày trên TikTok. Không có deep link, app mở ra trang chủ và họ phải tự tìm lại đôi giày. Mỗi bước tìm thêm là một chỗ để họ bỏ đi. Có deep link, họ vào đúng trang đôi giày, mã giảm giá đã được áp sẵn.</p>
+
+<p>Deep link mang theo tham số chiến dịch, nên hệ thống đo lường biết lượt mở app đến từ quảng cáo nào. Các chiến dịch <a href="/glossary/re-engagement/">re-engagement</a> kéo người dùng cũ quay lại app đều dựa vào điều này.</p>
+
+<h2>Các loại deep link</h2>
+
+<table>
+<thead>
+<tr><th>Loại</th><th>Dạng link</th><th>Khi chưa cài app</th><th>Xác minh</th></tr>
+</thead>
+<tbody>
+<tr><td>URI scheme</td><td>tenapp://sanpham/123</td><td>Báo lỗi hoặc không làm gì</td><td>Không</td></tr>
+<tr><td>Universal Links (iOS)</td><td>https://tenmien.vn/sanpham/123</td><td>Mở trang web trong trình duyệt</td><td>File apple-app-site-association trên website</td></tr>
+<tr><td>App Links (Android)</td><td>https://tenmien.vn/sanpham/123</td><td>Mở trang web trong trình duyệt</td><td>File assetlinks.json trên website</td></tr>
+<tr><td>Deferred deep link</td><td>Link của nền tảng đo lường</td><td>Đưa tới store, cài xong mở đúng nội dung</td><td>Qua SDK đo lường</td></tr>
+</tbody>
+</table>
+
+<p><strong>Universal Links</strong> là link http hoặc https bình thường. Khi người dùng bấm, iOS mở thẳng app mà không đi qua trình duyệt. Chưa cài app thì link mở trên trình duyệt mặc định. Lúc cài app, hệ thống kiểm tra một file trên web server để xác nhận website cho phép app mở link thay mình (<a href="https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content" target="_blank" rel="nofollow noopener">Apple Developer Documentation</a>).</p>
+
+<p><strong>Android App Links</strong> là deep link đã xác minh quyền sở hữu tên miền qua file Digital Asset Links. Link đã xác minh mở thẳng app, không hiện hộp thoại hỏi người dùng chọn app nào. App Links chạy trên Android 6 trở lên, trên máy có dịch vụ Google. Từ Android 15 có thêm Dynamic App Links, đổi quy tắc khớp link mà không cần phát hành bản app mới (<a href="https://developer.android.com/training/app-links" target="_blank" rel="nofollow noopener">Android Developers, cập nhật 10/2026</a>).</p>
+
+<p><strong>Deferred deep link</strong> giải bài toán người chưa có app: bấm link, sang App Store hoặc Google Play, cài, mở app lần đầu và vẫn vào đúng trang sản phẩm. Trên Android, Google Play có Install Referrer API để app lấy nội dung giới thiệu này một cách an toàn (<a href="https://developer.android.com/google/play/installreferrer" target="_blank" rel="nofollow noopener">Android Developers, 07/2025</a>). Thực tế phần lớn app dùng SDK của một <a href="/glossary/mobile-measurement-partner-mmp-nen-tang-do-luong-mobile/">MMP</a> để xử lý cả iOS lẫn Android.</p>
+
+<h2>Firebase Dynamic Links đã ngừng hoạt động</h2>
+
+<p>Firebase Dynamic Links (link dạng page.link) từng là cách miễn phí để làm deferred deep link. Google đã tắt dịch vụ ngày 25/08/2025: mọi link, kể cả link gắn tên miền riêng, ngừng hoạt động và không tạo được link mới (<a href="https://firebase.google.com/support/dynamic-links-faq" target="_blank" rel="nofollow noopener">Firebase, Dynamic Links Deprecation FAQ</a>). Mã QR trên bao bì, tờ rơi hay email cũ còn trỏ tới page.link đều đã hỏng. Firebase khuyên chuyển sang App Links và Universal Links.</p>
+
+<h2>Ví dụ (giả định)</h2>
+
+<p>Một app thời trang chạy quảng cáo giảm 30% bộ sưu tập mùa thu. Link trong quảng cáo trỏ tới https://tenmien.vn/bst-thu?ma=THU30.</p>
+
+<ul>
+<li>Người đã cài app: Universal Links hoặc App Links mở thẳng trang bộ sưu tập, mã THU30 tự điền.</li>
+<li>Người chưa cài app: deferred deep link đưa họ tới store, sau khi cài vẫn mở đúng trang đó.</li>
+<li>Máy không mở được app: link rơi về trang web cùng địa chỉ, khách vẫn mua được trên web.</li>
+</ul>
+
+<h2>Phân biệt deep link và deferred deep link</h2>
+
+<p>Deep link thường chỉ chạy khi app đã có trên máy. Deferred deep link thêm bước "nhớ" link qua lúc cài đặt. Chiến dịch kéo người dùng mới cần deferred deep link; chiến dịch nhắm lại người dùng cũ chỉ cần deep link. Danh sách cách làm cho cả hai nhóm có trong bài <a href="/chien-luoc-app-marketing-9-phuong-phap/">chiến lược app marketing</a>.</p>
+
+<h2>Câu hỏi thường gặp</h2>
+
+<h3>Vì sao Universal Link vẫn mở trang web thay vì app?</h3>
+<p>Theo Apple, khi người dùng đang xem website trong Safari và bấm một link cùng tên miền, iOS giữ họ lại trên Safari. Link từ tên miền khác mới mở app.</p>
+
+<h3>Có cần MMP để làm deep link không?</h3>
+<p>Deep link cơ bản thì không. Deferred deep link và đo nguồn cài đặt thì gần như cần.</p>
+
+<p>Nếu bạn cần rà lại hệ thống link trong quảng cáo, email và mã QR của app, hoặc kiểm tra đo lường sau khi thay Firebase Dynamic Links, đội đo lường của Adtek có thể hỗ trợ qua trang <a href="/contact/">liên hệ</a>.</p>

@@ -1,0 +1,34 @@
+{
+  "id": 2680,
+  "slug": "cpm",
+  "keyword": "CPM là gì",
+  "seo_title": "CPM là gì? Công thức tính và phân biệt CPM, CPC, CPA",
+  "meta_desc": "CPM là gì, công thức tính chi phí cho 1,000 lượt hiển thị, cách CPM nối với CTR, CPC, CPA, bảng phân biệt và ví dụ tính bằng tiền Việt.",
+  "sources": [
+    {
+      "name": "Meta Business Help Center: CPM (cost per 1,000 impressions)",
+      "url": "https://www.facebook.com/business/help/753932008002620",
+      "date": "truy cập 10/2026 (trang không ghi ngày cập nhật)"
+    },
+    {
+      "name": "TikTok Business Help Center: Available bidding methods",
+      "url": "https://ads.tiktok.com/help/article/bidding-methods?lang=en",
+      "date": "08/2025"
+    },
+    {
+      "name": "Google Ads Help: Cost-per-thousand impressions (CPM): Definition",
+      "url": "https://support.google.com/google-ads/answer/6310?hl=en",
+      "date": "truy cập 10/2026 (trang không ghi ngày cập nhật)"
+    },
+    {
+      "name": "Media Rating Council: Viewable Ad Impression Measurement Guidelines, Version 2.0",
+      "url": "https://www.mediaratingcouncil.org/sites/default/files/Standards/081815%20Viewable%20Ad%20Impression%20Guideline_v2.0_Final.pdf",
+      "date": "08/2015"
+    }
+  ],
+  "confirm": [
+    "Slug cpm (ID 2680) trên WordPress hiện có tên và nội dung \"Retargeting\". Bản này thay toàn bộ bằng CPM: cần đổi title thành \"CPM\" và xác nhận bỏ nội dung Retargeting cũ (không có slug retargeting riêng trong internal-links.json).",
+    "Thuật ngữ cpm-2 (tên \"CPM\", đã noindex) trùng chủ đề: đề xuất chuyển hướng 301 cpm-2 về /glossary/cpm/.",
+    "Các con số CPM, CTR, CVR trong ví dụ là giả định, không phải benchmark thị trường."
+  ]
+}
