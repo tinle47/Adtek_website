@@ -1,6 +1,6 @@
 # Routine: Facebook Adtek hằng ngày
 
-Chạy trong phiên **Adtek - Facebook post** (session_0196UuuQJu6Edu8fi8VXJDzh). Lịch bài do phiên **Adtek - Marketing** lập trong danh sách `facebook` của `calendar.json`; phiên Facebook post không tự đổi `date`. Giờ đăng ngẫu nhiên từ 19:00 đến 20:00 mỗi ngày (anh Tin chọn 17/10/2026): `fb_daily.py retime` gán giờ trong khung cho bài chưa đăng, bài đã có giờ trong khung thì giữ nguyên; lượt báo trước hẹn send_later đăng đúng phút, lượt 20:13 là lưới an toàn. Ảnh do phiên **Adtek - Designer** (session_01Wp8F7EosGPrY7v6XwBpRSM) làm, đặt ở `content/facebook/<id>/` (ảnh đơn hoặc carousel `1.jpg`, `2.jpg`...; video `video.mp4`) hoặc ghi danh sách file vào trường `images`. Công cụ: `tools/fb_daily.py`.
+Chạy trong phiên **Adtek - Facebook post** (session_0196UuuQJu6Edu8fi8VXJDzh). Lịch bài do phiên **Adtek - Marketing** lập trong danh sách `facebook` của `calendar.json`; phiên Facebook post không tự đổi `date`. Giờ đăng ngẫu nhiên từ 19:00 đến 20:00 mỗi ngày (anh Tin chọn 17/10/2026): `fb_daily.py retime` gán giờ trong khung cho bài chưa đăng, bài đã có giờ trong khung thì giữ nguyên; lượt báo trước hẹn send_later đăng đúng phút. Lượt đăng cố định 20:13 đã tắt theo yêu cầu anh Tin (17/10/2026), không còn lưới an toàn. Ảnh do phiên **Adtek - Designer** (session_01Wp8F7EosGPrY7v6XwBpRSM) làm, đặt ở `content/facebook/<id>/` (ảnh đơn hoặc carousel `1.jpg`, `2.jpg`...; video `video.mp4`) hoặc ghi danh sách file vào trường `images`. Công cụ: `tools/fb_daily.py`.
 
 Quy tắc caption: viết theo `brief` và `source`, chỉ dùng số liệu có trong brief (không thêm số liệu chưa kiểm chứng), đúng định dạng ở `format`, 120 đến 200 chữ, dùng skill anti-ai-writing, giữ giọng riêng của Page Adtek (không áp dụng `content/editorial/van-phong.md`, anh Tin chọn ngày 17/10/2026), không emoji, không ký tự gạch dài, không link, số theo định dạng US, ví dụ giả định phải ghi rõ là ví dụ. `hashtags` là 3 hashtag riêng, không dấu, viết liền. Script tự ghép template: tiêu đề in hoa, câu "Xem full bài viết ở bình luận bên dưới." (chỉ khi bài blog `link_post` đã lên sóng, Page sẽ bình luận link), caption, 5 hashtag, Website, Email. Bình luận link: mọi bài có `link_post` mà bài blog đã lên sóng đều bình luận link, không giới hạn số bài mỗi tuần (anh Tin chọn phương án A ngày 16/10/2026).
 
@@ -24,7 +24,7 @@ Khi anh Tin trả lời trong phiên: "duyệt <id>" thì chạy `python3 tools/
 ## 2. Đăng bài đến giờ
 
 - Đăng đúng phút: send_later do lượt báo trước hẹn cho từng bài (giờ ngẫu nhiên 19:00 đến 20:00).
-- Lưới an toàn: `CRON_TZ=Asia/Ho_Chi_Minh 13 20 * * *` (20:13 mỗi ngày), trig_01BM7F7Xa9Aumx4BjSNK3vH1, đăng bài nào đã qua giờ mà chưa đăng.
+- Lượt cố định 20:13 (trig_01BM7F7Xa9Aumx4BjSNK3vH1): đã tắt ngày 17/10/2026 theo yêu cầu anh Tin. Prompt bên dưới vẫn dùng cho từng lượt send_later. Bật lại bằng update_trigger enabled=true nếu cần.
 
 ### Prompt
 
