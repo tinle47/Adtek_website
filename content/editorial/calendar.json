@@ -2608,10 +2608,10 @@
    "scripts": [
     "mua-data-khach-hang"
    ],
-   "zernio_post_id": "6ad3323c782fac7f472d0593",
-   "tiktok_url": "https://www.tiktok.com/@adtek.growth.marketing/video/7697551427345943860",
-   "posted_at": "2026-10-17T15:38:00+07:00",
-   "note": "Đăng sớm 1 ngày (anh Tin chọn đăng thử ngay 17/10), cover là khung giây thứ 1, chưa dùng cover của hub"
+   "note": "Bản đăng 15:38 17/10 (https://www.tiktok.com/@adtek.growth.marketing/video/7697551427345943860) chưa có cover hub, anh Tin đã xóa trong app 17/10 và chọn đăng lại ngay có cover",
+   "attempt": 1,
+   "zernio_post_id": "6ad335ec8d477d146464c5e5",
+   "scheduled_at": "2026-10-17T15:46:44+07:00"
   },
   {
    "id": "tt-20261019",

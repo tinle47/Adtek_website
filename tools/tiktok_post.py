@@ -23,7 +23,8 @@ Cách dùng:
   python3 tools/tiktok_post.py check               kiểm tra kết nối Zernio (chỉ đọc): tài khoản TikTok, quyền riêng tư, còn đăng được không
   python3 tools/tiktok_post.py week <YYYY-MM-DD>   video trong 7 ngày từ ngày đó (JSON tóm tắt)
   python3 tools/tiktok_post.py show <id>           caption đăng thật, file video, việc còn thiếu
-  python3 tools/tiktok_post.py schedule <id> [--dry-run]   tải video lên Zernio, hẹn đăng đúng date, time
+  python3 tools/tiktok_post.py schedule <id> [--dry-run] [--now]   tải video lên Zernio, hẹn đăng đúng date, time
+                                                   (--now: đăng ngay khi anh Tin yêu cầu)
   python3 tools/tiktok_post.py status <id>         hỏi Zernio: đã đăng thì status = posted, ghi tiktok_url; lỗi thì failed
   python3 tools/tiktok_post.py cancel <id>         anh Tin nhắn "hủy": xóa lịch trên Zernio (nếu có), status = cancelled
   python3 tools/tiktok_post.py due                 video đã qua giờ đăng mà chưa hẹn hay đăng (JSON)
@@ -378,7 +379,7 @@ def presign_put(path, content_type):
     return r["publicUrl"]
 
 
-def schedule(data, x, dry_run=False):
+def schedule(data, x, dry_run=False, now=False):
     if x.get("status") in ("scheduled", "inbox", "posted"):
         sys.exit(f"{x['id']}: đã hẹn hoặc đã đăng ({x.get('zernio_post_id') or x.get('publish_id')}), không hẹn lại")
     if x.get("status") == "cancelled":
@@ -391,6 +392,9 @@ def schedule(data, x, dry_run=False):
     body = {"content": caption(v), "platforms": [{"platform": "tiktok", "accountId": None}],
             "scheduledFor": when(x).isoformat(), "timezone": "Asia/Ho_Chi_Minh", "tiktokSettings": dict(TIKTOK_SETTINGS),
             "mediaItems": [{"type": "video", "url": None}], "metadata": {"calendar_id": x["id"], "hub_slug": slug}}
+    if now:  # anh Tin yêu cầu đăng ngay, không chờ date, time của lịch
+        body.pop("scheduledFor"), body.pop("timezone")
+        body["publishNow"] = True
     if dry_run:
         print(json.dumps({"id": x["id"], "video": str(path.relative_to(ROOT)), "bytes": path.stat().st_size,
                           "cover": str(art.relative_to(ROOT)) if art else None, "post": body}, ensure_ascii=False, indent=1))
@@ -409,7 +413,7 @@ def schedule(data, x, dry_run=False):
     post = r.get("post") or {}
     if code not in (200, 201) or not post.get("_id") or post.get("status") == "failed":
         zfail("hẹn đăng trên Zernio", code, r)
-    x.update({"status": "scheduled", "zernio_post_id": post["_id"],
+    x.update({"status": "posted" if post.get("status") == "published" else "scheduled", "zernio_post_id": post["_id"],
               "scheduled_at": datetime.now(VN).isoformat(timespec="seconds")})
     save(data)
     print(json.dumps({"id": x["id"], "zernio_post_id": post["_id"], "zernio_status": post.get("status"),
@@ -466,7 +470,7 @@ if __name__ == "__main__":
     elif cmd == "show":
         show(data, item(data, args[0]))
     elif cmd == "schedule":
-        schedule(data, item(data, args[0]), dry_run="--dry-run" in sys.argv)
+        schedule(data, item(data, args[0]), dry_run="--dry-run" in sys.argv, now="--now" in sys.argv)
     elif cmd == "status":
         status(data, item(data, args[0]))
     elif cmd == "cancel":
