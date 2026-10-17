@@ -17,7 +17,7 @@ Cách dùng:
   python3 tools/fb_daily.py due                    bài đã đến giờ mà chưa đăng (JSON)
   python3 tools/fb_daily.py week <YYYY-MM-DD>      7 bài từ ngày đó (JSON tóm tắt)
   python3 tools/fb_daily.py show <id>              caption đăng thật, ảnh, bình luận
-  python3 tools/fb_daily.py notify <id...> [--mark | --pending]   in JSON email (kèm ảnh)
+  python3 tools/fb_daily.py notify <id...> [--mark | --pending] [--attach]   in JSON email (ảnh gửi trong phiên; --attach đính kèm ảnh)
         --mark: báo trước, approval = auto (anh không nhắn hủy thì đăng)
         --pending: gửi duyệt theo tuần, approval = pending, hạn 24 giờ (D+1)
   python3 tools/fb_daily.py approve <id...>        anh Tin duyệt: approval = approved
@@ -153,8 +153,13 @@ def show(data, x):
     print("Ảnh:", [str(p.relative_to(ROOT)) for p in media(x)])
 
 
-def notify(data, xs, mark=False, pending=False):
-    """Email báo trước: caption đăng thật, bình luận, ảnh đính kèm. Không nhắn hủy thì đăng đúng giờ."""
+IMG_NOTE = ' (xem trong phiên Claude Code "Adtek - Facebook post")'
+
+
+def notify(data, xs, mark=False, pending=False, attach=False):
+    """Email báo trước: caption đăng thật, bình luận, tên ảnh. Không nhắn hủy thì đăng đúng giờ.
+    Ảnh không đính kèm (base64 quá nặng để chuyển qua công cụ Gmail); routine gửi ảnh trong phiên bằng SendUserFile.
+    --attach: vẫn đính kèm ảnh gốc."""
     e = html.escape
     blocks, texts, attachments = [], [], []
     for x in xs:
@@ -162,8 +167,9 @@ def notify(data, xs, mark=False, pending=False):
         link = blog_link(data, x, live_check=False)
         cap = message(x, with_cta=bool(link))
         issues = problems(x, files)
+        shown = (", ".join(str(p.relative_to(ROOT)) for p in files) + IMG_NOTE) if files else "chưa có"
         texts.append(f"{x['id']} · {label(x)} · {x['format']}\n\n{cap}\n\nBình luận đầu tiên: "
-                     f"{link[0] if link else '(không bình luận)'}\nẢnh: {', '.join(p.name for p in files) or 'chưa có'}"
+                     f"{link[0] if link else '(không bình luận)'}\nẢnh: {shown}"
                      + (f"\nCẦN XỬ LÝ: {'; '.join(issues)}" if issues else ""))
         blocks.append(
             f'<div style="border:1px solid #E3E8F0;border-radius:10px;padding:16px 18px;margin:0 0 20px">'
@@ -172,10 +178,10 @@ def notify(data, xs, mark=False, pending=False):
             f'<div style="margin:10px 0;padding:10px 12px;background-color:#F4F6FA;border-radius:6px;font-size:13px;'
             f'line-height:1.55;color:#333">{e(cap).replace(chr(10), "<br>")}</div>'
             f'<p style="margin:0 0 6px;font-size:13px;color:#555">Bình luận đầu tiên: {e(link[0]) if link else "(không bình luận)"}</p>'
-            f'<p style="margin:0;font-size:13px;color:#555">Ảnh đính kèm: {e(", ".join(p.name for p in files)) or "chưa có"}</p>'
+            f'<p style="margin:0;font-size:13px;color:#555">Ảnh: {e(shown)}</p>'
             + (f'<p style="margin:6px 0 0;font-size:13px;color:#B42318">Cần xử lý: {e("; ".join(issues))}</p>' if issues else "")
             + "</div>")
-        for i, p in enumerate(files):
+        for i, p in enumerate(files if attach else []):
             if p.exists() and p.suffix.lower() in (".jpg", ".jpeg", ".png"):
                 attachments.append({"filename": f"{x['id']}-{i + 1}{p.suffix}", "mimeType": mimetypes.guess_type(p.name)[0],
                                     "content": base64.b64encode(p.read_bytes()).decode()})
@@ -275,7 +281,8 @@ if __name__ == "__main__":
     elif cmd == "show":
         show(data, item(data, args[0]))
     elif cmd == "notify":
-        notify(data, [item(data, a) for a in args], mark="--mark" in sys.argv, pending="--pending" in sys.argv)
+        notify(data, [item(data, a) for a in args], mark="--mark" in sys.argv, pending="--pending" in sys.argv,
+               attach="--attach" in sys.argv)
     elif cmd == "approve":
         for a in args:
             item(data, a)["approval"] = "approved"
