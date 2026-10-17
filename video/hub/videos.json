@@ -105,8 +105,15 @@
    "#dongnama",
    "#digitalmarketing"
   ],
-  "note": "Mở đầu mới: 2 giây đầu chỉ có câu hook chữ to giữa màn hình.",
-  "cover": "/_blob/00c1f517b2e77fda310c31b3e7684dcf"
+  "note": "Mở đầu mới: 2 giây đầu chỉ có câu hook chữ to giữa màn hình. Bản thử bản đồ 3D (17/10/2026): máy quay lướt vào rồi nhìn thẳng xuống, mọi nước dày bằng nhau. Chỉ để so sánh, video chính vẫn là bản thường.",
+  "cover": "/_blob/00c1f517b2e77fda310c31b3e7684dcf",
+  "alts": [
+   {
+    "label": "Tải bản thử bản đồ 3D",
+    "url": "/_blob/80da4876a10231e049c2e76c2c387997",
+    "suffix": "ban thu 3D"
+   }
+  ]
  },
  {
   "slug": "3-dieu-truoc-sale-11-11",
