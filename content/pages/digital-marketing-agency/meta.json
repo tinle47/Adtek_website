@@ -1,0 +1,95 @@
+{
+  "vi": {
+    "title": "Agency digital marketing tại TP.HCM",
+    "slug": "agency-digital-marketing",
+    "seo_title": "Agency digital marketing tại TP.HCM | Adtek",
+    "meta_desc": "Adtek là agency digital marketing tại TP.HCM: quảng cáo, SEO, TMĐT và CRM, đo bằng doanh thu và CAC. Xem dịch vụ, quy trình và 8 câu nên hỏi agency."
+  },
+  "en": {
+    "title": "Digital Marketing Agency in Vietnam",
+    "slug": "digital-marketing-agency-vietnam",
+    "seo_title": "Digital Marketing Agency in Vietnam | Adtek",
+    "meta_desc": "Adtek is a digital marketing agency in Ho Chi Minh City running ads, SEO, e-commerce and CRM, measured by revenue and CAC. See how we work and what to ask."
+  },
+  "words": {
+    "vi": 1675,
+    "en": 1468
+  },
+  "internal_links": {
+    "vi": [
+      "/",
+      "/aio-la-gi/",
+      "/author/tin-le/",
+      "/bao-chi/",
+      "/contact/",
+      "/customer-relationship-management-va-he-thong-crm/",
+      "/faq/",
+      "/gioi-thieu/",
+      "/glossary/attribution-modeling-mo-hinh-phan-bo/",
+      "/glossary/brand-strategy/",
+      "/glossary/return-on-ad-spend-roas/",
+      "/glossary/user-acquisition-ua/",
+      "/growth-marketing-nhung-dieu-co-ban-doanh-nghiep-khong-the-bo-qua/",
+      "/ke-hoach-11-11/",
+      "/kiem-thu-tang-tien-incrementality-testing/",
+      "/meta-andromeda/"
+    ],
+    "en": [
+      "/aio-la-gi/",
+      "/en/",
+      "/en/about-us/",
+      "/en/author/tin-le/",
+      "/en/contact/",
+      "/en/faq/",
+      "/en/press/",
+      "/glossary/user-acquisition-ua/"
+    ]
+  },
+  "external_links": {
+    "vi": [
+      "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "https://www.facebook.com/business/help/112167992830700"
+    ],
+    "en": [
+      "https://developers.google.com/search/docs/fundamentals/do-i-need-seo",
+      "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "https://www.facebook.com/business/help/112167992830700"
+    ],
+    "_note": "target=_blank rel=nofollow noopener; da kiem tra 200 ngay 17/10/2026"
+  },
+  "keywords": {
+    "vi": {
+      "primary": "agency digital marketing",
+      "secondary": [
+        "công ty digital marketing"
+      ]
+    },
+    "en": {
+      "primary": "digital marketing agency",
+      "secondary": [
+        "digital marketing agency in Vietnam",
+        "digital marketing agency in Ho Chi Minh City"
+      ]
+    }
+  },
+  "not_linked": {
+    "_note": "Trang giải pháp đang là nội dung mẫu Lorem Ipsum nên chưa link. Khi có nội dung thật, thêm link vào mục dịch vụ tương ứng.",
+    "/solution/integrated-marketing-communication-imc/": "VI và EN: mục IMC",
+    "/en/solution/user-acquisition-strategy/": "EN: tiêu đề 'Digital Marketing', nội dung Lorem Ipsum",
+    "/solutions/": "VI: nội dung Lorem Ipsum",
+    "/en/solution/ecommerce-management/": "EN: mục e-commerce, nội dung Lorem Ipsum",
+    "/en/solution/crm-consulting/": "EN: mục Data and CRM, trang trống"
+  },
+  "confirm": [
+    "Dịch vụ nào đang thật sự bán: cả 8 mục (Brand Commerce, quảng cáo hiệu suất gồm Apple Ads, SEO và AI Search, dữ liệu và CRM, TMĐT, chiến lược tăng trưởng, IMC, App Marketing/UA)? Có bỏ mục nào không?",
+    "TMĐT: Adtek có nhận vận hành gian hàng (store operations) hay chỉ quảng cáo và kế hoạch sale trên sàn?",
+    "Quy trình 5 bước: khảo sát chỉ cần quyền xem, tối ưu hằng tuần, báo cáo đối chiếu doanh thu hệ thống bán hàng, kiểm thử tăng tiến định kỳ. Đúng cách Adtek đang làm?",
+    "Chính sách tài khoản: tài khoản quảng cáo, pixel, Analytics đứng tên khách, Adtek làm bằng quyền đối tác. Có trường hợp Adtek dùng tài khoản agency (ví dụ tài khoản TikTok, Meta của agency) không?",
+    "Báo phí sau buổi khảo sát: đúng không, có thu phí khảo sát không?",
+    "Nhắc tên báo The Saigon Times, CafeBiz (EN) và thêm Brands Vietnam (VI) lấy từ trang /bao-chi/. Đồng ý để trên trang dịch vụ?",
+    "EN: Adtek có làm việc bằng tiếng Anh và nhận khách nước ngoài không? Nếu có, nên thêm một câu vào trang EN. Câu hỏi hóa đơn VAT trong checklist EN là câu hỏi chung, không nói Adtek xuất hóa đơn thế nào.",
+    "Trang giải pháp /solutions/, /solution/integrated-marketing-communication-imc/, /en/solution/* đang có Lorem Ipsum hoặc trống (trang /en/solution/growth-consulting/ có tiêu đề 'Social Media'). Nên sửa trước khi link từ trang đích.",
+    "Ví dụ phép tính 2 tỷ đồng, đơn 500,000 đồng là ví dụ minh họa, không phải số liệu khách hàng."
+  ]
+}
