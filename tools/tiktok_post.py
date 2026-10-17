@@ -1,32 +1,36 @@
 """Video TikTok theo danh sách "tiktok" trong content/editorial/calendar.json (3 video/tuần, lịch do phiên Adtek - Marketing lập).
 
-Phương án B (anh Tin chọn 17/10/2026): script đẩy video vào hộp nháp (inbox) của tài khoản TikTok Adtek qua
-Content Posting API, scope video.upload. Anh Tin bấm thông báo trong app TikTok, dán caption, bật nhãn "Nội dung do AI
-tạo", rồi bấm Đăng. API inbox không nhận caption, nên script in caption để gửi anh Tin qua tin nhắn và push.
-TikTok không duyệt Direct Post (đăng thẳng) cho công cụ chỉ đăng lên tài khoản của chính mình (Content Sharing Guidelines).
+Đăng qua Zernio (zernio.com, anh Tin chọn 17/10/2026): script tải video lên Zernio và hẹn giờ đăng công khai đúng date,
+time của video (giờ Việt Nam); đến giờ Zernio đăng lên TikTok Adtek, có nhãn "Nội dung do AI tạo" (giọng đọc nhân bản).
+Hủy trước giờ đăng thì script xóa lịch trên Zernio. TikTok không duyệt Direct Post cho công cụ chỉ đăng lên tài khoản
+của chính mình (Content Sharing Guidelines), Zernio là đơn vị đã được TikTok duyệt.
+Dự phòng (phương án B): lệnh upload đẩy video vào hộp nháp TikTok bằng ứng dụng TikTok riêng của Adtek, anh Tin tự bấm Đăng.
 
 Mỗi mục tiktok có id (tt-YYYYMMDD), date, time, post (số bài blog), part (video thứ mấy của bài), angle, status.
 Kịch bản: video/scripts/<slug bài blog>/<part>.json (id, caption, hashtags); video dựng ra: video/out/<id kịch bản>.mp4
 (node tools/render.mjs <slug> <part> trong thư mục video, cần giọng đọc ở video/public/voice/<id>/).
 
-status: planned -> inbox (đã vào hộp nháp, publish_id) -> posted (anh Tin đã bấm Đăng); cancelled; failed (lỗi xử lý).
+status: planned -> scheduled (đã hẹn trên Zernio, zernio_post_id) -> posted (tiktok_url); cancelled; failed (fail_reason).
+Phương án B: planned -> inbox (publish_id) -> posted.
 
-Khóa TikTok đọc từ biến môi trường (network secret của môi trường), script không in token:
-  TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET   ứng dụng trên developers.tiktok.com
-  TIKTOK_REFRESH_TOKEN                      lấy một lần bằng lệnh auth, hạn 365 ngày
-Mã truy cập (24 giờ) xin mới mỗi lần chạy. TikTok đổi refresh token thì script lưu bản mới vào REFRESH_FILE (ngoài repo)
-và báo refresh_token_rotated: true để anh Tin cập nhật TIKTOK_REFRESH_TOKEN.
+Khóa đọc từ biến môi trường (network secret của môi trường), script không in khóa:
+  ZERNIO_API_KEY                            API key trong trang quản trị Zernio
+  ZERNIO_TIKTOK_ACCOUNT_ID                  không bắt buộc; bỏ trống thì dùng tài khoản TikTok duy nhất đã kết nối
+  TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET, TIKTOK_REFRESH_TOKEN   chỉ cho phương án B (lệnh auth, upload, inbox-status)
 
 Cách dùng:
-  python3 tools/tiktok_post.py auth                lấy refresh token (chạy trên máy anh Tin, không chạy trong phiên cloud)
-  python3 tools/tiktok_post.py check               kiểm tra kết nối (chỉ đọc): token thuộc tài khoản TikTok nào
-  python3 tools/tiktok_post.py due                 video đã đến giờ mà chưa đẩy vào hộp nháp (JSON)
+  python3 tools/tiktok_post.py check               kiểm tra kết nối Zernio (chỉ đọc): tài khoản TikTok, quyền riêng tư, còn đăng được không
   python3 tools/tiktok_post.py week <YYYY-MM-DD>   video trong 7 ngày từ ngày đó (JSON tóm tắt)
-  python3 tools/tiktok_post.py show <id>           caption để dán, file video, việc còn thiếu
+  python3 tools/tiktok_post.py show <id>           caption đăng thật, file video, việc còn thiếu
+  python3 tools/tiktok_post.py schedule <id> [--dry-run]   tải video lên Zernio, hẹn đăng đúng date, time
+  python3 tools/tiktok_post.py status <id>         hỏi Zernio: đã đăng thì status = posted, ghi tiktok_url; lỗi thì failed
+  python3 tools/tiktok_post.py cancel <id>         anh Tin nhắn "hủy": xóa lịch trên Zernio (nếu có), status = cancelled
+  python3 tools/tiktok_post.py due                 video đã qua giờ đăng mà chưa hẹn hay đăng (JSON)
+Phương án B:
+  python3 tools/tiktok_post.py auth                lấy refresh token (chạy trên máy anh Tin, không chạy trong phiên cloud)
   python3 tools/tiktok_post.py upload <id> [--dry-run]   đẩy video vào hộp nháp TikTok
-  python3 tools/tiktok_post.py status <id>         hỏi TikTok trạng thái; anh Tin đã bấm Đăng thì status = posted
-  python3 tools/tiktok_post.py posted <id>         anh Tin báo đã đăng (khi status API chưa cập nhật)
-  python3 tools/tiktok_post.py cancel <id>         anh Tin nhắn "hủy": không đẩy video này
+  python3 tools/tiktok_post.py inbox-status <id>   hỏi TikTok trạng thái video trong hộp nháp
+  python3 tools/tiktok_post.py posted <id>         anh Tin báo đã đăng từ hộp nháp
 """
 import json
 import os
@@ -47,6 +51,13 @@ REFRESH_FILE = Path.home() / ".config/adtek/tiktok_refresh_token"
 VIDEO = ROOT / "video"
 CHUNK = 10_000_000  # TikTok: mỗi phần 5 đến 64 MB, phần cuối gánh số byte dư (tối đa 128 MB); file đến 64 MB gửi một lần
 PENDING_CAP = 5  # TikTok: tối đa 5 video chờ trong hộp nháp mỗi 24 giờ
+ZERNIO = "https://zernio.com/api/v1"
+# Cài đặt đăng mặc định (anh Tin đổi được): công khai, cho bình luận, Duet, Stitch; gắn nhãn AI vì giọng đọc nhân bản;
+# không bật nhãn quảng cáo (commercialContentType "brand_organic" sẽ gắn nhãn "Promotional content").
+TIKTOK_SETTINGS = {"privacyLevel": "PUBLIC_TO_EVERYONE", "allowComment": True, "allowDuet": True, "allowStitch": True,
+                   "videoMadeWithAi": True, "commercialContentType": "none",
+                   # anh Tin duyệt qua email báo trước và được hủy đến giờ đăng (routines/tiktok.md)
+                   "contentPreviewConfirmed": True, "expressConsentGiven": True}
 DAYS = ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"]
 
 
@@ -124,15 +135,6 @@ def auth():
         sys.exit(f"Tài khoản chưa cấp quyền video.upload (scope: {r.get('scope')})")
     print(f"\n3. Lưu giá trị sau vào biến TIKTOK_REFRESH_TOKEN trong cài đặt môi trường (hạn "
           f"{int(r.get('refresh_expires_in', 0)) // 86400} ngày):\n\n{r['refresh_token']}")
-
-
-def check():
-    r = call("GET", "user/info/?fields=open_id,display_name")
-    if not ok(r):
-        fail("kết nối TikTok", r)
-    u = r["data"]["user"]
-    print(json.dumps({"display_name": u.get("display_name"), "open_id": u.get("open_id"),
-                      "refresh_token_rotated": ROTATED}, ensure_ascii=False))
 
 
 def item(data, tid):
@@ -252,7 +254,7 @@ def upload(data, x, dry_run=False):
                       "caption": caption(s), "refresh_token_rotated": ROTATED}, ensure_ascii=False))
 
 
-def status(data, x):
+def inbox_status(data, x):
     if not x.get("publish_id"):
         sys.exit(f"{x['id']}: chưa đẩy vào hộp nháp")
     r = call("POST", "post/publish/status/fetch/", {"publish_id": x["publish_id"]})
@@ -269,6 +271,146 @@ def status(data, x):
     save(data)
     print(json.dumps({"id": x["id"], "tiktok_status": st, "status": x["status"], "fail_reason": x.get("fail_reason"),
                       "refresh_token_rotated": ROTATED}, ensure_ascii=False))
+
+
+def zapi(method, path, body=None, headers=()):
+    """(mã HTTP, JSON) từ Zernio API."""
+    args = ["-X", method, f"{ZERNIO}/{path}", "-H", f"Authorization: Bearer {env('ZERNIO_API_KEY')}", "-w", "\n%{http_code}"]
+    for h in headers:
+        args += ["-H", h]
+    data = None
+    if body is not None:
+        args += ["-H", "Content-Type: application/json", "--data-binary", "@-"]
+        data = json.dumps(body, ensure_ascii=False).encode()
+    r = subprocess.run(["curl", "-sS", "--max-time", "300", *args], input=data, capture_output=True)
+    text, _, code = r.stdout.decode(errors="replace").rpartition("\n")
+    try:
+        return int(code), json.loads(text or "{}")
+    except (ValueError, json.JSONDecodeError):
+        return 0, {"error": (text or r.stderr.decode(errors="replace"))[:300]}
+
+
+def zfail(what, code, r):
+    sys.exit(f"Lỗi {what} (HTTP {code}): {json.dumps(r, ensure_ascii=False)[:400]}")
+
+
+def account():
+    """ID tài khoản TikTok trên Zernio: ZERNIO_TIKTOK_ACCOUNT_ID, hoặc tài khoản TikTok duy nhất đã kết nối."""
+    if os.environ.get("ZERNIO_TIKTOK_ACCOUNT_ID"):
+        return os.environ["ZERNIO_TIKTOK_ACCOUNT_ID"]
+    code, r = zapi("GET", "accounts?platform=tiktok")
+    if code != 200:
+        zfail("đọc danh sách tài khoản Zernio", code, r)
+    tiktok = [a for a in r.get("accounts", []) if a.get("platform") == "tiktok" and a.get("isActive", True)]
+    if len(tiktok) != 1:
+        sys.exit(f"Zernio có {len(tiktok)} tài khoản TikTok, cần đúng 1 (hoặc đặt ZERNIO_TIKTOK_ACCOUNT_ID): "
+                 + ", ".join(f"{a['_id']} {a.get('username') or a.get('displayName')}" for a in tiktok))
+    return tiktok[0]["_id"]
+
+
+def creator(acc):
+    code, r = zapi("GET", f"accounts/{acc}/tiktok/creator-info?mediaType=video")
+    if code != 200:
+        zfail("đọc thông tin tài khoản TikTok", code, r)
+    return r
+
+
+def check():
+    acc = account()
+    c = creator(acc)
+    print(json.dumps({"account_id": acc, "nickname": c.get("creator", {}).get("nickname"),
+                      "can_post_more": c.get("creator", {}).get("canPostMore"),
+                      "privacy_levels": [p.get("value") for p in c.get("privacyLevels", [])],
+                      "max_video_sec": c.get("postingLimits", {}).get("maxVideoDurationSec")}, ensure_ascii=False))
+
+
+def settings(c):
+    """TIKTOK_SETTINGS, tắt tương tác nào tài khoản đã tắt trong app; dừng nếu không đăng được công khai."""
+    levels = [p.get("value") for p in c.get("privacyLevels", [])]
+    if TIKTOK_SETTINGS["privacyLevel"] not in levels:
+        sys.exit(f"Tài khoản TikTok không đăng được {TIKTOK_SETTINGS['privacyLevel']} (chỉ có {levels}): "
+                 "chuyển tài khoản sang công khai")
+    out = dict(TIKTOK_SETTINGS)
+    for k, field in (("allow_comment", "allowComment"), ("allow_duet", "allowDuet"), ("allow_stitch", "allowStitch")):
+        d = (c.get("postingLimits", {}).get("interactionSettings") or {}).get(k) or {}
+        if d.get("enabled") is False:
+            out[field] = False
+    return out
+
+
+def schedule(data, x, dry_run=False):
+    if x.get("status") in ("scheduled", "inbox", "posted"):
+        sys.exit(f"{x['id']}: đã hẹn hoặc đã đăng ({x.get('zernio_post_id') or x.get('publish_id')}), không hẹn lại")
+    if x.get("status") == "cancelled":
+        sys.exit(f"{x['id']}: anh Tin đã hủy, không đăng")
+    issues = problems(data, x)
+    if issues:
+        sys.exit(f"{x['id']}: chưa hẹn: {'; '.join(issues)}")
+    _, s = script(data, x)
+    path = mp4(s)
+    body = {"content": caption(s), "platforms": [{"platform": "tiktok", "accountId": None}],
+            "scheduledFor": when(x).isoformat(), "timezone": "Asia/Ho_Chi_Minh", "tiktokSettings": dict(TIKTOK_SETTINGS),
+            "mediaItems": [{"type": "video", "url": None}], "metadata": {"calendar_id": x["id"], "script": s["id"]}}
+    if dry_run:
+        print(json.dumps({"id": x["id"], "video": str(path.relative_to(ROOT)), "bytes": path.stat().st_size, "post": body},
+                         ensure_ascii=False, indent=1))
+        return
+    acc = account()
+    c = creator(acc)
+    if c.get("creator", {}).get("canPostMore") is False:
+        sys.exit(f"{x['id']}: TikTok báo tài khoản tạm thời không đăng thêm được, thử lại sau")
+    body["platforms"][0]["accountId"] = acc
+    body["tiktokSettings"] = settings(c)
+    code, r = zapi("POST", "media/presign", {"filename": path.name, "contentType": "video/mp4", "size": path.stat().st_size})
+    if code != 200 or "uploadUrl" not in r:
+        zfail("xin link tải video", code, r)
+    u = subprocess.run(["curl", "-sS", "--max-time", "600", "-o", "/dev/null", "-w", "%{http_code}", "-X", "PUT",
+                        r["uploadUrl"], "-H", "Content-Type: video/mp4", "--data-binary", f"@{path}"], capture_output=True)
+    if not u.stdout.startswith(b"2"):  # link lưu trữ, không gửi Authorization
+        sys.exit(f"Lỗi tải video lên Zernio: HTTP {u.stdout.decode()} {u.stderr.decode()[:200]}")
+    body["mediaItems"][0]["url"] = r["publicUrl"]
+    # cùng khóa trong 24 giờ thì Zernio trả lại bài cũ, chạy lại sau lỗi mạng không tạo bài trùng
+    code, r = zapi("POST", "posts", body, [f"Idempotency-Key: adtek-{x['id']}-{x.get('attempt', 0)}"])
+    post = r.get("post") or {}
+    if code not in (200, 201) or not post.get("_id") or post.get("status") == "failed":
+        zfail("hẹn đăng trên Zernio", code, r)
+    x.update({"status": "scheduled", "zernio_post_id": post["_id"],
+              "scheduled_at": datetime.now(VN).isoformat(timespec="seconds")})
+    save(data)
+    print(json.dumps({"id": x["id"], "zernio_post_id": post["_id"], "zernio_status": post.get("status"),
+                      "when": label(x), "caption": body["content"]}, ensure_ascii=False))
+
+
+def status(data, x):
+    if not x.get("zernio_post_id"):
+        sys.exit(f"{x['id']}: chưa hẹn trên Zernio")
+    code, r = zapi("GET", f"posts/{x['zernio_post_id']}")
+    if code != 200:
+        zfail("hỏi trạng thái", code, r)
+    post = r.get("post") or {}
+    p = next((e for e in post.get("platforms", []) if e.get("platform") == "tiktok"), {})
+    if p.get("status") == "published" and x.get("status") != "posted":
+        x.update({"status": "posted", "posted_at": p.get("publishedAt") or datetime.now(VN).isoformat(timespec="seconds")})
+    if p.get("platformPostUrl"):
+        x["tiktok_url"] = p["platformPostUrl"]  # TikTok có thể mất vài phút mới trả link
+    if p.get("status") == "failed" or post.get("status") == "failed":
+        x.update({"status": "failed", "fail_reason": p.get("errorMessage")})
+    save(data)
+    print(json.dumps({"id": x["id"], "zernio_status": post.get("status"), "tiktok_status": p.get("status"),
+                      "status": x["status"], "tiktok_url": x.get("tiktok_url"), "fail_reason": x.get("fail_reason")},
+                     ensure_ascii=False))
+
+
+def cancel(data, x):
+    if x.get("status") == "posted":
+        sys.exit(f"{x['id']}: đã đăng lên TikTok, không hủy được bằng lệnh này")
+    if x.get("zernio_post_id") and x.get("status") == "scheduled":
+        code, r = zapi("DELETE", f"posts/{x['zernio_post_id']}")
+        if code not in (200, 204):
+            zfail("xóa lịch trên Zernio", code, r)
+    x.update({"status": "cancelled", "zernio_post_id": None, "attempt": x.get("attempt", 0) + 1})
+    save(data)
+    print(json.dumps({"cancelled": x["id"]}))
 
 
 if __name__ == "__main__":
@@ -288,19 +430,20 @@ if __name__ == "__main__":
         week(data, args[0])
     elif cmd == "show":
         show(data, item(data, args[0]))
-    elif cmd == "upload":
-        upload(data, item(data, args[0]), dry_run="--dry-run" in sys.argv)
+    elif cmd == "schedule":
+        schedule(data, item(data, args[0]), dry_run="--dry-run" in sys.argv)
     elif cmd == "status":
         status(data, item(data, args[0]))
+    elif cmd == "cancel":
+        cancel(data, item(data, args[0]))
+    elif cmd == "upload":
+        upload(data, item(data, args[0]), dry_run="--dry-run" in sys.argv)
+    elif cmd == "inbox-status":
+        inbox_status(data, item(data, args[0]))
     elif cmd == "posted":
         x = item(data, args[0])
         x.update({"status": "posted", "posted_at": datetime.now(VN).isoformat(timespec="seconds")})
         save(data)
         print(json.dumps({"posted": x["id"]}))
-    elif cmd == "cancel":
-        x = item(data, args[0])
-        x["status"] = "cancelled"
-        save(data)
-        print(json.dumps({"cancelled": x["id"]}))
     else:
         sys.exit(__doc__)
