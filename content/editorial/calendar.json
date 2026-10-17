@@ -2609,10 +2609,10 @@
     "mua-data-khach-hang"
    ],
    "note": "Bản đăng 15:38 17/10 (https://www.tiktok.com/@adtek.growth.marketing/video/7697551427345943860) chưa có cover hub, anh Tin đã xóa trong app 17/10 và chọn đăng lại ngay có cover",
-   "attempt": 1,
-   "zernio_post_id": "6ad335ec8d477d146464c5e5",
-   "scheduled_at": "2026-10-17T15:46:44+07:00",
-   "tiktok_url": "https://www.tiktok.com/@adtek.growth.marketing/video/7697555460240493831",
+   "attempt": 2,
+   "zernio_post_id": "6ad365f7b25bc7c22c4407e7",
+   "scheduled_at": "2026-10-17T19:11:51+07:00",
+   "tiktok_url": "https://www.tiktok.com/@adtek.growth.marketing/video/7697608331728309524",
    "music": {
     "id": "7055200957088565249",
     "track_id": "7055200957088565249",
@@ -2620,7 +2620,14 @@
     "artist": "Ney",
     "clip_sec": 289,
     "volume": 15
-   }
+   },
+   "replaced": [
+    {
+     "tiktok_url": "https://www.tiktok.com/@adtek.growth.marketing/video/7697555460240493831",
+     "zernio_post_id": "6ad335ec8d477d146464c5e5",
+     "reason": "đăng lại có nhạc, anh Tin xóa bản cũ trong app"
+    }
+   ]
   },
   {
    "id": "tt-20261019",
