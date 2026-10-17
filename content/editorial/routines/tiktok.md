@@ -20,6 +20,27 @@ Cài đặt đăng mặc định (`TIKTOK_SETTINGS` trong script): công khai, c
 2. Tạo API key mới trong Zernio, lưu vào cài đặt môi trường cloud với tên `ZERNIO_API_KEY` (Network secrets hoặc biến môi trường), xóa key cũ đã lộ trong chat. Không dán vào chat.
 3. Mở phiên mới, chạy `python3 tools/tiktok_post.py check`: phải ra Adtek Growth Marketing Agency, có `PUBLIC_TO_EVERYONE`.
 
+## Lượt hẹn đăng hằng tuần (anh Tin chọn 17/10/2026)
+
+Chạy trong phiên **Adtek - TikTok đăng tự động** (phiên mở sau khi có `ZERNIO_API_KEY`), nhánh `claude/brave-curie-2c6zbc`. Zernio giữ lịch đăng theo đúng `date`, `time` của Marketing, nên chỉ cần một lượt mỗi tuần.
+
+- Lịch: `CRON_TZ=Asia/Ho_Chi_Minh 43 11 * * 0` (11:43 Chủ nhật, sau lượt sản xuất 08:52 của Video production).
+- Phạm vi: các mục `tiktok` có `date` từ thứ Hai tới hết Chủ nhật tuần sau, status chưa phải scheduled, posted, cancelled.
+- Video production nhắn danh sách video đã lên hub sau lượt sản xuất. Lúc 11:43 mà còn video trong tuần chưa có trên hub thì hẹn lại một lượt bù bằng send_later sau 3 giờ (tối đa 2 lượt bù), rồi báo anh Tin video nào vẫn thiếu.
+- Marketing đổi `date` hoặc `time` của video đã hẹn: phiên Marketing nhắn phiên đăng tự động; phiên đó `cancel <id>`, đổi status về `video_ready` và `schedule <id>` lại.
+
+### Prompt
+
+[TikTok: hẹn đăng tuần tới] Repo Adtek_website, nhánh claude/brave-curie-2c6zbc (fetch, pull), làm theo content/editorial/routines/tiktok.md.
+1. git fetch origin claude/confident-ramanujan-t3jbi6. Với mỗi mục tiktok status scheduled đã qua giờ đăng: python3 tools/tiktok_post.py status <id> (ghi tiktok_url).
+2. python3 tools/tiktok_post.py week <ngày thứ Hai sắp tới theo giờ Việt Nam>. Với mỗi video chưa hẹn có video_asset: tải video và cover bằng Artifact read (url hub, path = video_asset, cover_asset), chép vào video/out/<slug>.mp4 và video/out/<slug>-cover.png, rồi python3 tools/tiktok_post.py schedule <id>. Thêm cả video của các ngày còn lại trong tuần này nếu chưa hẹn.
+3. Video thiếu kịch bản hoặc chưa có trên hub: không hẹn; nếu chưa dùng hết 2 lượt bù, gọi send_later sau 3 giờ với message "[TikTok: hẹn đăng bù] Làm lại bước 2 và 3 trong mục Lượt hẹn đăng hằng tuần của content/editorial/routines/tiktok.md (lượt bù thứ <n>)."
+4. Báo anh Tin: push notification (dưới 200 ký tự) "<n> video TikTok tuần <dd/mm> đã hẹn trên Zernio. Muốn hủy hay sửa video nào thì nhắn trước giờ đăng."; tin nhắn trong phiên: bảng ngày, giờ, chủ đề, caption của từng video đã hẹn, link các video đã đăng tuần trước, video còn thiếu và lý do.
+5. Lỗi Zernio hoặc TikTok: báo anh Tin nguyên văn lỗi, không thử cách khác.
+6. Ghi logs/changelog.md, commit, push lên claude/brave-curie-2c6zbc.
+
+Khi anh Tin nhắn trong phiên: "hủy <id>" thì `cancel <id>`; sửa caption thì nhắn phiên Video production sửa trên hub, rồi `cancel <id>`, đổi status về `video_ready`, `schedule <id>` lại.
+
 ## Mỗi video
 
 1. `git fetch origin claude/confident-ramanujan-t3jbi6` (script đọc `video/hub/videos.json` từ nhánh này), rồi `python3 tools/tiktok_post.py week <hôm nay>`.
@@ -31,4 +52,4 @@ Cài đặt đăng mặc định (`TIKTOK_SETTINGS` trong script): công khai, c
 
 Giới hạn: TikTok tối đa 15 video mỗi 24 giờ cho mỗi tài khoản; Zernio gói miễn phí 60 lượt gọi mỗi phút; bản tải lên Zernio giữ 7 ngày.
 
-Lịch tự động chưa tạo: chờ `ZERNIO_API_KEY` trong môi trường và anh Tin quyết định thay lượt "nhắc đăng tay 07:47" của phiên Video production bằng đăng tự động.
+Lượt nhắc đăng tay 07:47 của phiên Video production đã tắt từ 17/10/2026; việc đăng chỉ còn lượt hẹn đăng hằng tuần ở trên.
