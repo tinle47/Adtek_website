@@ -1,3 +1,5 @@
+Trạng thái: TẮT từ 17/10/2026 (trig_01BRGsizN3tkDdo9LqKXFqZS). Anh Tin chốt: việc đăng video chuyển cho phiên Adtek - Tiktok post (đăng tự động qua Zernio), không gửi email nhắc đăng nữa. Giữ file này để tham khảo.
+
 Tên: TikTok Adtek: nhắc đăng video (mỗi ngày)
 Lịch: CRON_TZ=Asia/Ho_Chi_Minh 47 7 * * *
 Nội dung gửi vào phiên mỗi lần chạy (chép nguyên văn phần dưới đường kẻ):

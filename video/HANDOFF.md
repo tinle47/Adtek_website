@@ -6,7 +6,7 @@ File này để một phiên Claude mới nhận việc và làm tiếp mà khô
 
 - Kênh TikTok @adtek.growth.marketing của Adtek Growth Marketing Agency, mỗi ngày 1 video infographic khoảng 1 phút (hoặc bản ngắn 30 giây khi thử nghiệm).
 - Video làm bằng Remotion (thư mục `video/`), giọng đọc nhân bản của anh Tin qua ElevenLabs (giọng "Tin Le v1", model Eleven v4, tốc độ 1.1x).
-- Anh Tin đăng tay lên TikTok. Claude viết kịch bản, tạo giọng, xuất video, đưa lên trang hub và gửi email nhắc.
+- Từ 17/10/2026: phiên Adtek - Marketing (session_01XqVohyrjLRctpapS6FbMXD) quản lý lịch TikTok trong `content/editorial/calendar.json` (nhánh `claude/brave-curie-2c6zbc`); phiên Adtek - Tiktok post (session_01XZK48jTG9DpqHxwCKxGbA6) đăng tự động qua Zernio, đọc `hub/videos.json`. Phiên video (Claude ở đây) viết kịch bản, tạo giọng, xuất video, đưa lên hub, email duyệt và báo 2 phiên kia. Không còn email nhắc đăng.
 - Repo `tinle47/Adtek_website`, nhánh làm việc `claude/confident-ramanujan-t3jbi6`. Chỉ đẩy lên nhánh này, không tạo PR khi chưa được yêu cầu.
 
 ## Cách xưng hô và trình bày với anh Tin
@@ -46,17 +46,17 @@ python3 tools/hub_export.py                        # sau mỗi lần đổi lị
 
 | Routine | Giờ | ID |
 |---|---|---|
-| Nhắc đăng video hôm nay (email kèm caption, cấu hình nhạc) | Mỗi ngày 07:47 | trig_01BRGsizN3tkDdo9LqKXFqZS |
+| Nhắc đăng video hôm nay (TẮT từ 17/10/2026, việc đăng chuyển cho phiên Tiktok post) | Mỗi ngày 07:47 | trig_01BRGsizN3tkDdo9LqKXFqZS |
 | Viết kịch bản tuần tới, email chờ duyệt | Thứ Bảy 08:47 | trig_01M1bsFaGkqY3WP8Pd4k9GVe |
 | Sản xuất video theo kịch bản đã duyệt, đưa lên hub, email | Chủ nhật 08:52 | trig_01PMqm6rHeR3J5WdBYcNmLa7 |
 
-Từ 17/10/2026 (tài khoản Claude mới), cả 3 routine bắn vào phiên session_01RJbeQ6L8V6bz5xR8mWeYGP ("Adtek - TikTok lịch tự động"). Phiên này được tạo riêng vì biến môi trường (khóa ElevenLabs) chỉ có ở phiên mở sau khi thêm biến. 3 routine nháp trỏ vào phiên bàn giao session_015wnXjaRHuK6RciQ3JeDviz (trig_01Q8D4SMZZuQQdiihw8kXrDN, trig_01Mf3NeyFEiVyVoXEnckCYWW, trig_013uBjHGAqWFpFDU7VztYtgg) đã tắt, không xóa. Lần sau chuyển phiên: tạo routine mới trỏ vào phiên mới (create_trigger với persistent_session_id) rồi tắt routine cũ. Nội dung từng routine chép nguyên văn từ `video/routines/*.md`.
+Từ 17/10/2026 (tài khoản Claude mới), cả 3 routine bắn vào phiên session_01RJbeQ6L8V6bz5xR8mWeYGP ("Adtek - TikTok lịch tự động"). Phiên này được tạo riêng vì biến môi trường (khóa ElevenLabs) chỉ có ở phiên mở sau khi thêm biến. 3 routine nháp trỏ vào phiên bàn giao session_015wnXjaRHuK6RciQ3JeDviz (trig_01Q8D4SMZZuQQdiihw8kXrDN, trig_01Mf3NeyFEiVyVoXEnckCYWW, trig_013uBjHGAqWFpFDU7VztYtgg) đã tắt, không xóa. Lần sau chuyển phiên: tạo routine mới trỏ vào phiên mới (create_trigger với persistent_session_id) rồi tắt routine cũ. Nội dung từng routine chép nguyên văn từ `video/routines/*.md`. Nội dung routine chỉ sửa được từ chính phiên nhận routine (update_trigger từ phiên khác bị từ chối); tắt, bật thì phiên nào cũng làm được.
 
 Khóa ElevenLabs của tài khoản mới không có quyền đọc thông tin tài khoản: `GET /v1/user` trả 401 là bình thường. `GET /v1/voices/<voice_id>` (endpoint `voice.mjs` dùng) trả 200, giọng "Tin Le v1".
 
 ## Tình trạng hiện tại (17/10/2026)
 
-- Đã đăng tới 17/10 (tài khoản cũ gửi nhắc tới 17/10).
+- Đã đăng tới 18/10 (video 18/10 do phiên Tiktok post đăng sớm lúc 15:38 ngày 17/10).
 - Hub mới https://claude.ai/artifact/YAeKXQbpBZj26HyPKV5wxN (tài khoản mới sở hữu). Video sắp đăng 18 đến 22/10 và 27/10 đã xuất lại từ giọng có sẵn và tải lên hub mới. Video đã đăng (07 đến 17/10) ghi "Đã đăng", file gốc nằm ở hub cũ của tài khoản cũ, không chuyển. Mục "Mẫu dạng video mới" để trống vì asset nằm ở hub cũ.
 - Kịch bản 18, 23, 24, 25/10 do routine thứ Bảy của tài khoản cũ viết sáng 17/10 (có giọng, trạng thái "Đã viết kịch bản"). Ảnh duyệt đã chụp lại và đưa lên hub mới. Video 18/10 đã xuất sẵn lên hub; routine Chủ nhật 18/10 vẫn xử lý cả 4 video theo quy trình (giọng đã có nên không tốn credit nếu không đổi lời).
 - Email kịch bản tuần 18 đến 25/10 được gửi từ Gmail của tài khoản cũ, nên Gmail của tài khoản mới (tin.le@adtek.agency) không có thread đó. Từ 18/10 mọi email đi từ tin.le@adtek.agency tới hi@tinle.co.
