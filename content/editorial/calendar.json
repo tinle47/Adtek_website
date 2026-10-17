@@ -2612,7 +2612,7 @@
    ],
    "note": "Bản đăng 15:38 17/10 (https://www.tiktok.com/@adtek.growth.marketing/video/7697551427345943860) chưa có cover hub, anh Tin đã xóa trong app 17/10 và chọn đăng lại ngay có cover",
    "attempt": 3,
-   "zernio_post_id": "6ad378d279d189c68e4d7306",
+   "zernio_post_id": null,
    "scheduled_at": "2026-10-17T20:32:18+07:00",
    "tiktok_url": null,
    "music": {
@@ -2633,9 +2633,15 @@
      "tiktok_url": "https://www.tiktok.com/@adtek.growth.marketing/video/7697608331728309524",
      "zernio_post_id": "6ad365f7b25bc7c22c4407e7",
      "reason": "nhạc mức 15 nghe không thấy, đăng lại mức 30, anh Tin xóa bản cũ trong app"
+    },
+    {
+     "zernio_post_id": "6ad378d279d189c68e4d7306",
+     "tiktok_post_id": "7697628889216124948",
+     "reason": "Zernio báo published nhưng TikTok không hiện sau 40 phút; anh Tin tự đăng tay"
     }
    ],
-   "posted_at": "2026-10-17T13:40:26.368Z"
+   "posted_at": "2026-10-17T22:26:57+07:00",
+   "posted_by": "anh Tin đăng tay trong app"
   },
   {
    "id": "tt-20261019",
