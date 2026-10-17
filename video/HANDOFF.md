@@ -47,10 +47,10 @@ python3 tools/hub_export.py                        # sau mỗi lần đổi lị
 | Routine | Giờ | ID |
 |---|---|---|
 | Nhắc đăng video hôm nay (TẮT từ 17/10/2026, việc đăng chuyển cho phiên Tiktok post) | Mỗi ngày 07:47 | trig_01BRGsizN3tkDdo9LqKXFqZS |
-| Viết kịch bản tuần tới, email chờ duyệt | Thứ Bảy 08:47 | trig_01M1bsFaGkqY3WP8Pd4k9GVe |
-| Sản xuất video theo kịch bản đã duyệt, đưa lên hub, email | Chủ nhật 08:52 | trig_01PMqm6rHeR3J5WdBYcNmLa7 |
+| Viết kịch bản tuần tới, email chờ duyệt | Thứ Bảy 08:47 | trig_013NW4HfoFmiCaGN4WUQDxdW |
+| Sản xuất video theo kịch bản đã duyệt, đưa lên hub, email | Chủ nhật 08:52 | trig_01Lz38SJwUNHvE6QNbPEjHmP |
 
-Từ 17/10/2026 (tài khoản Claude mới), cả 3 routine bắn vào phiên session_01RJbeQ6L8V6bz5xR8mWeYGP ("Adtek - TikTok lịch tự động"). Phiên này được tạo riêng vì biến môi trường (khóa ElevenLabs) chỉ có ở phiên mở sau khi thêm biến. 3 routine nháp trỏ vào phiên bàn giao session_015wnXjaRHuK6RciQ3JeDviz (trig_01Q8D4SMZZuQQdiihw8kXrDN, trig_01Mf3NeyFEiVyVoXEnckCYWW, trig_013uBjHGAqWFpFDU7VztYtgg) đã tắt, không xóa. Lần sau chuyển phiên: tạo routine mới trỏ vào phiên mới (create_trigger với persistent_session_id) rồi tắt routine cũ. Nội dung từng routine chép nguyên văn từ `video/routines/*.md`. Nội dung routine chỉ sửa được từ chính phiên nhận routine (update_trigger từ phiên khác bị từ chối); tắt, bật thì phiên nào cũng làm được.
+Từ chiều 17/10/2026 (anh Tin chốt): chỉ phiên Adtek - Video production (session_015wnXjaRHuK6RciQ3JeDviz) sản xuất video; việc đăng chỉ do phiên Adtek - TikTok post (session_018zu7wyE9zvuKk5Smnpczn4, lượt hẹn đăng 11:43 Chủ nhật) làm. Hai routine thứ Bảy và Chủ nhật trỏ vào phiên Video production (phiên này đã khởi động lại sau khi thêm biến nên có khóa ElevenLabs). Routine cũ trỏ vào phiên "Adtek - TikTok lịch tự động" (session_01RJbeQ6L8V6bz5xR8mWeYGP: trig_01M1bsFaGkqY3WP8Pd4k9GVe, trig_01PMqm6rHeR3J5WdBYcNmLa7) và 3 routine nháp (trig_01Q8D4SMZZuQQdiihw8kXrDN, trig_01Mf3NeyFEiVyVoXEnckCYWW, trig_013uBjHGAqWFpFDU7VztYtgg) đã tắt, không xóa. Lần sau chuyển phiên: tạo routine mới trỏ vào phiên mới (create_trigger với persistent_session_id) rồi tắt routine cũ. Nội dung từng routine chép nguyên văn từ `video/routines/*.md`. Nội dung routine chỉ sửa được từ chính phiên nhận routine (update_trigger từ phiên khác bị từ chối); tắt, bật thì phiên nào cũng làm được.
 
 Khóa ElevenLabs của tài khoản mới không có quyền đọc thông tin tài khoản: `GET /v1/user` trả 401 là bình thường. `GET /v1/voices/<voice_id>` (endpoint `voice.mjs` dùng) trả 200, giọng "Tin Le v1".
 
