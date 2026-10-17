@@ -297,7 +297,7 @@
     "4175"
    ],
    "words": 2000,
-   "status": "draft",
+   "status": "scheduled",
    "wp_id": 6112,
    "published": null,
    "last_reviewed": null,
@@ -331,7 +331,7 @@
    "fb_comment": "MER, CAC, LTV: cách đọc đúng khi ROAS giảm https://adtek.agency/chi-so-growth-marketing/",
    "fb_status": "cancelled",
    "media_id": 6182,
-   "approval": "pending",
+   "approval": "auto",
    "approval_requested": "2026-10-16T09:13:31+07:00",
    "fb_title": "ROAS giảm, có nên cắt ngân sách quảng cáo ngay?",
    "fb_hashtags": [
@@ -358,7 +358,7 @@
     28
    ],
    "words": 2000,
-   "status": "draft",
+   "status": "scheduled",
    "wp_id": 6114,
    "published": null,
    "last_reviewed": null,
@@ -393,7 +393,7 @@
    "fb_comment": "Luật Thương mại điện tử 2026: livestream, KOL/KOC và affiliate cần chuẩn bị gì? https://adtek.agency/luat-thuong-mai-dien-tu-livestream/",
    "fb_status": "cancelled",
    "media_id": 6183,
-   "approval": "pending",
+   "approval": "auto",
    "approval_requested": "2026-10-16T09:13:31+07:00",
    "fb_title": "Nhãn hàng cần gửi KOC giấy tờ gì trước phiên livestream?",
    "fb_hashtags": [
