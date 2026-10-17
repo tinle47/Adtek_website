@@ -1,0 +1,23 @@
+{
+ "id": 2680,
+ "slug": "cpm",
+ "status": "publish",
+ "title": {
+  "raw": "Retargeting",
+  "rendered": "Retargeting"
+ },
+ "content": {
+  "raw": "<b>Retargeting (Nhắm mục tiêu lại):</b><span style=\"font-weight: 400;\"> Retargeting có nghĩa là phân phối quảng cáo cho đối tượng dựa trên tương tác trước đó của họ với quảng cáo của bạn. Sử dụng retargeting, bạn có thể chạy quảng cáo cho đối tượng được nhắm mục tiêu và sau đó chỉ chạy quảng cáo thứ hai cho những người đã tương tác với quảng cáo đầu tiên theo một cách nào đó, cho dù đó là nhấp vào quảng cáo hay mua hàng trên trang web hoặc ứng dụng.</span>\r\n\r\n<span style=\"font-weight: 400;\">Ví dụ: nếu bạn chạy quảng cáo video về một dòng quần áo mới, bạn có thể chạy quảng cáo tiếp theo dựa trên câu chuyện của quảng cáo trước đó và chỉ hiển thị cho những người đã xem hoặc nhấp vào quảng cáo video đầu tiên.</span>\r\n\r\n<span style=\"font-weight: 400;\">Điều quan trọng cần lưu ý là đối tượng của bạn sẽ giảm dần theo thời gian nếu bạn sử dụng retargeting, và có thể dẫn đến kết quả phân phối thấp hơn. Nếu bạn muốn kể một câu chuyện bằng cách sử dụng multiple ads để hiển thị theo một thứ tự cụ thể mà không thu hẹp đối tượng của mình, hãy thử sắp xếp theo trình tự quảng cáo (Ad Sequencing).</span>",
+  "rendered": "<p><b>Retargeting (Nhắm mục tiêu lại):</b><span style=\"font-weight: 400;\"> Retargeting có nghĩa là phân phối quảng cáo cho đối tượng dựa trên tương tác trước đó của họ với quảng cáo của bạn. Sử dụng retargeting, bạn có thể chạy quảng cáo cho đối tượng được nhắm mục tiêu và sau đó chỉ chạy quảng cáo thứ hai cho những người đã tương tác với quảng cáo đầu tiên theo một cách nào đó, cho dù đó là nhấp vào quảng cáo hay mua hàng trên trang web hoặc ứng dụng.</span></p>\n<p><span style=\"font-weight: 400;\">Ví dụ: nếu bạn chạy quảng cáo video về một dòng quần áo mới, bạn có thể chạy quảng cáo tiếp theo dựa trên câu chuyện của quảng cáo trước đó và chỉ hiển thị cho những người đã xem hoặc nhấp vào quảng cáo video đầu tiên.</span></p>\n<p><span style=\"font-weight: 400;\">Điều quan trọng cần lưu ý là đối tượng của bạn sẽ giảm dần theo thời gian nếu bạn sử dụng retargeting, và có thể dẫn đến kết quả phân phối thấp hơn. Nếu bạn muốn kể một câu chuyện bằng cách sử dụng multiple ads để hiển thị theo một thứ tự cụ thể mà không thu hẹp đối tượng của mình, hãy thử sắp xếp theo trình tự quảng cáo (Ad Sequencing).</span></p>\n",
+  "protected": false,
+  "block_version": 0
+ },
+ "meta": {
+  "_acf_changed": false,
+  "_yoast_wpseo_title": "Retargeting là gì? Quảng cáo nhắm mục tiêu lại | Adtek",
+  "_yoast_wpseo_metadesc": "Retargeting là gì? Retargeting (Nhắm mục tiêu lại): Retargeting có nghĩa là phân phối quảng cáo cho đối tượng dựa trên tương tác trước đó của họ với...",
+  "_yoast_wpseo_meta-robots-noindex": "",
+  "inline_featured_image": false,
+  "footnotes": ""
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "id": 1762,
+ "slug": "click-fraud-gian-lan-nhap-chuot",
+ "title": {
+  "raw": "Click fraud",
+  "rendered": "Click fraud"
+ },
+ "content": {
+  "raw": "<b>Click fraud (Gian lận nhấp chuột)</b>\r\n\r\n<span style=\"font-weight: 400;\">Click Fraud là loại gian lận trong đó kẻ xấu áp những clicks ảo để tăng doanh thu (trong trường hợp của ad networks hay publishers/website) hoặc làm tiêu tốn ngân sách quảng cáo cho chiến dịch thanh toán bằng nhấp chuột (như PPC, CPC, CPI,...).</span>\r\n\r\n<img class=\"aligncenter wp-image-1763 size-full\" src=\"http://adtek.agency/wp-content/uploads/2022/04/20220206_Click-fraud-Gian-lận-nhấp-chuột_Image1.jpg\" alt=\"\" width=\"1200\" height=\"675\" />\r\n\r\n<b>Click fraud là gì?</b>\r\n\r\n<span style=\"font-weight: 400;\">Click fraud bao gồm báo cáo nhấp chuột gian lận hoặc nhấp chuột ảo có thể thực hiện bởi con người và tác nhân không phải con người giả danh là người dùng hợp pháp, nhưng không có bất kỳ theo dõi chuyển đổi nào dù là lượt mua, đăng ký, cài đặt hay hành động nào khác.</span>\r\n\r\n<span style=\"font-weight: 400;\">Loại gian lận phổ biến bao gồm forced clicks, nhấp chuột gian lận như bot clicks, click flooding, click redirection, nhấp chuột gắn nhãn sai từ chiến dịch khuyến khích và báo cáo sai số lần hiển thị, hay lượt xem video được báo cáo là lần nhấp.</span>\r\n\r\n<span style=\"font-weight: 400;\">Những trò gian lận này thường nhắm mục tiêu vào chiến dịch CPC và CPI.</span>",
+  "rendered": "<p><b>Click fraud (Gian lận nhấp chuột)</b></p>\n<p><span style=\"font-weight: 400;\">Click Fraud là loại gian lận trong đó kẻ xấu áp những clicks ảo để tăng doanh thu (trong trường hợp của ad networks hay publishers/website) hoặc làm tiêu tốn ngân sách quảng cáo cho chiến dịch thanh toán bằng nhấp chuột (như PPC, CPC, CPI,&#8230;).</span></p>\n<img loading=\"lazy\" decoding=\"async\" class=\"aligncenter wp-image-1763 size-full\" src=\"http://adtek.agency/wp-content/uploads/2022/04/20220206_Click-fraud-Gian-lận-nhấp-chuột_Image1.jpg\" alt=\"\" width=\"1200\" height=\"675\" srcset=\"https://adtek.agency/wp-content/uploads/2022/04/20220206_Click-fraud-Gian-lận-nhấp-chuột_Image1.jpg 1200w, https://adtek.agency/wp-content/uploads/2022/04/20220206_Click-fraud-Gian-lận-nhấp-chuột_Image1-300x169.jpg 300w, https://adtek.agency/wp-content/uploads/2022/04/20220206_Click-fraud-Gian-lận-nhấp-chuột_Image1-1024x576.jpg 1024w, https://adtek.agency/wp-content/uploads/2022/04/20220206_Click-fraud-Gian-lận-nhấp-chuột_Image1-768x432.jpg 768w, https://adtek.agency/wp-content/uploads/2022/04/20220206_Click-fraud-Gian-lận-nhấp-chuột_Image1-570x321.jpg 570w\" sizes=\"auto, (max-width: 1200px) 100vw, 1200px\" />\n<p><b>Click fraud là gì?</b></p>\n<p><span style=\"font-weight: 400;\">Click fraud bao gồm báo cáo nhấp chuột gian lận hoặc nhấp chuột ảo có thể thực hiện bởi con người và tác nhân không phải con người giả danh là người dùng hợp pháp, nhưng không có bất kỳ theo dõi chuyển đổi nào dù là lượt mua, đăng ký, cài đặt hay hành động nào khác.</span></p>\n<p><span style=\"font-weight: 400;\">Loại gian lận phổ biến bao gồm forced clicks, nhấp chuột gian lận như bot clicks, click flooding, click redirection, nhấp chuột gắn nhãn sai từ chiến dịch khuyến khích và báo cáo sai số lần hiển thị, hay lượt xem video được báo cáo là lần nhấp.</span></p>\n<p><span style=\"font-weight: 400;\">Những trò gian lận này thường nhắm mục tiêu vào chiến dịch CPC và CPI.</span></p>\n",
+  "protected": false,
+  "block_version": 0
+ },
+ "meta": {
+  "_acf_changed": false,
+  "_yoast_wpseo_title": "Click Fraud là gì? Gian lận nhấp chuột | Adtek",
+  "_yoast_wpseo_metadesc": "Click fraud là gì? Click Fraud là loại gian lận trong đó kẻ xấu áp những clicks ảo để tăng doanh thu (trong trường hợp của ad networks hay...",
+  "_yoast_wpseo_meta-robots-noindex": "",
+  "inline_featured_image": false,
+  "footnotes": ""
+ }
+}

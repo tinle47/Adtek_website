@@ -1,0 +1,22 @@
+{
+ "id": 3041,
+ "slug": "brand",
+ "title": {
+  "raw": "Brand",
+  "rendered": "Brand"
+ },
+ "content": {
+  "raw": "<b>Brand (Thương hiệu)</b>\r\n\r\n<span style=\"font-weight: 400;\">Có nhiều cách hiểu về thuật ngữ “Brand” nhưng nói một cách đơn giản, có thể giải thích thương hiệu là sự kết hợp của các đặc điểm hữu hình và vô hình để tác động đến một nhóm cụ thể hoặc tạo ra giá trị cho đối tượng nào đó. Các công ty sử dụng các thuộc tính thương hiệu như logo, nhãn hiệu, tên hoặc những câu nói để làm cho sản phẩm, dịch vụ nổi bật hơn so với các sản phẩm, dịch vụ khác hiện có trên thị trường.</span>",
+  "rendered": "<p><b>Brand (Thương hiệu)</b></p>\n<p><span style=\"font-weight: 400;\">Có nhiều cách hiểu về thuật ngữ “Brand” nhưng nói một cách đơn giản, có thể giải thích thương hiệu là sự kết hợp của các đặc điểm hữu hình và vô hình để tác động đến một nhóm cụ thể hoặc tạo ra giá trị cho đối tượng nào đó. Các công ty sử dụng các thuộc tính thương hiệu như logo, nhãn hiệu, tên hoặc những câu nói để làm cho sản phẩm, dịch vụ nổi bật hơn so với các sản phẩm, dịch vụ khác hiện có trên thị trường.</span></p>\n",
+  "protected": false,
+  "block_version": 0
+ },
+ "meta": {
+  "_acf_changed": false,
+  "_yoast_wpseo_title": "Brand là gì? Định nghĩa thương hiệu | Thuật ngữ Adtek",
+  "_yoast_wpseo_metadesc": "Brand là gì? Có nhiều cách hiểu về thuật ngữ “Brand” nhưng nói một cách đơn giản, có thể giải thích thương hiệu là sự kết hợp của các đặc điểm hữu hình...",
+  "_yoast_wpseo_meta-robots-noindex": "",
+  "inline_featured_image": false,
+  "footnotes": ""
+ }
+}

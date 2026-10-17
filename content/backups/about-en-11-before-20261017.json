@@ -1,0 +1,137 @@
+{
+ "acf": {
+  "id": 11,
+  "fields": {
+   "mona_aboutus_banners": {
+    "banner": 101,
+    "banner_mobile": 99,
+    "title": "Problem-solving is our DNA.",
+    "description": "The people at Adtek are always challenging through data and technology to differentiate themselves from the crowd.",
+    "statistical_information": {
+     "statistical_title": "Let’s Start Your Project With Adtek.co",
+     "statistical_list": [
+      {
+       "icon": 86,
+       "number": "10",
+       "description": "PROJECTS COMPLETED"
+      },
+      {
+       "icon": 85,
+       "number": "3",
+       "description": "SATISFIED CLIENTS"
+      },
+      {
+       "icon": 84,
+       "number": "8",
+       "description": "EXPERT TEAMS"
+      }
+     ]
+    }
+   },
+   "mona_aboutus_descriptions": {
+    "title": "About Us",
+    "link": "http://adtek.agency/contact/",
+    "description": "<p>Adtek was founded in 2021 to help brands grow their businesses from branding building to revenue growth. Unlike other agencies, we combine creatives and data-driven to provide end-to-end marketing strategies from branding, user acquisition, and user retention. We challenge conventional marketing methods by understanding clients’ markets, profoundly diving into their problems, and growing clients’ businesses at scale.</p>\n",
+    "decor_img": [
+     95,
+     96,
+     97
+    ],
+    "decor_img_mobile": false
+   },
+   "mona_aboutus_protect": {
+    "background": 69,
+    "title": "LET US KNOW WHAT THE PROBLEM YOU NEED TO SOLVE. WE WILL THINK WITH YOU.",
+    "link": "http://adtek.agency/contact/"
+   },
+   "mona_aboutus_leadership_team": {
+    "title": "Leardership Team",
+    "description": "With more than 10 years of experience in growth marketing and e-commerce, we are strongly confident to deliver the best results to our clients.",
+    "team": [
+     3023,
+     3025
+    ]
+   },
+   "mona_aboutus_awards": {
+    "title": "Our Certificates",
+    "description": "100% of our experts are certified in Google Ads, Facebook Blueprint",
+    "awards": [
+     2955,
+     2957
+    ]
+   },
+   "mona_aboutus_news": {
+    "title": "",
+    "description": "",
+    "news": false,
+    "count": ""
+   },
+   "mona_aboutus_platform": {
+    "title": "",
+    "platforms": false
+   },
+   "mona_aboutus_contact": {
+    "title": "Contact",
+    "description": "Contact Adtek now to get a free consultation from our experts.",
+    "contact_information": [
+     {
+      "icon": 126,
+      "title": "HO CHI MINH OFFICE",
+      "information_select": "value_text",
+      "information_detail": "146 Bis Nguyen Van Thu Street, Tan Dinh Ward, Ho Chi Minh City, Vietnam"
+     },
+     {
+      "icon": 123,
+      "title": "Email",
+      "information_select": "value_email",
+      "information_detail": "contact@adtek.agency"
+     },
+     {
+      "icon": 125,
+      "title": "PHONE",
+      "information_select": "value_tel",
+      "information_detail": "+84 9323 494 34 (Mr. Tín)"
+     }
+    ],
+    "contact_form": {
+     "title_contact_form": "Request a Call Back",
+     "description_contact_form": "Please leave your information below; we will call you back soon.",
+     "shortcode_contact_form": "[contact-form-7 id=\"235\" title=\"CONTACTFORM - ABOUTUS PAGE\"]"
+    },
+    "contact_map": "<iframe src=\"https://www.google.com/maps?q=146%20Bis%20Nguy%E1%BB%85n%20V%C4%83n%20Th%E1%BB%A7%2C%20T%C3%A2n%20%C4%90%E1%BB%8Bnh%2C%20H%E1%BB%93%20Ch%C3%AD%20Minh&output=embed\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\" title=\"Adtek office map\"></iframe>"
+   }
+  },
+  "version": "1.2.1"
+ },
+ "page": {
+  "id": 11,
+  "title": {
+   "raw": "About Us",
+   "rendered": "About Us"
+  },
+  "meta": {
+   "_acf_changed": false,
+   "_yoast_wpseo_title": "",
+   "_yoast_wpseo_metadesc": "About Adtek: a growth marketing agency helping brands grow from branding to revenue by combining creative thinking with data-driven strategy.",
+   "_yoast_wpseo_meta-robots-noindex": "",
+   "inline_featured_image": false,
+   "footnotes": ""
+  }
+ },
+ "team": {
+  "id": 3023,
+  "title": {
+   "raw": "CEO",
+   "rendered": "CEO"
+  }
+ },
+ "team_acf": {
+  "id": 3023,
+  "fields": {
+   "position": "",
+   "social_network": false,
+   "description_information": "<ul>\n<li>Former Head of Online Marketing @ Shopee Vietnam</li>\n</ul>\n"
+  },
+  "version": "1.2.1"
+ }
+}

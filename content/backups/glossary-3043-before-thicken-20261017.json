@@ -1,0 +1,22 @@
+{
+ "id": 3043,
+ "slug": "branding",
+ "title": {
+  "raw": "Branding",
+  "rendered": "Branding"
+ },
+ "content": {
+  "raw": "<b>Branding</b>\r\n\r\n<span style=\"font-weight: 400;\">Với sự hiểu biết về brand, branding có thể xem là quá trình tận dụng hình ảnh của một doanh nghiệp và truyền tải đến đối tượng mục tiêu.</span>",
+  "rendered": "<p><b>Branding</b></p>\n<p><span style=\"font-weight: 400;\">Với sự hiểu biết về brand, branding có thể xem là quá trình tận dụng hình ảnh của một doanh nghiệp và truyền tải đến đối tượng mục tiêu.</span></p>\n",
+  "protected": false,
+  "block_version": 0
+ },
+ "meta": {
+  "_acf_changed": false,
+  "_yoast_wpseo_title": "Branding là gì? Quá trình xây dựng thương hiệu | Adtek",
+  "_yoast_wpseo_metadesc": "Branding là gì? Với sự hiểu biết về brand, branding có thể xem là quá trình tận dụng hình ảnh của một doanh nghiệp và truyền tải đến đối tượng mục tiêu.",
+  "_yoast_wpseo_meta-robots-noindex": "",
+  "inline_featured_image": false,
+  "footnotes": ""
+ }
+}
