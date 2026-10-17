@@ -1,0 +1,35 @@
+{
+  "id": 1762,
+  "slug": "click-fraud-gian-lan-nhap-chuot",
+  "keyword": "click fraud là gì",
+  "seo_title": "Click fraud là gì? Các dạng gian lận nhấp chuột",
+  "meta_desc": "Click fraud là gì, các dạng gian lận nhấp chuột từ bot, đối thủ đến click flooding, dấu hiệu phát hiện và cách phòng tránh trên Google Ads, app.",
+  "sources": [
+    {
+      "name": "Google Ads Help: About invalid traffic",
+      "url": "https://support.google.com/google-ads/answer/11182074?hl=en",
+      "date": "truy cập 10/2026 (trang không ghi ngày cập nhật)"
+    },
+    {
+      "name": "Media Rating Council: Update to Invalid Traffic Detection and Filtration Standards (IVT 2.0)",
+      "url": "https://www.mediaratingcouncil.org/sites/default/files/News/General-Announcements/062520%20Media%20Rating%20Council%20Issues%20Update%20To%20Invalid%20Traffic%20Detection%20and%20Filtration%20Standards_Final.pdf",
+      "date": "06/2020"
+    },
+    {
+      "name": "Marketing Brew: Advertisers will spend $84 billion on ad fraud this year (dẫn Juniper Research)",
+      "url": "https://www.marketingbrew.com/stories/2023/10/05/advertisers-will-spend-usd84-billion-on-ad-fraud-this-year-report",
+      "date": "10/2023"
+    },
+    {
+      "name": "AppsFlyer: The State of Fraud for Marketers, 2026 Edition",
+      "url": "https://www.appsflyer.com/resources/reports/mobile-ad-fraud-state/",
+      "date": "04/2026"
+    }
+  ],
+  "confirm": [
+    "Giữ ảnh cũ wp-image-1763 (đổi src sang https, thêm alt). Anh Tin muốn giữ hay bỏ ảnh?",
+    "Số liệu Juniper Research (84 tỷ USD, 22%) là báo cáo năm 2023 làm cùng Fraud Blocker, bài đã ghi rõ là ước tính tham khảo; chưa tìm được bản cập nhật mới hơn từ Juniper.",
+    "Số 36 lần của AppsFlyer lấy từ trang giới thiệu báo cáo (bản đầy đủ cần đăng ký), chưa đọc được bảng chi tiết.",
+    "Ví dụ shop điện máy ở Đà Nẵng là giả định."
+  ]
+}

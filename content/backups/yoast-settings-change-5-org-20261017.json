@@ -1,0 +1,29 @@
+{
+ "version": "1.1.1",
+ "settings": {
+  "org-description": {
+   "old": "",
+   "new": "Adtek là growth marketing agency tại Việt Nam, giúp thương hiệu tăng trưởng từ xây dựng thương hiệu đến doanh thu: Brand Commerce, quảng cáo hiệu suất, SEO và AI Search, dữ liệu và CRM, thương mại điện tử."
+  },
+  "org-email": {
+   "old": "",
+   "new": "contact@adtek.agency"
+  },
+  "org-phone": {
+   "old": "",
+   "new": "+84932349434"
+  },
+  "org-legal-name": {
+   "old": "",
+   "new": "Công ty Cổ phần Adtek Technology"
+  },
+  "org-founding-date": {
+   "old": "",
+   "new": "2022-05-05"
+  },
+  "org-tax-id": {
+   "old": "",
+   "new": "0317120810"
+  }
+ }
+}

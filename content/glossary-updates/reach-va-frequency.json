@@ -1,0 +1,34 @@
+{
+  "id": 2154,
+  "slug": "reach-va-frequency",
+  "keyword": "reach và frequency là gì",
+  "seo_title": "Reach và frequency là gì? Tần suất tối ưu và giới hạn",
+  "meta_desc": "Reach và frequency là gì, công thức tần suất, tần suất tối ưu theo dữ liệu TikTok, Meta, cách đặt giới hạn tần suất trên Meta, TikTok, Google.",
+  "sources": [
+    {
+      "name": "TikTok Business Help Center: Best practices for optimizing brand awareness and ad recall with TikTok's Brand Basics",
+      "url": "https://ads.tiktok.com/help/article/best-practices-for-optimizing-brand-awareness-and-ad-recall-with-tiktoks?lang=en",
+      "date": "05/2026"
+    },
+    {
+      "name": "TikTok Business Help Center: About target frequency",
+      "url": "https://ads.tiktok.com/help/article/about-target-frequency?lang=en",
+      "date": "11/2025"
+    },
+    {
+      "name": "Meta Business Help Center: Glossary of reservation terms",
+      "url": "https://www.facebook.com/business/help/230299314945919",
+      "date": "truy cập 10/2026 (trang không ghi ngày cập nhật)"
+    },
+    {
+      "name": "DataReportal: Digital 2026 Vietnam",
+      "url": "https://datareportal.com/reports/digital-2026-vietnam",
+      "date": "11/2025"
+    }
+  ],
+  "confirm": [
+    "Tên thuật ngữ trên WordPress hiện là \"Reach\": đề xuất đổi thành \"Reach và Frequency\" cho khớp slug và nội dung.",
+    "Thuật ngữ frequency (đã noindex) trùng chủ đề: đề xuất chuyển hướng 301 về /glossary/reach-va-frequency/.",
+    "Các mốc Meta (cap mặc định 2 lần mỗi 7 ngày, Target frequency 2 đến 4 tuần) và Google Target frequency lấy từ Help Center, trang không ghi ngày; ví dụ chuỗi cà phê là giả định."
+  ]
+}
