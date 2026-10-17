@@ -1,4 +1,4 @@
-# Xuất dữ liệu cho trang hub (claude.ai/artifact/72zNCsPigyqbV6P8kQtji5):
+# Xuất dữ liệu cho trang hub (claude.ai/artifact/YAeKXQbpBZj26HyPKV5wxN):
 #   hub/schedule.json  từ plan/lich-noi-dung-tiktok.xlsx (sheet "Lịch đăng")
 #   hub/scripts.json   từ scripts/*/*.json (bỏ kịch bản có "archived": true)
 # Cách dùng (trong thư mục video): python3 tools/hub_export.py

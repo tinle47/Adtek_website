@@ -343,6 +343,7 @@ details.fold > .list { margin-top: 12px; }
     if (v.date) meta.appendChild(el("span", "date", fmtDate(v.date)));
     if (v.date && v.date === today) meta.appendChild(el("span", "chip today", "Đăng hôm nay"));
     if (v.format) meta.appendChild(el("span", "chip ok", "Mẫu: " + v.format));
+    else if (v.posted && !v.url) meta.appendChild(el("span", "chip", "Đã đăng"));
     else meta.appendChild(el("span", "chip " + (v.url ? "ok" : "wait"), v.url ? "Sẵn sàng" : "Chưa có video"));
     if (v.service) meta.appendChild(el("span", null, v.service));
     if (v.duration) meta.appendChild(el("span", null, v.duration));

@@ -25,7 +25,7 @@ File này để một phiên Claude mới nhận việc và làm tiếp mà khô
 | Lịch đăng (nguồn chính) | `video/plan/lich-noi-dung-tiktok.xlsx`, sheet "Lịch đăng" (cột N là trạng thái, cột K "Lưu ý khi dùng") |
 | Giọng đã tạo | `video/public/voice/<id>/` (có `manifest.json`, đã commit) |
 | Video xuất ra | `video/out/` (không commit; video thật nằm trên hub) |
-| Trang hub (anh Tin tải video, copy caption) | https://claude.ai/artifact/72zNCsPigyqbV6P8kQtji5, dữ liệu trong `video/hub/*.json` |
+| Trang hub (anh Tin tải video, copy caption) | https://claude.ai/artifact/YAeKXQbpBZj26HyPKV5wxN, dữ liệu trong `video/hub/*.json` |
 
 ## Lệnh hay dùng (trong thư mục `video`)
 
@@ -46,17 +46,20 @@ python3 tools/hub_export.py                        # sau mỗi lần đổi lị
 
 | Routine | Giờ | ID |
 |---|---|---|
-| Nhắc đăng video hôm nay (email kèm caption, cấu hình nhạc) | Mỗi ngày 07:47 | trig_015moonCQ7qxhn7oX9AAw6Qd |
-| Viết kịch bản tuần tới, email chờ duyệt | Thứ Bảy 08:47 | trig_01RniaH3JPJRrWA2SBv1K6iJ |
-| Sản xuất video theo kịch bản đã duyệt, đưa lên hub, email | Chủ nhật 08:52 | trig_01XR5BNQVfwxuhe6Ak7BBTci |
+| Nhắc đăng video hôm nay (email kèm caption, cấu hình nhạc) | Mỗi ngày 07:47 | trig_01BRGsizN3tkDdo9LqKXFqZS |
+| Viết kịch bản tuần tới, email chờ duyệt | Thứ Bảy 08:47 | trig_01M1bsFaGkqY3WP8Pd4k9GVe |
+| Sản xuất video theo kịch bản đã duyệt, đưa lên hub, email | Chủ nhật 08:52 | trig_01PMqm6rHeR3J5WdBYcNmLa7 |
 
-Cả 3 routine bắn vào phiên session_01WxJyQayTE17duXYsRamVW7 (tạo 16/10/2026). 3 routine cũ của phiên trước (trig_01CQnosVhYjPGFhPaiztwZZ8, trig_01NTBXYMDspRxo8qvc2T6nRe, trig_019hnqJBnVkP1i1DYK3Yh8Ch) đã tắt, không xóa. Lần sau chuyển phiên: tạo routine mới trỏ vào phiên mới (create_trigger với persistent_session_id) rồi tắt routine cũ. Nội dung từng routine xem bằng `get_trigger`.
+Từ 17/10/2026 (tài khoản Claude mới), cả 3 routine bắn vào phiên session_01RJbeQ6L8V6bz5xR8mWeYGP ("Adtek - TikTok lịch tự động"). Phiên này được tạo riêng vì biến môi trường (khóa ElevenLabs) chỉ có ở phiên mở sau khi thêm biến. 3 routine nháp trỏ vào phiên bàn giao session_015wnXjaRHuK6RciQ3JeDviz (trig_01Q8D4SMZZuQQdiihw8kXrDN, trig_01Mf3NeyFEiVyVoXEnckCYWW, trig_013uBjHGAqWFpFDU7VztYtgg) đã tắt, không xóa. Lần sau chuyển phiên: tạo routine mới trỏ vào phiên mới (create_trigger với persistent_session_id) rồi tắt routine cũ. Nội dung từng routine chép nguyên văn từ `video/routines/*.md`.
 
-## Tình trạng hiện tại (16/10/2026)
+Khóa ElevenLabs của tài khoản mới không có quyền đọc thông tin tài khoản: `GET /v1/user` trả 401 là bình thường. `GET /v1/voices/<voice_id>` (endpoint `voice.mjs` dùng) trả 200, giọng "Tin Le v1".
 
-- Đã đăng tới 13/10. Đã gửi email nhắc tới 16/10 (cột K ghi "Đã nhắc").
-- Video đã xong, đã có trên hub: 16/10, 17/10, 19/10, 20/10, 21/10, 22/10, 27/10.
-- Chưa có video: 18/10 (ý tưởng "Mua data khách hàng để chạy quảng cáo: rủi ro tới đâu?", chưa có kịch bản) và các slot trống 23 đến 26/10, 28/10 trở đi. Routine thứ Bảy 17/10 sẽ viết kịch bản cho 18 đến 25/10, routine Chủ nhật 18/10 sản xuất. Lưu ý 18/10 đăng lúc 09:00 Chủ nhật, cùng ngày với lúc sản xuất (08:52), nên cần ưu tiên xuất video 18/10 trước.
+## Tình trạng hiện tại (17/10/2026)
+
+- Đã đăng tới 17/10 (tài khoản cũ gửi nhắc tới 17/10).
+- Hub mới https://claude.ai/artifact/YAeKXQbpBZj26HyPKV5wxN (tài khoản mới sở hữu). Video sắp đăng 18 đến 22/10 và 27/10 đã xuất lại từ giọng có sẵn và tải lên hub mới. Video đã đăng (07 đến 17/10) ghi "Đã đăng", file gốc nằm ở hub cũ của tài khoản cũ, không chuyển. Mục "Mẫu dạng video mới" để trống vì asset nằm ở hub cũ.
+- Kịch bản 18, 23, 24, 25/10 do routine thứ Bảy của tài khoản cũ viết sáng 17/10 (có giọng, trạng thái "Đã viết kịch bản"). Ảnh duyệt đã chụp lại và đưa lên hub mới. Video 18/10 đã xuất sẵn lên hub; routine Chủ nhật 18/10 vẫn xử lý cả 4 video theo quy trình (giọng đã có nên không tốn credit nếu không đổi lời).
+- Email kịch bản tuần 18 đến 25/10 được gửi từ Gmail của tài khoản cũ, nên Gmail của tài khoản mới (tin.le@adtek.agency) không có thread đó. Từ 18/10 mọi email đi từ tin.le@adtek.agency tới hi@tinle.co.
 - Video "Khách muốn nhắn tin trước khi mua" đã dời từ 09/10 (chưa đăng) sang 22/10, nguồn đã kiểm tra lại 13/10.
 
 ## Quyết định mới nhất của anh Tin (13/10/2026)
@@ -73,23 +76,11 @@ Cả 3 routine bắn vào phiên session_01WxJyQayTE17duXYsRamVW7 (tạo 16/10/2
 - ffmpeg đi kèm Remotion không có muxer s16le: muốn đọc âm thanh thô thì giải mã ra WAV.
 - Mạng: WebFetch đôi khi lỗi DNS, dùng `curl -sSL` qua proxy thay thế. Tải PDF lớn có thể bị ngắt, thử lại vài lần.
 
-## Chuyển sang tài khoản Claude khác (anh Tin yêu cầu 16/10/2026)
+## Chuyển sang tài khoản Claude khác (đã xong 17/10/2026)
 
-Những thứ nằm trong repo đi theo tự động: code, kịch bản, giọng đã tạo, lịch xlsx, dữ liệu và trang hub (`video/hub/`), quy tắc (`CLAUDE.md`), file này. Những thứ gắn với tài khoản cũ phải làm lại ở tài khoản mới:
+- GitHub, Gmail, môi trường cloud, khóa ElevenLabs: đã nối ở tài khoản mới.
+- Hub: tạo mới (link ở trên), đã thay link trong `CLAUDE.md`, `HANDOFF.md`, `tools/hub_export.py`.
+- 3 lịch tự động: đã tạo lại (bảng ở trên).
+- Anh Tin tắt 3 routine ở tài khoản cũ (`trig_015moonCQ7qxhn7oX9AAw6Qd`, `trig_01RniaH3JPJRrWA2SBv1K6iJ`, `trig_01XR5BNQVfwxuhe6Ak7BBTci`) tại https://claude.ai/code/routines của tài khoản cũ, để tránh 2 phiên cùng sản xuất và gửi email trùng.
 
-| Việc | Ai làm | Cách làm |
-|---|---|---|
-| Nối GitHub | Anh Tin | https://claude.ai/connect-github, chọn repo `tinle47/Adtek_website` (cài Claude GitHub App nếu được hỏi) |
-| Nối Gmail (gửi email hi@tinle.co) | Anh Tin | https://claude.ai/customize/connectors, bật Gmail |
-| Môi trường cloud | Anh Tin | Khi mở phiên Claude Code trên web: tạo environment, mục Network access cho phép ít nhất `api.elevenlabs.io`, các trang nguồn số liệu (nên chọn mức mở rộng để tra cứu), `cms-investor-cdn.vng.com.vn` |
-| Khóa ElevenLabs | Anh Tin | Trong settings của environment, thêm biến `ELEVENLABS_API_KEY` và `ELEVENLABS_VOICE_ID` (lấy trên elevenlabs.io, không dán vào chat) |
-| Tùy chọn cách trả lời | Anh Tin | Chép phần "personal preferences" (xưng em/anh, không "—", US number format...) sang Settings của tài khoản mới |
-| Trang hub | Anh Tin + Claude | Link hiện tại https://claude.ai/artifact/72zNCsPigyqbV6P8kQtji5 thuộc tài khoản cũ. Nếu tạo hub mới thì thay link này trong `CLAUDE.md`, `HANDOFF.md`, `routines/*.md`. Cách 1 (giữ link cũ): ở tài khoản cũ mở hub, Share, mời email tài khoản mới với quyền chỉnh sửa. Cách 2: tài khoản mới tạo hub mới từ `video/hub/index.html` và các file json, rồi tải lại video và ảnh bìa (asset cũ nằm ở hub cũ) |
-| 3 lịch tự động | Claude ở tài khoản mới | Tạo lại 3 routine trỏ vào phiên mới, tên, giờ và nội dung chép nguyên văn từ `video/routines/1-nhac-dang-moi-ngay.md`, `2-viet-kich-ban-thu-bay.md`, `3-san-xuat-chu-nhat.md` |
-| Tắt lịch ở tài khoản cũ | Anh Tin | Sau khi tài khoản mới đã gửi được email nhắc đầu tiên, vào https://claude.ai/code/routines của tài khoản cũ và tắt 3 routine `trig_015moonCQ7qxhn7oX9AAw6Qd`, `trig_01RniaH3JPJRrWA2SBv1K6iJ`, `trig_01XR5BNQVfwxuhe6Ak7BBTci` (tránh email trùng) |
-
-Công cụ cần trong container: node 22, python3 + openpyxl, ffmpeg, ffprobe, soffice (LibreOffice Calc), pdftotext, Chromium của Playwright ở `/opt/pw-browsers`. Môi trường cloud mặc định thường đã có; thiếu cái nào thì cài bằng setup script (ví dụ `apt-get install -y libreoffice-calc poppler-utils ffmpeg && pip install openpyxl`) và chạy `cd video && npm install`.
-
-Câu mở đầu để dán vào phiên Claude Code đầu tiên ở tài khoản mới (chọn repo `tinle47/Adtek_website`, nhánh `claude/confident-ramanujan-t3jbi6`):
-
-> Em nhận lại dự án video TikTok của Adtek từ tài khoản Claude cũ của anh. Checkout nhánh claude/confident-ramanujan-t3jbi6, đọc video/HANDOFF.md, video/CLAUDE.md, video/README.md. Sau đó: (1) kiểm tra có biến ELEVENLABS_API_KEY và ELEVENLABS_VOICE_ID (không in giá trị), có Gmail, có soffice, ffmpeg, Chromium; (2) chạy thử `node tools/check.mjs nguoi-viet-song-trong-app` để chắc máy xuất video được; (3) hỏi anh dùng lại hub cũ (anh đã share quyền chỉnh sửa) hay tạo hub mới; (4) tạo lại 3 lịch tự động (nhắc đăng 07:47 mỗi ngày, viết kịch bản 08:47 thứ Bảy, sản xuất 08:52 Chủ nhật, giờ Việt Nam) trỏ vào phiên này; (5) báo anh những gì còn thiếu. Chưa gửi email nào trong lúc kiểm tra.
+Công cụ cần trong container: node 22, python3 + openpyxl, ffmpeg, ffprobe, soffice (LibreOffice Calc), pdftotext, Chromium của Playwright ở `/opt/pw-browsers`. Môi trường cloud mặc định đã có đủ; phiên mới chỉ cần `cd video && npm install`.
